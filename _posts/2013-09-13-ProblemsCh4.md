@@ -90,8 +90,9 @@ Exercise 10.
 ============
 Prove Theorem 25.
 
+{% highlight haskell %}
     map f . concat = concat (map (map f )).
-
+{% endhighlight %}
 
 Exercise 11.
 ============
@@ -101,7 +102,9 @@ Exercise 12.
 ============
 Prove
 
+{% highlight haskell %}
     sum . map length = length . concat
+{% endhighlight %}
 
 
 Exercise 13.
@@ -113,7 +116,10 @@ Exercise 14.
 State the requirements on finite length that the proof of
 P imposes on the arguments of concat, where P is defined as
 
+{% highlight haskell %}
     P (n) ≡ concat xss = foldr (++) [] xss
+{% endhighlight %}
+
 
 Exercise 15.
 ============
