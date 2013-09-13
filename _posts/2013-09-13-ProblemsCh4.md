@@ -49,8 +49,11 @@ Exercise 5.
 Prove Theorem 16.
 
 **Theorem 16.**
+
 {% highlight haskell %}
-    length (xs++ys) = length xs + length ys
+
+length (xs++ys) = length xs + length ys
+
 {% endhighlight %}
 
 Exercise 7.
