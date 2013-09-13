@@ -50,7 +50,7 @@ Prove Theorem 16.
 
 {% highlight haskell %}
 
-length (xs++ys) = length xs + length ys
+   length (xs++ys) = length xs + length ys
 
 {% endhighlight %}
 
@@ -65,7 +65,7 @@ Exercise 7.
 Prove Theorem 19.
 
 {% highlight haskell %}
-(map f . map g) xs = map (f.g) xs
+    (map f . map g) xs = map (f.g) xs
 {% endhighlight %}
 
 Exercise 8.
@@ -75,6 +75,7 @@ Recall Theorem 20, which says
 {% highlight haskell %}
     sum (map (1+) xs) = length xs + sum xs.
 {% endhighlight %}
+
 
 Explain in English what this theorem says. Using the definitions of the
 functions involved (sum, length and map), calculate the values of the left
@@ -129,7 +130,9 @@ Exercise 16.
 ============
 Prove the following theorem, using induction:
 
+{% highlight haskell %}
     reverse (xs++ys) = reverse ys++reverse xs
+{% endhighlight %}
 
 Then decide whether this theorem happens to be true for infinite lists like
 [1 . .]. Try to give a good argument for your conclusion, but you don’t
@@ -140,7 +143,10 @@ Exercise 17.
 ============
 Use induction to prove Theorem 27.
 
+{% highlight haskell %}
     reverse (reverse xs) = xs.
+{% endhighlight %}
+
 
 Exercise 18.
 ============
@@ -152,7 +158,10 @@ Assume that xss is a finite list of type [[a]], that it is of length n,
 and that xs is a finite list and an arbitrary element of xss.
 Prove that length
 
+{% highlight haskell %}
     (concat xss) = sum (map length xss).
+{% endhighlight %}
+
 
 
 Exercise 20.
@@ -173,8 +182,12 @@ Exercise 22.
 ===========
 Assume there is a function called max that delivers the larger of its two arguments.
 
+
+{% highlight haskell %}
     max x y = x   if x >= y
     max x y = y   if y >= x
+{% endhighlight %}
+
 
 Write a function maximum that, given a non-empty sequence of values
 whose sizes can be compared (that is, values from a type of class Ord),
@@ -197,7 +210,10 @@ Given the definition of maximum, defined as
 
 prove that maximum has the following property:
 
+{% highlight haskell %}
     (maximum xs) >= x
+{% endhighlight %}
+
 
 
 Exercise 24.
@@ -211,7 +227,10 @@ Exercise 25.
 ===========
 Prove the equation
 
+{% highlight haskell %}
     concat = foldr (++) []
+{% endhighlight %}
+
 
 Assume that the lists are finite, so that list induction can be used.
 
@@ -225,4 +244,6 @@ Exercise 27.
 ===========
  Given a list xs of type Bool, prove that
 
+{% highlight haskell %}
     and ([False] ++ xs) = False
+{% endhighlight %}
