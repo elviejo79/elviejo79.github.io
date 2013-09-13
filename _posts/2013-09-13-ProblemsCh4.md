@@ -48,21 +48,175 @@ Exercise 5.
 ==========
 Prove Theorem 16.
 
-**Theorem 16.**
-
 {% highlight haskell %}
 
 length (xs++ys) = length xs + length ys
 
 {% endhighlight %}
 
+
+Exercise 6.
+===========
+Prove Theorem 18.
+
+
 Exercise 7.
 ==========
 Prove Theorem 19.
 
+{% highlight haskell %}
+(map f . map g) xs = map (f.g) xs
+{% endhighlight %}
+
+Exercise 8.
+==========
+Recall Theorem 20, which says
+
+{% highlight haskell %}
+    sum (map (1+) xs) = length xs + sum xs.
+{% endhighlight %}
+
+Explain in English what this theorem says. Using the definitions of the
+functions involved (sum, length and map), calculate the values of the left
+and right-hand sides of the equation using xs = [1, 2, 3, 4].
+
+
 Exercise 9.
 ===========
-Invent a new theorem similar to Theorem 20, where (1+) is re-
-placed by (k+). Test it on one or two small examples. Then prove your
-theorem.
-Theorem 20. sum (map (1+) xs) = length xs + sum xs
+Invent a new theorem similar to Theorem 20, where (1+) is replaced by (k+).
+Test it on one or two small examples. Then prove your theorem.
+
+Exercise 10.
+============
+Prove Theorem 25.
+
+    map f . concat = concat (map (map f )).
+
+
+Exercise 11.
+============
+Prove that the ++ operator is associative.
+
+Exercise 12.
+============
+Prove
+
+    sum . map length = length . concat
+
+
+Exercise 13.
+=============
+What is the flaw in the proof given above?
+
+Exercise 14.
+============
+State the requirements on finite length that the proof of
+P imposes on the arguments of concat, where P is defined as
+
+    P (n) ≡ concat xss = foldr (++) [] xss
+
+Exercise 15.
+============
+Check that Theorem 27 holds for the argument [1, 2, 3].
+
+Exercise 16.
+============
+Prove the following theorem, using induction:
+
+    reverse (xs++ys) = reverse ys++reverse xs
+
+Then decide whether this theorem happens to be true for infinite lists like
+[1 . .]. Try to give a good argument for your conclusion, but you don’t
+have to prove it.
+
+
+Exercise 17.
+============
+Use induction to prove Theorem 27.
+
+    reverse (reverse xs) = xs.
+
+Exercise 18.
+============
+Explain why Theorem 27 does not hold for infinite lists.
+
+Exercise 19.
+===========
+Assume that xss is a finite list of type [[a]], that it is of length n,
+and that xs is a finite list and an arbitrary element of xss.
+Prove that length
+
+    (concat xss) = sum (map length xss).
+
+
+Exercise 20.
+===========
+Prove that **or** defined over an argument that has an arbitrary
+number of elements delivers the value True if True occurs as one of the
+elements of its argument.
+
+
+Exercise 21.
+===========
+Prove that **and** defined over an argument that has an arbitrary
+number of elements delivers the value True if all of the elements in its
+argument are True.
+
+
+Exercise 22.
+===========
+Assume there is a function called max that delivers the larger of its two arguments.
+
+    max x y = x   if x >= y
+    max x y = y   if y >= x
+
+Write a function maximum that, given a non-empty sequence of values
+whose sizes can be compared (that is, values from a type of class Ord),
+delivers the largest value in the sequence.
+
+
+Exercise 23.
+===========
+Assume that the list xs is of type Ord a => [a],
+and that x is an arbitrary element of xs.
+Given the definition of maximum, defined as
+
+{% highlight haskell %}
+
+> maximum :: [Ord] -> Ord
+> maximum xs = foldr (max) y ys
+>              where xs = y:ys
+
+{% endhighlight %}
+
+prove that maximum has the following property:
+
+    (maximum xs) >= x
+
+
+Exercise 24.
+===========
+Write a function that, given a sequence containing only nonempty sequences,
+delivers the sequence made up of the first elements of each of those non-empty
+sequences.
+
+
+Exercise 25.
+===========
+Prove the equation
+
+    concat = foldr (++) []
+
+Assume that the lists are finite, so that list induction can be used.
+
+
+Exercise 26.
+===========
+Define an **and** operator using **&&** and foldr.
+
+
+Exercise 27.
+===========
+ Given a list xs of type Bool, prove that
+
+    and ([False] ++ xs) = False
