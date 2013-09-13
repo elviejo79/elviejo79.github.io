@@ -47,8 +47,11 @@ $$\sum_{i=1}^n fib (i) =  fib (n+2) -1  $$
 Exercise 5.
 ==========
 Prove Theorem 16.
-Theorem 16. length (xs++ys) = length xs + length ys
 
+**Theorem 16.**
+{% highlight haskell %}
+    length (xs++ys) = length xs + length ys
+{% endhighlight %}
 
 Exercise 7.
 ==========
