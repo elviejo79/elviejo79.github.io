@@ -130,6 +130,56 @@ Prove Theorem 16.
 
 {% endhighlight %}
 
+Definitions
+-----------
+
+{% highlight haskell %}
+
+    length :: [a] -> Int
+    length [] = 0
+    length (x:xs) = 1 + length xs
+
+    (++) :: [a] -> [a] -> [a]
+    (++) [] ++ ys = ys
+    (++) (x:xs) ++ ys = x : (xs ++ ys)
+
+{% endhighlight %}
+
+Basis []
+---------
+$$ xs <- [] $$
+
+{% highlight haskell %}
+    length ([]++ys) = length [] + length ys
+    length ([]++ys) = 0 + length ys   {def len []}
+    lenght (ys) = lenght ys           {def (++) [] ++ ys}
+{% endhighlight %}
+
+Induction xs hypothesis
+-----------------------
+We assume
+{% highlight haskell %}
+
+   length (xs++ys) = length xs + length ys
+
+{% endhighlight %}
+is true
+
+Induction x:xs
+---------------
+{% highlight haskell %}
+
+    length (x:xs++ys) = length x:xs + length ys
+    length (x:xs++ys) = length x:xs + length ys   {def ++}
+    length (x: (xs++ys)) = length x:xs + length ys   {def ++}
+    1 + length (xs++ys) = length x:xs + length ys   {def length x:xs}
+    1 + length xs + length ys = length x:xs + length ys   {hypothesis}
+    length x:xs + lenght ys = length x:xs + length ys   {def length x:xs}
+    {QED}
+
+{% endhighlight %}
+
+
 
 Exercise 6.
 ===========
