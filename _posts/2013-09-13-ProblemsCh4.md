@@ -318,18 +318,19 @@ Induction x:xs
 xs <- x:xs
 {% highlight haskell %}
 
-    sum (map (k+) x:xs) = k*length x:xs + sum x:xs
-    sum (((k+)x): map (k+) xs )  = k*lenght x:xs + sum x:xs {def map f x:xs}
-    ((k+)x) + sum (map (k+) xs ) = k*lenght x:xs + sum x:xs {def sum x:xs}
+    sum (map (k+) x:xs)            = k*length x:xs + sum x:xs
+    sum (((k+)x): map (k+) xs )    = k*lenght x:xs + sum x:xs {def map f x:xs}
+    ((k+)x) + sum (map (k+) xs )   = k*lenght x:xs + sum x:xs {def sum x:xs}
     ((k+)x) + k*length xs + sum xs = k*lenght x:xs + sum x:xs {hypothesis}
-    k + x + k*length xs + sum xs = k*lenght x:xs + sum x:xs {parenthesis}
-    k + k*length xs + x + sum xs = k*lenght x:xs + sum x:xs {changed order}
-    k * (1+lenght xs) + x + sum xs =  k*lenght x:xs + sum x:xs {factorizing k}
-    k * (lenght x:xs) + x + sum xs =  k*lenght x:xs + sum x:xs {def len x:xs}
-    k * (lenght x:xs) + sum x:xs =  k*lenght x:xs + sum x:xs {def sum x:xs}
+    k + x + k*length xs + sum xs   = k*lenght x:xs + sum x:xs {parenthesis}
+    k + k*length xs + x + sum xs   = k*lenght x:xs + sum x:xs {changed order}
+    k * (1+lenght xs) + x + sum xs = k*lenght x:xs + sum x:xs {factorizing k}
+    k * (lenght x:xs) + x + sum xs = k*lenght x:xs + sum x:xs {def len x:xs}
+    k * (lenght x:xs) + sum x:xs   = k*lenght x:xs + sum x:xs {def sum x:xs}
     {QED}
 
 {% endhighlight %}
+
 
 **************************************************************
 
