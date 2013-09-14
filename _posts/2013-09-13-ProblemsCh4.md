@@ -32,7 +32,7 @@ The nth Fibonacci number is defined as follows:
 > fib :: Integer -> Integer
 > fib 0 = 0
 > fib 1 = 1
-> fib (n+2) = fib n + fib (n+1)
+> fib (n) = fib (n-1) + fib (n-2)
 
 {% endhighlight %}
 
@@ -202,9 +202,9 @@ Given the definition of maximum, defined as
 
 {% highlight haskell %}
 
-> maximum :: [Ord] -> Ord
+> maximum ::  Ord a => [a] -> a
 > maximum xs = foldr (max) y ys
->              where xs = y:ys
+>              where  y:ys = xs
 
 {% endhighlight %}
 
