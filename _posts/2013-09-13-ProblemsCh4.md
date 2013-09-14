@@ -4,6 +4,9 @@ title: Solutions to Chapter 4
 category: haskell
 ---
 
+* auto-gen TOC:
+{:toc}
+
 Exercise 1.
 ===========
 Let a be an arbitrary real number. Prove, for all natural numbers
