@@ -87,10 +87,9 @@ The nth Fibonacci number is defined as follows:
 > fib 1 = 1
 > fib (n) = fib (n-1) + fib (n-2)
 
-** Elviejo: Changed this formula definition because the books syntax isn't valid haskell **
-
 {% endhighlight %}
 
+** Elviejo: Changed this formula definition because the books syntax isn't valid haskell **
 
 The first few numbers in this famous sequence are 0, 1, 1, 2, 3, 5, . . . .
 Prove the following:
