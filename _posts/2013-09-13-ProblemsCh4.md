@@ -119,7 +119,7 @@ fib (n+1) + fib (n+2) -1 = fib (n+2) + fib (n+1) -1 \\
 QED \\
 \end{aligned}$$</div>
 
-
+******************************************************************
 Exercise 5.
 ==========
 Prove Theorem 16.
@@ -136,11 +136,11 @@ Definitions
 {% highlight haskell %}
 
     length :: [a] -> Int
-    length [] = 0
+    length []     = 0
     length (x:xs) = 1 + length xs
 
     (++) :: [a] -> [a] -> [a]
-    (++) [] ++ ys = ys
+    (++) [] ++ ys     = ys
     (++) (x:xs) ++ ys = x : (xs ++ ys)
 
 {% endhighlight %}
@@ -152,7 +152,7 @@ $$ xs <- [] $$
 {% highlight haskell %}
     length ([]++ys) = length [] + length ys
     length ([]++ys) = 0 + length ys   {def len []}
-    lenght (ys) = lenght ys           {def (++) [] ++ ys}
+    lenght (ys)     = lenght ys           {def (++) [] ++ ys}
 {% endhighlight %}
 
 Induction xs hypothesis
@@ -169,23 +169,23 @@ Induction x:xs
 ---------------
 {% highlight haskell %}
 
-    length (x:xs++ys) = length x:xs + length ys
-    length (x:xs++ys) = length x:xs + length ys   {def ++}
-    length (x: (xs++ys)) = length x:xs + length ys   {def ++}
-    1 + length (xs++ys) = length x:xs + length ys   {def length x:xs}
+            length (x:xs++ys) = length x:xs + length ys
+            length (x:xs++ys) = length x:xs + length ys   {def ++}
+         length (x: (xs++ys)) = length x:xs + length ys   {def ++}
+          1 + length (xs++ys) = length x:xs + length ys   {def length x:xs}
     1 + length xs + length ys = length x:xs + length ys   {hypothesis}
-    length x:xs + lenght ys = length x:xs + length ys   {def length x:xs}
+      length x:xs + lenght ys = length x:xs + length ys   {def length x:xs}
     {QED}
 
 {% endhighlight %}
 
 
-
+******************************************************************
 Exercise 6.
 ===========
 Prove Theorem 18.
 
-
+******************************************************************
 Exercise 7.
 ==========
 Prove Theorem 19.
@@ -193,6 +193,8 @@ Prove Theorem 19.
 {% highlight haskell %}
     (map f . map g) xs = map (f.g) xs
 {% endhighlight %}
+
+
 
 Exercise 8.
 ==========
