@@ -9,16 +9,61 @@ Exercise 1.
 Let a be an arbitrary real number. Prove, for all natural numbers
 m and n, that $$a^{m \times n} = (a^m)^n $$
 
+
+
 Exercise 2.
 ===========
 Prove that the sum of the first n odd positive numbers is $$n^2 $$.
 
+$$
+\sum_{i=1}^{n} 2i-1 = n^2
+$$
+
+Basis 1
+--------
+*para n = 1*
+
+$$
+\begin{aligned}
+\sum_{i=1}^{1} 2i-1 = 1^2 \\
+2(1)-1 = 1^2 \\
+1 = 1 \\
+\end{aligned}
+$$
+
+Induction (n) hypothesis
+--------------------
+We assume that
+$$
+\sum_{i=1}^{n} 2i-1 = n^2
+$$ is true
+
+Induction (n+1)
+---------------
+consideramos $$ n <- n+1 $$
+
+$$
+\begin{aligned}
+\sum_{i=1}^{n+1} 2i-1 = (n+1)^2 \\
+2(n+1)-1 + \sum_{i=1}^{n} 2i-1 =  (n+1)^2 \\
+2n+2-1 + \sum_{i=1}^{n} 2i-1 =  (n+1)^2 \\
+2n + 1 + n^2 = (n+1)^2 \\
+(n+1)^2 = (n+1)^2 \\
+\end{aligned}
+$$
 
 
 Exercise 3.
 ===========
-Prove that $$\sum_{k=1}^n a^i =  (a^{n+1} − 1)/(a − 1) $$
+Prove that $$\sum_{i=1}^n a^i =  (a^{n+1} − 1)/(a − 1) $$
 , where a is a real number and $$ a \neq 1 $$.
+
+$$
+\begin{aligned}
+\sum_{i=1}^n a^i = \frac{(a^{n+1} − 1)}{(a − 1)}
+\end{aligned}
+$$
+
 
 
 Exercise 4.
@@ -34,6 +79,8 @@ The nth Fibonacci number is defined as follows:
 > fib 1 = 1
 > fib (n) = fib (n-1) + fib (n-2)
 
+** Elviejo: Changed this formula definition because the books syntax isn't valid haskell **
+
 {% endhighlight %}
 
 
@@ -42,6 +89,35 @@ Prove the following:
 
 $$\sum_{i=1}^n fib (i) =  fib (n+2) -1  $$
 
+
+Basis 1
+-------
+
+<div>$$\begin{aligned}
+\sum_{i=1}^1 fib (i) =  fib (1+2) -1 \\
+fib (1) =  fib (3) -1 \\
+fib (1) = fib (2) + fib (1) -1 \\
+fib (1) = fib (1) +  fib (0) + fib (1) -1 \\
+fib (1) = 1 + 0 + 1 -1 \\
+fib (1) = 1 \\
+1 = 1  \\
+\end{aligned}$$</div>
+
+Induction n hypothesis
+----------------------
+We assume $$\sum_{i=1}^n fib (i) =  fib (n+2) -1  $$ is true.
+
+Induction n+1
+----------------
+$$ n <- n + 1 $$
+
+<div>$$\begin{aligned}
+\sum_{i=1}^{n+1} fib (i) =  fib ((n+1)+2) -1 \\
+fib (n+1) + \sum_{i=1}^n fib (i) =  fib (n+3) -1 \\
+fib (n+1) + fib (n+2) -1 = fib (n+3) -1 \\
+fib (n+1) + fib (n+2) -1 = fib (n+2) + fib (n+1) -1 \\
+QED \\
+\end{aligned}$$</div>
 
 
 Exercise 5.
