@@ -10,6 +10,7 @@ Let a be an arbitrary real number. Prove, for all natural numbers
 m and n, that $$a^{m \times n} = (a^m)^n $$
 
 
+**************************************************************
 
 Exercise 2.
 ===========
@@ -52,6 +53,7 @@ $$
 \end{aligned}
 $$
 
+**************************************************************
 
 Exercise 3.
 ===========
@@ -65,6 +67,7 @@ $$
 $$
 
 
+**************************************************************
 
 Exercise 4.
 ==========
@@ -119,7 +122,8 @@ fib (n+1) + fib (n+2) -1 = fib (n+2) + fib (n+1) -1 \\
 QED \\
 \end{aligned}$$</div>
 
-******************************************************************
+**************************************************************
+
 Exercise 5.
 ==========
 Prove Theorem 16.
@@ -181,11 +185,13 @@ Induction x:xs
 
 
 ******************************************************************
+
 Exercise 6.
 ===========
 Prove Theorem 18.
 
 ******************************************************************
+
 Exercise 7.
 ==========
 Prove Theorem 19.
@@ -194,7 +200,55 @@ Prove Theorem 19.
     (map f . map g) xs = map (f.g) xs
 {% endhighlight %}
 
+Definitions
+-----------
+{% highlight haskell %}
+    map :: (a->b) -> [a] -> [b]
+    map f []     = []
+    map f (x:xs) = f x : map f xs
 
+    (.) :: (b -> c) -> (a -> b) -> (a -> c)
+    (f.g) x = f (g x)
+{% endhighlight %}
+
+Basis []
+--------
+xs <- []
+
+{% highlight haskell %}
+    (map f . map g) xs = map (f.g) xs
+    (map f . map g) [] = map (f.g) []  {xs <- []}
+    (map f . map g) [] = []            {def map f []}
+    map f (map g [])   = []            {def (.)}
+    map f []           = []            {def map f []}
+                    [] = []            {def map f []}
+{% endhighlight %}
+
+Induction xs hypotesis
+-----------------------
+We assume
+{% highlight haskell %}
+    (map f . map g) xs = map (f.g) xs
+{% endhighlight %}
+is true
+
+Induction x:xs
+--------------------
+xs <- x:xs
+
+{% highlight haskell %}
+    (map f . map g) x:xs             = map (f.g) x:xs
+    map f (map g x:xs)               = map (f.g) x:xs           {def (.)}
+    map f (g x : map g xs)           = map (f.g) x:xs           {def map f (x:xs)}
+    f(g x) : map f (map g xs)        = map (f.g) x:xs           {def map f (x:xs)}
+    f(g x) : ((map f . map g) xs)    = map (f.g) x:xs           {def (.)}
+    ((f.g) x) : ((map f . map g) xs) = map (f.g) x:xs           {def (.)}
+    ((f.g) x) : (map (f.g) xs)       = map (f.g) x:xs           {def (.)} {hypothesis}
+    ((f.g) x) : (map (f.g) xs)       = ((f.g) x) : map (f.g) xs {def map f x:xs}
+    {QED}
+{% endhighlight %}
+
+**************************************************************
 
 Exercise 8.
 ==========
@@ -209,11 +263,14 @@ Explain in English what this theorem says. Using the definitions of the
 functions involved (sum, length and map), calculate the values of the left
 and right-hand sides of the equation using xs = [1, 2, 3, 4].
 
+**************************************************************
 
 Exercise 9.
 ===========
 Invent a new theorem similar to Theorem 20, where (1+) is replaced by (k+).
 Test it on one or two small examples. Then prove your theorem.
+
+**************************************************************
 
 Exercise 10.
 ============
@@ -223,9 +280,13 @@ Prove Theorem 25.
     map f . concat = concat (map (map f )).
 {% endhighlight %}
 
+**************************************************************
+
 Exercise 11.
 ============
 Prove that the ++ operator is associative.
+
+**************************************************************
 
 Exercise 12.
 ============
@@ -235,10 +296,13 @@ Prove
     sum . map length = length . concat
 {% endhighlight %}
 
+**************************************************************
 
 Exercise 13.
 =============
 What is the flaw in the proof given above?
+
+**************************************************************
 
 Exercise 14.
 ============
@@ -249,10 +313,13 @@ P imposes on the arguments of concat, where P is defined as
     P (n) ≡ concat xss = foldr (++) [] xss
 {% endhighlight %}
 
+**************************************************************
 
 Exercise 15.
 ============
 Check that Theorem 27 holds for the argument [1, 2, 3].
+
+**************************************************************
 
 Exercise 16.
 ============
@@ -266,6 +333,7 @@ Then decide whether this theorem happens to be true for infinite lists like
 [1 . .]. Try to give a good argument for your conclusion, but you don’t
 have to prove it.
 
+**************************************************************
 
 Exercise 17.
 ============
@@ -275,10 +343,13 @@ Use induction to prove Theorem 27.
     reverse (reverse xs) = xs.
 {% endhighlight %}
 
+**************************************************************
 
 Exercise 18.
 ============
 Explain why Theorem 27 does not hold for infinite lists.
+
+**************************************************************
 
 Exercise 19.
 ===========
@@ -291,6 +362,7 @@ Prove that length
 {% endhighlight %}
 
 
+**************************************************************
 
 Exercise 20.
 ===========
@@ -298,6 +370,7 @@ Prove that **or** defined over an argument that has an arbitrary
 number of elements delivers the value True if True occurs as one of the
 elements of its argument.
 
+**************************************************************
 
 Exercise 21.
 ===========
@@ -305,6 +378,7 @@ Prove that **and** defined over an argument that has an arbitrary
 number of elements delivers the value True if all of the elements in its
 argument are True.
 
+**************************************************************
 
 Exercise 22.
 ===========
@@ -321,6 +395,7 @@ Write a function maximum that, given a non-empty sequence of values
 whose sizes can be compared (that is, values from a type of class Ord),
 delivers the largest value in the sequence.
 
+**************************************************************
 
 Exercise 23.
 ===========
@@ -342,7 +417,7 @@ prove that maximum has the following property:
     (maximum xs) >= x
 {% endhighlight %}
 
-
+**************************************************************
 
 Exercise 24.
 ===========
@@ -350,6 +425,7 @@ Write a function that, given a sequence containing only nonempty sequences,
 delivers the sequence made up of the first elements of each of those non-empty
 sequences.
 
+**************************************************************
 
 Exercise 25.
 ===========
@@ -362,11 +438,14 @@ Prove the equation
 
 Assume that the lists are finite, so that list induction can be used.
 
+**************************************************************
 
 Exercise 26.
 ===========
 Define an **and** operator using **&&** and foldr.
 
+
+**************************************************************
 
 Exercise 27.
 ===========
