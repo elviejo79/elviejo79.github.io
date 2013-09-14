@@ -270,6 +270,67 @@ Exercise 9.
 Invent a new theorem similar to Theorem 20, where (1+) is replaced by (k+).
 Test it on one or two small examples. Then prove your theorem.
 
+**Theorem 20**
+
+{% highlight haskell %}
+    sum (map (1+) xs) = length xs + sum xs.
+{% endhighlight %}
+
+**Theorem 20Bis**
+{% highlight haskell %}
+    sum (map (k+) xs) = k*length xs + sum xs.
+{% endhighlight %}
+
+Definitions
+-----------
+{% highlight haskell %}
+
+    sum :: Num a => [a] -> a
+    sum [] = 0
+    sum (x:xs) = x + sum xs
+
+{% endhighlight %}
+
+Basis []
+--------
+xs <- []
+{% highlight haskell %}
+
+    sum (map (k+) []) = k*length [] + sum []
+    sum ([])          = k*lenght [] + sum [] {def map f []}
+                   0  = k*lenght [] + 0      {def sum []}
+                   0  = k*0 + 0              {def len []}
+                   0  = 0
+{% endhighlight %}
+
+Induction xs hypothesis
+-----------------------
+we assume
+{% highlight haskell %}
+
+    sum (map (k+) xs) = k*length xs + sum xs.
+
+{% endhighlight %}
+is true
+
+Induction x:xs
+-----------------------
+xs <- x:xs
+{% highlight haskell %}
+
+    sum (map (k+) x:xs) = k*length x:xs + sum x:xs
+    sum (((k+)x): map (k+) xs )  = k*lenght x:xs + sum x:xs {def map f x:xs}
+    ((k+)x) + sum (map (k+) xs ) = k*lenght x:xs + sum x:xs {def sum x:xs}
+    ((k+)x) + k*length xs + sum xs = k*lenght x:xs + sum x:xs {hypothesis}
+    k + x + k*length xs + sum xs = k*lenght x:xs + sum x:xs {parenthesis}
+    k + k*length xs + x + sum xs = k*lenght x:xs + sum x:xs {changed order}
+    k * (1+lenght xs) + x + sum xs =  k*lenght x:xs + sum x:xs {factorizing k}
+    k * (lenght x:xs) + x + sum xs =  k*lenght x:xs + sum x:xs {def len x:xs}
+    k * (lenght x:xs) + sum x:xs =  k*lenght x:xs + sum x:xs {def sum x:xs}
+    {QED}
+
+{% endhighlight %}
+
 **************************************************************
 
 Exercise 10.
