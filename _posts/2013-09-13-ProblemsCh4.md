@@ -4,8 +4,10 @@ title: Solutions to Chapter 4
 category: haskell
 ---
 
+<div style="float:right" >
 * auto-gen TOC:
 {:toc}
+</div>
 
 Exercise 1.
 ===========
