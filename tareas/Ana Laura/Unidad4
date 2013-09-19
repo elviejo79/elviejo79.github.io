@@ -1,0 +1,422 @@
+Exercise 1. Let a be an arbitrary real number. Prove, for all natural numbers m and n, that am×n = (am)n.
+
+ P(0)
+a^ m*n = (a^m)^n
+a^ m*0 = (a^m)^0
+a^0 = (a^0)
+1=1
+
+P(k+1)
+a^ m*(k+1) = (a^m)^(k+1)
+a^ m*K + m = a^m* (k+1)
+a^ m*K + a^m = a^mk*m
+a^ m*K + a^m = a^ m*K + a^m
+
+Exercise 2. Prove that the sum of the first n odd positive numbers is n2.
+
+para n = 1
+
+$$ \begin{aligned} \sum_{i=1}^{1} 2i-1 = 1^2 \ 2(1)-1 = 1^2 \ 1 = 1 \ \end{aligned} $$
+
+
+We assume that $$ \sum_{i=1}^{n} 2i-1 = n^2 $$ is true
+ 
+ consideramos $$ n <- n+1 $$
+
+$$ \begin{aligned} \sum_{i=1}^{n+1} 2i-1 = (n+1)^2 \ 2(n+1)-1 + \sum_{i=1}^{n} 2i-1 = (n+1)^2 \ 2n+2-1 + \sum_{i=1}^{n} 2i-1 = (n+1)^2 \ 2n + 1 + n^2 = (n+1)^2 \ (n+1)^2 = (n+1)^2 \ \end{aligned} $$
+
+Exercise 3. Prove that  , where a is a real
+number and a _= 1.
+
+
+P(1)
+1 = (a^(1+1) -1)/ a-1 
+1 = (a^2 -1)/ a-1
+
+si a = 2 
+1 = (2^2 -1)/ 2-1
+1 != 3/1
+1 != 3
+
+
+Exercise 4. (This problem is from [12], where you can find many more.) The
+nth Fibonacci number is defined as follows:
+
+fib :: Integer -> Integer
+fib 0 = 0
+fib 1 = 1
+fib (n+2) = fib n + fib (n+1)
+The first fewnumbers in this famous sequence are 0, 1, 1, 2, 3, 5, . . .. Prove
+the following:
+_n
+i=1
+fib i = fib (n + 2) – 1
+
+
+Basis 1
+$$\begin{aligned} \sum_{i=1}^1 fib (i) = fib (1+2) -1 \\ fib (1) = fib (3) -1 \\ fib (1) = fib (2) + fib (1) -1 \\ fib (1) = fib (1) + fib (0) + fib (1) -1 \\ fib (1) = 1 + 0 + 1 -1 \\ fib (1) = 1 \\ 1 = 1 \\ \end{aligned}$$
+Induction n hypothesis
+We assume $$\sum_{i=1}^n fib (i) = fib (n+2) -1 $$ is true.
+Induction n+1
+$$ n <- n + 1 $$
+$$\begin{aligned} \sum_{i=1}^{n+1} fib (i) = fib ((n+1)+2) -1 \\ fib (n+1) + \sum_{i=1}^n fib (i) = fib (n+3) -1 \\ fib (n+1) + fib (n+2) -1 = fib (n+3) -1 \\ fib (n+1) + fib (n+2) -1 = fib (n+2) + fib (n+1) -1 \\ QED \\ \end{aligned}$$
+
+
+Exercise 5. Prove Theorem 16.
+
+length (xs ++ ys) = length xs + length ys
+
+P([])
+length ([] ++ ys) = length [] + length ys        {length.1}
+0 + length ys = 0 + length ys
+
+
+P(x:xs)
+
+length ((x:xs) ++ ys) = length (x:xs) + length ys
+length (x: (xs ++ ys)) = 1 + length xs + length ys 	{length.1}
+1 + length (xs ++ ys) = 1 +  length (xs ++ ys) 		{Hipotesis}
+
+
+Exercise 6. Prove Theorem 18.
+
+map f (xs ++ ys) = map f xs ++ map f ys
+
+P([])
+map f ([] ++  ys) = map f [] ++ map f ys
+map f [] ++ map f ys = [] ++  map f ys
+[] ++ map f ys	= [] ++  map f ys
+
+P(x:xs)
+map f ((x:xs) ++ ys)= map f (x:xs) ++ map f ys
+map f (x: (xs ++ ys))= f x map f xs ++ map f ys
+f x map f (xs ++ ys) = f x map f xs ++ map f ys   {map.2}
+f x map f (xs ++ ys) = f x map f (xs ++ ys )	  {Hipotesis}
+
+Exercise 7. Prove Theorem 19.
+
+(map f . map g) xs = map (f.g) xs
+
+P([])
+
+map f (map g []) = map (f.g) []   {.1}
+map f [] = map f (map g [])       {map.1}
+[] = map f [] 					  {map.1}
+[] = []
+
+
+P(x:xs)
+map f (map g (x:xs)) = map (f.g) (x:xs)
+map f (g x map g xs) = map f (map g (x:xs))
+f (g x) : map f (map g xs)= map f (g x : map g xs)
+(f.g) x : map (f.g) xs = (f.g)x : map (f.g) xs
+
+
+Exercise 8. Recall Theorem 20, which says sum (map (1+) xs) = length xs + sum xs.
+
+
+
+Explain in English what this theorem says. Using the definitions of the functions involved (sum, length and map), calculate the values of the left and right-hand sides of the equation using xs = [1, 2, 3, 4].
+
+
+xs = [1,2,3,4]
+
+sum (map (1+) [1,2,3,4])= length [1,2,3,4] + sum [1,2,3,4]
+sum (1+1 : map (1+) [2,3,4]) = 1 + length [2,3,4] + 1 + sum [2,3,4]
+sum (2 : 1+2 : map (1+) [3,4]) = 1 + 1 + length [3,4] + 1 + 2 + sum [3,4]
+sum (2 : 3 : 1+3 : map (1+) [4]) = 1+ 1 + 1 + length [4] = 1 + 2 + 3 + sum [4]
+sum (2: 3 : 4 : 1+4 : map (1+) []) = 1 + 1 + 1 + 1 + 0 + 1 + 2 + 3 + 4 + 0
+sum (2:3:4:5:[]) = 14
+sum ([2,3,4,5]) =14
+2 + sum [3,4,5] = 14
+2 + 3 + sum [4,5] = 14
+2 + 3 + 4 + sum [5] = 14
+2 + 3 + 4 + 5 + 0 = 14
+14 = 14
+
+
+Exercise 9. Invent a new theorem similar to Theorem 20, where (1+) is replaced
+By
+
+sum (map (k+) []) = k*length [] + sum []
+sum ([])          = k*lenght [] + sum [] {def map f []}
+               0  = k*lenght [] + 0      {def sum []}
+               0  = k*0 + 0              {def len []}
+               0  = 0
+
+
+sum (map (k+) x:xs)            = k*length x:xs + sum x:xs
+sum (((k+)x): map (k+) xs )    = k*lenght x:xs + sum x:xs {def map f x:xs}
+((k+)x) + sum (map (k+) xs )   = k*lenght x:xs + sum x:xs {def sum x:xs}
+((k+)x) + k*length xs + sum xs = k*lenght x:xs + sum x:xs {hypothesis}
+k + x + k*length xs + sum xs   = k*lenght x:xs + sum x:xs {parenthesis}
+k + k*length xs + x + sum xs   = k*lenght x:xs + sum x:xs {changed order}
+k * (1+lenght xs) + x + sum xs = k*lenght x:xs + sum x:xs {factorizing k}
+k * (lenght x:xs) + x + sum xs = k*lenght x:xs + sum x:xs {def len x:xs}
+k * (lenght x:xs) + sum x:xs   = k*lenght x:xs + sum x:xs {def sum x:xs}
+
+
+Exercise 10. Prove Theorem 25.
+
+map f . concat = concat (map (map f))
+map f (concat xs) = concat (map (map f) xs)
+
+
+P([])
+map f (concat []) = concat (map (map f) [])
+map f [] = concat ([])
+[] = []
+
+P(x:xs)
+map f (concat (x:xs) = concat (map (map f) (x:xs))
+map f (x ++ concat xs) = concat ( map f x : map (map f) xs)
+map f x ++ map concat xs = map f x ++ concat ( concat map (map f) xs)
+map f x ++ map concat xs = map f x ++ map concat xs
+
+
+Exercise 11. Prove that the ++ operator is associative.
+
+(a ++ b) ++ c = a ++ (b ++ c)
+
+P([])
+([] ++ b) ++ c = [] ++ (b ++ c)
+b ++ c = b ++ c
+
+
+p(a:as)
+((a:as) ++ b ) ++ c = (a:as) ++ (b ++ c)
+a : (as ++ b) ++ c = a : as ++ (b ++ c)
+a : (as ++ b) ++ c = a : (as ++ b) ++ c
+
+Exercise 12. Prove sum . map length = length . concat.
+
+sum . map length xs = length . concat xs
+sum (map length xs) = length (concat xs)
+
+P([])
+sum (map length []) = length (concat [])
+sum	[] = length []
+0 = 0
+
+P(x:xs)
+sum (map length (x:xs)) = length (concat (x:xs))
+sum (length x : map	length xs) = length ( x + concat xs)
+length x + sum map length xs = length x + length concat xs
+length x + length concat xs = length x + length concat xs
+
+
+
+Exercise 13. What is the flaw in the proof given above? (Please try to work this out yourself, and then check the answer in the Appendix.)
+
+P(n) = n+1 Horses
+A= h1.. hn
+B= h2..hn+1
+
+P(1)
+A = h1
+
+Para el caso de cuando vale 1, no se cumple debido a que no se cuentan con los valores necesarios para realizar el conjunto C
+
+Exercise 14. State the requirements on finite length that the proof of P imposes on the arguments of concat, where P is defined as
+
+P(n) ≡ concat xss = foldr (++) [] xss
+
+Para que se pueda realizar la comprobacion, se requiere que la lista sea finite. Cuando se realizan comprobaciones con listas, se requiere que están sea de un valor finito, esto debido a que para que se pueda llegar a un resultado, se necesita recorrer la lista, y como no se tiene un valor para esta, nunca se llega a un resultado.
+
+Exercise 15. Check that Theorem 27 holds for the argument [1, 2, 3].
+
+reverse . reverse = id
+reverse (reverse xs) =xs
+
+xs = [1,2,3]
+reverse (reverse [1,2,3])= [1,2,3]
+reverse (reverse [2,3] ++ [1]) = [1,2,3]
+reverse (reverse [3] ++ [2] ++ [1]) = [1,2,3]
+reverse (reverse [] ++ [3] ++ [2] ++ [1]) = [1,2,3]
+reverse ([3,2,1])= [1,2,3]
+reverse [2,1] ++ [3] = [1,2,3]
+reverse [1] ++ [2] ++ [3]  = [1,2,3]
+reverse[] ++ [1] ++ [2] ++ [3] = [1,2,3]
+[1,2,3] = [1,2,3]
+
+Exercise 16. Prove the following theorem, using induction:
+
+reverse (xs++ys) = reverse ys++reverse xs
+
+
+Then decide whether this theorem happens to be true for infinite lists like [1 . .]. Try to give a good argument for your conclusion, but you don’t have to prove it.
+
+P([])
+reverse ([] ++ ys) = reverse [] ++ reverse ys
+reverse [] ++ reverse ys = reverse ys
+reverse ys	= reverse ys
+
+P(x:xs)
+reverse ((x:xs) ++ ys) = reverse (x:xs) ++  reverse ys
+reverse (x:(xs ++ ys))= reverse xs + x ++  reverse ys
+reverse (xs ++ ys) ++ x = x ++  reverse (xs ++ ys)
+x ++  reverse (xs ++ ys) = x ++  reverse (xs ++ ys)
+
+
+Exercise 17. Use induction to prove Theorem 27. reverse (reverse xs) = xs.
+reverse (reverse []) []
+reverse [] = []
+[] = []
+
+P(x:xs)
+reverse (reverse (x:xs))= x:xs
+
+reverse (reverse xs ++ x) = x:xs
+reverse (reverse xs) ++  reverse x = x:xs 
+x:xs = x:xs
+
+
+Exercise 18. Explain why Theorem 27 does not hold for infinite lists.
+
+El teorema no se cumple para las listas infinitas, debido a que el primer paso es obtener el ultimo element de la lista, y si la lista es infinita, nunca se podra obtener el ultimo element, por lo tanto no se podra seguir con los siguientes pasos.
+
+
+Exercise 19. Assume that xss is a finite list of type [[a]], that it is of length n, and that xs is a finite list and an arbitrary element of xss. Prove that
+
+length (concat xss) = sum (map length xss).
+
+
+P([])
+length (concat []) = sum (map length [])
+length [] = sum []
+0 = 0
+
+P(x:xs)
+length (concat xss) = sum (map length xss)
+length (concat (x:xs)) = sum (map length (x:xs))
+length ( x ++ concat xs) = sum (length x : map length xs)
+length x ++ length concat xs = length x + sum	(map length xs)
+length x ++ length concat xs = length x ++ length concat xs
+
+
+Exercise 20. Prove that or defined over an argument that has an arbitrary number of elements delivers the value True if True occurs as one of the elements of its argument.
+
+
+or xs = True
+or xs = foldr (||) False xs
+
+P(True)
+True = foldr (||) False True
+True = || False True
+True = True
+
+P (x:xs)
+= foldr (||) False xs
+= foldr (||) False (x:xs)
+= x (||) foldr (||) False xs
+
+
+Caso 1 x = True
+= True (||) foldr (||) False xs
+= True
+
+Caso 2 xs = True
+= x (||) foldr (||) False True
+= x (||) True
+= True
+
+
+Exercise 21. Prove that and defined over an argument that has an arbitrary number of elements delivers the value True if all of the elements in its argument are True.
+
+and xs = True
+and xs = foldr (&&) True xs
+
+P(True)
+True = foldr (&&) True True
+True = && True True
+True = True
+
+P (x:xs)
+= foldr (&&) True xs          
+= foldr (&&) True (x:xs)
+= x (&&) foldr (&&) True xs
+
+caso 1 si x = True
+= True && foldr True xs       {Hipotesis}
+= True && True
+= True
+
+Exercise 22. Assume there is a function called max that delivers the larger of its two arguments.
+
+max x y = x 		if x >= y
+and
+max x y = y 		if y >= x
+
+
+Write a function maximum that, given a non-empty sequence of values whose sizes can be compared (that is, values from a type of class Ord), delivers the largest value in the sequence.
+
+maximum :: Ord a => [a] -> a
+maximum (x:xs) = foldr (max) x xs
+
+
+Exercise 23. Assume that the list xs is of type Ord a => [a], and that x is an arbitrary element of xs.
+Given the definition of maximum, defined as
+
+maximum :: [Ord] -> Ord
+maximum xs = foldr (max) y ys
+where xs = y:ys
+
+prove that maximum has the following property:
+
+(maximum xs) >= x
+
+P([])
+maximum (x:[]) = foldr (max) (x:[])
+x= max x x 
+x=x
+
+maximum (y1:y:ys) = foldr max y1 y:ys
+foldr max y1 y:ys = foldr max y1 y:ys
+max y1 foldr max y ys = max y1 foldr max y ys
+
+
+
+Exercise 24. Write a function that, given a sequence containing only nonempty sequences, delivers the sequence made up of the first elements of each of those non-empty sequences.
+
+seq :: [a] -> a
+seq (x:xs) = x
+
+elemento :: [[a]] -> [a]
+elemento xs = map (seq) xs
+
+
+Exercise 25. Prove the equation concat = foldr (++) []. Assume that the lists are finite, so that list induction can be used.
+
+concat xs = foldr (++) [] xs
+
+P([])
+concat [] = foldr (++) [] []
+[] = []
+
+P(x:xs)
+concat (x:xs) = foldr (++) [] (x:xs)
+x ++  concat xs = x ++ foldr (++) [] xs
+x ++ foldr (++) [] xs = x ++ foldr (++) [] xs
+
+
+Exercise 26. Define an and operator using && and foldr.
+ 
+and :: [Bool] -> Bool
+and	xs = foldr (&&) True xs
+
+
+
+Exercise 27. Given a list xs of type Bool, prove that
+
+and ([False] ++ xs) = False.
+
+and :: [Bool] -> Bool
+and	xs = foldr (&&) True xs
+
+and ([False] ++ xs) = False
+
+P(True)
+foldr (&&) True (False:xs) = False
+&& False foldr (&&) True xs = False
+& False True = False
+False = False
