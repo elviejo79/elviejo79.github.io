@@ -3,6 +3,15 @@ Exercise 1.
 Let a be an arbitrary real number. Prove, for all natural numbers
 m and n, that $$a^{m \times n} = (a^m)^n $$
 
+base n=0
+a^(m*n) = (a^m)^n
+a^(m*0) = (a^m)*0
+a0      = a^0
+1       = 1
+
+Inducción n<- (n+1)
+a^(m*n+1)      = (a^m)^(n+1)
+(a^m)^(n+1)    = (a^m)^(n+1)
 
 
 
@@ -65,7 +74,7 @@ $$
 \end{aligned}
 $$
 
-
+El caso no se cumple.
 **************************************************************
 
 Exercise 4.
@@ -621,15 +630,16 @@ Prove that **and** defined over an argument that has an arbitrary
 number of elements delivers the value True if all of the elements in its
 argument are True.
 
-xs 	=	True
-foldr (&&) True [True []]
-foldr (&&) (foldr (&&) True [])
+base
+xs  =   []
+foldr (&&) True [] 
 True && True
 True
 
 Inducción
 
-xs <- True= ys
+xs <- True = ys
+
 foldr(&&) True xs
 foldr(&&) True (True ys)
 true (&&) (foldr (&&) True ys)
@@ -644,10 +654,19 @@ Exercise 22.
 Assume there is a function called max that delivers the larger of its two arguments.
 
 
-{% highlight haskell %}
     max x y = x   if x >= y
     max x y = y   if y >= x
-{% endhighlight %}
+
+foldr (||)True xs = True
+foldr (max) 0 xs
+
+prueba xs= [7,2,9]
+
+foldr(max) 0 [7,2,9]
+max(7(max)2(mac(0 9)))
+max(7(max(2 4)))
+max(7 9)
+9
 
 
 Write a function maximum that, given a non-empty sequence of values
@@ -684,12 +703,12 @@ Write a function that, given a sequence containing only nonempty sequences,
 delivers the sequence made up of the first elements of each of those non-empty
 sequences.
 
-obtenerPrimeros			::	[a] -> a
-obtenerPrimeros (x:xs)	=	x
 
-obtenerPrimeros (listas 	::	[[a]] -> [a])
-obtenerPrimeros Listas xss = map (obtenerPrimeros)xs
+first :: [a] -> a
+first (x:xs) = x
 
+firstLista :: [[a]]->[a]
+firstLista xs = map (first) xs
 
 **************************************************************
 
