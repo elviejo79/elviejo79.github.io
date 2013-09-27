@@ -4,14 +4,17 @@ title: Solutions to Chapter 5
 category: haskell
 ---
 
+
+
 Excercise 1
 ===========
 Define a Haskell datatype Tree1 for a tree that contains a character and an integer in each node, along with exactly three subtrees.
 
 {% highlight haskell %}
 
+> import Test.HUnit
 > data Tree1 = Tree1Leaf
->                 |Tree1Node Char Integer Tree1 Tree1 Tree1
+>            |Tree1Node Char Integer Tree1 Tree1 Tree1
 
 
 {% endhighlight %}
@@ -34,7 +37,22 @@ Calculate the inorder traversal of tree3.
 
 {% highlight haskell %}
 
-> -- Escribe tu solución aquí
+> data BinTreeInt = Leaf
+>                | Node Integer BinTreeInt BinTreeInt
+>
+> tree3 :: BinTreeInt
+> tree3 =
+>  Node 4
+>    (Node 2
+>      (Node 1 Leaf Leaf)
+>      (Node 3 Leaf Leaf))
+>    (Node 7
+>       (Node 5
+>       Leaf
+>       (Node 6 Leaf Leaf))
+>    (Node 8 Leaf Leaf))
+
+-- Escribe tu solución aquí
 
 {% endhighlight %}
 
@@ -84,6 +102,19 @@ Define two trees of size seven, one with the largest possible height and the oth
 
 {% highlight haskell %}
 
+> height :: BinTree a -> Integer
+> height BinLeaf = 0
+> height (BinNode x t1 t2) = 1 + max (height t1) (height t2)
+>
+> size :: BinTreeInt -> Int
+> size Leaf = 0
+> size (Node x t1 t2) = 1 + size t1 + size t2
+>
+> balanced :: BinTree a -> Bool
+> balanced BinLeaf = True
+> balanced (BinNode x t1 t2) =
+>   balanced t1 && balanced t2 && (height t1 == height t2)
+>
 > -- Escribe tu solución aquí
 
 {% endhighlight %}
@@ -131,12 +162,26 @@ be
 
 This function is analogous to map, which operates over lists.
 
+{% highlight haskell %}
+
+> -- Escribe tu solución aquí
+
+{% endhighlight %}
+
 Exercise 9.
 ===========
 Write concatTree, a function that takes a tree of lists and concatenates
 the lists in order from left to right. For example,
 
   concatTree (Node [2] (Node [3,4] Tip Tip) (Node [5] Tip Tip)) ==> [3,4,2,5]
+
+{% highlight haskell %}
+
+> -- Escribe tu solución aquí
+
+{% endhighlight %}
+
+
 
 Exercise 10.
 ============
@@ -147,6 +192,13 @@ if the two trees do not have the same shape. For example,
   zipTree (Node 2 (Node 1 Tip Tip) (Node 3 Tip Tip)) (Node 5 (Node 4 Tip Tip) (Node 6 Tip Tip))
   ==> Just [(1,4),(2,5),(3,6)]
 
+{% highlight haskell %}
+
+> -- Escribe tu solución aquí
+
+{% endhighlight %}
+
+
 Exercise 11.
 ============
 Write zipWithTree, a function that is like zipWith except that
@@ -154,6 +206,13 @@ it takes trees instead of lists. The first argument is a function of type
 a->b->c, the second argument is a tree with elements of type a,and the
 third argument is a tree with elements of type b. The function returns a
 list with type [c]
+
+{% highlight haskell %}
+
+> -- Escribe tu solución aquí
+
+{% endhighlight %}
+
 
 Exercise 12.
 ============
@@ -166,3 +225,20 @@ the front of the list. For example,
                [4,5]
 
 evaluates to [1,2,3,4,5]. Try to find an efficient solution that minimises recopying.
+
+
+Run all the tests
+-----------------
+
+In order to execute this tests in your local computer:
+
+{% highlight bash %}
+$ ghci -x lhs ./2013-09-06-ProblmsCh3.md
+$ Main> runTestsTT tests
+{% endhighlight %}
+
+{% highlight haskell %}
+
+> tests = test (t4)
+
+{% endhighlight %}
