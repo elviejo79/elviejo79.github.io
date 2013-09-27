@@ -1,24 +1,8 @@
 ---
 layout: post
-title: Solutions to Chapter 3
+title: Solutions to Chapter 5
 category: haskell
 ---
-
-Exercise 00.
-===========
-Write a recursive function copy :: [a] -> [a] that copies its list argument.
-For example, copy [2] ⇒[2].
-
-{% highlight haskell %}
-
-> import Test.HUnit
-> t1 =  ["f21 [2,3] lista con algo" ~: [2,3] ~=? (f21 [2,3])
->        ,"f21 [1] lista con un elementa" ~: [1] ~=? (f21 [1])]
-> f21 :: [a]->[a]
-> f21 [] = []
-> f21 (x:xs) = x:f21(xs)
-
-{% endhighlight %}
 
 Excercise 1
 ===========
