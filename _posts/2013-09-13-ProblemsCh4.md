@@ -424,7 +424,7 @@ and that xs is a finite list and an arbitrary element of xss.
 Prove that length
 
 {% highlight haskell %}
-    (concat xss) = sum (map length xss).
+    length (concat xss) = sum (map length xss).
 {% endhighlight %}
 
 

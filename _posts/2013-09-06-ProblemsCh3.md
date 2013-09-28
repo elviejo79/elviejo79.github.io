@@ -337,5 +337,7 @@ $ Main> runTestsTT tests
 {% endhighlight %}
 
 {% highlight haskell %}
-> tests = test (t1++t3++t5++t7++t9++t11 ++t13 ++ t15 ++ t17 ++ t19)
+
+> tests = test (t1++t2++t3++t5++t7++t9++t11 ++t13 ++ t15 ++ t17 ++ t19)
+
 {% endhighlight %}
