@@ -1,14 +1,3 @@
----
-layout: post
-title: Solutions to Chapter 4
-category: haskell
----
-
-<div style="float:right" >
-* auto-gen TOC:
-{:toc}
-</div>
-
 Exercise 1.
 ===========
 Let a be an arbitrary real number. Prove, for all natural numbers
@@ -194,6 +183,30 @@ Exercise 6.
 ===========
 Prove Theorem 18.
 
+map f (xs ++ ys) == map f xs ++ map f ys
+
+Definición de map
+map :: (a->b) ->[a]->[b]
+map _ [] = []
+map f (x:xs) = f x:map f xs
+Definición de (++) => Concatenar
+
+Basis = []
+
+1.-map f ([]++[]) => map f [] => [] (map _ [] = [])
+2.- map f [] ++ map f [] => [] ++ [] => []
+Therefore 1===2
+
+Induction:
+map f (xs ++ ys) == map f xs ++ map f ys
+
+map f (xs ++ ys) => por propiedad conmutativa fijamos ys
+
+map f ((x:xs)++ys)
+f x:map f(xs++ys)
+f x:map f xs ++ map f ys
+map f (x:xs) ++ map f ys  ===> map f (x:xs) = f x:map f xs
+
 ******************************************************************
 
 Exercise 7.
@@ -262,12 +275,63 @@ Recall Theorem 20, which says
     sum (map (1+) xs) = length xs + sum xs.
 {% endhighlight %}
 
+sum (map (1+) xs) = length xs + sum xs.
+
+map :: (a->b)->[a]->[b] ====> map takes a function and a list and applies that function to every element in the list, producing a new list.
+
+sum :: Num a => [a] -> a =====> The sum function computes the sum of a finite list of numbers.
+length :: [a] -> Int ====> The length function returns the number of elements in a list
+
+Basis = [1]
+
+Izqui
+sum (map (1+) [1])
+sum (1+1:map 1+ [])
+sum (1+1:[])
+sum([2])
+2
+se aplica la función (1+) a todos los elementos de una lista, siendo el último elemento una lista vacía, y al final se hace la sumatoria de todos los elementos de la lista.
+
+Dere
+length xs + sum xs
+length [1] + sum [1]
+1 + 1
+2
+Se calcula el número de elementos en una lista y se le suma la suma de los elementos que tiene la misma lista
+
+sum (map (1+) [1,2,3,4])
+sum (1+1:map (1+) [2,3,4])
+sum (1+1:1+2:map (1+) [3,4])
+sum (1+1:1+2:1+3:map (1+) [4])
+sum (1+1:1+2:1+3:1+4 map (1+) [])
+sum (1+1:1+2:1+3:1+4:[])
+sum (2:3:4:5:[])
+sum [2,3,4,5]
+14
+
+length [1,2,3,4] + sum [1,2,3,4]
+4 + 10
+14
+
+
 
 Explain in English what this theorem says. Using the definitions of the
 functions involved (sum, length and map), calculate the values of the left
 and right-hand sides of the equation using xs = [1, 2, 3, 4].
 
 **************************************************************
+
+
+(map f . map g) xs = map (f . g) xs
+===================================
+
+(map f . map g) x:xs = map (f . g) x:xs
+map f(map g(x:xs)) = map (f . g) x:xs
+map f ((g x) : map g xs) = map (f . g) x:xs
+f(g(x)) : map f (map g (xs)) = map (f . g) x:xs
+f(g(x)):(map f . map g) xs =  map (f . g) x:xs
+f(g(x)):map (f . g)xs = map (f . g) x:xs
+(f . g)x = map (f . g) xs = map (f . g) x:xs
 
 Exercise 9.
 ===========
@@ -338,6 +402,27 @@ xs <- x:xs
 
 **************************************************************
 
+Ejercicio 9.
+============
+
+sum(map (1+) xs) = len xs + sum as
+--
+len xs = map 1 xs
+--
+sum(map (1+) xs) = map 1 xs + sum as
+--sum (map (k+) xs) = (k * len xs) + sum xs
+
+sum(map(k+)xs) = (k * len xs)
+sum(map(k+)x:xs) = k * len x:xs
+sum ((k+)x : map(k+) xs) =
+(k+)x + sum (map(k+)xs) =
+(k+ x + k * len xs + sum xs)
+k + k + len xs + k + sym xs
+k (1 + len xs) + sum x:xs = 
+k + len x: xs (sum x:xs) = k * len x:xs
+
+**************************************************************
+
 Exercise 10.
 ============
 Prove Theorem 25.
@@ -346,14 +431,90 @@ Prove Theorem 25.
     map f . concat = concat (map (map f )).
 {% endhighlight %}
 
-**************************************************************
+map f . concat = concat (map (map f ))
 
+concat :: [[a]] -> [a]
+concat [] = []
+concat (xs:xss) = xs ++ concat xss
+[[1],[2],[3]] => [1,2,3]
+
+(.) composition
+(.) :: (b -> c) -> (a -> b) -> (a -> c)
+(f.g) x = f (g x)
+
+Basis = [1,2]
+
+map f .concat[[1],[2]]
+map f .[1]++concat[[2]]
+map f .[1]++[2]++concat[[]]
+map f .[1]++[2]++[]
+map f [1,2]
+f 1:map f [2]
+f 1:f 2: map f []
+f 1:f 2:[]
+
+concat (map (map f [[1],[2]]))
+concat (map (f [1]:map f [[2]]))
+concat (map (f [1]:f [2]:map f [[]]))
+concat (map (f [1]:f [2]:[]))
+concat (f 1:map (f [2]:[]))
+concat (f 1:f 2(map f []))
+concat (f 1:f 2:[])
+f 1:f 2:[]
+
+Induction
+map f . concat [(xs:xss)]= concat (map (map f [(xs:xss)]))
+
+map f . [xs]++concat[xss] => por la propiedad de concat nos queda una lista de elementos
+map f (xs:xss)
+f xs: map f xss => por la propiedad de map, llegará un momento donde tendremos una lista vacía
+f xs:f xss:[]
+[f xs,f xss]
+
+concat (map (map f [(xs:xss)]))
+concat (map (f xs:map f xss))
+concat (map (f xs:f xss:map f []))
+concat (map (f xs:f xss:[]))
+concat (f xs:map (f xss:[]))
+concat (f xs:f xss:map (f []))
+concat (f xs:f xss:[])
+f xs++concat(f xss:[])
+f xs++f xss++concat([])
+f xs++f xss++[]
+[f xs,f xss]
+
+
+**************************************************************
 Exercise 11.
 ============
 Prove that the ++ operator is associative.
 
-**************************************************************
+xs ++ (ys ++ zs) = (xs ++ ys) ++ zs
 
+asociativo : 1 + (2 + 3) = (1 + 2) + 3 pero no se puede 1 + (2 + 3) = (1 + 3) + 2
+conmutativo: 1 * (2 * 3) = (1 * 2) * 3 ó (1 * 3) * 2 = 1 * (2 * 3)
+
+Basis = [1,2], [2,3], [3,4]
+
+[1,2]++([2,3]++[3,4])
+[1,2]++[2,3,3,4]
+[1,2,2,3,3,4]
+
+([1,2]++[2,3])++[3,4]
+[1,2,2,3]++[3,4]
+[1,2,2,3,3,4]
+
+xs ++ (ys ++ zs) = (xs ++ ys) ++ zs
+
+(x:xs) ++ (ys ++ zs)
+(x:xs) ++ (ys:zs)
+(x:xs:ys:zs)
+And then, a miracle happens...
+(x:xs++ys):zs
+(x:xs++ys)++zs
+
+
+**************************************************************
 Exercise 12.
 ============
 Prove
@@ -362,13 +523,43 @@ Prove
     sum . map length = length . concat
 {% endhighlight %}
 
-**************************************************************
+sum . map length = length . concat
 
-Exercise 13.
-=============
-What is the flaw in the proof given above?
+Basis = [[1,2]]
 
-**************************************************************
+sum . map length [[1],[2]]
+sum . (length [1]:map length [[2]])
+sum . (length [1]:length [2]:map length [[]])
+sum . (length [1]:length [2]:[])
+sum . ([1]:[1]:[])
+sum [1,1]
+2
+
+length . concat [[1,2]]
+length . [1,2]:concat[]
+length [1,2]
+2
+
+sum . map length xs = length . concat xs
+C = {1..n} => C = {as..xs}
+n, n + 1 => xs, ys
+
+C = [as..]
+
+sum . length xs:map length [] + ys
+sum . length xs:[] + ys
+sum [lxs] + ys
+lxs + ys
+
+
+length . concat [xs] + ys
+length . xs++concat[] + ys
+length . xs++[] + ys
+length [xs] + ys
+lxs + ys
+
+
+**************************************************************____________________
 
 Exercise 14.
 ============
@@ -379,12 +570,24 @@ P imposes on the arguments of concat, where P is defined as
     P (n) ≡ concat xss = foldr (++) [] xss
 {% endhighlight %}
 
+Cuando se hace una prueba por inducción, se tiene que definir un número finito en el conjunto, aunque se exprese con una variable, así podremos comprobar el último valor del conjunto y el valor siguiente. (ver problemas anteriores) 
+
+
 **************************************************************
 
 Exercise 15.
 ============
 Check that Theorem 27 holds for the argument [1, 2, 3].
 
+ej.15
+reverse :: [a] -> [a]
+reverse(reverse xs) = xs
+reverse . reverse = id   <--- false in case of infinite list
+
+reverse(reverse xs) = xs
+reverse(reverse [1,2,3]) = [1,2,3]
+reverse([3,2,1]) = [1,2,3]
+[1,2,3] = [1,2,3]
 **************************************************************
 
 Exercise 16.
@@ -399,8 +602,26 @@ Then decide whether this theorem happens to be true for infinite lists like
 [1 . .]. Try to give a good argument for your conclusion, but you don’t
 have to prove it.
 
-**************************************************************
+ej. 16
+hip.
+reverse (xs ++ ys) = reverse ys ++ reverse xs
 
+pb.
+reverse([] ++ ys) = reverse ys ++ reverse []
+reverse(ys) = reverse ys ++ []
+reverse(ys) = reverse ys
+
+reverse((x:xs) ++ ys) = reverse ys ++ reverse (x:xs)
+reverse(x:(xs++ys))
+reverse x:reverse (xs++ys)
+x:reverse (xs++ys)
+--Por la hip
+x:(reverse xs ++ reverse ys)
+(x:reverse xs) ++ reverse ys
+reverse x:reverse xs ++ reverse ys
+reverse (x:xs) ++ reverse ys = reverse ys ++ reverse (x:xs)
+
+**************************************************************
 Exercise 17.
 ============
 Use induction to prove Theorem 27.
@@ -409,11 +630,22 @@ Use induction to prove Theorem 27.
     reverse (reverse xs) = xs.
 {% endhighlight %}
 
-**************************************************************
+ej 17
+Use induction to prove Theorem 27
+reverse (reverse xs) = xs
 
-Exercise 18.
-============
-Explain why Theorem 27 does not hold for infinite lists.
+pb
+reverse (reverse [])
+reverse ([])
+[]
+
+reverse (reverse xs)
+reverse (reverse (x:xs))
+reverse (reverse x ++ reverse xs)
+reverse (x ++ reverse xs)
+reverse (x) ++ reverse(reverse xs)
+x ++ xs
+x:xs
 
 **************************************************************
 
@@ -424,8 +656,13 @@ and that xs is a finite list and an arbitrary element of xss.
 Prove that length
 
 {% highlight haskell %}
-    length (concat xss) = sum (map length xss).
+    (concat xss) = sum (map length xss).
 {% endhighlight %}
+
+________
+ej. 19
+
+igual al problema 12
 
 
 **************************************************************
@@ -435,8 +672,22 @@ Exercise 20.
 Prove that **or** defined over an argument that has an arbitrary
 number of elements delivers the value True if True occurs as one of the
 elements of its argument.
+______________________
+
+Exercise 20. Prove that or defined over an argument that has an arbitrary
+number of elements delivers the value True if True occurs as one of the
+elements of its argument
+
+foldr (||) True xs = True
+P(True) = foldr (||)True[] = True 
+P(x:xs) = foldr (||)True(x:xs) = True 
+(||) foldr (||) True(xs)) True
+(||) (True) = True 
+True = True
 
 **************************************************************
+_________________
+
 
 Exercise 21.
 ===========
@@ -444,24 +695,38 @@ Prove that **and** defined over an argument that has an arbitrary
 number of elements delivers the value True if all of the elements in its
 argument are True.
 
-**************************************************************
+&& :: Bool -> Bool -> Bool 
+&& True (xs) = foldl && True xs
+
+**************************************************************_____________________________
 
 Exercise 22.
 ===========
-Assume there is a function called max that delivers the larger of its two arguments.
-
-
-{% highlight haskell %}
-    max x y = x   if x >= y
-    max x y = y   if y >= x
-{% endhighlight %}
-
-
+Exercise 22. Assume there is a function called max that delivers the larger of
+its two arguments.
+max x y = x
+if x >= y
+and
+max x y = y
+if y >= x
 Write a function maximum that, given a non-empty sequence of values
 whose sizes can be compared (that is, values from a type of class Ord),
 delivers the largest value in the sequence.
 
-**************************************************************
+foldr (max) 0 xs
+xs:[7,2,9]
+
+foldr(max) 0 [7,3,9]
+max(7max(2max(0 9)))
+max 7(max 2 9)
+max (7 9)
+9
+
+max :: [a] -> a
+max [] = 0¹
+max xs = (foldr(max) 0 xs)
+
+_______
 
 Exercise 23.
 ===========
@@ -487,14 +752,23 @@ prove that maximum has the following property:
 
 Exercise 24.
 ===========
-Write a function that, given a sequence containing only nonempty sequences,
-delivers the sequence made up of the first elements of each of those non-empty
-sequences.
+
+Exercise 24. Write a function that, given a sequence containing only non-
+empty sequences, delivers the sequence made up of the first elements of
+each of those non-empty sequences.
+
+first :: [a] -> a
+first (x:xs) = x
+firstEl :: [[a]] -> [a] 0¹
+firstEl xs = map(first)xs
+
+______
 
 **************************************************************
 
 Exercise 25.
 ===========
+
 Prove the equation
 
 {% highlight haskell %}
@@ -504,12 +778,31 @@ Prove the equation
 
 Assume that the lists are finite, so that list induction can be used.
 
+concat xss = foldr (++) [] xs
+
+PB xss = []
+[]
+foldr (++) [] []
+foldr (++) [] xss
+Inductive case:
+concat xss
+concat ys : yss
+ys ++ concat yss
+foldr (++) [] (ys : yss)
+foldr (++) [] xss
+
+
 **************************************************************
 
 Exercise 26.
 ===========
-Define an **and** operator using **&&** and foldr.
+Exercise 26. Define an and operator using && and foldr.
 
+&& :: Bool -> Bool -> Bool
+and :: [Bool] -> Bool
+
+and xs = foldr (&&) True xs
+and = (foldr(&&) True)
 
 **************************************************************
 
@@ -520,3 +813,10 @@ Exercise 27.
 {% highlight haskell %}
     and ([False] ++ xs) = False
 {% endhighlight %}
+
+and ([False] + xs) 
+and (False : xs)
+foldr (&&) True (False : xs)
+False && (foldr (&&) True xs)
+False && True
+False
