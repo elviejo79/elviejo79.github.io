@@ -141,7 +141,12 @@ B ⊆ C and B /= C   -- {def. ⊆}
 
 {-Exercise 12. Consider the following two claims. For each one, if it is true give a proof, but if it is false give a counterexample.
 (a) If A ⊆ B and B ⊆ C, then A ⊂ C.
-
+Si A=B y B=C entonces no puede ser que A ⊂  C esto es falso
+   A={4,5,2}
+   B={4,5,2}
+   C={4,5,2}
+   A ⊆ B y B ⊆ C
+ Falso que A ⊂ C  =>  {4,5,2} ⊂  {4,5,2}
 
 (b) If A ⊂ B and B ⊂ C, then A ⊆ C.
 
