@@ -84,7 +84,7 @@ type Set a = [a]
 
 --Exercise 10. What is the value of each of the following expressions?
 --subset [1,3,4] [4,3] = FALSE
---subset [] [2,3,4] 	 = TRUE
+--subset [] [2,3,4]    = TRUE
 --setEq [2,3] [4,5,6]  = FALSE
 --setEq [1,2] [1,2,3]  = FALSE
 
@@ -187,12 +187,13 @@ isSubset set1 set2 = null [e | e <- set1, not(elem e set2)]
 --diff :: Eq a => [a] -> [a] -> [a] diff set1 set2 = [e | e <- set2, not (elem e set1)]
 
 
-diff' :: Eq a => [a] -> [a] -> [a]
-diff' set1 set2 = [e | e <- set1, not (elem e set2)]
+diff :: Eq a => [a] -> [a] -> [a]
+diff set1 set2 = [e | e <- set1, not (elem e set2)]
 
 -- Exercise 18. What is wrong with this definition of intersection, a function
 -- that takes two sets and returns their intersection?
-
+intersection :: Eq a => [a] -> [a] -> [a] 
+intersection set1 set2 = [e | e <- set1, elem e <- set2]
 
 -- Exercise 19. Write a function using a list comprehension that takes two sets
 -- and returns their union.
@@ -202,12 +203,14 @@ union set1 set2 = set1 ++ [e | e <- set2, not (elem e set1)]
 
 
 --Exercise 20.Is it ever the case that A∪(B−C)=B? 
---Solamente que A fuera un resultado de B-C.
---    A = B - C
+
 
 
 --Exercise 21.Give an example in which (A∪C)∩(B∪C)=0
-
+-- (A∪C)∩(B∪C)=0
+-- ({1,2}∪{3,4})∩({5,6}∪{7,8})=0
+-- ({1,2,3,4}∩{5,6,7,8})
+-- ()
 
 
 --Exercise 22.Prove the commutative law of set-intersection,A∩B=B∩A
