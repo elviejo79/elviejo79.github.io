@@ -33,15 +33,21 @@ if there is code as part of the problem write it here
 
 Excercise 2
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
+Check your understanding of or, and, and not by deciding what
+value each of these expressions has and then evaluating it with the com-
+puter (you will need to import the Stdm module provided on the web
+page for this book):
 
 
 {% highlight haskell %}
 
-if there is code as part of the problem write it here
+ False /\ True
+ True \/ (not True)
+ not (False \/ True)
+ (not (False /\ True)) \/ False
+ (not True) ==> True
+ True \/ False ==> True
+ True ==> (True /\ False)
 
 {% endhighlight %}
 
@@ -461,7 +467,47 @@ Write the problem definition here
 
 {% highlight haskell %}
 
-if there is code as part of the problem write it here
+> import Stdm
+> theorem55 = [] `Theorem` (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+> proof1 =
+>   (Assume (P `And` R)
+>   {------------------} `AndER`
+>             R,         Assume Q)
+>   {--------------------------------} `AndI`
+>             (R `And` Q)
+>   {---------------------------------------}`ImpI`
+>            ((P `And` R) `Imp` (R `And` Q))
+>   {---------------------------------------------}`ImpI`
+>            (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+>
+> proof2 =
+>   (Assume Q, (Assume (P `And` R)
+>   {------------------} `AndER`
+>             R)         )
+>   {--------------------------------} `AndI`
+>             (R `And` Q)
+>   {---------------------------------------}`ImpI`
+>            ((P `And` R) `Imp` (R `And` Q))
+>   {---------------------------------------------}`ImpI`
+>            (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+>
+> proof3 =
+>   (Assume Q, (Assume (P `And` R)
+>   {------------------} `AndER`
+>             R)         )
+>   {--------------------------------} `AndI`
+>             (Q `And` R)
+>   {---------------------------------------}`ImpI`
+>            ((P `And` R) `Imp` (R `And` Q))
+>   {---------------------------------------------}`ImpI`
+>            (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+> check22 = check_proof theorem55 proof1
+> check22b = check_proof theorem55 proof2
+> check22c = check_proof theorem55 proof3
 
 {% endhighlight %}
 
