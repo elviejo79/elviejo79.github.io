@@ -511,13 +511,6 @@ Write the problem definition here
 
 {% endhighlight %}
 
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
 Excercise 23
 ============================================================
 Write the problem definition here
