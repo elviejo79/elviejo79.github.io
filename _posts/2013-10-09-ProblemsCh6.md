@@ -460,6 +460,7 @@ Write the problem definition here
 
 
 {% highlight haskell %}
+> import Stdm
 
 if there is code as part of the problem write it here
 
