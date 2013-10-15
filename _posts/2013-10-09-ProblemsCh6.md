@@ -33,15 +33,21 @@ if there is code as part of the problem write it here
 
 Excercise 2
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
+Check your understanding of or, and, and not by deciding what
+value each of these expressions has and then evaluating it with the com-
+puter (you will need to import the Stdm module provided on the web
+page for this book):
 
 
 {% highlight haskell %}
 
-if there is code as part of the problem write it here
+ False /\ True
+ True \/ (not True)
+ not (False \/ True)
+ (not (False /\ True)) \/ False
+ (not True) ==> True
+ True \/ False ==> True
+ True ==> (True /\ False)
 
 {% endhighlight %}
 
@@ -453,33 +459,60 @@ if there is code as part of the problem write it here
 
 Excercise 22
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
+Suppose we simply replace R ∧ Q below the {∧I} line with
+Q∧R. This fixes the Invalid And-Introduction error, but it introduces
+another error into the proof.
 
 
 {% highlight haskell %}
+
 > import Stdm
-
-if there is code as part of the problem write it here
+> theorem55 = [] `Theorem` (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+> proof1 =
+>   (Assume (P `And` R)
+>   {------------------} `AndER`
+>             R,         Assume Q)
+>   {--------------------------------} `AndI`
+>             (R `And` Q)
+>   {---------------------------------------}`ImpI`
+>            ((P `And` R) `Imp` (R `And` Q))
+>   {---------------------------------------------}`ImpI`
+>            (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+>
+> proof2 =
+>   (Assume Q, (Assume (P `And` R)
+>   {------------------} `AndER`
+>             R)         )
+>   {--------------------------------} `AndI`
+>             (R `And` Q)
+>   {---------------------------------------}`ImpI`
+>            ((P `And` R) `Imp` (R `And` Q))
+>   {---------------------------------------------}`ImpI`
+>            (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+> ---------------------------------------------------------------
+> proof3 =
+>   (Assume Q, (Assume (P `And` R)
+>   {------------------} `AndER`
+>             R)         )
+>   {--------------------------------} `AndI`
+>             (Q `And` R)
+>   {---------------------------------------}`ImpI`
+>            ((P `And` R) `Imp` (R `And` Q))
+>   {---------------------------------------------}`ImpI`
+>            (Q `Imp` ((P `And` R) `Imp` (R `And` Q)))
+>
+> check22 = check_proof theorem55 proof1
+> check22b = check_proof theorem55 proof2
+> check22c = check_proof theorem55 proof3
 
 {% endhighlight %}
 
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 23
+Homework 31
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+1. P, Q, R  |-  P /\ (Q /\ R) [Note: this is Excercise 3, Chapter 2 of Hall/O'Donnell.]
 
 {% highlight haskell %}
 
@@ -487,20 +520,10 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 24
+Homework 32.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+A /\ (Not A)  |-  False
 
 {% highlight haskell %}
 
@@ -508,20 +531,10 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 25
+Homework 33.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+A  |-  Not(Not A)
 
 {% highlight haskell %}
 
@@ -529,20 +542,10 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 26
+Homework 34.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+A, A->B, B->C, C->D  |-  D  [Note: Extension of Implication Chain Rule, Theorem 11]
 
 {% highlight haskell %}
 
@@ -550,20 +553,10 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 27
+Homework 35.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+A -> B, Not B |-  Not A  [Note: This is Modus Tollens, Theorem 12]
 
 {% highlight haskell %}
 
@@ -571,20 +564,10 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 28
+Homework 36.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+B \/ (Not B), A -> B  |-  (Not A) \/ B
 
 {% highlight haskell %}
 
@@ -592,20 +575,10 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 29
+Homework 37.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+A->B  |-  (Not B) -> (Not A)  [Note: This conclusion is called the contrapositive of the premis]
 
 {% highlight haskell %}
 
@@ -613,471 +586,13 @@ if there is code as part of the problem write it here
 
 {% endhighlight %}
 
-{% highlight haskell %}
 
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 30
+Homework 38.
 ============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
+A \/ (B /\ C) |-  (A \/ B) /\ (A \/ C) [Note: \/ distributes over /\.]
 
 {% highlight haskell %}
 
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 31
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 32
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 33
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 34
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 35
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 36
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 37
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 38
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 39
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 40
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 41
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 42
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 43
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 44
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 45
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 46
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 47
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 48
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 49
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 50
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-Excercise 51
-============================================================
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-Write the problem definition here
-
-
-{% highlight haskell %}
-
-if there is code as part of the problem write it here
-
-{% endhighlight %}
-
-{% highlight haskell %}
-
-write the solution here
 if there is code as part of the problem write it here
 
 {% endhighlight %}
