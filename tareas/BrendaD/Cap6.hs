@@ -324,15 +324,22 @@ e36cpt = check_proof e36theorem e36proof
 
 
 --Exercise 37 A->B |- (Not B) -> (Not A) [Note: This conclusion is called the contrapositive of the premis]
+--e37theorem = Theorem [(Imp A B)] (Imp (Imp B FALSE) (Imp A FALSE))
 e37theorem = Theorem [(Imp A B)] (Imp (Imp B FALSE) (Imp A FALSE))
 
+e37proof = ImpI 
+            (ImpI
+              (ImpE (
+                (ImpE (Assume A,Assume(Imp A B)) B),
+                Assume(Imp B FALSE)
+                )
+                FALSE
+              )
+              (Imp A FALSE)
+            ) 
+            (Imp (Imp B FALSE) (Imp A FALSE))
 
-
-
-
-
-
-
+e37cpt=check_proof e37theorem e37proof
 
 
 --Exercise 38  A \/ (B /\ C) |- (A \/ B) /\ (A \/ C) [Note: \/ distributes over /\.] ***
@@ -340,17 +347,29 @@ e37theorem = Theorem [(Imp A B)] (Imp (Imp B FALSE) (Imp A FALSE))
 
 
 --e38theorem = Theorem [Or A (And B C)] (And (Or A B) (Or A C))
-e38theorem = Theorem [Or A (And B C), A] (A)
+e38theorem = Theorem [Or A (And B C), A] (And (Or A B) (Or A C))
 
-e38proof = OrE(
-              Assume(Or A (And B C)),
-              (ID (Assume A) A),         
-              (AndEL(AndI (Assume A,(AndER (Assume(And B C)) C)) (And A C)) A)
+e38proof = AndI(
+            (OrIL(
+              OrE( --1
+                Assume(Or A (And B C)),
+                (ID (Assume A) A),         
+                (AndEL(AndI (Assume A,(AndER (Assume(And B C)) C)) (And A C)) A)
+              ) A) --1
+            (Or A B))
+          ,  
+            (OrIL(
+              OrE(
+                Assume(Or A (And B C)),
+                (ID (Assume A) A),         
+                (AndEL(AndI (Assume A,(AndER (Assume(And B C)) C)) (And A C)) A)
+              ) A)
+            (Or A C))
+          )
+          (And (Or A B) (Or A C))
 
-
-            )
-            A
-        
+     
 
 e38cpt = check_proof e38theorem e38proof       
+      
 
