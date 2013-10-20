@@ -1,13 +1,12 @@
 ------------------------------
 --CHAPTER 7. PREDICATE LOGIC--
 --    Rosario Marin P.      --
---     Octuober,18,2013     --
+--     October,18,2013     --
 ------------------------------
 
 --Quantifiers--
 ∀x.  	ALL		 ^ (and)
 ∃x.    EXISTS    v (or)
-
 
 --------Exercise 1.--------
 Topic: 7.1.3 Expanding Quantified Expressions
@@ -18,12 +17,10 @@ Topic: 7.1.3 Expanding Quantified Expressions
 	  ^ F(2)
 	  ^ F(3)
 
-
 (b) ∃x. F(x)
 	  v F(1)
 	  v F(2)
 	  v F(3)
-
 
 (c) ∃x.∀y. G(x, y)
 
@@ -36,7 +33,6 @@ Topic: 7.1.3 Expanding Quantified Expressions
 	 v((1, 1) ^ (1, 2) ^ (1, 3))
 	 v((2, 1) ^ (2, 2) ^ (2, 3))
 	 v((3, 1) ^ (3, 2) ^ (3, 3))_
-
 
 --------Exercise 2.--------
 --Let the universe be the set of integers. Expand the following expression:
@@ -148,13 +144,13 @@ Topic: 7.2 Computing with Quantifiers
 --takes a number and returns True if it is less than 4.
 
 (a) forall [1,2,3] (== 2)
-	= 1==2 ^ 2==2 ^ 3==2
+	= (1==2) ^ (2==2) ^ (3==2)
 	= False ^ True ^ False
 	= False
 
 
 (b) forall [1,2,3] (< 4)
-	= 1<4 ^ 2<4 ^ 3<4
+	= (1<4) ^ (2<4) ^ (3<4)
 	= True ^ True ^ True
 	= True
 
@@ -170,6 +166,164 @@ Topic: 7.2 Computing with Quantifiers
 	= (1>5) v (2>5) v (3>5)
 	=  False v False v False
 	=  False
+
+
+--------Exercise 8.--------
+--Define the predicate p x y to mean x=y+1, and let the universe be {1,2}. 
+--Calculate the value of each of the following expressions, and
+--then check your solution using Haskell.
+(a) ∀x.(∃y. p(x, y))
+	
+
+	=and [exists [1,2] (x=1+1),
+          exists [1,2] (x=2+1)]
+    =and [or [1=1+1, 2=1+1],
+          or [1=2+1, 2=2+1]]
+    =and [or [False, True],
+          or [False, False]]
+    =and [True,False]
+    =False
+
+
+(b) ∃x,y. p(x, y)
+	 --Equivale a:
+	∃x,∃y. p(x, y)
+
+
+	=or [exists [1,2] (x=1+1),
+         exists [1,2] (x=2+1)]
+    =or [or [1=1+1, 2=1+1],
+         or [1=2+1, 2=2+1]]
+    =or [or [False, True],
+         or [False, False]]
+    =or [True,False]
+    =True
+
+
+(c) ∃x.(∀y. p(x, y))
+	=or [forall [1,2] (x=1+1),
+         forall [1,2] (x=2+1)]
+    =or [and [1=1+1, 2=1+1],
+         and [1=2+1, 2=2+1]]
+    =or [and[False, True],
+         and [False, False]]
+    =or [False,False]
+    =False
+
+	
+(d) ∀x, y. p(x, y)
+ --Equivale a:
+	∀x,∀y. p(x, y)
+
+
+	=and [forall [1,2] (x=1+1),
+          forall [1,2] (x=2+1)]
+    =and [and [1=1+1, 2=1+1],
+          and [1=2+1, 2=2+1]]
+    =and [and [False, True],
+          and [False, False]]
+    =and [False,False]
+    =False
+
+
+--------Exercise 9.--------
+Topic:7.3 Logical Inference with Predicates
+
+--Prove:
+--Any arbitrary value of x, say p
+--We can infer G(p)
+--Hence we can infer∀x.G(x)
+
+∀x.F(x),∀x.F(x) → G(x) = ∀x.G(x)    
+
+∀x.F(x)			∀x.F(x)→G(x)
+-------- {∀E}  -------------- {∀E}     PONER LAS REGLAS
+  F(p)			   F(p)→G(p)
+---------------------------------- {→E}
+			G(p)
+--------------------------------------- {∀I}
+		  ∀x.G(x)
+
+
+--------Exercise 10.--------
+--Prove:
+∃x.∃y. F(x, y) = ∃y.∃x. F(x, y)
+ 			
+ 	    F(p, q)
+ -------------------- {∃I}
+ ∃y.F(p, y) ∃x.F(x, q)
+ -------------------------- {∃E}
+ 		∃x.F(x, q)
+ ------------------------------ {∃I}
+ ∃x.∃y.F(x, y)   ∃y.∃x.F(x, y)
+ ------------------------------------- {∃E}
+ 			∃y.∃x.F(x, y)
+
+
+--------Exercise 11.--------
+--The converse of Theorem 66 is the following:
+∀y.∃x. F(x, y) = ∃x.∀y. F(x, y) Wrong!
+
+--Give a counter example that demonstrates that this statement is not valid.
+
+Universe = {0,1,2}
+Let F(x, y) = x==y
+
+∀y.∃x. F(x, y)
+=and [exists [0,1,2] (x==0),
+      exists [0,1,2] (x==1),
+      exists [0,1,2] (x==2)]
+=and [or [0==0, 1==0, 2==0],
+      or [0==1, 1==1, 2==1],
+      or [0==2, 1==2, 2==2]]
+=and [or [True, False, False],
+      or [False, True, False],
+      or [False, False, True]]
+=and [True,True,True]
+=True
+
+
+∃x.∀y. F(x, y)
+=or [forall [0,1,2] (x==0),
+     forall [0,1,2] (x==1),
+     forall [0,1,2] (x==2)]
+=or [and [0==0, 1==0, 2==0],
+     and [0==1, 1==1, 2==1],
+     and [0==2, 1==2, 2==2]]
+=or [and[True, False, False],
+     and [False, True, False],
+     and[False, False, True]]
+=or [False,False,False]
+=False
+
+--Por lo tanto:
+∀y.∃x. F(x, y) = ∃x.∀y. F(x, y) Wrong!
+	    True    =    False    Wrong!
+
+
+--------Exercise 12.--------
+--Prove
+∀x.(F(x) ^ G(x)) = (∀x.F(x)) ^ (∀x.G(x))
+
+   ∀x.F(x) ^ G(x)             ∀x.F(x) ^ G(x)
+------------------- {∀E}   ------------------- {∀E}
+	 F(p) ^ G(p)                   F(q) ^ G(q)
+---------------------- {∧EL}  ------------------- {∧ER}
+		 F(p)                          G(q)
+------------------------ {∀I}  --------------------- {∀I}
+        ∀x.F(x)                      ∀x.G(x)
+---------------------------------------------------------- {∧I}
+                   ∀x.F(x)∧∀x.G(x)
+
+
+
+
+
+
+
+
+
+
 
 
 
