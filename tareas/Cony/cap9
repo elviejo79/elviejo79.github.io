@@ -1,0 +1,483 @@
+imp1a :: Integer -> Integer
+imp1a 1 =2
+imp1a x = error " blabla"
+
+imp2a :: Integer -> Integer
+imp2a 2 = 3
+imp2a x = error " bla "
+
+ss:: [Integer]
+ss=[1,imp1a (ss !! 0), imp2a (ss !! 1)]
+
+
+imp11 :: Integer -> Integer
+imp11 2 = 3
+imp11 x = error "premise does not match"
+s1 :: [Integer]
+s1 = [1, imp11 (s !! 0)]
+
+
+--EJERCICIOS DEL CAPITULO 9
+--Exercise 1. Is the following a chain? You can test your conclusions by evaluating
+--s in each case.
+imp1 :: Integer -> Integer
+imp1 1 = 2
+imp1 x = error "imp1: premise does not apply"
+
+imp2 :: Integer -> Integer
+imp2 2 = 3
+imp2 x = error "imp2: premise does not apply"
+
+imp3 :: Integer -> Integer
+imp3 3 = 4
+imp3 x = error "imp3: premise does not apply"
+
+s :: [Integer]
+s = [1, imp1 (s !! 0), imp2 (s !! 1), imp3 (s !! 2)]
+
+-- en el ejercicio 1, si es un chain, ya que muestra una serie de valores [1,2,3,4]
+
+
+
+
+--Exercise 2. Is the following a chain?
+imp4 :: Integer -> Integer
+imp4 1 =2
+imp4 x = error "imp4: premise does not apply"
+
+imp5 :: Integer -> Integer
+imp5 3 = 4
+imp5 x= error "imp5: premise does not apply"
+
+s2 :: [Integer]
+s2= [0,imp4 (s2!! 0), imp5 (s2!!1)]
+
+--no es un chain ya que comienza desde 0 no nos muestra una secuencia correcta
+
+--Exercise 3
+imp6 :: Integer -> Integer
+imp6 0 = 1
+imp6 x = error "imp6: premise does not apply"
+
+imp7 :: Integer -> Integer
+imp7 3 = 4
+imp7 x = error "imp7: premise does not apply"
+
+s3 :: [Integer]
+s3 = [0, imp6 (s3!!0), imp7 (s3!!1)]
+
+-- no es un chain comoeniza en 0 y eso es lo que no nos muestra la secuencia esperada
+
+
+--Exercise 4. Is the following a chain?
+imp8 :: Integer -> Integer
+imp8 0 = 1
+imp8 x = error "imp8: premise does not apply"
+
+imp9 :: Integer -> Integer
+imp9 1 = 2
+imp9 x = error "imp9: premise does not apply"
+s4 :: [Integer]
+s4 = [0, imp8 (s4 !! 1), imp9 (s4 !! 0)]
+
+-- no es un chain, se cicla como comenza en 0 y apunta al mismo valor de 1
+
+
+increment :: Integer -> Integer
+increment x = x + 1
+
+se :: [Integer]
+se = [0, increment (se !! 0), increment (se !! 1)]
+
+
+sm :: [Integer]
+sm = 0 : map increment sm
+
+
+
+--Exercise 5. Given the base case 0 ∈ n and the induction rule x ∈ n → x+1 ∈
+--n, fix the following calculation so that 3 is in set n:
+
+fun5 :: Integer -> Integer
+fun5  x = x - 1
+
+n :: [Integer]
+n = 0 : map fun5 n 
+---si esta el numero especificado en el conjunto de numeros.ya que al momento de ejecutarlo comenzará desde 0 hasta el momento que lo detergamos, es recursivo e irá aumenando en 1 hasta que lo detengamos
+
+--increment9 :: Integer -> Integer
+--increment9 x = x + 1
+--s9 :: [Integer]
+--s9 = [0, increment9 (s9 !! 0), increment9 (s9 !! 1)]
+
+--s10 :: [Integer]
+--s10 = 0 : map increment9 s10
+
+
+--Exercise 6. Use the following definitions, determine whether 4 is in set s,
+--given 1 ∈ s and the induction rule x ∈ s → x + 2 ∈ s.
+
+fun6 :: Integer -> Integer
+fun6 x = x + 2
+
+s6 :: [Integer]
+s6 = 1 : map fun6 s6
+--en elemento 4 no se encuentra en el conjunto ya que al especificarle que se estará auemnatdno de 2 y este comienza desde 1, asi qu eeste conjunto solo mos mostrará los elementos impares 
+
+
+--Exercise 7. Fix this calculation of the positive integers:
+fun7 :: Integer -> Integer
+fun7 x = 0
+
+p7 :: [Integer]
+p7 = 0 : map fun7 p7
+-- este ejericio solo mostrará el cero ya que se esta inicializando en cero desde la fucion, y como es recursiva siempre estará nostrando el mismo elementos
+
+
+--Exercise 8. Fix this calculation of the positive multiples of 3:
+fun8 :: Integer -> Integer
+fun8 x = x * 3
+
+p8 :: [Integer]
+p8 = map fun8 p8
+-- no nos estará haciedo las operaciones ya que no se esta indicando por cual es el elemento base por el que estará haciedno la operación, es decir no nos da valor de x para poder haer la multiplicación.
+
+
+--Exercise 9. Here is a Haskell equation that defines the set s inductively. Is
+--82 an element of s?
+
+s9 :: [Integer]
+s9 = 0 : map ((+) 2) s9
+
+--si aparece el número 82 en el conjunto, es una función recursiva y comeniza desde cero aumentando 2 al numero inicial, esto es que la serie comienza en cero y nos muestra todos los numeros pares hasta el momento que lo detengamos.
+
+--Exercise 10. What set is defined by the following?
+s10 :: [Integer]
+s10 = 1 : map ((*) 3) s10
+
+-- el conjunto que se muestra es una serie que comienza de 1 y este es multiplicado por 3, el resultado es 3 ahora este se multiplica por 3, ahora el resultado es 9
+-- al ser recursivo el resultado siempre se irá multiplicando por el numero 3 y lo que nos mostraría seriá [1,3,9,27,81......]
+
+
+
+
+--Exercise 11. Alter the definition of newBinaryWords and binWords so that
+--they produce all of the octal numbers. An octal number is one that
+--contains only the digits 0 through 7.
+
+newBinaryWords :: [Integer] -> [[Integer]]
+newBinaryWords ys = [0 : ys, 1 : ys, 2 : ys, 3 : ys,4 : ys, 5 : ys,6 : ys, 7 : ys]
+mappend :: (a -> [b]) -> [a] -> [b]
+mappend f [] = []                          
+mappend f (x:xs) = f x ++ mappend f xs
+
+binWords = [0] : [1] : [2] : [3] : [4] : [5] : [6] : [7] : (mappend newBinaryWords binWords) 
+
+
+
+--Exercise 12. Use take 10 integers1 to evaluate the first 10 integers according
+--to this definition. Describe the set that is actually defined by Attempt 1.
+
+
+type Set a = [a]
+
+build :: a -> (a -> a) -> Set a
+build a f = set
+			where set = a : map f set
+builds :: a -> (a -> [a]) -> Set a
+builds a f = set
+			where set = a : mappend f set
+
+nextInteger1 :: Integer -> Integer
+nextInteger1 x = -x
+
+integers1 :: [Integer]
+integers1 = build 0 nextInteger1
+
+
+ej12 :: [Integer]
+ej12 = take 10 integers1
+
+--Second Attempt
+nextIntegers2 :: Integer -> [Integer]
+nextIntegers2 x = [x + 1, x - 1]
+
+integers2 :: [Integer]
+integers2 = builds 0 nextIntegers2
+
+--la salida es solo una lista de numeros en este caso solo son ceros ya que es lo que se esta definiendo 
+
+
+--Exercise 13. Use take 20 integers2 to evaluate the first 20 integers according
+--to this definition. Describe the set that is actually defined by Attempt 2.
+
+ej13 :: [Integer]
+ej13 = take 20 integers2
+--muestra una lista de números tanto numeros positivos como negativos, de manera intercalada en al igual que el cero. ya que se van decremantando y aumentadno el valor de x que son los que estan incuidos en l y se repiten de manera consecutiva los elelemtos de la lista y es dificil ver la continuacion 
+
+--Exercise 14. Use the computer to examine the first 10 integers generated by
+--this definition, and describe the set that is defined.
+
+nextIntegers3 :: Integer -> [Integer]
+nextIntegers3 x = [x + 1, -(x + 1)]
+
+integers3 :: [Integer]
+integers3 = builds 0 nextIntegers3
+
+--muestra una lista de números tanto numeros positivos como negativos, de manera intercalada en al igual que el cero. ya que se van decremantando y aumentadno el valor de x que son los que estan incuidos en l, se repiten los numeros y es dificil deducirlo
+
+
+--Exercise 15. Use the computer to generate some elements of the set defined
+--by Attempt 4, and describe the result.
+
+nextInteger4 :: Integer -> Integer
+nextInteger4 x = if x < 0 then x - 1 else x + 1
+
+integers4 :: [Integer]
+integers4 = build 0 nextInteger4
+
+-- muestra una lista consecutiva de numeros comenzando desde 0 y solo numeros positivos 
+
+
+--Exercise 16. Use the computer to evaluate the first 10 elements of the set,
+--and describe the result.
+
+nextIntegers5 :: Integer -> [Integer]
+nextIntegers5 x = if x > 0 || x == 0 then [x + 1, -(x + 1)] else []
+
+integers5 :: [Integer]
+integers5 = builds 0 nextIntegers5
+
+ej16 :: [Integer]
+ej16 = take 10 integers2
+
+--muestra una lista de numeros tanto positivos como negativos y ceros de manera correcta.
+
+
+
+--Exercise 17. Does ints, using the following definition, enumerate the integers?
+--If it does, then you should be able to pick any integer and see it
+--eventually in the output produced by ints. Will you ever see the value -1?
+
+nats :: [Integer]
+nats = build 0 (1 +)
+
+negs :: [Integer]
+negs = build (-1) (1 -)
+
+ints :: [Integer]
+ints = nats ++ negs
+-- la salida muestra una lista de numeros naturales comenzando desde cero y aumenta consecutivamente y solo son numeros positivos, pero si solo ejecutamos negs nos muestra los valores negativos y solo el -1 y el 2 positivo.
+
+--Exercise 18. Does twos enumerate the set of even natural numbers?
+twos :: [Integer]
+twos = build 0 (2 *)
+
+-- la salida muestra una lista de ceros, ya que al multiplicar cualquier valor por cero siempre nos mostrara una salida de ceros.
+
+--Exercise 19. What is wrong with the following definition of the stream of
+--natural numbers?
+--nats = map (+ 1) nats ++ [0]
+
+nats1 :: [Integer]
+nats1 = 1: map (+ 1) nats1
+
+-- hay que comenzar desde uno, falta  el caso base y asi comience con la lista consecutiva de numeros como es recursiva y se estara llamando asi misma nos formará la salida deseada
+
+--Exercise 20. What is the problem with the following definition of the naturals?
+naturals :: [Integer] -> [Integer]
+naturals (i:acc) = naturals (i + 1:i:acc)
+
+nats2 :: [Integer]
+nats2 = naturals [0]
+
+-- nunca nos muestra una salida de datos ya que se esta especificando en la lista un cero y por lo tanto este se cicla al no recibir nada 
+
+
+
+--Exercise 21. Can we write a function that will take a stream of the naturals
+--(appearing in any order) and give the index of a particular number?
+
+--no se podria ya que el problema es que se mostrarian una serie infinita de numeros naturales, estos serian consecutivos con numeros pares e impares 
+
+
+
+
+--Exercise 22. Using induction, define the set of roots of a given number n.
+
+
+-- caso base
+--n € U
+
+--induction
+--n^(1/m) € U -> n(1/m+1) € U
+-- nada esta en  U , a menos que se puede demostrar con un  número finito usando  los casos base y de inducción.
+
+
+
+--Exercise 23. Given the following definition, prove that n3 is in set P of powers
+--n^o € U caso base
+
+--n^(1/m) € U -> n(1/m+1) € U
+
+-- por induccion n^o € U -> n^1 € U  y n^1 € U
+-- por induccion n^1 € U -> n^2 € U  y n^2 € U
+-- por induccion n^3 € U -> n^3 € U  y n^3 € U
+
+
+--Exercise 24. When is 0 in the set defined below?
+--Definition 29. Given a number n, the set N is defined as follows:
+-- • n ∈ N
+-- • m ∈ N → m − 2 ∈ N
+-- • Nothing is in N unless it can be shown to be in N by a finite number of uses of the previous rules.
+
+--se tiene un conjunto de numeros  y si este numero positivo y es multimple de 2 y si no este esta condicion no se cumpole estonces es cero
+
+
+
+
+--Exercise 25. What set is defined by the following definition?
+--Definition 30. The set S is defined as follows:
+-- • 1 ∈ S
+-- • n ∈ S ∧ nmod2 = 0 → n + 1 ∈ S
+-- • n ∈ S ∧ nmod2 = 1 → n + 2 ∈ S
+-- • Nothing else is in S unless it can be shown to be in S by a finite
+--number of uses of the previous rules.
+
+ej25 :: Integer -> Integer
+ej25 n = if n `mod` 2 == 0 then n+1 else n+2
+
+-- la salida seria una lista de numeros impares ya que la condicion dice que si el residuo es 0 esntonces es impar y si es 1 es par 
+
+
+--Exercise 26. Prove that 4 is in the set defined as follows:
+--Definition 31. The set S is defined as follows:
+--1. 0 ∈ S
+--2. n ∈ S ∧ nmod2 = 0 → n + 2 ∈ S
+--3. n ∈ S ∧ nmod2 = 1 → n + 1 ∈ S
+--4. Nothing is in S unless it can be shown to be in S by a finite number of uses of the previous rules.
+
+ej26 :: Integer -> Integer
+ej26 n = if n `mod` 2 == 0 then n+2 else n+1
+
+
+--0 € S
+--0 € S -> 2 € S
+--2 € S -> 4 € S 
+-- por lo tanto 4€ S
+--la salida muestra una serie  la cual nos muestra una serie de numeros pares coemnzando de cero y así sucesivamente y el ejericio lo qu epide es que si aparece el numero 4 en la serie, si si aparece ya uqe nos muestra todos los valores pares comenzando de 0,2,4,6,..
+
+
+
+
+--Exercise 27. Given the following definition, prove that the string ‘yyyy’ is in YYS.
+--Definition 32. The set YYS of strings containing pairs of the letter ’y’
+--is defined as follows:
+-- 1. ""∈ Y Y S
+-- 2. s ∈ Y Y S → "yy"++s ∈ Y Y S
+-- 3. Nothing else is in YYS unless it can be shown to be in YYS by a
+-- finite number of uses of rules (1) and (2).
+
+-- caso base
+--"" € YYS
+--"" € YYS -> "yy" € YYS 
+-- "yy" € YYS -> "yyyy" € YYS 
+--con esto se demuestra que la cadena "yyyy" pertenece a YYS 
+
+
+
+--Exercise 28. Using data recursion, define the set of strings containing the
+--letter ‘z’.
+
+ej28 :: [String]
+ej28 = " " : map ('z': ) ej28
+
+--Exercise 29. Using induction, define the set of strings of spaces of length less
+--than or equal to some positive integer n.
+	--case base
+	--"" €  YYS
+	-- inductive
+	-- ss € YYS ^ length ss < n -> '': ss € YYS
+	-- nada es un conjunto qu epertenecezca a YYS amenos que sea crea un numero finito
+
+
+--Exercise 30. Using recursion, define the set of strings of spaces of length less
+--than or equal to length n, where n is a positive integer.
+
+ej30 :: Integer -> [String]
+ej30 0 = []
+ej30 n = "" : map (' ':) (ej30 (n-1))
+
+--Exercise 31. We could have a set that consists of all the natural numbers
+--except for 2; you can write this as N − {2}. Similarly, for every natural
+--number x, there is a set that contains all the natural numbers except
+--for x. Now, we could make a set SSN of all of these results. Write an
+--inductive definition of SSN.
+
+--case base
+--N -{0} € P
+
+--induction
+--(N-{n})€ P -> (N-{n+1} € P)
+
+-- nada pertenece al conjunto  a menos que se defina una serie finita 
+
+
+
+--Exercise 32. Given the following definition, show that the set I − {−3} ∈ SSI−.
+--The set of sets of integers SSI, each of which is missing a distinct negative
+--integer, is defined inductively as follows:
+-- 1. I − {−1} ∈ SSI−
+-- 2. I − {n} → I − {n − 1} ∈ SSI−
+-- 3. Nothing else is in SSI- unless it can be shown to be in SSI- by a
+--finite number of uses of rules (1) and (2).
+
+-- I − {−1} € SSI−
+-- I − {−1} -> I − {−2} € SSI−
+-- I − {−2} -> I − {−3} € SSI−
+--			   I − {−3} € SSI−
+
+
+
+--Exercise 33. Given the following definition, prove that -7 is in ONI. The set
+--ONI of odd negative integers is defined as follows:
+--1. −1 ∈ ONI
+--2. n ∈ ONI → n − 2 ∈ ONI
+--3. Nothing is in ONI unless it can be shown to be in ONI by a finite
+--number of uses of the previous rules.
+
+
+--  -1 € ONI
+--  -1 € ONI -> -3 ONI  y -3 € ONI
+--	-3 € ONI -> -5 ONI  y -5 € ONI 
+--	-5 € ONI -> -7 ONI  y -7 € ONI
+
+
+--Exercise 34. Using data recursion, define the set ni of negative integers.
+
+eje34 :: Integer -> Integer
+eje34 x= x -1
+
+eje = -1 : map eje34 eje
+
+
+
+
+--Exercise 35. If you print the elements of
+--[(a,b) | a <- [0..], b <- [0..]]
+--will you ever see the element (1,2)?
+
+--no se podrian ver ya que es una lista infinitas y seria imposible visualizar estos elementos
+
+
+
+--Exercise 36. What set is given by the following definition?
+--Definition 33. The set S is defined as follows:
+--1. 1 ∈ S
+--2. n ∈ S → n − n ∈ S
+--3. Nothing is in S unless it can be shown to be in S by a finite number
+--of uses of the previous rules.
+
+--1 € S
+--1 € S -> 1-1 € S
+-- el resultados que muestra serian los elemtos 0 y 1 esto es por la definicion antes mencionada.
