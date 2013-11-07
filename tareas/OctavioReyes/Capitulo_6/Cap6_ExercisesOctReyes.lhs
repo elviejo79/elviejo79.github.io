@@ -461,23 +461,23 @@ A->B, Not B |- Not A
 -----------------Exercise 36-----------------------
 B \/ (Not B), A -> B |- (Not A) \/ B
 
-e36 =  [( B  `Or` (Not B)), ( A `Imp` B), A ]  `Theorem` ( (Not A) `Or` B)
+>e36 =  [( B  `Or` (Not B)), ( A `Imp` B), A ]  `Theorem` ( (Not A) `Or` B)
 
-p36= (( Assume( B  `Or` (Not B)),
-            ( (Assume B) `ID` B),
-            (((((Assume A, Assume( A `Imp` B)) 
-                 {---------------------} `ImpE`
-                B), (Assume( B  `Imp` FALSE)))
-                {---------------} `ImpE`
-               FALSE)
-              {-------------} `CTR`
-            B))
-           {-----------}`OrE` 
-            B)
-           {-------------}`OrIR`
-          ( (Not A) `Or` B)
+>p36= (( Assume( B  `Or` (Not B)),
+>            ( (Assume B) `ID` B),
+>            (((((Assume A, Assume( A `Imp` B)) 
+>                 {---------------------} `ImpE`
+>                B), (Assume( B  `Imp` FALSE)))
+>                {---------------} `ImpE`
+>               FALSE)
+>              {-------------} `CTR`
+>            B))
+>           {-----------}`OrE` 
+>            B)
+>           {-------------}`OrIR`
+>          ( (Not A) `Or` B)
 
-cp36 = check_proof e36 p36
+>cp36 = check_proof e36 p36
 
 
 
@@ -510,16 +510,35 @@ cp36 = check_proof e36 p36
 A \/ (B /\ C) |- (A \/ B) /\ (A \/ C) [Note: \/ distributes over /.]
 
 
->e38=[(A `Or` (B `And` C) )] `Theorem` (A `And` B)
+>e38 =  [ A  `Or` ( B  `And` C), A]  `Theorem`  (And (Or A B) (Or A C))
 
->p38=(((Assume (A `Or` (B `And` C) ))
->    {-------------------}  `AndEL`
->	     A ),
->    (Assume (A `Or` (B `And` C))
->    {-------------------}   `AndER`
->	    (B `And` C)
->	{-------------------}  `AndER`
->	             B))
->	{-------------------}   `AndI`
->	   (A `And` B)
->cp38=check_proof e38 p38
+>p38 = ((((Assume( A  `Or` ( B `And` C)),  Assume A, (( (Assume A,( (Assume( B  `And`  C))  
+>                                                                        {--------------------}`AndER` 
+>                                                                                  C))
+>                                               {---------------------------------------}  `AndI`
+>                                               ( A `And` C)) 
+>                                               {------------} `AndEL` 
+>                                                     A)) 
+>              {--------------------------------------}`OrE`  
+>                      A)
+>              {-------------}`OrIL` 
+>              ( A  `Or` B))
+>          ,
+>            ((
+>              (
+>                Assume( A  `Or` ( B `And` C) ), Assume A,(( (Assume A,( (Assume( B `And` C)) 
+>                                                                       {----------}`AndER`
+>                                                                           C)) 
+>                                                        {---------------------------}`AndI` 
+>                                                       ( A `And` C))
+>                                                        {-----------} `AndEL`  
+>                                                              A))
+>                {-----------------------------------------}`OrE`
+>                          A) 
+>                 {-------------}`OrIL`
+>                  ( A  `Or`  C)))
+>            {------------------------------} `AndI`
+>             ((A `Or` B)  `And`  (A `Or` C))
+
+
+>cp38 = check_proof e38 p38
