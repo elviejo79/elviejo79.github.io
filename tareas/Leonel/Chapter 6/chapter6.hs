@@ -1,22 +1,3 @@
---------------Exercise 1-------------------------
-
-
-1True  = El autobus va al aeropuerto.
-1False = El siguiente autobus va al aeropuerto.
-2True  = La computadora Bob no dice la verdad
-2False = La computadora Bob dice la verdad
-
-
-|   1   |   2   | Respuesta |
-|-------+-------+-----------|
-| True  | True  | True      |
-| True  | False | False     |
-| False | True  | True      |
-| False | False | False     |
-   
-
-
-
 --------------Exercise 2-------------------------
 
 (a) False /\ True
@@ -86,7 +67,7 @@
 | F | T | F         | T               |
 | F | F | F         | F               |
 
-- No es tautología
+- No es tautologÃ­a
 
 
 (b) (P \/ Q) -> (P /\ Q)
@@ -97,7 +78,7 @@
 | T | F | T       | F         | F                   |
 | F | T | T       | F         | F                   |
 | F | F | F       | F         | T                   |
-- No es tautología
+- No es tautologÃ­a
 
 
 
@@ -109,7 +90,7 @@
 | T | F | F        | T        | T                    |
 | F | T | F        | T        | T                    |
 | F | F | F        | F        | T                    |
-- Si es tautología
+- Si es tautologÃ­a
 
 
 (d) (P \/ Q) -> (Q \/ P)
@@ -119,7 +100,7 @@
 | T | F | T        | T        | T                    |
 | F | T | T        | T        | T                    |
 | F | F | F        | F        | T                    |
-- Si es tautología
+- Si es tautologÃ­a
 
 
 
@@ -136,7 +117,7 @@
 | T | F | T | T      | T      | T                      | T        | T               | T                                          |
 | T | T | F | T      | T      | T                      | T        | T               | T                                          |
 | T | T | T | T      | T      | T                      | T        | T               | T                                          |
--Es satisfacible pero no es tautología
+-Es satisfacible pero no es tautologÃ­a
 
 
 
@@ -155,7 +136,7 @@ P \/ Q /\ (P \/ R) <-> P /\ (Q \/ R)
 | T | F | T | T      | T      | T                      | T        | T               | T                                          |
 | T | T | F | T      | T      | T                      | T        | T               | T                                          |
 | T | T | T | T      | T      | T                      | T        | T               | T                                          |
--Es satisfacible pero no es tautología
+-Es satisfacible pero no es tautologÃ­a
 
 
 
@@ -172,7 +153,7 @@ P \/ Q /\ (P \/ R) <-> P /\ (Q \/ R)
 | T | F | T        | F       | T                         | F         | T           | T                                        |
 | F | T | F        | T       | T                         | F         | T           | T                                        |
 | F | F | F        | F       | F                         | T         | F           | T                                        |
-- Si es Tautología
+- Si es TautologÃ­a
 
 
 
@@ -186,7 +167,7 @@ P \/ Q /\ (P \/ R) <-> P /\ (Q \/ R)
 | T | F | T  | F    | T       |  F                 |
 | F | T | F  | T    | T       |  T                 |
 | F | F | T  | T    | T       |  T                 |
-- Es satisfacible pero no es tautología
+- Es satisfacible pero no es tautologÃ­a
 
 
 
@@ -199,7 +180,7 @@ P \/ Q /\ (P \/ R) <-> P /\ (Q \/ R)
 | T | F | F  | F    | T        | F                   |
 | F | T | T  | T    | T        | T                   |
 | F | F | T  | T    | F        | F                   |
-- Es satisfacible pero no es tautología
+- Es satisfacible pero no es tautologÃ­a
 
 
 
@@ -215,7 +196,7 @@ P \/ Q /\ (P \/ R) <-> P /\ (Q \/ R)
 | T | F | F   | T  | F    |  F         | T                   |  
 | F | T | T   | F  | T    |  T         | T                   |
 | F | F | T   | T  | T    |  T         | T                   |
-- Si es tautología
+- Si es tautologÃ­a
 
 
 
@@ -231,24 +212,6 @@ P \/ Q /\ (P \/ R) <-> P /\ (Q \/ R)
 R   Q /\ R
 ----------- {/\I}
   P /\ (Q/\R)
-
-
-
-
---------------Exercise 11-------------------------
--Consider the following two propositions:
-x = A /\ (B /\ (C /\ D))
-y = (A /\ B) /\ (C /\ D)
-Describe the shapes of the proofs for x and y, Assuming A, B, C, and
-D. Suppose each proposition has 2n propositional variables. What then
-would be the heights of the proof trees?
-
----La prueba de y sera una forma simetrica, pero la prueba de x será triangular,
-con más inferencia en el lado derecho que en el lado izquierdo. En el caso
-general, la prueba de x con 2 a la n variables tendrá peso de 2 a la n, porque
-cada variable extra requerirá una inferencia sobre lo demás. En contraste,
-la prueba de y con 2 a la n variables tendrá un peso de n.
-
 
 
 
@@ -455,34 +418,20 @@ A->B, Not B |- Not A
 
 
 
+>theorem35 = Theorem [P,Q] (P `And` Q)
 
+>prooft35 = (Assume P, Assume Q)
+>           {-----------------}`AndI`
+>		(P `And` Q)
+>cpt35 = check_proof theorem35 prooft35
 
-
------------------Exercise 36-----------------------
-B \/ (Not B), A -> B |- (Not A) \/ B
-
->e36 =  [( B  `Or` (Not B)), ( A `Imp` B), A ]  `Theorem` ( (Not A) `Or` B)
-
->p36= (( Assume( B  `Or` (Not B)),
->            ( (Assume B) `ID` B),
->            (((((Assume A, Assume( A `Imp` B)) 
->                 {---------------------} `ImpE`
->                B), (Assume( B  `Imp` FALSE)))
->                {---------------} `ImpE`
->               FALSE)
->              {-------------} `CTR`
->            B))
->           {-----------}`OrE` 
->            B)
->           {-------------}`OrIR`
->          ( (Not A) `Or` B)
-
->cp36 = check_proof e36 p36
-
-
-
-
-
+>t37 = [P,Q,R] `Theorem` ((P `And` Q) `And` R)
+>prooft37 = ((Assume P, Assume Q)
+>	    {-------------------} `AndI`
+>	       (P `And` Q), Assume R)
+>	    {---------------------------} `AndI`
+>	    	((P `And` Q) `And` R)
+>cpt37 = check_proof t37 prooft37			  
 
 
 
@@ -510,35 +459,16 @@ B \/ (Not B), A -> B |- (Not A) \/ B
 A \/ (B /\ C) |- (A \/ B) /\ (A \/ C) [Note: \/ distributes over /.]
 
 
->e38 =  [ A  `Or` ( B  `And` C), A]  `Theorem`  (And (Or A B) (Or A C))
+>e38=[(A `Or` (B `And` C) )] `Theorem` (A `And` B)
 
->p38 = ((((Assume( A  `Or` ( B `And` C)),  Assume A, (( (Assume A,( (Assume( B  `And`  C))  
->                                                                        {--------------------}`AndER` 
->                                                                                  C))
->                                               {---------------------------------------}  `AndI`
->                                               ( A `And` C)) 
->                                               {------------} `AndEL` 
->                                                     A)) 
->              {--------------------------------------}`OrE`  
->                      A)
->              {-------------}`OrIL` 
->              ( A  `Or` B))
->          ,
->            ((
->              (
->                Assume( A  `Or` ( B `And` C) ), Assume A,(( (Assume A,( (Assume( B `And` C)) 
->                                                                       {----------}`AndER`
->                                                                           C)) 
->                                                        {---------------------------}`AndI` 
->                                                       ( A `And` C))
->                                                        {-----------} `AndEL`  
->                                                              A))
->                {-----------------------------------------}`OrE`
->                          A) 
->                 {-------------}`OrIL`
->                  ( A  `Or`  C)))
->            {------------------------------} `AndI`
->             ((A `Or` B)  `And`  (A `Or` C))
-
-
->cp38 = check_proof e38 p38
+>p38=(((Assume (A `Or` (B `And` C) ))
+>    {-------------------}  `AndEL`
+>	     A ),
+>    (Assume (A `Or` (B `And` C))
+>    {-------------------}   `AndER`
+>	    (B `And` C)
+>	{-------------------}  `AndER`
+>	             B))
+>	{-------------------}   `AndI`
+>	   (A `And` B)
+>cp38=check_proof e38 p38
