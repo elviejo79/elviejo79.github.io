@@ -1,1 +1,0 @@
-data Moneda = Centavo Integer | Toston Integer | Peso Integer deriving (Eq, Show)

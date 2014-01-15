@@ -527,7 +527,16 @@ A /\ (Not A)  |-  False
 
 {% highlight haskell %}
 
-if there is code as part of the problem write it here
+> e32 = [(A `And` (Not A))] `Theorem` (FALSE)
+> p32 = ((Assume (A `And` (Not A))
+>       {-----------------------} `AndEL`
+>           A),
+>               (Assume (A `And` (Not A))
+>       {------------ss-----------------} `AndER`
+>                 (Not A)))
+>       {--------------------------------} `ImpE`
+>               FALSE
+> cp32 = check_proof e32 p32
 
 {% endhighlight %}
 

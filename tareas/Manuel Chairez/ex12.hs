@@ -1,1 +1,0 @@
-data Universal = BOOL Bool | INT Integer | CHAR Char deriving (Eq, Show)
