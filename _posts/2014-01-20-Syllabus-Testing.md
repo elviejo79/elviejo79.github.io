@@ -12,11 +12,17 @@ Software Testing (Validación y Verificación) Jan-May 2014
 *Email:* agarciafdz@cimat.mx
 *Learning Objectives:* Students should be able to lead the implementation a continuous delivery practice at small to medium size software company.
 *Reference Books*:
-- Whittaker JA, Arbon J, Carollo J. How Google Tests Software. Addison-Wesley Professional; 2012.
-- Humble J, Farley D. Continuous Delivery, Reliable Software Releases through Build, Test, and Deployment Automation. Pearson Education; 2010.
-- Duvall PM, Matyas S, Glover A. Continuous Integration, Improving Software Quality and Reducing Risk. Pearson Education; 2007.
-- Beck K. Test-driven Development, By Example. Addison-Wesley Professional; 2003.
-- Gärtner M. ATDD by Example, A Practical Guide to Acceptance Test-Driven Development. Addison-Wesley; 2012.
+
+ - Whittaker JA, Arbon J, Carollo J. How Google Tests Software. Addison-Wesley Professional; 2012.
+
+ - Humble J, Farley D. Continuous Delivery, Reliable Software Releases through Build, Test, and Deployment Automation. Pearson Education; 2010.
+
+ - Duvall PM, Matyas S, Glover A. Continuous Integration, Improving Software Quality and Reducing Risk. Pearson Education; 2007.
+
+ - Beck K. Test-driven Development, By Example. Addison-Wesley Professional; 2003.
+
+ - Gärtner M. ATDD by Example, A Practical Guide to Acceptance Test-Driven Development. Addison-Wesley; 2012.
+
 
 *Preparations*
 Students are expected to study the material before class.
@@ -24,8 +30,8 @@ Students will do at least 100 unit tests before the end of the class.
 
 Grading
 -------
-Final Project Developed using TDD 40%
-Homeworks 60%
+Final Project Developed using TDD 30%
+Homeworks 70%
 
 
 Calendar
