@@ -12,14 +12,8 @@
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
-####+HTML_HEAD: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css" type="text/css" />
-
-
-
-* After actually written a tutorial
-  On my previous post I was trying to decide how to write a tutorial, that showed the evolution of the code.
+On my previous post I was trying to decide how to write a tutorial, that showed the evolution of the code.
 
   I wanted to be:
   - as close as possible to literate programming
