@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://elviejo79.github.io/rss.xml"
+      title="RSS feed for https://elviejo79.github.io/"/>
+<title>Actually writing a programming tutorial</title>
+<meta name="author" content="Alejandro Garcia">
+<meta name="referrer" content="no-referrer">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="static/favicon.ico"></head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+  <a href="https://elviejo79.github.io/">Elviejos blog</a>
+</div></div>
+<div id="content">
+<div class="post-date">25 dic 2019</div><h1 class="post-title"><a href="https://elviejo79.github.io/2020-01-04-actually-writing-the-tutorial.html">Actually writing a programming tutorial</a></h1>
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc84f190">1. After actually written a tutorial</a></li>
+</ul>
+</div>
+</nav>
+<p>
+####+HTML<sub>HEAD</sub>: &lt;link rel="stylesheet" href="<a href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css">https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css</a>" type="text/css" /&gt;
+</p>
+
+
+
+<div id="outline-container-orgc84f190" class="outline-2">
+<h2 id="orgc84f190"><span class="section-number-2">1</span> After actually written a tutorial</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+On my previous post I was trying to decide how to write a tutorial, that showed the evolution of the code.
+</p>
+
+<p>
+I wanted to be:
+</p>
+<ul class="org-ul">
+<li>as close as possible to literate programming</li>
+<li>to be abele to show changes in the code, the lines that I deletede and added</li>
+<li>and to be able to change it.</li>
+</ul>
+
+<p>
+In the end the workflow that I setteld on was:
+</p>
+
+<ol class="org-ol">
+<li>Use stg init (to use git commits a stack)</li>
+<li>Do</li>
+</ol>
+<p>
+1.1 Write a couple of lines in a file
+1.2 Commit with a heading written in Markdown
+1.3 stg refresh
+</p>
+<ol class="org-ol">
+<li>while still have something to say</li>
+<li>Reorder commits (or patches as they are called in stgit) until you have a logical order</li>
+<li>Export the series of commits to markdown tutotiarl with git-tutorial.</li>
+<li>Edit the exported markdown tutorial.</li>
+<li>convert to html</li>
+</ol>
+
+<p>
+The process was very slow, because of lack of familiarity wit the tools.
+But I did finish a pretty simple tutorial.
+</p>
+
+<p>
+I'm not sure that the benefits outweight the costs.
+</p>
+
+<p>
+but definitively, where not yet there.
+</p>
+
+<p>
+I would want somethnig that generates a literate program, like org-mode tangle.
+BUT that is aware of changes in the code repository.
+</p>
+
+<p>
+Because that gives times.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><div id="archive">
+  <a href="https://staticblog.org/archive.html">Other posts</a>
+</div>
+<center><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" href="https://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">elviejo79.github.io</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://elviejo79.github.io" property="cc:attributionName" rel="cc:attributionURL">Alejandro Garcia</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center></div>
+</body>
+</html>

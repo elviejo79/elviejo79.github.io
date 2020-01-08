@@ -4,7 +4,88 @@
 <title><![CDATA[My Static Org Blog]]></title>
 <description><![CDATA[My Static Org Blog]]></description>
 <link>https://elviejo79.github.io/</link>
-<lastBuildDate>mar, 31 dic 2019 18:34:31 -0600</lastBuildDate>
+<lastBuildDate>mar, 07 ene 2020 13:39:17 -0600</lastBuildDate>
+<item>
+  <title><![CDATA[Actually writing a programming tutorial]]></title>
+  <description><![CDATA[
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgfb897c3">1. After actually written a tutorial</a></li>
+</ul>
+</div>
+</nav>
+<p>
+####+HTML<sub>HEAD</sub>: &lt;link rel="stylesheet" href="<a href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css">https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css</a>" type="text/css" /&gt;
+</p>
+
+
+
+<div id="outline-container-orgfb897c3" class="outline-2">
+<h2 id="orgfb897c3"><span class="section-number-2">1</span> After actually written a tutorial</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+On my previous post I was trying to decide how to write a tutorial, that showed the evolution of the code.
+</p>
+
+<p>
+I wanted to be:
+</p>
+<ul class="org-ul">
+<li>as close as possible to literate programming</li>
+<li>to be abele to show changes in the code, the lines that I deletede and added</li>
+<li>and to be able to change it.</li>
+</ul>
+
+<p>
+In the end the workflow that I setteld on was:
+</p>
+
+<ol class="org-ol">
+<li>Use stg init (to use git commits a stack)</li>
+<li>Do</li>
+</ol>
+<p>
+1.1 Write a couple of lines in a file
+1.2 Commit with a heading written in Markdown
+1.3 stg refresh
+</p>
+<ol class="org-ol">
+<li>while still have something to say</li>
+<li>Reorder commits (or patches as they are called in stgit) until you have a logical order</li>
+<li>Export the series of commits to markdown tutotiarl with git-tutorial.</li>
+<li>Edit the exported markdown tutorial.</li>
+<li>convert to html</li>
+</ol>
+
+<p>
+The process was very slow, because of lack of familiarity wit the tools.
+But I did finish a pretty simple tutorial.
+</p>
+
+<p>
+I'm not sure that the benefits outweight the costs.
+</p>
+
+<p>
+but definitively, where not yet there.
+</p>
+
+<p>
+I would want somethnig that generates a literate program, like org-mode tangle.
+BUT that is aware of changes in the code repository.
+</p>
+
+<p>
+Because that gives times.
+</p>
+</div>
+</div>
+]]></description>
+  <link>https://elviejo79.github.io/2020-01-04-actually-writing-the-tutorial.html</link>
+  <pubDate>mié, 25 dic 2019 18:00:00 -0600</pubDate>
+</item>
 <item>
   <title><![CDATA[writing programming tutorials]]></title>
   <description><![CDATA[
@@ -12,30 +93,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org81c52c5">1. Deep dive into tutorial writing</a>
+<li><a href="#org67e4172">1. Deep dive into tutorial writing</a>
 <ul>
-<li><a href="#orgbe4332d">1.1. Emacs with org-babel</a>
+<li><a href="#org1cd84c0">1.1. Emacs with org-babel</a>
 <ul>
-<li><a href="#orgbbf1be1">1.1.1. write in several languages</a></li>
-<li><a href="#org8cfe062">1.1.2. progressive writing</a></li>
-<li><a href="#org9f80884">1.1.3. drawback</a></li>
+<li><a href="#org730bab2">1.1.1. write in several languages</a></li>
+<li><a href="#org8909f1f">1.1.2. progressive writing</a></li>
+<li><a href="#org1709252">1.1.3. drawback</a></li>
 </ul>
 </li>
-<li><a href="#org4b61ede">1.2. Gitorial</a>
+<li><a href="#org2e0e1ce">1.2. Gitorial</a>
 <ul>
-<li><a href="#orgac7f00a">1.2.1. GitChapter</a></li>
-<li><a href="#org25d06e2">1.2.2. Git-tutor</a></li>
-<li><a href="#orgf7c45f8">1.2.3. Leg</a></li>
-<li><a href="#org828574b">1.2.4. Gitorial.com</a></li>
-<li><a href="#orgbe251c5">1.2.5. HelloGit</a></li>
-<li><a href="#org97f4913">1.2.6. Kondiment</a></li>
-<li><a href="#orgb5273fb">1.2.7. meteor-tutorial-tools</a></li>
+<li><a href="#org4a488ab">1.2.1. GitChapter</a></li>
+<li><a href="#org4531f41">1.2.2. Git-tutor</a></li>
+<li><a href="#org552111e">1.2.3. Leg</a></li>
+<li><a href="#orge304d4b">1.2.4. Gitorial.com</a></li>
+<li><a href="#org3ace6e2">1.2.5. HelloGit</a></li>
+<li><a href="#org19482e3">1.2.6. Kondiment</a></li>
+<li><a href="#org0b8e707">1.2.7. meteor-tutorial-tools</a></li>
 </ul>
 </li>
-<li><a href="#orgbb62baa">1.3. the key: stgit</a></li>
-<li><a href="#org91a9b45">1.4. back to were we started.</a>
+<li><a href="#org35aed5f">1.3. the key: stgit</a></li>
+<li><a href="#orgaa8bc3c">1.4. back to were we started.</a>
 <ul>
-<li><a href="#orgeb73260">1.4.1. alternative process, using even more emacs.</a></li>
+<li><a href="#org71f0fbe">1.4.1. alternative process, using even more emacs.</a></li>
 </ul>
 </li>
 </ul>
@@ -44,12 +125,12 @@
 </div>
 </nav>
 
-<div id="outline-container-org81c52c5" class="outline-2">
-<h2 id="org81c52c5"><span class="section-number-2">1</span> Deep dive into tutorial writing</h2>
+<div id="outline-container-org67e4172" class="outline-2">
+<h2 id="org67e4172"><span class="section-number-2">1</span> Deep dive into tutorial writing</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgbe4332d" class="outline-3">
-<h3 id="orgbe4332d"><span class="section-number-3">1.1</span> Emacs with org-babel</h3>
+<div id="outline-container-org1cd84c0" class="outline-3">
+<h3 id="org1cd84c0"><span class="section-number-3">1.1</span> Emacs with org-babel</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 I started this adventure with the only software thath I love&#x2026; emacs with org-mode.
@@ -57,8 +138,8 @@ It's advantages are many but for my purpose the main ones are that.
 </p>
 </div>
 
-<div id="outline-container-orgbbf1be1" class="outline-4">
-<h4 id="orgbbf1be1"><span class="section-number-4">1.1.1</span> write in several languages</h4>
+<div id="outline-container-org730bab2" class="outline-4">
+<h4 id="org730bab2"><span class="section-number-4">1.1.1</span> write in several languages</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 I could write in <code>shell</code> so that I can show what commands the student needs to type in the command line.
@@ -67,8 +148,8 @@ this helps with compiling commands, mkdir, git, etc.
 </div>
 </div>
 
-<div id="outline-container-org8cfe062" class="outline-4">
-<h4 id="org8cfe062"><span class="section-number-4">1.1.2</span> progressive writing</h4>
+<div id="outline-container-org8909f1f" class="outline-4">
+<h4 id="org8909f1f"><span class="section-number-4">1.1.2</span> progressive writing</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 it makes literate programming possible if not eassy.
@@ -78,8 +159,8 @@ however it's biggest drawback was that
 </div>
 </div>
 
-<div id="outline-container-org9f80884" class="outline-4">
-<h4 id="org9f80884"><span class="section-number-4">1.1.3</span> drawback</h4>
+<div id="outline-container-org1709252" class="outline-4">
+<h4 id="org1709252"><span class="section-number-4">1.1.3</span> drawback</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 you cannot modify a line of a tangled file. so the code that you write should be in it's final version.
@@ -89,8 +170,8 @@ probably there is a way to go over this problem but I couldn't find it.
 </div>
 </div>
 
-<div id="outline-container-org4b61ede" class="outline-3">
-<h3 id="org4b61ede"><span class="section-number-3">1.2</span> Gitorial</h3>
+<div id="outline-container-org2e0e1ce" class="outline-3">
+<h3 id="org2e0e1ce"><span class="section-number-3">1.2</span> Gitorial</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 then I went down the rabbit hole of tutorials based on git commits. where each commit has a litle bit of the evolution of the code and then you export that change history as the tutorial itself.
@@ -104,8 +185,8 @@ the key with this kind of tutorials are:
 
 
 
-<div id="outline-container-orgac7f00a" class="outline-4">
-<h4 id="orgac7f00a"><span class="section-number-4">1.2.1</span> GitChapter</h4>
+<div id="outline-container-org4a488ab" class="outline-4">
+<h4 id="org4a488ab"><span class="section-number-4">1.2.1</span> GitChapter</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 this tool helps with writing it acnowledges that writin the tutorial and the commits to get there are different things. also one chapter can reference multiple commits.
@@ -113,7 +194,7 @@ this tool helps with writing it acnowledges that writin the tutorial and the com
 </div>
 
 <ol class="org-ol">
-<li><a id="orgbcbcacd"></a>drawbacks<br>
+<li><a id="org6dca9ff"></a>drawbacks<br>
 <div class="outline-text-5" id="text-1-2-1-1">
 <p>
 the same problem as with all of this. you have to have a good organized commit history.
@@ -121,7 +202,7 @@ the same problem as with all of this. you have to have a good organized commit h
 </div>
 
 <ol class="org-ol">
-<li><a id="orgaf072d1"></a>I don't like the format that uses for the chapters.<br>
+<li><a id="org9926094"></a>I don't like the format that uses for the chapters.<br>
 <div class="outline-text-6" id="text-1-2-1-1-1">
 <p>
 it's not markdown or emacs&#x2026; looks a little bit like latex
@@ -129,7 +210,7 @@ it's not markdown or emacs&#x2026; looks a little bit like latex
 </div>
 </li>
 
-<li><a id="org32d4b65"></a>I don't like how it dispplays the hash of the commit messages<br>
+<li><a id="org535c964"></a>I don't like how it dispplays the hash of the commit messages<br>
 <div class="outline-text-6" id="text-1-2-1-1-2">
 <p>
 I would prefer if it was just links to the commit on github.
@@ -137,16 +218,16 @@ I would prefer if it was just links to the commit on github.
 </div>
 </li>
 
-<li><a id="org744a144"></a>I don't understand how it associates each chapter with the commits related to that chapter.<br></li>
+<li><a id="org4f5b616"></a>I don't understand how it associates each chapter with the commits related to that chapter.<br></li>
 
-<li><a id="orgcd3dfa4"></a>It's optimized to work with haskell and ghci<br></li>
+<li><a id="org6af6c3a"></a>It's optimized to work with haskell and ghci<br></li>
 </ol>
 </li>
 </ol>
 </div>
 
-<div id="outline-container-org25d06e2" class="outline-4">
-<h4 id="org25d06e2"><span class="section-number-4">1.2.2</span> Git-tutor</h4>
+<div id="outline-container-org4531f41" class="outline-4">
+<h4 id="org4531f41"><span class="section-number-4">1.2.2</span> Git-tutor</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 git tutor takes the diff history of the commit hooks. It displays each commit code with the deleted lines and the added lines per commit.
@@ -155,7 +236,7 @@ this is important to the evolution of code.
 </div>
 
 <ol class="org-ol">
-<li><a id="org7da7656"></a>drawbacks<br>
+<li><a id="orgfb95fbb"></a>drawbacks<br>
 <div class="outline-text-5" id="text-1-2-2-1">
 <p>
 compared with GitChapter, it doesn't show each commit hash so that I could look at the of the whole repository at that stage.
@@ -165,8 +246,8 @@ compared with GitChapter, it doesn't show each commit hash so that I could look 
 </ol>
 </div>
 
-<div id="outline-container-orgf7c45f8" class="outline-4">
-<h4 id="orgf7c45f8"><span class="section-number-4">1.2.3</span> Leg</h4>
+<div id="outline-container-org552111e" class="outline-4">
+<h4 id="org552111e"><span class="section-number-4">1.2.3</span> Leg</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 This is allows separation of writing and commits. generates a markdown of all the history and then you can modify the article generated.
@@ -175,7 +256,7 @@ it's the idea that got me in this road.
 </div>
 
 <ol class="org-ol">
-<li><a id="org3d5c866"></a>drawbacks<br>
+<li><a id="org60afcf9"></a>drawbacks<br>
 <div class="outline-text-5" id="text-1-2-3-1">
 <p>
 when I try to use it, it only works one time and then it throws errors on the next attempts.
@@ -186,8 +267,8 @@ it's written in ruby. I would prefer something compiled like: haskell, rust, go.
 </ol>
 </div>
 
-<div id="outline-container-org828574b" class="outline-4">
-<h4 id="org828574b"><span class="section-number-4">1.2.4</span> Gitorial.com</h4>
+<div id="outline-container-orge304d4b" class="outline-4">
+<h4 id="orge304d4b"><span class="section-number-4">1.2.4</span> Gitorial.com</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 it was an app in java plus a websit that would replay your history of git commmits. the website is no longer available.
@@ -196,8 +277,8 @@ it was an app in java plus a websit that would replay your history of git commmi
 </div>
 </div>
 
-<div id="outline-container-orgbe251c5" class="outline-4">
-<h4 id="orgbe251c5"><span class="section-number-4">1.2.5</span> HelloGit</h4>
+<div id="outline-container-org3ace6e2" class="outline-4">
+<h4 id="org3ace6e2"><span class="section-number-4">1.2.5</span> HelloGit</h4>
 <div class="outline-text-4" id="text-1-2-5">
 <p>
 same idea it suggests to use the tig program to navigate through history.
@@ -207,8 +288,8 @@ looks well in command line.
 </div>
 
 
-<div id="outline-container-org97f4913" class="outline-4">
-<h4 id="org97f4913"><span class="section-number-4">1.2.6</span> Kondiment</h4>
+<div id="outline-container-org19482e3" class="outline-4">
+<h4 id="org19482e3"><span class="section-number-4">1.2.6</span> Kondiment</h4>
 <div class="outline-text-4" id="text-1-2-6">
 <p>
 has the nicest output of all, the tuorial is html5 and the default CSS looks a little bit like read the docs.
@@ -219,8 +300,8 @@ and this problem is bigger with Kondiment because the ouput is already html5&#x2
 </div>
 </div>
 
-<div id="outline-container-orgb5273fb" class="outline-4">
-<h4 id="orgb5273fb"><span class="section-number-4">1.2.7</span> meteor-tutorial-tools</h4>
+<div id="outline-container-org0b8e707" class="outline-4">
+<h4 id="org0b8e707"><span class="section-number-4">1.2.7</span> meteor-tutorial-tools</h4>
 <div class="outline-text-4" id="text-1-2-7">
 <p>
 this is a set of tools that parse a git patch and shows them as tutorials.
@@ -231,8 +312,8 @@ it's strogest selling point is that the website meteor.coml/tutorials is written
 </div>
 </div>
 
-<div id="outline-container-orgbb62baa" class="outline-3">
-<h3 id="orgbb62baa"><span class="section-number-3">1.3</span> the key: stgit</h3>
+<div id="outline-container-org35aed5f" class="outline-3">
+<h3 id="org35aed5f"><span class="section-number-3">1.3</span> the key: stgit</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -244,8 +325,8 @@ I made one seven years ago. I used stgit to make jumping back and forth in histo
 </div>
 </div>
 
-<div id="outline-container-org91a9b45" class="outline-3">
-<h3 id="org91a9b45"><span class="section-number-3">1.4</span> back to were we started.</h3>
+<div id="outline-container-orgaa8bc3c" class="outline-3">
+<h3 id="orgaa8bc3c"><span class="section-number-3">1.4</span> back to were we started.</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 now it seems there is a <code>begig_src diff</code> block that can present diff in a nice way.
@@ -261,8 +342,8 @@ so I could.
 </ul>
 </div>
 
-<div id="outline-container-orgeb73260" class="outline-4">
-<h4 id="orgeb73260"><span class="section-number-4">1.4.1</span> alternative process, using even more emacs.</h4>
+<div id="outline-container-org71f0fbe" class="outline-4">
+<h4 id="org71f0fbe"><span class="section-number-4">1.4.1</span> alternative process, using even more emacs.</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>write my code in emacs</li>

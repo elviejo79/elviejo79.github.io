@@ -1,0 +1,52 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Actually writing a programming tutorial
+#+DATE: <2019-12-26 jue>
+#+filetags:
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+####+HTML_HEAD: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.7.2/tufte.min.css" type="text/css" />
+
+
+
+* After actually written a tutorial
+  On my previous post I was trying to decide how to write a tutorial, that showed the evolution of the code.
+
+  I wanted to be:
+  - as close as possible to literate programming
+  - to be abele to show changes in the code, the lines that I deletede and added
+  - and to be able to change it.
+
+In the end the workflow that I setteld on was:
+
+1. Use stg init (to use git commits a stack)
+1. Do
+1.1 Write a couple of lines in a file
+1.2 Commit with a heading written in Markdown
+1.3 stg refresh
+4. while still have something to say
+5. Reorder commits (or patches as they are called in stgit) until you have a logical order
+5. Export the series of commits to markdown tutotiarl with git-tutorial.
+6. Edit the exported markdown tutorial.
+7. convert to html
+
+The process was very slow, because of lack of familiarity wit the tools.
+But I did finish a pretty simple tutorial.
+
+I'm not sure that the benefits outweight the costs.
+
+but definitively, where not yet there.
+
+I would want somethnig that generates a literate program, like org-mode tangle.
+BUT that is aware of changes in the code repository.
+
+Because that gives times.
