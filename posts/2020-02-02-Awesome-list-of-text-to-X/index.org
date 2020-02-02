@@ -1,0 +1,652 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: awesome-text-to-x
+#+DATE: <2020-02-01 sáb>
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: awesome
+
+#+HTML:<div align=center>
+
+* Awesome Text-To-X
+
+
+#+HTML:</div>
+
+Welcome to Awesome Text To X. A community driven list of programs that transform Text files to multimedia representations.
+In a general case every compiler takes a text representation and translates into another representation.
+so it's difficul to draw a line here.
+
+
+
+** Text to BPMN
+
+*** [[https://www.bpmn-sketch-miner.ai/][BPMN Sketch Miner]] Text to BPMN Diagrams
+    :PROPERTIES:
+    :ID:       83f3462a-cc17-4105-8c62-babbbab92542
+    :END:
+
+#+BEGIN_EXAMPLE
+Employee:
+
+Fill in the form
+Mark the bills
+Scan the bills
+(send the dossier)
+(receive decision)
+
+Department Head:
+
+(receive the dossier)
+Check the costs|Check the description
+Reject the request
+(send decision)
+
+...
+Check the costs|Check the description
+Accept the request
+(send decision)
+#+END_EXAMPLE
+
+
+[[file:data/83/f3462a-cc17-4105-8c62-babbbab92542/bpmn-sketch-miner.png]]
+
+
+
+
+
+
+* Text to UML
+
+** [[https://plantuml.com/][plantuml.com]]
+
+*** Sequence Diagram
+    :PROPERTIES:
+    :ID:       d19f2fa5-c850-4c8e-9408-28f9c9cb6c99
+    :END:
+    #+BEGIN_EXAMPLE
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+@enduml
+    #+END_EXAMPLE
+
+[[file:data/d1/9f2fa5-c850-4c8e-9408-28f9c9cb6c99/plantuml-sequence.png]]
+
+*** Component Diagram
+    :PROPERTIES:
+    :ID:       19b12fda-26f2-4e49-b747-74096207fa64
+    :END:
+#+BEGIN_EXAMPLE
+@startuml
+
+skinparam component {
+    FontColor          black
+    AttributeFontColor black
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #6A9EFF
+    BorderColor        black
+    ArrowColor         #222266
+}
+
+title "OSCIED Charms Relations (Simple)"
+skinparam componentStyle uml2
+
+cloud {
+    interface "JuJu" as juju
+    interface "API" as api
+    interface "Storage" as storage
+    interface "Transform" as transform
+    interface "Publisher" as publisher
+    interface "Website" as website
+
+    juju - [JuJu]
+
+    website - [WebUI]
+    [WebUI] .up.> juju
+    [WebUI] .down.> storage
+    [WebUI] .right.> api
+
+    api - [Orchestra]
+    transform - [Orchestra]
+    publisher - [Orchestra]
+    [Orchestra] .up.> juju
+    [Orchestra] .down.> storage
+
+    [Transform] .up.> juju
+    [Transform] .down.> storage
+    [Transform] ..> transform
+
+    [Publisher] .up.> juju
+    [Publisher] .down.> storage
+    [Publisher] ..> publisher
+
+    storage - [Storage]
+    [Storage] .up.> juju
+}
+
+@enduml
+#+END_EXAMPLE
+
+[[file:data/19/b12fda-26f2-4e49-b747-74096207fa64/screenshot-20200202-114323.png]]
+
+*** Class Diagram
+    :PROPERTIES:
+    :ID:       d528f9da-b312-4586-be10-944f28ed0ef6
+    :END:
+
+#+BEGIN_EXAMPLE
+@startuml
+
+package util {
+
+class Spec {
+    + value
+    + index
+    --
+    filter(quants)
+    pattern()
+    sort()
+    get(quant)
+    has(quant)
+    ..
+    token(quant) : quant
+    version()
+    method()
+    type()
+    id()
+    source()
+    ..
+    add(spec,quant)
+    toString()
+}
+class "Spec.Map" {
+    + map: {}
+
+    + add(versionVector)
+    + covers(version)
+    + toString(trim)
+}
+
+class "(quant)" as qq {
+    +quant
+    +body
+    +bare
+    +ext
+}
+
+Spec .> qq
+
+}
+
+package model {
+
+interface Syncable {
+    - _lstn[]
+    - _id
+    - _version
+    - _host
+
+    + spec()
+    + version()
+    + deliver(spec,val,lstn)
+    + diff(base)
+    + apply(values)
+    + validateOrder()
+    + acl()
+    + validate()
+
+    + checkUplink()
+    + close()
+    + gc()
+    + log()
+
+    ~ init()
+    ~ default()
+    ~ err()
+
+    - emit(spec,val,src)
+    - on()
+    - reon()
+    - once()
+    - off()
+    - reoff()
+}
+
+class Model {
+    - _oplog
+
+    + diff()
+    + packState(state)
+    + unpackState(state)
+    + distillLog()
+    + pojo()
+    + fill()
+    + save()
+
+    ~ init()
+    # set()
+
+    - on()
+    - off()
+}
+
+class Set {
+    + get(key)
+    + add(key,spec)
+    + remove(key)
+    + fillAll()
+    + collection()
+}
+
+class Host {
+    + objects: {};
+    + lastTs;
+    + tsSeq;
+    + clockOffset;
+    + peers: {};
+
+    + connect(host)
+    + checkUplink(spec)
+
+    + version()
+    + deliver()
+    + availableUplinks(spec)
+    + get(spec)
+    + register(obj)
+    + unregister(obj)
+
+    - init()
+    - on()
+    - reon()
+    - off()
+    - reoff()
+}
+
+Model -up-|> Syncable
+Set -up|> Model
+Host -left|> Syncable
+
+}
+
+@enduml
+#+END_EXAMPLE
+
+[[file:data/d5/28f9da-b312-4586-be10-944f28ed0ef6/screenshot-20200202-114555.png]]
+
+
+*** More diagrams can be found in:
+  - https://real-world-plantuml.com/
+
+** [[https://mermaidjs.github.io/][mermaid.js]]
+
+*** Flowchart
+    :PROPERTIES:
+    :ATTACH_DIR: /home/agarciafdz/exp_before_floobits/blog/org/posts/2020-02-02/
+    :END:
+    #+BEGIN_EXAMPLE
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+    #+END_EXAMPLE
+
+
+[[file:2020-02-02/screenshot-20200202-115034.png]]
+
+
+*** Sequence diagram
+    :PROPERTIES:
+    :ATTACH_DIR: /home/agarciafdz/exp_before_floobits/blog/org/posts/2020-02-02/
+    :END:
+    #+BEGIN_EXAMPLE
+    sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+    #+END_EXAMPLE
+
+[[file:2020-02-02/screenshot-20200202-115156.png]]
+
+*** Gantt diagram
+    #+BEGIN_EXAMPLE
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+    #+END_EXAMPLE
+
+
+[[file:2020-02-02/gantt.png]]
+
+
+
+
+** [[https://yuml.me][yuml.me]]
+
+*** Class Diagram
+    #+BEGIN_EXAMPLE
+// Cool Class Diagram
+[Customer|-forname:string;surname:string|doShiz()]<>-orders*>[Order]
+[Order]++-0..*>[LineItem]
+[Order]-[note:Aggregate Root ala DDD{bg:wheat}]
+    #+END_EXAMPLE
+
+[[https://yuml.me/08fdfe82.png]]
+
+*** Activity Diagram
+#+BEGIN_EXAMPLE
+(start)-|a|
+|a|->(Grind Coffee)->(Pour Shot)->(Froth Milk)->(Pour Coffee)->|b|
+|a|->(Fry Eggs)->(Make Toast)->(Butter Toast)->|b|
+|b|-><c>[want another coffee]->(Grind Coffee)
+<c>[ready to go]->(end)
+#+END_EXAMPLE
+
+[[https://yuml.me/69f94f72.png]]
+
+*** Use cases
+#+BEGIN_EXAMPLE
+[Customer]-(Sign In)
+[Customer]-(Buy Products)
+(Buy Products)>(Browse Products)
+(Buy Products)>(Checkout)
+(Checkout)<(Add New Credit Card)
+(Checkout)
+[Office Staff]-(Processs Order)
+#+END_EXAMPLE
+
+[[https://yuml.me/a9d0a33f.png]]
+
+
+** [[https://www.websequencediagrams.com/][websequencediagrams.com]]
+   Just sequence diagrams
+
+   #+BEGIN_EXAMPLE
+title Authentication Sequence
+
+Alice->Bob: Authentication Request
+note right of Bob: Bob thinks about it
+Bob->Alice: Authentication Response
+   #+END_EXAMPLE
+
+[[file:2020-02-02/websequencediagarms.png]]
+
+
+
+** [[http://blockdiag.com][blockdiag.com]]
+
+*** [[http://blockdiag.com/en/blockdiag/index.html][Block Diagrams]]
+    #+BEGIN_EXAMPLE
+blockdiag {
+   A -> B -> C -> D;
+   A -> E -> F -> G;
+}
+    #+END_EXAMPLE
+
+[[file:2020-02-02/blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979.png]]
+
+
+*** [[http://blockdiag.com/en/seqdiag/index.html][Sequence Diagrams]],
+
+
+*** [[http://blockdiag.com/en/actdiag/index.html][Activity diagrams]],
+
+*** [[http://blockdiag.com/en/nwdiag/index.html][Network diagrams]].
+    #+BEGIN_EXAMPLE
+nwdiag {
+  network Sample_front {
+    address = "192.168.10.0/24";
+
+    // define group
+    group web {
+      web01 [address = ".1"];
+      web02 [address = ".2"];
+    }
+  }
+  network Sample_back {
+    address = "192.168.20.0/24";
+    web01 [address = ".1"];
+    web02 [address = ".2"];
+    db01 [address = ".101"];
+    db02 [address = ".102"];
+
+    // define network using defined nodes
+    group db {
+      db01;
+      db02;
+    }
+  }
+}
+    #+END_EXAMPLE
+
+[[file:2020-02-02/nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944.png]]
+
+
+** [[https://github.com/stathissideris/ditaa][ditaa]]
+   Convert diagrams drawn using ascii art (block diagrams) , into proper bitmap graphics.
+#+BEGIN_EXAMPLE
+    +--------+   +-------+    +-------+
+    |        | --+ ditaa +--> |       |
+    |  Text  |   +-------+    |diagram|
+    |Document|   |!magic!|    |       |
+    |     {d}|   |       |    |       |
+    +---+----+   +-------+    +-------+
+        :                         ^
+        |       Lots of work      |
+        +-------------------------+
+#+END_EXAMPLE
+
+[[file:2020-02-02/ditaa.png]]
+
+
+** [[https://graphviz.org/][graphviz.org]] Creates graphs (as in Edges and Vertex).
+   #+BEGIN_EXAMPLE
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3;
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+   #+END_EXAMPLE
+
+[[file:2020-02-02/graphviz_cluster.png]]
+
+*** finite state machine
+#+BEGIN_EXAMPLE
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
+	node [shape = circle];
+	LR_0 -> LR_2 [ label = "SS(B)" ];
+	LR_0 -> LR_1 [ label = "SS(S)" ];
+	LR_1 -> LR_3 [ label = "S($end)" ];
+	LR_2 -> LR_6 [ label = "SS(b)" ];
+	LR_2 -> LR_5 [ label = "SS(a)" ];
+	LR_2 -> LR_4 [ label = "S(A)" ];
+	LR_5 -> LR_7 [ label = "S(b)" ];
+	LR_5 -> LR_5 [ label = "S(a)" ];
+	LR_6 -> LR_6 [ label = "S(b)" ];
+	LR_6 -> LR_5 [ label = "S(a)" ];
+	LR_7 -> LR_8 [ label = "S(b)" ];
+	LR_7 -> LR_5 [ label = "S(a)" ];
+	LR_8 -> LR_6 [ label = "S(b)" ];
+	LR_8 -> LR_5 [ label = "S(a)" ];
+}
+#+END_EXAMPLE
+
+[[file:2020-02-02/graphviz_fsm.png]]
+
+
+*** Descendant and ancestor
+#+BEGIN_EXAMPLE
+
+graph G {
+I5 [shape=ellipse,color=red,style=bold,label="Caroline Bouvier Kennedy\nb. 27.11.1957 New York",image="images/165px-Caroline_Kennedy.jpg",labelloc=b];
+I1 [shape=box,color=blue,style=bold,label="John Fitzgerald Kennedy\nb. 29.5.1917 Brookline\nd. 22.11.1963 Dallas",image="images/kennedyface.jpg",labelloc=b];
+I6 [shape=box,color=blue,style=bold,label="John Fitzgerald Kennedy\nb. 25.11.1960 Washington\nd. 16.7.1999 over the Atlantic Ocean, near Aquinnah, MA, USA",image="images/180px-JFKJr2.jpg",labelloc=b];
+I7 [shape=box,color=blue,style=bold,label="Patrick Bouvier Kennedy\nb. 7.8.1963\nd. 9.8.1963"];
+I2 [shape=ellipse,color=red,style=bold,label="Jaqueline Lee Bouvier\nb. 28.7.1929 Southampton\nd. 19.5.1994 New York City",image="images/jacqueline-kennedy-onassis.jpg",labelloc=b];
+I8 [shape=box,color=blue,style=bold,label="Joseph Patrick Kennedy\nb. 6.9.1888 East Boston\nd. 16.11.1969 Hyannis Port",image="images/1025901671.jpg",labelloc=b];
+I10 [shape=box,color=blue,style=bold,label="Joseph Patrick Kennedy Jr\nb. 1915\nd. 1944"];
+I11 [shape=ellipse,color=red,style=bold,label="Rosemary Kennedy\nb. 13.9.1918\nd. 7.1.2005",image="images/rosemary.jpg",labelloc=b];
+I12 [shape=ellipse,color=red,style=bold,label="Kathleen Kennedy\nb. 1920\nd. 1948"];
+I13 [shape=ellipse,color=red,style=bold,label="Eunice Mary Kennedy\nb. 10.7.1921 Brookline"];
+I9 [shape=ellipse,color=red,style=bold,label="Rose Elizabeth Fitzgerald\nb. 22.7.1890 Boston\nd. 22.1.1995 Hyannis Port",image="images/Rose_kennedy.JPG",labelloc=b];
+I15 [shape=box,color=blue,style=bold,label="Aristotle Onassis"];
+I3 [shape=box,color=blue,style=bold,label="John Vernou Bouvier III\nb. 1891\nd. 1957",image="images/BE037819.jpg",labelloc=b];
+I4 [shape=ellipse,color=red,style=bold,label="Janet Norton Lee\nb. 2.10.1877\nd. 3.1.1968",image="images/n48862003257_1275276_1366.jpg",labelloc=b];
+ I1 -- I5  [style=bold,color=blue];
+ I1 -- I6  [style=bold,color=orange];
+ I2 -- I6  [style=bold,color=orange];
+ I1 -- I7  [style=bold,color=orange];
+ I2 -- I7  [style=bold,color=orange];
+ I1 -- I2  [style=bold,color=violet];
+ I8 -- I1  [style=bold,color=blue];
+ I8 -- I10  [style=bold,color=orange];
+ I9 -- I10  [style=bold,color=orange];
+ I8 -- I11  [style=bold,color=orange];
+ I9 -- I11  [style=bold,color=orange];
+ I8 -- I12  [style=bold,color=orange];
+ I9 -- I12  [style=bold,color=orange];
+ I8 -- I13  [style=bold,color=orange];
+ I9 -- I13  [style=bold,color=orange];
+ I8 -- I9  [style=bold,color=violet];
+ I9 -- I1  [style=bold,color=red];
+ I2 -- I5  [style=bold,color=red];
+ I2 -- I15  [style=bold,color=violet];
+ I3 -- I2  [style=bold,color=blue];
+ I3 -- I4  [style=bold,color=violet];
+ I4 -- I2  [style=bold,color=red];
+}
+#+END_EXAMPLE
+
+[[file:2020-02-02/kennedyanc.png]]
+
+
+
+** [[https://tobloef.com/text2mindmap/][Text2MindMap]]
+   :PROPERTIES:
+   :ATTACH_DIR: /home/agarciafdz/exp_before_floobits/blog/org/posts/2020-02-02/
+   :END:
+   creates a mind map out of indented text
+   #+BEGIN_EXAMPLE
+Text2MindMap
+	Turn tab-indented lists into mind maps
+		Press Tab to indent lines
+		Press Shift + Tab to unindent lines
+	Drag nodes to re-organize them
+	This project is based on the now dead site Text2MindMap.com
+   #+END_EXAMPLE
+
+[[file:2020-02-02/screenshot-20200202-122010.png]]
+
+
+* Text to 3D
+
+** [[https://www.openscad.org][openscad.org]]
+   Creates 3d models :: [[https://www.openscad.org/assets/img/screenshot.png]]
+   #+BEGIN_EXAMPLE
+// increase the visual detail
+$fn = 100;
+
+// the main body :
+// a cylinder
+rocket_d = 30; 				// 3 cm wide
+rocket_r = rocket_d / 2;
+rocket_h = 100; 			// 10 cm tall
+cylinder(d = rocket_d, h = rocket_h);
+
+// the head :
+// a cone
+head_d = 40;  				// 4 cm wide
+head_r = head_d / 2;
+head_h = 40;  				// 4 cm tall
+// prepare a triangle
+tri_base = head_r;
+tri_height = head_h;
+tri_points = [[0,			 0],
+			  [tri_base,	 0],
+			  [0,	tri_height]];
+// rotation around X-axis and then 360° around Z-axis
+// put it on top of rocket's body
+translate([0,0,rocket_h])
+rotate_extrude(angle = 360)
+	polygon(tri_points);
+
+// the wings :
+// 3x triangles
+wing_w = 2;					// 2 mm thick
+many = 3;					// 3x wings
+wing_l = 40;				// length
+wing_h = 40;				// height
+wing_points = [[0,0],[wing_l,0],[0,wing_h]];
+
+module wing() {
+	// let it a bit inside the main body
+	in_by = 1;				// 1 mm
+	// set it up on the rocket's perimeter
+	translate([rocket_r - in_by,0,0])
+	// set it upright by rotating around X-axis
+	rotate([90,0,0])
+	// set some width and center it
+	linear_extrude(height = wing_w,center = true)
+	// make a triangle
+		polygon(wing_points);
+}
+
+for (i = [0: many - 1])
+	rotate([0, 0, 360 / many * i])
+	wing();
+   #+END_EXAMPLE
+
+
+[[file:2020-02-02/openscad_rocket.png]]

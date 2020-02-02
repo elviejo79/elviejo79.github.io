@@ -1,0 +1,117 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Deep dive into tutorial writing
+#+DATE: <2019-12-26 jue>
+#+filetags:
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: metaturial, tutorial
+
+* Emacs with org-babel
+  I started this adventure with the only software thath I love... emacs with org-mode.
+  It's advantages are many but for my purpose the main ones are that.
+
+** write in several languages
+   I could write in =shell= so that I can show what commands the student needs to type in the command line.
+   this helps with compiling commands, mkdir, git, etc.
+
+** progressive writing
+   it makes literate programming possible if not eassy.
+   tangle of files allows one to write a program step by step. Just what you want in a tutorial.
+   however it's biggest drawback was that
+
+** drawback
+   you cannot modify a line of a tangled file. so the code that you write should be in it's final version.
+   probably there is a way to go over this problem but I couldn't find it.
+
+* Gitorial
+  then I went down the rabbit hole of tutorials based on git commits. where each commit has a litle bit of the evolution of the code and then you export that change history as the tutorial itself.
+  the key with this kind of tutorials are:
+  - the commit history must be in a logical format. which normally includes using =rebase= a lot. which isn't fun and
+  - each commit message should be formated as markdown so that when you export the tutorial it can be read in order.
+
+
+
+** GitChapter
+   this tool helps with writing it acnowledges that writin the tutorial and the commits to get there are different things. also one chapter can reference multiple commits.
+
+*** drawbacks
+    the same problem as with all of this. you have to have a good organized commit history.
+
+**** I don't like the format that uses for the chapters.
+     it's not markdown or emacs... looks a little bit like latex
+
+**** I don't like how it dispplays the hash of the commit messages
+     I would prefer if it was just links to the commit on github.
+
+**** I don't understand how it associates each chapter with the commits related to that chapter.
+
+**** It's optimized to work with haskell and ghci
+
+** Git-tutor
+   git tutor takes the diff history of the commit hooks. It displays each commit code with the deleted lines and the added lines per commit.
+   this is important to the evolution of code.
+
+*** drawbacks
+    compared with GitChapter, it doesn't show each commit hash so that I could look at the of the whole repository at that stage.
+
+** Leg
+   This is allows separation of writing and commits. generates a markdown of all the history and then you can modify the article generated.
+   it's the idea that got me in this road.
+
+*** drawbacks
+   when I try to use it, it only works one time and then it throws errors on the next attempts.
+   it's written in ruby. I would prefer something compiled like: haskell, rust, go.
+
+** Gitorial.com
+   it was an app in java plus a websit that would replay your history of git commmits. the website is no longer available.
+   [[https://news.ycombinator.com/item?id=14330635][gitorials announcement on hacker news]]
+
+** HelloGit
+   same idea it suggests to use the tig program to navigate through history.
+   looks well in command line.
+
+
+** Kondiment
+   has the nicest output of all, the tuorial is html5 and the default CSS looks a little bit like read the docs.
+   It uses the proper idea where the title of the commit is the heading of the step.
+   the problem is that there is no separation between writing the text of the tutorial and the commit steps.
+   and this problem is bigger with Kondiment because the ouput is already html5... not markdown so althought the output is pretty is not easily editable.
+
+** meteor-tutorial-tools
+   this is a set of tools that parse a git patch and shows them as tutorials.
+   it's strogest selling point is that the website meteor.coml/tutorials is written in it.
+   https://meteor-tutorial-tools.readthedocs.io/en/latest/
+
+* the key: stgit
+  #+BEGIN_QUOTE
+  bryanlarsen on May 14, 2017
+  I made one seven years ago. I used stgit to make jumping back and forth in history so much easier than using rebase.
+  https://github.com/bryanlarsen/agility-gitorial-patches
+  #+END_QUOTE
+
+* back to were we started.
+
+  now it seems there is a =begig_src diff= block that can present diff in a nice way.
+  so I could.
+  - write the tutorial as a series of git commits.
+  - order and edit the history, using stgit
+  - generate a diff patch file that could be used as the beginnig of an org-mode file.
+  - on each section of the diff insert links to the revision, and the repository with orgit
+  - add more instructions and text to the tutorial...
+  - export it to markdown and from there to a website.
+
+*** alternative process, using even more emacs.
+    - write my code in emacs
+    - use magit to do commit messages
+    - using one of the scripts that I saw in reddit create a heading on an org file with links at the commit release.
+      - on this step I wish it would also include the diff message already
+    - then modify that org-file.
+      - the problem is that if change the order of the headers, then the history in the git path is not changed.
