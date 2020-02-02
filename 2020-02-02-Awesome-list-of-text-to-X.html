@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-02 dom 13:04 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>awesome-text-to-x</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Alejandro Garcia" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">awesome-text-to-x</h1>
+</header><div align=center>
+
+<div id="outline-container-org0b22375" class="outline-2">
+<h2 id="org0b22375">Awesome Text-To-X</h2>
+<div class="outline-text-2" id="text-org0b22375">
+</div>
+
+<p>
+Welcome to Awesome Text To X. A community driven list of programs that transform Text files to multimedia representations.
+In a general case every compiler takes a text representation and translates into another representation.
+so it's difficul to draw a line here.
+</p>
+</div>
+
+
+
+<div id="outline-container-org7924c82" class="outline-3">
+<h3 id="org7924c82">Text to BPMN</h3>
+<div class="outline-text-3" id="text-org7924c82">
+</div>
+<div id="outline-container-orgc6f11f8" class="outline-4">
+<h4 id="orgc6f11f8"><a id="ID-83f3462a-cc17-4105-8c62-babbbab92542"></a><a href="https://www.bpmn-sketch-miner.ai/">BPMN Sketch Miner</a> Text to BPMN Diagrams</h4>
+<div class="outline-text-4" id="text-orgc6f11f8">
+<pre class="example">
+Employee:
+
+Fill in the form
+Mark the bills
+Scan the bills
+(send the dossier)
+(receive decision)
+
+Department Head:
+
+(receive the dossier)
+Check the costs|Check the description
+Reject the request
+(send decision)
+
+...
+Check the costs|Check the description
+Accept the request
+(send decision)
+</pre>
+
+
+
+<figure>
+<img src="data/83/f3462a-cc17-4105-8c62-babbbab92542/bpmn-sketch-miner.png" alt="bpmn-sketch-miner.png" />
+
+</figure>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org05538fd" class="outline-2">
+<h2 id="org05538fd">Text to UML</h2>
+<div class="outline-text-2" id="text-org05538fd">
+</div>
+<div id="outline-container-org9b1fb3b" class="outline-3">
+<h3 id="org9b1fb3b"><a href="https://plantuml.com/">plantuml.com</a></h3>
+<div class="outline-text-3" id="text-org9b1fb3b">
+</div>
+<div id="outline-container-org9b9c4f5" class="outline-4">
+<h4 id="org9b9c4f5"><a id="ID-d19f2fa5-c850-4c8e-9408-28f9c9cb6c99"></a>Sequence Diagram</h4>
+<div class="outline-text-4" id="text-org9b9c4f5">
+<pre class="example">
+@startuml
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
+
+Alice -&gt; Bob: Another authentication Request
+Alice &lt;-- Bob: Another authentication Response
+@enduml
+</pre>
+
+
+<figure>
+<img src="data/d1/9f2fa5-c850-4c8e-9408-28f9c9cb6c99/plantuml-sequence.png" alt="plantuml-sequence.png" />
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org6b87e62" class="outline-4">
+<h4 id="org6b87e62"><a id="ID-19b12fda-26f2-4e49-b747-74096207fa64"></a>Component Diagram</h4>
+<div class="outline-text-4" id="text-org6b87e62">
+<pre class="example">
+@startuml
+
+skinparam component {
+    FontColor          black
+    AttributeFontColor black
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #6A9EFF
+    BorderColor        black
+    ArrowColor         #222266
+}
+
+title "OSCIED Charms Relations (Simple)"
+skinparam componentStyle uml2
+
+cloud {
+    interface "JuJu" as juju
+    interface "API" as api
+    interface "Storage" as storage
+    interface "Transform" as transform
+    interface "Publisher" as publisher
+    interface "Website" as website
+
+    juju - [JuJu]
+
+    website - [WebUI]
+    [WebUI] .up.&gt; juju
+    [WebUI] .down.&gt; storage
+    [WebUI] .right.&gt; api
+
+    api - [Orchestra]
+    transform - [Orchestra]
+    publisher - [Orchestra]
+    [Orchestra] .up.&gt; juju
+    [Orchestra] .down.&gt; storage
+
+    [Transform] .up.&gt; juju
+    [Transform] .down.&gt; storage
+    [Transform] ..&gt; transform
+
+    [Publisher] .up.&gt; juju
+    [Publisher] .down.&gt; storage
+    [Publisher] ..&gt; publisher
+
+    storage - [Storage]
+    [Storage] .up.&gt; juju
+}
+
+@enduml
+</pre>
+
+
+<figure>
+<img src="data/19/b12fda-26f2-4e49-b747-74096207fa64/screenshot-20200202-114323.png" alt="screenshot-20200202-114323.png" />
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orge3b19e2" class="outline-4">
+<h4 id="orge3b19e2"><a id="ID-d528f9da-b312-4586-be10-944f28ed0ef6"></a>Class Diagram</h4>
+<div class="outline-text-4" id="text-orge3b19e2">
+<pre class="example">
+@startuml
+
+package util {
+
+class Spec {
+    + value
+    + index
+    --
+    filter(quants)
+    pattern()
+    sort()
+    get(quant)
+    has(quant)
+    ..
+    token(quant) : quant
+    version()
+    method()
+    type()
+    id()
+    source()
+    ..
+    add(spec,quant)
+    toString()
+}
+class "Spec.Map" {
+    + map: {}
+
+    + add(versionVector)
+    + covers(version)
+    + toString(trim)
+}
+
+class "(quant)" as qq {
+    +quant
+    +body
+    +bare
+    +ext
+}
+
+Spec .&gt; qq
+
+}
+
+package model {
+
+interface Syncable {
+    - _lstn[]
+    - _id
+    - _version
+    - _host
+
+    + spec()
+    + version()
+    + deliver(spec,val,lstn)
+    + diff(base)
+    + apply(values)
+    + validateOrder()
+    + acl()
+    + validate()
+
+    + checkUplink()
+    + close()
+    + gc()
+    + log()
+
+    ~ init()
+    ~ default()
+    ~ err()
+
+    - emit(spec,val,src)
+    - on()
+    - reon()
+    - once()
+    - off()
+    - reoff()
+}
+
+class Model {
+    - _oplog
+
+    + diff()
+    + packState(state)
+    + unpackState(state)
+    + distillLog()
+    + pojo()
+    + fill()
+    + save()
+
+    ~ init()
+    # set()
+
+    - on()
+    - off()
+}
+
+class Set {
+    + get(key)
+    + add(key,spec)
+    + remove(key)
+    + fillAll()
+    + collection()
+}
+
+class Host {
+    + objects: {};
+    + lastTs;
+    + tsSeq;
+    + clockOffset;
+    + peers: {};
+
+    + connect(host)
+    + checkUplink(spec)
+
+    + version()
+    + deliver()
+    + availableUplinks(spec)
+    + get(spec)
+    + register(obj)
+    + unregister(obj)
+
+    - init()
+    - on()
+    - reon()
+    - off()
+    - reoff()
+}
+
+Model -up-|&gt; Syncable
+Set -up|&gt; Model
+Host -left|&gt; Syncable
+
+}
+
+@enduml
+</pre>
+
+
+<figure>
+<img src="data/d5/28f9da-b312-4586-be10-944f28ed0ef6/screenshot-20200202-114555.png" alt="screenshot-20200202-114555.png" />
+
+</figure>
+</div>
+</div>
+
+
+<div id="outline-container-org7809289" class="outline-4">
+<h4 id="org7809289">More diagrams can be found in:</h4>
+<div class="outline-text-4" id="text-org7809289">
+<ul class="org-ul">
+<li><a href="https://real-world-plantuml.com/">https://real-world-plantuml.com/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org12fdaac" class="outline-3">
+<h3 id="org12fdaac"><a href="https://mermaidjs.github.io/">mermaid.js</a></h3>
+<div class="outline-text-3" id="text-org12fdaac">
+</div>
+<div id="outline-container-org76874ff" class="outline-4">
+<h4 id="org76874ff">Flowchart</h4>
+<div class="outline-text-4" id="text-org76874ff">
+<pre class="example">
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+</pre>
+
+
+
+<figure>
+<img src="2020-02-02/screenshot-20200202-115034.png" alt="screenshot-20200202-115034.png" />
+
+</figure>
+</div>
+</div>
+
+
+<div id="outline-container-orgc659539" class="outline-4">
+<h4 id="orgc659539">Sequence diagram</h4>
+<div class="outline-text-4" id="text-orgc659539">
+<pre class="example">
+sequenceDiagram
+participant Alice
+participant Bob
+Alice-&gt;&gt;John: Hello John, how are you?
+loop Healthcheck
+    John-&gt;&gt;John: Fight against hypochondria
+end
+Note right of John: Rational thoughts &lt;br/&gt;prevail!
+John--&gt;&gt;Alice: Great!
+John-&gt;&gt;Bob: How about you?
+Bob--&gt;&gt;John: Jolly good!
+</pre>
+
+
+<figure>
+<img src="2020-02-02/screenshot-20200202-115156.png" alt="screenshot-20200202-115156.png" />
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org78a2eaa" class="outline-4">
+<h4 id="org78a2eaa">Gantt diagram</h4>
+<div class="outline-text-4" id="text-org78a2eaa">
+<pre class="example">
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+</pre>
+
+
+
+<figure>
+<img src="2020-02-02/gantt.png" alt="gantt.png" />
+
+</figure>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org45205f7" class="outline-3">
+<h3 id="org45205f7"><a href="https://yuml.me">yuml.me</a></h3>
+<div class="outline-text-3" id="text-org45205f7">
+</div>
+<div id="outline-container-org34c5b85" class="outline-4">
+<h4 id="org34c5b85">Class Diagram</h4>
+<div class="outline-text-4" id="text-org34c5b85">
+<pre class="example">
+// Cool Class Diagram
+[Customer|-forname:string;surname:string|doShiz()]&lt;&gt;-orders*&gt;[Order]
+[Order]++-0..*&gt;[LineItem]
+[Order]-[note:Aggregate Root ala DDD{bg:wheat}]
+</pre>
+
+
+<figure>
+<img src="https://yuml.me/08fdfe82.png" alt="08fdfe82.png" />
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orgffe68c2" class="outline-4">
+<h4 id="orgffe68c2">Activity Diagram</h4>
+<div class="outline-text-4" id="text-orgffe68c2">
+<pre class="example">
+(start)-|a|
+|a|-&gt;(Grind Coffee)-&gt;(Pour Shot)-&gt;(Froth Milk)-&gt;(Pour Coffee)-&gt;|b|
+|a|-&gt;(Fry Eggs)-&gt;(Make Toast)-&gt;(Butter Toast)-&gt;|b|
+|b|-&gt;&lt;c&gt;[want another coffee]-&gt;(Grind Coffee)
+&lt;c&gt;[ready to go]-&gt;(end)
+</pre>
+
+
+<figure>
+<img src="https://yuml.me/69f94f72.png" alt="69f94f72.png" />
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orga3b10ee" class="outline-4">
+<h4 id="orga3b10ee">Use cases</h4>
+<div class="outline-text-4" id="text-orga3b10ee">
+<pre class="example">
+[Customer]-(Sign In)
+[Customer]-(Buy Products)
+(Buy Products)&gt;(Browse Products)
+(Buy Products)&gt;(Checkout)
+(Checkout)&lt;(Add New Credit Card)
+(Checkout)
+[Office Staff]-(Processs Order)
+</pre>
+
+
+<figure>
+<img src="https://yuml.me/a9d0a33f.png" alt="a9d0a33f.png" />
+
+</figure>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org62148d4" class="outline-3">
+<h3 id="org62148d4"><a href="https://www.websequencediagrams.com/">websequencediagrams.com</a></h3>
+<div class="outline-text-3" id="text-org62148d4">
+<p>
+Just sequence diagrams
+</p>
+
+<pre class="example">
+title Authentication Sequence
+
+Alice-&gt;Bob: Authentication Request
+note right of Bob: Bob thinks about it
+Bob-&gt;Alice: Authentication Response
+</pre>
+
+
+<figure>
+<img src="2020-02-02/websequencediagarms.png" alt="websequencediagarms.png" />
+
+</figure>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd0506f2" class="outline-3">
+<h3 id="orgd0506f2"><a href="http://blockdiag.com">blockdiag.com</a></h3>
+<div class="outline-text-3" id="text-orgd0506f2">
+</div>
+<div id="outline-container-orgd3ca689" class="outline-4">
+<h4 id="orgd3ca689"><a href="http://blockdiag.com/en/blockdiag/">Block Diagrams</a></h4>
+<div class="outline-text-4" id="text-orgd3ca689">
+<pre class="example">
+blockdiag {
+   A -&gt; B -&gt; C -&gt; D;
+   A -&gt; E -&gt; F -&gt; G;
+}
+</pre>
+
+
+<figure>
+<img src="2020-02-02/blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979.png" alt="blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979.png" />
+
+</figure>
+</div>
+</div>
+
+
+<div id="outline-container-org1e865c7" class="outline-4">
+<h4 id="org1e865c7"><a href="http://blockdiag.com/en/seqdiag/">Sequence Diagrams</a>,</h4>
+</div>
+
+
+<div id="outline-container-org626b515" class="outline-4">
+<h4 id="org626b515"><a href="http://blockdiag.com/en/actdiag/">Activity diagrams</a>,</h4>
+</div>
+
+<div id="outline-container-orge88d3b8" class="outline-4">
+<h4 id="orge88d3b8"><a href="http://blockdiag.com/en/nwdiag/">Network diagrams</a>.</h4>
+<div class="outline-text-4" id="text-orge88d3b8">
+<pre class="example">
+nwdiag {
+  network Sample_front {
+    address = "192.168.10.0/24";
+
+    // define group
+    group web {
+      web01 [address = ".1"];
+      web02 [address = ".2"];
+    }
+  }
+  network Sample_back {
+    address = "192.168.20.0/24";
+    web01 [address = ".1"];
+    web02 [address = ".2"];
+    db01 [address = ".101"];
+    db02 [address = ".102"];
+
+    // define network using defined nodes
+    group db {
+      db01;
+      db02;
+    }
+  }
+}
+</pre>
+
+
+<figure>
+<img src="2020-02-02/nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944.png" alt="nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944.png" />
+
+</figure>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgbb08a87" class="outline-3">
+<h3 id="orgbb08a87"><a href="https://github.com/stathissideris/ditaa">ditaa</a></h3>
+<div class="outline-text-3" id="text-orgbb08a87">
+<p>
+Convert diagrams drawn using ascii art (block diagrams) , into proper bitmap graphics.
+</p>
+<pre class="example">
++--------+   +-------+    +-------+
+|        | --+ ditaa +--&gt; |       |
+|  Text  |   +-------+    |diagram|
+|Document|   |!magic!|    |       |
+|     {d}|   |       |    |       |
++---+----+   +-------+    +-------+
+    :                         ^
+    |       Lots of work      |
+    +-------------------------+
+</pre>
+
+
+<figure>
+<img src="2020-02-02/ditaa.png" alt="ditaa.png" />
+
+</figure>
+</div>
+</div>
+
+
+<div id="outline-container-orgcba81eb" class="outline-3">
+<h3 id="orgcba81eb"><a href="https://graphviz.org/">graphviz.org</a> Creates graphs (as in Edges and Vertex).</h3>
+<div class="outline-text-3" id="text-orgcba81eb">
+<pre class="example">
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -&gt; a1 -&gt; a2 -&gt; a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -&gt; b1 -&gt; b2 -&gt; b3;
+		label = "process #2";
+		color=blue
+	}
+	start -&gt; a0;
+	start -&gt; b0;
+	a1 -&gt; b3;
+	b2 -&gt; a3;
+	a3 -&gt; a0;
+	a3 -&gt; end;
+	b3 -&gt; end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+</pre>
+
+
+<figure>
+<img src="2020-02-02/graphviz_cluster.png" alt="graphviz_cluster.png" />
+
+</figure>
+</div>
+
+<div id="outline-container-orgf720286" class="outline-4">
+<h4 id="orgf720286">finite state machine</h4>
+<div class="outline-text-4" id="text-orgf720286">
+<pre class="example">
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
+	node [shape = circle];
+	LR_0 -&gt; LR_2 [ label = "SS(B)" ];
+	LR_0 -&gt; LR_1 [ label = "SS(S)" ];
+	LR_1 -&gt; LR_3 [ label = "S($end)" ];
+	LR_2 -&gt; LR_6 [ label = "SS(b)" ];
+	LR_2 -&gt; LR_5 [ label = "SS(a)" ];
+	LR_2 -&gt; LR_4 [ label = "S(A)" ];
+	LR_5 -&gt; LR_7 [ label = "S(b)" ];
+	LR_5 -&gt; LR_5 [ label = "S(a)" ];
+	LR_6 -&gt; LR_6 [ label = "S(b)" ];
+	LR_6 -&gt; LR_5 [ label = "S(a)" ];
+	LR_7 -&gt; LR_8 [ label = "S(b)" ];
+	LR_7 -&gt; LR_5 [ label = "S(a)" ];
+	LR_8 -&gt; LR_6 [ label = "S(b)" ];
+	LR_8 -&gt; LR_5 [ label = "S(a)" ];
+}
+</pre>
+
+
+<figure>
+<img src="2020-02-02/graphviz_fsm.png" alt="graphviz_fsm.png" />
+
+</figure>
+</div>
+</div>
+
+
+<div id="outline-container-orgf23a6e3" class="outline-4">
+<h4 id="orgf23a6e3">Descendant and ancestor</h4>
+<div class="outline-text-4" id="text-orgf23a6e3">
+<pre class="example">
+
+graph G {
+I5 [shape=ellipse,color=red,style=bold,label="Caroline Bouvier Kennedy\nb. 27.11.1957 New York",image="images/165px-Caroline_Kennedy.jpg",labelloc=b];
+I1 [shape=box,color=blue,style=bold,label="John Fitzgerald Kennedy\nb. 29.5.1917 Brookline\nd. 22.11.1963 Dallas",image="images/kennedyface.jpg",labelloc=b];
+I6 [shape=box,color=blue,style=bold,label="John Fitzgerald Kennedy\nb. 25.11.1960 Washington\nd. 16.7.1999 over the Atlantic Ocean, near Aquinnah, MA, USA",image="images/180px-JFKJr2.jpg",labelloc=b];
+I7 [shape=box,color=blue,style=bold,label="Patrick Bouvier Kennedy\nb. 7.8.1963\nd. 9.8.1963"];
+I2 [shape=ellipse,color=red,style=bold,label="Jaqueline Lee Bouvier\nb. 28.7.1929 Southampton\nd. 19.5.1994 New York City",image="images/jacqueline-kennedy-onassis.jpg",labelloc=b];
+I8 [shape=box,color=blue,style=bold,label="Joseph Patrick Kennedy\nb. 6.9.1888 East Boston\nd. 16.11.1969 Hyannis Port",image="images/1025901671.jpg",labelloc=b];
+I10 [shape=box,color=blue,style=bold,label="Joseph Patrick Kennedy Jr\nb. 1915\nd. 1944"];
+I11 [shape=ellipse,color=red,style=bold,label="Rosemary Kennedy\nb. 13.9.1918\nd. 7.1.2005",image="images/rosemary.jpg",labelloc=b];
+I12 [shape=ellipse,color=red,style=bold,label="Kathleen Kennedy\nb. 1920\nd. 1948"];
+I13 [shape=ellipse,color=red,style=bold,label="Eunice Mary Kennedy\nb. 10.7.1921 Brookline"];
+I9 [shape=ellipse,color=red,style=bold,label="Rose Elizabeth Fitzgerald\nb. 22.7.1890 Boston\nd. 22.1.1995 Hyannis Port",image="images/Rose_kennedy.JPG",labelloc=b];
+I15 [shape=box,color=blue,style=bold,label="Aristotle Onassis"];
+I3 [shape=box,color=blue,style=bold,label="John Vernou Bouvier III\nb. 1891\nd. 1957",image="images/BE037819.jpg",labelloc=b];
+I4 [shape=ellipse,color=red,style=bold,label="Janet Norton Lee\nb. 2.10.1877\nd. 3.1.1968",image="images/n48862003257_1275276_1366.jpg",labelloc=b];
+ I1 -- I5  [style=bold,color=blue];
+ I1 -- I6  [style=bold,color=orange];
+ I2 -- I6  [style=bold,color=orange];
+ I1 -- I7  [style=bold,color=orange];
+ I2 -- I7  [style=bold,color=orange];
+ I1 -- I2  [style=bold,color=violet];
+ I8 -- I1  [style=bold,color=blue];
+ I8 -- I10  [style=bold,color=orange];
+ I9 -- I10  [style=bold,color=orange];
+ I8 -- I11  [style=bold,color=orange];
+ I9 -- I11  [style=bold,color=orange];
+ I8 -- I12  [style=bold,color=orange];
+ I9 -- I12  [style=bold,color=orange];
+ I8 -- I13  [style=bold,color=orange];
+ I9 -- I13  [style=bold,color=orange];
+ I8 -- I9  [style=bold,color=violet];
+ I9 -- I1  [style=bold,color=red];
+ I2 -- I5  [style=bold,color=red];
+ I2 -- I15  [style=bold,color=violet];
+ I3 -- I2  [style=bold,color=blue];
+ I3 -- I4  [style=bold,color=violet];
+ I4 -- I2  [style=bold,color=red];
+}
+</pre>
+
+
+<figure>
+<img src="2020-02-02/kennedyanc.png" alt="kennedyanc.png" />
+
+</figure>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org32cf946" class="outline-3">
+<h3 id="org32cf946"><a href="https://tobloef.com/text2mindmap/">Text2MindMap</a></h3>
+<div class="outline-text-3" id="text-org32cf946">
+<p>
+creates a mind map out of indented text
+</p>
+<pre class="example">
+Text2MindMap
+	Turn tab-indented lists into mind maps
+		Press Tab to indent lines
+		Press Shift + Tab to unindent lines
+	Drag nodes to re-organize them
+	This project is based on the now dead site Text2MindMap.com
+</pre>
+
+
+<figure>
+<img src="2020-02-02/screenshot-20200202-122010.png" alt="screenshot-20200202-122010.png" />
+
+</figure>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6082626" class="outline-2">
+<h2 id="org6082626">Text to 3D</h2>
+<div class="outline-text-2" id="text-org6082626">
+</div>
+<div id="outline-container-org42e934d" class="outline-3">
+<h3 id="org42e934d"><a href="https://www.openscad.org">openscad.org</a></h3>
+<div class="outline-text-3" id="text-org42e934d">
+<p>
+Creates 3d models :: <img src="https://www.openscad.org/assets/img/screenshot.png" alt="screenshot.png" />
+</p>
+<pre class="example">
+// increase the visual detail
+$fn = 100;
+
+// the main body :
+// a cylinder
+rocket_d = 30; 				// 3 cm wide
+rocket_r = rocket_d / 2;
+rocket_h = 100; 			// 10 cm tall
+cylinder(d = rocket_d, h = rocket_h);
+
+// the head :
+// a cone
+head_d = 40;  				// 4 cm wide
+head_r = head_d / 2;
+head_h = 40;  				// 4 cm tall
+// prepare a triangle
+tri_base = head_r;
+tri_height = head_h;
+tri_points = [[0,			 0],
+			  [tri_base,	 0],
+			  [0,	tri_height]];
+// rotation around X-axis and then 360° around Z-axis
+// put it on top of rocket's body
+translate([0,0,rocket_h])
+rotate_extrude(angle = 360)
+	polygon(tri_points);
+
+// the wings :
+// 3x triangles
+wing_w = 2;					// 2 mm thick
+many = 3;					// 3x wings
+wing_l = 40;				// length
+wing_h = 40;				// height
+wing_points = [[0,0],[wing_l,0],[0,wing_h]];
+
+module wing() {
+	// let it a bit inside the main body
+	in_by = 1;				// 1 mm
+	// set it up on the rocket's perimeter
+	translate([rocket_r - in_by,0,0])
+	// set it upright by rotating around X-axis
+	rotate([90,0,0])
+	// set some width and center it
+	linear_extrude(height = wing_w,center = true)
+	// make a triangle
+		polygon(wing_points);
+}
+
+for (i = [0: many - 1])
+	rotate([0, 0, 360 / many * i])
+	wing();
+</pre>
+
+
+
+<figure>
+<img src="2020-02-02/openscad_rocket.png" alt="openscad_rocket.png" />
+
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-02-01 sáb 00:00</p>
+<p class="author">Author: Alejandro Garcia</p>
+<p class="date">Created: 2020-02-02 dom 13:04</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>
