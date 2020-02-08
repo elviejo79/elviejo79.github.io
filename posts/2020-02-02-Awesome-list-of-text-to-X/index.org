@@ -65,7 +65,7 @@ Accept the request
 #+END_EXAMPLE
 
 
-[[file:bpmn-sketch-miner.png]]
+[[file:bpmn-sketch-miner-transparent.png]]
 
 
 * Text to UML
@@ -87,7 +87,7 @@ Alice <-- Bob: Another authentication Response
 @enduml
     #+END_EXAMPLE
 
-[[file:screenshot-20200207-193201.png]]
+[[file:screenshot-20200207-193201-transparent.png]]
 
 *** Component Diagram
     :PROPERTIES:
@@ -147,7 +147,7 @@ cloud {
 @enduml
 #+END_EXAMPLE
 
-[[file:screenshot-20200207-193350.png]]
+[[file:screenshot-20200207-193350-transparent.png]]
 
 *** Class Diagram
     :PROPERTIES:
@@ -182,7 +182,7 @@ Receiver <-left- ConcreteCommand
 #+END_EXAMPLE
 
 
-[[file:screenshot-20200207-193655.png]]
+[[file:screenshot-20200207-193655-transparent.png]]
 
 
 *** More diagrams can be found in:
@@ -202,7 +202,7 @@ graph TD;
     C-->D;
     #+END_EXAMPLE
 
-[[file:mermaidjs_flowchart.png]]
+[[file:mermaidjs_flowchart-transparent.png]]
 
 
 
@@ -224,7 +224,7 @@ graph TD;
     Bob-->>John: Jolly good!
     #+END_EXAMPLE
 
-[[file:mermaidjs_sequence.png]]
+[[file:mermaidjs_sequence-transparent.png]]
 
 *** Gantt diagram
     #+BEGIN_EXAMPLE
@@ -241,7 +241,7 @@ Future task2               :         des4, after des3, 5d
     #+END_EXAMPLE
 
 
-[[file:mermaidjs_gantt.png]]
+[[file:mermaidjs_gantt-transparent.png]]
 
 
 
@@ -267,7 +267,7 @@ Future task2               :         des4, after des3, 5d
 <c>[ready to go]->(end)
 #+END_EXAMPLE
 
-[[https://yuml.me/69f94f72.png]]
+[[./69f94f72-transparent.png]]
 
 *** Use cases
 #+BEGIN_EXAMPLE
@@ -294,7 +294,7 @@ note right of Bob: Bob thinks about it
 Bob->Alice: Authentication Response
    #+END_EXAMPLE
 
-[[file:websequencediagarms.png]]
+[[file:websequencediagarms-transparent.png]]
 
 
 
@@ -308,7 +308,7 @@ blockdiag {
 }
     #+END_EXAMPLE
 
-[[file:blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979.png]]
+[[file:blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979-transparent.png]]
 
 
 *** [[http://blockdiag.com/en/seqdiag/index.html][Sequence Diagrams]],
@@ -344,8 +344,7 @@ nwdiag {
 }
     #+END_EXAMPLE
 
-[[file:nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944.png]]
-
+[[file:nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944-transparent.png]]
 
 ** [[https://github.com/stathissideris/ditaa][ditaa]]
    Convert diagrams drawn using ascii art (block diagrams) , into proper bitmap graphics.
@@ -361,7 +360,7 @@ nwdiag {
         +-------------------------+
 #+END_EXAMPLE
 
-[[file:ditaa.png]]
+[[file:ditaa-transparent.png]]
 
 
 ** [[https://graphviz.org/][graphviz.org]] Creates graphs (as in Edges and Vertex).
@@ -395,7 +394,7 @@ digraph G {
 }
    #+END_EXAMPLE
 
-[[file:graphviz_cluster.png]]
+[[file:graphviz_cluster-transparent.png]]
 
 *** finite state machine
 #+BEGIN_EXAMPLE
@@ -421,7 +420,7 @@ digraph finite_state_machine {
 }
 #+END_EXAMPLE
 
-[[file:graphviz_fsm.png]]
+[[file:graphviz_fsm-transparent.png]]
 
 
 *** Descendant and ancestor
@@ -467,7 +466,7 @@ I4 [shape=ellipse,color=red,style=bold,label="Janet Norton Lee\nb. 2.10.1877\nd.
 }
 #+END_EXAMPLE
 
-[[file:kennedyanc.png]]
+[[file:kennedyanc-transparent.png]]
 
 
 
@@ -485,7 +484,7 @@ Text2MindMap
 	This project is based on the now dead site Text2MindMap.com
    #+END_EXAMPLE
 
-[[file:screenshot-20200202-122010.png]]
+[[file:screenshot-20200202-122010-transparent.png]]
 
 
 * Text to 3D
@@ -547,4 +546,4 @@ for (i = [0: many - 1])
    #+END_EXAMPLE
 
 
-[[file:openscad_rocket.png]]
+[[file:openscad_rocket-transparent.png]]
