@@ -18,7 +18,10 @@ In the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Julie Andrews]] sings abo
 [[./favorite_things.jpeg]]
 
 
-Well my favorite things are,  /stackable things/. They fulfill  their function when you need them, and store nicely when you don't. Achieving the separation in time principle.
+Well my favorite things are,  /stackable things/.
+They fulfill  their function when you need them,
+and store nicely when you don't.
+This way they achieve  separation in time principle.
 Here are examples in action.
 
 ** Coffe cups
@@ -82,5 +85,5 @@ On the surface they do the same, however the ones in Colombia are stackable, whi
    Thanks to the magic of the stackable shipping container
    [[./single_shipping_container.png]]
 
-So when I'm in the market ready to buy something... I just need to remember the voice of Julie Andrews, sing about /stackable things/.
-And the choice is clear.
+So when I'm in the market ready to buy several things, of the same type (chairs, glasses, dishers, boxes, etc).
+I just need to remember the voice of Julie Andrews, sing about /stackable things/ and the choice is clear.
