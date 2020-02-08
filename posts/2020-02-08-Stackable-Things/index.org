@@ -13,7 +13,7 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: design
 
-On the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Judy Garland]] sings about her favorite things.
+On the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Julie Andrews]] sings about her favorite things.
 
 [[./favorite_things.jpeg]]
 
