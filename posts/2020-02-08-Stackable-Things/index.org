@@ -13,11 +13,16 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: design
 
-My favorite things are stackable things. They fulfill  their function when you need them, and store nicely when you don't. Achieving the separation in time principle.
-Here are my favorite examples of this in action:
+On the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Judy Garland]] sings about her favorite things.
+
+[[./favorite_things.jpeg]]
+
+
+Well my favorite things are,  /stackable things/. They fulfill  their function when you need them, and store nicely when you don't. Achieving the separation in time principle.
+Here are examples in action.
 
 ** Coffe cups
-My friend Carlos López de Lara owns "[[https://www.facebook.com/vendimiapizza/][La Vendimia]]", a super nice coffee shop. There they have many types of coffee cups my favorite by far is this:
+My friend Carlos owns "[[https://www.facebook.com/vendimiapizza/][La Vendimia]]", a super nice coffee shop. There they have many types of coffee cups my favorite by far is this:
 
 [[./single_coffe_cup.png]]
 
@@ -29,6 +34,7 @@ Let's compare this with the alternative, unstackable coffe mugs:
 
 [[./stack-of-colorful-coffee-cups-on-table_1373-61.jpg]]
 
+For me the choice is clear
 
 ** Chairs
    Continuing with the coffee shop example there are two kinds of chairs, the practical:
