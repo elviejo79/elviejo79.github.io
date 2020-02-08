@@ -2,7 +2,7 @@
 #+OPTIONS: author:t broken-links:nil c:nil creator:nil
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
-#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
 #+TITLE: On the beauty of stackable things
 #+DATE: <2020-02-08 sáb>
 #+AUTHOR: Alejandro Garcia
@@ -13,7 +13,7 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: design
 
-On the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Julie Andrews]] sings about her favorite things.
+In the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Julie Andrews]] sings about her favorite things.
 
 [[./favorite_things.jpeg]]
 
@@ -81,3 +81,6 @@ On the surface they do the same, however the ones in Colombia are stackable, whi
 
    Thanks to the magic of the stackable shipping container
    [[./single_shipping_container.png]]
+
+So when I'm in the market ready to buy something... I just need to remember the voice of Julie Andrews, sing about /stackable things/.
+And the choice is clear.
