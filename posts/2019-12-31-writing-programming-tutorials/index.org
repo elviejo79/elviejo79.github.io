@@ -3,7 +3,7 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Deep dive into tutorial writing
+#+TITLE: Comparing tools to write programming tutorials
 #+DATE: <2019-12-26 jue>
 #+filetags:
 #+AUTHOR: Alejandro Garcia
@@ -13,6 +13,25 @@
 #+EXCLUDE_TAGS: noexport
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: metaturial, tutorial
+
+* Introduction
+  I'm a big fan of literate programming.
+  Literate programming is the practice of writing prose, a book. with code snippets as part of it.
+  And from the book generate: both the documentation and the code.
+
+  #+BEGIN_QUOTE
+  When ever I come to a new code base I wish the authors have done with literate programming.
+  But when ever I'm programming I don't see the point in even having long variable names ;-)
+  #+END_QUOTE
+
+  And although I don't expect literate programming to become the norm for software development.
+  I do expect it to *be the norm for computer tutorial writing* or book publishing.
+  I think is an irony that a book on continuous integration, testing or compilers includes samples that don't compile themselves!
+  Those [fn:1]mistakes are easy to prevent with continuous integration and literate programming.
+
+  On this list is my analysis of
+
+
 
 * Emacs with org-babel
   I started this adventure with the only software thath I love... emacs with org-mode.
@@ -115,3 +134,7 @@
       - on this step I wish it would also include the diff message already
     - then modify that org-file.
       - the problem is that if change the order of the headers, then the history in the git path is not changed.
+
+* Footnotes
+
+[fn:1] Actually it wasn't that easy to do, when I actually wrote the tutorial. Check my [[../2020-01-04-actually-writing-the-tutorial/index.html][other article]].

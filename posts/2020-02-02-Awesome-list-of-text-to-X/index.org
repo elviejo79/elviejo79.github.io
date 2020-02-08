@@ -23,15 +23,16 @@ than to design it in any of the many design programs.
 But /there should be something better/. I mean something that allows us to draw faster in the computer than in plain and paper.
 
 And that is where Text-to-X "compilers" help us.
-On this tools you write on your keyboard the relationships of the diagram you want to create,
+With this tools you write on your keyboard the relationships of the diagram you want to create,
 and the tools themselves do the arrangement, layout and positioning of what you are trying to say.
 
 This tools are not very flexible, they make the decisions for you and if you don't like them then there is not much you can do about.
 But having [[https://en.wikipedia.org/wiki/The_Paradox_of_Choice][less options is a good thing]]. You finish typing your ideas, your diagram is done and then you can move on to the next idea.
 Plus also you can store your file on your source code repositor (git, svn, pijul, etc) and modify it later.
 
-So throught the years I've become a fan of *text-to-x* tools that allow to express visualy but to create with the keyboard and have assembled a collection of tools
-please if you know anymore tools that should be in the list, create [[https://github.com/elviejo79/elviejo79.github.io/issues][creat an issue on github]].
+Through the years I've become a fan of *text-to-x* tools that allow to express visually but to create with the keyboard
+and have assembled the following collection of tools.
+Please if you know anymore tools that should be in the list, create [[https://github.com/elviejo79/elviejo79.github.io/issues][creat an issue on github]].
 thank you and enjoy your typing.
 
 ** Text to BPMN
