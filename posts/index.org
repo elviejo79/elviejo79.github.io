@@ -2,7 +2,7 @@
 #+OPTIONS: author:t broken-links:nil c:nil creator:nil
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
-#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
 #+TITLE: El viejo's blog
 #+DATE: <2019-12-01>
 #+AUTHOR: Alejandro Garcia
@@ -13,7 +13,8 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: software development, theory of constraints, kanban
 
-* Blog about
+
+* Alejandro García Fernández (El viejo)
 
 I'm a software developer, Computer Science teacher and Entrepreneur with experience creating small tech companies. I love leading small focused teams to achieve success. I'm an accredited Kanban Trainer and Certified Scrum Professional.
 
