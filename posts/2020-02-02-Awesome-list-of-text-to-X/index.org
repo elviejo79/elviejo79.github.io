@@ -13,12 +13,8 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: awesome
 
-#+HTML:<div align=center>
-
 * Awesome Text-To-X
 
-
-#+HTML:</div>
 
 I would classify myself as a "visual thinker". I would always understand better with a diagram first and a narrative second.
 However when ever I want to create a beautiful diagram to bring my point across, it has always been faster to sketch it with pen and paper
