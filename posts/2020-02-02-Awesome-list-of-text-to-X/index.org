@@ -56,11 +56,7 @@ Accept the request
 #+END_EXAMPLE
 
 
-[[file:data/83/f3462a-cc17-4105-8c62-babbbab92542/bpmn-sketch-miner.png]]
-
-
-
-
+[[file:bpmn-sketch-miner.png]]
 
 
 * Text to UML
@@ -70,6 +66,7 @@ Accept the request
 *** Sequence Diagram
     :PROPERTIES:
     :ID:       d19f2fa5-c850-4c8e-9408-28f9c9cb6c99
+    :ATTACH_DIR: /home/agarciafdz/repos/gh/elviejo79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/
     :END:
     #+BEGIN_EXAMPLE
 @startuml
@@ -81,11 +78,12 @@ Alice <-- Bob: Another authentication Response
 @enduml
     #+END_EXAMPLE
 
-[[file:data/d1/9f2fa5-c850-4c8e-9408-28f9c9cb6c99/plantuml-sequence.png]]
+[[file:screenshot-20200207-193201.png]]
 
 *** Component Diagram
     :PROPERTIES:
     :ID:       19b12fda-26f2-4e49-b747-74096207fa64
+    :ATTACH_DIR: /home/agarciafdz/repos/gh/elviejo79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/
     :END:
 #+BEGIN_EXAMPLE
 @startuml
@@ -140,151 +138,42 @@ cloud {
 @enduml
 #+END_EXAMPLE
 
-[[file:data/19/b12fda-26f2-4e49-b747-74096207fa64/screenshot-20200202-114323.png]]
+[[file:screenshot-20200207-193350.png]]
 
 *** Class Diagram
     :PROPERTIES:
     :ID:       d528f9da-b312-4586-be10-944f28ed0ef6
+    :ATTACH_DIR: /home/agarciafdz/repos/gh/elviejo79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/
     :END:
 
 #+BEGIN_EXAMPLE
 @startuml
-
-package util {
-
-class Spec {
-    + value
-    + index
-    --
-    filter(quants)
-    pattern()
-    sort()
-    get(quant)
-    has(quant)
-    ..
-    token(quant) : quant
-    version()
-    method()
-    type()
-    id()
-    source()
-    ..
-    add(spec,quant)
-    toString()
+interface Command {
+    execute()
+    undo()
 }
-class "Spec.Map" {
-    + map: {}
-
-    + add(versionVector)
-    + covers(version)
-    + toString(trim)
+class Invoker{
+    setCommand()
+}
+class Client
+class Receiver{
+    action()
+}
+class ConcreteCommand{
+    execute()
+    undo()
 }
 
-class "(quant)" as qq {
-    +quant
-    +body
-    +bare
-    +ext
-}
-
-Spec .> qq
-
-}
-
-package model {
-
-interface Syncable {
-    - _lstn[]
-    - _id
-    - _version
-    - _host
-
-    + spec()
-    + version()
-    + deliver(spec,val,lstn)
-    + diff(base)
-    + apply(values)
-    + validateOrder()
-    + acl()
-    + validate()
-
-    + checkUplink()
-    + close()
-    + gc()
-    + log()
-
-    ~ init()
-    ~ default()
-    ~ err()
-
-    - emit(spec,val,src)
-    - on()
-    - reon()
-    - once()
-    - off()
-    - reoff()
-}
-
-class Model {
-    - _oplog
-
-    + diff()
-    + packState(state)
-    + unpackState(state)
-    + distillLog()
-    + pojo()
-    + fill()
-    + save()
-
-    ~ init()
-    # set()
-
-    - on()
-    - off()
-}
-
-class Set {
-    + get(key)
-    + add(key,spec)
-    + remove(key)
-    + fillAll()
-    + collection()
-}
-
-class Host {
-    + objects: {};
-    + lastTs;
-    + tsSeq;
-    + clockOffset;
-    + peers: {};
-
-    + connect(host)
-    + checkUplink(spec)
-
-    + version()
-    + deliver()
-    + availableUplinks(spec)
-    + get(spec)
-    + register(obj)
-    + unregister(obj)
-
-    - init()
-    - on()
-    - reon()
-    - off()
-    - reoff()
-}
-
-Model -up-|> Syncable
-Set -up|> Model
-Host -left|> Syncable
-
-}
-
+Command <|-down- ConcreteCommand
+Client -right-> Receiver
+Client --> ConcreteCommand
+Invoker o-right-> Command
+Receiver <-left- ConcreteCommand
 @enduml
 #+END_EXAMPLE
 
-[[file:data/d5/28f9da-b312-4586-be10-944f28ed0ef6/screenshot-20200202-114555.png]]
+
+[[file:screenshot-20200207-193655.png]]
 
 
 *** More diagrams can be found in:
@@ -304,8 +193,8 @@ graph TD;
     C-->D;
     #+END_EXAMPLE
 
+[[file:mermaidjs_flowchart.png]]
 
-[[file:2020-02-02/screenshot-20200202-115034.png]]
 
 
 *** Sequence diagram
@@ -326,7 +215,7 @@ graph TD;
     Bob-->>John: Jolly good!
     #+END_EXAMPLE
 
-[[file:2020-02-02/screenshot-20200202-115156.png]]
+[[file:mermaidjs_sequence.png]]
 
 *** Gantt diagram
     #+BEGIN_EXAMPLE
@@ -343,7 +232,7 @@ Future task2               :         des4, after des3, 5d
     #+END_EXAMPLE
 
 
-[[file:2020-02-02/gantt.png]]
+[[file:mermaidjs_gantt.png]]
 
 
 
@@ -396,7 +285,7 @@ note right of Bob: Bob thinks about it
 Bob->Alice: Authentication Response
    #+END_EXAMPLE
 
-[[file:2020-02-02/websequencediagarms.png]]
+[[file:websequencediagarms.png]]
 
 
 
@@ -410,7 +299,7 @@ blockdiag {
 }
     #+END_EXAMPLE
 
-[[file:2020-02-02/blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979.png]]
+[[file:blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979.png]]
 
 
 *** [[http://blockdiag.com/en/seqdiag/index.html][Sequence Diagrams]],
@@ -446,7 +335,7 @@ nwdiag {
 }
     #+END_EXAMPLE
 
-[[file:2020-02-02/nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944.png]]
+[[file:nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944.png]]
 
 
 ** [[https://github.com/stathissideris/ditaa][ditaa]]
@@ -463,7 +352,7 @@ nwdiag {
         +-------------------------+
 #+END_EXAMPLE
 
-[[file:2020-02-02/ditaa.png]]
+[[file:ditaa.png]]
 
 
 ** [[https://graphviz.org/][graphviz.org]] Creates graphs (as in Edges and Vertex).
@@ -497,7 +386,7 @@ digraph G {
 }
    #+END_EXAMPLE
 
-[[file:2020-02-02/graphviz_cluster.png]]
+[[file:graphviz_cluster.png]]
 
 *** finite state machine
 #+BEGIN_EXAMPLE
@@ -523,7 +412,7 @@ digraph finite_state_machine {
 }
 #+END_EXAMPLE
 
-[[file:2020-02-02/graphviz_fsm.png]]
+[[file:graphviz_fsm.png]]
 
 
 *** Descendant and ancestor
@@ -569,7 +458,7 @@ I4 [shape=ellipse,color=red,style=bold,label="Janet Norton Lee\nb. 2.10.1877\nd.
 }
 #+END_EXAMPLE
 
-[[file:2020-02-02/kennedyanc.png]]
+[[file:kennedyanc.png]]
 
 
 
@@ -587,7 +476,7 @@ Text2MindMap
 	This project is based on the now dead site Text2MindMap.com
    #+END_EXAMPLE
 
-[[file:2020-02-02/screenshot-20200202-122010.png]]
+[[file:screenshot-20200202-122010.png]]
 
 
 * Text to 3D
@@ -649,4 +538,4 @@ for (i = [0: many - 1])
    #+END_EXAMPLE
 
 
-[[file:2020-02-02/openscad_rocket.png]]
+[[file:openscad_rocket.png]]
