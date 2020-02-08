@@ -1,0 +1,77 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: On the beauty of stackable things
+#+DATE: <2020-02-08 sáb>
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: design
+
+My favorite things are stackable things. They fulfill  their function when you need them, and store nicely when you don't. Achieving the separation in time principle.
+Here are my favorite examples of this in action:
+
+** Coffe cups
+My friend Carlos López de Lara owns "[[https://www.facebook.com/vendimiapizza/][La Vendimia]]", a super nice coffee shop. There they have many types of coffee cups my favorite by far is this:
+
+[[./single_coffe_cup.png]]
+
+Because it has the magic of stackable:
+
+[[./stacked_cups.jpeg]]
+
+Let's compare this with the alternative, unstackable coffe mugs:
+
+[[./stack-of-colorful-coffee-cups-on-table_1373-61.jpg]]
+
+
+** Chairs
+   Continuing with the coffee shop example there are two kinds of chairs, the practical:
+
+   [[./stacked_chairs.png]]
+
+   and the impractical
+
+   [[./coffe_chairs.jpeg]]
+
+** Food Containers
+
+   Stacked food containers are good.
+
+   [[./stacked_food_containers.jpeg]]
+
+   But stacked containers inside each others are better.
+
+   [[./stacked_inside_each_other.jpeg]]
+
+** Water thanks
+
+For example in México where I live is common to see in the road trucks fully loaded with water tanks.
+
+[[./tinacos_large.jpeg]]
+
+But in a trip to Colombia we discovered water tanks, like this one:
+
+[[./colempaque.jpeg]]
+
+On the surface they do the same, however the ones in Colombia are stackable, which makes them much more practical:
+
+[[./colempaque_stacked.jpeg]]
+
+** Shipping Containers
+   It's hard to remember but there was a time when shipping containers where not the standard and that was a hinderance to global commerce.
+   Se we passed of transporting things with different shapes:
+
+   [[./old_ship_loading.jpeg]]
+
+   To the much more efficient way to do it now:
+   [[./modern_ship_loading.jpeg]]
+
+
+   Thanks to the magic of the stackable shipping container
+   [[./single_shipping_container.png]]
