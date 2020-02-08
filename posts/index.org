@@ -13,12 +13,16 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: software development, theory of constraints, kanban
 
-Blog about
+* Blog about
+
+I'm a software developer, Computer Science teacher and Entrepreneur with experience creating small tech companies. I love leading small focused teams to achieve success. I'm an accredited Kanban Trainer and Certified Scrum Professional.
 
 - Theory of constraints
 - Kanban
 - Agile software development
 - Functional programming
 
+
+* Posts
 
 #+INCLUDE: archive.inc
