@@ -3,7 +3,7 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: awesome-text-to-x
+#+TITLE: awesome-text-to-multimedia
 #+DATE: <2020-02-01 sáb>
 #+AUTHOR: Alejandro Garcia
 #+EMAIL: agarciafdz@gmail.com
@@ -13,7 +13,7 @@
 #+CREATOR: Emacs 26.3 (Org mode 9.1.9)
 #+FILETAGS: awesome
 
-* Awesome Text-To-X
+* Awesome Text-To-Multimedia
 
 
 I would classify myself as a "visual thinker". I would always understand better with a diagram first and a narrative second.
