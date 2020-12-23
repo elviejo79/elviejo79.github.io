@@ -1,0 +1,101 @@
+#+title: projectional_editing
+
+* Problem
+
+As we have established before [[Awesome-text-to-multimedia]].
+I like to create using sipmle text (as you do with plantuml).
+But then I like the creation to be somethnig visual as an image.
+
+The problem is that the Text and the Representation are *different* things
+They represent the same information, but look different.
+
+And as any software developer knows having the same information in two places
+is a "Bad Idea" (tm) violating the [[Dry Principle]].
+
+* Direction of the solution
+So a solution for me should be something like:
+
+** Views on a database
+   A database table can have multiple views
+   i.e. it displays a subset of the information
+   but it's still the same information!
+
+** Air flex
+Air flex was a nice technology, it was used to produce web apps.
+It compiled the apps to Flash technology, and Flash was killed by Steve Jobs
+by not including it on the iphone.
+
+The nice thing about flex is that was a text representation (in XML, not pretty)
+and a visual represenation. When one changed the visual representation it changed the xml
+
+** Docbook and Asciidoc
+Docbook is an XML standard, that is used to edit documents such as books.
+The advantage is that there are tools (lyx) that can process it to create a fully formed book.
+However it's disadvantage was that writting xml by hand was a horrible.
+So much so that XML became known first as: humand writable but later,
+it was said that XML was only for computers to use and humans to interpret.
+
+Asciidoc is a simplier format (looks like markdown) however it's 100% compatible with docbook.
+This makes it possible to write documents in plain text (dockbook) and then compile (translate)
+to Docbook and use all the tools.
+
+** XML vs JSON
+I hated XML, it always seemed to complex for what it was the information displayed was always to much information for such a little text.
+Plus all the validators and schemas seemed like an unnecessary complication.
+Plus it was *too* flexible at the same time.
+Should a subproperty be represented as child node or as property of the element?
+/How wrong I was!/
+
+In the beginning json seemed like a breath of fresh air.
+A lot less verbose, besides all the "extra stuff" (I mean "{" brackets) was justified because it was necessary
+since json was an ascii represantation of a javascript object.
+You had a way to navigate the tree that was part of the programming language!
+
+However later we discovered that:
+a) json had the same complication should a subproperty be representad as nest or plain?!
+b) the scheme in XML where actually necessary! because in Json for expample a field "telephone" is expecting an integer? or a string of the form "492-123-1234"
+c) searching inside json was a mess of navigating properties and again non standard see the "search language" of [[jQ]]
+
+So turns out that disliked the *syntax* of xml, but not it's *semantics*.
+I mean it *looked* ugly but it worked very well.
+
+by the way this was the same "error" I made with [[java vs strongyl typed]]
+
+** In my mind everything is a graph
+
+I think in terms of nodes and links between them.
+So when I discovered Neo4j I saw that was the correct data represenation for the world.
+
+*** Sqlite
+#+begin_quote
+Sqlite is a replacemnet of a text file, not oracle
+#+end_quote
+
+What that means is that Sqlite should be used as a datafile with all the advantages of
+
+* Vision
+So what I want is:
+#+begin_quote
+A format that can represent the information in different media (at least text and chart, like plantuml),
+That has all the tools of XML
+That looks like Yaml or whatever.
+Probably is like an embeded database, like sqlite but is in fact a graph.
+
+#+end_quote
+
+* Does such a thing exist?
+Turns out it does and is called projectional editing!
+
+** Projectional editing
+Is the idea of an editor where the information looks different depending on the angle you are watching.
+So each representation is in fact a *projection* of what the concepts.
+
+** MPS
+   For example in the following image you can see MPS a projectional editor looking at the same code in different views:
+   - As text
+   - As graph
+   - As table!
+   And everythnig is in fact saved as an XML file.
+
+
+   [[file:mps_demo.jpg][MPS a practical projectional editor]]
