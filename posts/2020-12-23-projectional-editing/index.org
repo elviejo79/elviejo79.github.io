@@ -61,6 +61,12 @@ I mean it *looked* ugly but it worked very well.
 
 by the way this was the same "error" I made with [[java vs strongyl typed]]
 
+** XML vs JSON vs YAML
+YAML improves over JSON in one important, to me, aspect it uses spaces as meaningful for the data structure.
+Why? because by making whitespace mandatory, there is more meannig in the same space and less things to argue abuout
+Being strict even with the format is something I appreciate like.
+Ken Arnold said on his essay [[Style is substance]] where he advocates to use the code style as part of the compiler
+
 ** In my mind everything is a graph
 
 I think in terms of nodes and links between them.
@@ -84,7 +90,7 @@ Probably is like an embeded database, like sqlite but is in fact a graph.
 #+end_quote
 
 * Does such a thing exist?
-Turns out it does and is called projectional editing!
+Turns out it does and is called *projectional editing*!
 
 ** Projectional editing
 Is the idea of an editor where the information looks different depending on the angle you are watching.
@@ -99,3 +105,43 @@ So each representation is in fact a *projection* of what the concepts.
 
 
    [[file:mps_demo.jpg][MPS a practical projectional editor]]
+
+*** Things I like about MPS
+
++ Has over 10 years of development on it.
++ It's sponsored by a company JetBrains
++ It's Apache licensed
+
+- It's too focused on DSL, and not simple reipmelementations of the laguages that already exist.
+- not enough examples of reimplemnetations.
+
+** [[https://cloudalion.org/2016/05/29/whats-the-deal-with-projectional-editing/][Cedalion]]
+
+Its a PhD thesis... that makes sense
+
+* Experiments
+Things that I would like to do with this technology.
+
+** JSON
+If we had a projectional de JSON, then we could have version of it that is XML.
+And since it would be XML it would be possible to use schema validator, xpath, and xml databases.
+
+** Reimplement the Real-Time Object-Oriented modeling language.
+Just like they did with [[https://www.eclipse.org/etrice/][eTrice]]. But in this one of the projectios would be the source that looks like the same language.
+Another projection would be the code to implement the state machines in elixir
+Another projection would be the code to implemnet the machines as Nix language to deploy an architecture.
+
+** Reimplemnet PlantUML
+One of the projections would be source code and the other obivously the diagram.
+
+** Reimplement flyinglogic
+as a textual language that has a representation.
+
+** Remiplemnet VUE (Visual understanding envorinment)
+In VUE one of the views is a Graph another view is like slides.
+[[https://78fda818-a-62cb3a1a-s-sites.googlegroups.com/site/venusiconography/home/connectivity-maps/VUE.jpg?attachauth=ANoY7cryA2dzh24lFCwwPt5PBs5-dS3FjRXiN9RIFrlJa4UD6hTHBZv9KN7m2L4uKk57QjuxdAMxKLffCPxDMFwsMZoPIYH_d7C66SJyW2HUmOWcSbzmg0mohVN4gUEJg2Wzu4yb-pue4AdUlj4HvPMn66cwv2A0i-MeozfvcWWQohcVLLN4oq5BR9vkUpCD8E-fdWWXiovpgPQq7eqcrcIsM9N18ckgg0quoAUjt7eoar70IWXPHv4IR451cbz40_c7xfqrmfi4&attredirects=0]]
+
+This I like but I prefer to combine the two views like in:
+[[https://storymap.knightlab.com/examples/aryas-journey/][Arya's journey]]
+
+** Implement a state machine language for smart contracts.
