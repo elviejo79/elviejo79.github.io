@@ -630,3 +630,17 @@ Text2MindMap
 
 ** Layer diagram
 [[file:2020-12-27-180423_1093x291_scrot.png]]
+
+* code2flow
+The good thing about this tool is that it creates flowcharts
+as fast as [[BPMN Sketch Miner]] does bpmn diagrams.
+This two tools are the only ones in this list
+that make a smart use of white space.
+
+And when using white space the result is brevity. Look at Python and Haskell
+
+[[file:code2flow.gif]]
+
+* [[https://kroki.io/][Kroki.com]]
+This one website combines several of the tools in this thread.
+And it's a good point to explore first when searching for a solution in text to multimedia.
