@@ -35,12 +35,12 @@ and have assembled the following collection of tools.
 Please if you know anymore tools that should be in the list, create [[https://github.com/elviejo79/elviejo79.github.io/issues][creat an issue on github]].
 thank you and enjoy your typing.
 
-** Text to BPMN
+* Text to BPMN
 
-*** [[https://www.bpmn-sketch-miner.ai/][BPMN Sketch Miner]] Text to BPMN Diagrams
-    :PROPERTIES:
-    :ID:       83f3462a-cc17-4105-8c62-babbbab92542
-    :END:
+** [[https://www.bpmn-sketch-miner.ai/][BPMN Sketch Miner]] Text to BPMN Diagrams
+   :PROPERTIES:
+   :ID:       83f3462a-cc17-4105-8c62-babbbab92542
+   :END:
 
 #+BEGIN_EXAMPLE
 Employee:
@@ -557,3 +557,21 @@ Text2MindMap
    #+END_EXAMPLE
 
 [[file:screenshot-20200202-122010-transparent.png]]
+
+* Diagram.codes
+  What I like about this tool is that it offers some diagrams that don't appear on any other tool.
+
+** Dataflow
+
+[[file:2020-12-27-175812_1236x439_scrot.png][Dataflow diagram]]
+
+** Timeline
+
+[[file:2020-12-27-180017_1203x162_scrot.png][timeline]]
+
+** layer stack
+
+[[file:2020-12-27-180200_1075x261_scrot.png]]
+
+** Layer diagram
+[[file:2020-12-27-180423_1093x291_scrot.png]]
