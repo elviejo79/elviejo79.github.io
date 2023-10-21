@@ -1,2 +1,5 @@
 _site
 
+
+# Ignored by gitless cli
+./randomized_todo.txt
