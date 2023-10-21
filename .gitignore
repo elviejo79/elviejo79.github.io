@@ -1,3 +1,4 @@
+
 _site
 
 
@@ -5,5 +6,4 @@ _site
 ./randomized_todo.txt
 
 # Ignored by gitless cli
-private/.gitignore
-private/readme.md
+private/*
