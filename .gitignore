@@ -7,3 +7,6 @@ _site
 
 # Ignored by gitless cli
 private/*
+
+# Ignored by gitless cli
+randomized_files.txt
