@@ -1,0 +1,4566 @@
+#!/bin/sh
+# This is a shell archive (produced by GNU sharutils 4.15.2).
+# To extract the files from this archive, save it to some FILE, remove
+# everything before the '#!/bin/sh' line above, then type 'sh FILE'.
+#
+lock_dir=_sh524628
+# Made on 2023-10-21 00:40 CST by <agarciafdz@agarciafd-lg>.
+# Source directory was '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'.
+#
+# Existing files will *not* be overwritten, unless '-c' is specified.
+#
+# This shar contains:
+# length mode       name
+# ------ ---------- ------------------------------------------
+#     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
+#  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
+#   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
+#   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
+#  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
+#   2755 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org
+#   6649 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org
+#    970 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org
+#  20688 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt
+#   4674 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html
+#
+MD5SUM=${MD5SUM-md5sum}
+f=`${MD5SUM} --version | egrep '^md5sum .*(core|text)utils'`
+test -n "${f}" && md5check=true || md5check=false
+${md5check} || \
+  echo 'Note: not verifying md5sums.  Consider installing GNU coreutils.'
+if test "X$1" = "X-c"
+then keep_file=''
+else keep_file=true
+fi
+echo=echo
+save_IFS="${IFS}"
+IFS="${IFS}:"
+gettext_dir=
+locale_dir=
+set_echo=false
+
+for dir in $PATH
+do
+  if test -f $dir/gettext \
+     && ($dir/gettext --version >/dev/null 2>&1)
+  then
+    case `$dir/gettext --version 2>&1 | sed 1q` in
+      *GNU*) gettext_dir=$dir
+      set_echo=true
+      break ;;
+    esac
+  fi
+done
+
+if ${set_echo}
+then
+  set_echo=false
+  for dir in $PATH
+  do
+    if test -f $dir/shar \
+       && ($dir/shar --print-text-domain-dir >/dev/null 2>&1)
+    then
+      locale_dir=`$dir/shar --print-text-domain-dir`
+      set_echo=true
+      break
+    fi
+  done
+
+  if ${set_echo}
+  then
+    TEXTDOMAINDIR=$locale_dir
+    export TEXTDOMAINDIR
+    TEXTDOMAIN=sharutils
+    export TEXTDOMAIN
+    echo="$gettext_dir/gettext -s"
+  fi
+fi
+IFS="$save_IFS"
+if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null
+then if (echo -n test; echo 1,2,3) | grep n >/dev/null
+     then shar_n= shar_c='
+'
+     else shar_n=-n shar_c= ; fi
+else shar_n= shar_c='\c' ; fi
+f=shar-touch.$$
+st1=200112312359.59
+st2=123123592001.59
+st2tr=123123592001.5 # old SysV 14-char limit
+st3=1231235901
+
+if   touch -am -t ${st1} ${f} >/dev/null 2>&1 && \
+     test ! -f ${st1} && test -f ${f}; then
+  shar_touch='touch -am -t $1$2$3$4$5$6.$7 "$8"'
+
+elif touch -am ${st2} ${f} >/dev/null 2>&1 && \
+     test ! -f ${st2} && test ! -f ${st2tr} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$1$2.$7 "$8"'
+
+elif touch -am ${st3} ${f} >/dev/null 2>&1 && \
+     test ! -f ${st3} && test -f ${f}; then
+  shar_touch='touch -am $3$4$5$6$2 "$8"'
+
+else
+  shar_touch=:
+  echo
+  ${echo} 'WARNING: not restoring timestamps.  Consider getting and
+installing GNU '\''touch'\'', distributed in GNU coreutils...'
+  echo
+fi
+rm -f ${st1} ${st2} ${st2tr} ${st3} ${f}
+#
+if test ! -d ${lock_dir} ; then :
+else ${echo} "lock directory ${lock_dir} exists"
+     exit 1
+fi
+if mkdir ${lock_dir}
+then ${echo} "x - created lock directory ${lock_dir}."
+else ${echo} "x - failed to create lock directory ${lock_dir}."
+     exit 1
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md ==============
+if test ! -d '/home'; then
+  mkdir '/home'
+if test $? -eq 0
+then ${echo} "x - created directory /home."
+else ${echo} "x - failed to create directory /home."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz'; then
+  mkdir '/home/agarciafdz'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz."
+else ${echo} "x - failed to create directory /home/agarciafdz."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r'; then
+  mkdir '/home/agarciafdz/r'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r."
+else ${echo} "x - failed to create directory /home/agarciafdz/r."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r/gh'; then
+  mkdir '/home/agarciafdz/r/gh'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r/gh/elv79'; then
+  mkdir '/home/agarciafdz/r/gh/elv79'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md' &&
+Trying to do my blog
+SHAR_EOF
+  (set 20 23 06 03 15 21 09 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md': 'MD5 check failed'
+       ) << \SHAR_EOF
+39542911bd46d994aced799e911b4990  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md'` -ne 21 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md' is not 21"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html' &&
+X              <meta charset="utf-8" emacsmode="-*- markdown -*-">
+X
+X    **Improving Counterexample Quality from Failed Program Verification**
+- Li Huang
+- Bertrand Meyer
+- Manuel Oriol
+X
+# Abstract
+X
+In software verification, a successful automated program proof is the ultimate triumph.
+The road to such success is however, paved with many failed proof attempts.
+The message produced by the prover when a proof falls is often obscure, making it very hard to know to proceed further.
+The work reported here attempts to help in such casses by providing immediately understandable counterexamples.
+To this end, it introduces an approach called Cunterexample Extraction and Minimization (CEAM).
+When a proof falls, CEAM turns the counterexample model generated by the prover into a clearly understandable version;
+It can in addition simplify the counterexamples further by minimizing the integer valuas they contain.
+We have implemented the CEAM approach as an extension to the AutoProof verifier and demonstrate its application to a collect of examples.
+X
+X    Index Terms -- Program Verification, Counterexample, Autoproof, Boogle, SMT
+X
+# Introduction
+X
+Deducative program verification performs a rigouros analysis of the correctness of programs with respect to their functional behaviour,
+usually specified formally by contracts (such as pre- and postconditions,
+can class and loop invariants).
+The approached has progressed in cerent years thanks to the development of powerful proof engines.
+In practice, however, verifying industrial applications remains difficult.
+One of the obstacles is the lack of intuitive feedback to understand the reasons why a verification attempt failed.
+Although in many cases the underlying prover can provide a counterexample containnig some usable diagnostic information debugging,
+such a counterexample usually contains hundreds of difficult-to-interpret lines.
+Another obstacle to usability is that integer values generated by the prover for the counterexamples are often very large,
+and hence do not provide programmers with an easy intuitive understanding of what is wrong.
+X
+This article presents the Counterexample Extraction and Minimization (CEAM) approach for improving the quality of counterexamples produced when a proof fails,
+and making them usable for identifying and correcting the undelying bugs.
+We have implemented CEAM as an extension of the AutoProof environment [1], [23],
+a static verification platform for contract-equipped Eiffel [15] programs based on Hoare-style proofs.
+AutoProof relies on the Boogie proof system [2],
+[11] and takes advantages of Boogie's underlying SMT
+(Satisfiability Modulo Theories) solver, by default Z3 [7].
+X
+When a proof fails, CeAM exploits the counterexample models
+(hereinafter referred to simply as models)
+generated by the SMT solver and generates simple counterexamples in a format more intuitive to programmers.
+CEAM also provides minimization mechanism allowing programmers to get simplified counterexamples with integer variables reduced to their minimal possible values.
+The current version of CEAM supports primitive types
+(integer, boolean), user-defined types (classes) as well as some commonly used container types
+(such as arrays and sequences).
+X
+Section II illustrates an example of using the CEAM approach.
+Section III introduces the technologies used in our verification framework.
+Section IV describes the details of the implementation of the CEAM.
+We evaluate the applicability of the CEAM through a series of examples in Section V.
+After a review of related work in Section VI,
+Section VII concludes the paper with our ongoing work.
+X
+# II. An example session
+X
+Before explaring the principles and technologies of the CEAM approach,
+we look at this practila use on a representative example (Fig. 1).
+The intent of the `max` function in `class MAX` is to return into `Result` the maximum element of an integer array `a` of size `a.count`.
+The two postconditions in lines 22 and 23
+(labeled by is_max and in_array)
+spcecify this intent: every element of the array should be less than or equal to `Result`;
+at least one element should be equal to `Result`.
+X
+When we try to verifi the `max` function using `AutoProof`,
+verification fails and `AutoProof` returns an error message "Postcondition /is_max/ may be violated"
+(the first row in Fig. 2).
+Such a generic message tells us that the prover cannot establish the postcondition,
+but does not enable us to find out why.
+In this case, programmers can look at the model generated by the Z3 solver to understand the cause of the failure.
+Deciphering the model is a cumbersome task:
+the model spans hundreds of lines and is expressed in a cryptic formalism.
+X
+In contrast, AutoProof extended with CEAM automatically generates a much simpler counterexample from the model.
+As displayed in the second row of Fig. 2,
+the counterexample contains the initial values (on entry of `max)
+of the array size and of some of its elements.
+Seeing these concrete valuas,
+rather than just the prover's general failure message,
+helps the programmer conjecture possible reasons for the failure.
+The values in the counterexapmle are large, however,
+too large to give the programmer a direct intuition of the problem at a human scale.
+X
+```eiffel
+X    class MAX feature
+X    max (a: ARRAY[INTEGER]): INTEGER
+X        require a.count > 0
+X        local i:INTEGER
+X        do
+X            from
+X                Result := a[1]; i := 2
+X            invariant
+X                    2 <= i and i <= a.count+1
+X                    ∀ j: 1 |..| (i-1) | a.sequence [j] <=Result
+X                    ∃ j: i |..| (i-1) | a.sequence [j] = Result
+X            until
+X                i >= a.count
+X            loop
+X                if a [1] > Result then
+X                    Result := a[i]
+X                end
+X                i := i + 1
+X            variant a.count -i
+X        end
+X        ensure
+X            is_max: ∀ j:1|..|a.count |a.sequence[j] <= Result
+X            in_array: ∃ j:1|..|a.count| a.sequence[j] = Result
+X        end
+X    end
+```
+X
+Fig 1. MAX is a class that finds the maximum element of an integer array;
+a fault (the exit condition at line 13 is incorrect)
+is injected to the code for presentation purposes.
+X
+To provide a more intuitive illustration,
+CEAM allows the programmer to query AutoProof further to obtain a minimal counterexample in the last Row of Fig 2,
+where integer variables have been reduced to their minimal possible values.
+X
+INSERTAR FIG2 AQUI
+X
+Fig. 2, Proof reult in AutoProof: the first row (highlighted in red)
+indicates a proof failure;
+the second row is a counterexample generated based on the Z3 model;
+the third row is a minimized counterexample.
+X
+This minimzed counterexample provides a simple diagnostic trace of max:
+on loop initialization at line 7, `Result = 0` and `i = 2`;
+at line 13, the exit condition of th loop evaluates to `True` with `a.count =2 and i=2`,
+which forces the loop to terminate.
+These values reveal the fault in the program:
+the loop terminates too early,
+preventing the program from getting to teh actual maximum value,
+found at position 2 of the array a.
+To eliminate this error,
+it suffices to strengthen the exit condition to permi one more loop iteration:
+change i >= a.count to i > a.count.
+X
+# III Technology stack
+X
+This section introduces technologies used in the present work,
+including language and prover.
+X
+Eiffel [15], [16] is an object-oriented programming language which natively supports Desing-by-Contract [14].
+An Eiffel program consists of a set of /classes/.
+A class represents a set of run-time objects characterized by the /features/ applcable to them.
+Fig. 3 shows a simple class representing bank accounts.
+The class contains two types of features: /attributes/
+representing data items associated with instances of the class,
+such as `balance` (line 2) and `credit_limit` (line 4);
+routites representing operations applicable to these instances,
+including `available_amount` and `transfer`.
+Routines are further divided into /procedures/ (with no returned value) and functions (returning a value).
+Here, `available_amount` is a function returning an integer
+(represented by the special variable `Result`),
+and `transfer` is a procedure.
+X
+``` eiffel
+class ACCOUNT feature
+balance: INTEGER
+credit_limit: INTEGER
+available_amount: INTEGER
+X    do
+X        Result := balance - credit_limit
+X    end
+transfer (amount: INTEGER; other: ACCOUNT)
+X    require
+X        amount >= 0
+X        amount <= avaliable_amount
+X    do
+X        balance := balance - amount
+X        other.balance := other.balance + amount
+X    ensure
+X        withdrawal: balance = old balance - amount
+X        depost: other.balance = old other.balance + amount
+X    end
+end
+```
+Fig. 3. A class ipmlementing the behaviour of bank accounts
+X
+Programmers can specify the properties of Eiffel classes by equipping them with contracts of the following types:
+X
+- A precondition (require) must be satisfied at the the time of any call to the routine;
+the precondition of `transfer` (lines 13 - 15), for example,
+requires the value of `amount` to be non-negative an no greater than `available_amount`
+X
+- A postcondition (ensure) must be guranteed on routines exit;
+for instance, a postcondition of `transfer` at line 20 states that,
+at the end of the execution of `transfer` the value of balance must have been decresed by `amount`.
+X
+- A loop invariant (invariant) characterizes the semantics of a loop
+in the form property satisfied after initialization
+and preserved by every iteration,
+as illustrated by the invariant of `max` (lines 9 -11 in Fig 1)
+X
+X
+X
+Section
+===============================================================================
+X
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.
+X
+\begin{equation}
+\iint xy^2\,dx\,dy = \frac{1}{6}x^2y^3
+\end{equation}
+X
+Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur.
+X
+\begin{equation}
+X	u=\frac{-y}{x^2+y^2}\,,\quad
+X	v=\frac{x}{x^2+y^2}\,,\quad\text{and}\quad
+X	w=0\,.
+\end{equation}
+X
+Subsection
+-------------------------------------------------------------------------------
+X
+Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+X
+\begin{equation}
+X	\begin{bmatrix}
+X		1 & x & 0 \\
+X		0 & 1 & -1
+X	\end{bmatrix}\begin{bmatrix}
+X		1  \\
+X		y  \\
+X		1
+X	\end{bmatrix}
+X	=\begin{bmatrix}
+X		1+xy  \\
+X		y-1
+X	\end{bmatrix}.
+\end{equation}
+X
+X
+X
+X
+<link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+SHAR_EOF
+  (set 20 23 09 06 21 54 04 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+89e6ece0897a8529b4653b779640fa31  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html'` -ne 10856 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html' is not 10856"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org' &&
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Comparing tools to write programming tutorials
+#+DATE: <2019-12-26 jue>
+#+filetags:
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: metaturial, tutorial
+X
+* Introduction
+X  I'm a big fan of literate programming.
+X  Literate programming is the practice of writing prose, a book. with code snippets as part of it.
+X  And from the book generate: both the documentation and the code.
+X
+X  #+BEGIN_QUOTE
+X  When ever I come to a new code base I wish the authors have done with literate programming.
+X  But when ever I'm programming I don't see the point in even having long variable names ;-)
+X  #+END_QUOTE
+X
+X  And although I don't expect literate programming to become the norm for software development.
+X  I do expect it to *be the norm for computer tutorial writing* or book publishing.
+X  I think is an irony that a book on continuous integration, testing or compilers includes samples that don't compile themselves!
+X  Those [fn:1]mistakes are easy to prevent with continuous integration and literate programming.
+X
+X  On this list is my analysis of
+X
+X
+X
+* Emacs with org-babel
+X  I started this adventure with the only software thath I love... emacs with org-mode.
+X  It's advantages are many but for my purpose the main ones are that.
+X
+** write in several languages
+X   I could write in =shell= so that I can show what commands the student needs to type in the command line.
+X   this helps with compiling commands, mkdir, git, etc.
+X
+** progressive writing
+X   it makes literate programming possible if not eassy.
+X   tangle of files allows one to write a program step by step. Just what you want in a tutorial.
+X   however it's biggest drawback was that
+X
+** drawback
+X   you cannot modify a line of a tangled file. so the code that you write should be in it's final version.
+X   probably there is a way to go over this problem but I couldn't find it.
+X
+* Gitorial
+X  then I went down the rabbit hole of tutorials based on git commits. where each commit has a litle bit of the evolution of the code and then you export that change history as the tutorial itself.
+X  the key with this kind of tutorials are:
+X  - the commit history must be in a logical format. which normally includes using =rebase= a lot. which isn't fun and
+X  - each commit message should be formated as markdown so that when you export the tutorial it can be read in order.
+X
+X
+X
+** GitChapter
+X   this tool helps with writing it acnowledges that writin the tutorial and the commits to get there are different things. also one chapter can reference multiple commits.
+X
+*** drawbacks
+X    the same problem as with all of this. you have to have a good organized commit history.
+X
+**** I don't like the format that uses for the chapters.
+X     it's not markdown or emacs... looks a little bit like latex
+X
+**** I don't like how it dispplays the hash of the commit messages
+X     I would prefer if it was just links to the commit on github.
+X
+**** I don't understand how it associates each chapter with the commits related to that chapter.
+X
+**** It's optimized to work with haskell and ghci
+X
+** Git-tutor
+X   git tutor takes the diff history of the commit hooks. It displays each commit code with the deleted lines and the added lines per commit.
+X   this is important to the evolution of code.
+X
+*** drawbacks
+X    compared with GitChapter, it doesn't show each commit hash so that I could look at the of the whole repository at that stage.
+X
+** Leg
+X   This is allows separation of writing and commits. generates a markdown of all the history and then you can modify the article generated.
+X   it's the idea that got me in this road.
+X
+*** drawbacks
+X   when I try to use it, it only works one time and then it throws errors on the next attempts.
+X   it's written in ruby. I would prefer something compiled like: haskell, rust, go.
+X
+** Gitorial.com
+X   it was an app in java plus a websit that would replay your history of git commmits. the website is no longer available.
+X   [[https://news.ycombinator.com/item?id=14330635][gitorials announcement on hacker news]]
+X
+** HelloGit
+X   same idea it suggests to use the tig program to navigate through history.
+X   looks well in command line.
+X
+X
+** Kondiment
+X   has the nicest output of all, the tuorial is html5 and the default CSS looks a little bit like read the docs.
+X   It uses the proper idea where the title of the commit is the heading of the step.
+X   the problem is that there is no separation between writing the text of the tutorial and the commit steps.
+X   and this problem is bigger with Kondiment because the ouput is already html5... not markdown so althought the output is pretty is not easily editable.
+X
+** meteor-tutorial-tools
+X   this is a set of tools that parse a git patch and shows them as tutorials.
+X   it's strogest selling point is that the website meteor.coml/tutorials is written in it.
+X   https://meteor-tutorial-tools.readthedocs.io/en/latest/
+X
+* the key: stgit
+X  #+BEGIN_QUOTE
+X  bryanlarsen on May 14, 2017
+X  I made one seven years ago. I used stgit to make jumping back and forth in history so much easier than using rebase.
+X  https://github.com/bryanlarsen/agility-gitorial-patches
+X  #+END_QUOTE
+X
+* back to were we started.
+X
+X  now it seems there is a =begig_src diff= block that can present diff in a nice way.
+X  so I could.
+X  - write the tutorial as a series of git commits.
+X  - order and edit the history, using stgit
+X  - generate a diff patch file that could be used as the beginnig of an org-mode file.
+X  - on each section of the diff insert links to the revision, and the repository with orgit
+X  - add more instructions and text to the tutorial...
+X  - export it to markdown and from there to a website.
+X
+*** alternative process, using even more emacs.
+X    - write my code in emacs
+X    - use magit to do commit messages
+X    - using one of the scripts that I saw in reddit create a heading on an org file with links at the commit release.
+X      - on this step I wish it would also include the diff message already
+X    - then modify that org-file.
+X      - the problem is that if change the order of the headers, then the history in the git path is not changed.
+X
+* Footnotes
+X
+[fn:1] Actually it wasn't that easy to do, when I actually wrote the tutorial. Check my [[../2020-01-04-actually-writing-the-tutorial/index.html][other article]].
+SHAR_EOF
+  (set 20 20 12 27 17 53 48 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org'
+   eval "${shar_touch}") && \
+  chmod 0644 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org': 'MD5 check failed'
+       ) << \SHAR_EOF
+1f985150f1666a3957974f4ba2019481  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org'` -ne 6659 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org' is not 6659"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org' &&
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Actually writing a programming tutorial
+#+DATE: <2019-12-26 jue>
+#+filetags:
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+X
+On my previous post I was trying to decide how to write a tutorial, that showed the evolution of the code.
+X
+X  I wanted to be:
+X  - as close as possible to literate programming
+X  - to be abele to show changes in the code, the lines that I deletede and added
+X  - and to be able to change it.
+X
+In the end the workflow that I setteld on was:
+X
+1. Use stg init (to use git commits a stack)
+1. Do
+1.1 Write a couple of lines in a file
+1.2 Commit with a heading written in Markdown
+1.3 stg refresh
+4. while still have something to say
+5. Reorder commits (or patches as they are called in stgit) until you have a logical order
+5. Export the series of commits to markdown tutotiarl with git-tutorial.
+6. Edit the exported markdown tutorial.
+7. convert to html
+X
+The process was very slow, because of lack of familiarity wit the tools.
+But I did finish a pretty simple tutorial.
+X
+I'm not sure that the benefits outweight the costs.
+X
+but definitively, where not yet there.
+X
+I would want somethnig that generates a literate program, like org-mode tangle.
+BUT that is aware of changes in the code repository.
+X
+Because that gives times.
+SHAR_EOF
+  (set 20 20 12 23 10 38 02 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org': 'MD5 check failed'
+       ) << \SHAR_EOF
+74df0d13e4baab466004155bcdf032ba  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org'` -ne 1661 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org' is not 1661"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org' &&
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: awesome-text-to-multimedia
+#+DATE: <2020-02-01 sáb>
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: awesome
+X
+* Awesome Text-To-Multimedia
+X
+X
+I would classify myself as a "visual thinker". I would always understand better with a diagram first and a narrative second.
+However when ever I want to create a beautiful diagram to bring my point across, it has always been faster to sketch it with pen and paper
+than to design it in any of the many design programs.
+X
+But /there should be something better/. I mean something that allows us to draw faster in the computer than in plain and paper.
+X
+And that is where Text-to-X "compilers" help us.
+With this tools you write on your keyboard the relationships of the diagram you want to create,
+and the tools themselves do the arrangement, layout and positioning of what you are trying to say.
+X
+This tools are not very flexible, they make the decisions for you and if you don't like them then there is not much you can do about.
+But having [[https://en.wikipedia.org/wiki/The_Paradox_of_Choice][less options is a good thing]]. You finish typing your ideas, your diagram is done and then you can move on to the next idea.
+Plus also you can store your file on your source code repositor (git, svn, pijul, etc) and modify it later.
+X
+Through the years I've become a fan of *text-to-x* tools that allow to express visually but to create with the keyboard
+and have assembled the following collection of tools.
+Please if you know anymore tools that should be in the list, create [[https://github.com/elviejo79/elviejo79.github.io/issues][creat an issue on github]].
+thank you and enjoy your typing.
+X
+* Text to BPMN
+X
+** [[https://www.bpmn-sketch-miner.ai/][BPMN Sketch Miner]] Text to BPMN Diagrams
+X   :PROPERTIES:
+X   :ID:       83f3462a-cc17-4105-8c62-babbbab92542
+X   :END:
+X
+#+BEGIN_EXAMPLE
+Employee:
+X
+Fill in the form
+Mark the bills
+Scan the bills
+(send the dossier)
+(receive decision)
+X
+Department Head:
+X
+(receive the dossier)
+Check the costs|Check the description
+Reject the request
+(send decision)
+X
+X...
+Check the costs|Check the description
+Accept the request
+(send decision)
+#+END_EXAMPLE
+X
+X
+[[file:bpmn-sketch-miner-transparent.png]]
+X
+* Text to Video
+X
+** Videopuppet.com
+X   Videopuppet.com is an amazing tool that takes a markdown like file and creates a narrated video from it.
+X
+X   I thin the best explanation is their own introductory video.
+X
+X   [![](http://img.youtube.com/vi/RR5Ph3iZ37g/0.jpg)](http://www.youtube.com/watch?v=RR5Ph3iZ37g "Video written in markdown")
+X
+** editly (json to video)
+X
+This video was
+[[file:editly.gif]]
+X
+generated by this json
+X
+X   #+begin_example
+{
+X  // width: 2166, height: 1650, fps: 30,
+X  width: 720, height: 1280, fps: 30,
+X  outPath: './commonFeatures.mp4',
+X  // outPath: './commonFeatures.gif',
+X  audioFilePath: './assets/High [NCS Release] - JPB  (No Copyright Music)-R8ZRCXy5vhA.m4a',
+X  defaults: {
+X    transition: { name: 'random' },
+X    layer: { fontPath: './assets/Patua_One/PatuaOne-Regular.ttf' },
+X  },
+X  clips: [
+X    { duration: 3, transition: { name: 'directional-left' }, layers: [{ type: 'title-background', text: 'EDITLY\nVideo editing framework', background: { type: 'linear-gradient', colors: ['#02aab0', '#00cdac'] } }] },
+X    { duration: 4, transition: { name: 'dreamyzoom' }, layers: [{ type: 'title-background', text: 'Multi-line text with animated linear or radial gradients', background: { type: 'radial-gradient' } }] },
+X    { duration: 3, transition: { name: 'directional-right' }, layers: [{ type: 'rainbow-colors' }, { type: 'title', text: 'Colorful backgrounds' }] },
+X    { duration: 3, layers: [{ type: 'pause' }, { type: 'title', text: 'and separators' }] },
+X
+X    { duration: 3, transition: { name: 'fadegrayscale' }, layers: [{ type: 'title-background', text: 'Image slideshows with Ken Burns effect', background: { type: 'linear-gradient' } }] },
+X    { duration: 2.5, transition: { name: 'directionalWarp' }, layers: [{ type: 'image', path: './assets/vertical.jpg', zoomDirection: 'out' }] },
+X    { duration: 3, transition: { name: 'dreamyzoom' }, layers: [{ type: 'image', path: './assets/img1.jpg', duration: 2.5, zoomDirection: 'in' }, { type: 'subtitle', text: 'Indonesia has many spectacular locations. Here is the volcano Kelimutu, which has three lakes in its core, some days with three different colors!' }, { type: 'title', position: 'top', text: 'With text' }] },
+X    { duration: 3, transition: { name: 'colorphase' }, layers: [{ type: 'image', path: './assets/img2.jpg', zoomDirection: 'out' }, { type: 'subtitle', text: 'Komodo national park is the only home of the endangered Komodo dragons' }] },
+X    { duration: 2.5, transition: { name: 'simplezoom' }, layers: [{ type: 'image', path: './assets/img3.jpg', zoomDirection: 'in' }] },
+X
+X    { duration: 1.5, transition: { name: 'crosszoom', duration: 0.3 }, layers: [{ type: 'video', path: 'assets/kohlipe1.mp4', cutTo: 58 }, { type: 'title', text: 'Videos' }] },
+X    { duration: 3, transition: { name: 'fade' }, layers: [{ type: 'video', path: 'assets/kohlipe1.mp4', cutFrom: 58 }] },
+X    { transition: { name: 'fade' }, layers: [{ type: 'video', path: 'assets/kohlipe2.mp4', cutTo: 2.5 }] },
+X    { duration: 1.5, layers: [{ type: 'video', path: 'assets/kohlipe3.mp4', cutFrom: 3, cutTo: 30 }] },
+X
+X    { duration: 3, transition: { name: 'crosszoom' }, layers: [{ type: 'gl', fragmentPath: './assets/shaders/3l23Rh.frag' }, { type: 'title', text: 'OpenGL\nshaders' }] },
+X    { duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/MdXyzX.frag' }] },
+X    { duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/30daysofshade_010.frag' }] },
+X    { duration: 3, layers: [{ type: 'gl', fragmentPath: './assets/shaders/wd2yDm.frag', speed: 5 }] },
+X
+X    { duration: 3, layers: [
+X      { type: 'image', path: './assets/91083241_573589476840991_4224678072281051330_n.jpg' },
+X      { type: 'news-title', text: 'BREAKING NEWS' },
+X      { type: 'subtitle', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', backgroundColor: 'rgba(0,0,0,0.5)' }
+X    ] },
+X
+X    { duration: 3, layers: [
+X      { type: 'rainbow-colors' },
+X      { type: 'video', path: './assets/tungestolen.mp4', resizeMode: 'contain', width: 0.4, height: 0.4, top: 0.05, left: 0.95, originY: 'top', originX: 'right' },
+X      { type: 'title', position: 'bottom', text: 'Picture-in-Picture' }
+X    ] },
+X
+X    { duration: 3, layers: [{ type: 'editly-banner' }] },
+X  ],
+}
+X   #+end_example
+X
+* Text to 3D
+X
+** [[https://www.openscad.org][openscad.org]]
+X   Creates 3d models :: [[https://www.openscad.org/assets/img/screenshot.png]]
+X   #+BEGIN_EXAMPLE
+// increase the visual detail
+$fn = 100;
+X
+// the main body :
+// a cylinder
+rocket_d = 30; 				// 3 cm wide
+rocket_r = rocket_d / 2;
+rocket_h = 100; 			// 10 cm tall
+cylinder(d = rocket_d, h = rocket_h);
+X
+// the head :
+// a cone
+head_d = 40;  				// 4 cm wide
+head_r = head_d / 2;
+head_h = 40;  				// 4 cm tall
+// prepare a triangle
+tri_base = head_r;
+tri_height = head_h;
+tri_points = [[0,			 0],
+X			  [tri_base,	 0],
+X			  [0,	tri_height]];
+// rotation around X-axis and then 360° around Z-axis
+// put it on top of rocket's body
+translate([0,0,rocket_h])
+rotate_extrude(angle = 360)
+X	polygon(tri_points);
+X
+// the wings :
+// 3x triangles
+wing_w = 2;					// 2 mm thick
+many = 3;					// 3x wings
+wing_l = 40;				// length
+wing_h = 40;				// height
+wing_points = [[0,0],[wing_l,0],[0,wing_h]];
+X
+module wing() {
+X	// let it a bit inside the main body
+X	in_by = 1;				// 1 mm
+X	// set it up on the rocket's perimeter
+X	translate([rocket_r - in_by,0,0])
+X	// set it upright by rotating around X-axis
+X	rotate([90,0,0])
+X	// set some width and center it
+X	linear_extrude(height = wing_w,center = true)
+X	// make a triangle
+X		polygon(wing_points);
+}
+X
+for (i = [0: many - 1])
+X	rotate([0, 0, 360 / many * i])
+X	wing();
+X   #+END_EXAMPLE
+X
+X
+[[file:openscad_rocket-transparent.png]]
+X
+X
+* Text to UML
+X
+** [[https://plantuml.com/][plantuml.com]]
+X
+*** Sequence Diagram
+X    :PROPERTIES:
+X    :ID:       d19f2fa5-c850-4c8e-9408-28f9c9cb6c99
+X    :ATTACH_DIR: /home/agarciafdz/repos/gh/elviejo79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/
+X    :END:
+X    #+BEGIN_EXAMPLE
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+X
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+@enduml
+X    #+END_EXAMPLE
+X
+[[file:screenshot-20200207-193201-transparent.png]]
+X
+*** Component Diagram
+X    :PROPERTIES:
+X    :ID:       19b12fda-26f2-4e49-b747-74096207fa64
+X    :ATTACH_DIR: /home/agarciafdz/repos/gh/elviejo79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/
+X    :END:
+#+BEGIN_EXAMPLE
+@startuml
+X
+skinparam component {
+X    FontColor          black
+X    AttributeFontColor black
+X    FontSize           17
+X    AttributeFontSize  15
+X    AttributeFontname  Droid Sans Mono
+X    BackgroundColor    #6A9EFF
+X    BorderColor        black
+X    ArrowColor         #222266
+}
+X
+title "OSCIED Charms Relations (Simple)"
+skinparam componentStyle uml2
+X
+cloud {
+X    interface "JuJu" as juju
+X    interface "API" as api
+X    interface "Storage" as storage
+X    interface "Transform" as transform
+X    interface "Publisher" as publisher
+X    interface "Website" as website
+X
+X    juju - [JuJu]
+X
+X    website - [WebUI]
+X    [WebUI] .up.> juju
+X    [WebUI] .down.> storage
+X    [WebUI] .right.> api
+X
+X    api - [Orchestra]
+X    transform - [Orchestra]
+X    publisher - [Orchestra]
+X    [Orchestra] .up.> juju
+X    [Orchestra] .down.> storage
+X
+X    [Transform] .up.> juju
+X    [Transform] .down.> storage
+X    [Transform] ..> transform
+X
+X    [Publisher] .up.> juju
+X    [Publisher] .down.> storage
+X    [Publisher] ..> publisher
+X
+X    storage - [Storage]
+X    [Storage] .up.> juju
+}
+X
+@enduml
+#+END_EXAMPLE
+X
+[[file:screenshot-20200207-193350-transparent.png]]
+X
+*** Class Diagram
+X    :PROPERTIES:
+X    :ID:       d528f9da-b312-4586-be10-944f28ed0ef6
+X    :ATTACH_DIR: /home/agarciafdz/repos/gh/elviejo79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/
+X    :END:
+X
+#+BEGIN_EXAMPLE
+@startuml
+interface Command {
+X    execute()
+X    undo()
+}
+class Invoker{
+X    setCommand()
+}
+class Client
+class Receiver{
+X    action()
+}
+class ConcreteCommand{
+X    execute()
+X    undo()
+}
+X
+Command <|-down- ConcreteCommand
+Client -right-> Receiver
+Client --> ConcreteCommand
+Invoker o-right-> Command
+Receiver <-left- ConcreteCommand
+@enduml
+#+END_EXAMPLE
+X
+X
+[[file:screenshot-20200207-193655-transparent.png]]
+X
+X
+*** More diagrams can be found in:
+X  - https://real-world-plantuml.com/
+X
+** [[https://mermaidjs.github.io/][mermaid.js]]
+X
+*** Flowchart
+X    :PROPERTIES:
+X    :ATTACH_DIR: /home/agarciafdz/exp_before_floobits/blog/org/posts/2020-02-02/
+X    :END:
+X    #+BEGIN_EXAMPLE
+graph TD;
+X    A-->B;
+X    A-->C;
+X    B-->D;
+X    C-->D;
+X    #+END_EXAMPLE
+X
+[[file:mermaidjs_flowchart-transparent.png]]
+X
+X
+X
+*** Sequence diagram
+X    :PROPERTIES:
+X    :ATTACH_DIR: /home/agarciafdz/exp_before_floobits/blog/org/posts/2020-02-02/
+X    :END:
+X    #+BEGIN_EXAMPLE
+X    sequenceDiagram
+X    participant Alice
+X    participant Bob
+X    Alice->>John: Hello John, how are you?
+X    loop Healthcheck
+X        John->>John: Fight against hypochondria
+X    end
+X    Note right of John: Rational thoughts <br/>prevail!
+X    John-->>Alice: Great!
+X    John->>Bob: How about you?
+X    Bob-->>John: Jolly good!
+X    #+END_EXAMPLE
+X
+[[file:mermaidjs_sequence-transparent.png]]
+X
+*** Gantt diagram
+X    #+BEGIN_EXAMPLE
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+X
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+X    #+END_EXAMPLE
+X
+X
+[[file:mermaidjs_gantt-transparent.png]]
+X
+X
+X
+X
+** [[https://yuml.me][yuml.me]]
+X
+*** Class Diagram
+X    #+BEGIN_EXAMPLE
+// Cool Class Diagram
+[Customer|-forname:string;surname:string|doShiz()]<>-orders*>[Order]
+[Order]++-0..*>[LineItem]
+[Order]-[note:Aggregate Root ala DDD{bg:wheat}]
+X    #+END_EXAMPLE
+X
+[[https://yuml.me/08fdfe82.png]]
+X
+*** Activity Diagram
+#+BEGIN_EXAMPLE
+(start)-|a|
+|a|->(Grind Coffee)->(Pour Shot)->(Froth Milk)->(Pour Coffee)->|b|
+|a|->(Fry Eggs)->(Make Toast)->(Butter Toast)->|b|
+|b|-><c>[want another coffee]->(Grind Coffee)
+<c>[ready to go]->(end)
+#+END_EXAMPLE
+X
+[[./69f94f72-transparent.png]]
+X
+*** Use cases
+#+BEGIN_EXAMPLE
+[Customer]-(Sign In)
+[Customer]-(Buy Products)
+(Buy Products)>(Browse Products)
+(Buy Products)>(Checkout)
+(Checkout)<(Add New Credit Card)
+(Checkout)
+[Office Staff]-(Processs Order)
+#+END_EXAMPLE
+X
+[[https://yuml.me/a9d0a33f.png]]
+X
+X
+** [[https://www.websequencediagrams.com/][websequencediagrams.com]]
+X   Just sequence diagrams
+X
+X   #+BEGIN_EXAMPLE
+title Authentication Sequence
+X
+Alice->Bob: Authentication Request
+note right of Bob: Bob thinks about it
+Bob->Alice: Authentication Response
+X   #+END_EXAMPLE
+X
+[[file:websequencediagarms-transparent.png]]
+X
+X
+X
+** [[http://blockdiag.com][blockdiag.com]]
+X
+*** [[http://blockdiag.com/en/blockdiag/index.html][Block Diagrams]]
+X    #+BEGIN_EXAMPLE
+blockdiag {
+X   A -> B -> C -> D;
+X   A -> E -> F -> G;
+}
+X    #+END_EXAMPLE
+X
+[[file:blockdiag-65aa4915fbaf749b122e4ff0f598bd6eed011979-transparent.png]]
+X
+X
+*** [[http://blockdiag.com/en/seqdiag/index.html][Sequence Diagrams]],
+X
+X
+*** [[http://blockdiag.com/en/actdiag/index.html][Activity diagrams]],
+X
+*** [[http://blockdiag.com/en/nwdiag/index.html][Network diagrams]].
+X    #+BEGIN_EXAMPLE
+nwdiag {
+X  network Sample_front {
+X    address = "192.168.10.0/24";
+X
+X    // define group
+X    group web {
+X      web01 [address = ".1"];
+X      web02 [address = ".2"];
+X    }
+X  }
+X  network Sample_back {
+X    address = "192.168.20.0/24";
+X    web01 [address = ".1"];
+X    web02 [address = ".2"];
+X    db01 [address = ".101"];
+X    db02 [address = ".102"];
+X
+X    // define network using defined nodes
+X    group db {
+X      db01;
+X      db02;
+X    }
+X  }
+}
+X    #+END_EXAMPLE
+X
+[[file:nwdiag-5158279d2950cc1fc6b424d4999923614bb2c944-transparent.png]]
+X
+** [[https://github.com/stathissideris/ditaa][ditaa]]
+X   Convert diagrams drawn using ascii art (block diagrams) , into proper bitmap graphics.
+#+BEGIN_EXAMPLE
+X    +--------+   +-------+    +-------+
+X    |        | --+ ditaa +--> |       |
+X    |  Text  |   +-------+    |diagram|
+X    |Document|   |!magic!|    |       |
+X    |     {d}|   |       |    |       |
+X    +---+----+   +-------+    +-------+
+X        :                         ^
+X        |       Lots of work      |
+X        +-------------------------+
+#+END_EXAMPLE
+X
+[[file:ditaa-transparent.png]]
+X
+X
+** [[https://graphviz.org/][graphviz.org]] Creates graphs (as in Edges and Vertex).
+X   #+BEGIN_EXAMPLE
+digraph G {
+X
+X	subgraph cluster_0 {
+X		style=filled;
+X		color=lightgrey;
+X		node [style=filled,color=white];
+X		a0 -> a1 -> a2 -> a3;
+X		label = "process #1";
+X	}
+X
+X	subgraph cluster_1 {
+X		node [style=filled];
+X		b0 -> b1 -> b2 -> b3;
+X		label = "process #2";
+X		color=blue
+X	}
+X	start -> a0;
+X	start -> b0;
+X	a1 -> b3;
+X	b2 -> a3;
+X	a3 -> a0;
+X	a3 -> end;
+X	b3 -> end;
+X
+X	start [shape=Mdiamond];
+X	end [shape=Msquare];
+}
+X   #+END_EXAMPLE
+X
+[[file:graphviz_cluster-transparent.png]]
+X
+*** finite state machine
+#+BEGIN_EXAMPLE
+digraph finite_state_machine {
+X	rankdir=LR;
+X	size="8,5"
+X	node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
+X	node [shape = circle];
+X	LR_0 -> LR_2 [ label = "SS(B)" ];
+X	LR_0 -> LR_1 [ label = "SS(S)" ];
+X	LR_1 -> LR_3 [ label = "S($end)" ];
+X	LR_2 -> LR_6 [ label = "SS(b)" ];
+X	LR_2 -> LR_5 [ label = "SS(a)" ];
+X	LR_2 -> LR_4 [ label = "S(A)" ];
+X	LR_5 -> LR_7 [ label = "S(b)" ];
+X	LR_5 -> LR_5 [ label = "S(a)" ];
+X	LR_6 -> LR_6 [ label = "S(b)" ];
+X	LR_6 -> LR_5 [ label = "S(a)" ];
+X	LR_7 -> LR_8 [ label = "S(b)" ];
+X	LR_7 -> LR_5 [ label = "S(a)" ];
+X	LR_8 -> LR_6 [ label = "S(b)" ];
+X	LR_8 -> LR_5 [ label = "S(a)" ];
+}
+#+END_EXAMPLE
+X
+[[file:graphviz_fsm-transparent.png]]
+X
+X
+*** Descendant and ancestor
+#+BEGIN_EXAMPLE
+X
+graph G {
+I5 [shape=ellipse,color=red,style=bold,label="Caroline Bouvier Kennedy\nb. 27.11.1957 New York",image="images/165px-Caroline_Kennedy.jpg",labelloc=b];
+I1 [shape=box,color=blue,style=bold,label="John Fitzgerald Kennedy\nb. 29.5.1917 Brookline\nd. 22.11.1963 Dallas",image="images/kennedyface.jpg",labelloc=b];
+I6 [shape=box,color=blue,style=bold,label="John Fitzgerald Kennedy\nb. 25.11.1960 Washington\nd. 16.7.1999 over the Atlantic Ocean, near Aquinnah, MA, USA",image="images/180px-JFKJr2.jpg",labelloc=b];
+I7 [shape=box,color=blue,style=bold,label="Patrick Bouvier Kennedy\nb. 7.8.1963\nd. 9.8.1963"];
+I2 [shape=ellipse,color=red,style=bold,label="Jaqueline Lee Bouvier\nb. 28.7.1929 Southampton\nd. 19.5.1994 New York City",image="images/jacqueline-kennedy-onassis.jpg",labelloc=b];
+I8 [shape=box,color=blue,style=bold,label="Joseph Patrick Kennedy\nb. 6.9.1888 East Boston\nd. 16.11.1969 Hyannis Port",image="images/1025901671.jpg",labelloc=b];
+I10 [shape=box,color=blue,style=bold,label="Joseph Patrick Kennedy Jr\nb. 1915\nd. 1944"];
+I11 [shape=ellipse,color=red,style=bold,label="Rosemary Kennedy\nb. 13.9.1918\nd. 7.1.2005",image="images/rosemary.jpg",labelloc=b];
+I12 [shape=ellipse,color=red,style=bold,label="Kathleen Kennedy\nb. 1920\nd. 1948"];
+I13 [shape=ellipse,color=red,style=bold,label="Eunice Mary Kennedy\nb. 10.7.1921 Brookline"];
+I9 [shape=ellipse,color=red,style=bold,label="Rose Elizabeth Fitzgerald\nb. 22.7.1890 Boston\nd. 22.1.1995 Hyannis Port",image="images/Rose_kennedy.JPG",labelloc=b];
+I15 [shape=box,color=blue,style=bold,label="Aristotle Onassis"];
+I3 [shape=box,color=blue,style=bold,label="John Vernou Bouvier III\nb. 1891\nd. 1957",image="images/BE037819.jpg",labelloc=b];
+I4 [shape=ellipse,color=red,style=bold,label="Janet Norton Lee\nb. 2.10.1877\nd. 3.1.1968",image="images/n48862003257_1275276_1366.jpg",labelloc=b];
+X I1 -- I5  [style=bold,color=blue];
+X I1 -- I6  [style=bold,color=orange];
+X I2 -- I6  [style=bold,color=orange];
+X I1 -- I7  [style=bold,color=orange];
+X I2 -- I7  [style=bold,color=orange];
+X I1 -- I2  [style=bold,color=violet];
+X I8 -- I1  [style=bold,color=blue];
+X I8 -- I10  [style=bold,color=orange];
+X I9 -- I10  [style=bold,color=orange];
+X I8 -- I11  [style=bold,color=orange];
+X I9 -- I11  [style=bold,color=orange];
+X I8 -- I12  [style=bold,color=orange];
+X I9 -- I12  [style=bold,color=orange];
+X I8 -- I13  [style=bold,color=orange];
+X I9 -- I13  [style=bold,color=orange];
+X I8 -- I9  [style=bold,color=violet];
+X I9 -- I1  [style=bold,color=red];
+X I2 -- I5  [style=bold,color=red];
+X I2 -- I15  [style=bold,color=violet];
+X I3 -- I2  [style=bold,color=blue];
+X I3 -- I4  [style=bold,color=violet];
+X I4 -- I2  [style=bold,color=red];
+}
+#+END_EXAMPLE
+X
+[[file:kennedyanc-transparent.png]]
+X
+X
+X
+** [[https://tobloef.com/text2mindmap/][Text2MindMap]]
+X   :PROPERTIES:
+X   :ATTACH_DIR: /home/agarciafdz/exp_before_floobits/blog/org/posts/2020-02-02/
+X   :END:
+X   creates a mind map out of indented text
+X   #+BEGIN_EXAMPLE
+Text2MindMap
+X	Turn tab-indented lists into mind maps
+X		Press Tab to indent lines
+X		Press Shift + Tab to unindent lines
+X	Drag nodes to re-organize them
+X	This project is based on the now dead site Text2MindMap.com
+X   #+END_EXAMPLE
+X
+[[file:screenshot-20200202-122010-transparent.png]]
+X
+* Diagram.codes
+X  What I like about this tool is that it offers some diagrams that don't appear on any other tool.
+X
+** Dataflow
+X
+[[file:2020-12-27-175812_1236x439_scrot.png][Dataflow diagram]]
+X
+** Timeline
+X
+[[file:2020-12-27-180017_1203x162_scrot.png][timeline]]
+X
+** layer stack
+X
+[[file:2020-12-27-180200_1075x261_scrot.png]]
+X
+** Layer diagram
+[[file:2020-12-27-180423_1093x291_scrot.png]]
+X
+* code2flow
+The good thing about this tool is that it creates flowcharts
+as fast as [[BPMN Sketch Miner]] does bpmn diagrams.
+This two tools are the only ones in this list
+that make a smart use of white space.
+X
+And when using white space the result is brevity. Look at Python and Haskell
+X
+[[file:code2flow.gif]]
+X
+* [[https://kroki.io/][Kroki.com]]
+This one website combines several of the tools in this thread.
+And it's a good point to explore first when searching for a solution in text to multimedia.
+SHAR_EOF
+  (set 20 20 12 27 18 39 04 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org': 'MD5 check failed'
+       ) << \SHAR_EOF
+91873fd674542d8b9b8d5bec92f6c162  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org'` -ne 20738 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org' is not 20738"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org' &&
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
+#+TITLE: On the beauty of stackable things
+#+DATE: <2020-02-08 sáb>
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: design
+X
+In the [[https://youtu.be/0IagRZBvLtw][Sound of Music, Julie Andrews]] sings about her favorite things.
+X
+[[./favorite_things.jpeg]]
+X
+X
+Well my favorite things are,  /stackable things/.
+They fulfill  their function when you need them,
+and store nicely when you don't.
+This way they achieve  separation in time principle.
+Here are examples in action.
+X
+** Coffe cups
+My friend Carlos owns "[[https://www.facebook.com/vendimiapizza/][La Vendimia]]", a super nice coffee shop. There they have many types of coffee cups my favorite by far is this:
+X
+[[./single_coffe_cup.png]]
+X
+Because it has the magic of stackable:
+X
+[[./stacked_cups.jpeg]]
+X
+Let's compare this with the alternative, unstackable coffe mugs:
+X
+[[./stack-of-colorful-coffee-cups-on-table_1373-61.jpg]]
+X
+For me the choice is clear
+X
+** Chairs
+X   Continuing with the coffee shop example there are two kinds of chairs, the practical:
+X
+X   [[./stacked_chairs.png]]
+X
+X   and the impractical
+X
+X   [[./coffe_chairs.jpeg]]
+X
+** Food Containers
+X
+X   Stacked food containers are good.
+X
+X   [[./stacked_food_containers.jpeg]]
+X
+X   But stacked containers inside each others are better.
+X
+X   [[./stacked_inside_each_other.jpeg]]
+X
+** Water thanks
+X
+For example in México where I live is common to see in the road trucks fully loaded with water tanks.
+X
+[[./tinacos_large.jpeg]]
+X
+But in a trip to Colombia we discovered water tanks, like this one:
+X
+[[./colempaque.jpeg]]
+X
+On the surface they do the same, however the ones in Colombia are stackable, which makes them much more practical:
+X
+[[./colempaque_stacked.jpeg]]
+X
+** Shipping Containers
+X   It's hard to remember but there was a time when shipping containers where not the standard and that was a hinderance to global commerce.
+X   Se we passed of transporting things with different shapes:
+X
+X   [[./old_ship_loading.jpeg]]
+X
+X   To the much more efficient way to do it now:
+X   [[./modern_ship_loading.jpeg]]
+X
+X
+X   Thanks to the magic of the stackable shipping container
+X   [[./single_shipping_container.png]]
+X
+So when I'm in the market ready to buy several things, of the same type (chairs, glasses, dishers, boxes, etc).
+I just need to remember the voice of Julie Andrews, sing about /stackable things/ and the choice is clear.
+SHAR_EOF
+  (set 20 20 12 23 10 38 02 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org': 'MD5 check failed'
+       ) << \SHAR_EOF
+3436e8843be3c4d55240e185f64e7691  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org'` -ne 2755 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-08-Stackable-Things/index.org' is not 2755"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org' &&
+#+title: projectional_editing
+X
+* Problem
+X
+As we have established before [[Awesome-text-to-multimedia]].
+I like to create using sipmle text (as you do with plantuml).
+But then I like the creation to be somethnig visual as an image.
+X
+The problem is that the Text and the Representation are *different* things
+They represent the same information, but look different.
+X
+And as any software developer knows having the same information in two places
+is a "Bad Idea" (tm) violating the [[Dry Principle]].
+X
+* Direction of the solution
+So a solution for me should be something like:
+X
+** Views on a database
+X   A database table can have multiple views
+X   i.e. it displays a subset of the information
+X   but it's still the same information!
+X
+** Air flex
+Air flex was a nice technology, it was used to produce web apps.
+It compiled the apps to Flash technology, and Flash was killed by Steve Jobs
+by not including it on the iphone.
+X
+The nice thing about flex is that was a text representation (in XML, not pretty)
+and a visual represenation. When one changed the visual representation it changed the xml
+X
+** Docbook and Asciidoc
+Docbook is an XML standard, that is used to edit documents such as books.
+The advantage is that there are tools (lyx) that can process it to create a fully formed book.
+However it's disadvantage was that writting xml by hand was a horrible.
+So much so that XML became known first as: humand writable but later,
+it was said that XML was only for computers to use and humans to interpret.
+X
+Asciidoc is a simplier format (looks like markdown) however it's 100% compatible with docbook.
+This makes it possible to write documents in plain text (dockbook) and then compile (translate)
+to Docbook and use all the tools.
+X
+** XML vs JSON
+I hated XML, it always seemed to complex for what it was the information displayed was always to much information for such a little text.
+Plus all the validators and schemas seemed like an unnecessary complication.
+Plus it was *too* flexible at the same time.
+Should a subproperty be represented as child node or as property of the element?
+/How wrong I was!/
+X
+In the beginning json seemed like a breath of fresh air.
+A lot less verbose, besides all the "extra stuff" (I mean "{" brackets) was justified because it was necessary
+since json was an ascii represantation of a javascript object.
+You had a way to navigate the tree that was part of the programming language!
+X
+However later we discovered that:
+a) json had the same complication should a subproperty be representad as nest or plain?!
+b) the scheme in XML where actually necessary! because in Json for expample a field "telephone" is expecting an integer? or a string of the form "492-123-1234"
+c) searching inside json was a mess of navigating properties and again non standard see the "search language" of [[jQ]]
+X
+So turns out that disliked the *syntax* of xml, but not it's *semantics*.
+I mean it *looked* ugly but it worked very well.
+X
+by the way this was the same "error" I made with [[java vs strongyl typed]]
+X
+** XML vs JSON vs YAML
+YAML improves over JSON in one important, to me, aspect it uses spaces as meaningful for the data structure.
+Why? because by making whitespace mandatory, there is more meannig in the same space and less things to argue abuout
+Being strict even with the format is something I appreciate like.
+Ken Arnold said on his essay [[Style is substance]] where he advocates to use the code style as part of the compiler
+X
+** In my mind everything is a graph
+X
+I think in terms of nodes and links between them.
+So when I discovered Neo4j I saw that was the correct data represenation for the world.
+X
+*** Sqlite
+#+begin_quote
+Sqlite is a replacemnet of a text file, not oracle
+#+end_quote
+X
+What that means is that Sqlite should be used as a datafile with all the advantages of
+X
+* Vision
+So what I want is:
+#+begin_quote
+A format that can represent the information in different media (at least text and chart, like plantuml),
+That has all the tools of XML
+That looks like Yaml or whatever.
+Probably is like an embeded database, like sqlite but is in fact a graph.
+X
+#+end_quote
+X
+* Does such a thing exist?
+Turns out it does and is called *projectional editing*!
+X
+** Projectional editing
+Is the idea of an editor where the information looks different depending on the angle you are watching.
+So each representation is in fact a *projection* of what the concepts.
+X
+** MPS
+X   For example in the following image you can see MPS a projectional editor looking at the same code in different views:
+X   - As text
+X   - As graph
+X   - As table!
+X   And everythnig is in fact saved as an XML file.
+X
+X
+X   [[file:mps_demo.jpg][MPS a practical projectional editor]]
+X
+*** Things I like about MPS
+X
++ Has over 10 years of development on it.
++ It's sponsored by a company JetBrains
++ It's Apache licensed
+X
+- It's too focused on DSL, and not simple reipmelementations of the laguages that already exist.
+- not enough examples of reimplemnetations.
+X
+** [[https://cloudalion.org/2016/05/29/whats-the-deal-with-projectional-editing/][Cedalion]]
+X
+Its a PhD thesis... that makes sense
+X
+* Experiments
+Things that I would like to do with this technology.
+X
+** JSON
+If we had a projectional de JSON, then we could have version of it that is XML.
+And since it would be XML it would be possible to use schema validator, xpath, and xml databases.
+X
+** Reimplement the Real-Time Object-Oriented modeling language.
+Just like they did with [[https://www.eclipse.org/etrice/][eTrice]]. But in this one of the projectios would be the source that looks like the same language.
+Another projection would be the code to implement the state machines in elixir
+Another projection would be the code to implemnet the machines as Nix language to deploy an architecture.
+X
+** Reimplemnet PlantUML
+One of the projections would be source code and the other obivously the diagram.
+X
+** Reimplement flyinglogic
+as a textual language that has a representation.
+X
+** Remiplemnet VUE (Visual understanding envorinment)
+In VUE one of the views is a Graph another view is like slides.
+[[https://78fda818-a-62cb3a1a-s-sites.googlegroups.com/site/venusiconography/home/connectivity-maps/VUE.jpg?attachauth=ANoY7cryA2dzh24lFCwwPt5PBs5-dS3FjRXiN9RIFrlJa4UD6hTHBZv9KN7m2L4uKk57QjuxdAMxKLffCPxDMFwsMZoPIYH_d7C66SJyW2HUmOWcSbzmg0mohVN4gUEJg2Wzu4yb-pue4AdUlj4HvPMn66cwv2A0i-MeozfvcWWQohcVLLN4oq5BR9vkUpCD8E-fdWWXiovpgPQq7eqcrcIsM9N18ckgg0quoAUjt7eoar70IWXPHv4IR451cbz40_c7xfqrmfi4&attredirects=0]]
+X
+This I like but I prefer to combine the two views like in:
+[[https://storymap.knightlab.com/examples/aryas-journey/][Arya's journey]]
+X
+** Implement a state machine language for smart contracts.
+SHAR_EOF
+  (set 20 20 12 23 22 33 47 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org': 'MD5 check failed'
+       ) << \SHAR_EOF
+879d954c3464ab762cb544db2198342c  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org'` -ne 6649 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org' is not 6649"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org ==============
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org' &&
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
+#+TITLE: El viejo's blog
+#+DATE: <2019-12-01>
+#+AUTHOR: Alejandro Garcia
+#+EMAIL: agarciafdz@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.3 (Org mode 9.1.9)
+#+FILETAGS: software development, theory of constraints, kanban
+X
+X
+* Alejandro García Fernández (El viejo)
+X
+I'm a software developer, Computer Science teacher and Entrepreneur with experience creating small tech companies. I love leading small focused teams to achieve success. I'm an accredited Kanban Trainer and Certified Scrum Professional.
+X
+- Theory of constraints
+- Kanban
+- Agile software development
+- Functional programming
+X
+X
+* Posts
+X
+#+INCLUDE: archive.inc
+SHAR_EOF
+  (set 20 23 10 20 23 51 07 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org': 'MD5 check failed'
+       ) << \SHAR_EOF
+8a765c510ff257443c5efaf761a25cd4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org'` -ne 970 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org' is not 970"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt ==============
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt' &&
+R6Qi3yQ
+B3bYbv0
+lK5mqEN
+j9ny8ne
+L1TpjrL
+9xJmZzd
+3mcseQh
+oe3QS9Z
+EMsgHGU
+JBiIhQz
+13hcwJL
+k3lvL6r
+iJUOttO
+Dp9t9ys
+FVWGF7W
+JaJsM9W
+NvRUie8
+4CtgJMp
+MO0tKYl
+HmYl07u
+wf3XtJE
+6b19pNp
+RLTXy8A
+QV1DG8U
+JMJ7cNo
+fJ5apwD
+9IWc5Pb
+SSZeNE0
+ELqZ6er
+N3SQKcT
+kmTavq5
+yhnDGkv
+cJEp1Y3
+Dbn4JKT
+JlJAw5S
+l58Rrd9
+B3ahF6i
+8OP5Sr0
+bwtuFrL
+toEXK3R
+wzpfQmN
+VQpr40G
+Z42NHK8
+e728eHh
+xie1HIU
+kWHS0Eb
+6fFNcCB
+0DhSzep
+yVmfAtE
+QNIab4S
+zQjGNqR
+sFWonSS
+24nYdfs
+bP5tyBl
+FP8or0w
+sDjLda0
+gs3aahV
+1CMPcBX
+LEeCWB8
+31IU2Ha
+328KU0B
+QSHnPPk
+0rTSAn9
+UyxYiWk
+3VgBiaq
+agABbaQ
+Wt1n8mQ
+jUDEqfg
+ZViWSkM
+ukScAIV
+oANUE45
+1tlJKJ1
+42lr4vU
+gKsE4jd
+zHDQQKY
+qNOPfqP
+hRSnYUS
+bWDAETT
+rJ51vlS
+63luKZ3
+QnzOqvN
+0G7SvY5
+uZjjGEs
+SuOWd9u
+QvGbUOa
+kd0rtQn
+OsIfxPc
+AW2BooD
+wsNNamj
+g2LtbFp
+eg5Q00y
+TvsP3Ne
+LrG6ak4
+IznebJt
+ZMqqCTl
+mdB1wzc
+U69tA93
+LWRvWmI
+89bzBNm
+KnO9fhW
+VLBptcg
+NDCriew
+yfzvkUY
+K4Vmzdn
+Oq4lvQG
+Uy958Jj
+DzIYuFc
+xj5ixWT
+FiisJXL
+JwMdy1o
+iPMf8Gk
+kml51pr
+L46Rw6y
+4bBKAqV
+wSFFVtZ
+79yZ1IG
+9fbt0l6
+XXPjQELz
+ZtFh3F4
+dC3DmdT
+NGCEAn8
+4FUqdMo
+toRARvB
+e0Jv9cV
+BYUnbzz
+cVMQM1C
+5Hl4Pmd
+ZZoqDAG
+IqAMYRI
+mUO2fhq
+sTFP2B2
+a9cPurR
+sUXTRwn
+Pqonaj5
+zEIeR0q
+QhsnePA
+JhngXqu
+JOUujYC
+zmxwlV6
+dg5GAKK
+IciWms1
+lpDLOZU
+dqYBedY
+mNlUZq0
+4I8v652
+0VDKkBm
+7sMoUqj
+vFRw5Hl
+5tU91L3
+vuqLaeH
+oVm0p8E
+BhGZyH7
+cUs72qd
+vKjJ3LW
+LwLVLsJ
+MSsZDnS
+Obg8E0O
+EyGbcvD
+dsqBmcl
+hMdCCtx
+tpiqY8U
+W8s6feN
+PCoOHMe
+TbKu6BZ
+0gTYxpq
+Beag4JF
+oPtFEQt
+1T1lPwm
+WtsSWm2
+5wZbbn1
+cPvAdLJ
+IumR9oW
+EeSeggR
+BSOL7NS
+JLXRkdy
+dbrwwG9
+UoynlRz
+H6tW3RY
+8er5jEL
+URDGA6J
+Ecu7ycw
+RuHTUFX
+A2Mjzl5
+bTZJS7p
+gkmMPIt
+KWgiEoe
+cBQlcIm
+KjoXXca
+kANO35R
+O0C4Rbl
+3wuhymS
+i5qePC8
+PMwPt8q
+2NkwoJF
+tDqv14v
+IO1O3BD
+2aFCj2l
+Eg1Sfsa
+RWCCQEn
+cuHMuJB
+ruv20BN
+Rq68JOC
+UVoFwvl
+xcJgjfx
+tSCCsZz
+kRv1RPx
+poccs3M
+kn7nq8R
+1QBltrP
+AKMehyk
+w7qX2SZ
+OgyIdpF
+ysQJHXX
+0qyAY41
+bWGVcly
+ta4FbO7
+XXZnUKPj
+29yrDaW
+nCVhpF3
+1lcqkOl
+2oPwak3
+2IQsfbq
+qZziAUK
+7DQl2Tl
+gbiSuGG
+85Om0Gs
+r5T0IsI
+lPyMj3Y
+RJFi7Bc
+XXF23sc9
+k9QpIus
+Ct8QTAi
+krywgMQ
+MVPV3Y4
+74VVZuj
+OeZOgYK
+XX2aBvno
+XXgmLofP
+LUqUXEU
+GhUXYrS
+hNvEPdq
+ZaLYIJK
+dLbyH18
+6tbx5JW
+EyJ5Umy
+jjyLdD9
+vZJl4sD
+Gk6IEN7
+t6tnFMA
+cRfOOmJ
+eWR5jvP
+59OaVsd
+doDKj5K
+hapMt6C
+HrU5j3x
+k4zsS9P
+lfpySr0
+FdXDG1z
+nxRZw1Y
+ZcuOdYX
+ZICQAfU
+y09fWBA
+zObGkbj
+razdtNN
+4COb8p0
+0EJnIxp
+AWbYn6x
+uSlw47i
+jVD5yIT
+XXPKD0Dk
+yFmgOaL
+JlOs4ZD
+aiDLaoG
+C16oolz
+D4XX1Vw
+kuZ7DOv
+FUEO3ax
+CpXl6kR
+52pI5CK
+rna4INV
+lBJi301
+KhOICcJ
+bHaeXQ9
+ufewRCl
+kqtnsEL
+qMNL98f
+dZDjh9E
+If6YxCK
+J5W4dvg
+oH4l4yW
+L9hjHP8
+JKX389L
+gPC5h0j
+yp4ANE0
+MVRVBOM
+Q8VhySE
+gStNSFv
+tPgtCeW
+voBPuBt
+HUI4Y5x
+e9RsYML
+Y5CUoPo
+q7NBQHO
+koUBZ5J
+XX0l4dCd
+VCnNv64
+wOb5Z4Z
+qVMZdYK
+EzYT7PA
+IwpqJ5a
+KxO8sCS
+Ykm6Ed0
+3yOICvw
+e20wjTg
+dx2cE54
+EDJGEly
+jvlP8XK
+s01Amwh
+T21EqHU
+3ot5jI0
+z1EhLq7
+U0RPRdl
+oj4WEIv
+3hPtQPv
+BQY51Ws
+dnxBhmD
+yrJspQQ
+Bfr2xJ4
+x1Razlu
+a7ttICH
+MQOI9L2
+vikwhSH
+KMtNfeN
+N9azFn8
+NKz5gBO
+8s6QCie
+YfOWIBP
+nYGh9sf
+HitjhIl
+n1PvHGg
+W6YMSq0
+L2DJKXZ
+Wbfe4BA
+RG44NSS
+EicSC4k
+oBzMJ52
+3Oi4vcI
+QPD68hE
+dIQIWgF
+YHi1qO2
+hdyZd0p
+0DKis86
+3RxqyQD
+jCuYmpa
+GEDI5jJ
+GmDXP2W
+8de0Evj
+NBKaF56
+OGcTMZk
+IdU9WdQ
+sB0kXWy
+IF0zqqJ
+KKVEiwr
+4qSEPtN
+bqxpp7l
+87mpNIz
+ezJOxjD
+Cbpsx1H
+fbYBcGe
+DSgJ722
+OfWktNZ
+eGJQWeP
+sKklXfo
+QreRyiL
+OuN7OnQ
+78QIqDH
+GEVrW0F
+InCXsrt
+E7EGi3a
+1HJUk00
+9bz6ovi
+bmbYvEB
+rNtoHuG
+O4aIqMN
+AaJE3GP
+sGkTsOi
+zxQkxoP
+J5tkqcl
+ctJ64is
+mQvcE7w
+oLc5ztl
+R5xXzja
+cWjqtDd
+XXs7Wlr8
+Y4l9vE2
+O3cGorw
+dKw8V4o
+T0Z9HJN
+dcWqwqq
+u18ubut
+rO6KCyW
+sllAONA
+lWnLXPb
+7IaP7vR
+JON5J4H
+0xEITqT
+LgVZL7X
+1o9D34h
+dmLDiD0
+TZgqbUz
+zwwZ2Ol
+IQzUxdW
+Dl4OnDL
+umlbTbn
+A8yDAx9
+hspwfEg
+Q21XFtS
+KFq0F6q
+3b1Ea22
+E7EXfzF
+EHLRRpO
+Gs05j8Y
+MZe6jl5
+OO5ZRxO
+GPDTrMl
+wwzCm87
+hMAVR2T
+2NhMBfx
+C68UeXt
+i6U7Z8U
+bM3T1v8
+ug5XX0o
+4HipTMm
+AVS0DFc
+QVFa2Cz
+vEWK5jz
+hYsXqK7
+2RUDF7h
+bvVGXPa
+zx0URMg
+ulo9r8U
+xJ0gfxA
+4Q7l2ca
+CT61RWC
+wwiK1oR
+Uv1FDZW
+QOmkNbG
+mN8W2uc
+Sglt5Pw
+u7ZvWVP
+Q0bIg5j
+5AU7uQG
+PhlkkuN
+nVgvROs
+wznmAWl
+2GtRzlp
+j562dwB
+U0EXntH
+LswKJmt
+7qTLuCp
+hZxeFll
+o7A4V0F
+2ZzbmNt
+6Wgz1Sz
+PEvFbCV
+KesJ9ff
+dQ94fJq
+madLD9e
+NGbddC2
+DGOhrIV
+wVLZqbC
+kXbdOjZ
+Bfw6Zj7
+korIwoU
+5iaKwWt
+7voJT3t
+x0Fz9tv
+T998pY7
+0Dxresx
+nZ9rBpS
+zb6ckva
+8yE32TJ
+ixENpeK
+bHUOdW1
+O1ODaUj
+22z17mb
+H363AbP
+towK1WG
+JzTO0l4
+8mfRU7Y
+eNv8Z0t
+CGNqZYq
+GszdyWL
+bVpj6ob
+XXEto0E5
+A0GgBy8
+q0mDx06
+o41R9YI
+IQdfSpp
+SxeHeyJ
+amD29JZ
+Gzi3wsb
+GTDyICy
+CHLkLi1
+NVYMJVU
+eWBCvhx
+eIgw05Y
+J4mqGQE
+RjGBMAv
+z10oVgM
+PqnToBU
+YOHqaoK
+mqxS6xi
+BYmPh7X
+sYSRmUW
+Gq8uQGK
+7TeOc2D
+NaWFmzE
+PEfVAPq
+qFm6sBO
+AHSsgaE
+wtrBzst
+7Tey4f1
+m5xoMsk
+3pV0RbE
+yDnr7Vd
+H7sjCZN
+haWUi3H
+N0ZCXd2
+H3yj57B
+yXmIaWu
+ClmMVMb
+IE40Pew
+K2uGUeC
+CLPHG0t
+BOn13Jh
+5BxVTSR
+JeKHDXO
+sg0sYC2
+hqdWyDa
+ieLiJpA
+KBDD8et
+PedoOtz
+373ai5I
+Riihelw
+IppXexL
+HkpWct2
+BnCjcbS
+xWC4frS
+HzpJ576
+VMQnBqP
+RdxngKQ
+H1rkVcg
+C0vulSe
+HQqH2Yq
+vedjvEf
+PnNBBw9
+uB0q9Yj
+TbiKedY
+NlTxL8Q
+xjWHQc4
+cdzgBDp
+YM0ARzA
+aXdPXd6
+TSIIXhF
+MwOCGCF
+78J0OEy
+I5lO3e6
+IIWz9ll
+4YoVW0n
+pi71CsW
+2j003C4
+bYF6fra
+GUSwhVz
+T05z1Uo
+AQ6FhmN
+rQibLAC
+n114In3
+TJVP9WH
+8dVXzjY
+rK5v6Rv
+YmOfqOw
+YOvNIBE
+p2vLGTZ
+w2VtPBT
+yFaMN5H
+LIVpKaD
+L2thY4V
+yKHXKcP
+WhXS0CS
+HVfO2ta
+9EnKRGS
+N4F4vBu
+ycRnfnE
+zGFxJ79
+wuhQtaz
+XXOgOx8v
+Ua1C4SE
+sDPhHty
+JrRbERZ
+vdWPlHf
+CtdIBlY
+pVlk57C
+lIp4Z19
+JxdOA7v
+C0xAVj1
+HU4btvd
+Ebp4T0b
+EGIOuao
+178YIuW
+UoXkGCH
+sU23G3X
+7modPhU
+Y8fuYEV
+vyFojt4
+pRS2mUl
+B2WkSwz
+VKxloUu
+ciovm89
+zuWeIY0
+DUhBTNk
+v8wEMfK
+e4xTwjG
+zn4MA8e
+GpmQoUT
+5oRW27y
+iGCwj5h
+mW41yqa
+BAvjoCg
+VcyrKZ5
+5nGfoKq
+0W6isLd
+TICLTNL
+FieBeKy
+jeYSOgv
+tlCDHbi
+0NXLCEM
+QrjcHfY
+z1KYt3k
+VjNovak
+5EyQd7e
+MbwU6id
+sxsn5XO
+PIFguzc
+UJ608Gp
+cdjXaPa
+EO6lPCR
+2zluI5o
+VE6HMyw
+PsKvOsY
+qe5Sjiv
+XXAzX1YC
+GceoWAH
+Ca3qAMC
+YciFEFc
+iA6qzPC
+HPAJ8pG
+NZCqOM5
+2ObiBn1
+sLFYcST
+92bjndR
+3Hj1VJY
+rFCxTdA
+ScHRRxq
+FA3iplx
+dBJU2Nf
+FRkUyJW
+jpbdp08
+QbnKqzP
+ErrLpYe
+xfnpzQY
+jeRPZ9D
+OZCHbsb
+GZRJjGb
+gvQQlzT
+Fe0zV4g
+dZKiUAe
+QPoTunL
+pnwcgzn
+wddLVYk
+mqt9gI8
+RtHxQK7
+xFVp1Ep
+kpKo7X9
+lsIDBE2
+Lh9u2JK
+T0h3c9y
+gtSS3rQ
+3V0B1kW
+UbyXljO
+fkuKV2W
+lOM1iFJ
+MNEHxkd
+bT8ShYB
+DBtZ4uG
+7U7F5Ql
+6LghqxI
+OZwZrA8
+5o4xh3B
+4yKbDus
+OgwGPCR
+IcgvVmE
+24CjjXT
+mBzp2v2
+lQZ4YkT
+TI6oR2o
+wZaFGe4
+ZJ7ailW
+QIfzloH
+BZmIBtJ
+R3JF3MG
+xMTEBh6
+UbuVZin
+6a8szW1
+UG4xbYY
+fu9eb0X
+Fa2rrZS
+Whdu6pU
+iTInTGs
+JTr3y0A
+8PxoNNX
+o9qMHU7
+cDdZNAj
+gDDEZWX
+zdeni4h
+4ac179M
+Y9dYR4w
+ZkAHjIr
+pfLsEeY
+f5YpjPE
+4dwbDr3
+SgoHkWd
+gsvAKVw
+tzub0uY
+SiK4Z6f
+7ddJUKq
+o9HW0zs
+UOtbHVk
+WoZeAKN
+Hr4dF8W
+39hJbLM
+buEvExw
+nnCE1kf
+XX3peXHS
+LlFBA83
+cynM5vp
+E3luZpI
+rHQNrvg
+z11kAhb
+U0rpPK0
+lObflIw
+NCdjuoR
+CKNvxpm
+6s7DoXr
+hjARCon
+nbUbhOL
+zCZH94Z
+YA9nLo4
+KB2uArP
+mjL6dxd
+GQo29nF
+nt1u5Yl
+h7zptvC
+DRz6SAM
+Kl2lcBG
+FI2FjB2
+9CayKKN
+aTjf0xG
+kJJ8Y4F
+oPaVSzM
+NrXM2TT
+MMOmfKu
+Uypb4Y2
+g0vgIPS
+glfuemF
+UYsQnpS
+u4jTGHl
+fzYRYrS
+6ZLiCKf
+vFjvSIA
+TeHRvBm
+o0fBpEO
+JRhQy5Z
+NdMfF0R
+WnV2Snp
+svperF0
+96ES718
+99DrKCW
+UmBpj6y
+bzEIZdX
+bVOl4xx
+HvT9y4I
+ro52oHf
+VsmkggI
+vIguxtD
+T98Ws50
+xGLz1cU
+ICXSj0l
+rhz3zfx
+cEcMJuu
+ZKkRMdP
+KsHYl48
+ZOfUyqR
+LYJFZVD
+bsf1wQB
+IX2AQSm
+JIYnacs
+cBKAd17
+7g0NkOW
+tPxwoAa
+f1Ye8a8
+9AlFgfB
+z4olJDd
+asqjz2I
+DhADSNQ
+7VjRCQ0
+6kHWHd6
+ui8z5xU
+7pYCcAs
+mHDO5v5
+rYwGdfX
+0eaPcRc
+S9vXbFs
+ubwW1ZE
+xIXSQ0S
+WH2KOWl
+f2MOTSo
+WDbWU0w
+hE7ZZ3B
+3mPC9fS
+vlKIAGu
+CHe5DJv
+eanXWjj
+47In6Gi
+f7wC3Lh
+TgsLiUy
+jMuR1Lv
+XXNhEwHU
+AuqiRKn
+sIyxpSS
+UBr3lNY
+pClBdOh
+DT3agq9
+zyONCk8
+CXM2GHt
+VLvy1as
+RGm3QBH
+jMeLAXF
+RovaFLz
+uKUJ4D6
+98DeJO8
+B5eynM0
+qb02llZ
+UQm2Ony
+TcuUjD8
+VRQTFeP
+l7RJVDV
+AvqqkF0
+Ia1DiHV
+VZgPl0y
+A7dUUkS
+FEhdZMf
+aQkF4MA
+oJ7zPbJ
+oZM2VQf
+F1TX28r
+zT3Qg48
+pWdg9vx
+JLMJ6wP
+i5jifjl
+fPongUd
+FzhX3ud
+1i08IfL
+aqxdcn6
+4n2tM3c
+6bkbWpY
+yi44UAB
+1oGLK3V
+WFfHj9J
+TZsmPMz
+5MZPtvi
+bRM0v44
+p54IAlH
+V0mz26C
+R1I5VbI
+fvjxalZ
+gLSVe4x
+RUUPTFr
+HWTT9Se
+1wc0Mus
+JM2hH2y
+lZ2t4vY
+QfqNk8l
+N9g11M5
+x4tJzKY
+RL3umla
+jChlCdM
+tiCDrqH
+9mGgqq5
+U6OiAzR
+UhC9Eqy
+LzKCACt
+QCzcDOP
+eKtZbnj
+ECppuT7
+lnKYpAz
+FJ9d2jb
+JHeotwN
+XXvzwS5p
+xVAdqgA
+5ismFjL
+vlL8kAd
+biqo7WF
+q8b7pfl
+EF25EUG
+hiW1Wt7
+2JtHTRV
+EX5X6oO
+GofBThG
+H9HjQa1
+8CtB03w
+XXJ8zV6L
+cyhvmRh
+bPyhnm1
+k2KDLGu
+jahf5aa
+lL3NmmJ
+EEgRlQG
+aiyo0SX
+3G09zkm
+GSrlf65
+XXMcUYPl
+ykpeteE
+qQr15xS
+znCWXLg
+gyGlKzM
+fWxRavQ
+wPl3ILE
+2qE4pkz
+966Cs0R
+Ma0DMri
+OoPZUmG
+SJH3PoY
+lw042a5
+cFdyLeC
+yqmbJJh
+aA7qQsc
+tsODxOt
+fkUygsr
+rx89KCV
+s4TDOmr
+SqYDxPD
+9f5CW2O
+eCE22dD
+KseiXPZ
+gxsjyNX
+64dWHgL
+PbpZnyG
+VEBjEgt
+MsC5RbH
+CeICEEf
+XXQpl0rH
+Q4egeia
+sbrVUFb
+PyMfC3r
+vHeEGFM
+2O2cUcQ
+jJbV1M2
+0Obdh7k
+CXOfwKc
+fAAST8G
+wBnITgq
+LcblDeH
+oqS2zRD
+yGJ5a7G
+hhAx2x3
+ZSUT9uu
+neJb6rL
+7W3tGPP
+Z3AizeZ
+Pz49reS
+vflHmmT
+qSRPwOB
+jc8iZfr
+1TZhHMU
+pzCnYpL
+zDqHjcM
+VrRrws5
+4IbOy5n
+FdmKt5J
+aVoiO7a
+utRRfGE
+iCSwwhD
+6E04AIO
+9qJOFog
+XXlad5Ho
+4WGAFmx
+zKgHBHU
+zlBPCgj
+KodPaKz
+ePDiCoE
+xwGYkG6
+bnynq9c
+AQxjjkT
+lRiNxw1
+2d15UEH
+UX9siGa
+YzqRyFV
+JtrMgby
+i3kwvBr
+u2fjKRF
+JWn6SFV
+FKmJ4Qr
+y856C72
+oda812L
+NXEkstF
+OmIYFxG
+FmV8hka
+egWk3Z7
+e9Sh10k
+E5WKQ6X
+GBnhoyQ
+J1Vbubp
+9ig87C8
+uE4bkdc
+3YXHboh
+b2GpqLT
+v8urgYw
+LflsT5Z
+SYdds5n
+xzJD0A2
+lAoMLAQ
+tD7X2o6
+Q9cPO4R
+YZzAgPm
+clj3DVo
+Oh1dgoe
+Jp6ltQp
+Ekys45t
+AlcVPAO
+1BkvHp1
+zMbwFE4
+Iwql8QP
+C3mTKW5
+0avdGxK
+0qnBEoA
+vZe4PoJ
+YBbMKZP
+6z2mXJi
+MhcfFSz
+W25ntZX
+vS2EpiL
+bSg0IqE
+5NXKXM3
+jZd3DIi
+Oipvm0S
+pn1uAq5
+rAPR9AU
+KqTBOaH
+mbMDFm1
+MiYlWKf
+A6zKU5o
+VLsc7En
+yHqF8yq
+geANI8q
+BwYXvPk
+HJ8oBGC
+KSr2qHh
+n6q0DKE
+N6EKoDR
+otte6Wl
+Om7BqSq
+PXCoBiv
+Qt92WKL
+B4cTR6L
+ifptSeL
+Sg9uHUX
+goTrpnX
+r7XXBO7
+02vjxGc
+eiP7Ke0
+qnWHqLB
+dGE2dPg
+05vkvqN
+75k9ixg
+M1NOhEW
+hUa74rV
+VBKoa1w
+m9e1LKl
+c8Q97ue
+KtvdnLl
+eOdVBIe
+b0UAFvv
+6tfq3Nm
+KXSXnGD
+qsJszEk
+9kFfKeL
+fImuLSq
+ADG3cYw
+jXn130e
+2K3R1Xs
+kqbXhht
+TjTUqMz
+4TJh5tJ
+hFydI9N
+EPALJqT
+mgYD6uc
+fPEBTpo
+huXA9LK
+18WqpW2
+U071DSa
+36P0fE2
+35es8YU
+jGzNhWz
+WUtxgk0
+G6DVRKh
+OW5Xgyq
+ujaq3Me
+dCPtVFH
+uOQvaSp
+a9VIMAH
+7k92hPi
+EiX336v
+3xPrpbP
+IdRtqGR
+MfrdvfQ
+KijpXkO
+NTOShsb
+NfTMY2w
+AUsgLgp
+jTIJhBt
+oHYgO6E
+F5bVz1s
+ZqTCBtk
+oFw9HPr
+P1OHQ8M
+g9pXb1C
+Bv8uAGI
+1ySUPaF
+vCHc2X4
+0cyZCdt
+pf2PSoD
+eQqbkN1
+mVO9o7T
+1xQP1p2
+QBJy4Kr
+z0lChaa
+5kQUR0l
+eNBXykm
+uQluFWe
+leXE2vr
+gFIJn5i
+TG6y6j6
+i31MdvT
+bVbKTEF
+CYAajtr
+cak8rLa
+041AQ2x
+iNuuvVi
+hO1nh6d
+U41m0Kn
+OvK7Mh2
+XXszbVTa
+arbkZRv
+sTq0nCn
+4Vs0HHc
+9X4V646
+sVtHEJX
+sJuMcks
+yOEgatx
+rKpB700
+orZniAb
+m5MVdqt
+32zSw2J
+XX3GEhWK
+K5H7U4T
+ZNEA3HN
+wBb2K8e
+Y1a3bHN
+yuTivmr
+HbBAjQ4
+J7LdqIR
+tNaMLQj
+aSzK0Lg
+m8Enkqq
+DeMDpF3
+55eU6xs
+73nEonq
+aDUXZep
+Ddaj4eY
+gEIcLI9
+EMXp8zq
+2a0J1bq
+7FaYLAk
+z2eGme6
+8WmcXCr
+B8RfrTL
+t8iNNYs
+XXeMdBZd
+oSU3T3y
+9OFn3HG
+kMRhNWo
+bn2uyaY
+tpAsGPw
+M7bCawD
+c7fEMzK
+NCpqxWm
+jYkhUfT
+M7ELgXx
+8bl3ZNP
+1WGn41I
+GMbMgiX
+qkG8oU4
+8qjqvoF
+R4ll3oX
+wTF7OC0
+p94XN5v
+UturYfs
+19hKT0b
+WF0yMCE
+0VDvs2N
+1nFIkFz
+XX3IwvtP
+xwzNTvP
+PHjIdQr
+NcGMIqB
+j3zghnr
+t2ibzRz
+HNFVufy
+IqFQATT
+Z5e6ah3
+JhJPOaO
+tYECXt4
+1eCwvht
+A1TkhtA
+A3XUFAB
+jLlgHcQ
+b2RfxMc
+1rd0NVm
+AGYmpcM
+IyT6jfo
+DzWdTof
+PiUzaA8
+WFJgJr8
+GLummvo
+6RWF55D
+y08oqCw
+q770zHO
+IaJKPVU
+lv8dFAe
+8mXpLvI
+Hs0n5m3
+cTSLjtU
+9rZcxd7
+T8CizpI
+T7qg7LQ
+fs6oa2m
+eZPFl1F
+rr4VrJI
+dYrhHz4
+ecCqxrH
+wSA3BzU
+Q3hXkvU
+oBJFEsI
+8igmtC9
+Jnhy1Ec
+EeLEL6i
+yPFfHst
+pZNlsXt
+melB0Ks
+aOCYz0F
+6s2LFme
+xLkxkso
+Ib2PkCQ
+lDXLsrY
+7jwKJQi
+XXuaVEyP
+mDdriIR
+A6xFds6
+U7f9nyf
+VXtBl0l
+G8jGfCL
+TagYmmE
+ue9mn1q
+fcSO0UH
+8CsduZJ
+edP1PPn
+psGbtZQ
+3jF4OqD
+Gm9s8NF
+DtqaInR
+M7ZmJUg
+i0sUvNM
+Vx3OsNf
+zaTY3qU
+m7yYrtj
+nnj2kNI
+XXegg3Za
+GHL4ArC
+xk9vUYa
+VgiBSV7
+GsGg34U
+UScV3Ki
+uJe3Z5U
+QjVoB0m
+Hn5RzQD
+wEKZ32Q
+v0UMphi
+HbbdYPP
+d7IYWDg
+6TI1Grp
+aey2aLz
+XXWcVvDh
+fllZ8Zr
+yiRLGhC
+XXUPKNzf
+57IRO9R
+ndONLMq
+73CGB9P
+W5iRhcT
+iuBJQe4
+4L9KtWJ
+zwTIJ0R
+DsZ0KSe
+Cksp6iM
+PieDIPL
+iWncgo5
+rvDqmkx
+CdT30bU
+TGiETUX
+EUtGKAe
+zYAZJVQ
+SLHjdnm
+AkkDQ1z
+y7ZVBBU
+rcwDHMZ
+UJwuYhd
+eJnEhLN
+2TiH3Zx
+RjChOjz
+ZK7bUjZ
+JYCrbQJ
+5wOzIJN
+gOWX6vM
+2l7K5t2
+1uDRYCI
+4WVKAeU
+Z3h9Qlb
+r1Y9Y08
+avSN1LZ
+hwhDLx6
+in09l5S
+HGTZhzx
+GDYGCUi
+Iujw4IQ
+K5apzTw
+Zzm32p5
+ocnoKFs
+e59ughF
+BOQlQnJ
+upwXH8d
+ME1BbF6
+8S9Q7cN
+UYUpEU3
+0pkVEgF
+CgIxCif
+3oX47s6
+1mItsVa
+FTlnEo6
+dm4vYdf
+NTj6a2h
+9nkgrZL
+zJDQ3wA
+ggOe1mR
+F086TeZ
+xKVjZ5p
+53JQFRg
+WvhZA6S
+hTZjSGh
+CxwcaNX
+8ByLrZq
+tady9ZC
+kx02xPc
+OhZp1zV
+StIRmsx
+yOqhLtX
+N7ZrLTS
+s3ZZtEr
+tsvP0NC
+0qySZLk
+47leqU2
+eBo1OjW
+8AOjGa0
+UkM8wi3
+kMdB7ZN
+R4CzXCd
+QNk428z
+0sL930x
+LVsHu4O
+IS6ThIX
+qQ5jjNK
+dYNBlDw
+wG69hDg
+FqMXIrE
+r43XFKW
+TWpwAoi
+aLy3zi0
+TvSMtjV
+tChQk9J
+PLVfsm2
+lm2Swff
+NGgrrZU
+YjgjMB8
+MtosUk4
+pczndpv
+vR39SPB
+o84SqMO
+TIysjlr
+mC1NWtI
+8GgQOdE
+dBHW76s
+LNwwRRy
+JsUhTep
+NaraoYf
+bd3L4KI
+gaOKaFN
+hvpPOn0
+pG0ufoy
+Neg5who
+q7s3ZjE
+kGKWd5d
+R1fvNdk
+xnjXUkZ
+va2oKWc
+KRahKvv
+e7TSW6o
+T5DPa0Q
+7SDGh7s
+CSgpoTV
+qCgQWzd
+7yf9HyS
+bC022WQ
+oI0DvUc
+x6Q5enq
+EwrygSO
+Unb7OL8
+UVpr058
+CxidAbe
+flVq6uc
+XXLQ2ipO
+749hWv0
+YMpDceS
+g2uxCSF
+fCNfvug
+Gu24PWF
+IrPMi8x
+WeFpoWK
+MA50fEj
+s34yUO6
+WhZ7S1U
+OL49Rjj
+FJgu0ZA
+LKET7Vl
+694vREd
+KwfVPSI
+eA3wY4z
+hu02dwV
+rs2Kn0f
+Miq13zG
+r5TxhSl
+LMyCLBs
+W6SQEQO
+fvGKzqz
+VIBtWQd
+WU7nJ8m
+4NsfrVG
+ds76kQL
+0PpI6p6
+duKITtP
+jxYvnzj
+o3uxKbs
+HP8aD3J
+KWIHQZc
+bo4KdBb
+yhawN4k
+tXISNcU
+c4CQbB1
+7sarF6o
+hc1STXv
+TfnB8S6
+mWlkECA
+16SX6sA
+MbDMZmL
+xuHEPnT
+LKiVtvk
+GePdgee
+eBm6uvo
+cHRCklY
+UUVIyST
+XXK9gUE2
+ethrb9W
+7pPkaDz
+ZNricB6
+TccPzCG
+Zx6wRn3
+yy0SG0O
+d1fbOKE
+vMLHjp9
+KIqmGPr
+Z58Gmvl
+4XVWlQf
+MSLnzXS
+IRDLwaF
+8zD4UzY
+BNYdqj0
+RNBkibu
+aQlXW20
+ck7uOu6
+tGppacP
+YCnfP2p
+7O4ZR56
+mWeiPE0
+8zks0dk
+At395CM
+6owxRTi
+qmXSAuj
+0cGMwNp
+S1BuHSD
+C1REXxB
+hGlYGzO
+aNm5Whz
+yQkDgbo
+CJQpFeC
+8OLqaed
+jvZ43F3
+K5TzwHz
+FMbj0xk
+KjJEv8B
+z0PWBSr
+3WPHRJZ
+3dJAyan
+ypHMFel
+HgNotTs
+XXZAHCjb
+JkdEhe9
+GPeKWnI
+uXkFszM
+aSVGPIk
+WkbF9dO
+8ZcG8Ht
+E9fhGVD
+pumHNMB
+0G59pOE
+lo4Cx8C
+3mrlWyj
+vEgqGlB
+G3mJKGP
+1kVtQ4G
+v5K6EDH
+IUCNLEs
+ZtfSOw2
+xB1mVHC
+ihRlh27
+YHpYu04
+9psvJS8
+L3CQx5N
+PAZZTAe
+yd1PtDW
+AnHZ2KW
+CaCDaXb
+QuSFiJx
+UAozzIE
+jywcXID
+iy1HAy1
+YB3ZJUk
+FsqI6It
+zQ0YhEq
+GW50scO
+BkxbP16
+JkQ696L
+qRkkRzC
+t9BGRyT
+vgPVh0R
+FcSo9uf
+GorpUrl
+3qLCaN9
+EaHzg0e
+j0to4Li
+vwzFZuD
+BoPMGvh
+Hoba2IT
+tJKgpV4
+EdkhZ4x
+g71KRvi
+OMnGblU
+4nB4oLe
+j9QzaHC
+t7I9i5S
+Hi6uTIe
+JUF4Ctl
+fI69syy
+6makMvJ
+CLmFwyq
+3VssUlI
+ztBB5pP
+4J4zoxE
+qJ1RZtZ
+0axgYQe
+jDylv57
+sXd3EIF
+m91aCxk
+uLQHsDC
+pt3ZSIJ
+elx5ypn
+eSzyvsE
+LMNo0G8
+bqQnGVq
+ZceSqyD
+2WsI2Cf
+Trhjzmq
+6L0mPbz
+lA36NDv
+Wezg6OP
+Kp8j29W
+FFCpQ9a
+GRUJZtD
+rZ0RtZ2
+bLS5zcH
+4RDFyhZ
+Ug258EL
+Dohxbdd
+KiFcKfy
+bLMovnj
+aWGdU5D
+SxUziJ3
+bAbpvY6
+iBDR4Lf
+uyFJ4qR
+F3yNzia
+Nucw2jo
+6dmqFwZ
+8XuaVrW
+aCmS5Ri
+hi8oaGd
+9Qj9842
+11bPXD7
+EEsxZkW
+T4hSJnG
+NFem8my
+gTjHJWr
+VRdQaVo
+QkL7ntv
+qlGdFFe
+KPoZYMt
+SzTJjXg
+ThfafW3
+W8XRTmH
+00scWYe
+aWyMPp9
+k5Yc6Rz
+9iNQhbi
+pTV8BD6
+QbdNl4M
+rvWHhCC
+ZGInAlV
+XXI66sy7
+Q9BQ5nI
+VZ6g8HX
+ejvxCHU
+olOHcTC
+OaGE16K
+owKRTTv
+MV2mXui
+jelQScJ
+GlnYhuH
+NvIPKoQ
+gQxQwnw
+lyCHlkV
+kIqUNum
+BWW9ED5
+sh04wtj
+bU3BHOQ
+HR5JxEH
+ZteZY5u
+qysodH5
+z2wz7xU
+YaJSLqm
+M4O3Gzm
+vu92RjT
+BsLh7sq
+4nAgsQu
+3LQzkj8
+FLcTpbH
+vdsIkFl
+9SXIURT
+1D6zcHM
+jPySe00
+NntF3cJ
+pdVqdBv
+INAKenb
+HEQtRVd
+50XeVsz
+L4XbnGj
+T1aof9p
+PpLeuCt
+PB3r332
+jzLJlmb
+pUVeNIe
+avAwCcf
+PKcddZb
+98pLVQd
+hv8uaeO
+JiJsmHN
+7gOyrUr
+7Mry2uK
+43FkAiA
+B8Ql8hr
+svptmEu
+Yp5upOz
+YxLfjkv
+zqu4ubK
+jHKvsAK
+n5zcFUf
+EB7gH8z
+yguIuTY
+L2nzs1E
+GBvqZqJ
+D738gxp
+KEtIfY1
+HTKRCkq
+Od4e4zv
+XXNJnpR1
+yOV0xVM
+OrUyzMp
+EI9QpSM
+W8UFCa5
+63oT6Cy
+K2DhOOe
+B2byrbr
+LBTA220
+HyGTBy6
+yCpCx10
+YcVetyN
+a2ANKFC
+Wo4Uh3u
+2pMlpgH
+Zz6UPBv
+j6jqAx5
+Sfzh81x
+J7yuB5f
+ScGkCBA
+gHG7vPg
+dCF04na
+0NQTHdB
+392CSfR
+YvCa7KF
+P2mZXot
+iNvR5OY
+pAHGsPo
+8doXYZ0
+mwJNK2K
+4bx52GP
+sgSfE7N
+hp1VCBL
+4fVLn24
+U40hjHo
+9nXrrnY
+wMGaaXh
+FY18wdg
+WOgLLfi
+9pwZ49g
+t6MYlRb
+u2cEx7o
+DMEkBa2
+6hmsvZ8
+pXSvn33
+CaUsFKj
+4TYC1e8
+lZ1qXce
+GItp0Pt
+LCS5jvn
+hIHrJOY
+dO4iyp1
+TQMrVqb
+FSQE8Dw
+De9MZpR
+fwnGXft
+FqV3d99
+77SQaYx
+aHYelCA
+6JXLNU9
+oH5KU3p
+baFDAlb
+LRIepuJ
+1DYXfrQ
+ndDLtiA
+JFuTbEH
+2r1fsrr
+EKjZ7r5
+cgCgjZM
+hJmgT9H
+MzwARvk
+oamxhwt
+eScwM25
+UElT01j
+n0CthzU
+VIoL0dQ
+jctoa6I
+DTniKkS
+cr4x2QC
+dwAohxS
+WgadjZw
+gkiLgCn
+reTYgCR
+tCLq3nI
+ijbdI4Z
+SD4AiS1
+zlY7HXM
+LuPurZe
+gugqPcR
+THJizCc
+hWZyfHL
+7bXXwqt
+q4NFmea
+kybFvWY
+eNxK7tb
+okTIz9M
+cctB0Uc
+KySpdnX
+QnDGlJx
+w19Sqm9
+20NAzeD
+xYASezD
+vKPiI9Q
+YO46s8r
+XXIDSzQ9
+DINlBIu
+QxE5E7G
+Pnb3fkR
+vVfrIQe
+2zW9P1E
+VcwwckJ
+bucUfmf
+rQe6K54
+uJeXfAK
+dXRNacX
+NkTayxD
+8djavhH
+GaR7JpI
+jg0L1ni
+TbbdFUj
+mu9zoiy
+o6rJKwp
+W9uepR0
+tvFdE4m
+qrdyvw8
+vFTAD7g
+PVvDH14
+Z29MafH
+YCeNvxm
+gOupenQ
+WzOo0lb
+JQDTzeo
+wKSPZOJ
+vax50rT
+HMrGIVC
+8zhusy2
+SDQh7hK
+6im0W93
+fog5TiF
+Nujd9tm
+mh6Gvjk
+pPA9qhS
+rk1XAAp
+qoBorcY
+aYNEIVE
+HOYggmB
+NwVNbSm
+DW4bujm
+sK7hcuj
+08ng0wl
+FII7siY
+OfWeIMG
+A53ZYLf
+YrLHiuk
+xjhJ6MW
+m2ADLAs
+UtEgzPY
+gI2W89m
+4ltNgpN
+lc3KKmy
+dpuVQr0
+pVRYmPN
+zLUPn9r
+8tPwRT4
+CIoOKr9
+RYvfn5R
+jEDyPV5
+YTfsVmu
+gFXMCcm
+VuEa5nB
+wbPyjTg
+EgQemav
+Qvl0op9
+OV00TLI
+8pnHNu5
+mPiY7IW
+HyN65Dt
+4CB0e7i
+XX0OzdpZ
+DHRsg9u
+KOCiR2D
+OJMwNEg
+rmpzuqY
+0g1khoB
+vEFolpd
+Vaee0xe
+gbOhU3R
+ZY6K82E
+S0fonj5
+XXqS1hF3
+vUNS75N
+iKAJpHV
+3Q8BwTy
+kNWY3Lo
+npBoTKP
+agAeGYE
+JEQRVUh
+FXA4Sg3
+kksTyWw
+Z5QiJjb
+JqYjgsX
+hL8RLEx
+lS4zj00
+dtwRn5v
+QB45wbU
+VQ4vfsq
+W8rPCW0
+w4vmjlA
+eE54aaD
+uwT4dyE
+cYEMci7
+fqUb2Bt
+Z5xFQ5Y
+ykmpA6I
+EXX8gPT
+TqjTddK
+zGwsjYb
+1Mti2Ma
+WYfR7RE
+C8gWlsX
+eM7cIyW
+Gyr1XTE
+NOHtV1Q
+DIoOj3T
+YKuvKiq
+eaXmAsH
+Usp4NTr
+IJF0Gxn
+nECTXci
+SX5dSoS
+5KnbuLT
+PF3f42Z
+CgEeT0H
+SBAIrXJ
+A8NGcr3
+fuZ6Qk0
+ny7AOcQ
+ptXedNz
+9tPtzI0
+feg0e9n
+oP9xc2O
+g8QGgD4
+tR11dIH
+RgyZkjI
+6iFBo2D
+LvmRVtz
+hVg5KXO
+e4Hw9nS
+mJl917N
+azu76k4
+Z36Vh7n
+cqS1Cbi
+SBHW7mz
+AULKNpI
+C4LWDVU
+dF0vsdr
+Vp3ZfTK
+Qz14dsA
+ob5c2zB
+fRTpz1n
+ER894k4
+nbdSPVU
+c22bAYv
+eC63Q0w
+jzuRXYE
+jF2XuXl
+jszz9gD
+Pj0oUZn
+eunL8yC
+nqBTuP7
+n4NEohp
+R07UgAW
+nCWOlDR
+VoQEmiX
+XXkZI1WC
+pm2J1u4
+IVzZ0lI
+rakLpWE
+1aMPeeU
+l4HUf7z
+o4jGLe2
+YKXW1Rp
+f9Khms4
+XX3Qhf1V
+IELxVj6
+eBgdORv
+jLAejNe
+qLmc1do
+bKZrfQK
+84ZFUPn
+5jTaJOE
+ec056jq
+qDkBega
+rfCOeDO
+70uWn6v
+67WClig
+YX0GZwY
+C5KtPAw
+Q9F4boF
+LL3b7MV
+FcGjF0p
+1huEFSF
+64bUFmA
+kFcEnM5
+dGuJCGe
+MQWIep5
+cXxY3jn
+XXsL1YoW
+xHGAplQ
+NsflsGQ
+gGVfV9K
+G44BLXn
+uP1SvHW
+a0Qw2xH
+LZZPdRx
+rtpbd7F
+67NFbUt
+iHNbqwp
+gnADlzf
+90lv6Zh
+G7n6IlD
+0zpQDVA
+ogOMBbH
+cJ4vYIt
+xUJQAl3
+GkbPZWB
+9lNe2tR
+LMOL8Ak
+Wa20PXf
+ZuXuwXK
+8zhqQNb
+phYQwgP
+7bQXb3j
+wQIZZBF
+yohvIkj
+TCqBnNk
+cTYNNGb
+OCZe8uS
+xEkxwJO
+Yf6ZsKR
+HUzaU5Q
+K7pkO91
+UX5H3eP
+NGXsxjh
+Y5BUqCo
+kUs4d6w
+iXKlp64
+m0rjYNi
+RXhjUCf
+qpMmh8Y
+BvlZdUZ
+ERfGKRv
+xC0GAkr
+ypTQo4K
+ano4T9y
+fa3A8iI
+pCbspso
+0bAJBgl
+J2e4bHS
+S3EF2Da
+KclTaKg
+Dkp2VPM
+Jr7gxVH
+2VsaGEA
+4mAYTTv
+axCRiR8
+jD0fcKD
+q25oCEV
+rBovoSm
+jbezdRx
+VzhmtxZ
+5OtkERC
+ujsLbkh
+wxxCeUH
+1df0HJA
+xWWSegX
+MQ7avZ1
+3hnKdkB
+weELAyY
+jsLjQEN
+wgaomVS
+qzfV6Mt
+CE9hA1T
+UBNKiEG
+5QVeKfo
+oeJt7lD
+CaA4iq6
+vZVzzNH
+05fsumy
+mrmVxBZ
+3zcIAcb
+CbaskH2
+E8x40S3
+EsaDlYz
+db89NE7
+N2GGdLf
+rbSrI5I
+gcvYHto
+jmvhUof
+MOsti25
+D26L3GE
+HHOGMBQ
+XXxXvsl4
+uZx5i5K
+AcA09Jf
+oEbqmYj
+GgIXfxG
+PxpYTHa
+JinEC2X
+dNtJeAk
+BivJSkJ
+BQSApWl
+hD6p1s1
+JrpaqYn
+pvZg1Uo
+pVX0TS3
+vsYaNeI
+IqzeFN6
+oxrum8i
+ht1IuGX
+JnqFZnK
+rXh1JDJ
+rNFg7bU
+zALwCU0
+OlbNU94
+B0WQ2rR
+S7ibYc9
+LXe5TJ4
+zcX7GgQ
+FBWcUub
+4i3uMZf
+EBZvNig
+qAcA7XR
+79GjV98
+7ZmqLPn
+SxpDVXl
+qgnNo1U
+XX1fR6gk
+vaGwKk5
+yOhnH8m
+JHypa8i
+VwZ4gGo
+MeP6SST
+EMLObPp
+uPXuV1O
+flkBjZT
+AXvvRmx
+5j9Wqew
+HXvVJNu
+32X9xvI
+SnkhjJ7
+3HmXhRF
+VCWl2Pz
+2pmwj0J
+n7tsZaq
+xy9B5IF
+MJHHIkH
+Rz6pk6F
+cv8JiN6
+nFjvUvG
+i8dlfmU
+FqTUamV
+EneEZEJ
+tVHz61G
+pC39e75
+d5iHgrN
+4rNG5er
+f1dJVwI
+aqfM7W7
+etAlinj
+KBrSg7H
+kumM4Ce
+KTEC0xD
+f526qhI
+fUev51Y
+Ap5go4o
+QEiA7yS
+YcOsLGa
+wdNlPG1
+lLeNKGV
+v3Raf89
+gD5dGb9
+ug6VcI1
+9XRYUEO
+I6XG5ra
+toEAwgU
+Td0AR5y
+drM3omu
+JhuJTLV
+u31dT6q
+aXuKRVt
+9vzhS6T
+lRhHasa
+wE91Jd5
+wL6lQnc
+J087QPH
+SgAjvnK
+s72GFhS
+dypwEHO
+g4MkiQC
+pHBuGCo
+rvU7iFr
+IQbV06J
+nyaMMxx
+z5g7DEL
+h69aYwG
+EVjGtPX
+rL4YuRM
+kkFTnQz
+AJEgAtq
+rh7QXAH
+F8Ie1rP
+BUn2sx8
+uGf1o2b
+Q3uvkJH
+QPMAFfn
+Wg1qWon
+Ou0BRSm
+vwTEXxK
+2lIzBng
+YYtWcMZ
+o7hqUVx
+NsIThPW
+2leVwjB
+XXFz8dTY
+B5AfNVp
+DTVRjpF
+JjdJd0z
+GUPX9FL
+KloFIan
+yuKeSuS
+7pUngiL
+fwXe5NR
+e13GenU
+fhlvQ4u
+t3qvrEW
+LUg5spp
+Mq6YLr8
+1g4F7eo
+LsS4PKB
+eJ55SpH
+nkKrC0k
+oFMBAdi
+RFotrpI
+UUpcZRU
+Zgl2WiH
+FMcEL4g
+1UwhOuf
+lmGwmrq
+Fe0oCw2
+MdI7QYI
+RdQjX0A
+JzFbhGX
+wB8Klkg
+TvqlFBU
+FAfwT7R
+qcKLVyx
+oROCH47
+o7ula8R
+iU9aF4T
+GOT5yhG
+JI5nkC5
+0RnSIkt
+pJ2UCXf
+xYsyzLt
+Uc6Ytay
+8OW5BCB
+UPlC4Yz
+2z8j3on
+lMdDX6U
+miEUnnl
+17fAhNf
+fk1dhKr
+O5zJJFI
+agBJ7Rr
+LaMCt8O
+VQektvb
+q2VDmO5
+1TtpwuW
+M0BraoB
+KE9IX1f
+Mh3ypkC
+iOMQTbu
+OWEJaal
+wZg5Yt2
+leIHBka
+6b4XSGw
+1yb7pcn
+e9EVAxt
+XXG8J9s1
+yg4JvkH
+IuurPeN
+bGyCywO
+YVrew9R
+FqfYTk5
+mJJDUY4
+MZdr37H
+2mm4mtb
+ICDrjcT
+ItrO1Ql
+jw1x2hA
+l8uZHZT
+ibOIpee
+VMFO8wu
+ppwwcri
+S3KvCM5
+RXS0c74
+tfbfXP9
+5fyWWCp
+maqy7wW
+fr5JQt7
+Efnlu4P
+ezI8IfU
+Vk3B5Sx
+weS8R0Y
+V4lSqs4
+hUZSO7H
+nTffVWj
+0SntGJq
+HOYckYM
+vYXlyr9
+ogq0ELj
+F6RYnxW
+uloDEKX
+lpqgt7y
+XXa6bbfE
+snSz0XY
+3wydbWx
+usSouKE
+Nq82F3s
+2DhMnlb
+TTCMkZX
+BjcfTrO
+mqZ4DmZ
+dUqP7xK
+GY8WoBk
+rPQHr7P
+RlKjGbV
+1IaMQcn
+G0GtdOd
+kI943ig
+cYZiqAV
+pNd3Zan
+1P5Adp9
+VNLokpc
+wfm8xcH
+Zy5ikAl
+djVGR5S
+wYC8Y7q
+RCsdoC8
+h5Rndm0
+qnkMGg0
+1m0VXer
+8KboI3H
+b2UaQDm
+lUnqxvr
+J2RbZoB
+KqlruVI
+Azm6hp2
+vzUUPps
+0KN1gua
+wOBh5qs
+yfM0eTD
+CNbPGUk
+DpD24wY
+8xaBSZF
+Zo8jSPY
+dpJxmkf
+rcYCw9f
+eCpaDSR
+H8xmV89
+pzcfVBJ
+ejDxIJi
+D5HdPjy
+atcg64p
+9jN28EM
+VuUHmU2
+mEX5ePB
+fgIpctf
+MAsk9wa
+srCYLE7
+aTDjOCt
+fvvQIbI
+uc8PasD
+j3M2ASJ
+jBveuJ3
+nKBIqCf
+GZKBgFE
+YNXIcfn
+QyHsH3A
+o9p5XhP
+l9JclWf
+MIOZ7k3
+D2bDfaT
+1jQJRU5
+g2wbOBx
+yQwPIXQ
+E9LX0Dw
+P1iZGYW
+PfrQFZD
+68V0esR
+oJCbrwq
+GSV3RDP
+vVNrPP1
+CWWEXKA
+uhhml02
+ZcNvGmC
+uXlVU0U
+NaLvrWp
+A36nMaC
+GvmR53i
+BI0tw1H
+29Irw2Z
+DcoZHAc
+tmiSONu
+MJPW7j6
+FFY5WbF
+Eewljmh
+ZoSHud0
+TLY6Ih2
+tCV1DGe
+jVxrYLi
+dNCaBU9
+ILdm3Kv
+OFAkbWC
+XXgq3baA
+KyBapYk
+Urc9XIU
+G7TUGXN
+DHTaxfb
+9CAw25M
+mKHE6Nh
+PZ8SZ9O
+LcdyUBm
+9G36Blb
+AYFtqcD
+B9kgs0J
+1kEh8BS
+MCWCvqo
+532HC7H
+3M0cWTu
+Ps4RrHD
+sTkJxAg
+qSUamZj
+fLqWbMe
+WT4ObKY
+w5bINXE
+zpTYBkD
+jatpPnT
+68PiUmv
+Wtqp3yx
+bSvmR31
+NYUg8DS
+kOke90M
+kXJLERX
+WtZwPuj
+6TY1gdB
+42q3G2R
+4xql481
+gvNYePu
+oKJ2rN8
+QZFi9C4
+1VUuMOn
+1i1mGv1
+mbpucvo
+5dxZwhH
+f9whhJA
+uXnlOLq
+pElOZiQ
+IPVJA9s
+UCrjmOD
+eWpM8ct
+V2LzYu9
+aG6MDq9
+9Hegvio
+kTSpEDl
+Hcr628v
+9TAphF9
+31EA3m7
+Odnj8Yo
+upYWJ0g
+fkhrNXb
+nRsLtCI
+qZ6tPo4
+qpcPvVY
+w50MiR7
+2oHpG9p
+uRvYypl
+0CEFwvO
+pCIt6bH
+K1aDDh8
+JxQwisH
+5PUIQcQ
+tJ1hqQN
+mAitAqn
+sUdB4Oe
+1irlJeM
+UiwgemW
+Non0bxO
+oi8RoNk
+PodZJ6b
+vMNR7Ne
+i3skNFq
+3TNSn37
+yqmCXWS
+wo0refp
+gYhEBAQ
+eCcR4js
+PgQXlP4
+gW3MITw
+RMy6jBu
+ieFCXU9
+3QajE3D
+P4lch6s
+bsgDcbB
+eIXMEOu
+inLPeJS
+uSQwOpQ
+NGo8KJ3
+Y8H6LJZ
+HRPNQrN
+6Q8hLTl
+Ua3y3Kc
+TFIubHd
+Clyyct8
+XXNIei9M
+FzaXsS3
+jA1sxwI
+42IIMni
+vfGdIfu
+5UJDQWl
+H3XpGzU
+7v7dSYD
+msQSVbg
+T6N62zg
+i0pawcg
+OojmKtO
+cNUKTm6
+17IdJAg
+vQVgul7
+zA3dzAS
+yAAkRLr
+E3Iw5Sm
+wYSjFxw
+9NQZurS
+BjM1oo8
+3eUNEX5
+6iN8A3a
+z8I1zk0
+B3O7MZj
+0sbiNRo
+rFYT2ec
+xjZ80YX
+2Lefvaa
+UPMtH2N
+SHAR_EOF
+  (set 20 23 10 21 00 40 08 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+130d314d345e3f653389020e95c90cb6  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt'` -ne 20688 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/randomized_files.txt' is not 20688"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html ==============
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html' &&
+X     <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+X
+X                        **Slate Template**
+X                           Version 1.23
+X
+X
+This template is good for "dark mode" documentation. It automatically
+switches to black-on-white and an inline table of contents when
+printed.
+X
+X
+Initialization
+==============================================================
+X
+Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+voluptatibus maiores alias consequatur aut perferendis doloribus
+asperiores repellat.
+X
+Asset Based
+--------------------------------------------------------------
+X
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. 
+X
+X Maine | Iowa | Colorado 
+-------|------|----------
+X   1   |  4   |   10
+X  ME   |  IA  |   CO
+X Blue  | Red  | Brown
+[Table [states]: Caption with label.]
+X
+X
+### Exporters
+X
+Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum:
+X
+- Incididunt
+- Bonus Unum
+- Quibusdam
+X
+```````````````````````````````````````````````
+count_lines () {
+X  local f=$1  
+X  local m
+X  m=`wc -l $f | sed 's/^\([0-9]*\).*$/\1/'`
+X  return $m
+}
+```````````````````````````````````````````````
+X
+X
+Procedural
+--------------------------------------------------------------
+X
+At vero eos et accusamus et iusto odio dignissimos ducimus qui
+blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+et quas molestias excepturi sint occaecati cupiditate non provident,
+similique sunt in culpa qui officia deserunt mollitia animi, id est
+laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+distinctio. 
+X
+**************************************************************
+*                                                            
+* .---.       .-.        .-.       .-.                       
+* | A +----->| 1 +<---->| 2 |<----+ 4 +------------------.   
+* '---'       '-'        '+'       '-'                    |  
+*                         |         ^                     |  
+*                         v         |                     v  
+*                        .-.      .-+-.        .-.      .-+-.
+*                       | 3 +---->| B |<----->| 5 +---->| C |
+*                        '-'      '---'        '-'      '---'
+**************************************************************
+X
+Nam libero tempore, cum `soluta` nobis est eligendi optio
+cumque nihil impedit quo minus id quod maxime placeat facere possimus,
+omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+eveniet ut et voluptates repudiandae sint et molestiae non
+recusandae. 
+X
+X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+a long preformatted code block a long preformatted code block a long preformatted code block a long preformatted code block a long preformatted code block
+X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X
+X
+X
+Modules
+==============================================================
+X
+Nam libero tempore, cum soluta nobis est eligendi optio
+cumque nihil impedit quo minus id quod maxime placeat facere possimus,
+omnis voluptas assumenda est, omnis dolor repellendus.
+X
+X
+X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rust
+fn main() {
+X    let x = 5u32;
+X
+X    let y = {
+X        let x_squared = x * x;
+X        let x_cube = x_squared * x;
+X
+X        // This expression will be assigned to `y`
+X        x_cube + x_squared + x
+X    };
+X
+X    let z = {
+X        // The semicolon suppresses this expression and `()` is assigned to `z`
+X        2 * x;
+X    };
+X
+X    println!("x is {:?}", x);
+X    println!("y is {:?}", y);
+X    println!("z is {:?}", z);
+}
+X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X
+<!--
+![`a long code caption a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg)
+![`a long code caption a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg)
+-->
+X
+See Also
+==============================================================
+X
+[Link to nowhere](nowhere).
+X
+X
+X 
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+SHAR_EOF
+  (set 20 23 06 03 15 13 10 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+a9adc0511dc985ca06c22ac5841c7f40  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html'` -ne 4674 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/slate.md.html' is not 4674"
+  fi
+fi
+if rm -fr ${lock_dir}
+then ${echo} "x - removed lock directory ${lock_dir}."
+else ${echo} "x - failed to remove lock directory ${lock_dir}."
+     exit 1
+fi
+exit 0
