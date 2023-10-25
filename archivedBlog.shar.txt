@@ -3,9 +3,9 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh623441
-# Made on 2023-10-25 13:00 CST by <agarciafdz@agarciafd-lg>.
-# Source directory was '/home/agarciafdz'.
+lock_dir=_sh624525
+# Made on 2023-10-25 13:03 CST by <agarciafdz@agarciafd-lg>.
+# Source directory was '/home/agarciafdz/r/gh/elv79/haskell-and-cryptocurrencies'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
 #
