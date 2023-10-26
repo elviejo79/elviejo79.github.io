@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh78272
-# Made on 2023-10-26 12:00 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh82393
+# Made on 2023-10-26 12:15 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh78272
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   5435 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#   2509 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   1518 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/latex.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
@@ -518,134 +518,34 @@ Why would they turn off the lights of the city block by block?
 That is a sequential algorithm!
 They could so much better with a Binary Search.
 X
-For example lets assu
+For example lets assume Rome has 128 blocks.
+Using the sequential approach of the movie there must be 128 blackouts.
+One by one, and let's think each blackout takes 1 minute so it would take the whole movie to find the bomb.
 X
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur.
+With Binary search
+The would first turn off the electricity in the whole city  (128 blocks)
+To make sure the lights in the bomb are connected to the grid!
+Because if they aren't then the whole blackout approach is worthless.
 X
-X Maine | Iowa | Colorado
--------|------|----------
-X   1   |  4   |   10
-X  ME   |  IA  |   CO
-X Blue  | Red  | Brown
-[Table [states]: Caption with label.]
+Assuming the ligts went off in the chamber with the bomb.
+Then they  would turn off the lights In half the city, (64 blocks)
+If the lights of the bomb go off then they turned the correct half.
+If they don't then the other half of the city is whele the bomb resides.
 X
+Then they do it again with the half of the half of the city (32 blocks).
+and so on 4 more times (16,8,4,2) to find the bomb.
 X
-Code
----------------------------------------------------------------
+So they can find the bomb in just 7 blackouts.
 X
-Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum:
+Bomb found, problem averted.
 X
-- Incididunt
-- Bonus Unum
-- Quibusdam
-X
-```````````````````````````````````````````````
-count_lines () {
-X  local f=$1
-X  local m
-X  m=`wc -l $f | sed 's/^\([0-9]*\).*$/\1/'`
-X  return $m
-}
-```````````````````````````````````````````````
-X
-X
-2019-02-20: Procedural Synthesis
-===================================================================
-X
-At vero eos et accusamus et iusto odio dignissimos ducimus qui
-blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-et quas molestias excepturi sint occaecati cupiditate non provident,
-similique sunt in culpa qui officia deserunt mollitia animi, id est
-laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-distinctio.
-X
-X
-2019-02-19: Flow Diagram
-===================================================================
-X
-**************************************************************
-*
-* .---.       .-.        .-.       .-.
-* | A +----->| 1 +<---->| 2 |<----+ 4 +------------------.
-* '---'       '-'        '+'       '-'                    |
-*                         |         ^                     |
-*                         v         |                     v
-*                        .-.      .-+-.        .-.      .-+-.
-*                       | 3 +---->| B |<----->| 5 +---->| C |
-*                        '-'      '---'        '-'      '---'
-**************************************************************
-X
-Nam libero tempore, cum `soluta` nobis est eligendi optio
-cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-eveniet ut et voluptates repudiandae sint et molestiae non
-recusandae.
-X
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-a long preformatted code block a long preformatted code block a long preformatted code block a long preformatted code block a long preformatted code block
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-X
-X
-X
-2019-02-15: Example
-==============================================================
-X
-Nam libero tempore, cum soluta nobis est eligendi optio
-cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-omnis voluptas assumenda est, omnis dolor repellendus.
-X
-X
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rust
-fn main() {
-X    let x = 5u32;
-X
-X    let y = {
-X        let x_squared = x * x;
-X        let x_cube = x_squared * x;
-X
-X        // This expression will be assigned to `y`
-X        x_cube + x_squared + x
-X    };
-X
-X    let z = {
-X        // The semicolon suppresses this expression and `()` is assigned to `z`
-X        2 * x;
-X    };
-X
-X    println!("x is {:?}", x);
-X    println!("y is {:?}", y);
-X    println!("z is {:?}", z);
-}
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-X
-<!--
-![`a long code caption a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg)
-![`a long code caption a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg) ![`a long code caption`](robot.jpg)
--->
-X
-[Link to nowhere](nowhere).
-X
-X
-X
-2019-02-01: Started Project
-==============================================================
-X
-Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-voluptatibus maiores alias consequatur aut perferendis doloribus
-asperiores repellat.
-X
-X
+You see they didn't need a Symbolagist like Langdond to go all over the city.
+They needed a computer scientist... student... second semester.
 X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 26 11 56 12 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 26 12 13 12 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -655,12 +555,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-bd520915e716be8184c6c02bf784f926  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+7cdf2e96bd2458e0488c7d717de87e17  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 5435 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 5435"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 2509 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 2509"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/latex.md.html ==============
