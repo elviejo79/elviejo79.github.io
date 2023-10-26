@@ -26,7 +26,7 @@ Let's assume, for instance, that Rome has 64 blocks. Following the movie's seque
 
 With Binary Search:
 
-Turn off the electricity for the entire city (64 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
+
 
 
 ************************
@@ -39,22 +39,44 @@ Turn off the electricity for the entire city (64 blocks) to ensure the bomb's li
 *    * * * * * * * *
 *    * * * * * * * *
 *    * * * * * * * *
+*
+************************
+
+
+Turn off the electricity for the entire city (64 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
+
+
+************************
+*
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
 *
 ************************
 
 
 Assuming the chamber's lights go off, they would next shut down half the city's electricity (32 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
 
+
+
+
+
+
 ************************
 *
 *    * * * * o o o o
 *    * * * * o o o o
 *    * * * * o o o o
 *    * * * * o o o o
-*    * * * * o o o o
-*    * * * * o o o o
-*    * * * * o o o o
-*    * * * * o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
 *
 ************************
 
@@ -64,10 +86,10 @@ Repeat the process with the selected half, then continue halving 5 more times (1
 
 ************************
 *
-*    * * * * o o o o
-*    * * * * o o o o
-*    * * * * o o o o
-*    * * * * o o o o
+*    * * o o o o o o
+*    * * o o o o o o
+*    * * o o o o o o
+*    * * o o o o o o
 *    o o o o o o o o
 *    o o o o o o o o
 *    o o o o o o o o
@@ -76,18 +98,8 @@ Repeat the process with the selected half, then continue halving 5 more times (1
 ************************
 
 
-************************
-*
-*    * * o o o o o o
-*    * * o o o o o o
-*    * * o o o o o o
-*    * * o o o o o o
-*    o o o o o o o o
-*    o o o o o o o o
-*    o o o o o o o o
-*    o o o o o o o o
-*
-************************
+
+
 
 
 ************************
@@ -104,6 +116,10 @@ Repeat the process with the selected half, then continue halving 5 more times (1
 ************************
 
 
+
+
+
+
 ************************
 *
 *    * * o o o o o o
@@ -116,6 +132,10 @@ Repeat the process with the selected half, then continue halving 5 more times (1
 *    o o o o o o o o
 *
 ************************
+
+
+
+
 
 
 ************************
@@ -132,7 +152,7 @@ Repeat the process with the selected half, then continue halving 5 more times (1
 ************************
 
 
-With this approach, the bomb can be located with just 8 blackouts (1 complete + 7 halves).
+With this approach, the bomb can be located with just 7 blackouts (1 complete + 6 halves).
 Crisis averted!
 
 In this movie, the expert  symbologist Langdon wasn't necessary to save the city.
