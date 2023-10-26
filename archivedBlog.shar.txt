@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh73743
-# Made on 2023-10-26 11:45 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh78272
+# Made on 2023-10-26 12:00 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh73743
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   4882 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#   5435 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   1518 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/latex.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
@@ -497,15 +497,28 @@ X
 2023-Oct-26: Algorithms at the movies
 =================================================================
 X
-In the movie "Angels and Demons"
-There is a scene were they create an "anti-matter bomb".
+In the movie "Angels & Demons"
+There is a scene were they create an "antimatter bomb".
 The idea that once the antimatter
 touches the matter the vatican and Rome they would dissapear.
 X
-So the bad guy sends the police a live feed,
+So the Illuminati (the bad guys) send the police a live feed,
 Of the bomb ticking.
 X
-And then one of the priests, played by
+And then Cameerlengo (i.e. a priest manager of the Vatian),
+played by Ewan Mcgregor suggest to the police that should,
+Turn of the electricity of the city, block by block
+in order to identify from which block the feed is being transmitted.
+X
+This constants shutodwns are a source of troubles,
+for professor Langdon (Tom Hanks) and the scientist who helps him on his search.
+X
+When I saw the movie I asked my self?
+Why would they turn off the lights of the city block by block?
+That is a sequential algorithm!
+They could so much better with a Binary Search.
+X
+For example lets assu
 X
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -632,7 +645,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 26 11 43 35 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 26 11 56 12 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -642,12 +655,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-044f3bfa1936fabcbc36abb3872a959f  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+bd520915e716be8184c6c02bf784f926  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 4882 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 4882"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 5435 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 5435"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/latex.md.html ==============
