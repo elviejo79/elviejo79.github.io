@@ -1,0 +1,35 @@
+   <meta charset="utf-8" emacsmode="-*- markdown -*-"> <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
+
+                        **Another one of my blogs**
+                           Version 1.1
+
+
+Mabye this will become o biffer blog in the future
+
+
+2023-Oct-26: Algorithms at the Movies
+======================================================
+
+In the movie "Angels & Demons," there's a scene where an "antimatter bomb" is introduced. The prevailing idea is that once the antimatter comes into contact with matter, both the Vatican and Rome would vanish.
+
+The Illuminati (the antagonists) send the police a live feed of the ticking bomb.
+
+Camerlengo, the priestly manager of the Vatican (played by Ewan McGregor), suggests to the police that they should turn off the city's electricity, block by block, to identify the source of the live feed.
+
+These constant shutdowns create challenges for Professor Langdon (Tom Hanks) and the scientist assisting him.
+
+Upon watching the movie, I pondered: Why turn off the city lights block by block? That's a sequential algorithm! A Binary Search would be much more efficient.
+
+Let's assume, for instance, that Rome has 128 blocks. Following the movie's sequential approach, there would be 128 blackouts. If each blackout lasts 1 minute, it would take more than two hours to find the bomb.
+
+With Binary Search:
+
+Turn off the electricity for the entire city (128 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
+Assuming the chamber's lights go off, they would next shut down half the city's electricity (64 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
+Repeat the process with the selected half (32 blocks), then continue halving 4 more times (16, 8, 4, 2) until the bomb's location is determined.
+With this approach, the bomb can be located with just 7 blackouts. Problem averted!
+
+
+In this movie, the expert  symbologist Langdon wasn't necessary to save the city.
+What they truly needed was a computer science...
+student second-semester.
