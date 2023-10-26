@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh104312
-# Made on 2023-10-26 13:30 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh108525
+# Made on 2023-10-26 13:45 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh104312
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   3439 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#   4006 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   1518 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/latex.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
@@ -509,29 +509,113 @@ These constant shutdowns create challenges for Professor Langdon (Tom Hanks) and
 X
 Upon watching the movie, I pondered: Why turn off the city lights block by block? That's a sequential algorithm! A Binary Search would be much more efficient.
 X
-Let's assume, for instance, that Rome has 128 blocks. Following the movie's sequential approach, there would be 128 blackouts. If each blackout lasts 1 minute, it would take more than two hours to find the bomb.
+Let's assume, for instance, that Rome has 64 blocks. Following the movie's sequential approach, there would be 64 blackouts. If each blackout lasts 1 minute, it would take more than one hour to find the bomb.
 X
 With Binary Search:
 X
-Turn off the electricity for the entire city (128 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
+Turn off the electricity for the entire city (64 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
 X
-Dot Grids
---------------------------------------------------------------------------------
 X
-*************************************************************************************************
-*                                                                                               *
-*  o o o o o  * * * * *  * * o o *    o o o      * * *      o o o     · * · · ·     · · ·       *
-*  o o o o o  * * * * *  o o o o *   o o o o    * * * *    * o * *    · * * · ·    · · · ·      *
-*  o o o o o  * * * * *  o * o o o  o o o o o  * * * * *  o o o o o   · o · · o   · · * * ·     *
-*  o o o o o  * * * * *  o * o o o   o o o o    * * * *    o * o o    · · · · o    · · * ·      *
-*  o o o o o  * * * * *  * * * * o    o o o      * * *      o * o     · · · · ·     · · *       *
-*                                                                                               *
-*************************************************************************************************
+************************
+*
+*    * * * * * * * *
+*    * * * * * * * *
+*    * * * * * * * *
+*    * * * * * * * *
+*    * * * * * * * *
+*    * * * * * * * *
+*    * * * * * * * *
+*    * * * * * * * *
+*
+************************
 X
-Assuming the chamber's lights go off, they would next shut down half the city's electricity (64 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
-Repeat the process with the selected half (32 blocks), then continue halving 4 more times (16, 8, 4, 2) until the bomb's location is determined.
-With this approach, the bomb can be located with just 7 blackouts. Problem averted!
 X
+Assuming the chamber's lights go off, they would next shut down half the city's electricity (32 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
+X
+************************
+*
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*
+************************
+X
+X
+Repeat the process with the selected half, then continue halving 5 more times (16, 8, 4, 2, 1) until the bomb's location is determined.
+X
+************************
+*
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    * * * * o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*
+************************
+X
+************************
+*
+*    * * o o o o o o
+*    * * o o o o o o
+*    * * o o o o o o
+*    * * o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*
+************************
+X
+************************
+*
+*    * * o o o o o o
+*    * * o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*
+************************
+X
+************************
+*
+*    * * o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*
+************************
+X
+************************
+*
+*    * o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*    o o o o o o o o
+*
+************************
+X
+X
+With this approach, the bomb can be located with just 8 blackouts (1 complete + 7 halves).
+Crisis averted!
 X
 In this movie, the expert  symbologist Langdon wasn't necessary to save the city.
 What they truly needed was a computer science...
@@ -541,7 +625,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 26 13 28 46 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 26 13 40 21 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -551,12 +635,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-7c7dec8d0e0204b4f3fceea91ffa6178  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+cf1babc46c44c0fb3bd515766d416178  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 3439 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 3439"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 4006 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 4006"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/latex.md.html ==============
