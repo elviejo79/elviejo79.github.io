@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh199351
-# Made on 2023-10-28 20:00 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh203373
+# Made on 2023-10-28 20:15 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh199351
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   4721 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#   6920 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
 #  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
@@ -489,7 +489,59 @@ X                        **Another one of my blogs**
 X                           Version 1.1
 X
 X
-Mabye this will become o biffer blog in the future
+Mabye this will become o bigger blog in the future
+X
+2023-Oct-28: Mortimer Adler How to Read a Book
+======================================================
+X
+I read a heading I don't remember where that said:
+X
+> It doesn't matter how many books you read, what matters is how many summaries you write.
+X
+And I think there is a lot of truth to that sentence.
+However even writing a summary is a lot of work,
+So I need a way to produce summaries of books in a fast way.
+X
+Fortunately there is a book called "How to read a book"
+By Mortimer Adler that I think is a master class on how to be an honest intellectual.
+X
+What follows is the summary of the How to read a book.
+So that I can use it to produce summaries.
+X
+This one is taken from:
+https://www.scribd.com/document/311241114/Adler-How-to-Read-a-Book
+X
+## Systematic skimming or pre-reading
+X
+1. Look at the title page and preface, try to pigeonhole type of book.
+1. Study the table of contents look for structure / roadmap for the trip.
+1. Check the index try to estiate range of terms and topics; look up some passages that seem crucial.
+1. Check the publishers blurb / summary of the book. Also the preface
+1. Look for chapters whic seem most pivotal: read opening or closing pages carefully.
+1. Thumb throught he entire book, reading a few paragraphs here and there, esp. at the en looking for the main arguments.
+X
+## Superficial reading
+X
+1. Read thourugh "without ever stoppyng to lookup or ponder the things you do not understand right away"
+1. "Go right on [until] you come to things you do understand. Concentrate on these. keep on this way." (e.g. reading Shakespeare!)
+X
+a. "Many book are hardly worth even skimming"
+a. "some should be read quickly"
+a. "a few should be read, quite slow... allowing for complete comprehension".. Like little sips.
+X
+Even difficult books have some material which can be read quickly.
+X
+a. "Race through even the hardest book". the first through.
+a. "You will then be prepared to read it well the second time."
+X
+## Inspectional reading
+X
+1. What is the book about as whole? Subject / classification
+1. "What is being said in detail, and how?" Terms / interpretation
+1. "Is the book true, in whole or part?" Truth / evaluation
+1. "What of it?" Significance / Response
+X
+X
 X
 X
 2023-Oct-26: Algorithms at the Movies
@@ -648,7 +700,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 26 14 19 52 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 28 20 12 53 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -658,12 +710,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-1f315ae9fba0b4f30e3f84b7161431d7  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+9907cbd1e8beffacc0de964a47519101  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 4721 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 4721"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 6920 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 6920"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
