@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh203373
-# Made on 2023-10-28 20:15 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh208071
+# Made on 2023-10-28 20:30 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh203373
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   6920 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#   7177 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
 #  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
@@ -511,7 +511,7 @@ X
 This one is taken from:
 https://www.scribd.com/document/311241114/Adler-How-to-Read-a-Book
 X
-## Systematic skimming or pre-reading
+## 0. Systematic skimming or pre-reading
 X
 1. Look at the title page and preface, try to pigeonhole type of book.
 1. Study the table of contents look for structure / roadmap for the trip.
@@ -520,7 +520,7 @@ X
 1. Look for chapters whic seem most pivotal: read opening or closing pages carefully.
 1. Thumb throught he entire book, reading a few paragraphs here and there, esp. at the en looking for the main arguments.
 X
-## Superficial reading
+## 1. Superficial reading
 X
 1. Read thourugh "without ever stoppyng to lookup or ponder the things you do not understand right away"
 1. "Go right on [until] you come to things you do understand. Concentrate on these. keep on this way." (e.g. reading Shakespeare!)
@@ -534,12 +534,20 @@ X
 a. "Race through even the hardest book". the first through.
 a. "You will then be prepared to read it well the second time."
 X
-## Inspectional reading
+## 2. Inspectional reading
 X
 1. What is the book about as whole? Subject / classification
 1. "What is being said in detail, and how?" Terms / interpretation
 1. "Is the book true, in whole or part?" Truth / evaluation
 1. "What of it?" Significance / Response
+X
+### Three kinds of note taking
+X
+a. Structural about the content of the subject
+a. Conceptual about the truth and significance
+a. Dilectical about the shape of the argument in the larger discussion of other peoples ideas.
+X
+## 3. Analytical Reading
 X
 X
 X
@@ -700,7 +708,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 28 20 12 53 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 28 20 15 09 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -710,12 +718,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-9907cbd1e8beffacc0de964a47519101  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+5abab7899acf15a74ae3c22ff1d458db  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 6920 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 6920"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 7177 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 7177"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
