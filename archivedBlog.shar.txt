@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh212116
-# Made on 2023-10-28 20:45 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh216114
+# Made on 2023-10-28 21:00 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh212116
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   9569 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#  11578 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
 #  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
@@ -591,6 +591,60 @@ X
 Determine which of his problems the author has solved, and which he has not;
 and to the latter, decide whicho the author knew he had failed to solve. (p. 135)
 X
+### Third stage of analytical reading
+#### Rule 9 You must be able to say 'I understand'.
+Before you can say any of the following:
+- I agree or I disagee or I suspend judgment.
+Do not begin criticism until you have completed your outline and your interpretation of the book.
+(pp 142- 143)
+X
+1. Recognize your respnosibility of taking a postion. in response to the propositions you have now read.
+"Reading a book is a kind of conversation.. the author had hi say, and then is the readers turn"
+X
+2. Recognize the "role of rethoric" in this process, i.e. the attemn in all communication "to convince or presuade".
+This attempt is "the ultimate end in view... rethoricla skill is knowing how to react to anyone who tries to convince or persuade us".
+X
+#### Rule 10. When you disagree, do so reasonably,
+and not disputiously or contentiously. (p. 145)
+X
+#### Rule 11. Respect the difference between knwoldege and opnion, by giving reasons for your judgment.
+(p. 150)
+X
+## Chapter 11 - Agreeing or disagreeing with an author
+### Three ideal conditions for a well-conducted disagreement:
+1. Acknowledge your emotions
+1. Make your own assumptions explicit
+1. Make an attempt at impartiability
+### Foru practial ways to criticize a book negatively
+1. You are uninformed
+1. You are misinformed
+1. You are illogical
+1. Youy analysis is incomplete
+X
+## How to read practical books
+What are he author's objectives and means?
+X
+### Chapter 14. How to read imaginative literature
+Don't criticize until you fully appreciate...
+X
+### Chapter 15. Reading stories, plays and poems,
+"Read quickly... suspend disbelief"
+X
+### Chapter 16. How to read history
+Ask authors' purpose/audience/knowledge, etc.
+X
+### Chapter 17. Science and mathematics
+Recognize math as a language to be learned
+X
+### Chapter 18. How to read philosophy
+Identify question(s) and historical context
+X
+### Chapter 19. How to read social science
+Identify point of view & mix of fact / fiction;
+read syntopically (ie. in relation to other books on the same subject)
+X
+X
+X
 X
 2023-Oct-26: Algorithms at the Movies
 ======================================================
@@ -748,7 +802,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 28 20 42 27 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 28 20 58 51 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -758,12 +812,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-ba04aa3bd7f653a649b6c67695213f19  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+3f1fe7ee48e03528d532c8099f2b65e4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 9569 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 9569"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 11578 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 11578"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
