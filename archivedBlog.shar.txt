@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh208071
-# Made on 2023-10-28 20:30 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh212116
+# Made on 2023-10-28 20:45 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh208071
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#   7177 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#   9569 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
 #  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
@@ -549,7 +549,47 @@ a. Dilectical about the shape of the argument in the larger discussion of other 
 X
 ## 3. Analytical Reading
 X
+### Fist stage of analytical reading
 X
+#### Rule 1. You must know what kind of book you are reading,
+and you should know this as early in the process as possible, preferably before you begin to read. / Classify the book according to kind and subject matter. (p. 60)
+X
+#### Rule 2. State the unity of the whole book in a single sentence,
+or at most a few sentences (a short paragraph). State what the whole book is about with the utmost brevity. (pp 75-76)
+X
+#### Rule 3. Set forth the major parts of the book, and show how these are organized into a whole,
+by being ordered to one another nad the unity of the whole. / Enumerate its major parts in their order and relation, and outline these parts as you have outlined the whole. (p. 76)
+X
+#### Rule 4. Find out what the author's problems were.
+Define the problem or problems the author has tried to solve. (p. 92)
+X
+### Second stage of analytical reading
+X
+#### Rule 5. Find the important words
+and through them come to terms with the author. Come to terms with the author by interpreting his key words. (p. 98)
+X 1. Find the key words (words which are emphasized, repeated, defined, and or italicized, 'fighting' words)
+X 2. Find the meanings of those words from the context, like "putting a jigsaw puzzle together".
+X
+#### Rule 6. Mark the most important sentnces
+in a book and discover the propositions they contain. Grasp the author's leading propositions by dealing with his most important sentences (p. 120)
+X
+#### Rule 7. Locate or construct the basic arguments
+in the book, by connecting the sentences.
+Know the author's arguments, by finding them in, or constructing them out of, sequences of sentences. (p. 120)
+Arguments are statements which offer the grounds of reasn for the authors judgments and conclusions.
+X
+How to find the key sentences and propositions:
+1. Look for signs: underlining; italics; location
+1. look whele you seem to be "perplexed"
+1. Look for statements containing key terms
+1. look for a sequence in the arguments
+1. separte complicated sentencs into more than one proposition
+1. See if you can state the authors argument in your own words.
+1. See if you can give your own expmplo to make the same point.
+X
+### Rule 8. Find out what the author's solutions are.
+Determine which of his problems the author has solved, and which he has not;
+and to the latter, decide whicho the author knew he had failed to solve. (p. 135)
 X
 X
 2023-Oct-26: Algorithms at the Movies
@@ -708,7 +748,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 28 20 15 09 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 28 20 42 27 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -718,12 +758,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-5abab7899acf15a74ae3c22ff1d458db  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+ba04aa3bd7f653a649b6c67695213f19  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 7177 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 7177"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 9569 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 9569"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
