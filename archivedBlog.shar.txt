@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh232654
-# Made on 2023-10-28 22:00 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh237941
+# Made on 2023-10-29 10:30 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
