@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh216114
-# Made on 2023-10-28 21:00 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh220183
+# Made on 2023-10-28 21:15 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh216114
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#  11578 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#  13082 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
 #  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
@@ -491,6 +491,12 @@ X
 X
 Mabye this will become o bigger blog in the future
 X
+2023-Oct-28: How to read a book by Mortimer Adler
+======================================================
+X
+X
+X
+X
 2023-Oct-28: Mortimer Adler How to Read a Book
 ======================================================
 X
@@ -642,6 +648,46 @@ X
 ### Chapter 19. How to read social science
 Identify point of view & mix of fact / fiction;
 read syntopically (ie. in relation to other books on the same subject)
+X
+X
+## Part 4: The ulitimate goals of reading
+X
+### Chapter 20. The 4th lever of reading, syntopical reading
+X
+#### A. The five steps of syntopical reading
+X
+1. Find the relevant passages
+1. Establish a common terminology
+1. Clarify the questions
+1. Define the issues
+1. Analyze  the discussion: Look for the truth:
+X   a. In the order dicussion itself
+X   b and in the conflict of opposing answers (weigh the evidence; seek to be objetive)
+X
+#### B. How to use the Syntopicon
+A book  of 60 books called the great books of the world published by Encyclopedia Britannica.
+Lists 103, Great Ideas (e.g. "Democracy God, Happiness")
+X
+### Chapter 21 Reading the Growth of the Mind
+X
+#### A. Active reading asking questions and looking for answers
+X
+#### B. What good books do for us?
+X
+- Stretch our mind
+- improve our reading skill
+- teach us about the world and ourselves
+X
+#### C. Difference btween good (few thousands) and great books (less than 100)
+X
+1. Good books need to have no more than one meaning and one reading
+1. Great books have many meanings and need to be read over and over agin
+X
+#### D. The test of a great a book
+X
+1. "Marooned on a desert island": Which ten books would you select?
+1. "The book seems to grow with you;" "you see new things" every time you re-read it; The book is able to "lift you" over and over again.
+1. "You should seek out the few books that can have this value for you."
 X
 X
 X
@@ -802,7 +848,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 10 28 20 58 51 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 10 28 21 14 19 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -812,12 +858,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-3f1fe7ee48e03528d532c8099f2b65e4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+d4473cf3696bb088e6f5ecf202e11309  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 11578 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 11578"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 13082 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 13082"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
