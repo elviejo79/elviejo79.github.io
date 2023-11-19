@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh422142
-# Made on 2023-11-18 20:45 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh423340
+# Made on 2023-11-18 20:48 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -14,7 +14,7 @@ lock_dir=_sh422142
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#  16190 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+#  18698 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
 #  20738 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-02-02-Awesome-list-of-text-to-X/index.org
@@ -491,6 +491,77 @@ X
 X
 Mabye this will become o bigger blog in the future
 X
+2023-Nov-18: keysentence
+===========================================================
+X
+## Problem
+X
+The /huge real world probmel that clearly needs to be solved/;
+/a specific knowledge-gap within the huge problem tha you lan to address in your project/
+X
+## Objective
+X
+With the /title - acronym/ project
+we aim to /what the project is going to develop, achieve, discover, establish, improve, analyze to solve some part of the identified research gap,
+to achive this aim, we have /number/ specific objectives.
+X
+1. /Develop, achieve, discove, establish, improve, analyze/ the objective of the first subproject.
+2.
+3.
+X
+## Methodology
+X
+During the project /description of research activity/ to /state what will the activity achieve/,
+X
+## Resources
+X
+The project will /use, apply, benefit from/ to /specific outcome/
+X
+## Participants
+X
+/Role/, /Person name/ from /affiliation/ is /core area fo expertise/ and has /proof of exepretices in terms of publications, projects, awards, etc./
+X
+## Results and impact
+X
+The project will /a general statement of what results, deliverables, outcomes the project will deliver to solve the problem you identified/, including:
+X
+- A statement of delivering a specific result/outcome in response to objective No. 1
+- No. 2
+- No. 3
+X
+Delivering these  results, outcomes will /enable, allow/ the, /specify the stakeholder/ to /explain what positive impacts these results/.
+X
+## Dissemination
+X
+We will /relevant activity/ the project results within /the key target audience/ through /the channels that you plan to use/.
+X
+## Timeline
+X
+The project will start in / date/, it will be executed in /number of months/, and /add the time when key reports, milestones, deliverables, other critical accomplisments will be submitted, reached/
+X
+## Budget
+X
+The total eligible projects costs are /the sum/ where /name the cost for each cost category as requested in the research call guide/.
+Name of partners 1 will use x% of the budget,
+Describe the co-financing by the partners, if any
+XX% of the costs are covered through the fund if already known.
+X
+X
+X
+2023-Nov-18: On how to write a research grant key sentences
+===========================================================
+The big problem is that ___ evidence ___
+We should solve it because ___ evidence ___
+we already know that ___ evidence ___
+we need to find out ___ evidence ___
+we already know that __ evidence ___
+we need to find out ___ evidence ____
+Our apprach is pertinent because ___ evidence ___
+Filling the knowldege gap will help to ___
+X
+X
+X
+X
 2023-Nov-2: How to brainstorm ideas.
 ==========================================================
 This is my response to an stack exchange question:
@@ -906,7 +977,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 11 02 20 25 26 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
+  (set 20 23 11 18 20 48 08 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
 if test $? -ne 0
@@ -916,12 +987,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-d30478461343eb922e5f9d7cd4f53149  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
+1697d838be443db037e11f8debf1ef87  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 16190 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 16190"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 18698 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 18698"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org ==============
