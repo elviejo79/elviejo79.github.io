@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh85000
-# Made on 2023-11-29 14:35 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh86788
+# Made on 2023-11-29 14:40 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -13,7 +13,7 @@ lock_dir=_sh85000
 # length mode       name
 # ------ ---------- ------------------------------------------
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
-#   2233 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
+#   2563 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
 #  20785 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
@@ -213,15 +213,22 @@ ${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.m
   sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html' &&
 X              <meta charset="utf-8" emacsmode="-*- markdown -*-">
 X
-X                            **LaTeX-style Starter Document**
+X                            **An Object Oriented Bidirectional Compiler**
 X
 Abstract 4 sentences
 =============================
 X
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat.
+Bidirectional Comilers (BdX) Have the property of taking a source code.
+Transform to another representation like tree, a diagram an other language.
+And then modify the target language and get back the code transparently.
+X
+However, most of the research on bidirectional compiles has been done in
+Functional programming languages with only one paper allowing for the translation
+Between a subsect of Java and HTML.
+X
+So the question is: Can an industrial language OOP language like Eiffel
+offer advantages for the creation of BiDirectional compilers?
+X
 X
 X
 X
@@ -291,7 +298,7 @@ X
 <link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 11 29 14 32 34 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html'
+  (set 20 23 11 29 14 37 42 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html'
 if test $? -ne 0
@@ -301,12 +308,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-6d97e6f732bf917d6d7a8af915dbd083  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
+5232df692dd6e26d3e101720df62d862  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html'` -ne 2233 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html' is not 2233"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html'` -ne 2563 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html' is not 2563"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html ==============
