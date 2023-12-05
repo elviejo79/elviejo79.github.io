@@ -3,7 +3,7 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh293317
+lock_dir=_sh293652
 # Made on 2023-12-04 23:34 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
