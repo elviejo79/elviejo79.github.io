@@ -74,67 +74,13 @@ Now the important thing... sometimes the pros and cons are the same
 #### I want to write
 
 ``` yaml
-? Why is there no silver bullet in software engineering?
- . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
- * Essential difficulties : Those related to conceptualization design
-    ? What are the essential difficultios of designing software?
-        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
-        * Comformity: must conform to arbritray conditions (business rules, existin systems)
-        * Changeability: often required to change difficulty of change understimated.
-        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
- ? What silver bullets have been proposed to date?
-    * These address indcidental difficulties (those related to implementation).
-         for example?
-            * OOP
-                + Improved programmer productivity (ipp)
-                - Do not help in software design (nodesing)
-            * Better Hardware
-                # ipp ---- notice that I mean a reference to the same above
-                # nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
-            * High level languages
-                # ipp
-                # nodesign
-            * Better tools - IDEs, etc.
-                # ipp
-                # no design
-            * AI / Expert systems
-                - limited applicability (la)
-                # no design
-            * Program Verification
-                # la
+@@ex3/mytyping
 ```
 
 ##### But the auto formatter should show:
 
 ``` yaml
-? Why is there no silver bullet in software engineering?
- . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
- * Essential difficulties : Those related to conceptualization design
-    ? What are the essential difficultios of designing software?
-        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
-        * Comformity: must conform to arbritray conditions (business rules, existin systems)
-        * Changeability: often required to change difficulty of change understimated.
-        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
- ? What silver bullets have been proposed to date?
-    * These address indcidental difficulties (those related to implementation).
-         for example?
-            * OOP
-                + Improved programmer productivity (ipp)
-                - Do not help in software design (nodesing)
-            * Better Hardware
-                + ipp ---- notice that I mean a reference to the same above
-                - nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
-            * High level languages
-                + ipp
-                - nodesign
-            * Better tools - IDEs, etc.
-                + ipp
-                - no design
-            * AI / Expert systems
-                - limited applicability (la)
-                - no design
-            * Program Verification
-                - la
+@@ex3/reformatted
 ``````
 
 
@@ -145,6 +91,23 @@ this is because a pro can be a con in another... this is common.
 ##### How it should look
 
 [3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
+
+# My problem a deadlock.
+
+The problem that I've had is that I've been deadlocked in search for that tool.
+
+
+I want to do many things.
+I need to write what I want to do in file.
+There are dependencies between things
+I need to map the dependencies as graph datastructure.
+I want to visualize the graph datastructure as a diagram.
+You can use any diagram editor for that.
+I **want** to wrie in text, and visualize in diagram
+So I'll add to my list of projects.
+I want to do many things, an the cycle begins again!
+
+
 
 
 **Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
