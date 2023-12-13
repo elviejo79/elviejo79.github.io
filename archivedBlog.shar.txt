@@ -3,17 +3,17 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh257584
-# Made on 2023-12-12 21:30 CST by <agarciafdz@agarciafd-lg>.
-# Source directory was '/home/agarciafdz'.
+lock_dir=_sh258407
+# Made on 2023-12-12 21:32 CST by <agarciafdz@agarciafd-lg>.
+# Source directory was '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
 #
 # This shar contains:
 # length mode       name
 # ------ ---------- ------------------------------------------
-#   3845 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md
-#   3845 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
+#  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md
+#  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #   2563 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
@@ -192,16 +192,163 @@ X
 X
 ## The goal
 X
-I want to write this:
+### First version
 X
-X~~~~~~~~~~~
+#### I want to type this:
 X
+X
+``` 
 Why is there no silver bullet in software engineering?
-X & Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
-X * Essential difficulties : Those related to conceptualization design
+X Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X Essential difficulties : Those related to conceptualization design !
 X What silver bullets have been proposed to date?
-X~~~~~~~~~~
 X
+```
+X
+#### When the formating happens
+But I want the code editor, when it does the reformating to show this:
+X
+``` 
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X ? What silver bullets have been proposed to date?
+X
+```
+X
+Notice that it kind of re-organizes the code, putting the question first... and the id ...
+because when I start typing I'm not 100% sure if its a proporsar or an idea.
+the 
+X
+`.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
+`!` is used to represent an idea
+`?` is used to represent a question)
+X
+#### I want to see 
+X
+[1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
+X
+X
+### 2nd verion
+X
+Once I have the first version the map can grow like this:
+X
+```
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+```
+X
+#### The autoforamtter 
+X
+Would of course change it to icons first:
+X
+``` yaml
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+```
+X
+<div class="admonition note">
+Notice that it seems that the colons are the id... maybe something to consider for when I need
+</div>
+X
+#### The image
+What I want to see:
+X
+[2nd iteration](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
+X
+X
+### 3rd edition
+X
+Now the important thing... sometimes the pros and cons are the same
+X
+#### I want to write
+X
+``` yaml
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+X    * These address indcidental difficulties (those related to implementation).
+X         for example?
+X            * OOP
+X                + Improved programmer productivity (ipp)
+X                - Do not help in software design (nodesing)
+X            * Better Hardware
+X                # ipp ---- notice that I mean a reference to the same above
+X                # nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X            * High level languages
+X                # ipp
+X                # nodesign
+X            * Better tools - IDEs, etc.
+X                # ipp
+X                # no design
+X            * AI / Expert systems
+X                - limited applicability (la)
+X                # no design
+X            * Program Verification
+X                # la
+```
+X
+##### But the auto formatter should show:
+X
+``` yaml
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+X    * These address indcidental difficulties (those related to implementation).
+X         for example?
+X            * OOP
+X                + Improved programmer productivity (ipp)
+X                - Do not help in software design (nodesing)
+X            * Better Hardware
+X                + ipp ---- notice that I mean a reference to the same above
+X                - nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X            * High level languages
+X                + ipp
+X                - nodesign
+X            * Better tools - IDEs, etc.
+X                + ipp
+X                - no design
+X            * AI / Expert systems
+X                - limited applicability (la)
+X                - no design
+X            * Program Verification
+X                - la
+``````
+X
+X
+Obeserve that the pros and cons are insert with the correct sign.
+this is because a pro can be a con in another... this is common.
+X
+X
+##### How it should look
+X
+[3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
 X
 X
 **Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
@@ -310,7 +457,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 12 20 37 05 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md'
+  (set 20 23 12 12 21 31 04 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md'
 if test $? -ne 0
@@ -320,12 +467,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md': 'MD5 check failed'
        ) << \SHAR_EOF
-9162da77124fce33c897e21d5075885f  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md
+7fde0199bab05a49e3ff4bde75bad082  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md'` -ne 3845 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md' is not 3845"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md'` -ne 10342 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md' is not 10342"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html ==============
@@ -358,16 +505,163 @@ X
 X
 ## The goal
 X
-I want to write this:
+### First version
 X
-X~~~~~~~~~~~
+#### I want to type this:
 X
+X
+``` 
 Why is there no silver bullet in software engineering?
-X & Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
-X * Essential difficulties : Those related to conceptualization design
+X Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X Essential difficulties : Those related to conceptualization design !
 X What silver bullets have been proposed to date?
-X~~~~~~~~~~
 X
+```
+X
+#### When the formating happens
+But I want the code editor, when it does the reformating to show this:
+X
+``` 
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X ? What silver bullets have been proposed to date?
+X
+```
+X
+Notice that it kind of re-organizes the code, putting the question first... and the id ...
+because when I start typing I'm not 100% sure if its a proporsar or an idea.
+the 
+X
+`.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
+`!` is used to represent an idea
+`?` is used to represent a question)
+X
+#### I want to see 
+X
+[1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
+X
+X
+### 2nd verion
+X
+Once I have the first version the map can grow like this:
+X
+```
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+```
+X
+#### The autoforamtter 
+X
+Would of course change it to icons first:
+X
+``` yaml
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+```
+X
+<div class="admonition note">
+Notice that it seems that the colons are the id... maybe something to consider for when I need
+</div>
+X
+#### The image
+What I want to see:
+X
+[2nd iteration](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
+X
+X
+### 3rd edition
+X
+Now the important thing... sometimes the pros and cons are the same
+X
+#### I want to write
+X
+``` yaml
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+X    * These address indcidental difficulties (those related to implementation).
+X         for example?
+X            * OOP
+X                + Improved programmer productivity (ipp)
+X                - Do not help in software design (nodesing)
+X            * Better Hardware
+X                # ipp ---- notice that I mean a reference to the same above
+X                # nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X            * High level languages
+X                # ipp
+X                # nodesign
+X            * Better tools - IDEs, etc.
+X                # ipp
+X                # no design
+X            * AI / Expert systems
+X                - limited applicability (la)
+X                # no design
+X            * Program Verification
+X                # la
+```
+X
+##### But the auto formatter should show:
+X
+``` yaml
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+X    * These address indcidental difficulties (those related to implementation).
+X         for example?
+X            * OOP
+X                + Improved programmer productivity (ipp)
+X                - Do not help in software design (nodesing)
+X            * Better Hardware
+X                + ipp ---- notice that I mean a reference to the same above
+X                - nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X            * High level languages
+X                + ipp
+X                - nodesign
+X            * Better tools - IDEs, etc.
+X                + ipp
+X                - no design
+X            * AI / Expert systems
+X                - limited applicability (la)
+X                - no design
+X            * Program Verification
+X                - la
+``````
+X
+X
+Obeserve that the pros and cons are insert with the correct sign.
+this is because a pro can be a con in another... this is common.
+X
+X
+##### How it should look
+X
+[3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
 X
 X
 **Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
@@ -476,7 +770,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 12 20 37 05 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'
+  (set 20 23 12 12 21 31 04 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'
 if test $? -ne 0
@@ -486,12 +780,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-9162da77124fce33c897e21d5075885f  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
+7fde0199bab05a49e3ff4bde75bad082  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'` -ne 3845 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html' is not 3845"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'` -ne 10342 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html' is not 10342"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md ==============
