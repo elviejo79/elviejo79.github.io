@@ -12,16 +12,163 @@ This is my working map of what it.
 
 ## The goal
 
-I want to write this:
+### First version
 
-~~~~~~~~~~~
+#### I want to type this:
 
+
+``` 
 Why is there no silver bullet in software engineering?
- & Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
- * Essential difficulties : Those related to conceptualization design
+ Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ Essential difficulties : Those related to conceptualization design !
  What silver bullets have been proposed to date?
-~~~~~~~~~~
 
+```
+
+#### When the formating happens
+But I want the code editor, when it does the reformating to show this:
+
+``` 
+? Why is there no silver bullet in software engineering?
+ . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ * Essential difficulties : Those related to conceptualization design
+ ? What silver bullets have been proposed to date?
+
+```
+
+Notice that it kind of re-organizes the code, putting the question first... and the id ...
+because when I start typing I'm not 100% sure if its a proporsar or an idea.
+the 
+
+`.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
+`!` is used to represent an idea
+`?` is used to represent a question)
+
+#### I want to see 
+
+[1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
+
+
+### 2nd verion
+
+Once I have the first version the map can grow like this:
+
+```
+? Why is there no silver bullet in software engineering?
+ . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ * Essential difficulties : Those related to conceptualization design
+    What are the essential difficultios of designing software?
+        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+        * Changeability: often required to change difficulty of change understimated.
+        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+ ? What silver bullets have been proposed to date?
+```
+
+#### The autoforamtter 
+
+Would of course change it to icons first:
+
+``` yaml
+? Why is there no silver bullet in software engineering?
+ . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ * Essential difficulties : Those related to conceptualization design
+    ? What are the essential difficultios of designing software?
+        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+        * Changeability: often required to change difficulty of change understimated.
+        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+ ? What silver bullets have been proposed to date?
+```
+
+<div class="admonition note">
+Notice that it seems that the colons are the id... maybe something to consider for when I need
+</div>
+
+#### The image
+What I want to see:
+
+[2nd iteration](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
+
+
+### 3rd edition
+
+Now the important thing... sometimes the pros and cons are the same
+
+#### I want to write
+
+``` yaml
+? Why is there no silver bullet in software engineering?
+ . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ * Essential difficulties : Those related to conceptualization design
+    ? What are the essential difficultios of designing software?
+        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+        * Changeability: often required to change difficulty of change understimated.
+        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+ ? What silver bullets have been proposed to date?
+    * These address indcidental difficulties (those related to implementation).
+         for example?
+            * OOP
+                + Improved programmer productivity (ipp)
+                - Do not help in software design (nodesing)
+            * Better Hardware
+                # ipp ---- notice that I mean a reference to the same above
+                # nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+            * High level languages
+                # ipp
+                # nodesign
+            * Better tools - IDEs, etc.
+                # ipp
+                # no design
+            * AI / Expert systems
+                - limited applicability (la)
+                # no design
+            * Program Verification
+                # la
+```
+
+##### But the auto formatter should show:
+
+``` yaml
+? Why is there no silver bullet in software engineering?
+ . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ * Essential difficulties : Those related to conceptualization design
+    ? What are the essential difficultios of designing software?
+        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+        * Changeability: often required to change difficulty of change understimated.
+        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+ ? What silver bullets have been proposed to date?
+    * These address indcidental difficulties (those related to implementation).
+         for example?
+            * OOP
+                + Improved programmer productivity (ipp)
+                - Do not help in software design (nodesing)
+            * Better Hardware
+                + ipp ---- notice that I mean a reference to the same above
+                - nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+            * High level languages
+                + ipp
+                - nodesign
+            * Better tools - IDEs, etc.
+                + ipp
+                - no design
+            * AI / Expert systems
+                - limited applicability (la)
+                - no design
+            * Program Verification
+                - la
+``````
+
+
+Obeserve that the pros and cons are insert with the correct sign.
+this is because a pro can be a con in another... this is common.
+
+
+##### How it should look
+
+[3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
 
 
 **Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
