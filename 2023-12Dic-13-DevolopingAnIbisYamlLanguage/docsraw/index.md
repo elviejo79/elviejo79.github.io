@@ -16,7 +16,6 @@ This is my working map of what it.
 
 #### I want to type this:
 
-
 ``` 
 @@ex1/mytyping
 ```
@@ -152,6 +151,12 @@ So  I need to break that cycle.
 
 ``` 
 
+!!! Note
+    One of the things that makes treeNotation special is that we can mix grammars.
+    for example the prevous code, could be just a line called ibisLanguage
+    and everything nested below it would be parsed using the ibis grammar!
+    and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
+    
 
 ### Subsection on stuff
 
