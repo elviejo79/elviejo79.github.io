@@ -109,7 +109,7 @@ I want to do many things, an the cycle begins again!
 
 So  I need to break that cycle.
 
-```
+``` ibis
 ? How can I break the deadlock of organizing my mind?
     * use a tool that already exists, until you can develop your own
 ? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
@@ -149,6 +149,7 @@ So  I need to break that cycle.
                 * use an editor like vscode, lapce, doomemacs that have auto complete.
                 * find a graphvusalization tool, and produce the json that it uses.
                 * use watch in the filesystem so that the graphvisualization gets updated automatically.    
+
 ``` 
 
 
