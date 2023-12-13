@@ -81,7 +81,7 @@ Now the important thing... sometimes the pros and cons are the same
 
 ``` yaml
 @@ex3/reformatted
-``````
+```
 
 
 Obeserve that the pros and cons are insert with the correct sign.
@@ -96,41 +96,54 @@ this is because a pro can be a con in another... this is common.
 
 The problem that I've had is that I've been deadlocked in search for that tool.
 
-
+```
 I want to do many things.
 I need to write what I want to do in file.
 There are dependencies between things
 I need to map the dependencies as graph datastructure.
 I want to visualize the graph datastructure as a diagram.
 You can use any diagram editor for that.
-I **want** to wrie in text, and visualize in diagram
+I **want** to write in text, and visualize in diagram
 So I'll add to my list of projects.
 I want to do many things, an the cycle begins again!
+```
 
+So  I need to break that cycle.
 
+```
+? What alternatives do I have?
+    * Dot/graphviz
+        + It works now and is stable 
+        + It can handle subgraphs
+        + it can have infinite customization.
+        - I don't like the syntax
+            ? Why?
+                * it forces to wre the nodes first and later the edges.
+                * it mixes presentation with content
+    * Use Flyinglogic
+        - It is monthly payment.
+        - I can't insert the diagrams in other documents
+        - I can't present the diagrams in order.
+        - I can't create the diagram from keyboard only
+        + I <3 the way it looks
+    * Plantuml
+        it has the same disadvantages as Dot/grahpviz
+    * Use yaml to create a DSL
+        + It works today
+        + it is whitespace based
+        + it favors a tree representation 
+        + it can *copy* from one branch to another
+        + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
+        + can be edited in vscode and lapce and many other editors
+        + with the redhat extension supports json-schema
+        - Dosn't have a native graph representation
+            ? How can you provide that?
+                * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
+        - it already uses the characters (-) that I want to use for my language
+            ? How can you solve that?
+                * use complete word + == pros, - == cons, & == id, * == reference 
+``` 
 
-
-**Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
-
-* Run on a computer
-* Exit with an exit code
-* Be a replacement for our old system, `theoldthing.exe`
-
-
-## Invoking it
-
-<div class="admonition note">
-This is a note by the way!
-</div>
-
-From the root folder, run "thing" with the target name, e.g.: `thing Yes`
-
-* On Mac, Linux or Windows PowerShell, you'll want to use `./thing` instead of just `thing`.
-* Target and option names are case sensitive!
-* Several things to do can be specified: `thing Yes No FileNotFound`
-
-Additional options can be passed via `-sNAME=VALUE` arguments. Most common ones are CONFIG
-(used to indicate debug or release thing) and PLATFORM (used to indicate 32 vs 64 bit thing).
 
 
 ### Subsection on stuff
@@ -147,15 +160,6 @@ FileNotFound            | Doesn't find files | Pass `-sFIND_FILE=maybe` to maybe
 
 Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
 
-* A
-* Bullet
-* List
-
-And:
-
-1. A
-1. Numbered
-1. List!
 
 Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
 
@@ -208,10 +212,6 @@ And other admonitions:
 
     Seriously, don't call shaders like that.
 
-
-
-The table of contents that Markdeep produces is stuffed on the right side, 
-if the browser window is wide enough. Otherwise it is hidden.
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
