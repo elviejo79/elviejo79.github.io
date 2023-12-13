@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh72820
-# Made on 2023-12-13 14:10 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh74168
+# Made on 2023-12-13 14:15 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -12,7 +12,7 @@ lock_dir=_sh72820
 # This shar contains:
 # length mode       name
 # ------ ---------- ------------------------------------------
-#   6270 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
+#   6296 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
@@ -319,13 +319,13 @@ X            ? Why?
 X                * it forces to wre the nodes first and later the edges.
 X                * it mixes presentation with content
 X    * Use Flyinglogic
+X        + I <3 the way it looks
 X        - It is monthly payment.
 X        - I can't insert the diagrams in other documents
 X        - I can't present the diagrams in order.
 X        - I can't create the diagram from keyboard only
-X        + I <3 the way it looks
 X    * Plantuml
-X        it has the same disadvantages as Dot/grahpviz
+X        it has the same disadvantages as Dot/grahpviz (this should be a pointer)
 X    * Use yaml to create a DSL
 X        + It works today
 X        + it is whitespace based
@@ -341,7 +341,6 @@ X        - it already uses the characters (-) that I want to use for my language
 X            ? How can you solve that?
 X                * use complete word + == pros, - == cons, & == id, * == reference 
 ``` 
-X
 X
 X
 ### Subsection on stuff
@@ -414,7 +413,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 13 14 08 44 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
+  (set 20 23 12 13 14 11 09 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
 if test $? -ne 0
@@ -424,12 +423,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-351c6d3d8c11d20a9f51e3e4bb65e542  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
+87d4cfaa94916bc50d2f5ab21b3e0fb4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'` -ne 6270 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md' is not 6270"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'` -ne 6296 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md' is not 6296"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md ==============

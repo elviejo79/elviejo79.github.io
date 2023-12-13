@@ -121,13 +121,13 @@ So  I need to break that cycle.
                 * it forces to wre the nodes first and later the edges.
                 * it mixes presentation with content
     * Use Flyinglogic
+        + I <3 the way it looks
         - It is monthly payment.
         - I can't insert the diagrams in other documents
         - I can't present the diagrams in order.
         - I can't create the diagram from keyboard only
-        + I <3 the way it looks
     * Plantuml
-        it has the same disadvantages as Dot/grahpviz
+        it has the same disadvantages as Dot/grahpviz (this should be a pointer)
     * Use yaml to create a DSL
         + It works today
         + it is whitespace based
@@ -143,7 +143,6 @@ So  I need to break that cycle.
             ? How can you solve that?
                 * use complete word + == pros, - == cons, & == id, * == reference 
 ``` 
-
 
 
 ### Subsection on stuff
