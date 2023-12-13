@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh74168
-# Made on 2023-12-13 14:15 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh75482
+# Made on 2023-12-13 14:20 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -12,7 +12,7 @@ lock_dir=_sh74168
 # This shar contains:
 # length mode       name
 # ------ ---------- ------------------------------------------
-#   6296 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
+#   6911 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
@@ -255,9 +255,8 @@ X
 @@ex2/reformatted
 ```
 X
-<div class="admonition note">
-Notice that it seems that the colons are the id... maybe something to consider for when I need
-</div>
+!!! Note 
+X    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
 X
 #### The image
 What I want to see:
@@ -309,7 +308,9 @@ X
 So  I need to break that cycle.
 X
 ```
-? What alternatives do I have?
+? How can I break the deadlock of organizing my mind?
+X    * use a tool that already exists, until you can develop your own
+? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
 X    * Dot/graphviz
 X        + It works now and is stable 
 X        + It can handle subgraphs
@@ -340,6 +341,12 @@ X                * Transform yaml to json |> jsonata |> (diagramming tool: glsp,
 X        - it already uses the characters (-) that I want to use for my language
 X            ? How can you solve that?
 X                * use complete word + == pros, - == cons, & == id, * == reference 
+X        ! Deal: this is te option I'm going to use
+X            ? how?
+X                * create json-schema that forces correct use symbols
+X                * use an editor like vscode, lapce, doomemacs that have auto complete.
+X                * find a graphvusalization tool, and produce the json that it uses.
+X                * use watch in the filesystem so that the graphvisualization gets updated automatically.    
 ``` 
 X
 X
@@ -413,7 +420,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 13 14 11 09 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
+  (set 20 23 12 13 14 17 39 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
 if test $? -ne 0
@@ -423,12 +430,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-87d4cfaa94916bc50d2f5ab21b3e0fb4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
+d6f233fa82a11127359d924570b044dc  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'` -ne 6296 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md' is not 6296"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'` -ne 6911 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md' is not 6911"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md ==============

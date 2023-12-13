@@ -57,9 +57,8 @@ Would of course change it to icons first:
 @@ex2/reformatted
 ```
 
-<div class="admonition note">
-Notice that it seems that the colons are the id... maybe something to consider for when I need
-</div>
+!!! Note 
+    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
 
 #### The image
 What I want to see:
@@ -111,7 +110,9 @@ I want to do many things, an the cycle begins again!
 So  I need to break that cycle.
 
 ```
-? What alternatives do I have?
+? How can I break the deadlock of organizing my mind?
+    * use a tool that already exists, until you can develop your own
+? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
     * Dot/graphviz
         + It works now and is stable 
         + It can handle subgraphs
@@ -142,6 +143,12 @@ So  I need to break that cycle.
         - it already uses the characters (-) that I want to use for my language
             ? How can you solve that?
                 * use complete word + == pros, - == cons, & == id, * == reference 
+        ! Deal: this is te option I'm going to use
+            ? how?
+                * create json-schema that forces correct use symbols
+                * use an editor like vscode, lapce, doomemacs that have auto complete.
+                * find a graphvusalization tool, and produce the json that it uses.
+                * use watch in the filesystem so that the graphvisualization gets updated automatically.    
 ``` 
 
 
