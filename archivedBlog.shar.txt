@@ -3,21 +3,21 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh132035
-# Made on 2023-12-13 20:50 CST by <agarciafdz@agarciafd-lg>.
-# Source directory was '/home/agarciafdz'.
+lock_dir=_sh138374
+# Made on 2023-12-13 21:11 CST by <agarciafdz@agarciafd-lg>.
+# Source directory was '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
 #
 # This shar contains:
 # length mode       name
 # ------ ---------- ------------------------------------------
-#    787 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html
 #   4532 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html
 #  10848 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html
 #   1546 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-02-How-to-brainstorm-ideas/index.md.html
 #   2994 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-18-Writting-research-grants/index.md.html
 #   2485 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html
+#   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #   7347 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
@@ -25,7 +25,6 @@ lock_dir=_sh132035
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #   2563 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
-#  24435 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
 #   2252 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/lorem_ipsum.md.html
 #   6659 -rw-r--r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2019-12-31-writing-programming-tutorials/index.org
 #   1661 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-01-04-actually-writing-the-tutorial/index.org
@@ -34,6 +33,7 @@ lock_dir=_sh132035
 #   6649 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/2020-12-23-projectional-editing/index.org
 #    970 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/posts/index.org
 #   2233 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/symon_peython_jones_structure.md.html
+#    787 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html
 #
 MD5SUM=${MD5SUM-md5sum}
 f=`${MD5SUM} --version | egrep '^md5sum .*(core|text)utils'`
@@ -130,7 +130,7 @@ then ${echo} "x - created lock directory ${lock_dir}."
 else ${echo} "x - failed to create lock directory ${lock_dir}."
      exit 1
 fi
-# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html ==============
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html ==============
 if test ! -d '/home'; then
   mkdir '/home'
 if test $? -eq 0
@@ -179,63 +179,6 @@ else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo
      exit 1
 fi
 fi
-if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template'; then
-  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template'
-if test $? -eq 0
-then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template."
-else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template."
-     exit 1
-fi
-fi
-if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'
-then
-${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html (file already exists)"
-
-else
-${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html (text)"
-  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html' &&
-X                    <meta charset="utf-8" emacsmode="-*- markdown -*">
-X                            **Starter Document**
-X
-Welcome to Markdeep. It's the simple way to write plain text with
-_style_. From https://casual-effects.com/markdeep.
-X
-Section
-===============================================================================
-X
-Subsection
--------------------------------------------------------------------------------
-X
-X
-X
-X
-X
-X
-X
-X
-X
-<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
-X
-SHAR_EOF
-  (set 20 23 12 13 20 32 34 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'
-   eval "${shar_touch}") && \
-  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'
-if test $? -ne 0
-then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html failed"
-fi
-  if ${md5check}
-  then (
-       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html': 'MD5 check failed'
-       ) << \SHAR_EOF
-169be9fca10fb9fb55f84415ce29c04b  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html
-SHAR_EOF
-
-else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'` -ne 787 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html' is not 787"
-  fi
-fi
-# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html ==============
 if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons'; then
   mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons'
 if test $? -eq 0
@@ -972,6 +915,97 @@ SHAR_EOF
 else
 test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html'` -ne 2485 && \
   ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html' is not 2485"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html' &&
+X                    <meta charset="utf-8" emacsmode="-*- markdown -*">
+X
+Unraveling the Complexities of Patents: A Case Study of Sawstop
+================================================================
+X
+## Introduction: The Intersection of Innovation and Intellectual Property
+In the realm of patents and their impact on technological advancement, one invention stands out for its significance: the Sawstop.
+X
+## Understanding Sawstop: A Safety Revolution in Carpentry
+### What Makes Sawstop Remarkable?
+Imagine a table saw that can distinguish between wood and a human finger, and stops instantaneously to prevent injuries. That's the magic of Sawstop. It's a breakthrough in carpentry, designed to halt automatically and prevent amputation upon detecting a finger.
+X
+### A Stark Reality in Workshop Safety
+Statistics reveal a grim picture: annually, table saws are involved in about 60,000 accidents, leading to roughly 3,000 amputations. Sawstop's relevance is undeniable.
+X
+### The Inventor's Confidence: A Real-Life Demonstration
+Daringly, the inventor demonstrated the technology's reliability by risking his own finger.
+[Experience the dramatic demonstration here](https://www.youtube.com/watch?v=XVktVFyid-Y).
+X
+## The Patent Conundrum
+### Why Isn't Every Table Saw a Sawstop?
+The answer lies in the web of patents. The inventor, leveraging his expertise in physics and law, secured over 100 patents for Sawstop, creating a significant barrier for competitors.
+X
+### Bosch's Legal Struggle: A Spotlight on Patent Issues
+The case of Bosch, who faced legal action from Sawstop for developing a similar safety feature, illustrates the intricate and often contentious nature of patent law.
+X
+## Beyond Black and White: The Shades of Patent Reality
+### The Journey of Sawstop
+Rejected by major manufacturers, the inventor embarked on a solo journey, establishing a factory to produce Sawstop. The company, sold in 2017, is now a success story, yet its revolutionary technology remains underutilized.
+X
+### The Persistent Safety Challenge
+Despite Sawstop's achievements, the widespread occurrence of table saw accidents and amputations continues, highlighting a gap in technology adoption.
+X
+## Patent Ethics and Societal Impact: A Deeper Dive
+### Volvo's Seatbelt Precedent: Open-Source for Public Safety
+Volvo's decision to freely share its seatbelt patent starkly contrasts with Sawstop's strategy. This raises a question: does open-sourcing life-saving technology lead to swifter, widespread adoption?
+X
+### Key Questions in the Patent Debate
+- Should Sawstop have followed Volvo's footsteps in open-sourcing its patents?
+- Did major tool companies miss a crucial opportunity by not licensing Sawstop's technology?
+- Is it the government's role to mandate such safety innovations?
+- Is the issue deeper, rooted in the foundations of intellectual property or capitalism?
+X
+### Future Prospects: Post-Patent Possibilities
+With the expiration of Sawstop's patents in 2026, we might witness a new era of safety innovations in carpentry tools.
+X
+### The Promise of Emerging Technologies
+Emerging safety solutions, like those using computer vision, offer a glimpse into a future possibly free from patent restrictions.
+[Explore an innovative approach here](https://www.youtube.com/shorts/2AFQPkDMJmU).
+X
+## Concluding Thoughts: Patents and the Path Forward
+The Sawstop saga is more than a story about a revolutionary safety device; it's a case study in the intricate dance of patents, innovation, and societal benefit. As we ponder the future of such technologies, the interplay between intellectual property, corporate responsibility, and public safety remains a compelling narrative in the ever-evolving story of human ingenuity.
+X
+X
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+X
+SHAR_EOF
+  (set 20 23 12 13 20 53 51 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+480330c6ae56733e4b0ce51b5dce2450  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html'` -ne 4080 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html' is not 4080"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md ==============
@@ -2339,617 +2373,6 @@ SHAR_EOF
 else
 test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html'` -ne 10856 && \
   ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html' is not 10856"
-  fi
-fi
-# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html ==============
-if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
-then
-${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html (file already exists)"
-
-else
-${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html (text)"
-  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' &&
-X   <meta charset="utf-8" emacsmode="-*- markdown -*-"> <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
-X
-X                        **Another one of my blogs**
-X                           Version 1.1
-X
-X
-Mabye this will become o bigger blog in the future
-X
-Unraveling the Complexities of Patents: A Case Study of Sawstop
-================================================================
-X
-## Introduction: The Intersection of Innovation and Intellectual Property
-In the realm of patents and their impact on technological advancement, one invention stands out for its significance: the Sawstop.
-X
-## Understanding Sawstop: A Safety Revolution in Carpentry
-### What Makes Sawstop Remarkable?
-Imagine a table saw that can distinguish between wood and a human finger, and stops instantaneously to prevent injuries. That's the magic of Sawstop. It's a breakthrough in carpentry, designed to halt automatically and prevent amputation upon detecting a finger.
-X
-### A Stark Reality in Workshop Safety
-Statistics reveal a grim picture: annually, table saws are involved in about 60,000 accidents, leading to roughly 3,000 amputations. Sawstop's relevance is undeniable.
-X
-### The Inventor's Confidence: A Real-Life Demonstration
-Daringly, the inventor demonstrated the technology's reliability by risking his own finger.
-[Experience the dramatic demonstration here](https://www.youtube.com/watch?v=XVktVFyid-Y).
-X
-## The Patent Conundrum
-### Why Isn't Every Table Saw a Sawstop?
-The answer lies in the web of patents. The inventor, leveraging his expertise in physics and law, secured over 100 patents for Sawstop, creating a significant barrier for competitors.
-X
-### Bosch's Legal Struggle: A Spotlight on Patent Issues
-The case of Bosch, who faced legal action from Sawstop for developing a similar safety feature, illustrates the intricate and often contentious nature of patent law.
-X
-## Beyond Black and White: The Shades of Patent Reality
-### The Journey of Sawstop
-Rejected by major manufacturers, the inventor embarked on a solo journey, establishing a factory to produce Sawstop. The company, sold in 2017, is now a success story, yet its revolutionary technology remains underutilized.
-X
-### The Persistent Safety Challenge
-Despite Sawstop's achievements, the widespread occurrence of table saw accidents and amputations continues, highlighting a gap in technology adoption.
-X
-## Patent Ethics and Societal Impact: A Deeper Dive
-### Volvo's Seatbelt Precedent: Open-Source for Public Safety
-Volvo's decision to freely share its seatbelt patent starkly contrasts with Sawstop's strategy. This raises a question: does open-sourcing life-saving technology lead to swifter, widespread adoption?
-X
-### Key Questions in the Patent Debate
-- Should Sawstop have followed Volvo's footsteps in open-sourcing its patents?
-- Did major tool companies miss a crucial opportunity by not licensing Sawstop's technology?
-- Is it the government's role to mandate such safety innovations?
-- Is the issue deeper, rooted in the foundations of intellectual property or capitalism?
-X
-### Future Prospects: Post-Patent Possibilities
-With the expiration of Sawstop's patents in 2026, we might witness a new era of safety innovations in carpentry tools.
-X
-### The Promise of Emerging Technologies
-Emerging safety solutions, like those using computer vision, offer a glimpse into a future possibly free from patent restrictions.
-[Explore an innovative approach here](https://www.youtube.com/shorts/2AFQPkDMJmU).
-X
-## Concluding Thoughts: Patents and the Path Forward
-The Sawstop saga is more than a story about a revolutionary safety device; it's a case study in the intricate dance of patents, innovation, and societal benefit. As we ponder the future of such technologies, the interplay between intellectual property, corporate responsibility, and public safety remains a compelling narrative in the ever-evolving story of human ingenuity.
-X
-X
-2023-Nov-22: Knowledge Filesystem
-===========================================================
-There is an explosion on what are called thiniking tools (Roam, Obsidian, etc.) evidence ____
-However most of this tools store their knowledge base as markdown notes.
-But our personal knowledge comes in many forms:
-- Images, Videos, Bookmarks, PDFs, etc.
-So we need to create system that allows for the storage and liking of all the information we already posses.
-In order to gain the benefits of a truly personal knowledge graph.
-X
-There have been attempts in the past to create a Filesystem that works more like a databes of Atributes than as a tree of files and directories.
-starting with BeOS, and also DeepFS and even Windows 7 had an attempt to provide that.
-And we al so have the NHFS to tag files using different attributes as folders.
-X
-However, those approaches are not popular.
-So there is a need for a graph filesystem that can represent a knowledge graph
-but we think those approaches were not successful for the following reasons:
-X
-1. They have usabulity problems (as is theorized on the thesis....)
-2. They have reliability problems (i.e. they might loose files)
-3. They have bad integration with common unix tools such as cp, mv, etc.
-4. There is not a protection warranty about the storage of the files.
-X
-However several improvements in the past years make this goal worth revisiting.
-X
-1. The Eiffel programming language and Invariants in Design By Contract,
-X   make developing a realiable filesystem a lot easier than the current state of the practice which is Python and C++
-X
-2. The developmente of test suite with 100,000 of tests that we can use as an oracle to validate our implementation
-3. The deveolpment of a verified filesystem.
-4. The content indexing of files using Inter Planetary FileSystem (IPFS).
-5. The explosion in the use of the Zettelkasten method and the so called thinking tools.
-X
-So maybe Personal Knowledge Graph Filesystem is an idea whose time has come.
-And we intend to find out, by building a truly reliable system.
-That can last for generations.
-X
-X
-X
-X
-2023-Nov-18: keysentence
-===========================================================
-X
-## Problem
-X
-The /huge real world probmel that clearly needs to be solved/;
-/a specific knowledge-gap within the huge problem tha you lan to address in your project/
-X
-## Objective
-X
-With the /title - acronym/ project
-we aim to /what the project is going to develop, achieve, discover, establish, improve, analyze to solve some part of the identified research gap,
-to achive this aim, we have /number/ specific objectives.
-X
-1. /Develop, achieve, discove, establish, improve, analyze/ the objective of the first subproject.
-2.
-3.
-X
-## Methodology
-X
-During the project /description of research activity/ to /state what will the activity achieve/,
-X
-## Resources
-X
-The project will /use, apply, benefit from/ to /specific outcome/
-X
-## Participants
-X
-/Role/, /Person name/ from /affiliation/ is /core area fo expertise/ and has /proof of exepretices in terms of publications, projects, awards, etc./
-X
-## Results and impact
-X
-The project will /a general statement of what results, deliverables, outcomes the project will deliver to solve the problem you identified/, including:
-X
-- A statement of delivering a specific result/outcome in response to objective No. 1
-- No. 2
-- No. 3
-X
-Delivering these  results, outcomes will /enable, allow/ the, /specify the stakeholder/ to /explain what positive impacts these results/.
-X
-## Dissemination
-X
-We will /relevant activity/ the project results within /the key target audience/ through /the channels that you plan to use/.
-X
-## Timeline
-X
-The project will start in / date/, it will be executed in /number of months/, and /add the time when key reports, milestones, deliverables, other critical accomplisments will be submitted, reached/
-X
-## Budget
-X
-The total eligible projects costs are /the sum/ where /name the cost for each cost category as requested in the research call guide/.
-Name of partners 1 will use x% of the budget,
-Describe the co-financing by the partners, if any
-XX% of the costs are covered through the fund if already known.
-X
-X
-X
-2023-Nov-18: On how to write a research grant key sentences
-===========================================================
-The big problem is that ___ evidence ___
-We should solve it because ___ evidence ___
-we already know that ___ evidence ___
-we need to find out ___ evidence ___
-we already know that __ evidence ___
-we need to find out ___ evidence ____
-Our apprach is pertinent because ___ evidence ___
-Filling the knowldege gap will help to ___
-X
-X
-X
-X
-2023-Nov-2: How to brainstorm ideas.
-==========================================================
-This is my response to an stack exchange question:
-X
-https://ux.stackexchange.com/questions/69785/a-graph-system-for-drawing-conclusions/149126#149126
-X
-X
-```
-? How can a community of users draw conclusions together?
-X ! They could use IBIS / Issue mapping
-X   ? What is IBIS
-X    ! Ibis is a syntax that was used in the 70s to help groups collaborate on wicked problems.
-X     - But I don't want to use something from the 70s
-X     + In the 90s they created an updated version of it based on computer interaction.
-X     ? Where can I learn more about IBIS?
-X       ! IBIS videos playlist: https://www.youtube.com/playlist?list=PL1IrP_dkJL9rQMtPN3ExxG5uVEHmvLFw4
-X       ! IBIS books: https://www.goodreads.com/review/list/82326491-alejandro-garcia?shelf=ibis-dialogue-mapping
-X       ! This blog: https://www.cleverworkarounds.com/2009/09/10/the-practice-of-dialogue-mapping-part-1/
-X     ? Do you have an example of an IBIS map?
-X       ! This answer!
-X       ! the image at the top
-X       ! the videos in the playlst
-X
-```
-X
-2023-Oct-28: How to read a book by Mortimer Adler
-======================================================
-X
-Taken from this
-https://www.scribd.com/document/360128823/Mortimer-Adler-How-to-Read-a-Book-pdf
-X
-## 1st stage Rules for finding what the book is about: What is the book about as whole?
-X
-1. Classify the book according to kind of subject matter.
-2. State what the whole book is about with the utmost brevity.
-3. Enumarate its major parts in their order and relation, and outline these parts as you have outlined the whole.
-4. Define the problem or problems the author has tried to solve.
-X
-## 2nd stage: Rules for interpreting a Book's contents. What is being said in deail, and how?
-X
-5. Come to terms with the author by interpreting his keywords. Understand literally the words, terms that the author uses.
-6. Grasp the author's leading propositons by dealing with his most important sentences.
-7. Know the author's arguments, by finding them in, or constructing them out of, sequences of sentences.
-8. Determine which of his problems the author has solved, and which he has not; and of the latter, decide which the authr knew he had faild to solve.
-X
-## 3rd stage: Rules for criticizing a book as a communication knowldege: Is it true? and what of it?
-X
-### A. General maxims of intellectual etiquette
-X
-9. Do not begin criticism until you have completed your outline and your interpretation of the book. Do not say you agree, disagree, or suspend judgment, until you can say "I understand")
-10. Do not disagree diputatiously or contentiously.
-11. Demonstrate that you recognize the difference between knowldege and mere personal opinion by presenting good reasons far any critical judgement you make.
-X
-### B. Special criteria for points of criticism
-X
-12. Is the author uninformed?
-13. Is the author misinformed?
-14. Is the author ilogical?
-15. Is the author analyisis or account is incomplete?
-X
-Note: of these last four, the first three are criteria for disagreement. Failing in all of these, you must agree, at least in part, although you may suspend judgement on the whole, in light of the last point.
-X
-X
-X
-2023-Oct-28: Mortimer Adler How to Read a Book
-======================================================
-X
-I read a heading I don't remember where that said:
-X
-> It doesn't matter how many books you read, what matters is how many summaries you write.
-X
-And I think there is a lot of truth to that sentence.
-However even writing a summary is a lot of work,
-So I need a way to produce summaries of books in a fast way.
-X
-Fortunately there is a book called "How to read a book"
-By Mortimer Adler that I think is a master class on how to be an honest intellectual.
-X
-What follows is the summary of the How to read a book.
-So that I can use it to produce summaries.
-X
-This one is taken from:
-https://www.scribd.com/document/311241114/Adler-How-to-Read-a-Book
-X
-## 0. Systematic skimming or pre-reading
-X
-1. Look at the title page and preface, try to pigeonhole type of book.
-1. Study the table of contents look for structure / roadmap for the trip.
-1. Check the index try to estiate range of terms and topics; look up some passages that seem crucial.
-1. Check the publishers blurb / summary of the book. Also the preface
-1. Look for chapters whic seem most pivotal: read opening or closing pages carefully.
-1. Thumb throught he entire book, reading a few paragraphs here and there, esp. at the en looking for the main arguments.
-X
-## 1. Superficial reading
-X
-1. Read thourugh "without ever stoppyng to lookup or ponder the things you do not understand right away"
-1. "Go right on [until] you come to things you do understand. Concentrate on these. keep on this way." (e.g. reading Shakespeare!)
-X
-a. "Many book are hardly worth even skimming"
-a. "some should be read quickly"
-a. "a few should be read, quite slow... allowing for complete comprehension".. Like little sips.
-X
-Even difficult books have some material which can be read quickly.
-X
-a. "Race through even the hardest book". the first through.
-a. "You will then be prepared to read it well the second time."
-X
-## 2. Inspectional reading
-X
-1. What is the book about as whole? Subject / classification
-1. "What is being said in detail, and how?" Terms / interpretation
-1. "Is the book true, in whole or part?" Truth / evaluation
-1. "What of it?" Significance / Response
-X
-### Three kinds of note taking
-X
-a. Structural about the content of the subject
-a. Conceptual about the truth and significance
-a. Dilectical about the shape of the argument in the larger discussion of other peoples ideas.
-X
-## 3. Analytical Reading
-X
-### Fist stage of analytical reading
-X
-#### Rule 1. You must know what kind of book you are reading,
-and you should know this as early in the process as possible, preferably before you begin to read. / Classify the book according to kind and subject matter. (p. 60)
-X
-#### Rule 2. State the unity of the whole book in a single sentence,
-or at most a few sentences (a short paragraph). State what the whole book is about with the utmost brevity. (pp 75-76)
-X
-#### Rule 3. Set forth the major parts of the book, and show how these are organized into a whole,
-by being ordered to one another nad the unity of the whole. / Enumerate its major parts in their order and relation, and outline these parts as you have outlined the whole. (p. 76)
-X
-#### Rule 4. Find out what the author's problems were.
-Define the problem or problems the author has tried to solve. (p. 92)
-X
-### Second stage of analytical reading
-X
-#### Rule 5. Find the important words
-and through them come to terms with the author. Come to terms with the author by interpreting his key words. (p. 98)
-X 1. Find the key words (words which are emphasized, repeated, defined, and or italicized, 'fighting' words)
-X 2. Find the meanings of those words from the context, like "putting a jigsaw puzzle together".
-X
-#### Rule 6. Mark the most important sentnces
-in a book and discover the propositions they contain. Grasp the author's leading propositions by dealing with his most important sentences (p. 120)
-X
-#### Rule 7. Locate or construct the basic arguments
-in the book, by connecting the sentences.
-Know the author's arguments, by finding them in, or constructing them out of, sequences of sentences. (p. 120)
-Arguments are statements which offer the grounds of reasn for the authors judgments and conclusions.
-X
-How to find the key sentences and propositions:
-1. Look for signs: underlining; italics; location
-1. look whele you seem to be "perplexed"
-1. Look for statements containing key terms
-1. look for a sequence in the arguments
-1. separte complicated sentencs into more than one proposition
-1. See if you can state the authors argument in your own words.
-1. See if you can give your own expmplo to make the same point.
-X
-### Rule 8. Find out what the author's solutions are.
-Determine which of his problems the author has solved, and which he has not;
-and to the latter, decide whicho the author knew he had failed to solve. (p. 135)
-X
-### Third stage of analytical reading
-#### Rule 9 You must be able to say 'I understand'.
-Before you can say any of the following:
-- I agree or I disagee or I suspend judgment.
-Do not begin criticism until you have completed your outline and your interpretation of the book.
-(pp 142- 143)
-X
-1. Recognize your respnosibility of taking a postion. in response to the propositions you have now read.
-"Reading a book is a kind of conversation.. the author had hi say, and then is the readers turn"
-X
-2. Recognize the "role of rethoric" in this process, i.e. the attemn in all communication "to convince or presuade".
-This attempt is "the ultimate end in view... rethoricla skill is knowing how to react to anyone who tries to convince or persuade us".
-X
-#### Rule 10. When you disagree, do so reasonably,
-and not disputiously or contentiously. (p. 145)
-X
-#### Rule 11. Respect the difference between knwoldege and opnion, by giving reasons for your judgment.
-(p. 150)
-X
-## Chapter 11 - Agreeing or disagreeing with an author
-### Three ideal conditions for a well-conducted disagreement:
-1. Acknowledge your emotions
-1. Make your own assumptions explicit
-1. Make an attempt at impartiability
-### Foru practial ways to criticize a book negatively
-1. You are uninformed
-1. You are misinformed
-1. You are illogical
-1. Youy analysis is incomplete
-X
-## How to read practical books
-What are he author's objectives and means?
-X
-### Chapter 14. How to read imaginative literature
-Don't criticize until you fully appreciate...
-X
-### Chapter 15. Reading stories, plays and poems,
-"Read quickly... suspend disbelief"
-X
-### Chapter 16. How to read history
-Ask authors' purpose/audience/knowledge, etc.
-X
-### Chapter 17. Science and mathematics
-Recognize math as a language to be learned
-X
-### Chapter 18. How to read philosophy
-Identify question(s) and historical context
-X
-### Chapter 19. How to read social science
-Identify point of view & mix of fact / fiction;
-read syntopically (ie. in relation to other books on the same subject)
-X
-X
-## Part 4: The ulitimate goals of reading
-X
-### Chapter 20. The 4th lever of reading, syntopical reading
-X
-#### A. The five steps of syntopical reading
-X
-1. Find the relevant passages
-1. Establish a common terminology
-1. Clarify the questions
-1. Define the issues
-1. Analyze  the discussion: Look for the truth:
-X   a. In the order dicussion itself
-X   b and in the conflict of opposing answers (weigh the evidence; seek to be objetive)
-X
-#### B. How to use the Syntopicon
-A book  of 60 books called the great books of the world published by Encyclopedia Britannica.
-Lists 103, Great Ideas (e.g. "Democracy God, Happiness")
-X
-### Chapter 21 Reading the Growth of the Mind
-X
-#### A. Active reading asking questions and looking for answers
-X
-#### B. What good books do for us?
-X
-- Stretch our mind
-- improve our reading skill
-- teach us about the world and ourselves
-X
-#### C. Difference btween good (few thousands) and great books (less than 100)
-X
-1. Good books need to have no more than one meaning and one reading
-1. Great books have many meanings and need to be read over and over agin
-X
-#### D. The test of a great a book
-X
-1. "Marooned on a desert island": Which ten books would you select?
-1. "The book seems to grow with you;" "you see new things" every time you re-read it; The book is able to "lift you" over and over again.
-1. "You should seek out the few books that can have this value for you."
-X
-X
-X
-X
-2023-Oct-26: Algorithms at the Movies
-======================================================
-X
-![Angels and Demons Movie Poster](./images/Angels_and_demons.jpg)
-X
-In the movie "Angels & Demons," there's a scene where an "antimatter bomb" is introduced. The prevailing idea is that once the antimatter comes into contact with matter, both the Vatican and Rome would vanish.
-X
-The Illuminati (the antagonists) send the police a live feed of the ticking bomb.
-X
-Camerlengo, the priestly manager of the Vatican (played by Ewan McGregor), suggests to the police that they should turn off the city's electricity, block by block, to identify the source of the live feed.
-X
-These constant shutdowns create challenges for Professor Langdon (Tom Hanks) and the scientist assisting him.
-X
-Upon watching the movie, I pondered: Why turn off the city lights block by block? That's a sequential algorithm! A Binary Search would be much more efficient.
-X
-Let's assume, for instance, that Rome has 64 blocks. Following the movie's sequential approach, there would be 64 blackouts. If each blackout lasts 1 minute, it would take more than one hour to find the bomb.
-X
-With Binary Search:
-X
-X
-X
-X
-**************************
-*                        *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*    * * * * * * * *     *
-*                        *
-**************************
-X
-X
-Turn off the electricity for the entire city (64 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
-X
-X
-**************************
-*                        *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*                        *
-**************************
-X
-X
-Assuming the chamber's lights go off, they would next shut down half the city's electricity (32 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
-X
-X
-X
-X
-X
-X
-**************************
-*                        *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    * * * * o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*                        *
-**************************
-X
-X
-Repeat the process with the selected half, then continue halving 5 more times (16, 8, 4, 2, 1) until the bomb's location is determined.
-X
-X
-************************
-*                      *
-*    * * o o o o o o   *
-*    * * o o o o o o   *
-*    * * o o o o o o   *
-*    * * o o o o o o   *
-*    o o o o o o o o   *
-*    o o o o o o o o   *
-*    o o o o o o o o   *
-*    o o o o o o o o   *
-*                      *
-************************
-X
-X
-X
-X
-X
-X
-**************************
-*                        *
-*    * * o o o o o o     *
-*    * * o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*                        *
-**************************
-X
-X
-X
-X
-X
-X
-**************************
-*                        *
-*    * * o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*                        *
-**************************
-X
-X
-X
-X
-X
-X
-**************************
-*                        *
-*    * o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*    o o o o o o o o     *
-*                        *
-**************************
-X
-X
-With this approach, the bomb can be located with just 7 blackouts (1 complete + 6 halves).
-Crisis averted!
-X
-In this movie, the expert  symbologist Langdon wasn't necessary to save the city.
-What they truly needed was a computer science...
-student second-semester.
-X
-X
-<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
-<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
-SHAR_EOF
-  (set 20 23 12 06 14 46 20 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
-   eval "${shar_touch}") && \
-  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'
-if test $? -ne 0
-then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html failed"
-fi
-  if ${md5check}
-  then (
-       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html': 'MD5 check failed'
-       ) << \SHAR_EOF
-b488ad8abd67c247cdbeb7b6bcc4c861  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html
-SHAR_EOF
-
-else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html'` -ne 24435 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/journal.md.html' is not 24435"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/lorem_ipsum.md.html ==============
@@ -4391,6 +3814,71 @@ SHAR_EOF
 else
 test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/symon_peython_jones_structure.md.html'` -ne 2233 && \
   ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/symon_peython_jones_structure.md.html' is not 2233"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html' &&
+X                    <meta charset="utf-8" emacsmode="-*- markdown -*">
+X                            **Starter Document**
+X
+Welcome to Markdeep. It's the simple way to write plain text with
+_style_. From https://casual-effects.com/markdeep.
+X
+Section
+===============================================================================
+X
+Subsection
+-------------------------------------------------------------------------------
+X
+X
+X
+X
+X
+X
+X
+X
+X
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+X
+SHAR_EOF
+  (set 20 23 12 13 20 32 34 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+169be9fca10fb9fb55f84415ce29c04b  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html'` -ne 787 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/templates/2023-01-01-basic-style-template/index.md.html' is not 787"
   fi
 fi
 if rm -fr ${lock_dir}
