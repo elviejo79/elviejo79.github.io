@@ -3,9 +3,9 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh117473
-# Made on 2023-12-13 20:01 CST by <agarciafdz@agarciafd-lg>.
-# Source directory was '/home/agarciafdz/r/gh/elv79/elviejo79.github.io'.
+lock_dir=_sh118401
+# Made on 2023-12-13 20:05 CST by <agarciafdz@agarciafd-lg>.
+# Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
 #
