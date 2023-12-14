@@ -1,0 +1,157 @@
+              <meta charset="utf-8" emacsmode="-*- markdown -*-">
+
+2023-Oct-26: Algorithms at the Movies
+======================================================
+
+![Angels and Demons Movie Poster](./images/Angels_and_demons.jpg)
+
+In the movie "Angels & Demons," there's a scene where an "antimatter bomb" is introduced. The prevailing idea is that once the antimatter comes into contact with matter, both the Vatican and Rome would vanish.
+
+The Illuminati (the antagonists) send the police a live feed of the ticking bomb.
+
+Camerlengo, the priestly manager of the Vatican (played by Ewan McGregor), suggests to the police that they should turn off the city's electricity, block by block, to identify the source of the live feed.
+
+These constant shutdowns create challenges for Professor Langdon (Tom Hanks) and the scientist assisting him.
+
+Upon watching the movie, I pondered: Why turn off the city lights block by block? That's a sequential algorithm! A Binary Search would be much more efficient.
+
+Let's assume, for instance, that Rome has 64 blocks. Following the movie's sequential approach, there would be 64 blackouts. If each blackout lasts 1 minute, it would take more than one hour to find the bomb.
+
+With Binary Search:
+
+
+
+
+**************************
+*                        *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*                        *
+**************************
+
+
+Turn off the electricity for the entire city (64 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
+
+
+**************************
+*                        *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*                        *
+**************************
+
+
+Assuming the chamber's lights go off, they would next shut down half the city's electricity (32 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
+
+
+
+
+
+
+**************************
+*                        *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+
+
+Repeat the process with the selected half, then continue halving 5 more times (16, 8, 4, 2, 1) until the bomb's location is determined.
+
+
+************************
+*                      *
+*    * * o o o o o o   *
+*    * * o o o o o o   *
+*    * * o o o o o o   *
+*    * * o o o o o o   *
+*    o o o o o o o o   *
+*    o o o o o o o o   *
+*    o o o o o o o o   *
+*    o o o o o o o o   *
+*                      *
+************************
+
+
+
+
+
+
+**************************
+*                        *
+*    * * o o o o o o     *
+*    * * o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+
+
+
+
+
+
+**************************
+*                        *
+*    * * o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+
+
+
+
+
+
+**************************
+*                        *
+*    * o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+
+
+With this approach, the bomb can be located with just 7 blackouts (1 complete + 6 halves).
+Crisis averted!
+
+In this movie, the expert  symbologist Langdon wasn't necessary to save the city.
+What they truly needed was a computer science...
+student second-semester.
+
+
+<link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
