@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh126077
-# Made on 2023-12-13 20:30 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh127517
+# Made on 2023-12-13 20:35 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -12,6 +12,9 @@ lock_dir=_sh126077
 # This shar contains:
 # length mode       name
 # ------ ---------- ------------------------------------------
+#    787 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html
+#   4532 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html
+#    787 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html
 #   7347 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
@@ -124,7 +127,7 @@ then ${echo} "x - created lock directory ${lock_dir}."
 else ${echo} "x - failed to create lock directory ${lock_dir}."
      exit 1
 fi
-# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md ==============
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html ==============
 if test ! -d '/home'; then
   mkdir '/home'
 if test $? -eq 0
@@ -173,6 +176,312 @@ else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo
      exit 1
 fi
 fi
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html' &&
+X                    <meta charset="utf-8" emacsmode="-*- markdown -*">
+X                            **Starter Document**
+X
+Welcome to Markdeep. It's the simple way to write plain text with
+_style_. From https://casual-effects.com/markdeep.
+X
+Section
+===============================================================================
+X
+Subsection
+-------------------------------------------------------------------------------
+X
+X
+X
+X
+X
+X
+X
+X
+X
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+X
+SHAR_EOF
+  (set 20 23 12 13 20 32 34 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+169be9fca10fb9fb55f84415ce29c04b  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html'` -ne 787 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2013-01-01-template/index.md.html' is not 787"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html' &&
+X              <meta charset="utf-8" emacsmode="-*- markdown -*-">
+X
+2023-Oct-26: Algorithms at the Movies
+======================================================
+X
+![Angels and Demons Movie Poster](./images/Angels_and_demons.jpg)
+X
+In the movie "Angels & Demons," there's a scene where an "antimatter bomb" is introduced. The prevailing idea is that once the antimatter comes into contact with matter, both the Vatican and Rome would vanish.
+X
+The Illuminati (the antagonists) send the police a live feed of the ticking bomb.
+X
+Camerlengo, the priestly manager of the Vatican (played by Ewan McGregor), suggests to the police that they should turn off the city's electricity, block by block, to identify the source of the live feed.
+X
+These constant shutdowns create challenges for Professor Langdon (Tom Hanks) and the scientist assisting him.
+X
+Upon watching the movie, I pondered: Why turn off the city lights block by block? That's a sequential algorithm! A Binary Search would be much more efficient.
+X
+Let's assume, for instance, that Rome has 64 blocks. Following the movie's sequential approach, there would be 64 blackouts. If each blackout lasts 1 minute, it would take more than one hour to find the bomb.
+X
+With Binary Search:
+X
+X
+X
+X
+**************************
+*                        *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*    * * * * * * * *     *
+*                        *
+**************************
+X
+X
+Turn off the electricity for the entire city (64 blocks) to ensure the bomb's lights are grid-connected. If they aren't, the blackout strategy is moot.
+X
+X
+**************************
+*                        *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*                        *
+**************************
+X
+X
+Assuming the chamber's lights go off, they would next shut down half the city's electricity (32 blocks). If the bomb's lights go off, then the correct half was chosen. If not, the bomb is in the other half.
+X
+X
+X
+X
+X
+X
+**************************
+*                        *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    * * * * o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+X
+X
+Repeat the process with the selected half, then continue halving 5 more times (16, 8, 4, 2, 1) until the bomb's location is determined.
+X
+X
+************************
+*                      *
+*    * * o o o o o o   *
+*    * * o o o o o o   *
+*    * * o o o o o o   *
+*    * * o o o o o o   *
+*    o o o o o o o o   *
+*    o o o o o o o o   *
+*    o o o o o o o o   *
+*    o o o o o o o o   *
+*                      *
+************************
+X
+X
+X
+X
+X
+X
+**************************
+*                        *
+*    * * o o o o o o     *
+*    * * o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+X
+X
+X
+X
+X
+X
+**************************
+*                        *
+*    * * o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+X
+X
+X
+X
+X
+X
+**************************
+*                        *
+*    * o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*    o o o o o o o o     *
+*                        *
+**************************
+X
+X
+With this approach, the bomb can be located with just 7 blackouts (1 complete + 6 halves).
+Crisis averted!
+X
+In this movie, the expert  symbologist Langdon wasn't necessary to save the city.
+What they truly needed was a computer science...
+student second-semester.
+X
+X
+<link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+SHAR_EOF
+  (set 20 23 12 13 20 31 07 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+47282b07787bead81b100b08b631a42b  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html'` -ne 4532 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-26-Algorithms-at-the-movies-angels-and-demons/index.md.html' is not 4532"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html' &&
+X                    <meta charset="utf-8" emacsmode="-*- markdown -*">
+X                            **Starter Document**
+X
+Welcome to Markdeep. It's the simple way to write plain text with
+_style_. From https://casual-effects.com/markdeep.
+X
+Section
+===============================================================================
+X
+Subsection
+-------------------------------------------------------------------------------
+X
+X
+X
+X
+X
+X
+X
+X
+X
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+X
+SHAR_EOF
+  (set 20 23 12 13 20 34 41 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html': 'MD5 check failed'
+       ) << \SHAR_EOF
+169be9fca10fb9fb55f84415ce29c04b  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html'` -ne 787 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-10-28-Mortimer-Adler-How_-to-read-a-book/index.md.html' is not 787"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md ==============
 if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'; then
   mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'
 if test $? -eq 0
