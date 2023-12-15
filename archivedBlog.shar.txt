@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh247368
-# Made on 2023-12-14 18:25 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh248787
+# Made on 2023-12-14 19:35 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -18,8 +18,8 @@ lock_dir=_sh247368
 #   2994 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-18-Writting-research-grants/index.md.html
 #   2485 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
-#   7347 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
+#   7347 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -1008,7 +1008,7 @@ test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-
   ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html' is not 4080"
   fi
 fi
-# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md ==============
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md ==============
 if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'; then
   mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'
 if test $? -eq 0
@@ -1017,275 +1017,6 @@ else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo
      exit 1
 fi
 fi
-if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw'; then
-  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw'
-if test $? -eq 0
-then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw."
-else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw."
-     exit 1
-fi
-fi
-if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
-then
-${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md (file already exists)"
-
-else
-${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md (text)"
-  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md' &&
-X     <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/apidoc.css?"">
-X
-X                          ** My Idea of an IBIS Languga**
-X
-IBIS is a way to map conversations and dialogues to solve, wicked problems.
-I'm a big fan of it, because that is how my brain works.
-However I don't like the point and click tools to create IBIS maps.
-I rather write them as conversations.
-X
-This is my working map of what it.
-X
-X
-## The goal
-X
-### First version
-X
-#### I want to type this:
-X
-``` 
-@@ex1/mytyping
-```
-X
-#### When the formating happens
-But I want the code editor, when it does the reformating to show this:
-X
-``` 
-@@ex1/reformated
-```
-X
-Notice that it kind of re-organizes the code, putting the question first... and the id ...
-because when I start typing I'm not 100% sure if its a proporsar or an idea.
-the 
-X
-`.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
-`!` is used to represent an idea
-`?` is used to represent a question)
-X
-#### I want to see 
-X
-[1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
-X
-X
-### 2nd verion
-X
-Once I have the first version the map can grow like this:
-X
-```
-@@ex2/mytyping
-```
-X
-#### The autoforamtter 
-X
-Would of course change it to icons first:
-X
-``` yaml
-@@ex2/reformatted
-```
-X
-!!! Note 
-X    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
-X
-#### The image
-What I want to see:
-X
-[2nd iteration](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
-X
-X
-### 3rd edition
-X
-Now the important thing... sometimes the pros and cons are the same
-X
-#### I want to write
-X
-``` yaml
-@@ex3/mytyping
-```
-X
-##### But the auto formatter should show:
-X
-``` yaml
-@@ex3/reformatted
-```
-X
-X
-Obeserve that the pros and cons are insert with the correct sign.
-this is because a pro can be a con in another... this is common.
-X
-X
-##### How it should look
-X
-[3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
-X
-# My problem a deadlock.
-X
-The problem that I've had is that I've been deadlocked in search for that tool.
-X
-```
-I want to do many things.
-I need to write what I want to do in file.
-There are dependencies between things
-I need to map the dependencies as graph datastructure.
-I want to visualize the graph datastructure as a diagram.
-You can use any diagram editor for that.
-I **want** to write in text, and visualize in diagram
-So I'll add to my list of projects.
-I want to do many things, an the cycle begins again!
-```
-X
-So  I need to break that cycle.
-X
-``` ibis
-? How can I break the deadlock of organizing my mind?
-X    * use a tool that already exists, until you can develop your own
-? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
-X    * Dot/graphviz
-X        + It works now and is stable 
-X        + It can handle subgraphs
-X        + it can have infinite customization.
-X        - I don't like the syntax
-X            ? Why?
-X                * it forces to wre the nodes first and later the edges.
-X                * it mixes presentation with content
-X    * Use Flyinglogic
-X        + I <3 the way it looks
-X        - It is monthly payment.
-X        - I can't insert the diagrams in other documents
-X        - I can't present the diagrams in order.
-X        - I can't create the diagram from keyboard only
-X    * Plantuml
-X        it has the same disadvantages as Dot/grahpviz (this should be a pointer)
-X    * Use yaml to create a DSL
-X        + It works today
-X        + it is whitespace based
-X        + it favors a tree representation 
-X        + it can *copy* from one branch to another
-X        + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
-X        + can be edited in vscode and lapce and many other editors
-X        + with the redhat extension supports json-schema
-X        - Dosn't have a native graph representation
-X            ? How can you provide that?
-X                * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
-X        - it already uses the characters (-) that I want to use for my language
-X            ? How can you solve that?
-X                * use complete word + == pros, - == cons, & == id, * == reference 
-X        ! Deal: this is te option I'm going to use
-X            ? how?
-X                * create json-schema that forces correct use symbols
-X                * use an editor like vscode, lapce, doomemacs that have auto complete.
-X                * find a graphvusalization tool, and produce the json that it uses.
-X                * use watch in the filesystem so that the graphvisualization gets updated automatically.    
-X
-``` 
-X
-!!! Note
-X    One of the things that makes treeNotation special is that we can mix grammars.
-X    for example the prevous code, could be just a line called ibisLanguage
-X    and everything nested below it would be parsed using the ibis grammar!
-X    and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
-X    
-# What are you going to do.
-X
-So now that I have found what I want to do let's do it!
-X
-X
-X
-### Subsection on stuff
-X
-X
-Thing Name              | Description        |Notes
-------------------------|--------------------|-----
-Yes                     | Yup!               |
-No                      | Nope :(            |
-FileNotFound            | Doesn't find files | Pass `-sFIND_FILE=maybe` to maybe find them
-X
-X
-## Markdeep syntax test
-X
-Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
-X
-X
-Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
-X
-Is this a definition list?
-:   Looks like one to me
-Is that right?
-:   Possibly!
-X
-And a code listing:
-X
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int main()
-{
-X    return 1;
-}
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-X
-X
-Markdeep diagrams:
-X
-*******************************************  Here's a text to the right of the diagram,
-* +-----------------+           .-.       *  ain't that fancy. Pretty fancy indeed, I
-* |\                |        .-+   |      *  must say! Markdeep diagrams are generally
-* | \     A-B   *---+--> .--+       '--.  *  enclosed into a rectangle full made of `*`
-* |  \              |   |     Cloud!    | *  symbols; and are "drawn" using ASCII-art
-* +---+-------------+    '-------------'  *  style, with `- | + / \ * o` etc.
-*******************************************  Suh-weet!
-X
-X
-Another random diagram, just because:
-X
-********************
-*    +-+-+-+-*-o   *
-*   / / ^ /        *
-*  / v / /         *
-* +-+-+-+          *
-********************
-X
-!!! Note
-X    Hey I'm a note. Don't mind me, I'm just sitting here.
-X
-!!! WARNING
-X    I'm a warning, perhaps. *Something might happen!*
-X
-And other admonitions:
-X
-!!! Error: Never Pass `nullptr` to a Shader
-X    Invoking a shader with a null argument can seg fault.
-X    This is a multi-line admonition.
-X
-X    Seriously, don't call shaders like that.
-X
-X
-<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
-<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
-SHAR_EOF
-  (set 20 23 12 13 18 00 56 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
-   eval "${shar_touch}") && \
-  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'
-if test $? -ne 0
-then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md failed"
-fi
-  if ${md5check}
-  then (
-       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md': 'MD5 check failed'
-       ) << \SHAR_EOF
-ff6dbaa67bc16c30ef118d943055d08f  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md
-SHAR_EOF
-
-else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md'` -ne 7347 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/docsraw/index.md' is not 7347"
-  fi
-fi
-# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md ==============
 if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'
 then
 ${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md (file already exists)"
@@ -1588,6 +1319,283 @@ SHAR_EOF
 else
 test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'` -ne 10342 && \
   ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md' is not 10342"
+  fi
+fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage."
+     exit 1
+fi
+fi
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' &&
+X     <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/apidoc.css?"">
+X
+X                          ** My Idea of an IBIS Languga**
+X
+IBIS is a way to map conversations and dialogues to solve, wicked problems.
+I'm a big fan of it, because that is how my brain works.
+However I don't like the point and click tools to create IBIS maps.
+I rather write them as conversations.
+X
+This is my working map of what it.
+X
+X
+## The goal
+X
+### First version
+X
+#### I want to type this:
+X
+``` 
+@@ex1/mytyping
+```
+X
+#### When the formating happens
+But I want the code editor, when it does the reformating to show this:
+X
+``` 
+@@ex1/reformated
+```
+X
+Notice that it kind of re-organizes the code, putting the question first... and the id ...
+because when I start typing I'm not 100% sure if its a proporsar or an idea.
+the 
+X
+`.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
+`!` is used to represent an idea
+`?` is used to represent a question)
+X
+#### I want to see 
+X
+[1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
+X
+X
+### 2nd verion
+X
+Once I have the first version the map can grow like this:
+X
+```
+@@ex2/mytyping
+```
+X
+#### The autoforamtter 
+X
+Would of course change it to icons first:
+X
+``` yaml
+@@ex2/reformatted
+```
+X
+!!! Note 
+X    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
+X
+#### The image
+What I want to see:
+X
+[2nd iteration](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
+X
+X
+### 3rd edition
+X
+Now the important thing... sometimes the pros and cons are the same
+X
+#### I want to write
+X
+``` yaml
+@@ex3/mytyping
+```
+X
+##### But the auto formatter should show:
+X
+``` yaml
+@@ex3/reformatted
+```
+X
+X
+Obeserve that the pros and cons are insert with the correct sign.
+this is because a pro can be a con in another... this is common.
+X
+X
+##### How it should look
+X
+[3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
+X
+# My problem a deadlock.
+X
+The problem that I've had is that I've been deadlocked in search for that tool.
+X
+```
+I want to do many things.
+I need to write what I want to do in file.
+There are dependencies between things
+I need to map the dependencies as graph datastructure.
+I want to visualize the graph datastructure as a diagram.
+You can use any diagram editor for that.
+I **want** to write in text, and visualize in diagram
+So I'll add to my list of projects.
+I want to do many things, an the cycle begins again!
+```
+X
+So  I need to break that cycle.
+X
+``` ibis
+? How can I break the deadlock of organizing my mind?
+X    * use a tool that already exists, until you can develop your own
+? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
+X    * Dot/graphviz
+X        + It works now and is stable 
+X        + It can handle subgraphs
+X        + it can have infinite customization.
+X        - I don't like the syntax
+X            ? Why?
+X                * it forces to wre the nodes first and later the edges.
+X                * it mixes presentation with content
+X    * Use Flyinglogic
+X        + I <3 the way it looks
+X        - It is monthly payment.
+X        - I can't insert the diagrams in other documents
+X        - I can't present the diagrams in order.
+X        - I can't create the diagram from keyboard only
+X    * Plantuml
+X        it has the same disadvantages as Dot/grahpviz (this should be a pointer)
+X    * Use yaml to create a DSL
+X        + It works today
+X        + it is whitespace based
+X        + it favors a tree representation 
+X        + it can *copy* from one branch to another
+X        + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
+X        + can be edited in vscode and lapce and many other editors
+X        + with the redhat extension supports json-schema
+X        - Dosn't have a native graph representation
+X            ? How can you provide that?
+X                * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
+X        - it already uses the characters (-) that I want to use for my language
+X            ? How can you solve that?
+X                * use complete word + == pros, - == cons, & == id, * == reference 
+X        ! Deal: this is te option I'm going to use
+X            ? how?
+X                * create json-schema that forces correct use symbols
+X                * use an editor like vscode, lapce, doomemacs that have auto complete.
+X                * find a graphvusalization tool, and produce the json that it uses.
+X                * use watch in the filesystem so that the graphvisualization gets updated automatically.    
+X
+``` 
+X
+!!! Note
+X    One of the things that makes treeNotation special is that we can mix grammars.
+X    for example the prevous code, could be just a line called ibisLanguage
+X    and everything nested below it would be parsed using the ibis grammar!
+X    and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
+X    
+# What are you going to do.
+X
+So now that I have found what I want to do let's do it!
+X
+X
+X
+### Subsection on stuff
+X
+X
+Thing Name              | Description        |Notes
+------------------------|--------------------|-----
+Yes                     | Yup!               |
+No                      | Nope :(            |
+FileNotFound            | Doesn't find files | Pass `-sFIND_FILE=maybe` to maybe find them
+X
+X
+## Markdeep syntax test
+X
+Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
+X
+X
+Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
+X
+Is this a definition list?
+:   Looks like one to me
+Is that right?
+:   Possibly!
+X
+And a code listing:
+X
+X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+int main()
+{
+X    return 1;
+}
+X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X
+X
+Markdeep diagrams:
+X
+*******************************************  Here's a text to the right of the diagram,
+* +-----------------+           .-.       *  ain't that fancy. Pretty fancy indeed, I
+* |\                |        .-+   |      *  must say! Markdeep diagrams are generally
+* | \     A-B   *---+--> .--+       '--.  *  enclosed into a rectangle full made of `*`
+* |  \              |   |     Cloud!    | *  symbols; and are "drawn" using ASCII-art
+* +---+-------------+    '-------------'  *  style, with `- | + / \ * o` etc.
+*******************************************  Suh-weet!
+X
+X
+Another random diagram, just because:
+X
+********************
+*    +-+-+-+-*-o   *
+*   / / ^ /        *
+*  / v / /         *
+* +-+-+-+          *
+********************
+X
+!!! Note
+X    Hey I'm a note. Don't mind me, I'm just sitting here.
+X
+!!! WARNING
+X    I'm a warning, perhaps. *Something might happen!*
+X
+And other admonitions:
+X
+!!! Error: Never Pass `nullptr` to a Shader
+X    Invoking a shader with a null argument can seg fault.
+X    This is a multi-line admonition.
+X
+X    Seriously, don't call shaders like that.
+X
+X
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+SHAR_EOF
+  (set 20 23 12 13 18 00 56 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
+       ) << \SHAR_EOF
+ff6dbaa67bc16c30ef118d943055d08f  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 7347 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 7347"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============
