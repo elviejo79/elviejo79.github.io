@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh410621
-# Made on 2023-12-16 01:05 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh412211
+# Made on 2023-12-16 01:10 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -19,7 +19,7 @@ lock_dir=_sh410621
 #   2485 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
-#  11192 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+#  12900 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -1637,8 +1637,84 @@ it workded!!!
 X
 What is the next chanllenge?
 Have a nice visualization with ...
+X
 ### labels, captions and a subgroup
 X
+In order to do that
+I tried to use the same json of les_miserables
+and use grahperx.netliffy.app
+because that application already had a button to upload files.
+X
+so from les_misebales.json to grapherx
+I thouht this jsonato query sohuld be enough:
+X
+``` javascript
+(
+X    $n := graph.nodes.$keys()@$id.*.{
+X    "id":$id,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    "tags":["group:"&metadata.group~>$string()],
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+};
+X
+$e:=graph.edges.{
+X    "id":source&"-"&target,
+X    "kind":"edge",
+X    "label":"label",
+X    "desc":"desc",
+X    "tags":[],
+X    "directed":true,
+X    "weight":metadata.value,
+X    "fromId":source,
+X    "toId":target
+}
+X
+{"items":$append($n,$e),
+X  "theme": {
+X    "name": "minimal",
+X    "bgfill": "#e5e7eb",
+X    "grid": false,
+X    "snapdist": {
+X      "x": 100,
+X      "y": 100
+X    },
+X    "selectionColor": "#1f2937",
+X    "highlightColor": "red",
+X    "nodefill": "white",
+X    "nodelabelstroke": "black",
+X    "nodelabelfontsize": 16,
+X    "nodenotesfontsize": 16,
+X    "nodeborder": "black",
+X    "nodeborderradius": 15,
+X    "nodeBackgroundImageURL": null,
+X    "edgestroke": "#1f2937",
+X    "edgeshape": "curved",
+X    "edgestroketype": "solid",
+X    "font": "PT Mono",
+X    "badges": [
+X      "✅",
+X      "❌",
+X      "⚡",
+X      "👎",
+X      "👍"
+X    ]
+X  },
+X  "jsondownload": true,
+X  "jsonupload": true,
+X  "contextmenu": true,
+X  "customjson": false,
+X  "exportcytoscape": true,
+X  "exportsvg": true,
+X  "title": "Sample graph",
+X  "description": "Compound graphs allow nodes to be nested inside each other.",
+X  "contact": "mailto:eshnil22@gmail.com"}
+)
+```
 ### Subsection on stuff
 X
 X
@@ -1709,7 +1785,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 15 18 23 44 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 16 01 06 48 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -1719,12 +1795,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-54558e0460d34f3833164abb95a8c1e4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+df22f8c88e0842095ef06c709ab1bfc8  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 11192 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 11192"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 12900 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 12900"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============
