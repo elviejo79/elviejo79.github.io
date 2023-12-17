@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh25135
-# Made on 2023-12-16 22:45 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh26519
+# Made on 2023-12-16 22:50 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -1802,19 +1802,17 @@ X
 X
 X
 ### Next version of the whole jsonata query
-In stedy https://stedi.link/7v8wtVy
+In stedy https://stedi.link/kdqY6J0
 X
 But since I don't want to loose my query here is the backup
 X
 ``` javascript
 (
 $node_template:=function($id,$label,$metadata,$parentId){{
-X    /*notice: now we use the that comes with the node */
 X    "id":$id,
 X    "kind":"node",
 X    "label":$label,
 X    "desc":" ",
-X    /* notice: we use the metadata as tags */
 X    "tags":[$each($metadata, function($v, $k) {$k & ":" & $v})],
 X    "parent":$parentId,
 X    "backgroundImageURL":null,
@@ -1841,7 +1839,7 @@ X    "kind":"edge",
 X    "label":relation,
 X    "desc":"desc",
 X    "tags":[],
-X    "directed":false,
+X    "directed":relation?true:false,
 X    "weight":metadata.value,
 X    "fromId":source,
 X    "toId":target
@@ -1891,6 +1889,14 @@ X  "contact": "mailto:eshnil22@gmail.com"
 X
 )
 ```
+X
+X
+# Sunday dec 17?
+X
+## Test your query with all the input data from json-graph-format
+X
+X
+X
 ### Subsection on stuff
 X
 X
@@ -1961,7 +1967,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 16 22 36 32 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 16 22 48 47 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -1971,7 +1977,7 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-157d84cb7bccfd792c77490445cbf7a7  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+e67df3835a1daf41b005b94b57941612  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
