@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh490014
-# Made on 2023-12-20 13:15 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh491612
+# Made on 2023-12-20 13:20 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -19,7 +19,7 @@ lock_dir=_sh490014
 #   2485 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
-#  20070 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+#  21340 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -2016,6 +2016,51 @@ But this should be good enough to create a graph with it...
 X
 ## transform to jsdot or grapherx or visjs
 X
+# Wednesday december 20th
+X
+I've spen the last two days trying different queries to graph.
+But I haven't done any progress :( 
+X
+What I have been wondering is a better way to write this by hand
+## Yet another way to write
+X
+Here is my new query:
+https://try.jsonata.org/FFE-gI76l
+X
+And this is how it looks in yaml:
+X
+``` sh
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndIdTitle.jsonata  | yq --yaml-output
+Questions:
+X  - root: What should we do about the one ring?
+X    answers:
+X      - gg: Give it to golumm
+X        Questions:
+X          - addicted: Isn't he addicted to the ring?
+X            answers:
+X              - ay: Yes,but so what?
+X                Questions:
+X                  - yw: So what??!!
+X      - gh: Give it to humans
+X        pros:
+X          - weapon: use the enemys weapon against itself
+X          - deserve: we deserve it.
+X        cons:
+X          - greed: humans greed has failled us once before.
+X      - bm: Burn it in mount mordor
+X        pros:
+X          - ow: its the only way to destroy it
+X        cons:
+X          - rd: the road is extremely dangerous
+X
+```
+X
+This looks very brief to write...
+WHich is what I want...
+now  I need to learn how move from here
+back to a json that can be used for graphs.
+X
 X
 X
 ### Subsection on stuff
@@ -2088,7 +2133,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 18 20 01 50 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 20 13 17 06 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -2098,12 +2143,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-277d9d226617dbda945e96304e7138e4  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+40cb4ce8025118c3ffe11cc764762c02  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 20070 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 20070"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 21340 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 21340"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============
