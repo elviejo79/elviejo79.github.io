@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.19.0/cytoscape.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonata/jsonata.min.js"></script>
+</head>
+<body>
+    <div id="cy" style="width: 800px; height: 600px;"></div>
+    <script type="text/javascript">
+        // Function to get the URL parameter
+        function getGraphUrlParameter() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get('graphUrl');
+        }
+
+        // Get the graph URL from the query parameter
+        const graphUrl = getGraphUrlParameter();
+
+        // @<tests/qryJsongraphV2ToCytoscape
+        const qryJsongraphV2ToCytoscape = `
+        (
+$root := $.graph{
+    "data":{
+        "id": id,
+        "label": id,
+        "title": type,
+        "how_to_copy":metadata
+    }
+};
+
+$nodes := $.graph.nodes.$keys()@$id.*.{
+        "data":{
+            "id":$id,
+            "label":$.label,
+            "classes":[$.metadata.group.$string()],
+            "parent":$$.graph.title
+        }
+    } ;
+
+$edges := $.graph.edges.{"data":$};
+
+/* We assembly the object that is going to be the one returned by the query */
+{
+    "nodes":$append($root,$nodes),
+    "edges":$edges
+}
+)        
+        `;
+    //>@tests/qryJsongraphV2ToCytoscape
+
+    fetch(graphUrl)
+    .then(response => response.json())
+    .then(rawData => {
+        // Transform nodes
+        const elements = jsonata(qryJsongraphV2ToCytoscape).evaluate(rawData);
+        // Initialize Cytoscape
+        var cy = cytoscape({
+            container: document.getElementById('cy'),
+            elements: elements,
+            style: [/* define your style here */],
+            layout: {/* define your layout here */}
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching the graph data:', error);
+    });
+
+    </script>
+</body>
+</html>

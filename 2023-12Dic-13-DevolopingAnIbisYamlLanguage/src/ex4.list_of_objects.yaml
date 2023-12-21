@@ -1,0 +1,47 @@
+#@<ex4/list_of_objects
+- items:
+  - type: Questions
+    id: root
+    title: What should we do about the one ring?
+    items:
+      - type: answers
+        id: gg
+        title: Give it to golumm
+        items:
+          - type: Questions
+      
+            id: addicted
+            title: Isn't he addicted to the ring?
+            items:
+              - type: answers
+                id: ay 
+                title: Yes,but so what?
+                items: 
+                  - type: Questions
+              
+                    id: yw
+                    title: So what??!! 
+      - type: answers
+        id: gh
+        title: Give it to humans
+        items:
+          - type: pros 
+            id: weapon
+            title: use the enemys weapon against itself
+          - type: pros 
+            id: deserve
+            title: we deserve it. 
+          - type: cons
+            id: greed
+            title: humans greed has failled us once before.
+      - type: answers
+        id: bm
+        title: Burn it in mount mordor
+        items:
+          - type: pros 
+            id: ow
+            title: its the only way to destroy it
+          - type: cons
+            id: rd
+            title: the road is extremely dangerous
+#>@ex4/list_of_objects

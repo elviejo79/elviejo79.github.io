@@ -1,0 +1,263 @@
+{
+  "items": [
+    {
+      "kind": "node",
+      "desc": " ",
+      "tags": [
+        "customer:Philip Morris International",
+        "speciesName:Human",
+        "description:The Th1 response model depicts the causal mechanisms that occur following activation of Th1 cells in response to upstream signals, including IFNG, IL2, LTA, and LTB.",
+        "modelVersion:3.0",
+        "graphCreatedByEmail:tthomson@genstruct.com",
+        "graphCreatedAt:1305578028000",
+        "graphCreatedBy:Ty Thomson",
+        "graphUpdatedBy:Ty Thomson",
+        "reference_node:bp(GO:\"T-helper 1 type immune response\")",
+        "graphUpdatedByEmail:tthomson@genstruct.com",
+        "graphProject:System Models Project",
+        "graphUpdatedAt:1305578028000",
+        "species:9606",
+        "bel_version:1.0"
+      ],
+      "parent": null,
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "p(HGNC:LTA)",
+      "kind": "node",
+      "label": "p(HGNC:LTA)",
+      "desc": " ",
+      "tags": [
+        "yloc:105",
+        "xloc:265"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "r(HGNC:IFNG)",
+      "kind": "node",
+      "label": "r(HGNC:IFNG)",
+      "desc": " ",
+      "tags": [
+        "yloc:30",
+        "xloc:45"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "bp(GO:\"T-helper 1 type immune response\")",
+      "kind": "node",
+      "label": "bp(GO:\"T-helper 1 type immune response\")",
+      "desc": " ",
+      "tags": [
+        "yloc:230",
+        "xloc:165"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "r(HGNC:LTA)",
+      "kind": "node",
+      "label": "r(HGNC:LTA)",
+      "desc": " ",
+      "tags": [
+        "yloc:30",
+        "xloc:265"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "r(HGNC:IL2)",
+      "kind": "node",
+      "label": "r(HGNC:IL2)",
+      "desc": " ",
+      "tags": [
+        "yloc:30",
+        "xloc:155"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "r(HGNC:LTB)",
+      "kind": "node",
+      "label": "r(HGNC:LTB)",
+      "desc": " ",
+      "tags": [
+        "yloc:30",
+        "xloc:375"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "p(HGNC:IFNG)",
+      "kind": "node",
+      "label": "p(HGNC:IFNG)",
+      "desc": " ",
+      "tags": [
+        "yloc:105",
+        "xloc:45"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "p(HGNC:IL2)",
+      "kind": "node",
+      "label": "p(HGNC:IL2)",
+      "desc": " ",
+      "tags": [
+        "yloc:105",
+        "xloc:155"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "p(HGNC:LTB)",
+      "kind": "node",
+      "label": "p(HGNC:LTB)",
+      "desc": " ",
+      "tags": [
+        "yloc:105",
+        "xloc:375"
+      ],
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "r(HGNC:IL2)-p(HGNC:IL2)",
+      "kind": "edge",
+      "label": "translatedTo",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "r(HGNC:IL2)",
+      "toId": "p(HGNC:IL2)"
+    },
+    {
+      "id": "p(HGNC:LTA)-bp(GO:\"T-helper 1 type immune response\")",
+      "kind": "edge",
+      "label": "increases",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "p(HGNC:LTA)",
+      "toId": "bp(GO:\"T-helper 1 type immune response\")"
+    },
+    {
+      "id": "p(HGNC:IFNG)-bp(GO:\"T-helper 1 type immune response\")",
+      "kind": "edge",
+      "label": "increases",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "p(HGNC:IFNG)",
+      "toId": "bp(GO:\"T-helper 1 type immune response\")"
+    },
+    {
+      "id": "p(HGNC:IL2)-bp(GO:\"T-helper 1 type immune response\")",
+      "kind": "edge",
+      "label": "increases",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "p(HGNC:IL2)",
+      "toId": "bp(GO:\"T-helper 1 type immune response\")"
+    },
+    {
+      "id": "r(HGNC:LTB)-p(HGNC:LTB)",
+      "kind": "edge",
+      "label": "translatedTo",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "r(HGNC:LTB)",
+      "toId": "p(HGNC:LTB)"
+    },
+    {
+      "id": "r(HGNC:IFNG)-p(HGNC:IFNG)",
+      "kind": "edge",
+      "label": "translatedTo",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "r(HGNC:IFNG)",
+      "toId": "p(HGNC:IFNG)"
+    },
+    {
+      "id": "p(HGNC:LTB)-bp(GO:\"T-helper 1 type immune response\")",
+      "kind": "edge",
+      "label": "increases",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "p(HGNC:LTB)",
+      "toId": "bp(GO:\"T-helper 1 type immune response\")"
+    },
+    {
+      "id": "r(HGNC:LTA)-p(HGNC:LTA)",
+      "kind": "edge",
+      "label": "translatedTo",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "r(HGNC:LTA)",
+      "toId": "p(HGNC:LTA)"
+    }
+  ],
+  "theme": {
+    "name": "minimal",
+    "bgfill": "#e5e7eb",
+    "grid": false,
+    "snapdist": {
+      "x": 100,
+      "y": 100
+    },
+    "selectionColor": "#1f2937",
+    "highlightColor": "red",
+    "nodefill": "white",
+    "nodelabelstroke": "black",
+    "nodelabelfontsize": 16,
+    "nodenotesfontsize": 16,
+    "nodeborder": "black",
+    "nodeborderradius": 15,
+    "nodeBackgroundImageURL": null,
+    "edgestroke": "#1f2937",
+    "edgeshape": "curved",
+    "edgestroketype": "solid",
+    "font": "PT Mono",
+    "badges": [
+      "✅",
+      "❌",
+      "⚡",
+      "👎",
+      "👍"
+    ]
+  },
+  "jsondownload": true,
+  "jsonupload": true,
+  "contextmenu": true,
+  "customjson": false,
+  "exportcytoscape": true,
+  "exportsvg": true,
+  "title": "Sample graph",
+  "description": "Compound graphs allow nodes to be nested inside each other.",
+  "contact": "mailto:eshnil22@gmail.com"
+}}

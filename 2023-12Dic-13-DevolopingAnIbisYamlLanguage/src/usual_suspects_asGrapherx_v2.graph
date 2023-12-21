@@ -1,0 +1,92 @@
+{
+  "items": [
+    {
+      "id": "Usual Suspects",
+      "kind": "node",
+      "label": "Usual Suspects",
+      "desc": " ",
+      "tags": [
+        "release year:1995"
+      ],
+      "parent": null,
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "Roger Kint",
+      "kind": "node",
+      "label": "Roger Kint",
+      "desc": " ",
+      "tags": [
+        "nickname:Verbal",
+        "actor:Kevin Spacey"
+      ],
+      "parent": "Usual Suspects",
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "Keyser Söze",
+      "kind": "node",
+      "label": "Keyser Söze",
+      "desc": " ",
+      "tags": [
+        "actor:Kevin Spacey"
+      ],
+      "parent": "Usual Suspects",
+      "backgroundImageURL": null,
+      "has_dynamic_notes": false,
+      "is_collapsed": false
+    },
+    {
+      "id": "Roger Kint-Keyser Söze",
+      "kind": "edge",
+      "label": "is",
+      "desc": "desc",
+      "tags": [],
+      "directed": true,
+      "fromId": "Roger Kint",
+      "toId": "Keyser Söze"
+    }
+  ],
+  "theme": {
+    "name": "minimal",
+    "bgfill": "#e5e7eb",
+    "grid": false,
+    "snapdist": {
+      "x": 100,
+      "y": 100
+    },
+    "selectionColor": "#1f2937",
+    "highlightColor": "red",
+    "nodefill": "white",
+    "nodelabelstroke": "black",
+    "nodelabelfontsize": 16,
+    "nodenotesfontsize": 16,
+    "nodeborder": "black",
+    "nodeborderradius": 15,
+    "nodeBackgroundImageURL": null,
+    "edgestroke": "#1f2937",
+    "edgeshape": "curved",
+    "edgestroketype": "solid",
+    "font": "PT Mono",
+    "badges": [
+      "✅",
+      "❌",
+      "⚡",
+      "👎",
+      "👍"
+    ]
+  },
+  "jsondownload": true,
+  "jsonupload": true,
+  "contextmenu": true,
+  "customjson": false,
+  "exportcytoscape": true,
+  "exportsvg": true,
+  "title": "Sample graph",
+  "description": "Compound graphs allow nodes to be nested inside each other.",
+  "contact": "mailto:eshnil22@gmail.com"
+}

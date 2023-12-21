@@ -1,0 +1,31 @@
+/* @<groupSentencesByTypeAndId */
+( 
+/* 
+$groupByType:=function($tree){
+    $tree.items{
+        `type`:$.($merge([{id:title},$groupByType($)]))
+    }
+};
+
+$groupByType($);
+*/
+
+$groupSentencesByTypeAndId:=function($tree){
+    $tree.items{
+    /* Question, Ideao, etc. will be a hashmap of things of that type*/
+    /* the hasmap will be identified by id*/
+    `type`:{`id`:
+                /* for each one of the sentences, create an object */
+                $.($merge([
+                            {"id":id,"title":title},
+                            /* if the sentence has its own children then also nest those */
+                            $groupSentencesByTypeAndId($)
+                            ])
+                    )
+            }
+    }
+};
+
+$groupSentencesByTypeAndId($)
+)
+/* >@groupSentencesByTypeAndId */

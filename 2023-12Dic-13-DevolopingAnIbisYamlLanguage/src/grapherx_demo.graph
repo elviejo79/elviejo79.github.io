@@ -1,0 +1,255 @@
+{
+  "items": [
+    {
+      "id": 4,
+      "kind": "edge",
+      "label": "is a prerequisite of",
+      "desc": "",
+      "tags": [
+        "org:apple",
+        "lab:mit"
+      ],
+      "directed": true,
+      "weight": 5,
+      "fromId": 3,
+      "toId": 1
+    },
+    {
+      "id": 37845,
+      "kind": "edge",
+      "label": "",
+      "desc": "",
+      "tags": [
+        "org:apple",
+        "org:google"
+      ],
+      "directed": true,
+      "weight": 5,
+      "fromId": 94575,
+      "toId": 3
+    },
+    {
+      "id": 17122,
+      "kind": "edge",
+      "label": "",
+      "desc": "",
+      "tags": [],
+      "strokeType": "solid",
+      "directed": true,
+      "weight": 5,
+      "fromId": 5699,
+      "toId": 10451
+    },
+    {
+      "id": 2,
+      "kind": "node",
+      "label": "Arithmetic",
+      "notes": "some notes here",
+      "desc": "",
+      "tags": [
+        "org:meta",
+        "primary"
+      ],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": null,
+      "pos": {
+        "x": 264,
+        "y": 351
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 1,
+      "kind": "node",
+      "label": "Algebra",
+      "notes": "other notes",
+      "desc": "",
+      "tags": [
+        "org:google",
+        "lab:cambridge",
+        "sponsor"
+      ],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": null,
+      "pos": {
+        "x": 155,
+        "y": 783
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 1550,
+      "kind": "node",
+      "label": "Quadratic Equations",
+      "notes": "",
+      "desc": "",
+      "tags": [
+        "org:apple",
+        "org:google",
+        "sponsor"
+      ],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 1,
+      "pos": {
+        "x": 150,
+        "y": 831
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 3,
+      "kind": "node",
+      "label": "Subtraction",
+      "notes": "",
+      "desc": "inverse of addition",
+      "tags": [
+        "goal"
+      ],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 2,
+      "pos": {
+        "x": 445,
+        "y": 364
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 94575,
+      "kind": "node",
+      "label": "Multiplication",
+      "notes": "",
+      "desc": "repeated addition",
+      "tags": [
+        "org:apple",
+        "lab:mit",
+        "project"
+      ],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 2,
+      "pos": {
+        "x": 70,
+        "y": 410
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 5699,
+      "kind": "node",
+      "label": "Arithmetic Sequences",
+      "notes": "",
+      "desc": "",
+      "tags": [],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 3,
+      "pos": {
+        "x": 465,
+        "y": 274
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 10451,
+      "kind": "node",
+      "label": "Proof by Induction",
+      "notes": "",
+      "desc": "",
+      "tags": [],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 3,
+      "pos": {
+        "x": 519,
+        "y": 474
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 3283,
+      "kind": "node",
+      "label": "Prime Numbers",
+      "notes": "",
+      "desc": "",
+      "tags": [],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 6916,
+      "pos": {
+        "x": 25,
+        "y": 450
+      },
+      "badge": "https://cdn.discordapp.com/attachments/987690735639875584/997881951534981203/hexbadge.png",
+      "backgroundImageURL": null
+    },
+    {
+      "id": 6916,
+      "kind": "node",
+      "label": "Factorizing",
+      "notes": "",
+      "desc": "",
+      "tags": [],
+      "has_dynamic_notes": false,
+      "is_collapsed": false,
+      "parent": 94575,
+      "pos": {
+        "x": 48,
+        "y": 450
+      },
+      "backgroundImageURL": null
+    },
+    {
+      "id": 56,
+      "kind": "note",
+      "pos": {
+        "x": 850,
+        "y": 250
+      },
+      "label": "hello",
+      "notes": "extra content goes here\n\ntest\n\n\n\n- first\n- second",
+      "backgroundImageURL": null
+    }
+  ],
+  "theme": {
+    "name": "minimal",
+    "bgfill": "#e5e7eb",
+    "grid": false,
+    "snapdist": {
+      "x": 100,
+      "y": 100
+    },
+    "selectionColor": "#1f2937",
+    "highlightColor": "red",
+    "nodefill": "white",
+    "nodelabelstroke": "black",
+    "nodelabelfontsize": 16,
+    "nodenotesfontsize": 16,
+    "nodeborder": "black",
+    "nodeborderradius": 15,
+    "nodeBackgroundImageURL": null,
+    "edgestroke": "#1f2937",
+    "edgeshape": "curved",
+    "edgestroketype": "solid",
+    "font": "PT Mono",
+    "badges": [
+      "✅",
+      "❌",
+      "⚡",
+      "👎",
+      "👍"
+    ]
+  },
+  "jsondownload": true,
+  "jsonupload": true,
+  "contextmenu": true,
+  "customjson": false,
+  "exportcytoscape": true,
+  "exportsvg": true,
+  "title": "Sample graph",
+  "description": "Compound graphs allow nodes to be nested inside each other.",
+  "contact": "mailto:eshnil22@gmail.com"
+}
