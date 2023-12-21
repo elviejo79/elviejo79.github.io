@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh593707
-# Made on 2023-12-21 14:20 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh595479
+# Made on 2023-12-21 14:25 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -19,7 +19,7 @@ lock_dir=_sh593707
 #   2485 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
-#  21340 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+#  21303 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -1363,26 +1363,26 @@ X
 X
 #### I want to type this:
 X
-``` 
+```
 @@ex1/mytyping
 ```
 X
 #### When the formating happens
 But I want the code editor, when it does the reformating to show this:
 X
-``` 
+```
 @@ex1/reformated
 ```
 X
 Notice that it kind of re-organizes the code, putting the question first... and the id ...
 because when I start typing I'm not 100% sure if its a proporsar or an idea.
-the 
+the
 X
 `.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
 `!` is used to represent an idea
 `?` is used to represent a question)
 X
-#### I want to see 
+#### I want to see
 X
 [1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
 X
@@ -1395,7 +1395,7 @@ X
 @@ex2/mytyping
 ```
 X
-#### The autoforamtter 
+#### The autoforamtter
 X
 Would of course change it to icons first:
 X
@@ -1403,7 +1403,7 @@ X
 @@ex2/reformatted
 ```
 X
-!!! Note 
+!!! Note
 X    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
 X
 #### The image
@@ -1460,7 +1460,7 @@ X
 X    * use a tool that already exists, until you can develop your own
 ? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
 X    * Dot/graphviz
-X        + It works now and is stable 
+X        + It works now and is stable
 X        + It can handle subgraphs
 X        + it can have infinite customization.
 X        - I don't like the syntax
@@ -1478,7 +1478,7 @@ X        it has the same disadvantages as Dot/grahpviz (this should be a pointer
 X    * Use yaml to create a DSL
 X        + It works today
 X        + it is whitespace based
-X        + it favors a tree representation 
+X        + it favors a tree representation
 X        + it can *copy* from one branch to another
 X        + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
 X        + can be edited in vscode and lapce and many other editors
@@ -1488,28 +1488,28 @@ X            ? How can you provide that?
 X                * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
 X        - it already uses the characters (-) that I want to use for my language
 X            ? How can you solve that?
-X                * use complete word + == pros, - == cons, & == id, * == reference 
+X                * use complete word + == pros, - == cons, & == id, * == reference
 X        ! Deal: this is te option I'm going to use
 X            ? how?
 X                * create json-schema that forces correct use symbols
 X                * use an editor like vscode, lapce, doomemacs that have auto complete.
 X                * find a graphvusalization tool, and produce the json that it uses.
-X                * use watch in the filesystem so that the graphvisualization gets updated automatically.    
+X                * use watch in the filesystem so that the graphvisualization gets updated automatically.
 X
-``` 
+```
 X
 !!! Note
 X    One of the things that makes treeNotation special is that we can mix grammars.
 X    for example the prevous code, could be just a line called ibisLanguage
 X    and everything nested below it would be parsed using the ibis grammar!
 X    and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
-X    
+X
 # What are you going to do.
 X
 So now that I have found what I want to do let's do it!
 X
 X
-# 2024-December-14 
+# 2024-December-14
 X
 ## My current plan
 X
@@ -1537,7 +1537,7 @@ X
 And transformed it to yaml so it looks like this
 X
 ``` yaml
-@@usual_suspects_json_as.yaml
+@@usual_suspects_json_as_yaml
 ```
 X
 and it works!! it validates the document!!
@@ -1563,12 +1563,12 @@ X
 ```
 X
 # December 15
-X 
+X
 ## Jsonata to transform jsong-graph example to a version that cytoscape uses
 X
 In yesterday's example I don't like that code uses:
 X
-``` js 
+``` js
 X.then(rawData => {
 X        // Transform nodes
 X        const nodes = Object.keys(rawData.graph.nodes).map(key => {
@@ -1615,18 +1615,18 @@ X            "classes":[$.metadata.group.$string()],
 X            "parent":$graph_title
 X        }
 X    }
-X    
+X
 }
 ```
 X
 ### Now I have a new version of the jsonata query that assemblys the result in parts:
 X
-``` js 
+``` js
 @@tests/qryJsongraphV2ToCytoscape
 ```
 X
-I know, that query looks bigger than the code that it's replacing, 
-but it does more things.  
+I know, that query looks bigger than the code that it's replacing,
+but it does more things.
 it is preparing the graph to be displayed using nest graphs.
 X
 ### Let's create a different visualization
@@ -1765,7 +1765,7 @@ X
 X
 The `$each` functios splits in value and keys
 then we use the transform opertar
-to take the node, and just add the "id" field 
+to take the node, and just add the "id" field
 to it.
 the rest of fields in the node are automatically
 added to $n.
@@ -1789,7 +1789,7 @@ X    "tags":$each(metadata, function($v, $k) {$k & ":" & $v}),
 X    "parent":"id of thee graph that represents the root",
 X    "backgroundImageURL":null,
 X    "has_dynamic_notes":false,
-X    "is_collapsed":false 
+X    "is_collapsed":false
 X    }
 ```
 X
@@ -1817,8 +1817,8 @@ X    "tags":[$each($metadata, function($v, $k) {$k & ":" & $v})],
 X    "parent":$parentId,
 X    "backgroundImageURL":null,
 X    "has_dynamic_notes":false,
-X    "is_collapsed":false 
-X  }  
+X    "is_collapsed":false
+X  }
 };
 X
 $rootNode := graph.($node_template(id,label,metadata,null));
@@ -1908,7 +1908,7 @@ into a nested structure by types.
 X
 Here is the result.
 As you can see it has the yaml from yesterday as json
-then two jsonata queries 
+then two jsonata queries
 https://try.jsonata.org/ZX5swwLNE
 X
 the one that I think is the best is:
@@ -1961,7 +1961,7 @@ Gives us a new json
 X
 ### Now we can see how they will look as yamls
 X
-```bash 
+```bash
 agarciafdz@agarciafd-lg:~/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage
 $ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByType.jsonata  | yq --yaml-output
 Question:
@@ -2019,7 +2019,7 @@ X
 # Wednesday december 20th
 X
 I've spen the last two days trying different queries to graph.
-But I haven't done any progress :( 
+But I haven't done any progress :(
 X
 What I have been wondering is a better way to write this by hand
 ## Yet another way to write
@@ -2133,7 +2133,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 20 13 17 06 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 21 14 22 47 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -2143,12 +2143,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-40cb4ce8025118c3ffe11cc764762c02  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+60d758288dfb664f53f079d77018c44d  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 21340 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 21340"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 21303 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 21303"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============

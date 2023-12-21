@@ -1,4 +1,4 @@
-# @<usual_suspects_json_as.yaml
+# @<usual_suspects_json_as_yaml
 #yaml-language-server: $schema=https://jsongraphformat.info/v2.0/json-graph-schema.json
 
 graph:
@@ -22,4 +22,4 @@ graph:
   metadata:
     release year: '1995'
 
-# @>usual_suspects_json_as.yaml
+# @>usual_suspects_json_as_yaml

@@ -16,26 +16,26 @@ This is my working map of what it.
 
 #### I want to type this:
 
-``` 
+```
 @@ex1/mytyping
 ```
 
 #### When the formating happens
 But I want the code editor, when it does the reformating to show this:
 
-``` 
+```
 @@ex1/reformated
 ```
 
 Notice that it kind of re-organizes the code, putting the question first... and the id ...
 because when I start typing I'm not 100% sure if its a proporsar or an idea.
-the 
+the
 
 `.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
 `!` is used to represent an idea
 `?` is used to represent a question)
 
-#### I want to see 
+#### I want to see
 
 [1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
 
@@ -48,7 +48,7 @@ Once I have the first version the map can grow like this:
 @@ex2/mytyping
 ```
 
-#### The autoforamtter 
+#### The autoforamtter
 
 Would of course change it to icons first:
 
@@ -56,7 +56,7 @@ Would of course change it to icons first:
 @@ex2/reformatted
 ```
 
-!!! Note 
+!!! Note
     Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
 
 #### The image
@@ -113,7 +113,7 @@ So  I need to break that cycle.
     * use a tool that already exists, until you can develop your own
 ? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
     * Dot/graphviz
-        + It works now and is stable 
+        + It works now and is stable
         + It can handle subgraphs
         + it can have infinite customization.
         - I don't like the syntax
@@ -131,7 +131,7 @@ So  I need to break that cycle.
     * Use yaml to create a DSL
         + It works today
         + it is whitespace based
-        + it favors a tree representation 
+        + it favors a tree representation
         + it can *copy* from one branch to another
         + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
         + can be edited in vscode and lapce and many other editors
@@ -141,28 +141,28 @@ So  I need to break that cycle.
                 * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
         - it already uses the characters (-) that I want to use for my language
             ? How can you solve that?
-                * use complete word + == pros, - == cons, & == id, * == reference 
+                * use complete word + == pros, - == cons, & == id, * == reference
         ! Deal: this is te option I'm going to use
             ? how?
                 * create json-schema that forces correct use symbols
                 * use an editor like vscode, lapce, doomemacs that have auto complete.
                 * find a graphvusalization tool, and produce the json that it uses.
-                * use watch in the filesystem so that the graphvisualization gets updated automatically.    
+                * use watch in the filesystem so that the graphvisualization gets updated automatically.
 
-``` 
+```
 
 !!! Note
     One of the things that makes treeNotation special is that we can mix grammars.
     for example the prevous code, could be just a line called ibisLanguage
     and everything nested below it would be parsed using the ibis grammar!
     and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
-    
+
 # What are you going to do.
 
 So now that I have found what I want to do let's do it!
 
 
-# 2024-December-14 
+# 2024-December-14
 
 ## My current plan
 
@@ -190,7 +190,7 @@ https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/exam
 And transformed it to yaml so it looks like this
 
 ``` yaml
-@@usual_suspects_json_as.yaml
+@@usual_suspects_json_as_yaml
 ```
 
 and it works!! it validates the document!!
@@ -216,12 +216,12 @@ Here is the algorithm.
 ```
 
 # December 15
- 
+
 ## Jsonata to transform jsong-graph example to a version that cytoscape uses
 
 In yesterday's example I don't like that code uses:
 
-``` js 
+``` js
 .then(rawData => {
         // Transform nodes
         const nodes = Object.keys(rawData.graph.nodes).map(key => {
@@ -268,18 +268,18 @@ $.graph.id@$graph_title{
             "parent":$graph_title
         }
     }
-    
+
 }
 ```
 
 ### Now I have a new version of the jsonata query that assemblys the result in parts:
 
-``` js 
+``` js
 @@tests/qryJsongraphV2ToCytoscape
 ```
 
-I know, that query looks bigger than the code that it's replacing, 
-but it does more things.  
+I know, that query looks bigger than the code that it's replacing,
+but it does more things.
 it is preparing the graph to be displayed using nest graphs.
 
 ### Let's create a different visualization
@@ -418,7 +418,7 @@ graph.nodes.
 
 The `$each` functios splits in value and keys
 then we use the transform opertar
-to take the node, and just add the "id" field 
+to take the node, and just add the "id" field
 to it.
 the rest of fields in the node are automatically
 added to $n.
@@ -442,7 +442,7 @@ $n:=graph.nodes.
     "parent":"id of thee graph that represents the root",
     "backgroundImageURL":null,
     "has_dynamic_notes":false,
-    "is_collapsed":false 
+    "is_collapsed":false
     }
 ```
 
@@ -470,8 +470,8 @@ $node_template:=function($id,$label,$metadata,$parentId){{
     "parent":$parentId,
     "backgroundImageURL":null,
     "has_dynamic_notes":false,
-    "is_collapsed":false 
-  }  
+    "is_collapsed":false
+  }
 };
 
 $rootNode := graph.($node_template(id,label,metadata,null));
@@ -561,7 +561,7 @@ into a nested structure by types.
 
 Here is the result.
 As you can see it has the yaml from yesterday as json
-then two jsonata queries 
+then two jsonata queries
 https://try.jsonata.org/ZX5swwLNE
 
 the one that I think is the best is:
@@ -614,7 +614,7 @@ Gives us a new json
 
 ### Now we can see how they will look as yamls
 
-```bash 
+```bash
 agarciafdz@agarciafd-lg:~/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage
 $ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByType.jsonata  | yq --yaml-output
 Question:
@@ -672,7 +672,7 @@ But this should be good enough to create a graph with it...
 # Wednesday december 20th
 
 I've spen the last two days trying different queries to graph.
-But I haven't done any progress :( 
+But I haven't done any progress :(
 
 What I have been wondering is a better way to write this by hand
 ## Yet another way to write
