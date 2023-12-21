@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh597100
-# Made on 2023-12-21 14:30 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh598889
+# Made on 2023-12-21 14:35 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -18,10 +18,11 @@ lock_dir=_sh597100
 #   2994 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-18-Writting-research-grants/index.md.html
 #   2485 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-11-22-Knowledge-Filesystem/index.md.html
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
-#  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
+#   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt
+#  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
 #  21303 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
-#  10342 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
+#  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
 #   2563 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/biyooc.md.html
 #  10856 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/improving-counterexample-quality-from-failed-program-verification.md.html
@@ -1008,6 +1009,71 @@ test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-
   ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html' is not 4080"
   fi
 fi
+# ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt ==============
+if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'; then
+  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'
+if test $? -eq 0
+then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage."
+else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage."
+     exit 1
+fi
+fi
+if test -n "${keep_file}" && test -f '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt'
+then
+${echo} "x - SKIPPING /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt (file already exists)"
+
+else
+${echo} "x - extracting /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt (text)"
+  sed 's/^X//' << 'SHAR_EOF' > '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt' &&
+#@<ex3/mytyping
+? Why is there no silver bullet in software engineering?
+X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+X * Essential difficulties : Those related to conceptualization design
+X    ? What are the essential difficultios of designing software?
+X        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+X        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+X        * Changeability: often required to change difficulty of change understimated.
+X        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+X ? What silver bullets have been proposed to date?
+X    * These address indcidental difficulties (those related to implementation).
+X         for example?
+X            * OOP
+X                + Improved programmer productivity (ipp)
+X                - Do not help in software design (nodesing)
+X            * Better Hardware
+X                # ipp ---- notice that I mean a reference to the same above
+X                # nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X            * High level languages
+X                # ipp
+X                # nodesign
+X            * Better tools - IDEs, etc.
+X                # ipp
+X                # no design
+X            * AI / Expert systems
+X                - limited applicability (la)
+X                # no design
+X            * Program Verification
+X                # la
+#>@ex3/mytyping
+SHAR_EOF
+  (set 20 23 12 21 14 32 13 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt'
+   eval "${shar_touch}") && \
+  chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt'
+if test $? -ne 0
+then ${echo} "restore of /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt failed"
+fi
+  if ${md5check}
+  then (
+       ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt': 'MD5 check failed'
+       ) << \SHAR_EOF
+2f9c60d3ced478a3d4d6f9b932d60748  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt
+SHAR_EOF
+
+else
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt'` -ne 1589 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt' is not 1589"
+  fi
+fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md ==============
 if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'; then
   mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'
@@ -1042,8 +1108,7 @@ X
 X
 #### I want to type this:
 X
-X
-``` 
+```
 Why is there no silver bullet in software engineering?
 X Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
 X Essential difficulties : Those related to conceptualization design !
@@ -1054,7 +1119,7 @@ X
 #### When the formating happens
 But I want the code editor, when it does the reformating to show this:
 X
-``` 
+```
 ? Why is there no silver bullet in software engineering?
 X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
 X * Essential difficulties : Those related to conceptualization design
@@ -1063,13 +1128,13 @@ X ? What silver bullets have been proposed to date?
 X
 Notice that it kind of re-organizes the code, putting the question first... and the id ...
 because when I start typing I'm not 100% sure if its a proporsar or an idea.
-the 
+the
 X
 `.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
 `!` is used to represent an idea
 `?` is used to represent a question)
 X
-#### I want to see 
+#### I want to see
 X
 [1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
 X
@@ -1090,7 +1155,7 @@ X        * Invisibility: structure cannot be vsualized (flowcharts and visual mo
 X ? What silver bullets have been proposed to date?
 ```
 X
-#### The autoforamtter 
+#### The autoforamtter
 X
 Would of course change it to icons first:
 X
@@ -1107,9 +1172,8 @@ X ? What silver bullets have been proposed to date?
 X
 ```
 X
-<div class="admonition note">
-Notice that it seems that the colons are the id... maybe something to consider for when I need
-</div>
+!!! Note
+X    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
 X
 #### The image
 What I want to see:
@@ -1169,23 +1233,23 @@ X ? What silver bullets have been proposed to date?
 X    * These address indcidental difficulties (those related to implementation).
 X         for example?
 X            * OOP
-X                + Improved programmer productivity (ipp)
-X                - Do not help in software design (nodesing)
+X                + &ipp Improved programmer productivity
+X                - &nodesign Do not help in software design
 X            * Better Hardware
-X                + ipp ---- notice that I mean a reference to the same above
-X                - nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X                + *ipp ---- notice that I mean a reference to the same above
+X                - *nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
 X            * High level languages
-X                + ipp
-X                - nodesign
+X                + *ipp
+X                - *nodesign
 X            * Better tools - IDEs, etc.
-X                + ipp
-X                - no design
+X                + *ipp
+X                - *no design
 X            * AI / Expert systems
-X                - limited applicability (la)
-X                - no design
+X                - &la limited applicability
+X                - *nodesign
 X            * Program Verification
-X                - la
-``````
+X                - *la
+```
 X
 X
 Obeserve that the pros and cons are insert with the correct sign.
@@ -1196,28 +1260,816 @@ X
 X
 [3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
 X
+# My problem a deadlock.
 X
-**Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
+The problem that I've had is that I've been deadlocked in search for that tool.
 X
-* Run on a computer
-* Exit with an exit code
-* Be a replacement for our old system, `theoldthing.exe`
+```
+I want to do many things.
+I need to write what I want to do in file.
+There are dependencies between things
+I need to map the dependencies as graph datastructure.
+I want to visualize the graph datastructure as a diagram.
+You can use any diagram editor for that.
+I **want** to write in text, and visualize in diagram
+So I'll add to my list of projects.
+I want to do many things, an the cycle begins again!
+```
+X
+So  I need to break that cycle.
+X
+``` ibis
+? How can I break the deadlock of organizing my mind?
+X    * use a tool that already exists, until you can develop your own
+? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
+X    * Dot/graphviz
+X        + It works now and is stable
+X        + It can handle subgraphs
+X        + it can have infinite customization.
+X        - I don't like the syntax
+X            ? Why?
+X                * it forces to wre the nodes first and later the edges.
+X                * it mixes presentation with content
+X    * Use Flyinglogic
+X        + I <3 the way it looks
+X        - It is monthly payment.
+X        - I can't insert the diagrams in other documents
+X        - I can't present the diagrams in order.
+X        - I can't create the diagram from keyboard only
+X    * Plantuml
+X        it has the same disadvantages as Dot/grahpviz (this should be a pointer)
+X    * Use yaml to create a DSL
+X        + It works today
+X        + it is whitespace based
+X        + it favors a tree representation
+X        + it can *copy* from one branch to another
+X        + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
+X        + can be edited in vscode and lapce and many other editors
+X        + with the redhat extension supports json-schema
+X        - Dosn't have a native graph representation
+X            ? How can you provide that?
+X                * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
+X        - it already uses the characters (-) that I want to use for my language
+X            ? How can you solve that?
+X                * use complete word + == pros, - == cons, & == id, * == reference
+X        ! Deal: this is te option I'm going to use
+X            ? how?
+X                * create json-schema that forces correct use symbols
+X                * use an editor like vscode, lapce, doomemacs that have auto complete.
+X                * find a graphvusalization tool, and produce the json that it uses.
+X                * use watch in the filesystem so that the graphvisualization gets updated automatically.
+X
+```
+X
+!!! Note
+X    One of the things that makes treeNotation special is that we can mix grammars.
+X    for example the prevous code, could be just a line called ibisLanguage
+X    and everything nested below it would be parsed using the ibis grammar!
+X    and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
+X
+# What are you going to do.
+X
+So now that I have found what I want to do let's do it!
 X
 X
-## Invoking it
+# 2024-December-14
 X
-<div class="admonition note">
-This is a note by the way!
-</div>
+## My current plan
 X
-XFrom the root folder, run "thing" with the target name, e.g.: `thing Yes`
+Ok now let's do a simple attempt.
+I'm gongo to use the json-graph-format v2
+to write a yaml document, probably taken from their samples.
+And will try to visualize it.
+if it doesn't work then I'm going to create a jsonata query to transform to the v1
+and try to visualize it again.
 X
-* On Mac, Linux or Windows PowerShell, you'll want to use `./thing` instead of just `thing`.
-* Target and option names are case sensitive!
-* Several things to do can be specified: `thing Yes No FileNotFound`
+if it works, then I'm going to create a new json schema
+basedo on the one for cytoscape or graphx
+then will write a yaml document based on their json documents.
+again just to test that it works.
 X
-Additional options can be passed via `-sNAME=VALUE` arguments. Most common ones are CONFIG
-(used to indicate debug or release thing) and PLATFORM (used to indicate 32 vs 64 bit thing).
+then I'll do my next schema, based on one of the two variants
+that I have, array of objects or objects with properties and will see
+what it does.
+X
+## Now let's try with a yaml document
+X
+So I have takeng the json-graph examples here:
+https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/usual_suspects.json
+X
+And transformed it to yaml so it looks like this
+X
+``` yaml
+#yaml-language-server: $schema=https://jsongraphformat.info/v2.0/json-graph-schema.json
+X
+graph:
+X  id: Usual Suspects
+X  type: movie characters
+X  label: Usual Suspects
+X  nodes:
+X    Roger Kint:
+X      label: Roger Kint
+X      metadata:
+X        nickname: Verbal
+X        actor: Kevin Spacey
+X    Keyser Söze:
+X      label: Keyser Söze
+X      metadata:
+X        actor: Kevin Spacey
+X  edges:
+X  - source: Roger Kint
+X    target: Keyser Söze
+X    relation: is
+X  metadata:
+X    release year: '1995'
+X
+```
+X
+and it works!! it validates the document!!
+uff...
+X
+## A Visualization with cytoscape
+Now we can take that json...
+And visualize it using cytoscape.
+X
+Like in this link
+file://./test/visualize_a_basic_usual_suspects_json.html?graphUrl=https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json
+X
+Observe that to the webpage I send as parameters the url of the json, that is the example
+`?graphUrl=https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json`
+X
+That page is just used to execute the javascript
+that reads the json data and visualize its using js.cytoscape.org to view it.
+Here is the algorithm.
+X
+X
+``` html
+<html>
+<head>
+X    <title>My Graph</title>
+X    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.19.0/cytoscape.min.js"></script>
+</head>
+<body>
+X    <div id="cy" style="width: 800px; height: 600px;"></div>
+X    <script type="text/javascript">
+X        // Function to get the URL parameter
+X        function getGraphUrlParameter() {
+X            const queryString = window.location.search;
+X            const urlParams = new URLSearchParams(queryString);
+X            return urlParams.get('graphUrl');
+X        }
+X
+X        // Get the graph URL from the query parameter
+X        const graphUrl = getGraphUrlParameter();
+X
+X    fetch(graphUrl)
+X    .then(response => response.json())
+X    .then(rawData => {
+X        // Transform nodes
+X        const nodes = Object.keys(rawData.graph.nodes).map(key => {
+X            return {
+X                data: {
+X                    id: key,
+X                    ...rawData.graph.nodes[key]
+X                }
+X            };
+X        });
+X
+X        // Transform edges
+X        const edges = rawData.graph.edges.map(edge => {
+X            return {
+X                data: edge
+X            };
+X        });
+X
+X        // Combine nodes and edges
+X        const elements = nodes.concat(edges);
+X
+X        // Initialize Cytoscape
+X        var cy = cytoscape({
+X            container: document.getElementById('cy'),
+X            elements: elements,
+X            style: [/* define your style here */],
+X            layout: {/* define your layout here */}
+X        });
+X    })
+X    .catch(error => {
+X        console.error('Error fetching the graph data:', error);
+X    });
+X
+X    </script>
+</body>
+</html>
+```
+X
+# December 15
+X
+## Jsonata to transform jsong-graph example to a version that cytoscape uses
+X
+In yesterday's example I don't like that code uses:
+X
+``` js
+X.then(rawData => {
+X        // Transform nodes
+X        const nodes = Object.keys(rawData.graph.nodes).map(key => {
+X            return {
+X                data: {
+X                    id: key,
+X                    ...rawData.graph.nodes[key]
+X                }
+X            };
+X        });
+X
+X        // Transform edges
+X        const edges = rawData.graph.edges.map(edge => {
+X            return {
+X                data: edge
+X            };
+X        });
+X
+X        // Combine nodes and edges
+X        const elements = nodes.concat(edges);
+```
+There is nothing wrong with the code,
+but I prefer https://jsonata.org for all my json filtering and transformations.
+I think that way the query can be resued in another page.
+Or can even be shorter.
+X
+## Jsoata attempts
+Given this json-graph
+https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json
+X
+I want to transform it to something close to this:
+X
+X
+``` js
+$.graph.id@$graph_title{
+X    "edges":$.edges.{
+X        "data":$
+X    },
+X    "nodes":$.nodes.$keys()@$id.*.{
+X        "data":{
+X            "id":$id,
+X            "label":$.label,
+X            "classes":[$.metadata.group.$string()],
+X            "parent":$graph_title
+X        }
+X    }
+X
+}
+```
+X
+### Now I have a new version of the jsonata query that assemblys the result in parts:
+X
+``` js
+X        const qryJsongraphV2ToCytoscape = `
+X        (
+$root := $.graph{
+X    "data":{
+X        "id": id,
+X        "label": id,
+X        "title": type,
+X        "how_to_copy":metadata
+X    }
+};
+X
+$nodes := $.graph.nodes.$keys()@$id.*.{
+X        "data":{
+X            "id":$id,
+X            "label":$.label,
+X            "classes":[$.metadata.group.$string()],
+X            "parent":$$.graph.title
+X        }
+X    } ;
+X
+$edges := $.graph.edges.{"data":$};
+X
+/* We assembly the object that is going to be the one returned by the query */
+{
+X    "nodes":$append($root,$nodes),
+X    "edges":$edges
+}
+)        
+X        `;
+```
+X
+I know, that query looks bigger than the code that it's replacing,
+but it does more things.
+it is preparing the graph to be displayed using nest graphs.
+X
+### Let's create a different visualization
+X
+[test/visualize_aJsongraph_withCytoscape.html](file:///home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/test/visualize_aJsongraph_withCytoscape.html?graphUrl=https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json )
+X
+it workded!!!
+X
+What is the next chanllenge?
+Have a nice visualization with ...
+X
+### labels, captions and a subgroup
+X
+In order to do that
+I tried to use the same json of les_miserables
+and use grahperx.netliffy.app
+because that application already had a button to upload files.
+X
+so from les_misebales.json to grapherx
+I thouht this jsonato query sohuld be enough:
+X
+``` javascript
+X
+(
+X    $n := graph.nodes.*.{
+X    "id":label,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    "tags":["transformar el metadata a array the key:value"],
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+};
+X
+$e:=graph.edges.{
+X    "id":source&"-"&target,
+X    "kind":"edge",
+X    "label":"label",
+X    "desc":"desc",
+X    "tags":[],
+X    "directed":false,
+X    "weight":metadata.value,
+X    "fromId":source,
+X    "toId":target
+};
+X
+{"items":$append($e,$n),
+X  "theme": {
+X    "name": "minimal",
+X    "bgfill": "#e5e7eb",
+X    "grid": false,
+X    "snapdist": {
+X      "x": 100,
+X      "y": 100
+X    },
+X    "selectionColor": "#1f2937",
+X    "highlightColor": "red",
+X    "nodefill": "white",
+X    "nodelabelstroke": "black",
+X    "nodelabelfontsize": 16,
+X    "nodenotesfontsize": 16,
+X    "nodeborder": "black",
+X    "nodeborderradius": 15,
+X    "nodeBackgroundImageURL": null,
+X    "edgestroke": "#1f2937",
+X    "edgeshape": "curved",
+X    "edgestroketype": "solid",
+X    "font": "PT Mono",
+X    "badges": [
+X      "✅",
+X      "❌",
+X      "⚡",
+X      "👎",
+X      "👍"
+X    ]
+X  },
+X  "jsondownload": true,
+X  "jsonupload": true,
+X  "contextmenu": true,
+X  "customjson": false,
+X  "exportcytoscape": true,
+X  "exportsvg": true,
+X  "title": "Sample graph",
+X  "description": "Compound graphs allow nodes to be nested inside each other.",
+X  "contact": "mailto:eshnil22@gmail.com"
+}
+)
+```
+X
+## Test data usual suspects
+Turns out that les miserables are too many nodes for grapherx,
+so I'm to to test with the usual suspects that is only two nodes and one edges.
+X
+https://github.com/jsongraph/json-graph-specification/blob/master/examples/usual_suspects.json
+X
+# Saturday December 16
+X
+## Let's improve the jsonata query
+X
+As part of the transormation for the json.
+I still think the query is too complex
+In particular this part
+X
+``` javascript
+$n := graph.nodes.*.{
+X    "id":label,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    "tags":["transformar el metadata a array the key:value"],
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+};
+```
+X
+the ` "id": label` is unsatisfactory because
+it shouldn't be the label it should be the ID
+that is the name of the object.
+X
+### How to insert the id as part of the object
+so to make the id as part of the node we can use the each and transfrom operators
+X
+``` javascript
+graph.nodes.
+X    $each(function($n, $id) {
+X    /* currently a node is of the form id:node_object */
+X    /* we want the node_objet to contain the id itself */
+X    $n~>|$|{"id":$id}|
+X    })
+X
+```
+X
+The `$each` functios splits in value and keys
+then we use the transform opertar
+to take the node, and just add the "id" field
+to it.
+the rest of fields in the node are automatically
+added to $n.
+X
+with that correction now the section looks like this:
+X
+``` javascript
+$n:=graph.nodes.
+X    $each(function($n, $id) {
+X    /* notice: we are injecting the id into the node */
+X    $merge([$n,{"id":$id}])
+X    }).
+X    {
+X    /*notice: now we use the that comes with the node */
+X    "id":id,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    /* notice: we use the metadata as tags */
+X    "tags":$each(metadata, function($v, $k) {$k & ":" & $v}),
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+X    }
+```
+X
+### Stedi a new playground for jsonata queries:
++ It saves the contents of the frames as part of the URL, so we don't loose it
++ it is easy to share a link to the query
+- The debugger gives a wrong position for the error messages.
+X
+X
+X
+X
+### Next version of the whole jsonata query
+In stedy https://stedi.link/kdqY6J0
+X
+But since I don't want to loose my query here is the backup
+X
+``` javascript
+(
+$node_template:=function($id,$label,$metadata,$parentId){{
+X    "id":$id,
+X    "kind":"node",
+X    "label":$label,
+X    "desc":" ",
+X    "tags":[$each($metadata, function($v, $k) {$k & ":" & $v})],
+X    "parent":$parentId,
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+X  }
+};
+X
+$rootNode := graph.($node_template(id,label,metadata,null));
+X
+X
+X $n:=graph.nodes.
+X    $each(function($n, $id) {
+X    /* notice: we are injecting the id into the node */
+X    $merge([$n,{"id":$id}])
+X    }).(
+X      $node_template(id,label,metadata,$rootNode.id)
+X    )
+X    ;
+X
+$e:=graph.edges.{
+X    "id":source&"-"&target,
+X    "kind":"edge",
+X    "label":relation,
+X    "desc":"desc",
+X    "tags":[],
+X    "directed":relation?true:false,
+X    "weight":metadata.value,
+X    "fromId":source,
+X    "toId":target
+};
+X
+$const_theme := {
+X    "name": "minimal",
+X    "bgfill": "#e5e7eb",
+X    "grid": false,
+X    "snapdist": {
+X      "x": 100,
+X      "y": 100
+X    },
+X    "selectionColor": "#1f2937",
+X    "highlightColor": "red",
+X    "nodefill": "white",
+X    "nodelabelstroke": "black",
+X    "nodelabelfontsize": 16,
+X    "nodenotesfontsize": 16,
+X    "nodeborder": "black",
+X    "nodeborderradius": 15,
+X    "nodeBackgroundImageURL": null,
+X    "edgestroke": "#1f2937",
+X    "edgeshape": "curved",
+X    "edgestroketype": "solid",
+X    "font": "PT Mono",
+X    "badges": [
+X      "✅",
+X      "❌",
+X      "⚡",
+X      "👎",
+X      "👍"
+X    ]
+X  },
+X  "jsondownload": true,
+X  "jsonupload": true,
+X  "contextmenu": true,
+X  "customjson": false,
+X  "exportcytoscape": true,
+X  "exportsvg": true,
+X  "title": "Sample graph",
+X  "description": "Compound graphs allow nodes to be nested inside each other.",
+X  "contact": "mailto:eshnil22@gmail.com"
+};
+X
+$grapherx_formatted:={
+X    "items":$append($rootNode,$n)~>$append($e)},
+X    "theme":$const_theme
+X    };
+)
+```
+X
+X
+# Sunday dec 17?
+X
+## Nested graphs
+X
+``` yaml
+- items:
+X  - type: Questions
+X    id: root
+X    title: What should we do about the one ring?
+X    items:
+X      - type: answers
+X        id: gg
+X        title: Give it to golumm
+X        items:
+X          - type: Questions
+X      
+X            id: addicted
+X            title: Isn't he addicted to the ring?
+X            items:
+X              - type: answers
+X                id: ay 
+X                title: Yes,but so what?
+X                items: 
+X                  - type: Questions
+X              
+X                    id: yw
+X                    title: So what??!! 
+X      - type: answers
+X        id: gh
+X        title: Give it to humans
+X        items:
+X          - type: pros 
+X            id: weapon
+X            title: use the enemys weapon against itself
+X          - type: pros 
+X            id: deserve
+X            title: we deserve it. 
+X          - type: cons
+X            id: greed
+X            title: humans greed has failled us once before.
+X      - type: answers
+X        id: bm
+X        title: Burn it in mount mordor
+X        items:
+X          - type: pros 
+X            id: ow
+X            title: its the only way to destroy it
+X          - type: cons
+X            id: rd
+X            title: the road is extremely dangerous
+```
+X
+## Monday dey 18
+X
+I have finally created a query that transforms the previous json
+into a nested structure by types.
+X
+Here is the result.
+As you can see it has the yaml from yesterday as json
+then two jsonata queries
+https://try.jsonata.org/ZX5swwLNE
+X
+the one that I think is the best is:
+X
+` $groupSentencesByTypeAndId`
+X
+``` json
+( 
+/* 
+$groupByType:=function($tree){
+X    $tree.items{
+X        `type`:$.($merge([{id:title},$groupByType($)]))
+X    }
+};
+X
+$groupByType($);
+*/
+X
+$groupSentencesByTypeAndId:=function($tree){
+X    $tree.items{
+X    /* Question, Ideao, etc. will be a hashmap of things of that type*/
+X    /* the hasmap will be identified by id*/
+X    `type`:{`id`:
+X                /* for each one of the sentences, create an object */
+X                $.($merge([
+X                            {"id":id,"title":title},
+X                            /* if the sentence has its own children then also nest those */
+X                            $groupSentencesByTypeAndId($)
+X                            ])
+X                    )
+X            }
+X    }
+};
+X
+$groupSentencesByTypeAndId($)
+)
+```
+X
+However I'll need to check, because some times it seems I'm figthing jsonata a little bit.
+X
+Now let's see how it works in the command line
+X
+``` bash
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndId.jsonata  > ./srex4.byTypeAndId.json
+X
+```
+X
+Now in `ex4.byTypeAndId.json` we can see the structure.
+It looks well
+Although I think that maky jsonata want to use
+arrays for nested structures instead of
+hashmaps.
+X
+this is something I'll need to keep in mind.
+X
+### Sentnces only by type and as array
+X
+Since I suspect that working with nested arrays
+is a more natural way to work with jsonata
+X
+I also made another query:
+X
+https://try.jsonata.org/XUnlg-DC7
+X
+``` json
+(
+X
+$groupByType:=function($tree){
+X    $tree.items{
+X        `type`:$.($merge([{"id":id, "title":title},$groupByType($)]))
+X    }
+};
+X
+$groupByType($);
+)
+```
+X
+X
+then executing the query like this
+``` bash
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByType.jsonata  > ./src/ex4.byType.json
+X
+```
+Gives us a new json
+X
+### Now we can see how they will look as yamls
+X
+```bash
+agarciafdz@agarciafd-lg:~/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByType.jsonata  | yq --yaml-output
+Question:
+X  id: root
+X  title: What should we do about the one ring?
+X  Idea:
+X    - id: gg
+X      title: Give it to golumm
+X    - id: gh
+X      title: Give it to humans
+X    - id: bm
+X      title: Burn it in mount mordor
+X      pro:
+X        id: ow
+X        title: its the only way to destroy it
+X      con:
+X        id: rd
+X        title: the road is extremely dangerous
+agarciafdz@agarciafd-lg:~/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndId.jsonata  | yq --yaml-output
+Question:
+X  root:
+X    id: root
+X    title: What should we do about the one ring?
+X    Idea:
+X      gg:
+X        id: gg
+X        title: Give it to golumm
+X      gh:
+X        id: gh
+X        title: Give it to humans
+X      bm:
+X        id: bm
+X        title: Burn it in mount mordor
+X        pro:
+X          ow:
+X            id: ow
+X            title: its the only way to destroy it
+X        con:
+X          rd:
+X            id: rd
+X            title: the road is extremely dangerous
+X
+```
+X
+I think I like the second one better.
+X
+Although I'm not yet satisfied...
+mmhhh...
+X
+But this should be good enough to create a graph with it...
+X
+## transform to jsdot or grapherx or visjs
+X
+# Wednesday december 20th
+X
+I've spen the last two days trying different queries to graph.
+But I haven't done any progress :(
+X
+What I have been wondering is a better way to write this by hand
+## Yet another way to write
+X
+Here is my new query:
+https://try.jsonata.org/FFE-gI76l
+X
+And this is how it looks in yaml:
+X
+``` sh
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndIdTitle.jsonata  | yq --yaml-output
+Questions:
+X  - root: What should we do about the one ring?
+X    answers:
+X      - gg: Give it to golumm
+X        Questions:
+X          - addicted: Isn't he addicted to the ring?
+X            answers:
+X              - ay: Yes,but so what?
+X                Questions:
+X                  - yw: So what??!!
+X      - gh: Give it to humans
+X        pros:
+X          - weapon: use the enemys weapon against itself
+X          - deserve: we deserve it.
+X        cons:
+X          - greed: humans greed has failled us once before.
+X      - bm: Burn it in mount mordor
+X        pros:
+X          - ow: its the only way to destroy it
+X        cons:
+X          - rd: the road is extremely dangerous
+X
+```
+X
+This looks very brief to write...
+WHich is what I want...
+now  I need to learn how move from here
+back to a json that can be used for graphs.
+X
 X
 X
 ### Subsection on stuff
@@ -1234,15 +2086,6 @@ X
 X
 Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
 X
-* A
-* Bullet
-* List
-X
-And:
-X
-1. A
-1. Numbered
-1. List!
 X
 Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
 X
@@ -1296,14 +2139,10 @@ X
 X    Seriously, don't call shaders like that.
 X
 X
-X
-The table of contents that Markdeep produces is stuffed on the right side, 
-if the browser window is wide enough. Otherwise it is hidden.
-X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 13 13 21 18 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'
+  (set 20 23 12 21 14 34 39 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'
 if test $? -ne 0
@@ -1313,23 +2152,15 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-9ea6e67dd45e804dacd5ec080ffcf82c  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
+0d4ab75ebbb87fcafbc7590c4818057d  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'` -ne 10342 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md' is not 10342"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md'` -ne 31068 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md' is not 31068"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md ==============
-if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'; then
-  mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage'
-if test $? -eq 0
-then ${echo} "x - created directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage."
-else ${echo} "x - failed to create directory /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage."
-     exit 1
-fi
-fi
 if test ! -d '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript'; then
   mkdir '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript'
 if test $? -eq 0
@@ -1947,7 +2778,7 @@ X
 https://try.jsonata.org/XUnlg-DC7
 X
 ``` json
-@@groupSentencesByType.jsonata
+@@groupSentencesByType_jsonata
 ```
 X
 X
@@ -2133,7 +2964,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 21 14 22 47 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 21 14 34 05 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -2143,7 +2974,7 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-60d758288dfb664f53f079d77018c44d  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+fdd06a0452fff5110381e761134f0c10  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
@@ -2242,8 +3073,7 @@ X
 X
 #### I want to type this:
 X
-X
-``` 
+```
 Why is there no silver bullet in software engineering?
 X Silve Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
 X Essential difficulties : Those related to conceptualization design !
@@ -2254,7 +3084,7 @@ X
 #### When the formating happens
 But I want the code editor, when it does the reformating to show this:
 X
-``` 
+```
 ? Why is there no silver bullet in software engineering?
 X . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
 X * Essential difficulties : Those related to conceptualization design
@@ -2263,13 +3093,13 @@ X ? What silver bullets have been proposed to date?
 X
 Notice that it kind of re-organizes the code, putting the question first... and the id ...
 because when I start typing I'm not 100% sure if its a proporsar or an idea.
-the 
+the
 X
 `.` is used to represent note?? mabye not... I want to be able to add details to a node, like links and stuff.. but not too many nodes. (maybe like icons surrounding the text?
 `!` is used to represent an idea
 `?` is used to represent a question)
 X
-#### I want to see 
+#### I want to see
 X
 [1st version of map](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage11.jpg)
 X
@@ -2290,7 +3120,7 @@ X        * Invisibility: structure cannot be vsualized (flowcharts and visual mo
 X ? What silver bullets have been proposed to date?
 ```
 X
-#### The autoforamtter 
+#### The autoforamtter
 X
 Would of course change it to icons first:
 X
@@ -2307,9 +3137,8 @@ X ? What silver bullets have been proposed to date?
 X
 ```
 X
-<div class="admonition note">
-Notice that it seems that the colons are the id... maybe something to consider for when I need
-</div>
+!!! Note
+X    Notice that it seems that the colons are the id... maybe something to consider for when I need to use ids to reference other sentences
 X
 #### The image
 What I want to see:
@@ -2369,23 +3198,23 @@ X ? What silver bullets have been proposed to date?
 X    * These address indcidental difficulties (those related to implementation).
 X         for example?
 X            * OOP
-X                + Improved programmer productivity (ipp)
-X                - Do not help in software design (nodesing)
+X                + &ipp Improved programmer productivity
+X                - &nodesign Do not help in software design
 X            * Better Hardware
-X                + ipp ---- notice that I mean a reference to the same above
-X                - nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
+X                + *ipp ---- notice that I mean a reference to the same above
+X                - *nodesign ----notice that I mean a reference to the one above (so a pro and a con the same way)
 X            * High level languages
-X                + ipp
-X                - nodesign
+X                + *ipp
+X                - *nodesign
 X            * Better tools - IDEs, etc.
-X                + ipp
-X                - no design
+X                + *ipp
+X                - *no design
 X            * AI / Expert systems
-X                - limited applicability (la)
-X                - no design
+X                - &la limited applicability
+X                - *nodesign
 X            * Program Verification
-X                - la
-``````
+X                - *la
+```
 X
 X
 Obeserve that the pros and cons are insert with the correct sign.
@@ -2396,28 +3225,816 @@ X
 X
 [3rd](https://eight2late.files.wordpress.com/2009/04/no_silver_bullet_stage4.jpg?w=700&h=729)
 X
+# My problem a deadlock.
 X
-**Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
+The problem that I've had is that I've been deadlocked in search for that tool.
 X
-* Run on a computer
-* Exit with an exit code
-* Be a replacement for our old system, `theoldthing.exe`
+```
+I want to do many things.
+I need to write what I want to do in file.
+There are dependencies between things
+I need to map the dependencies as graph datastructure.
+I want to visualize the graph datastructure as a diagram.
+You can use any diagram editor for that.
+I **want** to write in text, and visualize in diagram
+So I'll add to my list of projects.
+I want to do many things, an the cycle begins again!
+```
+X
+So  I need to break that cycle.
+X
+``` ibis
+? How can I break the deadlock of organizing my mind?
+X    * use a tool that already exists, until you can develop your own
+? What alternatives do I have? (aggghhh I want to put this nested but it doesn't work)
+X    * Dot/graphviz
+X        + It works now and is stable
+X        + It can handle subgraphs
+X        + it can have infinite customization.
+X        - I don't like the syntax
+X            ? Why?
+X                * it forces to wre the nodes first and later the edges.
+X                * it mixes presentation with content
+X    * Use Flyinglogic
+X        + I <3 the way it looks
+X        - It is monthly payment.
+X        - I can't insert the diagrams in other documents
+X        - I can't present the diagrams in order.
+X        - I can't create the diagram from keyboard only
+X    * Plantuml
+X        it has the same disadvantages as Dot/grahpviz (this should be a pointer)
+X    * Use yaml to create a DSL
+X        + It works today
+X        + it is whitespace based
+X        + it favors a tree representation
+X        + it can *copy* from one branch to another
+X        + Related, it supports defining ids with the &ampresnand operator and reference with *operator.
+X        + can be edited in vscode and lapce and many other editors
+X        + with the redhat extension supports json-schema
+X        - Dosn't have a native graph representation
+X            ? How can you provide that?
+X                * Transform yaml to json |> jsonata |> (diagramming tool: glsp, graphx, d3, cytoscope)
+X        - it already uses the characters (-) that I want to use for my language
+X            ? How can you solve that?
+X                * use complete word + == pros, - == cons, & == id, * == reference
+X        ! Deal: this is te option I'm going to use
+X            ? how?
+X                * create json-schema that forces correct use symbols
+X                * use an editor like vscode, lapce, doomemacs that have auto complete.
+X                * find a graphvusalization tool, and produce the json that it uses.
+X                * use watch in the filesystem so that the graphvisualization gets updated automatically.
+X
+```
+X
+!!! Note
+X    One of the things that makes treeNotation special is that we can mix grammars.
+X    for example the prevous code, could be just a line called ibisLanguage
+X    and everything nested below it would be parsed using the ibis grammar!
+X    and then maybe ibisLanguage asHTML would parse the content, and then transform it to HTML...
+X
+# What are you going to do.
+X
+So now that I have found what I want to do let's do it!
 X
 X
-## Invoking it
+# 2024-December-14
 X
-<div class="admonition note">
-This is a note by the way!
-</div>
+## My current plan
 X
-XFrom the root folder, run "thing" with the target name, e.g.: `thing Yes`
+Ok now let's do a simple attempt.
+I'm gongo to use the json-graph-format v2
+to write a yaml document, probably taken from their samples.
+And will try to visualize it.
+if it doesn't work then I'm going to create a jsonata query to transform to the v1
+and try to visualize it again.
 X
-* On Mac, Linux or Windows PowerShell, you'll want to use `./thing` instead of just `thing`.
-* Target and option names are case sensitive!
-* Several things to do can be specified: `thing Yes No FileNotFound`
+if it works, then I'm going to create a new json schema
+basedo on the one for cytoscape or graphx
+then will write a yaml document based on their json documents.
+again just to test that it works.
 X
-Additional options can be passed via `-sNAME=VALUE` arguments. Most common ones are CONFIG
-(used to indicate debug or release thing) and PLATFORM (used to indicate 32 vs 64 bit thing).
+then I'll do my next schema, based on one of the two variants
+that I have, array of objects or objects with properties and will see
+what it does.
+X
+## Now let's try with a yaml document
+X
+So I have takeng the json-graph examples here:
+https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/usual_suspects.json
+X
+And transformed it to yaml so it looks like this
+X
+``` yaml
+#yaml-language-server: $schema=https://jsongraphformat.info/v2.0/json-graph-schema.json
+X
+graph:
+X  id: Usual Suspects
+X  type: movie characters
+X  label: Usual Suspects
+X  nodes:
+X    Roger Kint:
+X      label: Roger Kint
+X      metadata:
+X        nickname: Verbal
+X        actor: Kevin Spacey
+X    Keyser Söze:
+X      label: Keyser Söze
+X      metadata:
+X        actor: Kevin Spacey
+X  edges:
+X  - source: Roger Kint
+X    target: Keyser Söze
+X    relation: is
+X  metadata:
+X    release year: '1995'
+X
+```
+X
+and it works!! it validates the document!!
+uff...
+X
+## A Visualization with cytoscape
+Now we can take that json...
+And visualize it using cytoscape.
+X
+Like in this link
+file://./test/visualize_a_basic_usual_suspects_json.html?graphUrl=https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json
+X
+Observe that to the webpage I send as parameters the url of the json, that is the example
+`?graphUrl=https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json`
+X
+That page is just used to execute the javascript
+that reads the json data and visualize its using js.cytoscape.org to view it.
+Here is the algorithm.
+X
+X
+``` html
+<html>
+<head>
+X    <title>My Graph</title>
+X    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.19.0/cytoscape.min.js"></script>
+</head>
+<body>
+X    <div id="cy" style="width: 800px; height: 600px;"></div>
+X    <script type="text/javascript">
+X        // Function to get the URL parameter
+X        function getGraphUrlParameter() {
+X            const queryString = window.location.search;
+X            const urlParams = new URLSearchParams(queryString);
+X            return urlParams.get('graphUrl');
+X        }
+X
+X        // Get the graph URL from the query parameter
+X        const graphUrl = getGraphUrlParameter();
+X
+X    fetch(graphUrl)
+X    .then(response => response.json())
+X    .then(rawData => {
+X        // Transform nodes
+X        const nodes = Object.keys(rawData.graph.nodes).map(key => {
+X            return {
+X                data: {
+X                    id: key,
+X                    ...rawData.graph.nodes[key]
+X                }
+X            };
+X        });
+X
+X        // Transform edges
+X        const edges = rawData.graph.edges.map(edge => {
+X            return {
+X                data: edge
+X            };
+X        });
+X
+X        // Combine nodes and edges
+X        const elements = nodes.concat(edges);
+X
+X        // Initialize Cytoscape
+X        var cy = cytoscape({
+X            container: document.getElementById('cy'),
+X            elements: elements,
+X            style: [/* define your style here */],
+X            layout: {/* define your layout here */}
+X        });
+X    })
+X    .catch(error => {
+X        console.error('Error fetching the graph data:', error);
+X    });
+X
+X    </script>
+</body>
+</html>
+```
+X
+# December 15
+X
+## Jsonata to transform jsong-graph example to a version that cytoscape uses
+X
+In yesterday's example I don't like that code uses:
+X
+``` js
+X.then(rawData => {
+X        // Transform nodes
+X        const nodes = Object.keys(rawData.graph.nodes).map(key => {
+X            return {
+X                data: {
+X                    id: key,
+X                    ...rawData.graph.nodes[key]
+X                }
+X            };
+X        });
+X
+X        // Transform edges
+X        const edges = rawData.graph.edges.map(edge => {
+X            return {
+X                data: edge
+X            };
+X        });
+X
+X        // Combine nodes and edges
+X        const elements = nodes.concat(edges);
+```
+There is nothing wrong with the code,
+but I prefer https://jsonata.org for all my json filtering and transformations.
+I think that way the query can be resued in another page.
+Or can even be shorter.
+X
+## Jsoata attempts
+Given this json-graph
+https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json
+X
+I want to transform it to something close to this:
+X
+X
+``` js
+$.graph.id@$graph_title{
+X    "edges":$.edges.{
+X        "data":$
+X    },
+X    "nodes":$.nodes.$keys()@$id.*.{
+X        "data":{
+X            "id":$id,
+X            "label":$.label,
+X            "classes":[$.metadata.group.$string()],
+X            "parent":$graph_title
+X        }
+X    }
+X
+}
+```
+X
+### Now I have a new version of the jsonata query that assemblys the result in parts:
+X
+``` js
+X        const qryJsongraphV2ToCytoscape = `
+X        (
+$root := $.graph{
+X    "data":{
+X        "id": id,
+X        "label": id,
+X        "title": type,
+X        "how_to_copy":metadata
+X    }
+};
+X
+$nodes := $.graph.nodes.$keys()@$id.*.{
+X        "data":{
+X            "id":$id,
+X            "label":$.label,
+X            "classes":[$.metadata.group.$string()],
+X            "parent":$$.graph.title
+X        }
+X    } ;
+X
+$edges := $.graph.edges.{"data":$};
+X
+/* We assembly the object that is going to be the one returned by the query */
+{
+X    "nodes":$append($root,$nodes),
+X    "edges":$edges
+}
+)        
+X        `;
+```
+X
+I know, that query looks bigger than the code that it's replacing,
+but it does more things.
+it is preparing the graph to be displayed using nest graphs.
+X
+### Let's create a different visualization
+X
+[test/visualize_aJsongraph_withCytoscape.html](file:///home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/test/visualize_aJsongraph_withCytoscape.html?graphUrl=https://raw.githubusercontent.com/jsongraph/json-graph-specification/master/examples/les_miserables.json )
+X
+it workded!!!
+X
+What is the next chanllenge?
+Have a nice visualization with ...
+X
+### labels, captions and a subgroup
+X
+In order to do that
+I tried to use the same json of les_miserables
+and use grahperx.netliffy.app
+because that application already had a button to upload files.
+X
+so from les_misebales.json to grapherx
+I thouht this jsonato query sohuld be enough:
+X
+``` javascript
+X
+(
+X    $n := graph.nodes.*.{
+X    "id":label,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    "tags":["transformar el metadata a array the key:value"],
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+};
+X
+$e:=graph.edges.{
+X    "id":source&"-"&target,
+X    "kind":"edge",
+X    "label":"label",
+X    "desc":"desc",
+X    "tags":[],
+X    "directed":false,
+X    "weight":metadata.value,
+X    "fromId":source,
+X    "toId":target
+};
+X
+{"items":$append($e,$n),
+X  "theme": {
+X    "name": "minimal",
+X    "bgfill": "#e5e7eb",
+X    "grid": false,
+X    "snapdist": {
+X      "x": 100,
+X      "y": 100
+X    },
+X    "selectionColor": "#1f2937",
+X    "highlightColor": "red",
+X    "nodefill": "white",
+X    "nodelabelstroke": "black",
+X    "nodelabelfontsize": 16,
+X    "nodenotesfontsize": 16,
+X    "nodeborder": "black",
+X    "nodeborderradius": 15,
+X    "nodeBackgroundImageURL": null,
+X    "edgestroke": "#1f2937",
+X    "edgeshape": "curved",
+X    "edgestroketype": "solid",
+X    "font": "PT Mono",
+X    "badges": [
+X      "✅",
+X      "❌",
+X      "⚡",
+X      "👎",
+X      "👍"
+X    ]
+X  },
+X  "jsondownload": true,
+X  "jsonupload": true,
+X  "contextmenu": true,
+X  "customjson": false,
+X  "exportcytoscape": true,
+X  "exportsvg": true,
+X  "title": "Sample graph",
+X  "description": "Compound graphs allow nodes to be nested inside each other.",
+X  "contact": "mailto:eshnil22@gmail.com"
+}
+)
+```
+X
+## Test data usual suspects
+Turns out that les miserables are too many nodes for grapherx,
+so I'm to to test with the usual suspects that is only two nodes and one edges.
+X
+https://github.com/jsongraph/json-graph-specification/blob/master/examples/usual_suspects.json
+X
+# Saturday December 16
+X
+## Let's improve the jsonata query
+X
+As part of the transormation for the json.
+I still think the query is too complex
+In particular this part
+X
+``` javascript
+$n := graph.nodes.*.{
+X    "id":label,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    "tags":["transformar el metadata a array the key:value"],
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+};
+```
+X
+the ` "id": label` is unsatisfactory because
+it shouldn't be the label it should be the ID
+that is the name of the object.
+X
+### How to insert the id as part of the object
+so to make the id as part of the node we can use the each and transfrom operators
+X
+``` javascript
+graph.nodes.
+X    $each(function($n, $id) {
+X    /* currently a node is of the form id:node_object */
+X    /* we want the node_objet to contain the id itself */
+X    $n~>|$|{"id":$id}|
+X    })
+X
+```
+X
+The `$each` functios splits in value and keys
+then we use the transform opertar
+to take the node, and just add the "id" field
+to it.
+the rest of fields in the node are automatically
+added to $n.
+X
+with that correction now the section looks like this:
+X
+``` javascript
+$n:=graph.nodes.
+X    $each(function($n, $id) {
+X    /* notice: we are injecting the id into the node */
+X    $merge([$n,{"id":$id}])
+X    }).
+X    {
+X    /*notice: now we use the that comes with the node */
+X    "id":id,
+X    "kind":"node",
+X    "label":label,
+X    "desc":" ",
+X    /* notice: we use the metadata as tags */
+X    "tags":$each(metadata, function($v, $k) {$k & ":" & $v}),
+X    "parent":"id of thee graph that represents the root",
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+X    }
+```
+X
+### Stedi a new playground for jsonata queries:
++ It saves the contents of the frames as part of the URL, so we don't loose it
++ it is easy to share a link to the query
+- The debugger gives a wrong position for the error messages.
+X
+X
+X
+X
+### Next version of the whole jsonata query
+In stedy https://stedi.link/kdqY6J0
+X
+But since I don't want to loose my query here is the backup
+X
+``` javascript
+(
+$node_template:=function($id,$label,$metadata,$parentId){{
+X    "id":$id,
+X    "kind":"node",
+X    "label":$label,
+X    "desc":" ",
+X    "tags":[$each($metadata, function($v, $k) {$k & ":" & $v})],
+X    "parent":$parentId,
+X    "backgroundImageURL":null,
+X    "has_dynamic_notes":false,
+X    "is_collapsed":false
+X  }
+};
+X
+$rootNode := graph.($node_template(id,label,metadata,null));
+X
+X
+X $n:=graph.nodes.
+X    $each(function($n, $id) {
+X    /* notice: we are injecting the id into the node */
+X    $merge([$n,{"id":$id}])
+X    }).(
+X      $node_template(id,label,metadata,$rootNode.id)
+X    )
+X    ;
+X
+$e:=graph.edges.{
+X    "id":source&"-"&target,
+X    "kind":"edge",
+X    "label":relation,
+X    "desc":"desc",
+X    "tags":[],
+X    "directed":relation?true:false,
+X    "weight":metadata.value,
+X    "fromId":source,
+X    "toId":target
+};
+X
+$const_theme := {
+X    "name": "minimal",
+X    "bgfill": "#e5e7eb",
+X    "grid": false,
+X    "snapdist": {
+X      "x": 100,
+X      "y": 100
+X    },
+X    "selectionColor": "#1f2937",
+X    "highlightColor": "red",
+X    "nodefill": "white",
+X    "nodelabelstroke": "black",
+X    "nodelabelfontsize": 16,
+X    "nodenotesfontsize": 16,
+X    "nodeborder": "black",
+X    "nodeborderradius": 15,
+X    "nodeBackgroundImageURL": null,
+X    "edgestroke": "#1f2937",
+X    "edgeshape": "curved",
+X    "edgestroketype": "solid",
+X    "font": "PT Mono",
+X    "badges": [
+X      "✅",
+X      "❌",
+X      "⚡",
+X      "👎",
+X      "👍"
+X    ]
+X  },
+X  "jsondownload": true,
+X  "jsonupload": true,
+X  "contextmenu": true,
+X  "customjson": false,
+X  "exportcytoscape": true,
+X  "exportsvg": true,
+X  "title": "Sample graph",
+X  "description": "Compound graphs allow nodes to be nested inside each other.",
+X  "contact": "mailto:eshnil22@gmail.com"
+};
+X
+$grapherx_formatted:={
+X    "items":$append($rootNode,$n)~>$append($e)},
+X    "theme":$const_theme
+X    };
+)
+```
+X
+X
+# Sunday dec 17?
+X
+## Nested graphs
+X
+``` yaml
+- items:
+X  - type: Questions
+X    id: root
+X    title: What should we do about the one ring?
+X    items:
+X      - type: answers
+X        id: gg
+X        title: Give it to golumm
+X        items:
+X          - type: Questions
+X      
+X            id: addicted
+X            title: Isn't he addicted to the ring?
+X            items:
+X              - type: answers
+X                id: ay 
+X                title: Yes,but so what?
+X                items: 
+X                  - type: Questions
+X              
+X                    id: yw
+X                    title: So what??!! 
+X      - type: answers
+X        id: gh
+X        title: Give it to humans
+X        items:
+X          - type: pros 
+X            id: weapon
+X            title: use the enemys weapon against itself
+X          - type: pros 
+X            id: deserve
+X            title: we deserve it. 
+X          - type: cons
+X            id: greed
+X            title: humans greed has failled us once before.
+X      - type: answers
+X        id: bm
+X        title: Burn it in mount mordor
+X        items:
+X          - type: pros 
+X            id: ow
+X            title: its the only way to destroy it
+X          - type: cons
+X            id: rd
+X            title: the road is extremely dangerous
+```
+X
+## Monday dey 18
+X
+I have finally created a query that transforms the previous json
+into a nested structure by types.
+X
+Here is the result.
+As you can see it has the yaml from yesterday as json
+then two jsonata queries
+https://try.jsonata.org/ZX5swwLNE
+X
+the one that I think is the best is:
+X
+` $groupSentencesByTypeAndId`
+X
+``` json
+( 
+/* 
+$groupByType:=function($tree){
+X    $tree.items{
+X        `type`:$.($merge([{id:title},$groupByType($)]))
+X    }
+};
+X
+$groupByType($);
+*/
+X
+$groupSentencesByTypeAndId:=function($tree){
+X    $tree.items{
+X    /* Question, Ideao, etc. will be a hashmap of things of that type*/
+X    /* the hasmap will be identified by id*/
+X    `type`:{`id`:
+X                /* for each one of the sentences, create an object */
+X                $.($merge([
+X                            {"id":id,"title":title},
+X                            /* if the sentence has its own children then also nest those */
+X                            $groupSentencesByTypeAndId($)
+X                            ])
+X                    )
+X            }
+X    }
+};
+X
+$groupSentencesByTypeAndId($)
+)
+```
+X
+However I'll need to check, because some times it seems I'm figthing jsonata a little bit.
+X
+Now let's see how it works in the command line
+X
+``` bash
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndId.jsonata  > ./srex4.byTypeAndId.json
+X
+```
+X
+Now in `ex4.byTypeAndId.json` we can see the structure.
+It looks well
+Although I think that maky jsonata want to use
+arrays for nested structures instead of
+hashmaps.
+X
+this is something I'll need to keep in mind.
+X
+### Sentnces only by type and as array
+X
+Since I suspect that working with nested arrays
+is a more natural way to work with jsonata
+X
+I also made another query:
+X
+https://try.jsonata.org/XUnlg-DC7
+X
+``` json
+(
+X
+$groupByType:=function($tree){
+X    $tree.items{
+X        `type`:$.($merge([{"id":id, "title":title},$groupByType($)]))
+X    }
+};
+X
+$groupByType($);
+)
+```
+X
+X
+then executing the query like this
+``` bash
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByType.jsonata  > ./src/ex4.byType.json
+X
+```
+Gives us a new json
+X
+### Now we can see how they will look as yamls
+X
+```bash
+agarciafdz@agarciafd-lg:~/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByType.jsonata  | yq --yaml-output
+Question:
+X  id: root
+X  title: What should we do about the one ring?
+X  Idea:
+X    - id: gg
+X      title: Give it to golumm
+X    - id: gh
+X      title: Give it to humans
+X    - id: bm
+X      title: Burn it in mount mordor
+X      pro:
+X        id: ow
+X        title: its the only way to destroy it
+X      con:
+X        id: rd
+X        title: the road is extremely dangerous
+agarciafdz@agarciafd-lg:~/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndId.jsonata  | yq --yaml-output
+Question:
+X  root:
+X    id: root
+X    title: What should we do about the one ring?
+X    Idea:
+X      gg:
+X        id: gg
+X        title: Give it to golumm
+X      gh:
+X        id: gh
+X        title: Give it to humans
+X      bm:
+X        id: bm
+X        title: Burn it in mount mordor
+X        pro:
+X          ow:
+X            id: ow
+X            title: its the only way to destroy it
+X        con:
+X          rd:
+X            id: rd
+X            title: the road is extremely dangerous
+X
+```
+X
+I think I like the second one better.
+X
+Although I'm not yet satisfied...
+mmhhh...
+X
+But this should be good enough to create a graph with it...
+X
+## transform to jsdot or grapherx or visjs
+X
+# Wednesday december 20th
+X
+I've spen the last two days trying different queries to graph.
+But I haven't done any progress :(
+X
+What I have been wondering is a better way to write this by hand
+## Yet another way to write
+X
+Here is my new query:
+https://try.jsonata.org/FFE-gI76l
+X
+And this is how it looks in yaml:
+X
+``` sh
+X
+$ cat ./src/ex4.list_of_objects.yaml | jfq --accept-yaml --query-file ./src/groupSentencesByTypeAndIdTitle.jsonata  | yq --yaml-output
+Questions:
+X  - root: What should we do about the one ring?
+X    answers:
+X      - gg: Give it to golumm
+X        Questions:
+X          - addicted: Isn't he addicted to the ring?
+X            answers:
+X              - ay: Yes,but so what?
+X                Questions:
+X                  - yw: So what??!!
+X      - gh: Give it to humans
+X        pros:
+X          - weapon: use the enemys weapon against itself
+X          - deserve: we deserve it.
+X        cons:
+X          - greed: humans greed has failled us once before.
+X      - bm: Burn it in mount mordor
+X        pros:
+X          - ow: its the only way to destroy it
+X        cons:
+X          - rd: the road is extremely dangerous
+X
+```
+X
+This looks very brief to write...
+WHich is what I want...
+now  I need to learn how move from here
+back to a json that can be used for graphs.
+X
 X
 X
 ### Subsection on stuff
@@ -2434,15 +4051,6 @@ X
 X
 Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
 X
-* A
-* Bullet
-* List
-X
-And:
-X
-1. A
-1. Numbered
-1. List!
 X
 Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
 X
@@ -2496,14 +4104,10 @@ X
 X    Seriously, don't call shaders like that.
 X
 X
-X
-The table of contents that Markdeep produces is stuffed on the right side, 
-if the browser window is wide enough. Otherwise it is hidden.
-X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 13 13 21 18 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'
+  (set 20 23 12 21 14 34 39 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'
 if test $? -ne 0
@@ -2513,12 +4117,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html': 'MD5 check failed'
        ) << \SHAR_EOF
-9ea6e67dd45e804dacd5ec080ffcf82c  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
+0d4ab75ebbb87fcafbc7590c4818057d  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'` -ne 10342 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html' is not 10342"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html'` -ne 31068 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html' is not 31068"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md ==============

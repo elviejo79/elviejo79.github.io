@@ -1,4 +1,4 @@
-/* @<groupSentencesByType */
+/* @<groupSentencesByType_jsonata */
 (
 
 $groupByType:=function($tree){
@@ -9,4 +9,4 @@ $groupByType:=function($tree){
 
 $groupByType($);
 )
-/* >@groupSentencesByType */
+/* >@groupSentencesByType_jsonata */

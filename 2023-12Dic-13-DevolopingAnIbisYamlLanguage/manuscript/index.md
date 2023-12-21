@@ -600,7 +600,7 @@ I also made another query:
 https://try.jsonata.org/XUnlg-DC7
 
 ``` json
-@@groupSentencesByType.jsonata
+@@groupSentencesByType_jsonata
 ```
 
 
