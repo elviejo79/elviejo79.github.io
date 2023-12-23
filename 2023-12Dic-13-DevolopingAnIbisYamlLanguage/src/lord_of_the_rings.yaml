@@ -1,0 +1,13 @@
+'null': top of the map
+Question:
+  - root: What should we do about the one ring?
+    Idea:
+      - gg: Give it to golumm
+      - gh: Give it to humans
+      - bm: Burn it in mordor
+        pro:
+          - ow: its the only way to destroy it
+          - ofora: once and for all
+        con:
+          - dr: the road is extremely dangerous
+  - root2: Why do we need to destroy it?

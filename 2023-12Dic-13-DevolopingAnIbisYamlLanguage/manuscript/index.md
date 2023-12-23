@@ -714,6 +714,94 @@ WHich is what I want...
 now  I need to learn how move from here
 back to a json that can be used for graphs.
 
+# Thursday Dec 21st
+## I wish I could do pattern matching.
+
+I wish I could simply write a query like this:
+
+``` javascript
+{$id: $label, "pros":$pros, "cons":$cons}
+```
+
+And apply it to the son document,
+and it could give me a result.
+
+So I have searched several alternatives... but none seem to work.
+
+### [ReJSON](https://github.com/squaremo/rejson)
+
+```javscript 
+> Json = json:decode("[1, 2, \"foo\", 3]"),
+> Pattern = rejson:parse("[1, 2, number *] ^ [S = string]"),
+> rejson:match(Pattern, Json).
+{ok, [{"S", "foo"}]}
+```
+
+Observe that `S = string` is where it decides to capture the value.
+with the "match" instruction.
+
+The problem is what it says here:
+
+>A capture cannot appear is as a property name, 
+>or (currently) as the operand of an interleave,
+>though it can appear in an operand.
+
+So what this means is that I cannot use it to match $id property,
+which is the difficult part :( 
+
+### [Jawk](https://github.com/mohd-akram/jawk)
+
+Awk but for json.
+
+It seems to me like a query like jsonata but mor imperatiav with For loops and ifs
+```bash
+$ echo '{"age":10}' | jawk '{print _["age"]}'
+10
+
+$ echo '{"person":{"name":"Jason"}}' | jawk '{print _["person","name"]}'
+Jason
+
+$ echo '[4,2,0]' | jawk '{while (++i <= _["length"]) print _[i]}'
+4
+2
+0
+
+$ echo '[{"x":6},{"x":7}]' | jawk '{while (++i <= _["length"]) print _[i,"x"]}'
+6
+7
+
+$ printf '{"x":6}\n{"x":7}\n' | jawk '{print _["x"]}'
+6
+7
+
+$ echo '{"name":{"first":"Jason"},"age":25}' | jawk '{
+	keys(o); for (k in o) print k, _[o[k],JSON]
+}'
+name {"first":"Jason"}
+age 25
+
+$ echo '{"name":"Jason"}' | jawk '{print _["name",JSON]}'
+"Jason"
+
+# Try it with real data!
+curl -Ls https://api.github.com/repos/onetrueawk/awk |
+jawk '{print "id:", _["id"], "owner.id:", _["owner","id"]}'
+
+curl -Ls https://api.github.com/repos/onetrueawk/awk/commits |
+jawk '{
+	while (++i <= _["length"]) {
+		sha = _[i,"sha"]
+		message = _[i,"commit","message"]
+		l = index(message, "\n")
+		print sha, substr(message, 1, l ? l - 1 : 50)
+	}
+}'
+
+curl -Ls https://api.github.com/repos/onetrueawk/awk/commits |
+jawk '{while (++i <= _["length"]) printf("{\"sha\":%s}\n",_[i,"sha",JSON])}'
+```
+
+
 # Friday Dec 22
 
 ## Stumbled to a solution

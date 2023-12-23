@@ -1,0 +1,4 @@
+{
+    "nodes":$.{"group":kind,"id":id,"label":label},
+    "edges":$.{"from":parent,"to":id}
+}
