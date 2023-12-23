@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh30615
-# Made on 2023-12-22 20:55 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh32261
+# Made on 2023-12-22 21:00 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -20,7 +20,7 @@ lock_dir=_sh30615
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt
 #  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
-#  21303 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+#  22619 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -2892,79 +2892,175 @@ WHich is what I want...
 now  I need to learn how move from here
 back to a json that can be used for graphs.
 X
+# Friday Dec 22
 X
+## Stumbled to a solution
 X
-### Subsection on stuff
+I stumbled on a jsonata query that gives me the desired results:
 X
+https://try.jsonata.org/lbQzpr17x
 X
-Thing Name              | Description        |Notes
-------------------------|--------------------|-----
-Yes                     | Yup!               |
-No                      | Nope :(            |
-FileNotFound            | Doesn't find files | Pass `-sFIND_FILE=maybe` to maybe find them
+Emphasis on *stumbled*.
 X
+So that I asked a query in stackoverflow to find a better way to do it.
 X
-## Markdeep syntax test
+https://stackoverflow.com/questions/77706465/flatten-nested-structure-by-two-keys
 X
-Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
+Plus I'm also worried that it only works for trees, not graphs.
+but It's good enough to help me continue moving:
 X
+```bash
+$ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata 
+[
+X  {
+X    "kind": "Question",
+X    "parent": "null",
+X    "id": "root",
+X    "label": "What should we do about the one ring?"
+X  },
+X  {
+X    "kind": "Idea",
+X    "parent": "root",
+X    "id": "gg",
+X    "label": "Give it to golumm"
+X  },
+X  {
+X    "kind": "Idea",
+X    "parent": "root",
+X    "id": "gh",
+X    "label": "Give it to humans"
+X  },
+X  {
+X    "kind": "Idea",
+X    "parent": "root",
+X    "id": "bm",
+X    "label": "Burn it in mordor"
+X  },
+X  {
+X    "kind": "pro",
+X    "parent": "bm",
+X    "id": "ow",
+X    "label": "its the only way to destroy it"
+X  },
+X  {
+X    "kind": "pro",
+X    "parent": "bm",
+X    "id": "ofora",
+X    "label": "once and for all"
+X  },
+X  {
+X    "kind": "pro",
+X    "parent": "bm",
+X    "id": "dr",
+X    "label": "the road is extremely dangerous"
+X  },
+X  {
+X    "kind": "Question",
+X    "parent": "null",
+X    "id": "root2",
+X    "label": "Why do we need to destroy it?"
+X  }
+]
 X
-Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
+```
 X
-Is this a definition list?
-:   Looks like one to me
-Is that right?
-:   Possibly!
+Now I can transform it in to the json for visjs
 X
-And a code listing:
+This query was easy
+https://try.jsonata.org/9m8IlB-Ge
 X
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int main()
+now lets look at it from the command line:
+X
+```bash
+$ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata  | jfq --query-file ./array_of_objecs_to_visjs.jsonata 
 {
-X    return 1;
+X  "data": {
+X    "nodes": [
+X      {
+X        "group": "Question",
+X        "id": "root",
+X        "label": "What should we do about the one ring?"
+X      },
+X      {
+X        "group": "Idea",
+X        "id": "gg",
+X        "label": "Give it to golumm"
+X      },
+X      {
+X        "group": "Idea",
+X        "id": "gh",
+X        "label": "Give it to humans"
+X      },
+X      {
+X        "group": "Idea",
+X        "id": "bm",
+X        "label": "Burn it in mordor"
+X      },
+X      {
+X        "group": "pro",
+X        "id": "ow",
+X        "label": "its the only way to destroy it"
+X      },
+X      {
+X        "group": "pro",
+X        "id": "ofora",
+X        "label": "once and for all"
+X      },
+X      {
+X        "group": "pro",
+X        "id": "dr",
+X        "label": "the road is extremely dangerous"
+X      },
+X      {
+X        "group": "Question",
+X        "id": "root2",
+X        "label": "Why do we need to destroy it?"
+X      }
+X    ],
+X    "edges": [
+X      {
+X        "from": "null",
+X        "to": "root"
+X      },
+X      {
+X        "from": "root",
+X        "to": "gg"
+X      },
+X      {
+X        "from": "root",
+X        "to": "gh"
+X      },
+X      {
+X        "from": "root",
+X        "to": "bm"
+X      },
+X      {
+X        "from": "bm",
+X        "to": "ow"
+X      },
+X      {
+X        "from": "bm",
+X        "to": "ofora"
+X      },
+X      {
+X        "from": "bm",
+X        "to": "dr"
+X      },
+X      {
+X        "from": "null",
+X        "to": "root2"
+X      }
+X    ]
+X  }
 }
-X~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 X
-X
-Markdeep diagrams:
-X
-*******************************************  Here's a text to the right of the diagram,
-* +-----------------+           .-.       *  ain't that fancy. Pretty fancy indeed, I
-* |\                |        .-+   |      *  must say! Markdeep diagrams are generally
-* | \     A-B   *---+--> .--+       '--.  *  enclosed into a rectangle full made of `*`
-* |  \              |   |     Cloud!    | *  symbols; and are "drawn" using ASCII-art
-* +---+-------------+    '-------------'  *  style, with `- | + / \ * o` etc.
-*******************************************  Suh-weet!
-X
-X
-Another random diagram, just because:
-X
-********************
-*    +-+-+-+-*-o   *
-*   / / ^ /        *
-*  / v / /         *
-* +-+-+-+          *
-********************
-X
-!!! Note
-X    Hey I'm a note. Don't mind me, I'm just sitting here.
-X
-!!! WARNING
-X    I'm a warning, perhaps. *Something might happen!*
-X
-And other admonitions:
-X
-!!! Error: Never Pass `nullptr` to a Shader
-X    Invoking a shader with a null argument can seg fault.
-X    This is a multi-line admonition.
-X
-X    Seriously, don't call shaders like that.
+```
 X
 X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 21 14 34 05 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 22 20 57 22 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -2974,12 +3070,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-fdd06a0452fff5110381e761134f0c10  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+b2c077f09294e78757cb8f65dfc5d429  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 21303 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 21303"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 22619 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 22619"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============

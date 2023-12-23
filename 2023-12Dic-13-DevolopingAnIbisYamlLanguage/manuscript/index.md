@@ -714,73 +714,169 @@ WHich is what I want...
 now  I need to learn how move from here
 back to a json that can be used for graphs.
 
+# Friday Dec 22
 
+## Stumbled to a solution
 
-### Subsection on stuff
+I stumbled on a jsonata query that gives me the desired results:
 
+https://try.jsonata.org/lbQzpr17x
 
-Thing Name              | Description        |Notes
-------------------------|--------------------|-----
-Yes                     | Yup!               |
-No                      | Nope :(            |
-FileNotFound            | Doesn't find files | Pass `-sFIND_FILE=maybe` to maybe find them
+Emphasis on *stumbled*.
 
+So that I asked a query in stackoverflow to find a better way to do it.
 
-## Markdeep syntax test
+https://stackoverflow.com/questions/77706465/flatten-nested-structure-by-two-keys
 
-Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
+Plus I'm also worried that it only works for trees, not graphs.
+but It's good enough to help me continue moving:
 
+```bash
+$ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata 
+[
+  {
+    "kind": "Question",
+    "parent": "null",
+    "id": "root",
+    "label": "What should we do about the one ring?"
+  },
+  {
+    "kind": "Idea",
+    "parent": "root",
+    "id": "gg",
+    "label": "Give it to golumm"
+  },
+  {
+    "kind": "Idea",
+    "parent": "root",
+    "id": "gh",
+    "label": "Give it to humans"
+  },
+  {
+    "kind": "Idea",
+    "parent": "root",
+    "id": "bm",
+    "label": "Burn it in mordor"
+  },
+  {
+    "kind": "pro",
+    "parent": "bm",
+    "id": "ow",
+    "label": "its the only way to destroy it"
+  },
+  {
+    "kind": "pro",
+    "parent": "bm",
+    "id": "ofora",
+    "label": "once and for all"
+  },
+  {
+    "kind": "pro",
+    "parent": "bm",
+    "id": "dr",
+    "label": "the road is extremely dangerous"
+  },
+  {
+    "kind": "Question",
+    "parent": "null",
+    "id": "root2",
+    "label": "Why do we need to destroy it?"
+  }
+]
 
-Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
+```
 
-Is this a definition list?
-:   Looks like one to me
-Is that right?
-:   Possibly!
+Now I can transform it in to the json for visjs
 
-And a code listing:
+This query was easy
+https://try.jsonata.org/9m8IlB-Ge
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int main()
+now lets look at it from the command line:
+
+```bash
+$ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata  | jfq --query-file ./array_of_objecs_to_visjs.jsonata 
 {
-    return 1;
+  "data": {
+    "nodes": [
+      {
+        "group": "Question",
+        "id": "root",
+        "label": "What should we do about the one ring?"
+      },
+      {
+        "group": "Idea",
+        "id": "gg",
+        "label": "Give it to golumm"
+      },
+      {
+        "group": "Idea",
+        "id": "gh",
+        "label": "Give it to humans"
+      },
+      {
+        "group": "Idea",
+        "id": "bm",
+        "label": "Burn it in mordor"
+      },
+      {
+        "group": "pro",
+        "id": "ow",
+        "label": "its the only way to destroy it"
+      },
+      {
+        "group": "pro",
+        "id": "ofora",
+        "label": "once and for all"
+      },
+      {
+        "group": "pro",
+        "id": "dr",
+        "label": "the road is extremely dangerous"
+      },
+      {
+        "group": "Question",
+        "id": "root2",
+        "label": "Why do we need to destroy it?"
+      }
+    ],
+    "edges": [
+      {
+        "from": "null",
+        "to": "root"
+      },
+      {
+        "from": "root",
+        "to": "gg"
+      },
+      {
+        "from": "root",
+        "to": "gh"
+      },
+      {
+        "from": "root",
+        "to": "bm"
+      },
+      {
+        "from": "bm",
+        "to": "ow"
+      },
+      {
+        "from": "bm",
+        "to": "ofora"
+      },
+      {
+        "from": "bm",
+        "to": "dr"
+      },
+      {
+        "from": "null",
+        "to": "root2"
+      }
+    ]
+  }
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-Markdeep diagrams:
-
-*******************************************  Here's a text to the right of the diagram,
-* +-----------------+           .-.       *  ain't that fancy. Pretty fancy indeed, I
-* |\                |        .-+   |      *  must say! Markdeep diagrams are generally
-* | \     A-B   *---+--> .--+       '--.  *  enclosed into a rectangle full made of `*`
-* |  \              |   |     Cloud!    | *  symbols; and are "drawn" using ASCII-art
-* +---+-------------+    '-------------'  *  style, with `- | + / \ * o` etc.
-*******************************************  Suh-weet!
-
-
-Another random diagram, just because:
-
-********************
-*    +-+-+-+-*-o   *
-*   / / ^ /        *
-*  / v / /         *
-* +-+-+-+          *
-********************
-
-!!! Note
-    Hey I'm a note. Don't mind me, I'm just sitting here.
-
-!!! WARNING
-    I'm a warning, perhaps. *Something might happen!*
-
-And other admonitions:
-
-!!! Error: Never Pass `nullptr` to a Shader
-    Invoking a shader with a null argument can seg fault.
-    This is a multi-line admonition.
-
-    Seriously, don't call shaders like that.
+```
 
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
