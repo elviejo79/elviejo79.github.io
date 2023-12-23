@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh70213
-# Made on 2023-12-23 13:50 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh71638
+# Made on 2023-12-23 13:55 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -20,7 +20,7 @@ lock_dir=_sh70213
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt
 #  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
-#  22619 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+#  25390 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -3056,11 +3056,79 @@ X  }
 X
 ```
 X
+# Saturday Dec 23rd
+X
+## Why the solution was too easy?
+X
+The final query that translates from: a doubled nested yaml to flat list of objects was extremely easy to write.
+X
+Then why did it take me so long to build it?
+And more importantly... How can I shorten that time the next time that I have a similar problem?
+X
+### Wha was the key for the solution?
+X  When I had given up, on trying to find the solution for myself I started to write the question in stack overflow.
+X
+X  And in the process of writing the rigth question I came up with the solution by myself.
+X
+#### How did you approach asking the question:
+X
+1. I wrote the well formated input.
+2. Then I typed by hand the output that I wanted.
+X
+!!! Note: But here I actually wrote the *Output that I wanted. NOT the intermediate process that I tought I needed to follow.
+X
+3. Then I tried to describe the propertie of the output.
+X - that the type was the Parent
+X - the "parent" was the oldest sibling
+X
+4. And that the answer was deeply nested. Because I didn't want the solution to be limetd to only two levels deep. So it needed some kind of recursive function. 
+X
+And with those elemenst was enough to write the solution for myself.
+I think this worked well, because jsonata is a declarative language... so
+thiking of what I really wanted, as opposed of what I thought where the prosses required to achive it was a good fit.
+X
+##### How could jsonata work in order to do this?
+X
+Well maybe the interface of jsonata should be such that:
+X
+it asks the input, then the desired output.
+Then you write your jsonata query,
+and it shows you the calculated output.
+and then also another window that shows the difference between the expected output,
+and the calculated output.
+so that you know what is going on.
+X
+Even better with that interface there could be a genetic algorithm that is testing the json window and calculatingthe output and then given the diffs trying to come up with the algorithm.
+X
+#### How does this relate to PyRet
+In pyret you name the method.
+Then write the docs
+then the examples (which are the expected outpus given known inputs)
+then could be the prec-conditions and post-conditions
+and finally the code.
+X
+which could be seen as:
+X
+|pyret | jsonata |
+|name  with the  goal | comment with the goal|
+|exmplaes | testcase|
+|example input| input window|
+|example output| output window|
+| input types| input json-schema|
+|pre-conditions| other predicates in the data that are not part of the schema|
+| output types | output json-schema |
+|post-conditions| other predicates that cannot be part of the schema|
+|actual code | actual jsonata query|
+| results of the tests | diff between expected output and calculated output|
+X
+And this relates to programming of functions in general.
+X
+<!-- Don't delete this line -->
 X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 22 20 57 22 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 23 13 51 20 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -3070,12 +3138,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-b2c077f09294e78757cb8f65dfc5d429  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+4a51a756dd70d9217fa257effcdcee59  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 22619 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 22619"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 25390 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 25390"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============

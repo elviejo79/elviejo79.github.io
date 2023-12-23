@@ -878,6 +878,74 @@ $ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_
 
 ```
 
+# Saturday Dec 23rd
+
+## Why the solution was too easy?
+
+The final query that translates from: a doubled nested yaml to flat list of objects was extremely easy to write.
+
+Then why did it take me so long to build it?
+And more importantly... How can I shorten that time the next time that I have a similar problem?
+
+### Wha was the key for the solution?
+  When I had given up, on trying to find the solution for myself I started to write the question in stack overflow.
+
+  And in the process of writing the rigth question I came up with the solution by myself.
+
+#### How did you approach asking the question:
+
+1. I wrote the well formated input.
+2. Then I typed by hand the output that I wanted.
+
+!!! Note: But here I actually wrote the *Output that I wanted. NOT the intermediate process that I tought I needed to follow.
+
+3. Then I tried to describe the propertie of the output.
+ - that the type was the Parent
+ - the "parent" was the oldest sibling
+
+4. And that the answer was deeply nested. Because I didn't want the solution to be limetd to only two levels deep. So it needed some kind of recursive function. 
+
+And with those elemenst was enough to write the solution for myself.
+I think this worked well, because jsonata is a declarative language... so
+thiking of what I really wanted, as opposed of what I thought where the prosses required to achive it was a good fit.
+
+##### How could jsonata work in order to do this?
+
+Well maybe the interface of jsonata should be such that:
+
+it asks the input, then the desired output.
+Then you write your jsonata query,
+and it shows you the calculated output.
+and then also another window that shows the difference between the expected output,
+and the calculated output.
+so that you know what is going on.
+
+Even better with that interface there could be a genetic algorithm that is testing the json window and calculatingthe output and then given the diffs trying to come up with the algorithm.
+
+#### How does this relate to PyRet
+In pyret you name the method.
+Then write the docs
+then the examples (which are the expected outpus given known inputs)
+then could be the prec-conditions and post-conditions
+and finally the code.
+
+which could be seen as:
+
+|pyret | jsonata |
+|name  with the  goal | comment with the goal|
+|exmplaes | testcase|
+|example input| input window|
+|example output| output window|
+| input types| input json-schema|
+|pre-conditions| other predicates in the data that are not part of the schema|
+| output types | output json-schema |
+|post-conditions| other predicates that cannot be part of the schema|
+|actual code | actual jsonata query|
+| results of the tests | diff between expected output and calculated output|
+
+And this relates to programming of functions in general.
+
+<!-- Don't delete this line -->
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
