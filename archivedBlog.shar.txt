@@ -3,8 +3,8 @@
 # To extract the files from this archive, save it to some FILE, remove
 # everything before the '#!/bin/sh' line above, then type 'sh FILE'.
 #
-lock_dir=_sh133083
-# Made on 2023-12-23 17:30 CST by <agarciafdz@agarciafd-lg>.
+lock_dir=_sh134468
+# Made on 2023-12-24 11:35 CST by <agarciafdz@agarciafd-lg>.
 # Source directory was '/home/agarciafdz'.
 #
 # Existing files will *not* be overwritten, unless '-c' is specified.
@@ -20,7 +20,7 @@ lock_dir=_sh133083
 #   4080 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12-06-Thinking-About-Patents-sawstop-case/index.md.html
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/ex3.mytpyng.txt
 #  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/index.md
-#  25390 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+#  27519 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 #   1589 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt
 #  31068 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/DevelopmentOfIbisYamlLanguage.md.html
 #     21 -rw-rw-r-- /home/agarciafdz/r/gh/elv79/elviejo79.github.io/README.md
@@ -2892,6 +2892,94 @@ WHich is what I want...
 now  I need to learn how move from here
 back to a json that can be used for graphs.
 X
+# Thursday Dec 21st
+## I wish I could do pattern matching.
+X
+I wish I could simply write a query like this:
+X
+``` javascript
+{$id: $label, "pros":$pros, "cons":$cons}
+```
+X
+And apply it to the son document,
+and it could give me a result.
+X
+So I have searched several alternatives... but none seem to work.
+X
+### [ReJSON](https://github.com/squaremo/rejson)
+X
+```javscript 
+> Json = json:decode("[1, 2, \"foo\", 3]"),
+> Pattern = rejson:parse("[1, 2, number *] ^ [S = string]"),
+> rejson:match(Pattern, Json).
+{ok, [{"S", "foo"}]}
+```
+X
+Observe that `S = string` is where it decides to capture the value.
+with the "match" instruction.
+X
+The problem is what it says here:
+X
+>A capture cannot appear is as a property name, 
+>or (currently) as the operand of an interleave,
+>though it can appear in an operand.
+X
+So what this means is that I cannot use it to match $id property,
+which is the difficult part :( 
+X
+### [Jawk](https://github.com/mohd-akram/jawk)
+X
+Awk but for json.
+X
+It seems to me like a query like jsonata but mor imperatiav with For loops and ifs
+```bash
+$ echo '{"age":10}' | jawk '{print _["age"]}'
+10
+X
+$ echo '{"person":{"name":"Jason"}}' | jawk '{print _["person","name"]}'
+Jason
+X
+$ echo '[4,2,0]' | jawk '{while (++i <= _["length"]) print _[i]}'
+4
+2
+0
+X
+$ echo '[{"x":6},{"x":7}]' | jawk '{while (++i <= _["length"]) print _[i,"x"]}'
+6
+7
+X
+$ printf '{"x":6}\n{"x":7}\n' | jawk '{print _["x"]}'
+6
+7
+X
+$ echo '{"name":{"first":"Jason"},"age":25}' | jawk '{
+X	keys(o); for (k in o) print k, _[o[k],JSON]
+}'
+name {"first":"Jason"}
+age 25
+X
+$ echo '{"name":"Jason"}' | jawk '{print _["name",JSON]}'
+"Jason"
+X
+# Try it with real data!
+curl -Ls https://api.github.com/repos/onetrueawk/awk |
+jawk '{print "id:", _["id"], "owner.id:", _["owner","id"]}'
+X
+curl -Ls https://api.github.com/repos/onetrueawk/awk/commits |
+jawk '{
+X	while (++i <= _["length"]) {
+X		sha = _[i,"sha"]
+X		message = _[i,"commit","message"]
+X		l = index(message, "\n")
+X		print sha, substr(message, 1, l ? l - 1 : 50)
+X	}
+}'
+X
+curl -Ls https://api.github.com/repos/onetrueawk/awk/commits |
+jawk '{while (++i <= _["length"]) printf("{\"sha\":%s}\n",_[i,"sha",JSON])}'
+```
+X
+X
 # Friday Dec 22
 X
 ## Stumbled to a solution
@@ -3128,7 +3216,7 @@ X
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 SHAR_EOF
-  (set 20 23 12 23 13 51 20 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
+  (set 20 23 12 23 17 30 19 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
    eval "${shar_touch}") && \
   chmod 0664 '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'
 if test $? -ne 0
@@ -3138,12 +3226,12 @@ fi
   then (
        ${MD5SUM} -c >/dev/null 2>&1 || ${echo} '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md': 'MD5 check failed'
        ) << \SHAR_EOF
-4a51a756dd70d9217fa257effcdcee59  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
+da65155d76717e5fa309fbad69a07cdb  /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md
 SHAR_EOF
 
 else
-test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 25390 && \
-  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 25390"
+test `LC_ALL=C wc -c < '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md'` -ne 27519 && \
+  ${echo} "restoration warning:  size of '/home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/manuscript/index.md' is not 27519"
   fi
 fi
 # ============= /home/agarciafdz/r/gh/elv79/elviejo79.github.io/2023-12Dic-13-DevolopingAnIbisYamlLanguage/src/ex3.mytpyng.txt ==============
