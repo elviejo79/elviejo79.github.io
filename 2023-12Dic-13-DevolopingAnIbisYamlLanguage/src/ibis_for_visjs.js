@@ -23,7 +23,7 @@ var data={
     {
       "group": "Idea",
       "id": "bm",
-      "label": "Burn it in mordor"
+      "label": "Drop it into the fires ouf mount Doom"
     },
     {
       "group": "pros",
@@ -54,6 +54,31 @@ var data={
       "group": "pro",
       "id": "dr",
       "label": "the road is extremely dangerous"
+    },
+    {
+      "group": "Question",
+      "id": "wr",
+      "label": "What are the risks?"
+    },
+    {
+      "group": "Idea",
+      "id": "ll",
+      "label": "lava"
+    },
+    {
+      "group": "Idea",
+      "id": "or",
+      "label": "Orcs"
+    },
+    {
+      "group": "Idea",
+      "id": "sp",
+      "label": "giant spiers"
+    },
+    {
+      "group": "Idea",
+      "id": "3b",
+      "label": "3rd degree burns"
     },
     {
       "group": "Question",
@@ -105,6 +130,26 @@ var data={
     {
       "from": "bm",
       "to": "dr"
+    },
+    {
+      "from": "dr",
+      "to": "wr"
+    },
+    {
+      "from": "wr",
+      "to": "ll"
+    },
+    {
+      "from": "wr",
+      "to": "or"
+    },
+    {
+      "from": "wr",
+      "to": "sp"
+    },
+    {
+      "from": "wr",
+      "to": "3b"
     },
     {
       "from": "null",
