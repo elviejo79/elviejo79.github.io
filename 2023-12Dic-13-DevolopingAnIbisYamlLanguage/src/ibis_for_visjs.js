@@ -6,22 +6,22 @@ var data={
       "label": "What should Frodo do about the one ring?"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "ki",
       "label": "keep the ring"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "gg",
       "label": "Give it to golumm"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "gh",
       "label": "Give it to humans"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "bm",
       "label": "Drop it into the fires ouf mount Doom"
     },
@@ -36,22 +36,22 @@ var data={
       "label": "Implications of using this trick?"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "sf",
       "label": "sauron will find the ring"
     },
     {
-      "group": "pro",
+      "group": "pros",
       "id": "ow",
       "label": "its the only way to destroy it"
     },
     {
-      "group": "pro",
+      "group": "pros",
       "id": "ofora",
       "label": "once and for all"
     },
     {
-      "group": "pro",
+      "group": "pros",
       "id": "dr",
       "label": "the road is extremely dangerous"
     },
@@ -61,22 +61,22 @@ var data={
       "label": "What are the risks?"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "ll",
       "label": "lava"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "or",
       "label": "Orcs"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "sp",
       "label": "giant spiers"
     },
     {
-      "group": "Idea",
+      "group": "Ideas",
       "id": "3b",
       "label": "3rd degree burns"
     },
