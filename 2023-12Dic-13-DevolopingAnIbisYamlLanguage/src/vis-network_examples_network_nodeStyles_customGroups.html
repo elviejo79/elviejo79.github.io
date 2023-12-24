@@ -60,20 +60,21 @@
             shape: "diamond",
           },
           Question: { 
-            color: {"rgb(0,255,140)" },
-          icons: {
             shape: "icon",
             icon: {
               face: "FontAwesome",
               code: "\uf128",
-              size: 150,
+              size: 20,
               color: "orange",
-            },
-          }},
-          pro: {
-            color: { border: "green" },
+            }
           },
-        },
+          pro: {
+            color: { background: "green" },
+          },
+          con: {
+            color: { background: "red" },
+          },
+        }
       };
       var network = new vis.Network(container, data, options);
     </script>
