@@ -41,7 +41,7 @@
         nodes: nodes,
         edges: edges,
       };*/
-      var options = {
+      const options = {
         nodes: {
           shape: "dot",
           size: 20,
@@ -55,26 +55,25 @@
           width: 2,
         },
         groups: {
-          Ideas: {
-            color: { background: "yellow", border: "white" },
-            shape: "diamond",
-          },
-          Question: { 
-            shape: "icon",
-            icon: {
-              face: "FontAwesome",
-              code: "\uf059",
-              size: 20,
-              color: "blue",
-            }
-          },
-          pros: {
-            color: { background: "green" },
-          },
-          cons: {
-            color: { background: "red" },
-          },
-        }
+            Question: {
+              shape: "icon",
+              icon: {
+                face: "'Ionicons'",
+                code: "\uf47c",
+                size: 50,
+                color: "#57169a",
+              },
+            },
+            Ideas: {
+              shape: "icon",
+              icon: {
+                face: "'Ionicons'",
+                code: "\uf47e",
+                size: 50,
+                color: "#aa00ff",
+              },
+            },
+          }
       };
       var network = new vis.Network(container, data, options);
     </script>
