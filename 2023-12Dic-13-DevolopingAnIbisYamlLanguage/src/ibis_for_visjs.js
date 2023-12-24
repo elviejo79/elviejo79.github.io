@@ -3,7 +3,12 @@ var data={
     {
       "group": "Question",
       "id": "root",
-      "label": "What should we do about the one ring?"
+      "label": "What should Frodo do about the one ring?"
+    },
+    {
+      "group": "Idea",
+      "id": "ki",
+      "label": "keep the ring"
     },
     {
       "group": "Idea",
@@ -19,6 +24,21 @@ var data={
       "group": "Idea",
       "id": "bm",
       "label": "Burn it in mordor"
+    },
+    {
+      "group": "pros",
+      "id": "in",
+      "label": "gain invisibility"
+    },
+    {
+      "group": "Question",
+      "id": "im",
+      "label": "Implications of using this trick?"
+    },
+    {
+      "group": "Idea",
+      "id": "sf",
+      "label": "sauron will find the ring"
     },
     {
       "group": "pro",
@@ -48,6 +68,10 @@ var data={
     },
     {
       "from": "root",
+      "to": "ki"
+    },
+    {
+      "from": "root",
       "to": "gg"
     },
     {
@@ -57,6 +81,18 @@ var data={
     {
       "from": "root",
       "to": "bm"
+    },
+    {
+      "from": "ki",
+      "to": "in"
+    },
+    {
+      "from": "in",
+      "to": "im"
+    },
+    {
+      "from": "im",
+      "to": "sf"
     },
     {
       "from": "bm",

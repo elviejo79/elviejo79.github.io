@@ -1,7 +1,14 @@
 'null': top of the map
 Question:
-  - root: What should we do about the one ring?
+  - root: What should Frodo do about the one ring?
     Idea:
+      - ki: keep the ring
+        pros:
+          - in: gain invisibility
+            Question:
+              - im: Implications of using this trick?
+                Idea:
+                  - sf: sauron will find the ring
       - gg: Give it to golumm
       - gh: Give it to humans
       - bm: Burn it in mordor
