@@ -1033,6 +1033,42 @@ which could be seen as:
 
 And this relates to programming of functions in general.
 
+## I finally understood how to write a paper
+This stackoverfow answer about "argument diagramming"
+ https://ux.stackexchange.com/a/91762/169709
+
+Put me in the pat to discover Toulmind Diagrams for argument diagramming.
+
+This lead me to read about Macro-toulmin to write papers.
+
+And I thikn I have finally understood how papers should be written!
+
+# Sunday Dec 24th 12:19
+
+I feel that it's already too late to start working on anything... but common lets do  alittle bit.
+
+## How to update my diagram on every file change?
+
+### How to generate the correct json for visjs from command line:
+
+```bash 
+cat ./lord_of_the_rings.yaml | \
+jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata  |\
+jfq --query-file ./array_of_objecs_to_visjs.jsonata | \
+cat <(echo -n "var data=") - <(echo ";") > ibis_for_visjs.js; \
+xdg-open vis-network_examples_network_nodeStyles_customGroups.html
+```
+
+### watchexec
+is a rust cli command
+
+### entr
+is a common linux command.
+
+``` bash 
+$ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata  | jfq --query-file ./array_of_objecs_to_visjs.jsonata  > 
+```
+
 <!-- Don't delete this line -->
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
