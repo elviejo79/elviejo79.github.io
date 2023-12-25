@@ -1068,6 +1068,10 @@ is a common linux command.
 $ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_of_objects.jsonata  | jfq --query-file ./array_of_objecs_to_visjs.jsonata  > 
 ```
 
+
+Now in order to generate the json everytime we change the yaml files.
+
+
 <!-- Don't delete this line -->
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
