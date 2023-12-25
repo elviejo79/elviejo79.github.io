@@ -42,6 +42,21 @@ var data={
     },
     {
       "group": "pros",
+      "id": "gw",
+      "label": "Gollum really wants its"
+    },
+    {
+      "group": "pros",
+      "id": "gas",
+      "label": "Gollum kept it away from Sauron for ages"
+    },
+    {
+      "group": "pros",
+      "id": "gm",
+      "label": "gollum is a litlle messed up"
+    },
+    {
+      "group": "pros",
       "id": "ow",
       "label": "its the only way to destroy it"
     },
@@ -118,6 +133,18 @@ var data={
     {
       "from": "im",
       "to": "sf"
+    },
+    {
+      "from": "gg",
+      "to": "gw"
+    },
+    {
+      "from": "gg",
+      "to": "gas"
+    },
+    {
+      "from": "gg",
+      "to": "gm"
     },
     {
       "from": "bm",
