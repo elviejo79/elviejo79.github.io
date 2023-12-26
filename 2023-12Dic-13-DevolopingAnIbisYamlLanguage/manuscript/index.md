@@ -1071,6 +1071,26 @@ $ cat ./lord_of_the_rings.yaml | jfq --accept-yaml --query-file ./ibis_to_array_
 
 Now in order to generate the json everytime we change the yaml files.
 
+# Tue Dec 26th 2023
+
+## Refocus
+
+### What do I really want? (for this tool)
+
+I want to write any ibis map in vs code and then having a preview window side by side that keeps updating the diagram as I type.
+
+Also that I can open that preview windon in its own window so that I can share the map on google meet while typing.
+
+Also that I can create a map and from the command line generate an image.
+
+### After that?
+
+I want to use the VSCode code sharing platform so that I can colaboratelly developed a map.
+
+Then maybe use rethink db to develop a collaborative platform that allows a lot of people to work on their own maps. Because with rethink we can save to a central server and the database can push the updates to all the connected clients.
+
+Then have each map stored as a json document, so that we can have all the maps linked as json-ld documents that AI can learn from to anwser questions.
+
 
 <!-- Don't delete this line -->
 
