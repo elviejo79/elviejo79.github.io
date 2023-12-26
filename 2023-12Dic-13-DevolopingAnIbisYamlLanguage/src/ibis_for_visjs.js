@@ -18,7 +18,12 @@ var data={
     {
       "group": "Ideas",
       "id": "gh",
-      "label": "Give it to humans"
+      "label": "THIS IS WRONG AFTER A CONS"
+    },
+    {
+      "group": "Ideas",
+      "id": "gf",
+      "label": "What hapenns If I add somethig here"
     },
     {
       "group": "Ideas",
@@ -117,6 +122,10 @@ var data={
     {
       "from": "root",
       "to": "gh"
+    },
+    {
+      "from": "root",
+      "to": "gf"
     },
     {
       "from": "root",
