@@ -1108,6 +1108,12 @@ And that will create `./my_graph_file.png`
     It's almost the end of the year. And  I want to "finish" this IBIS map before the next one starts.
     So what do I need to do?
 
+## Todos (at least to let it rest for a while)
+
+- [ ] Add the correct styling in the website for the PNG.
+- [ ] Create a website, and use the same website for the user and the PNG generation.
+- [ ] Correct the error so that Cons also appear properly displayed.
+
 <!-- Don't delete this line -->
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'medium'};</script>
