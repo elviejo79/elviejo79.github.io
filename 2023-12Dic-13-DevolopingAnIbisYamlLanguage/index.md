@@ -642,7 +642,6 @@ In stedy https://stedi.link/kdqY6J0
 
 But since I don't want to loose my query here is the backup
 
-```
 (
 $node_template:=function($id,$label,$metadata,$parentId){{
     "id":$id,
@@ -726,7 +725,7 @@ $grapherx_formatted:={
     "theme":$const_theme
     };
 )
-```
+
 
 # Sunday dec 17?
 
