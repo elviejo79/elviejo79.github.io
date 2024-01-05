@@ -642,7 +642,7 @@ In stedy https://stedi.link/kdqY6J0
 
 But since I don't want to loose my query here is the backup
 
-(
+exi(
 $node_template:=function($id,$label,$metadata,$parentId){{
     "id":$id,
     "kind":"node",
