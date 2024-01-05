@@ -459,7 +459,7 @@ In stedy https://stedi.link/kdqY6J0
 
 But since I don't want to loose my query here is the backup
 
-``` javascript
+```
 (
 $node_template:=function($id,$label,$metadata,$parentId){{
     "id":$id,
@@ -586,7 +586,7 @@ Now in `ex4.byTypeAndId.json` we can see the structure.
 It looks well
 Although I think that maky jsonata want to use
 arrays for nested structures instead of
-hashmaps.
+hashmaps.n
 
 this is something I'll need to keep in mind.
 
