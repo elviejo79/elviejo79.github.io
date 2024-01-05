@@ -1,0 +1,1 @@
+I asked chatgpt how to create a digram, and it gave me an answer that involves opennnig a webbrowser, And although in principle I *don't* like the solution  I decided to try it because maybe that way is warranted that the imag will look the same on the website and on the 
