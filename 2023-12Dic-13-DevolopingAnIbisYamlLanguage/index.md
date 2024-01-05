@@ -457,7 +457,7 @@ $edges := $.graph.edges.{"data":$};
     "nodes":$append($root,$nodes),
     "edges":$edges
 }
-)        
+)
         `;
 ```
 
@@ -642,7 +642,7 @@ In stedy https://stedi.link/kdqY6J0
 
 But since I don't want to loose my query here is the backup
 
-``` javascript
+```
 (
 $node_template:=function($id,$label,$metadata,$parentId){{
     "id":$id,
@@ -728,7 +728,6 @@ $grapherx_formatted:={
 )
 ```
 
-
 # Sunday dec 17?
 
 ## Nested graphs
@@ -744,28 +743,28 @@ $grapherx_formatted:={
         title: Give it to golumm
         items:
           - type: Questions
-      
+
             id: addicted
             title: Isn't he addicted to the ring?
             items:
               - type: answers
-                id: ay 
+                id: ay
                 title: Yes,but so what?
-                items: 
+                items:
                   - type: Questions
-              
+
                     id: yw
-                    title: So what??!! 
+                    title: So what??!!
       - type: answers
         id: gh
         title: Give it to humans
         items:
-          - type: pros 
+          - type: pros
             id: weapon
             title: use the enemys weapon against itself
-          - type: pros 
+          - type: pros
             id: deserve
-            title: we deserve it. 
+            title: we deserve it.
           - type: cons
             id: greed
             title: humans greed has failled us once before.
@@ -773,7 +772,7 @@ $grapherx_formatted:={
         id: bm
         title: Burn it in mount mordor
         items:
-          - type: pros 
+          - type: pros
             id: ow
             title: its the only way to destroy it
           - type: cons
@@ -796,8 +795,8 @@ the one that I think is the best is:
 ` $groupSentencesByTypeAndId`
 
 ``` json
-( 
-/* 
+(
+/*
 $groupByType:=function($tree){
     $tree.items{
         `type`:$.($merge([{id:title},$groupByType($)]))
