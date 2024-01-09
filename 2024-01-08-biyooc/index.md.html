@@ -1,0 +1,110 @@
+              <meta charset="utf-8" emacsmode="-*- markdown -*-">
+
+                            **LaTeX-style Starter Document**
+
+Welcome to Markdeep. It's the simple way to write plain text with
+_style_. From https://casual-effects.com/markdeep
+
+BiYooc a Practical Bidiriectional Object Oriented Compiler.
+===============================================================================
+
+BiYoocc (built on top of Eiffel and Yocc) is a great tool to develop bidirectional compilers.
+
+A bidirectinnal compiler is one in which the pretty printing of the parsed tree (AST) is also valid code.
+One would expect this to be the default rather than the exception.
+But most pretty printers evolve independently from the compiler, which leads to incompatibilites between them.
+
+This has lead to the development of parser generators (BiYacc) with the express purpose of having bidirectionallity by default.
+
+On this paper we intend to show that developing bidirectional parsers is not something extraourdinary.
+But a naturally expressed as part of Eiffel's design-by-contract and it's invariant mechanism.
+
+The invariant that defines a bidirectional parser is:
+
+    parse(pretty_print(parse(source))) = parse (source)
+
+Which basically means, parsing the pretty_printed version of a source code is equivalent to parsing the source code.
+
+This invariant is naturally expressed in eiffel.
+
+In order to demonstrate our claim that Eiffel and Yoocc make it easy to evolve a pragramming language grammar into bidirectionality.
+We will follow the following stages.
+
+Stage 0: Update Yoocc to modern eiffel.
+    On this stage the goal is to get the demo languages developed with Yoocc to compile again.
+    1. We take the Yoocc compiler developed by Monash University.
+    2. Take the example languages as part of the Yoocc distribution and
+   shhow that the pretty printed code generated with it is not, bidirectional.
+
+Stage 1: Evolve demo languages to be bidirectional
+
+    1.1 Add the invariant of Listing 1 to the Yoocc compiler.
+    1.2 Try to compile the generated languages and follow the errors generated, until there is none.
+    1.3 Show that the pretty_printed version of the example languages are bidirectional.
+    1.4 With this we would have demostrated that is possible to evolve a language to be bidirectional without changing it's grammar.
+
+Stage 2: Develop a document syncronizer (Java and HTML)
+    in BiOOP Zheng takes a light version of Java and Spring and creates an html version of the interface created with it.
+    Then changes made to the HTML are automatically sinchronized to the Java Source code.
+
+    So the idea would be to reproduce the same functionallity.
+
+Stage 3: Develop BiPandoc
+
+    Pandoc is a document translator, it take documents written in let's say markdown and translate to multiple formats.
+    And yet in such a tool, the transformations aren't bidirectional. For example it is possible to translate from a source format to another but not the other way around.
+    However if each pandoc language used was made with BiYoocc the translation would be bidirectional by default.
+
+    Here obivously the complexity is in developing the translators for several languages.
+
+Stage 4: Muliti-langugae programming.
+    If every langugae is equivalent to each other (turing complete).
+    How far could we take the idea of programming in one language and another using the same.
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.
+
+\begin{equation}
+\iint xy^2\,dx\,dy = \frac{1}{6}x^2y^3
+\end{equation}
+
+Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur.
+
+\begin{equation}
+	u=\frac{-y}{x^2+y^2}\,,\quad
+	v=\frac{x}{x^2+y^2}\,,\quad\text{and}\quad
+	w=0\,.
+\end{equation}
+
+Subsection
+-------------------------------------------------------------------------------
+the
+Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+\begin{equation}
+	\begin{bmatrix}
+		1 & x & 0 \\
+		0 & 1 & -1
+	\end{bmatrix}\begin{bmatrix}
+		1  \\
+		y  \\
+		1
+	\end{bmatrix}
+	=\begin{bmatrix}
+		1+xy  \\
+		y-1
+	\end{bmatrix}.
+\end{equation}
+
+
+
+
+<link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
