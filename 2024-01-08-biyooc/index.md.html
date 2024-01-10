@@ -1,107 +1,122 @@
               <meta charset="utf-8" emacsmode="-*- markdown -*-">
 
-                            **LaTeX-style Starter Document**
+                            **BiYoocc: A Bidirectional Compiler Generator in Eiffel by Evolution**
 
-Welcome to Markdeep. It's the simple way to write plain text with
-_style_. From https://casual-effects.com/markdeep
-
-BiYooc a Practical Bidiriectional Object Oriented Compiler.
+A Conjecture
 ===============================================================================
 
-BiYoocc (built on top of Eiffel and Yocc) is a great tool to develop bidirectional compilers.
+I have the conjecture that:
+Creating a Bidirectional compiler with Eiffel is a natural fit,
+due to its native support for invariants.
 
-A bidirectinnal compiler is one in which the pretty printing of the parsed tree (AST) is also valid code.
-One would expect this to be the default rather than the exception.
-But most pretty printers evolve independently from the compiler, which leads to incompatibilites between them.
+Background
+----------------------------------------------------------------------------------
 
-This has lead to the development of parser generators (BiYacc) with the express purpose of having bidirectionallity by default.
+In programming languages research: A pretty printer is a function that receives an Abstract Syntax Tree (AST) and outputs a human-readable representation.
+Pretty printers are important because they are used by coding tools such as debuggers, code formaters, and linters.
 
-On this paper we intend to show that developing bidirectional parsers is not something extraourdinary.
-But a naturally expressed as part of Eiffel's design-by-contract and it's invariant mechanism.
+A bidirectional compiler is one in which the pretty printing of the parsed tree (AST) is also a valid code.
+One would expect this to be the default behavior for all compilers.
+But most pretty printers evolve independently from the compiler,
+which leads to incompatibilities between them.
+
+This has led to the development of parser generators (BiYacc) with the express purpose of having bidirectionality by default.
+
+In this paper, we intend to show that developing bidirectional parsers is not something extraordinary,
+but a naturally expressed as part of Eiffel's design-by-contract and its invariant mechanism.
 
 The invariant that defines a bidirectional parser is:
 
     parse(pretty_print(parse(source))) = parse (source)
 
-Which basically means, parsing the pretty_printed version of a source code is equivalent to parsing the source code.
+This means, that parsing the pretty_printed version of a source code is equivalent to parsing the source code.
 
-This invariant is naturally expressed in eiffel.
+This invariant is naturally expressed in Eiffel and more importantly is checked, on every method invocation.
+which makes expressing bidirectional compilers in Eiffel a Natural fit.
 
-In order to demonstrate our claim that Eiffel and Yoocc make it easy to evolve a pragramming language grammar into bidirectionality.
-We will follow the following stages.
+Known-Unknowns (Uncertainties)
+-------------------------------------------------------------------------------
 
-Stage 0: Update Yoocc to modern eiffel.
-    On this stage the goal is to get the demo languages developed with Yoocc to compile again.
+There are a few things that at this stage we ignore about this project:
+
+1. Yoocc, which will be the core tool of our approach was developed in 1996 and hasn't received maintenance since 1998.
+So getting it to work with the current Eiffel could be a challenge. This will be addressed in Stage 0 of the project, by updating the code for Yoocc.
+
+2. There aren't many grammars created for Yoocc apart from a few demo examples in its source code.
+Which could challenge the validity of the approach by not using more widespread grammars.
+This will be addressed in Stage 2 of the plan. By developing a grammar for a light version of Java.
+
+3. Even if it turns out that developing bidirectional compilers with Eiffel is possible, it might be that the effort
+is bigger than the current state of the art (BiYacc).
+This will be addressed by Stage 3.
+
+The plan
+-------------------------------------------------------------------------------
+
+To demonstrate my claim that Eiffel (and Yoocc) make it easy to evolve a programming language grammar into bidirectionality.
+I will follow this stages.
+
+Stage 0: Update Yoocc to the current Eiffel.
+    At this stage, the goal is to get the demo languages developed with Yoocc to compile again.
     1. We take the Yoocc compiler developed by Monash University.
     2. Take the example languages as part of the Yoocc distribution and
-   shhow that the pretty printed code generated with it is not, bidirectional.
+   show that the pretty printed code generated with it is not, bidirectional.
 
 Stage 1: Evolve demo languages to be bidirectional
 
     1.1 Add the invariant of Listing 1 to the Yoocc compiler.
     1.2 Try to compile the generated languages and follow the errors generated, until there is none.
     1.3 Show that the pretty_printed version of the example languages are bidirectional.
-    1.4 With this we would have demostrated that is possible to evolve a language to be bidirectional without changing it's grammar.
+    1.4 With this we would have demonstrated that is possible to evolve a language to be bidirectional without changing its grammar.
 
-Stage 2: Develop a document syncronizer (Java and HTML)
-    in BiOOP Zheng takes a light version of Java and Spring and creates an html version of the interface created with it.
-    Then changes made to the HTML are automatically sinchronized to the Java Source code.
+Stage 2: Reproduce the BiOOP paper (a document synchronizer between Java and HTML)
+    in BiOOP Zheng takes a light version of Java and Spring and creates an HTML version of the interface created with it.
+    Then changes made to the HTML are automatically synchronized to the Java Source code.
 
-    So the idea would be to reproduce the same functionallity.
+    So the idea would be to reproduce the same functionality.
 
-Stage 3: Develop BiPandoc
+Stage 3: Develop BiPandoc. (Stretch Goal)
+    BiPandoc was a hobby project by Zhung et al. Where they created a limited subset of Pandoc
+    using bidirectional compiler technology.
 
-    Pandoc is a document translator, it take documents written in let's say markdown and translate to multiple formats.
-    And yet in such a tool, the transformations aren't bidirectional. For example it is possible to translate from a source format to another but not the other way around.
-    However if each pandoc language used was made with BiYoocc the translation would be bidirectional by default.
+    Pandoc is the most popular document translator in the world.
+    It takes documents written in let's say markdown and translate them to multiple formats.
+    And yet in such a tool, the transformations aren't bidirectional. For example, it is possible to translate from one source format to another but not the other way around.
+    However, if each Pandoc language used was made with BiYoocc the translation would be bidirectional by default.
 
-    Here obivously the complexity is in developing the translators for several languages.
+    A bidirectional Pandoc clone would have an impact on millions of users, with this "universal" file format translator.
 
-Stage 4: Muliti-langugae programming.
-    If every langugae is equivalent to each other (turing complete).
-    How far could we take the idea of programming in one language and another using the same.
+Stage 4: Multi-langugae programming. (Stretch Goal)
+    If every language is equivalent to each other (Turing complete).
+    How far could we take the idea of programming in one language and another programming a different one? Could we perhaps have one developer working in Python and another Working in Scheme? in the same source code?
 
+Expected Contributions
+----------------------------------------------------------
+As a result of this work, I expect to deliver the following work products.
 
+Create a bidirectional compiler in Eiffel on top of Yoocc, called BiYoocc
+Return Yoocc to working condition
+Have working demos of bidirectional languages in BiYooc
+Reproduce the paper BiOOP, to demonstrate the equivalence of BiYoocc to the previous work.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat.
+As a stretch goal, Develop BiPandoc, as a new product that is facilitated by the BiYooc technology.
 
-\begin{equation}
-\iint xy^2\,dx\,dy = \frac{1}{6}x^2y^3
-\end{equation}
+The grand vision
+-----------------------------------------------------------
 
-Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur.
+I see BiYooc as a steping stone for a bigger vision of programming.
+Were the code is stored in a central database as Abstract Syntax Tree,
+Not as a set of text-files.
 
-\begin{equation}
-	u=\frac{-y}{x^2+y^2}\,,\quad
-	v=\frac{x}{x^2+y^2}\,,\quad\text{and}\quad
-	w=0\,.
-\end{equation}
+One on which each diff and merge operation are semantic operations that work on the AST
+not the the lines of text.
 
-Subsection
--------------------------------------------------------------------------------
-the
-Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+And that allow developers to work in the same program using different grammars.
+So a python developer could read code developed by a smalltalk programmer.
 
-\begin{equation}
-	\begin{bmatrix}
-		1 & x & 0 \\
-		0 & 1 & -1
-	\end{bmatrix}\begin{bmatrix}
-		1  \\
-		y  \\
-		1
-	\end{bmatrix}
-	=\begin{bmatrix}
-		1+xy  \\
-		y-1
-	\end{bmatrix}.
-\end{equation}
+Next Action
+-----------------------------------------------------------
+In the following months, I intend to execute the different stages of the plan and write a paper to share the experience with the wider Programming Language Research community.
 
 
 
