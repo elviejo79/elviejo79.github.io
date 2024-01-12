@@ -1,6 +1,6 @@
               <meta charset="utf-8" emacsmode="-*- markdown -*-">
 
-                            **BiYoocc: A Bidirectional Compiler Generator in Eiffel by Evolution**
+                            **BiYoocc: A Bidirectional Compiler in Eiffel**
 
 A Conjecture
 ===============================================================================
@@ -12,8 +12,19 @@ due to its native support for invariants.
 Background
 ----------------------------------------------------------------------------------
 
-In programming languages research: A pretty printer is a function that receives an Abstract Syntax Tree (AST) and outputs a human-readable representation.
-Pretty printers are important because they are used by coding tools such as debuggers, code formaters, and linters.
+Current programming language practice, has caught up Eiffel and Smalltalk,
+In recoginzing that tooling is fundamental to help programmers develop high quality software.
+So any mature porgramming language should offer support for:
+
+- A Debugger
+- A linter
+- Code Formatter
+- Structured editor
+- Package manager.
+
+All of these tools depend on two intertwined concepts: a Parser and a Pretty Printer.
+A pretty printer is a function that receives an Abstract Syntax Tree (AST) and outputs a human-readable representation.
+So pretty printers and parsers are important for all the programming language designers, and for their users
 
 A bidirectional compiler is one in which the pretty printing of the parsed tree (AST) is also a valid code.
 One would expect this to be the default behavior for all compilers.
@@ -30,6 +41,33 @@ The invariant that defines a bidirectional parser is:
     parse(pretty_print(parse(source))) = parse (source)
 
 This means, that parsing the pretty_printed version of a source code is equivalent to parsing the source code.
+
+But having the pretty_printed version is not enough.
+
+For a refactoring tool. We want to manipulate the AST, and yet after our manipulation we want to have code that is still valid.
+So that invariant is expressed like this:
+
+    source |> parse |> transform |> pretty_print |> is_valid
+
+    is_valid :: CST -> Bool
+    pretty_print :: AST -> CST
+    transform :: AST -> AST
+    parse :: CST -> AST
+    source :: CST
+    CST :: String
+
+As an evolution of bidirectional parsers we have document synchronizers.
+A document synchronizer has a round property in which.
+Transfroming A to B and B to A leaves A unchanged.
+
+So the synchronizer_invariant can be expressed as follows:
+
+    source_a = as_a(as_b(source_a)
+
+also observe how those two invariants are complimentary.
+The bidirectional_parser_invariant focuses on the parse tree.
+the synchronizer_invariant focuses on the text representation of the code.
+
 
 This invariant is naturally expressed in Eiffel and more importantly is checked, on every method invocation.
 which makes expressing bidirectional compilers in Eiffel a Natural fit.
@@ -69,13 +107,13 @@ Stage 1: Evolve demo languages to be bidirectional
     1.3 Show that the pretty_printed version of the example languages are bidirectional.
     1.4 With this we would have demonstrated that is possible to evolve a language to be bidirectional without changing its grammar.
 
-Stage 2: Reproduce the BiOOP paper (a document synchronizer between Java and HTML)
-    in BiOOP Zheng takes a light version of Java and Spring and creates an HTML version of the interface created with it.
-    Then changes made to the HTML are automatically synchronized to the Java Source code.
+Stage 2: Evolve demo languages to have a Language server protocol (LSP)
+    Continue to demonstrate that it is possible to incrementally evolve language developed on a OO Compiler.
+    We will implement an LSP for all of the demo languages, in Yoocc. Using the same mechanism as for bidirectinoal programming: Inheritance.
+    With this two evolutions of langugaes that were not born to be done this way.
+    We hope to show that OO Compilers can better evolve a language than the current alternatives of today.
 
-    So the idea would be to reproduce the same functionality.
-
-Stage 3: Develop BiPandoc. (Stretch Goal)
+Stage 2: Develop BiPandoc.
     BiPandoc was a hobby project by Zhung et al. Where they created a limited subset of Pandoc
     using bidirectional compiler technology.
 
@@ -84,7 +122,9 @@ Stage 3: Develop BiPandoc. (Stretch Goal)
     And yet in such a tool, the transformations aren't bidirectional. For example, it is possible to translate from one source format to another but not the other way around.
     However, if each Pandoc language used was made with BiYoocc the translation would be bidirectional by default.
 
+    So bidirectional Pandoc will implement several popular languages like Markdown, HTML, Latex.
     A bidirectional Pandoc clone would have an impact on millions of users, with this "universal" file format translator.
+
 
 Stage 4: Multi-langugae programming. (Stretch Goal)
     If every language is equivalent to each other (Turing complete).
