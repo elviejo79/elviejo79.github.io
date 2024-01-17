@@ -1,0 +1,13 @@
+Q : What do you want to do?
+ - A : Rescue YOOC to compile in latest Eiffel
+  - Q : Why ?
+    - A : Because I want to use it to create a BiCompiler
+      - Q : Why ?
+        - A : Because I could use that to write my papper Developing Bidirectional compilers with Eiffel/YOOCC
+         - Q : Why ? 
+          - A : Because I want to use that to get enrolled in PhD with Bertrand Meyer
+  - Q : What problems do you have?
+   - A : YOOC doesn't compile
+     - Q : What do you want to do to correct that?
+       - A : I want to create a GitHub Action that makes it compile
+        - Q : What problems do githubActions have? 
