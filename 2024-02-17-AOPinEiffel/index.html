@@ -24,66 +24,16 @@ All the patterns identified are summarized in Weiher, M. (2020).
 But each pattern was publihed independently.
 In the following table there is a summary.
 
-Inspired by: internet URLs and URIs
-AOP proposes: Polymorphic identifiers
-One sentence summary: If every resource on your program: variables, objects, files, apis had a local URI that you can use to communicate with it.
-For example:
+| Inspired by                      | AOP Proposes                          | One Sentence Summary                                                                                                                                                                                 | Examples                                                                                                                                                     | Reference                                                                                                         |
+|----------------------------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| internet URLs and URIs           | Polymorphic identifiers               | If every resource on your program: variables, objects, files, apis had a local URI that you can use to communicate with it.                                                                          | var:person/name var:person/{attribute},     file://tmp/button.png ,    http://www.example.com/button.png, file:{env:HOME}/rfcs/{rfcName}                     | Polymorphic identifiers: uniform resource access in objective-smalltalk (https://doi.org/10.1145/2508168.2508169) |
+| Unix pipes and filters           | Polymorphic write streams             | Standard object out streaming objects with polymorphic write streams                                                                                                                                 |                                                                                                                                                              | Standard Object Out Streaming Objects with Polymorphic Write Streams (https://doi.org/10.1145/3359619.3359748)    |
+| Rest and stackable filesystems   | Storage combinators                   | With limited API verbs (like REST) you can create components that can compose, web servers combined with cache servers and load balancers.                                                           | A composition serving the files in $HOME/Sites, cached by memory. server := ref:file:{env:HOME} -> CachingStore -> SchemeHTTPServer port:8080. server start. | Storage Combinators (https://doi.org/10.1145/3359591.3359729)                                                     |
+| Internet Protocols FTP, WWW, IRC | Schemes                               | The same way that a URI like ftp://myDir/myImage.jpg has a different behavior such as www://myDy/myImage.jpg. Schemes change the behavior that Polymorphic URI will have                             |                                                                                                                                                              | Polymorphic identifiers: uniform resource access in objective-smalltalk (https://doi.org/10.1145/2508168.2508169) |
+| Spreadsheet formulas             | References                            | The same way that changing a value in a cell in a spreadsheet automatically recalculates the derived values.  Reference values will automatically update the derived values in a uniform identifier. |                                                                                                                                                              |                                                                                                                   |
+| Constraint programming           | Constraints as polymorphic connectors | What if the assignment operation had more meaning, such as keeping the values unidirectionally updated or synchronized?                                                                              |                                                                                                                                                              | Constraints as polymorphic connectors                                                                             |
+|                                  |                                       |                                                                                                                                                                                                      |                                                                                                                                                              |                                                                                                                   |
 
-    var:person/name
-    var:person/{attribute}
-    file://tmp/button.png
-    http://www.example.com/button.png
-    file:{env:HOME}/rfcs/{rfcName}
-
-Reference:
-    Polymorphic identifiers: uniform resource access in objective-smalltalk
-    https://doi.org/10.1145/2508168.2508169
-
-Inspired by: Unix pipes and filters
-AOP proposes: Polymorphic write streams
-Reference: Standard object out streaming objects with polymorphic write streams
-For example:
-    <TBD>
-Reference:
-    Standard Object Out Streaming Objects with Polymorphic Write Streams
-    https://doi.org/10.1145/3359619.3359748
-
-Inspired by: Rest and stackable filesystems
-AOP Proposes: Storage combinators
-One sentence summary:
-
-    With limited API verbs (like REST) you can create components that can compose, web servers combined with cache servers and load balancers.
-
-For example:
-
-    A composition serving the files in $HOME/Sites, cached by memory
-    server := ref:file:{env:HOME} -> CachingStore -> SchemeHTTPServer port:8080.
-    server start.
-
-Reference:
-    Storage Combinators
-    https://doi.org/10.1145/3359591.3359729
-
-Inspired by: Internet Protocols FTP, WWW, IRC
-AOP Proposes: Schemes
-One sentence summary: The same way that a URI like ftp://myDir/myImage.jpg has a different behavior such as www://myDy/myImage.jpg
-Schemes change the behavior that Polymorphic URI will have
-Reference:
-    Polymorphic identifiers: uniform resource access in objective-smalltalk
-    https://doi.org/10.1145/2508168.2508169
-
-Inspired by: Spreadsheet formulas
-AOP Proposes: References
-One sentence Summary the same way that changing a value in a cell in a spreadsheet automatically recalculates the derived values.
-Reference values will automatically update the derived values in a uniform identifier.
-
-Inspired by: Constraint programming
-AOP Proposes: Constraints as polymorphic connectors
-One sentence Summary:
-
-    What if the assignment operation had more meaning, such as keeping the values unidirectionally updated or synchronized?
-Reference:
-    Constraints as polymorphic connectors
 
 Known-Unknowns (Uncertainties)
 -------------------------------------------------------------------------------
