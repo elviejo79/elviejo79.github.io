@@ -20,7 +20,7 @@ The main idea is delightfully simple:
 >    and shrink the techniques to organize a single program.
 
 (Weiher, 2020 a)  identified the first patterns and also made a summary in the YouTube presentation: "Can programmers escape the gentle tyranny of call return" (Weiher, 2020 b)
-Also, each pattern was published independently. As is shown in the [following table][Summary AOP]:
+Also, each pattern was published independently. As is shown in table [Summary]:
 
 | Inspired by                      | AOP Proposes                          | One Sentence Summary                                                                                                                                                                                 | Examples                                                                                                                                                     | Reference                                                                                                     |
 |----------------------------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -30,7 +30,7 @@ Also, each pattern was published independently. As is shown in the [following ta
 | Unix pipes and filters           | Polymorphic write streams             | What if unix pipes, instead of sending a chain of text to the next process, threw a nested object structure                                                                                           |                                                                                                                                                              | Weiher, M., & Hirschfeld, R. (2019). Standard object out: streaming objects with polymorphic write streams.   |
 | Rest and stackable filesystems   | Storage combinators                   | With limited API verbs (like REST) you can create components that can compose, web servers combined with cache servers and load balancers.                                                           | A composition serving the files in $HOME/Sites, cached by memory. server := ref:file:{env:HOME} -> CachingStore -> SchemeHTTPServer port:8080. server start. | Weiher, M., & Hirschfeld, R. (2019). Storage combinators.                                                     |
 | Constraint programming           | Constraints as polymorphic connectors | What if the assignment operation had more meaning, such as keeping the values unidirectionally updated or synchronized?                                                                              |                                                                                                                                                              | Weiher, M., & Hirschfeld, R. (2016). Constraints as polymorphic connectors.                                   |
-[Table [Summary AOP]: Summary of AOP Patterns and their publication]
+[Table [Summary]: Summary of AOP Patterns and their publication]
 
 Uncertainties (Known-Unknowns)
 ================================================================================
@@ -49,7 +49,8 @@ First
 -----------
 
 Write a complete design by contract specification of the architecture patterns identified.
-
+This will require also the description of frame rules.
+Probably using "model queries" (Polikarpova et al. 2012)
 Second
 -----------
 
@@ -122,13 +123,13 @@ References
 ================================================================================
 
 - Avotins, J., & Mingins, C. (1993). Metrics for Object-Oriented Design. International Conference on Software Technology: Methods and Tools.
+- Polikarpova, N., Furia, C.A., Pei, Y., Wei, Y., & Meyer, B. (2012). What good are strong specifications? 2013 35th International Conference on Software Engineering (ICSE), 262-271.
 - Weiher, M., & Hirschfeld, R. (2013). Polymorphic identifiers: uniform resource access in objective-smalltalk. Dynamic Languages Symposium.
 - Weiher, M., & Hirschfeld, R. (2016). Constraints as polymorphic connectors. Proceedings of the 15th International Conference on Modularity.
 - Weiher, M., & Hirschfeld, R. (2019). Standard object out: streaming objects with polymorphic write streams. Proceedings of the 15th ACM SIGPLAN International Symposium on Dynamic Languages.
 - Weiher, M., & Hirschfeld, R. (2019). Storage combinators. Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software.
-- Weiher, M. (2020). Can programmers escape the gentle tyranny of call/return? Companion Proceedings of the 4th International Conference on Art, Science, and Engineering of Programming.
-- Weiher, M. (2020). Can programmers escape the gentle tyranny of call/return? https://www.youtube.com/watch?v=Gel8ffr4pqw
-
+- Weiher, M. (2020 a). Can programmers escape the gentle tyranny of call/return? Companion Proceedings of the 4th International Conference on Art, Science, and Engineering of Programming.
+- Weiher, M. (2020 b). Can programmers escape the gentle tyranny of call/return? https://www.youtube.com/watch?v=Gel8ffr4pqw
 
 
 
