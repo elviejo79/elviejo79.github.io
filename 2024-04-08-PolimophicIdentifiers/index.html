@@ -15,7 +15,7 @@ So inorder to implemnet Polimorphicidentifiers we need to do: a scheme.
 
 So how would we use a scheme for example an http ?
 
-let's start with a the creation of gradual example
+Let's create an example, that we will later use to as if it was a test in our class
 
 ```Eiffel http_scheme.e +=
 
@@ -56,6 +56,23 @@ feature
 
 ```
 
+A variable scheme
+------------------------------------------------------------
+The easiest scheme would be one that maps a dictionary (key value)
+So it should be very easy to implente this one.
+
+An HTTP scheme
+-------------------------------------------------------------
+this will the longest scheme I can think of,
+so if I can Implement it,
+then I can later abstract it.
+
+Schemes
+-------------------------------------------------------------
+
+Now that I have *imagined* two instances of a scheme.
+Can we create an deferred (abstract) class that generalizes those two concepts?
+
 ```Eiffel scheme.e +=
 deferred class SCHEME
     creation
@@ -71,12 +88,9 @@ deferred class SCHEME
 end
 ```
 
-
 Welcome to Markdeep. It's the simple way to write plain text with
 _style_. From https://casual-effects.com/markdeep
 
-Section
-===============================================================================
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
