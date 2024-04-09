@@ -1,0 +1,125 @@
+              <meta charset="utf-8" emacsmode="-*- markdown -*-">
+
+                            **Polimorphicidentifiers**
+
+Examples of Polimorphicidentifiers are
+
+   person            //default schema is var
+   person/name       //in a structured the key is name
+   var:person/name   //the same as the previous one but the scheme is explicit
+   file://myfile.txt //the scheme is file
+   http://www.example.com/ //the scheme is http
+
+
+So inorder to implemnet Polimorphicidentifiers we need to do: a scheme.
+
+So how would we use a scheme for example an http ?
+
+let's start with a the creation of gradual example
+
+```Eiffel http_scheme.e +=
+
+feature
+    example_grdual_construction:like Current
+            -- This is in example fo how I would use this class it should be used like test case
+        local
+            l_http:HTTP
+            host = "www.example.com"
+            folder = "folder"
+            subfolder = "subfolder"
+            file = "filename.extension"
+            qry = "query_string=value&var2=value"
+            anchor = "a heding in the document"
+        do
+            l_http := {HTTP}:// host / folder / subfolder / file ? qury # anchor
+
+            check
+                scheme_gets_created_statically: l_http /= void
+                scheme_can_get_created_gradually: "http://www.example.com/folder/subfolder/filename?query_string#anchor" = l_http
+                scheme_pretty_prints: "http://www.example.com/folder/subfolder/filename?query_string#anchor" = l_http
+            end
+
+
+            l_http := "http://www.example.com/folder/subfolder/filename?query_string#anchor"
+
+            check
+                an_scheme_can_be_created_by_string: "http://www.example.com/folder/subfolder/filename?query_string#anchor" = l_http
+            end
+
+            check
+                can_we_ask_things_of_the_service: host = l_http.host
+                what_is_the_path: folder = l_http.path
+                what_is_the_file: file = l_http.file
+            end
+        end
+    end
+
+```
+
+```Eiffel scheme.e +=
+deferred class SCHEME
+    creation
+        make
+    feature -- creation
+
+        make alias ":"
+            -- schemes are supposde to be started statically
+            do
+                create Current
+            end
+    feture
+end
+```
+
+
+Welcome to Markdeep. It's the simple way to write plain text with
+_style_. From https://casual-effects.com/markdeep
+
+Section
+===============================================================================
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.
+
+\begin{equation}
+\iint xy^2\,dx\,dy = \frac{1}{6}x^2y^3
+\end{equation}
+
+Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur.
+
+\begin{equation}
+	u=\frac{-y}{x^2+y^2}\,,\quad
+	v=\frac{x}{x^2+y^2}\,,\quad\text{and}\quad
+	w=0\,.
+\end{equation}
+
+Subsection
+-------------------------------------------------------------------------------
+
+Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+\begin{equation}
+	\begin{bmatrix}
+		1 & x & 0 \\
+		0 & 1 & -1
+	\end{bmatrix}\begin{bmatrix}
+		1  \\
+		y  \\
+		1
+	\end{bmatrix}
+	=\begin{bmatrix}
+		1+xy  \\
+		y-1
+	\end{bmatrix}.
+\end{equation}
+
+
+
+
+<link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
