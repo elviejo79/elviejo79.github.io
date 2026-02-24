@@ -1,0 +1,820 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/templates/company/api/company-api.css">
+
+
+
+    **Testorial: An executable Tutorial**
+    By [Alejandro Garcia](mailto:agarciafdz@gmail.com)
+
+When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
+The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
+
+Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
+
+Well, as a Content Engineer let me tell you that it is never our intention to write documentation that goes stale.
+It's just that there are many moving parts,
+So invariably a section of a good tutorial will always become obsolete almost the moment we publish it.
+It's our continuous fight against bit rot.
+
+However, from the field of DevOps we have techniques of Continuous Integration that helps fight bit rot in Software.
+And we can use the same techniques in our documentation.
+
+By monitoring our source code, and detecting changes we can anticipate parts of our tutorial that will be need to be updated.
+
+This tutorial is focused on content engineers, technical writers, that want to fight bit rot.
+Keep their documentation updated, correct, and provide more value to their organization by integrating the tutorial as part of the suite of integration tests that their software must run.
+
+# Testorial: A Testable Tutorial
+
+Is a Tutorial written for humans that also works
+as a Test in a Continuous Integration (CI) pipeline.
+Becoming valuable for both your customers and your QA Team.
+
+# Why aren't Docs-as-test more popular.
+
+Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
+And it's historical precedent Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
+It should be more popular and it isn't.
+
+If we just search online: Why isn't literate programming more popular? or ask an LLM.
+We would a find that common reason is that:
+
+> The intersection of people that are good programmers
+> and good writers at the same time is pretty small.
+
+I find this is a good point, for general programmers.
+
+But for technical writers, it's the starting position!
+
+Traditional Technical Writing has been seen as a person that can wear two hats:
+
+Programmer:
+ + Reads code, libraries, products
+ + Experiments and learns
+
+Writer
+ + Writes documentation
+ + Edits documentation
+
+But Even though a Technical Writer has the skills to do Testorial.
+It's still not common practice.
+
+And I think it is because
+Testorial asks the Author to wear a *third hat*:
+
+DevOps Engineer
+ + Automatizes
+ + Monitors
+
+
+And if just writing was already difficult.
+You can imagine how difficult it would be to wear all three.
+
+But now it's 2026 And we can count on the help of LLMs!
+which has dramatically increased the size of the intersection.
+
+
+
+So doesn't matter how you started,
+If you were writer fascinated by computers and became a technical writer.
+Or you were a software developer and DevOps engineer that you learned you love of writing later in life, like me.
+
+LLMs can help us become the unicorn at the intersection of the three hats needed to do Docs-as-Tests
+
+# A Map of the Terrain
+
+We have always had to consider the audience when writing a piece.
+Now we need to consider three different audiences:
++ A Student learning your article to develop a new skill.
++ A DevOps engineer in your team that doesn't care about your testorial, except that it will help him with QA for the whole project.
++ Yourself as an author that must consider your own environment, deadlines, etc. and the ones of your audience.
+
+For that I have found it useful to think in terms of the Nine Windows to understand a System [fn:3]
+
+## Nine Windows for a Testorial
+
+first of all we have to think about our Student, but that student is working not only on our program.
+It might be limited by it's current computer, operating system, etc.
+So in order to think about that I like to visualize it like this:
+
+|              | Concept                                                                                    | Examples                      |
+|--------------|--------------------------------------------------------------------------------------------|-------------------------------|
+| Super System | Refers to the external components and environment that currently interact with the problem | A city or Neighborhood        |
+| System       | The current problem on itself                                                              | A house                       |
+| Sub-system   | Parts of the system                                                                        | One of the rooms in the house |
+
+So now we can think about the different audience that our testorial needs to satisfy:
+
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer) | DevOps |
+|--------------|------------------|-----------------------------------------|--------|
+| Super System |                  |                                         |        |
+| System       |                  | This is the visible part of the job     |        |
+| Sub-system   |                  |                                         |        |
+
+
+
+
+Now with this map we can make sense of what we are writing for whom, when.
+
+# A tutorial to write testorial
+
+In the following sections we are going to develop a very simple hello world testorial.
+Beyond teaching how to print "Hello World" in the screen, the goal is to show.
+How to separate which hat to use at what time, and therefore make it easier for you to write testorial.
+Without getting tangled in the confusion.
+
+# Level 0: Configuring a Content Management System
+
+Your organization probably already has setup a CMS.
+And it our testorial must be able to work nicely with it.
+Since we are writing our documents in Markdown many CMS will work.
+[[https://docusaurus.io][Docusaurus]], [[https://jamstack.org][Jamstack]] or just plan [[https://docs.github.com/en/pages/quickstart][Github Pages]] will do.
+
+But any CMS that stores the content as plain text files will do.
+
+## Identify the Window, find our position in the map
+
+When writing Testorials, or any text with multiple audiences.
+We need to make to decide for whom are we writing this section.
+And importantly just devote that section to that audience at that level
+
+The CMS that we (our most probably our organization) uses is part of the Super-System,
+of the Author (Tech-Writer, Content Engineer).
+It is not the main part of the work (writing documentation),
+but it influences how to we write.
+
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)                     | DevOps |
+|--------------|------------------|-------------------------------------------------------------|--------|
+| Super System |                  | Content Management System (CMS) GitHub Pages on our example |        |
+| System       |                  |                                                             |        |
+| Sub-system   |                  |                                                             |        |
+
+
+Now what we are properly located we can proceed to work
+
+## Install GitHub Pages
+
+For simplicity we will use a a CMS GitHub pages.
+
+To do that you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the quickstart).
+
+When you are finish you can see your webpages here: https://$USERNAME.github.io/
+
+And it will look something like this [fn:6]:
+
+![Default GitHub Page](./images/default_github_page.png "Default A GitHub Page")
+
+## Modify a GitHub Page
+
+Now let's modify the default `readme.md` document to shouw that the update mechains works.
+
+Clone your repository to your local machine:
+
+```{.bash .invisible}
+    @author:$ export $USERNAME='jag-academy'
+    @author: exit 0
+```
+
+``` bash
+    @author:$ gh repo clone $USERNAME/$USERNAME.github.io
+    @author: exit 0 # your command executed without errors
+```
+
+That would create your local copy of your repository.
+
+Now you can modify the `readme.md` file.
+
+Like this little script would simply append the current date and time to the readme file
+to make sure it is modified.
+
+```
+   @author:$ cd $USERNAME.github.io
+   @author:$ echo "modified on: $(date +'%Y%m%d %H:%M:%S')" >> README.md
+```
+
+Now do commit and push
+
+
+```
+  @author:$ git commit -am "Append current date and time to trigger regeneration"
+  @author:$ git push
+```
+
+this will start the republishing of the page.
+
+## Check the publishing pipeline
+
+Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it is being renerated.
+
+Observe that the workflow it's on yellow while it is running.
+
+
+You can even check the detail process that is following.
+
+When it finally turns to green means your new website is finished.
+
+![GitHub Workflows](./images/workflows.png "It's in yellow while in process, and green once it correctly finishes")
+
+Got your link again and should see the document with the new date time.
+
+https://$USERNAME.github.io/
+
+## Publishing Pipeline
+
+So publishing pipiline in a sumary is:
+
+1. Create or Modify Markdown document.
+2. Git commit & push
+3. Wait for GitHub Workflow to finish.
+4. See modifief on your website.
+
+# Level 1: A "pure" testorial (No Side Effects)
+
+In functional programming a /pure/ function is one that just makes a calculation and returns you a result.
+It doesn't have any side-effect. Meaning it doesn't store anything in your hard drive.
+It doesn't change any other part of your program. Is just a /pure/ calculation.
+The advantage of a such a function is clear,
+you can be 100% sure that if you call the function with the same input it will always return the same output.
+
+The same way a pure testorial, is one that doesn't change anything in your students, computer.
+Their advantage is that they are the easiest to execute automatically.
+And therefore the easiest ones to add to your testing environment.
+
+- A Student
+- Ourselves as authors
+- Test Engineer or QA
+
+## As a Student
+
+### Lets identify our Window
+
+The tutorial `./docs/hello_world.md` is for the Reader (Student).
+And we have to write thinking of the Student's Super-system (Operating System [OS], Internet availability, other Sass)
+
+|              | Reader (Student)                  | Author (Tech writer, Content  Engineer) | DevOps |
+|--------------|-----------------------------------|-----------------------------------------|--------|
+| Super System | *OS, Internet availability*       | CMS - GitHub Pages                      |        |
+| System       | *Tutorial: ./docs/hello_world.md* |                                         |        |
+| Sub-system   |                                   |                                         |        |
+
+### Just a Basic Tutorial
+
+~~~~~~~{.markdown .save_as=./docs/hello_world.md }
+
+In this example Let's imagine we are a Content Engineer.
+Tasked with writing a tutorial for Bash Shell.
+
+#### Intro
+
+On this tutorial we are going to learn about the `echo` command Bash
+This command prints to the screen what ever you send it.
+
+#### echo :IGNORE:
+
+It's as easy as:
+
+```{.bash .cb_test}
+@reader:$ echo "hello world"
+@reader:hello world
+```
+
+but the great power of Unix is the pipe "|" the idea to connect programs that weren't made to be connected.
+so if we connect 'str_to_upper' to our previous command we will get:
+
+
+```{.prysk .cb_test}
+@reader:$ echo "hello world" | tr '[:lower:]' '[:upper:]'
+@reader:HELLO WORLD
+```
+
+~~~~~~~
+
+## As an Author
+
+In the previous section we saw what a Student would read.
+But how would you as an Author,
+
+How can we make sure that the instructions are correct?
+
+We should be able to execute them, in our computer, or even better in virtual machine or container.
+
+To do that we use a tool called:
+
+[https://github.com/aureliojargas/clitest](`clitest`for Posix ).
+
+Clitest belongs to a category of tools called /snapshot testing/
+that execute one command and then verify the output of that command matches, the expected one.
+
+There are several tools that do snapshot-testing at different levels,
+But so far `clitest` (for posix) has been the most flexible for me.
+
+### Orienting ourselves in the map
+
+Clitest is tool is meant to be used by you as the Author,
+to make sure that every single command in your tutorial executes correctly.
+
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)          | DevOps |
+|--------------|------------------|--------------------------------------------------|--------|
+| Super System |                  | CMS - GitHub Pages                               |        |
+| System       | Tutorial         | *clitest* repeateble execution of the testorial  |        |
+| Sub-system   |                  |                                                  |        |
+
+### Install clitest
+
+Is as easy as:
+
+```
+@author:$ curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
+@author:$ chmod +x clitest
+@author:$ mv clitest ~/.local/bin
+@author:$ clitest --version
+@author:clitest 0.5.0
+```
+
+### Example
+
+Now lets use `clitest` to view what commands are in our tutorial?
+
+```{.bash}
+@author:$ clitest --prefix '   :' --list ./docs/hello_world.md
+```
+
++ observe that in `--prefix '    @author:$'` we are telling it how we expect the lines that are going to be executed in the tutorial should look.
++ in `--list` we are asking to know what lines does `clitest` identifies as executable.
+
+This is how our testorial  works. A tutorial that is a *test suite*, where each command will be checked against reality.
+
+Now you can execute the tests with:
+
+```{.bash}
+@author:$ clitest --prefix '   :' ./docs/hello_world.md
+```
+
+We just removed the `--list` parameter.
+And now we get the report of which "tests" / commands executed and gave the same output as it was expected.
+
+This test is pure, which means that it doesn't change any state, or storage in your computer
+And you can repeat it as many times as you wish.
+
+Try it, just execute `clitest` again.
+
+```{.bash}
+@author:$ clitest --prefix '   :' ./docs/hello_world.md
+```
+
+It will run again without any error.
+
+## As a Tester
+
+Now that the test can be reproduce locally,
+we need to think, on how it is going to be executed on the Continuous Integration servers.
+
+### Orienting ourselves in the map
+
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer) | DevOps                                                             |
+|--------------|------------------|-----------------------------------------|--------------------------------------------------------------------|
+| Super System |                  | CMS - GitHub Pages                      | Continence Integration Pipeline, in our example GitHub Actions     |
+| System       | Tutorial         | clitest                                 | *Testorial.yml workflow* so that it gets executed on every commit. |
+| Sub-system   |                  |                                         |                                                                    |
+
+### GitHub Actions
+
+Is a Continuous Integration server provided by GitHub.
+It has two main components:
+
++ Runners: That are virtual containers that execute your code.
++ Workflows: that are instructions on how to configure said containers and how to execute your code.
+
+### A workflow to run our testorial.
+
+Now we already have a GitHub Workflow running.
+Is the one that takes a commit of our README.md file and then publish it to the web.
+Now we want to modify that workflow, so that it only publishes a new version
+Of the Testorial, if that new version is correctly executed.
+On GitHub Runners (containers).
+
+So our next goal is to configure a workflow that can execute the testorial that we have created.
+In order to do that you can copy the following template, that we explain in detail below.
+
+#### testorial.yml :IGNORE:
+
+```{.yaml .cb_include=./.github/workflow/testorial.yml}
+name: CliTest Tutorial              # (1)
+
+on:                                 # (2)
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:                # (3)
+
+jobs:
+  run-clitest:
+    runs-on: ubuntu-latest          # (4)
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install clitest
+      run: |
+         curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
+         chmod +x clitest
+
+    - name: Run clitest on your testorial
+      run: ./clitest --prefix '   :' ./docs/hello_world.md
+
+```
+
+(1) Name of our workflow
+(2) This is the event that will trigger the execution of our workflow.
+(3) In particular we want to trigger the execution from the GitHub User Interface
+(4) This is the Operating system where the tests are going to run.
+This workflow will execute on every commit, but for demonstration purposes go to where you have this tutorial stored.
+Then GitHub Workflows click on Execute wait a few minutes.
+And see that it is in *green* meaning all the tests executed correctly.
+
+### actionlint
+
+https://github.com/rhysd/actionlint
+
+actionlint is a static checker for GitHub Actions workflow files.
+go install github.com/rhysd/actionlint/cmd/actionlint@latest
+
+### add your workflow testorial.yaml
+
+Now we are ready to include this tutorial as part of our Continuous Integration Pipeline.
+
+In this part you will probably need approval from your QA Department,
+Or lead of Testing.
+But already your tutorial as a script,
+and your workflow is all the documentation they need to make the call.
+On how frequently said test needs to be executed.
+
+Perhaps they will change it, instead of being on every commit it can be done,
+on every Pull Request Merge, so that your tutorial continues to work, on every code change.
+Or maybe is on every Release.
+
+Although in this case, it would too late. Better to do it on every release candidate.
+
+So now you commit your tutorial and workflow to GitHub and it will work for ever.
+
+Now comes your next responsibility, keep the tutorial updated so that when new version of your software.
+
+Or dependencies become more popular.
+
+# Level 2: Storing in Disk
+
+Now that we have completed the hello world.
+
+We will create a 2 nd tutorial, this tutorial will create an actual file that gets stored in the computer.
+Having this effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
+Instead we need to create *isolation*.
+
+## As a student
+
+Now let's suppose we want to create a bash script that says hello world.
+
+### Orienting ourselves in the map
+
+Executing hi.sh from bash is something that happens in the system of the student,
+while reading tutorial: ./docs/hello_wrold.html in their browser.
+The script hi.sh is a sub part of the tutorial for the student.
+
+|              | Reader (Student)               | Author (Tech writer, Content  Engineer) | DevOps                       |
+|--------------|--------------------------------|-----------------------------------------|------------------------------|
+| Super System |                                | CMS - GitHub Pages                      | CI Pipeline (GitHub Actions) |
+| System       | *Execute hi.sh*                | clitest                                 | Testorial.yml workflow       |
+| Sub-system   | *Save hi.sh in the filesystem* |                                         |                              |
+
+### 2nd example: hi.sh
+One of the advantages of programs like bash.
+Is that the same instructions that you write as human,
+can be used to write a script,
+that the computer can execute almost exactly as if a human was typing them in the screen.
+
+Those programs are called: scripts.
+
+
+------
+
+Let's suppose we want to create a bash script,
+that tell us: "Hello World"
+So it is the same as we did typing the instructions,
+but now it will be a script that executes them.
+
+
+```{.bash .cb_save=./hi.sh}
+#!/bin/env bash
+
+echo "Hello World"
+
+
+```
+
+Once we store the file and name it: `hi.sh`
+you need to give it permissions to be used as a program.
+for that you use the command `chmod`
+
+```
+   :$ chmod +x ./hi.sh
+```
+
+What this means is add (+) the executable permission to the `./hi.sh` file.
+Which makes it an executable program you can use like:
+
+
+```
+    :$ ./hi.sh
+    Hello World
+```
+
+As you can see now, the computer is executing the same instructions,
+you typed before.
+But now it's a program.
+
+
+
+------
+
+## As a Teacher
+
+Now if we run the "testorial" tutorial
+on first instance we might get lucky
+
+and be able to execute it:
+
+```
+  :$ clitest --prefix '   :' ./hello_script.md
+```
+
+But if we execute it a second time.
+We will get the error that the file already exists:
+
+
+```
+  :$ clitest --prefix '   :' ./hello_script.md #=> exit -3
+```
+
+Now there are several ways we could handle this:
+
+1. We could write a code block in the beginning of our tutorial, specifying that the script shouldn't exist before execution.
+   That would be a pre-condition.
+2. Make the tutorial clean after it's execution. So deleting the created files, so that the next time is executed the state is known.
+3. Make the testorial execute on a temp directory every time to create isolation. This is the approach favored by the tool `prysk` and `cram` that are other snapshot-testing tools like `clitest` the one we are using now.
+4. And finally make our testorial execute on an *isolated* environment.
+
+### Orienting ourselves in the map
+
+
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)      | DevOps                 |
+|--------------|------------------|----------------------------------------------|------------------------|
+| Super System |                  | clitest, act, actlint and CMS - GitHub Pages | GitHub Actions..       |
+| System       | Executing hi.sh  | ./docs_source/hello_world.md                 | Testorial.yml workflow |
+| Sub-system   | the script hi.sh | hi.sh                                        |                        |
+
+### Act
+
+So to re-create the students environment in our tutorial we would use a Docker image,
+that looks a lot like a the system that our Continuous Integration team uses.
+
+So that would be using act`.
+
+you can verify that you have act installed by:
+
+```
+  $ act --version
+  act version 0.2.67
+```
+
+Now let's create a GitHub workflow that we can use to execute our tutorial as a test.
+
+We will use the help of Claude Code to do this but any of your  agentic coding tutorials can do it.
+
+```bash
+
+% claude --print "Can you generate .github workflow that using the latest ubuntu version install clitest and executes with basic_nushell_tutorial.md ?
+...
+```
+
+
+You can validate the generated workflow with actionlint[fn:5]
+
+```
+% claude --print "Validate .github/workflow/shelldocs.yml using actionlint and correct any error"
+...
+```
+
+And that's it.
+Now you have setup the environment that we will use to run the tests.
+
+#### Now run the test in our container
+now finally we ca locally run the tutorial repetitive tutorial.
+Even if it creates files, or changes databases, etc.
+It can run repetitively.
+
+```
+   ~$ act list
+```
+
+Will give you the list of jobs to run.
+
+
+```
+   ~$ act jobs test_hello_world_tutorial~
+```
+
+Now we are ready to make this tutorial part of our Continuous Integration Tutorial.
+
+## As a DevOps Engineer
+
+Now Fortunately for us,
+Our Act container has the same structure as the one of GitHub Actions.
+Therefore the execution of our new tutorial doesn't require any change.
+Just upload hello_script.md tutorial
+And see how it is running in the GitHub Workflows tab.
+
+# Level 3: Invisible Commands
+
+Now for our final variation on a tutorial.
+
+Let's think of commands that we want to be executed as part of our test,
+but we don't want to be actually read by the Student.
+
+This make us create a new kind of publishing step in our tutorials.
+One Step to execute the output
+
+## As a Student
+
+Some tutorial need to show changes over time for the same time.
+
+As developers the tool that we use to show the differences between two versions of the same file.
+
+so a tutorial to shows changes over time would look like this:
+
+### 3rd Example Hello your_name
+
+------
+
+Let's suppose we want to create a bash script,
+that tell us: "Hello $your_name"
+Where $your_name is parameter we send from the command line.
+
+Well in that case we would need to write a script like this:
+
+
+```
+#!/bin/env bash
+
++ name:-$1:'World'
++ echo "Hello $name"
+- echo "Hello World"
+
+```
+
+What the lines with the `+` sign mean that line was added.
+and the ones with `-` mean that line was deleted.
+And when you see two very similar lines one with the `+` and one with the `-` it means actually the line was replaced.
+like the "Hello World" being replaced by "Hello $name".
+
+Now save your file again as hi.sh. And Execute it like:
+
+```
+    :$ ./hi.sh "Alice"
+    :  Hello Alice
+```
+
+We even have a default value, for the parameter so:
+
+```
+    :$ ./hello.sh
+    :  Hello World
+```
+
+As you can see this new version of our script can take as input values entered by the user.
+
+------
+
+## As a Teacher
+
+Now that we have seen what a student, reads.
+
+How can we *produce* the diff output in a way that stays always consistent.
+But is *NOT* a screenshot or a copy paste of the output of a single time command?
+
+Well you can write it like this, and the output would like the one we want.
+But we don't want the command to be visible for our students.
+That might confuse them,
+so we need to execute the command, and make *only its output* part of the tutorial.
+For that we use `codebraid`.
+
+is a tool for literate programming that allows us to write command in markdown, but by using its special `.cb-run` property
+it can show the output of the command not its input.
+
+```{.bash .cb-run}
+  :$ git diff hi.sh@rev... hi.sh@rev...
+```
+
+to execute it we use:
+
+```
+  :$ codebraid pandoc --from markdown --to html --output ./doc/3rd_level.html
+```
+
+You can see that `codebraid` depends on the execution of `pandoc` good thing  that `pandoc` is the most popular tool used to transform documents from one format to another.
+
+Now if you read the ./doc/3rd_level.html file you would find that it doesn't contain any mention of the `diff` command
+It just shows how it's output. Which is precisely what we want for our student.
+
+One could make the case that making it just a copy paste from our interaction with the `diff` command line would be enough in this situation.
+
+But remember we are building this `testoria` to stand the passage of time.
+So probably a new version of our software or a new library, in the future is going to force us to write another version of the `hi.sh` script and therefore comparing versions with the new one, will be very easy to change for our command.
+
+### Finding this improvement in our map
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)              | DevOps                 |
+|--------------|------------------|------------------------------------------------------|------------------------|
+| Super System |                  | clitest, act, actlint and CMS - GitHub Pages         | GitHub Actions..       |
+| System       | Executing hi.sh  | ./docs_source/hello_world.md                         | Testorial.yml workflow |
+| Sub-system   | the script hi.sh | commands inside our tutorial not for public consumpt |                        |
+
+## As Tester
+
+Now the good news you.
+
+For a tester nothing to do!
+
+Just continue to run the workflows when you decide.
+
+### Finding this improvement in our map
+
+This stage doesn't modify anything on our workflow.
+Just like DevOps like it, because they don't get affected with more work.
+And yet reap the benefits of having a correct tutorial.
+
+
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)              | DevOps                 |
+|--------------|------------------|------------------------------------------------------|------------------------|
+| Super System |                  | clitest, act, actlint and CMS - GitHub Pages         | GitHub Actions..       |
+| System       | Executing hi.sh  | ./docs_source/hello_world.md                         | Testorial.yml workflow |
+| Sub-system   | the script hi.sh | commands inside our tutorial not for public consumpt |                        |
+
+# Tutorial Conclusion :ignore:
+
+And with that we have written a Testorial that covers a wide range of problems you might encounter when putting this ideas into practice.
+
+# What have we learned?
+
++ There are 9 windows / context :: We need to consider all of them when writing executable documentation.
+  But *one by one* if we think of them all at once we get confused. So we can simply decide the following paragraph.
+  For whom is it? and on what of it's contexts (super-system, system or sub-system) and just focus on that level.
+
+
++ Writing executable documentation is hard, but LLMs make it easier:
+  As we have seen we need to use 3 hats to write executable documentation, but fortunately we just need to be proficient in them. with the help of LLMs we can do things that before required experts.
+
++ There is no single tool to do executable documentation.
+  On this tutorial we used:
+  - clitest, to execute our tutorial.
+  - codebraid to  fine invisible executable blocks.
+  - pandoc to create an html version of our tutorial
+  - GitHub Actions to define the CI workflow.
+  - act to simulate locally, how our tutorial would run on GitHub Action servers.
+  - plus our standard text editor!
+
+
+ But your selection of tools is very contextual specific.
+ For example if your team uses another Continuous Integration tool not github actions, then you would need to change the workflow.yml file. To orient yourself you just need to keep in mind the 9 windows.
+
+# Is it worth it?
+
+If you want to have always correct, and up-to-date documentation and help your QA team with *real* test cases.
+It is definitively worth it, now that it has become cheaper to do it, with the help of LLMs
+
+# Footnotes
+
+[fn:7] codex exec "Where is stored the workflow that publishes a markdown to github pages?"
+
+[fn:6] codex exec "How can I take a screenshot from a website from the command line ?"
+
+[fn:5] A linter is program that reads the instructions in a program and gives you suggestions on how to improve it's style. Or points coding that could be errors.
+
+[fn:4] https://github.com/aureliojargas/clitest
+
+[fn:3] [[https://en.wikipedia.org/wiki/Nine_windows][Wikipedia: Nine Windows]]
+
+[fn:2] [[https://en.wikipedia.org/wiki/Literate_programming][wikipedia: Literate Programming]]
+
+[fn:1] MacNamara, Riona:
+[[https://www.youtube.com/watch?v=EnB8GtPuauw][Documentation, Disrupted: How Two Technical Writers Changed Google Engineering Culture]]
+ Write the Docs conference 2015
+
+# OrgDeep :IGNORE:
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
