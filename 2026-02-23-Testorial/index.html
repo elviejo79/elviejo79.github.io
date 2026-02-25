@@ -6,22 +6,22 @@
 
 ![Author finding the article in the terrain](./images/author_terrain.png)
 
-When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
+When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial?
 The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
 
-Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
+Only to feel the frustration of discovering that many instructions in the tutorial are obsolete, no longer work, or maybe they never did.
 
-Well, as a Content Engineer let me tell you that it is never our intention to write documentation that goes stale.
+Well, as a Content Engineer, let me tell you that it is never our intention to write documentation that goes stale.
 It's just that there are many moving parts,
-So invariably a section of a good tutorial will always become obsolete almost the moment we publish it.
+So, invariably, a section of a good tutorial will always become obsolete almost the moment we publish it.
 It's our continuous fight against bit rot.
 
-However, from the field of DevOps we have techniques of Continuous Integration that helps fight bit rot in Software.
+However, from the field of DevOps, we have techniques of Continuous Integration that help fight bit rot in Software.
 And we can use the same techniques in our documentation.
 
-By monitoring our source code, and detecting changes we can anticipate parts of our tutorial that will be need to be updated.
+By monitoring our source code, and detecting changes, we can anticipate parts of our tutorial that will need to be updated.
 
-This tutorial is focused on content engineers, technical writers, that want to fight bit rot.
+This tutorial is focused on content engineers and technical writers who want to fight bit rot.
 Keep their documentation updated, correct, and provide more value to their organization by integrating the tutorial as part of the suite of integration tests that their software must run.
 
 # Testorial: A Testable Tutorial
@@ -33,20 +33,20 @@ Becoming valuable for both your customers and your QA Team.
 # Why aren't Docs-as-test more popular.
 
 Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
-And it's historical precedent Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
-It should be more popular and it isn't.
+And it's historical precedent, Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
+It should be more popular, and it isn't.
 
 If we just search online: Why isn't literate programming more popular? or ask an LLM.
 We would a find that common reason is that:
 
-> The intersection of people that are good programmers
+> The intersection of people who are good programmers
 > and good writers at the same time is pretty small.
 
 I find this is a good point, for general programmers.
 
 But for technical writers, it's the starting position!
 
-Traditional Technical Writing has been seen as a person that can wear two hats:
+Traditional Technical Writing has been seen as a person who can wear two hats:
 
 Programmer:
  + Reads code, libraries, products
@@ -56,7 +56,7 @@ Writer
  + Writes documentation
  + Edits documentation
 
-But Even though a Technical Writer has the skills to do Testorial.
+But even though a Technical Writer has the skills to do Testorial.
 It's still not common practice.
 
 And I think it is because
@@ -70,14 +70,14 @@ DevOps Engineer
 And if just writing was already difficult.
 You can imagine how difficult it would be to wear all three.
 
-But now it's 2026 And we can count on the help of LLMs!
+But now it's 2026, and we can count on LLMs for help!
 which has dramatically increased the size of the intersection.
 
 
 
 So doesn't matter how you started,
-If you were writer fascinated by computers and became a technical writer.
-Or you were a software developer and DevOps engineer that you learned you love of writing later in life, like me.
+If you were a writer fascinated by computers and became a technical writer.
+Or you were a software developer and DevOps engineer, who learned you love writing later in life, like me.
 
 LLMs can help us become the unicorn at the intersection of the three hats needed to do Docs-as-Tests
 
@@ -87,15 +87,15 @@ We have always had to consider the audience when writing a piece.
 Now we need to consider three different audiences:
 + A Student learning your article to develop a new skill.
 + A DevOps engineer in your team that doesn't care about your testorial, except that it will help him with QA for the whole project.
-+ Yourself as an author that must consider your own environment, deadlines, etc. and the ones of your audience.
++ Yourself as an author who must consider your own environment, deadlines, etc., and the ones of your audience.
 
-For that I have found it useful to think in terms of the Nine Windows to understand a System [fn:3]
+For that, I have found it useful to think in terms of the Nine Windows to understand a System [fn:3]
 
-## Nine Windows for a Testorial
+## Nine Windows for a Testorial <!-- JAMS: Esta sección no la entiendo. Al llegar a este punto, no me queda claro qué aporta lo de "nine windows"; creo que hace falta un poco de contexto sobre ese término y para qué sirve, ya que es clave para todo tu tutorial. -->
 
-first of all we have to think about our Student, but that student is working not only on our program.
-It might be limited by it's current computer, operating system, etc.
-So in order to think about that I like to visualize it like this:
+First of all, we have to think about our Student, but that student is working not only on our program.
+It might be limited by their current computer, operating system, etc.
+So, in order to think about that, I like to visualize it like this:
 
 |              | Concept                                                                                    | Examples                      |
 |--------------|--------------------------------------------------------------------------------------------|-------------------------------|
@@ -117,7 +117,7 @@ So now we can think about the different audience that our testorial needs to sat
 
 Now with this map we can make sense of what we are writing for whom, when.
 
-# A tutorial to write testorial
+# A tutorial to write testorial <!-- JAMS: Me encanta como has presentado el hello world, deja muy claro que se espera al finalizar de leerlo -->
 
 In the following sections we are going to develop a very simple hello world testorial.
 Beyond teaching how to print "Hello World" in the screen, the goal is to show.
@@ -127,8 +127,8 @@ Without getting tangled in the confusion.
 # Level 0: Configuring a Content Management System
 
 Your organization probably already has setup a CMS.
-And it our testorial must be able to work nicely with it.
-Since we are writing our documents in Markdown many CMS will work.
+And our testorial must be able to work nicely with it.
+Since we are writing our documents in Markdown many CMS will work. <!-- JAMS: Aquí te sugiero dejar en claro que para que un testorial funcione se debe escribir en Markdown, no lo des por hecho -->
 [[https://docusaurus.io][Docusaurus]], [[https://jamstack.org][Jamstack]] or just plan [[https://docs.github.com/en/pages/quickstart][Github Pages]] will do.
 
 But any CMS that stores the content as plain text files will do.
@@ -136,8 +136,8 @@ But any CMS that stores the content as plain text files will do.
 ## Identify the Window, find our position in the map
 
 When writing Testorials, or any text with multiple audiences.
-We need to make to decide for whom are we writing this section.
-And importantly just devote that section to that audience at that level
+We need to decide whom we are writing this section for.
+And importantly, just devote that section to that audience at that level
 
 The CMS that we (our most probably our organization) uses is part of the Super-System,
 of the Author (Tech-Writer, Content Engineer).
@@ -145,20 +145,20 @@ It is not the main part of the work (writing documentation),
 but it influences how to we write.
 
 
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)                     | DevOps |
-|--------------|------------------|-------------------------------------------------------------|--------|
-| Super System |                  | Content Management System (CMS) GitHub Pages on our example |        |
-| System       |                  |                                                             |        |
-| Sub-system   |                  |                                                             |        |
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)                      | DevOps |
+|--------------|------------------|--------------------------------------------------------------|--------|
+| Super System |                  | Content Management System (CMS): GitHub Pages on our example |        |
+| System       |                  |                                                              |        |
+| Sub-system   |                  |                                                              |        |
 
 
-Now what we are properly located we can proceed to work
+Now that we are properly located, we can proceed to work
 
 ## Install GitHub Pages
 
-For simplicity we will use a a CMS GitHub pages.
+For simplicity, we will use as a CMS GitHub pages.
 
-To do that you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the quickstart).
+To do that, you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the GitHub pages quickstart).
 
 When you are finish you can see your webpages here: https://$USERNAME.github.io/
 
@@ -168,7 +168,7 @@ And it will look something like this [fn:6]:
 
 ## Modify a GitHub Page
 
-Now let's modify the default `readme.md` document to shouw that the update mechains works.
+Now, let's modify the default `readme.md` document to show that the update mechanisms work.
 
 Clone your repository to your local machine:
 
@@ -186,7 +186,7 @@ That would create your local copy of your repository.
 
 Now you can modify the `readme.md` file.
 
-Like this little script would simply append the current date and time to the readme file
+For this example, we will add a little script that simply appends the current date and time to the README file
 to make sure it is modified.
 
 ```
@@ -194,7 +194,7 @@ to make sure it is modified.
    @author:$ echo "modified on: $(date +'%Y%m%d %H:%M:%S')" >> README.md
 ```
 
-Now do commit and push
+Now, do commit and push
 
 
 ```
@@ -202,45 +202,45 @@ Now do commit and push
   @author:$ git push
 ```
 
-this will start the republishing of the page.
+This will start the republishing of the page.
 
 ## Check the publishing pipeline
 
-Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it is being renerated.
+Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it is being regenerated.
 
-Observe that the workflow it's on yellow while it is running.
+Observe that the workflow is on yellow while it is running.
 
 
-You can even check the detail process that is following.
+You can even check the detailed process that follows.
 
-When it finally turns to green means your new website is finished.
+When it finally turns green, it means your new website is finished.
 
 ![GitHub Workflows](./images/workflows.png "It's in yellow while in process, and green once it correctly finishes")
 
-Got your link again and should see the document with the new date time.
+Got your link again, and should see the document with the new date and time.
 
 https://$USERNAME.github.io/
 
 ## Publishing Pipeline
 
-So publishing pipiline in a sumary is:
+So publishing pipeline in a summary is:
 
-1. Create or Modify Markdown document.
+1. Create or modify a Markdown document.
 2. Git commit & push
 3. Wait for GitHub Workflow to finish.
-4. See modifief on your website.
+4. See the modifications on your website.
 
 # Level 1: A "pure" testorial (No Side Effects)
 
-In functional programming a /pure/ function is one that just makes a calculation and returns you a result.
-It doesn't have any side-effect. Meaning it doesn't store anything in your hard drive.
+In functional programming, a /pure/ function is one that just makes a calculation and returns a result.
+It doesn't have any side-effect. Meaning it doesn't store anything on your hard drive.
 It doesn't change any other part of your program. Is just a /pure/ calculation.
 The advantage of a such a function is clear,
-you can be 100% sure that if you call the function with the same input it will always return the same output.
+you can be 100% sure that if you call the function with the same input, it will always return the same output.
 
-The same way a pure testorial, is one that doesn't change anything in your students, computer.
+The same way a pure testorial, is one that doesn't change anything in your students' computesr.
 Their advantage is that they are the easiest to execute automatically.
-And therefore the easiest ones to add to your testing environment.
+And therefore, the easiest ones to add to your testing environment.
 
 - A Student
 - Ourselves as authors
@@ -251,7 +251,7 @@ And therefore the easiest ones to add to your testing environment.
 ### Lets identify our Window
 
 The tutorial `./docs/hello_world.md` is for the Reader (Student).
-And we have to write thinking of the Student's Super-system (Operating System [OS], Internet availability, other Sass)
+And we have to write thinking of the Student's Super-system (Operating System [OS], Internet availability, other SaaS)
 
 |              | Reader (Student)                  | Author (Tech writer, Content  Engineer) | DevOps |
 |--------------|-----------------------------------|-----------------------------------------|--------|
@@ -268,8 +268,8 @@ Tasked with writing a tutorial for Bash Shell.
 
 #### Intro
 
-On this tutorial we are going to learn about the `echo` command Bash
-This command prints to the screen what ever you send it.
+In this tutorial, we are going to learn about the `echo` command in Bash
+This command prints to the screen whatever you send it.
 
 #### echo :IGNORE:
 
@@ -293,26 +293,26 @@ so if we connect 'str_to_upper' to our previous command we will get:
 
 ## As an Author
 
-In the previous section we saw what a Student would read.
-But how would you as an Author,
+In the previous section, we saw what a Student would read.
+But how would you, as an Author,
 
 How can we make sure that the instructions are correct?
 
-We should be able to execute them, in our computer, or even better in virtual machine or container.
+We should be able to execute them on our computer, or even better, in a virtual machine or a container.
 
-To do that we use a tool called:
+To do that, we use a tool called:
 
 [https://github.com/aureliojargas/clitest](`clitest`for Posix ).
 
 Clitest belongs to a category of tools called /snapshot testing/
-that execute one command and then verify the output of that command matches, the expected one.
+that executes one command and then verifies that the output of that command matches the expected one.
 
 There are several tools that do snapshot-testing at different levels,
 But so far `clitest` (for posix) has been the most flexible for me.
 
 ### Orienting ourselves in the map
 
-Clitest is tool is meant to be used by you as the Author,
+Clitest is a tool meant to be used by you as the Author,
 to make sure that every single command in your tutorial executes correctly.
 
 
@@ -354,9 +354,9 @@ Now you can execute the tests with:
 ```
 
 We just removed the `--list` parameter.
-And now we get the report of which "tests" / commands executed and gave the same output as it was expected.
+And now we get the report of which "tests" / commands were executed and gave the same output as expected.
 
-This test is pure, which means that it doesn't change any state, or storage in your computer
+This test is pure, which means that it doesn't change any state or storage in your computer
 And you can repeat it as many times as you wish.
 
 Try it, just execute `clitest` again.
@@ -369,7 +369,7 @@ It will run again without any error.
 
 ## As a Tester
 
-Now that the test can be reproduce locally,
+Now that the test can be reproduced locally,
 we need to think, on how it is going to be executed on the Continuous Integration servers.
 
 ### Orienting ourselves in the map
@@ -387,15 +387,15 @@ Is a Continuous Integration server provided by GitHub.
 It has two main components:
 
 + Runners: That are virtual containers that execute your code.
-+ Workflows: that are instructions on how to configure said containers and how to execute your code.
++ Workflows: That are instructions on how to configure said containers and how to execute your code.
 
 ### A workflow to run our testorial.
 
 Now we already have a GitHub Workflow running.
-Is the one that takes a commit of our README.md file and then publish it to the web.
-Now we want to modify that workflow, so that it only publishes a new version
-Of the Testorial, if that new version is correctly executed.
-On GitHub Runners (containers).
+It is the one that takes a commit of our README.md file and then publishes it to the web.
+Now we want to modify that workflow so that it only publishes a new version
+of the Testorial, if that new version is correctly executed
+on GitHub Runners (containers).
 
 So our next goal is to configure a workflow that can execute the testorial that we have created.
 In order to do that you can copy the following template, that we explain in detail below.
@@ -432,13 +432,13 @@ jobs:
 
 (1) Name of our workflow
 (2) This is the event that will trigger the execution of our workflow.
-(3) In particular we want to trigger the execution from the GitHub User Interface
+(3) In particular, we want to trigger the execution from the GitHub User Interface
 (4) This is the Operating system where the tests are going to run.
-This workflow will execute on every commit, but for demonstration purposes go to where you have this tutorial stored.
-Then GitHub Workflows click on Execute wait a few minutes.
-And see that it is in *green* meaning all the tests executed correctly.
+This workflow will execute on every commit, but for demonstration purposes, go to where you have this tutorial stored.
+Then, in GitHub Workflows, click on Execute, wait a few minutes.
+And see that it is in *green*, meaning all the tests executed correctly.
 
-### actionlint
+### actionlint <!-- JAMS: Viejo, en esta sección te enredas mucho, no queda claro que decisión es responsabilidad del escritor y cuál del area de QA, busca la manera de explicarlo de manera más directa y sin tanto enredo -->
 
 https://github.com/rhysd/actionlint
 
@@ -449,17 +449,17 @@ go install github.com/rhysd/actionlint/cmd/actionlint@latest
 
 Now we are ready to include this tutorial as part of our Continuous Integration Pipeline.
 
-In this part you will probably need approval from your QA Department,
-Or lead of Testing.
-But already your tutorial as a script,
+In this part, you will probably need approval from your QA Department,
+or lead of Testing.
+But already your tutorial is a script,
 and your workflow is all the documentation they need to make the call.
-On how frequently said test needs to be executed.
+On how frequently the said test needs to be executed.
 
-Perhaps they will change it, instead of being on every commit it can be done,
-on every Pull Request Merge, so that your tutorial continues to work, on every code change.
+Perhaps they will change it, instead of being on every commit, it can be done
+on every Pull Request Merge, so that your tutorial continues to work on every code change.
 Or maybe is on every Release.
 
-Although in this case, it would too late. Better to do it on every release candidate.
+Although in this case, it would be too late. Better to do it on every release candidate.
 
 So now you commit your tutorial and workflow to GitHub and it will work for ever.
 
@@ -469,21 +469,20 @@ Or dependencies become more popular.
 
 # Level 2: Storing in Disk
 
-Now that we have completed the hello world.
-
-We will create a 2 nd tutorial, this tutorial will create an actual file that gets stored in the computer.
-Having this effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
-Instead we need to create *isolation*.
+Now that we have completed the "hello world," we will create a second tutorial. 
+This tutorial will create an actual file that gets stored on the computer.
+Having this effect doesn't let us run and re-run the tutorial with `clitest` as easily as before.
+Instead, we need to create *isolation*.
 
 ## As a student
 
-Now let's suppose we want to create a bash script that says hello world.
+Now, let's suppose we want to create a bash script that prints "Hello World"
 
 ### Orienting ourselves in the map
 
 Executing hi.sh from bash is something that happens in the system of the student,
 while reading tutorial: ./docs/hello_wrold.html in their browser.
-The script hi.sh is a sub part of the tutorial for the student.
+The script hi.sh is a subpart of the tutorial for the student.
 
 |              | Reader (Student)               | Author (Tech writer, Content  Engineer) | DevOps                       |
 |--------------|--------------------------------|-----------------------------------------|------------------------------|
@@ -491,11 +490,11 @@ The script hi.sh is a sub part of the tutorial for the student.
 | System       | *Execute hi.sh*                | clitest                                 | Testorial.yml workflow       |
 | Sub-system   | *Save hi.sh in the filesystem* |                                         |                              |
 
-### 2nd example: hi.sh
-One of the advantages of programs like bash.
-Is that the same instructions that you write as human,
+### Second example: `hi.sh`
+One of the advantages of programs like bash
+is that the same instructions that you write as human,
 can be used to write a script,
-that the computer can execute almost exactly as if a human was typing them in the screen.
+that the computer can execute almost exactly as if a human were typing them on the screen.
 
 Those programs are called: scripts.
 
@@ -552,8 +551,7 @@ and be able to execute it:
   :$ clitest --prefix '   :' ./hello_script.md
 ```
 
-But if we execute it a second time.
-We will get the error that the file already exists:
+But if we execute it a second time. we will get the error that the file already exists:
 
 
 ```
@@ -583,9 +581,9 @@ Now there are several ways we could handle this:
 So to re-create the students environment in our tutorial we would use a Docker image,
 that looks a lot like a the system that our Continuous Integration team uses.
 
-So that would be using act`.
+So that would be using `act`.
 
-you can verify that you have act installed by:
+you can verify that you have `act` installed by:
 
 ```
   $ act --version
@@ -594,7 +592,7 @@ you can verify that you have act installed by:
 
 Now let's create a GitHub workflow that we can use to execute our tutorial as a test.
 
-We will use the help of Claude Code to do this but any of your  agentic coding tutorials can do it.
+We will use the help of Claude Code to do this but any of your agentic coding tutorials can do it.
 
 ```bash
 
@@ -614,7 +612,7 @@ And that's it.
 Now you have setup the environment that we will use to run the tests.
 
 #### Now run the test in our container
-now finally we ca locally run the tutorial repetitive tutorial.
+Now, finally, we can locally run the tutorial repeatedly.
 Even if it creates files, or changes databases, etc.
 It can run repetitively.
 
@@ -633,15 +631,15 @@ Now we are ready to make this tutorial part of our Continuous Integration Tutori
 
 ## As a DevOps Engineer
 
-Now Fortunately for us,
-Our Act container has the same structure as the one of GitHub Actions.
+Now, fortunately for us,
+our Act container has the same structure as the one of GitHub Actions.
 Therefore the execution of our new tutorial doesn't require any change.
 Just upload hello_script.md tutorial
 And see how it is running in the GitHub Workflows tab.
 
 # Level 3: Invisible Commands
 
-Now for our final variation on a tutorial.
+Now, for our final variation on a tutorial.
 
 Let's think of commands that we want to be executed as part of our test,
 but we don't want to be actually read by the Student.
@@ -704,8 +702,8 @@ As you can see this new version of our script can take as input values entered b
 
 Now that we have seen what a student, reads.
 
-How can we *produce* the diff output in a way that stays always consistent.
-But is *NOT* a screenshot or a copy paste of the output of a single time command?
+How can we *produce* the diff output in a way that stays always consistent,
+but it is *NOT* a screenshot or a copy-paste of the output of a single time command?
 
 Well you can write it like this, and the output would like the one we want.
 But we don't want the command to be visible for our students.
@@ -713,7 +711,7 @@ That might confuse them,
 so we need to execute the command, and make *only its output* part of the tutorial.
 For that we use `codebraid`.
 
-is a tool for literate programming that allows us to write command in markdown, but by using its special `.cb-run` property
+Codebraid is a tool for literate programming that allows us to write commands in markdown, but by using its special `.cb-run` property
 it can show the output of the command not its input.
 
 ```{.bash .cb-run}
@@ -731,31 +729,31 @@ You can see that `codebraid` depends on the execution of `pandoc` good thing  th
 Now if you read the ./doc/3rd_level.html file you would find that it doesn't contain any mention of the `diff` command
 It just shows how it's output. Which is precisely what we want for our student.
 
-One could make the case that making it just a copy paste from our interaction with the `diff` command line would be enough in this situation.
+One could make the case that making it just a copy-paste from our interaction with the `diff` command line would be enough in this situation.
 
-But remember we are building this `testoria` to stand the passage of time.
+But remember, we are building this `testoria` to stand the passage of time.
 So probably a new version of our software or a new library, in the future is going to force us to write another version of the `hi.sh` script and therefore comparing versions with the new one, will be very easy to change for our command.
 
 ### Finding this improvement in our map
 
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)              | DevOps                 |
-|--------------|------------------|------------------------------------------------------|------------------------|
-| Super System |                  | clitest, act, actlint and CMS - GitHub Pages         | GitHub Actions..       |
-| System       | Executing hi.sh  | ./docs_source/hello_world.md                         | Testorial.yml workflow |
-| Sub-system   | the script hi.sh | commands inside our tutorial not for public consumpt |                        |
+|              | Reader (Student) | Author (Tech writer, Content  Engineer)                 | DevOps                 |
+|--------------|------------------|---------------------------------------------------------|------------------------|
+| Super System |                  | clitest, act, actlint and CMS - GitHub Pages            | GitHub Actions..       |
+| System       | Executing hi.sh  | ./docs_source/hello_world.md                            | Testorial.yml workflow |
+| Sub-system   | the script hi.sh | commands inside our tutorial not for public consumption |                        |
 
 ## As Tester
 
-Now the good news you.
+Now the good news for you.
 
-For a tester nothing to do!
+For a tester, nothing to do!
 
-Just continue to run the workflows when you decide.
+Just keep running the workflows when you decide.
 
 ### Finding this improvement in our map
 
 This stage doesn't modify anything on our workflow.
-Just like DevOps like it, because they don't get affected with more work.
+Just like a DevOps engineer likes it, because they don't get affected by more work.
 And yet reap the benefits of having a correct tutorial.
 
 
@@ -767,7 +765,7 @@ And yet reap the benefits of having a correct tutorial.
 
 # Tutorial Conclusion :ignore:
 
-And with that we have written a Testorial that covers a wide range of problems you might encounter when putting this ideas into practice.
+And with that we have written a Testorial that covers a wide range of problems you might encounter when putting these ideas into practice.
 
 # What have we learned?
 
