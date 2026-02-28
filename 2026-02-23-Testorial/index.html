@@ -1,34 +1,51 @@
 <meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css">
+
 
     **Testorial: An executable Tutorial**
     By [Alejandro Garcia](mailto:agarciafdz@gmail.com)
 
-![Author finding the article in the terrain](./images/author_terrain.png)
+![Author surveying the terrain ](./images/author_terrain.png)
 
 When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
 The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
-
 Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
 
-Well, as a Content Engineer let me tell you that it is never our intention to write documentation that goes stale.
+Well, as a Content Engineer let me tell you that it is never my intention to write documentation that goes stale.
 It's just that there are many moving parts,
 So invariably a section of a good tutorial will always become obsolete almost the moment we publish it.
-It's our continuous fight against bit rot.
+It's our continuous fight against [bit rot](https://en.wikipedia.org/wiki/Software_rot).
 
 However, from the field of DevOps we have techniques of Continuous Integration that helps fight bit rot in Software.
 And we can use the same techniques in our documentation.
+By monitoring our source testorial, and detecting changes we can anticipate parts of our tutorial that will be need to be updated.
 
-By monitoring our source code, and detecting changes we can anticipate parts of our tutorial that will be need to be updated.
+And if this wasn't enough reason to justify the effort to write testorials.
+We need to consider a new Learner: Large Language Models (LLMs)
+LLMS will learn from the documentation that we write.
+So our documentation *can't be a hallucination* it *must be correct* so that the LLM,
+Can learn the correct way to do things.
 
-This tutorial is focused on content engineers, technical writers, that want to fight bit rot.
-Keep their documentation updated, correct, and provide more value to their organization by integrating the tutorial as part of the suite of integration tests that their software must run.
+This tutorial is for Authors, Content Engineers and Technical Writers,
+that want to
+fight bit rot,
+don't waste their Learner's time,
+and provide more value to their organization by doing integration tests
+that their software must run.
 
-# Testorial: A Testable Tutorial
+Testorial
+: A Testable Tutorial
+: Is a Tutorial written so that  humans can comprehend,
+: that also works as a test in a Continuous Integration (CI) pipeline.
+: Becoming valuable for both your Learners and Quality Assurance (QA) Team.
+: synonym: executable documentation
+: related: literate programming, devops
 
-Is a Tutorial written for humans that also works
-as a Test in a Continuous Integration (CI) pipeline.
-Becoming valuable for both your customers and your QA Team.
+Tutorial
+: A goal oriented article, written so that a Learner can aquire a new skill.
+: Every Testorial is a Tutorial, but not every Tutorial is a Testorial.
+
 
 # Why aren't Docs-as-test more popular.
 
@@ -36,7 +53,7 @@ Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
 And it's historical precedent Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
 It should be more popular and it isn't.
 
-If we just search online: Why isn't literate programming more popular? or ask an LLM.
+If we just search online: Why isn't literate programming more popular?
 We would a find that common reason is that:
 
 > The intersection of people that are good programmers
@@ -48,90 +65,183 @@ But for technical writers, it's the starting position!
 
 Traditional Technical Writing has been seen as a person that can wear two hats:
 
-Programmer:
- + Reads code, libraries, products
- + Experiments and learns
+- Programmer:
+  - Read code, libraries, products
+  - Experiments and learns
+- Writer
+  - Writes documentation
+  - Edits documentation
 
-Writer
- + Writes documentation
- + Edits documentation
+![A Tech Writer is the rare intersection between a Programmer and a Writer](./images/venn_programmer_writer.svg)
 
-But Even though a Technical Writer has the skills to do Testorial.
-It's still not common practice.
-
+But Even though a Technical Writer has the skills of Programmer and a Writer.
+We don't see frequently executable documentation or testorials.
 And I think it is because
 Testorial asks the Author to wear a *third hat*:
 
-DevOps Engineer
- + Automatizes
- + Monitors
+- Tester
+ - Automatize test cases
+ - Monitors
 
+And if just writing is already difficult,
+writing, programming and testing is as difficult as finding a unicorn.
 
-And if just writing was already difficult.
-You can imagine how difficult it would be to wear all three.
+![A person that can wear all three hats is as rare as unicorn](./images/venn_programmer_writer_tester.svg)
+
 
 But now it's 2026 And we can count on the help of LLMs!
 which has dramatically increased the size of the intersection.
 
-
-
 So doesn't matter how you started,
 If you were writer fascinated by computers and became a technical writer.
-Or you were a software developer and DevOps engineer that you learned you love of writing later in life, like me.
-
+Or you were a DevOps engineer that you learned you love of writing later in life, like me.
 LLMs can help us become the unicorn at the intersection of the three hats needed to do Docs-as-Tests
 
-# A Map of the Terrain
+![With LLMs it is easier to become a unicorn, or Author of estorials](./images/venn_unicorn.svg)
+
+# A map of the terrain
 
 We have always had to consider the audience when writing a piece.
 Now we need to consider three different audiences:
-+ A Student learning your article to develop a new skill.
-+ A DevOps engineer in your team that doesn't care about your testorial, except that it will help him with QA for the whole project.
-+ Yourself as an author that must consider your own environment, deadlines, etc. and the ones of your audience.
 
-For that I have found it useful to think in terms of the Nine Windows to understand a System [fn:3]
+A Learner
+: A human or LLM using your article to develop a new skill.
 
-## Nine Windows for a Testorial
+A DevOps engineer
+: A person in your organization that doesn't care about your testorial, except that it will help him with QA for the whole project.
 
-first of all we have to think about our Student, but that student is working not only on our program.
-It might be limited by it's current computer, operating system, etc.
-So in order to think about that I like to visualize it like this:
+An Author (yourself)
+: You need consider your own environment, deadlines, etc. and the ones of your audience.
 
-|              | Concept                                                                                    | Examples                      |
-|--------------|--------------------------------------------------------------------------------------------|-------------------------------|
-| Super System | Refers to the external components and environment that currently interact with the problem | A city or Neighborhood        |
-| System       | The current problem on itself                                                              | A house                       |
-| Sub-system   | Parts of the system                                                                        | One of the rooms in the house |
+And for each element of our audince we need to consider distinct levels of understanding.
 
-So now we can think about the different audience that our testorial needs to satisfy:
+Context level
+: Is under what circunstances (outside its control) are we writing.
 
+Artifact level
+: the actual thing (tutorial, testorial, workflow) that the person can maniplate.
 
-|              | Reader (Student) | Author (Tech writer, Content  Engineer) | DevOps |
-|--------------|------------------|-----------------------------------------|--------|
-| Super System |                  |                                         |        |
-| System       |                  | This is the visible part of the job     |        |
-| Sub-system   |                  |                                         |        |
+Parts level
+: Every artifact, will be integrated from sub-parts and you need to think clearly about them considering the audience.
 
 
+Thinking this way, gives us a map of the terran that we are going to traverse while writing.
 
+## Nine windows to write a testorial
+
+Considering our Audiences and the Levels of context we need to understand we can map our article as:
+
+*********************************************************************************************************
+*                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Audience ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢       Context  ║          1st            ║          2nd             ║        3rd             ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+* Level     Artifact  ║                         ║                          ║                        ║   *
+*    ⎢                ║          4th            ║           5th            ║         6th            ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢         Parts  ║         7th             ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎣                ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
 
 Now with this map we can make sense of what we are writing for whom, when.
 
-# A tutorial to write testorial
+# 1st Window an Author's Context
 
-In the following sections we are going to develop a very simple hello world testorial.
-Beyond teaching how to print "Hello World" in the screen, the goal is to show.
-How to separate which hat to use at what time, and therefore make it easier for you to write testorial.
-Without getting tangled in the confusion.
+Let's start with you, the Author and your context.
+Probably your organization already has setup a Content Management System (CMS).
+It is crucial since the CMS defines the workflows that will transform (publish) the testorial from a tutorial.
 
-# Level 0: Configuring a Content Management System
+Since a testorial is also code, and code is plain text
+Any CMS that works with plain text formas like Markdown, Asciidoc, Org-mode will do.
 
-Your organization probably already has setup a CMS.
-And it our testorial must be able to work nicely with it.
-Since we are writing our documents in Markdown many CMS will work.
-[[https://docusaurus.io][Docusaurus]], [[https://jamstack.org][Jamstack]] or just plan [[https://docs.github.com/en/pages/quickstart][Github Pages]] will do.
+Some CMS that work well are:
+[Docusaurus](https://docusaurus.io),
+[GitHub Pages](https://docs.github.com/en/pages/quickstart) Or my personal favorite
+[MarkDeep](https://casual-effects.com/markdeep/)
 
-But any CMS that stores the content as plain text files will do.
+In this tutorial we will assume your using GitHub Pages as your CMS.
+Since it's pretty common and it integrates with GitHub Actions, that is a Continuous Integration pipeline.
+
+Probably your organization already has configured GitHub Pages.
+You just need to understand on which repository on which folder you need to save your testorial markdown document.
+But, in case it is not configured you can check the section [Appendix: Configuring GitHub Pages] Configuring GitHub Pages.
+
+
+What is important to understand is the publishing process of GitHub Pages
+
+## GitHub Pages publishing process
+
+In GitHBu Pages the process of publishing is:
+
+1. Create or Modify Markdown document.
+2. Git commit & push
+3. Wait for GitHub Workflow to finish.
+4. See modifief on your website.
+
+You can monitor the state the of the GitHub Workflow on the page.
+
+Observe that the workflow it's on yellow while it is running.
+
+You can even check the detail instructions that it is executing.
+
+When it finally turns to green means your new page is published.
+
+![Your workflow is in yellow while it runs and green once it passes](./images/workflows.png)
+
+## Now we can identify our position in the map.
+
+*********************************************************************************************************
+*                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Audience ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢       Context  ║ CMS - GitHub Pages      ║          2nd             ║        3rd             ║   *
+*    ⎢                ║        |                ║                          ║                        ║   *
+*    ⎢                ║        |                ║                          ║                        ║   *
+*    ⎢                ║     dictates            ║                          ║                        ║   *
+*    ⎢                ║    organization         ║                          ║                        ║   *
+*    ⎢                ╠════════|════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║        |                ║                          ║                        ║   *
+*    ⎢                ║        |                ║                          ║                        ║   *
+* Level     Artifact  ║        v                ║                          ║                        ║   *
+*    ⎢                ║ Markdown Document ---git push--> GH Workflow ---publish--> Tutorial         ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢         Parts  ║         7th             ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎣                ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+
 
 ## Identify the Window, find our position in the map
 
@@ -154,81 +264,16 @@ but it influences how to we write.
 
 Now what we are properly located we can proceed to work
 
-## Install GitHub Pages
-
-For simplicity we will use a a CMS GitHub pages.
-
-To do that you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the quickstart).
-
-When you are finish you can see your webpages here: https://$USERNAME.github.io/
-
-And it will look something like this [fn:6]:
-
-![Default GitHub Page](./images/default_github_page.png "Default A GitHub Page")
-
-## Modify a GitHub Page
-
-Now let's modify the default `readme.md` document to shouw that the update mechains works.
-
-Clone your repository to your local machine:
-
-```{.bash .invisible}
-    @author:$ export $USERNAME='jag-academy'
-    @author: exit 0
-```
-
-``` bash
-    @author:$ gh repo clone $USERNAME/$USERNAME.github.io
-    @author: exit 0 # your command executed without errors
-```
-
-That would create your local copy of your repository.
-
-Now you can modify the `readme.md` file.
-
-Like this little script would simply append the current date and time to the readme file
-to make sure it is modified.
-
-```
-   @author:$ cd $USERNAME.github.io
-   @author:$ echo "modified on: $(date +'%Y%m%d %H:%M:%S')" >> README.md
-```
-
-Now do commit and push
 
 
-```
-  @author:$ git commit -am "Append current date and time to trigger regeneration"
-  @author:$ git push
-```
+# A tutorial to write testorial
 
-this will start the republishing of the page.
-
-## Check the publishing pipeline
-
-Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it is being renerated.
-
-Observe that the workflow it's on yellow while it is running.
+In the following sections we are going to develop a very simple hello world testorial.
+Beyond teaching how to print "Hello World" in the screen, the goal is to show.
+How to separate which hat to use at what time, and therefore make it easier for you to write testorial.
+Without getting tangled in the confusion.
 
 
-You can even check the detail process that is following.
-
-When it finally turns to green means your new website is finished.
-
-![GitHub Workflows](./images/workflows.png "It's in yellow while in process, and green once it correctly finishes")
-
-Got your link again and should see the document with the new date time.
-
-https://$USERNAME.github.io/
-
-## Publishing Pipeline
-
-So publishing pipiline in a sumary is:
-
-1. Create or Modify Markdown document.
-2. Git commit & push
-3. Wait for GitHub Workflow to finish.
-4. See modifief on your website.
 
 # Level 1: A "pure" testorial (No Side Effects)
 
@@ -261,35 +306,16 @@ And we have to write thinking of the Student's Super-system (Operating System [O
 
 ### Just a Basic Tutorial
 
-~~~~~~~{.markdown .save_as=./docs/hello_world.md }
+<div class="example">
+<div class="view">
+Browser
+<div class="window browser">
+<div class="buttons"></div>
+<div class="tab">Example</div>
+<div class="menu"> <- -> ⟳ <div class="url">/Users/morgan/example.md.html</div></div>
+<iframe src="hello_world.html" content="text/html;charset=UTF-8"></iframe>
+</div></div></div>
 
-In this example Let's imagine we are a Content Engineer.
-Tasked with writing a tutorial for Bash Shell.
-
-#### Intro
-
-On this tutorial we are going to learn about the `echo` command Bash
-This command prints to the screen what ever you send it.
-
-#### echo :IGNORE:
-
-It's as easy as:
-
-```{.bash .cb_test}
-@reader:$ echo "hello world"
-@reader:hello world
-```
-
-but the great power of Unix is the pipe "|" the idea to connect programs that weren't made to be connected.
-so if we connect 'str_to_upper' to our previous command we will get:
-
-
-```{.prysk .cb_test}
-@reader:$ echo "hello world" | tr '[:lower:]' '[:upper:]'
-@reader:HELLO WORLD
-```
-
-~~~~~~~
 
 ## As an Author
 
@@ -815,6 +841,114 @@ It is definitively worth it, now that it has become cheaper to do it, with the h
 [[https://www.youtube.com/watch?v=EnB8GtPuauw][Documentation, Disrupted: How Two Technical Writers Changed Google Engineering Culture]]
  Write the Docs conference 2015
 
+# 9 windows filled
+
+
+*********************************************************************************************************
+*                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Audience ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    *
+*                                                                                                       *
+*                          Learner                   Tech Writer               DevOps                   *
+*    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢       Context  ║ Operating System        ║  CMS GitHub Pages        ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║ IDE (VS Code)           ║  Act container image ---copies--> Git Hub Runner  ║   *
+*    ⎢                ║                         ║      ^                   ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════|═══════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║      |                   ║                        ║   *
+*    ⎢                ║                         ║      |                   ║                        ║   *
+* Level     Artifact  ║ Tutorial.md <--cb pandoc--- Testorial.md ----clitest---> Workflow.yml       ║   *
+*    ⎢                ║     |                   ║   ^          ^           ║                        ║   *
+*    ⎢                ║     |                   ║   |          |           ║                        ║   *
+*    ⎢                ║   types                 ║   cb include cb run      ║                        ║   *
+*    ⎢                ║     |                   ║   |          |           ║                        ║   *
+*    ⎢                ╠═════|═══════════════════╬═══|══════════|═══════════╬════════════════════════╣   *
+*    ⎢                ║     |                   ║   |          |           ║                        ║   *
+*    ⎢                ║     |                   ║   |          |           ║                        ║   *
+*    ⎢                ║     v                   ║   |          |           ║                        ║   *
+*    ⎢         Parts  ║ hello.sh                ║  hello.sh   diff         ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎣                ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+
+
+
+# Appendix: Configuring GitHub Pages
+## Install GitHub Pages
+
+For simplicity we will use a a CMS GitHub pages.
+
+To do that you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the quickstart).
+
+When you are finish you can see your webpages here: https://$USERNAME.github.io/
+
+And it will look something like this [fn:6]:
+
+![Default GitHub Page](./images/default_github_page.png "Default A GitHub Page")
+
+## Modify a GitHub Page
+
+Now let's modify the default `readme.md` document to shouw that the update mechains works.
+
+Clone your repository to your local machine:
+
+```{.bash .invisible}
+    @author:$ export $USERNAME='jag-academy'
+    @author: exit 0
+```
+
+``` bash
+    @author:$ gh repo clone $USERNAME/$USERNAME.github.io
+    @author: exit 0 # your command executed without errors
+```
+
+That would create your local copy of your repository.
+
+Now you can modify the `readme.md` file.
+
+Like this little script would simply append the current date and time to the readme file
+to make sure it is modified.
+
+```
+   @author:$ cd $USERNAME.github.io
+   @author:$ echo "modified on: $(date +'%Y%m%d %H:%M:%S')" >> README.md
+```
+
+Now do commit and push
+
+
+```
+  @author:$ git commit -am "Append current date and time to trigger regeneration"
+  @author:$ git push
+```
+
+this will start the republishing of the page.
+
+## Check the publishing pipeline
+
+Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it is being renerated.
+
+Observe that the workflow it's on yellow while it is running.
+
+You can even check the detail process that is following.
+
+When it finally turns to green means your new website is finished.
+
+![Your workflow is in yellow while it runs and green once it passes](./images/workflows.png)
+
+Got your link again and should see the document with the new date time.
+
+https://$USERNAME.github.io/
+
+
+
 # OrgDeep :IGNORE:
-<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
-<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+<script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+<script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script>
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

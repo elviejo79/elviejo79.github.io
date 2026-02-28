@@ -1,0 +1,155 @@
+/* Override Markdeep's iframe styles - reset to allow our specific rules */
+.md iframe:not(.markdeep) {
+    display: block;
+    border: none !important;
+    margin: 0 !important;
+    /* Don't set width/height here - let specific rules handle it */
+}
+
+/* Window iframes need specific sizing - override Markdeep */
+.md div.window iframe {
+    width: 355px !important;
+    height: 600px !important; /* this isthe actual iframe height */
+    background: #FFF !important;
+    border: none !important;
+    margin-bottom: -120px !important;
+    border-radius: 0 !important;
+}
+
+/* Template iframes need specific sizing - override Markdeep */
+.md .template iframe {
+    width: 800px !important;
+    height: 450px !important;
+    border-radius: 16px !important;
+    background: #fff !important;
+}
+
+
+
+div.example {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: flex-start;
+   padding-top: 24px;
+   position: relative;
+   height: 550px;
+}
+
+.md div.view {
+   text-align: center !important;
+   display: inline-block;
+   font-weight: 900;
+   text-shadow: 0px 1px 4px rgba(1,1,1,0.5);
+   flex: 0 0 90%;
+   color: white;
+}
+
+.md div.view * {
+   text-shadow: none;
+   font-weight: 400;
+}
+
+
+div.example div.window {
+   width: 100%;
+   height: 500px; /* this is the black frame behind the iframe */
+   font-family: Tahoma, Arial, sans-serif;
+   text-align:left;
+   border: 1px solid #44A;
+   color: #fff;
+   background: black;
+   font-size: 11px;
+   padding-left: 0px;
+   padding-right: 0px;
+   padding-bottom: 0px;
+   padding-top: 20px;
+   position: relative;
+   overflow: hidden;
+   user-select: none;
+   border: 1px solid #444;
+   border-radius: 9px;
+   box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.5);
+}
+
+.md div.window iframe {
+   width: calc(100% / 0.8) !important;
+   background: #FFF;
+   height: 200px;
+   border: none;
+   margin-bottom: -120px;
+   overflow: hidden;
+   transform-origin: 0 0;
+   transform: scale(0.8);
+}
+
+div.window div.buttons::before {
+   content: "⬤ ⬤ ⬤";
+   position: absolute;
+   top: -3px;
+   padding-left: 9px;
+   font-size: 8px;
+   color: #444;
+}
+
+div.window div.caption, div.window div.tab {
+   position: absolute;
+   top: -1px;
+   width: 100%;
+   text-align: center;
+   padding-bottom: 4px;
+}
+
+div.window div.tab {
+   text-align: left;
+   left: 60px;
+   border-top-left-radius: 7px;
+   border-top-right-radius: 7px;
+   border: 1px solid #444;
+   border-bottom: none;
+   background: #222;
+   margin-top: 2px;
+   height: 15px;
+   padding-left: 16px;
+   width: 90px;
+   line-height: 15px;
+}
+
+div.window div.tab::before {
+    content: "×";
+    font-size: 120%;
+    position: absolute;
+    right: 5px;
+}
+
+div.window div.tab::after {
+   content: "+";
+   position: relative;
+   left: 55px;
+   font-size: 16px;
+}
+
+div.window div.menu {
+   font-family: monospace;
+   border-top: 1px solid #444;
+   background: #222;
+   width: 100%;
+   height: 20px;
+   padding-left: 10px;
+   font-size: 20px;
+   line-height: 17px;
+   padding-top: 0px;
+}
+
+div.window div.url {
+   font-size: 9px;
+   font-weight:300;
+   font-family: Arial;
+   display:inline-block;
+   border-radius: 6px;
+   width: 260px;
+   height: 14px;
+   padding: 0px 10px;
+   position: relative;
+   top: -2px;
+   border: 1px solid #444;
+}

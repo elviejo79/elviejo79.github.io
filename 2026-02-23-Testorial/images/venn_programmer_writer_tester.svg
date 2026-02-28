@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xml:lang="en"
+   width="4.8260822in"
+   height="4.500474in"
+   viewBox="-220 0 482.60821 450.04737"
+   version="1.1"
+   id="svg173"
+   sodipodi:docname="venn_programmer_writer_tester.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs177">
+    <rect
+       x="58.017529"
+       y="71.485374"
+       width="112.56285"
+       height="87.067619"
+       id="rect4350" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview175"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="in"
+     showgrid="false"
+     inkscape:zoom="1.1653645"
+     inkscape:cx="-15.445811"
+     inkscape:cy="228.25476"
+     inkscape:window-width="1278"
+     inkscape:window-height="1577"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g146"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <title
+     id="title110">The Web Platform: Roles and Relationships of Key Specifications</title>
+  <style
+     id="style112">
+svg {            
+    font-size: 20px;
+    font-family: Tahoma, sans-serif;
+    isolation: isolate;
+}
+.style {
+    color: orangered;
+    text-anchor: end;
+}
+.markup {
+    color: royalblue;
+    text-anchor: end;
+}
+.scripts {
+    color: darkgreen;
+    text-anchor: start;
+}
+.protocols {
+    color: darkorchid;
+    text-anchor: start;
+}
+.venn {
+    fill: currentColor;
+    fill-opacity: 0.3;
+    stroke: currentColor;
+    stroke-opacity: 0.7;
+    stroke-width: 5;
+    mix-blend-mode: overlay;
+}
+.web {
+    fill: #ff9;
+    stroke: black;
+    stroke-width: 3;
+}
+.concern .sub {
+    font-size: 80%;
+}
+.heading {
+    font-weight: bold;
+    font-size: 120%;
+    fill: currentColor;
+    stroke: black;
+    stroke-width: 0.6;
+    letter-spacing: 1px;
+}
+.heading.sub {
+    font-size: 85%;
+    text-anchor: middle;
+}
+    </style>
+  <g
+     class="style"
+     id="g146"
+     transform="translate(-1.6081799,-1.6761197)"
+     style="display:inline">
+    <g
+       id="g1980">
+      <ellipse
+         style="opacity:0.5;fill:#ed6a5a;fill-opacity:1;fill-rule:evenodd;stroke:#ed6a5a;stroke-width:2.39271;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path695"
+         cx="-75.257172"
+         cy="155.27547"
+         rx="141.93829"
+         ry="149.52995" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:25px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+         x="-4.5448847"
+         y="70.373001"
+         id="text8832"><tspan
+           sodipodi:role="line"
+           id="tspan8830"
+           style="font-size:25px;stroke-width:1.04167"
+           x="-4.5448847"
+           y="70.373001">* Programmer</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:13.8889px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+         x="-3.6020486"
+         y="98.982841"
+         id="text8832-7-26"><tspan
+           sodipodi:role="line"
+           style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+           x="-3.6020486"
+           y="98.982841"
+           id="tspan42665">* Tech</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+           x="-3.6020486"
+           y="116.34396"
+           id="tspan71356">Writer</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+           x="-3.6020486"
+           y="133.70509"
+           id="tspan9743-8" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:16.6667px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+         x="-206.97021"
+         y="121.46812"
+         id="text8832-7-3"><tspan
+           sodipodi:role="line"
+           id="tspan8830-5-6"
+           style="font-size:16.6667px;text-align:start;text-anchor:start;stroke-width:1.04167"
+           x="-206.97021"
+           y="121.46812">+ Read code</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:16.6667px;text-align:start;text-anchor:start;stroke-width:1.04167"
+           x="-206.97021"
+           y="142.3015"
+           id="tspan9741-0">+ Read APIs</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:16.6667px;text-align:start;text-anchor:start;stroke-width:1.04167"
+           x="-206.97021"
+           y="163.13487"
+           id="tspan9743-6">+ Experiment</tspan></text>
+    </g>
+    <g
+       id="g1967">
+      <ellipse
+         style="opacity:0.5;fill:#9bc1bc;fill-opacity:1;fill-rule:evenodd;stroke:#9bc1bc;stroke-width:2.18487;stroke-opacity:1"
+         id="path695-3"
+         cx="121.18562"
+         cy="152.29851"
+         rx="141.93829"
+         ry="149.52995" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:25px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+         x="217.7645"
+         y="76.501152"
+         id="text8832-3"><tspan
+           sodipodi:role="line"
+           id="tspan8830-56"
+           style="font-size:25px;stroke-width:1.04167"
+           x="225.71127"
+           y="76.501152">* Writer  </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:16.6667px;font-family:sans-serif;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+         x="214.76308"
+         y="110.10891"
+         id="text8832-7-2"><tspan
+           sodipodi:role="line"
+           style="font-size:16.6667px;text-align:end;text-anchor:end;stroke-width:1.04167"
+           x="214.76308"
+           y="110.10891"
+           id="tspan9741-1">+ Story telling</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:16.6667px;text-align:end;text-anchor:end;stroke-width:1.04167"
+           x="214.76308"
+           y="130.94229"
+           id="tspan14836">+ Editing</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:16.6667px;text-align:end;text-anchor:end;stroke-width:1.04167"
+           x="214.76308"
+           y="151.77567"
+           id="tspan9743-2">+ Empathy</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Tester"
+     transform="translate(-1.6081799,-1.6761197)"
+     style="display:inline">
+    <g
+       id="g1718">
+      <ellipse
+         style="opacity:0.5;fill:#f4f1bb;fill-opacity:1;fill-rule:evenodd;stroke:#f4f1bb;stroke-width:2.18487;stroke-opacity:1"
+         id="path695-3-6"
+         cx="16.25931"
+         cy="301.1011"
+         rx="141.93829"
+         ry="149.52995" />
+      <g
+         id="g73007">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:16.6667px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+           x="-30.877062"
+           y="359.7659"
+           id="text8832-7"><tspan
+             sodipodi:role="line"
+             id="tspan8830-5"
+             style="font-size:16.6667px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-30.877062"
+             y="359.7659">+ Testing</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:16.6667px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-30.877062"
+             y="380.59927"
+             id="tspan9743">+ Monitoring</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:13.8889px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+           x="44.633045"
+           y="242.88458"
+           id="text8832-7-26-7-3"><tspan
+             sodipodi:role="line"
+             style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="44.633045"
+             y="242.88458"
+             id="tspan29568-5">* QA Analyst</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:13.8889px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+           x="-87.723175"
+           y="206.70059"
+           id="text8832-7-26-7-3-2"><tspan
+             sodipodi:role="line"
+             style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-87.723175"
+             y="206.70059"
+             id="tspan51717">* Sw  Eng</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-87.723175"
+             y="224.06172"
+             id="tspan49135">in Test</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-87.723175"
+             y="241.42284"
+             id="tspan53061">(SDET)</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:13.8889px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-87.723175"
+             y="258.78397"
+             id="tspan49137" /></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:25px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+           x="-22.298443"
+           y="418.60825"
+           id="text8832-70"><tspan
+             sodipodi:role="line"
+             id="tspan8830-9"
+             style="font-size:25px;stroke-width:1.04167"
+             x="-22.298443"
+             y="418.60825">* Tester</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:11.1111px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+           x="-114.45335"
+           y="259.27036"
+           id="text8832-7-3-9-3"><tspan
+             sodipodi:role="line"
+             style="font-size:11.1111px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-114.45335"
+             y="259.27036"
+             id="tspan43301-9">+ Test Automation</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.1111px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="-114.45335"
+             y="273.15924"
+             id="tspan51123">+ Continous Delivery</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:11.1111px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04167"
+           x="66.392395"
+           y="258.82614"
+           id="text8832-7-3-9-9"><tspan
+             sodipodi:role="line"
+             style="font-size:11.1111px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="66.392395"
+             y="258.82614"
+             id="tspan43301-3">+ Executable </tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.1111px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="66.392395"
+             y="272.71503"
+             id="tspan46299">Specification</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.1111px;text-align:start;text-anchor:start;stroke-width:1.04167"
+             x="66.392395"
+             y="286.60388"
+             id="tspan46301">(BDD)</tspan></text>
+        <g
+           id="XMLID_4_"
+           transform="matrix(0.69131848,0,0,0.66816359,90.795781,144.58516)">
+          <path
+             id="XMLID_6_"
+             d="m -128.75,90.15 0.04,0.06 c 0.08,-0.53 0.66,-3.3 0.35,-6.92 0.27,3.62 -0.32,6.41 -0.39,6.86 z"
+             style="fill:none" />
+          <path
+             id="XMLID_25_"
+             d="m -128.18,90.85 -0.48,-0.55 0.36,0.6 c 0.04,-0.01 0.08,-0.03 0.12,-0.05 z"
+             style="fill:none" />
+          <path
+             id="XMLID_26_"
+             d="m -101.64,32.91 1.43,-8.85 c -0.45,2.74 -0.88,5.27 -1.43,8.85 z"
+             style="fill:#e6eeef" />
+          <path
+             id="XMLID_27_"
+             d="m -116.67,32.81 c 0.04,0.11 0.08,0.23 0.13,0.36 -0.01,-0.09 -0.02,-0.19 -0.03,-0.28 z"
+             style="fill:#e6eeef" />
+          <path
+             id="XMLID_30_"
+             d="m -44.92,76.08 c -0.42,-1.16 -0.96,-0.76 -1.16,0.12 -0.17,0.78 -0.41,1.58 -0.71,2.39 -0.19,0.51 -0.41,1.01 -0.65,1.48 -1.7,3.4 -4.56,5.89 -6.51,7.3 -0.54,0.39 -1.25,-0.19 -0.97,-0.79 1.04,-2.27 2.3,-5.95 1.45,-9.29 -0.79,-3.13 -5.42,-6.12 -7.66,-10.29 -1.53,-2.85 -1.01,-7.34 -1.1,-8.5 -0.07,-0.96 -0.3,-1.89 -0.59,-2.7 -0.57,-1.66 -1.16,-2 -1.1,-1.25 0.2,1.86 0.13,4.82 -1.6,7.51 -1,1.55 -2.29,2.59 -2.89,3.04 -0.98,0.72 -1.94,1.2 -2.79,1.53 -0.66,0.26 -1.27,-0.43 -0.97,-1.07 0.51,-1.08 1,-2.54 1.07,-4.3 0.05,-1.01 0.12,-2.86 -0.87,-4.71 -1.19,-2.23 -2.84,-2.41 -4.95,-4.44 -0.16,-0.15 -0.55,-0.12 -0.47,0.21 0.34,1.29 0.9,2.78 1.85,4.43 0.28,0.49 -0.1,1.09 -0.66,1.05 -1.34,-0.1 -3.26,-0.5 -5.05,-1.85 -2.06,-1.56 -2.88,-3.6 -3.14,-4.25 -1.27,-3.24 0.05,-4.91 -1.19,-7.92 -0.67,-1.63 -1.45,-2.74 -2.45,-3.4 0,0 0,0 0,0 l -2.48,-1.7 c 1.39,-4.26 1.35,-7.39 0.89,-11.22 -0.36,-3.05 -1.34,-5.87 -2.84,-8.16 -0.91,-1.38 -1.66,-2.17 -2.5,-2.66 -0.23,-0.13 -1.1,-0.66 -2.29,-0.76 -0.76,-0.07 -1.06,0.09 -1.14,0.13 -0.84,0.46 -0.85,1.74 -0.85,1.89 -0.09,0.6 -0.18,1.16 -0.27,1.71 l 0.07,-0.42 c 0,0 0.77,-1.78 2.73,-0.4 1.7,1.2 6.67,7.95 3.25,17.72 -0.3,-0.13 -2.93,-1.72 -4.77,-2.51 -1.56,-0.67 -3.43,-1.05 -3.43,-1.05 -0.93,-0.16 -1.96,-0.06 -1.96,-0.06 -0.37,-0.1 -1.58,-0.26 -3.2,1.5 -1.89,2.07 -2.15,4.98 -3.57,7.95 -2.08,4.35 -6.36,4.91 -8.83,5.31 -0.49,0.08 -0.85,-0.39 -0.52,-0.78 1.27,-1.5 3.75,-3.51 4,-6.42 0.13,-1.51 -0.22,-3.31 -0.52,-5.01 -0.05,1.47 -0.59,3.3 -2.38,5.17 -4.08,4.27 -10.43,1.61 -10.43,1.61 l -0.88,-1.43 c -5,3.78 -12.72,13.51 -19.33,22.89 2.54,0.3 9.79,2.33 14.11,5.9 4.98,4.12 6.49,9.49 6.81,13.72 0.31,3.62 -0.27,6.39 -0.35,6.92 l 0.05,0.09 0.48,0.55 c 0.01,0 0.02,-0.01 0.03,-0.01 5.06,-2.43 9.57,-4.61 10.75,-5.06 0.23,-0.09 0.53,-0.12 0.88,-0.12 2.41,0 9.29,1.62 15.81,1.62 0.57,0 0,0 0.59,-0.03 2.26,-0.38 10.78,-1.94 18.17,-8.26 0,0 1.36,-0.92 2.49,-2.12 0.57,-0.6 1.59,-0.13 1.56,0.7 -0.1,2.91 -1.7,6.08 -3.81,8.84 -4.53,5.93 -9.84,6.48 -9.84,6.48 L -77.7,128 H -42 V 81 c -1,-0.92 -2.31,-3.21 -2.92,-4.92 z M -107.2,56.97 c -0.79,0.79 -1.89,1.29 -3.09,1.29 -0.93,0 -1.79,-0.3 -2.5,-0.79 -1.67,-0.84 -2.83,-2.54 -2.83,-4.52 0,-1.4 0.57,-2.67 1.49,-3.59 0.92,-0.92 2.19,-1.49 3.59,-1.49 1.4,0 2.67,0.57 3.59,1.49 0.92,0.92 1.49,2.2 1.49,3.59 0,1.13 -0.39,2.18 -1.03,3.02 -0.18,0.37 -0.42,0.71 -0.71,1 z"
+             style="fill:#e6eeef" />
+          <polygon
+             id="XMLID_31_"
+             points="-103.11,29.49 -103.6,32.86 "
+             style="fill:#e6eeef" />
+          <path
+             id="XMLID_34_"
+             d="m -81.71,86.41 c 2.11,-2.76 3.71,-5.93 3.81,-8.84 0.03,-0.83 -0.98,-1.3 -1.56,-0.7 -1.14,1.2 -2.49,2.12 -2.49,2.12 -7.39,6.32 -15.91,7.88 -18.17,8.26 -0.59,0.03 -0.02,0.03 -0.59,0.03 -6.52,0 -13.39,-1.62 -15.81,-1.62 -0.35,0 -0.64,0.03 -0.88,0.12 -1.18,0.44 -5.69,2.63 -10.75,5.06 -0.01,0 -0.02,0.01 -0.03,0.01 -0.04,0.02 -0.12,0.06 -0.12,0.06 v 0 c 0.06,-0.45 0.21,-4 -0.06,-7.61 -0.32,-4.23 -1.83,-9.61 -6.81,-13.72 -4.32,-3.57 -11.57,-5.6 -14.11,-5.9 6.62,-9.38 14.34,-19.11 19.33,-22.89 l -0.62,-1 -1.24,-2 c -5.9,4.45 -14.81,15.09 -20.82,23.63 -4.76,6.71 -8.54,12.84 -10.66,17.24 -1.83,3.8 -0.76,7.47 0.16,9.04 2.39,4.11 8.19,10.28 8.98,11.11 0.57,0.62 3.37,3.4 7.79,3.4 1.19,0 2.39,-0.21 3.56,-0.61 2.99,-1.02 9.68,-4.19 16.28,-7.34 l 1.7,-0.82 c 3.53,-1.7 7.17,-3.45 8.45,-3.99 0.62,0.04 1.79,0.28 2.93,0.5 2.58,0.52 6.06,1.4 10.13,1.48 L -89.58,128 h 3.68 0.38 1.22 6.6 L -91.55,92.89 c 0,0 5.31,-0.55 9.84,-6.48 z m -71.54,-0.64 c -1.57,0 -2.85,-1.28 -2.85,-2.85 0,-1.58 1.28,-2.85 2.85,-2.85 1.57,0 2.85,1.26 2.85,2.85 0,1.57 -1.27,2.85 -2.85,2.85 z"
+             style="fill:#b5c3c6" />
+          <path
+             id="XMLID_35_"
+             d="m -115.35,16.92 c 0.07,-0.79 1.02,-1.53 2.33,-0.32 1.91,1.76 2.49,4.13 2.66,5.65 0.18,0.09 0.37,0.19 0.56,0.3 0.96,-0.47 2.08,-0.87 2.98,-0.98 -0.23,-1.56 -0.66,-3.09 -1.43,-4.56 -1.04,-1.98 -3.51,-4.42 -5.86,-4.44 -2.35,-0.03 -2.55,1.24 -2.55,1.24 l -1.38,8.73 c 0.59,-0.2 1.17,-0.45 1.8,-0.67 0.33,-1.76 0.84,-4.43 0.89,-4.95 z"
+             style="fill:#b5c3c6" />
+          <path
+             id="XMLID_36_"
+             d="m -115.35,16.92 c -0.05,0.52 -0.55,3.18 -0.89,4.94 0.22,-0.08 0.44,-0.15 0.67,-0.21 0.61,-0.17 1.27,-0.27 2.03,-0.26 0.8,0.03 1.88,0.2 3.18,0.85 -0.17,-1.52 -0.75,-3.89 -2.66,-5.65 -1.31,-1.19 -2.26,-0.45 -2.33,0.33 z"
+             style="fill:#aa7673" />
+          <path
+             id="XMLID_37_"
+             d="m -110.53,58.02 c -0.82,0 -1.58,-0.21 -2.26,-0.55 0.71,0.49 1.57,0.79 2.5,0.79 1.2,0 2.3,-0.49 3.09,-1.29 0.3,-0.29 0.53,-0.64 0.73,-1.01 -0.15,0.19 -0.29,0.39 -0.47,0.56 -0.92,0.93 -2.19,1.5 -3.59,1.5 z"
+             style="fill:#ffffff" />
+          <path
+             id="XMLID_39_"
+             d="m -101.64,32.91 c 0,0 1.87,0.38 3.43,1.05 1.84,0.79 4.47,2.39 4.77,2.51 3.42,-9.77 -1.54,-16.52 -3.25,-17.72 -1.96,-1.38 -2.73,0.4 -2.73,0.4 l -0.07,0.42 -0.73,4.49 z"
+             style="fill:#aa7673" />
+          <path
+             id="XMLID_42_"
+             d="m -106.94,49.35 c -0.92,-0.92 -2.2,-1.49 -3.59,-1.49 -1.41,0 -2.67,0.57 -3.59,1.49 -0.92,0.92 -1.49,2.2 -1.49,3.59 0,1.98 1.16,3.69 2.83,4.52 0.68,0.34 1.44,0.55 2.26,0.55 1.4,0 2.67,-0.57 3.59,-1.49 0.17,-0.17 0.32,-0.37 0.47,-0.56 0.64,-0.84 1.03,-1.89 1.03,-3.02 -0.01,-1.39 -0.58,-2.67 -1.51,-3.59 z m -3.59,2.43 c -0.83,0 -1.49,-0.67 -1.49,-1.49 0,-0.83 0.67,-1.49 1.49,-1.49 0.83,0 1.49,0.67 1.49,1.49 0,0.82 -0.66,1.49 -1.49,1.49 z"
+             style="fill:#2f2f2f" />
+          <path
+             id="XMLID_43_"
+             d="m -130.56,39.78 0.62,1 0.88,1.43 c 0,0 6.36,2.67 10.43,-1.61 1.79,-1.87 2.33,-3.7 2.38,-5.17 -0.04,-0.2 -0.07,-0.41 -0.11,-0.61 -0.09,-0.58 -0.16,-1.12 -0.2,-1.65 -0.04,-0.13 -0.09,-0.26 -0.13,-0.36 l -3.69,-3.06 -0.79,-0.65 c -0.4,1.28 -2.56,6.68 -10.68,8.64 l 0.03,0.05 z"
+             style="fill:#dd83d7" />
+          <path
+             id="XMLID_44_"
+             d="m -121.15,29.09 -4.92,-4.08 c -0.08,-0.17 -0.13,-0.34 -0.2,-0.51 l -0.51,-0.42 -0.93,-0.77 c 0,0 -0.55,4.05 -8.8,6.91 l 4.66,7.5 c 8.14,-1.95 10.29,-7.35 10.7,-8.63 z"
+             style="fill:#eaa9e8" />
+          <path
+             id="XMLID_45_"
+             d="m -127.7,23.31 -6.19,-5.14 c 0,0 -2,4.02 -6.89,5.14 l 4.29,6.91 c 8.24,-2.86 8.79,-6.91 8.79,-6.91 z"
+             style="fill:#71d3ea" />
+          <path
+             id="XMLID_46_"
+             d="m -133.9,18.18 -6.36,-5.28 c 0,0 -0.62,1.97 -4.92,3.36 l 4.39,7.05 c 4.89,-1.11 6.89,-5.13 6.89,-5.13 z"
+             style="fill:#8ceae7" />
+          <path
+             id="XMLID_47_"
+             d="m -140.26,12.9 -4.92,-4.09 -2.33,-1.93 c -1.13,-1.24 -3.12,-0.01 -2.53,1.55 l 1.56,2.52 3.3,5.31 c 4.29,-1.39 4.92,-3.36 4.92,-3.36 z"
+             style="fill:#b3f4e5" />
+          <path
+             id="XMLID_48_"
+             d="m -153.25,80.07 c -1.57,0 -2.85,1.26 -2.85,2.85 0,1.57 1.28,2.85 2.85,2.85 1.57,0 2.85,-1.28 2.85,-2.85 0,-1.58 -1.27,-2.85 -2.85,-2.85 z"
+             style="fill:#2f2f2f" />
+          <circle
+             id="XMLID_49_"
+             cx="-110.53"
+             cy="50.290001"
+             r="1.49"
+             style="fill:#939090" />
+          <path
+             id="XMLID_50_"
+             d="m -49.63,45.68 c -0.92,-0.37 -2.6,-0.6 -4.75,-0.51 -0.57,0.02 -0.79,-0.61 -0.35,-1.03 2.92,-2.75 4.28,-6.49 4.07,-6.66 -0.43,-0.45 -1,0.53 -2.43,1.42 -2.19,1.37 -4.76,1.79 -6.41,1.67 -4.6,-0.32 -4.55,-4.5 -9.77,-6.87 -1.51,-0.69 -4.74,-0.57 -7.74,0.09 v 0 c 0,-2.03 -0.5,-3.52 -0.96,-4.38 -0.47,-0.88 -2.1,-2.68 -4.18,-3.74 C -84.1,24.68 -86.6,25 -87.16,25 c 0,0 -0.01,0 -0.01,0 l 0.22,0.79 c 0.43,3.62 -0.07,9.96 -1.07,14.57 0,0 0,0 0,0 1,0.66 1.78,1.78 2.45,3.4 1.24,3.02 -0.07,4.68 1.2,7.92 0.26,0.64 1.08,2.69 3.14,4.25 1.78,1.35 3.71,1.75 5.05,1.85 0.56,0.04 0.94,-0.56 0.66,-1.05 -0.95,-1.65 -1.52,-3.14 -1.86,-4.43 -0.09,-0.32 0.31,-0.36 0.47,-0.21 2.11,2.03 3.76,2.21 4.95,4.44 0.99,1.85 0.92,3.7 0.87,4.71 -0.07,1.76 -0.56,3.22 -1.07,4.3 -0.3,0.64 0.31,1.33 0.97,1.07 0.85,-0.33 1.81,-0.82 2.79,-1.53 0.61,-0.44 1.89,-1.48 2.89,-3.04 1.73,-2.69 1.8,-5.65 1.6,-7.51 -0.07,-0.75 0.53,-0.42 1.1,1.25 0.28,0.81 0.52,1.75 0.59,2.7 0.09,1.16 -0.43,5.66 1.1,8.5 2.24,4.17 6.87,7.16 7.66,10.29 0.85,3.33 -0.41,7.02 -1.45,9.29 -0.28,0.6 0.43,1.18 0.97,0.79 1.95,-1.41 4.8,-3.9 6.51,-7.3 0.24,-0.47 0.45,-0.97 0.64,-1.48 0.3,-0.81 0.53,-1.61 0.7,-2.39 0.2,-0.88 0.75,-1.27 1.17,-0.12 0.61,1.7 1.92,4 2.92,4.91 v -1.59 -17.2 l 0.02,-11.79 c 0,0 -3.97,-3.24 -7.65,-4.71 z"
+             style="fill:#895b53" />
+          <path
+             id="XMLID_51_"
+             d="m -121.15,29.09 0.79,0.65 3.69,3.06 0.1,0.08 c 0.01,0.09 0.02,0.19 0.03,0.28 0.04,0.52 0.11,1.07 0.2,1.65 0.03,0.2 0.07,0.41 0.11,0.61 0.3,1.7 0.64,3.5 0.52,5.01 -0.25,2.91 -2.73,4.92 -4,6.42 -0.33,0.39 0.03,0.85 0.52,0.78 2.48,-0.41 6.75,-0.96 8.83,-5.31 1.43,-2.97 1.68,-5.88 3.57,-7.95 1.62,-1.77 2.83,-1.61 3.2,-1.5 l 0.49,-3.36 1.03,-7.06 c -1.22,-1.02 -3.32,-1.03 -4.68,-0.88 -0.02,0 -0.04,0.01 -0.06,0.01 -0.9,0.11 -2.02,0.51 -2.98,0.98 -0.19,-0.11 -0.37,-0.21 -0.56,-0.3 -1.29,-0.65 -2.38,-0.82 -3.18,-0.85 -0.77,-0.02 -1.43,0.09 -2.03,0.26 -0.23,0.06 -0.46,0.13 -0.67,0.21 -0.63,0.22 -1.21,0.47 -1.8,0.67 -0.88,0.3 -1.77,0.47 -2.88,0.17 -0.43,-0.12 -1.97,-0.53 -2.96,-1.83 -1.83,-2.4 -1.89,-3.28 -1.89,-3.28 -0.03,-0.06 -0.22,-1.16 -0.67,-0.57 -0.33,0.01 -0.75,2.67 -0.45,4.99 0.09,0.65 0.27,1.51 0.64,2.49 0.06,0.17 0.12,0.33 0.2,0.51 z"
+             style="fill:#895b53" />
+          <path
+             id="XMLID_38_"
+             d="m -101.64,32.91 c 0.55,-3.59 0.98,-6.11 1.43,-8.85 l 0.73,-4.49 c 0.09,-0.55 0.17,-1.11 0.27,-1.71 0,-0.15 0.01,-1.43 0.85,-1.89 0.08,-0.05 0.38,-0.2 1.14,-0.13 1.2,0.11 2.06,0.63 2.29,0.76 0.84,0.49 1.59,1.28 2.49,2.66 1.5,2.29 2.48,5.11 2.84,8.16 0.46,3.83 0.5,6.96 -0.89,11.22 l 2.48,1.7 c 2.14,-7.04 1.51,-10.94 1.08,-14.57 L -87.15,25 c 0,0 0.01,0 0.01,0 -0.48,-2 -1.33,-4.64 -2.93,-7.13 -0.97,-1.52 -1.99,-2.79 -3.46,-3.65 -0.96,-0.56 -1.99,-0.9 -3.18,-1.12 -1.08,-0.2 -2.19,0.02 -3.04,0.64 -0.79,0.57 -1.29,1.42 -1.42,2.38 l -1.95,13.38 -0.49,3.36 c 0.01,0 1.04,-0.1 1.97,0.05 z"
+             style="fill:#b5c3c6" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata66814">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>The Web Platform: Roles and Relationships of Key Specifications</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
