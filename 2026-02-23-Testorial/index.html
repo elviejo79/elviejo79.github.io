@@ -46,7 +46,6 @@ Tutorial
 : A goal oriented article, written so that a Learner can aquire a new skill.
 : Every Testorial is a Tutorial, but not every Tutorial is a Testorial.
 
-
 # Why aren't Docs-as-test more popular.
 
 Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
@@ -165,16 +164,112 @@ Considering our Audiences and the Levels of context we need to understand we can
 
 Now with this map we can make sense of what we are writing for whom, when.
 
-# 1st Window an Author's Context
+# 1st Level: Context
 
-Let's start with you, the Author and your context.
+Let's start by understanding the Context on which each of our Audience operate
+The context is very important since most of the time we cannot control it.
+And it is acutally a constraint.
+
+
+
+And the main Context that we need to focus on is the one for you the Author:
+
+## A Learners Context
+This is the most obvious one, we need to be mindful of our Learners Context.
++ What is their previous experience?
++ What constrains could their employer have?
++ What operating system are they using?
+and so on.
+
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║ Previous Experience?   ║   *
+*                     ║                         ║                          ║ Job Constraints?       ║   *
+*                     ║                         ║                          ║ Operating System?      ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*           Artifact  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*              Parts  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [learner_context]: The Learners context, guides the depath and tone of our tutorial]
+
+## DevOps Context
+
+On this context we need to understand that the DevOps and QA Team, have setup a Continious Integration (CI) pipeline.
+The CI on every change, takes the content of the source code repository,
+executes tests on it and if the tests are correct,
+publishes a new version of our software into production.
+
+All of this happens inside virtual computers called Containers, so that we don't have to
+This pipeline is crucial, since we will integrate the testorials as parts of the pipeline in the following sections.
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║ What is the CI pipeline? ║ Previous Experience?   ║   *
+*                     ║                         ║                          ║ Job Constraints?       ║   *
+*                     ║                         ║ GitHub Runner (Container)║ Operating System?      ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*           Artifact  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*              Parts  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [devops_context]: A DevOps context, inorms what is the CI pipeline and the publishing process]
+
+## An Author's Context
+
+Now lets talk about you, the Author and your Context.
+
 Probably your organization already has setup a Content Management System (CMS).
-It is crucial since the CMS defines the workflows that will transform (publish) the testorial from a tutorial.
+And you need to understand the workflows that will transform (publish) the testorial to a tutorial.
 
 Since a testorial is also code, and code is plain text
 Any CMS that works with plain text formas like Markdown, Asciidoc, Org-mode will do.
+This category is commonly called Static Site Generators.
 
-Some CMS that work well are:
+Some SSG that work well are:
 [Docusaurus](https://docusaurus.io),
 [GitHub Pages](https://docs.github.com/en/pages/quickstart) Or my personal favorite
 [MarkDeep](https://casual-effects.com/markdeep/)
@@ -189,14 +284,14 @@ But, in case it is not configured you can check the section [Appendix: Configuri
 
 What is important to understand is the publishing process of GitHub Pages
 
-## GitHub Pages publishing process
+### GitHub Pages publishing process
 
-In GitHBu Pages the process of publishing is:
+In GitHub Pages the process of publishing is:
 
 1. Create or Modify Markdown document.
-2. Git commit & push
+2. git commit & git push
 3. Wait for GitHub Workflow to finish.
-4. See modifief on your website.
+4. Review modifications on your website.
 
 You can monitor the state the of the GitHub Workflow on the page.
 
@@ -208,103 +303,52 @@ When it finally turns to green means your new page is published.
 
 ![Your workflow is in yellow while it runs and green once it passes](./images/workflows.png)
 
-## Now we can identify our position in the map.
+### Tracing the publishing process
+
+Now that we understand the GitHub Pages publishing process.
+We can trace how it works in our map of writing.
 
 *********************************************************************************************************
-*                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Audience ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    *
+*                                                                                                       *
 *                                                                                                       *
 *                                Author                  DevOps                  Learner                *
-*    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢       Context  ║ CMS - GitHub Pages      ║          2nd             ║        3rd             ║   *
-*    ⎢                ║        |                ║                          ║                        ║   *
-*    ⎢                ║        |                ║                          ║                        ║   *
-*    ⎢                ║     dictates            ║                          ║                        ║   *
-*    ⎢                ║    organization         ║                          ║                        ║   *
-*    ⎢                ╠════════|════════════════╬══════════════════════════╬════════════════════════╣   *
-*    ⎢                ║        |                ║                          ║                        ║   *
-*    ⎢                ║        |                ║                          ║                        ║   *
-* Level     Artifact  ║        v                ║                          ║                        ║   *
-*    ⎢                ║ Markdown Document ---git push--> GH Workflow ---publish--> Tutorial         ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢         Parts  ║         7th             ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎣                ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║ CMS - GitHub Pages      ║                          ║                        ║   *
+*                     ║        |                ║                          ║                        ║   *
+*                     ║        |                ║                          ║                        ║   *
+*                     ║     dictates            ║                          ║                        ║   *
+*                     ║    organization         ║                          ║                        ║   *
+*                     ╠════════|════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║        |                ║                          ║                        ║   *
+*           Artifact  ║        v                ║                          ║                        ║   *
+*                     ║ Markdown Document ---git push--> GH Workflow ---publish--> Tutorial         ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*              Parts  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
 *                                                                                                       *
 *********************************************************************************************************
+[Figure [gh_pages_workflow]: GitHub Pages pbublishing workflow]
 
+# 2nd Level the Artifact
 
-## Identify the Window, find our position in the map
+In the previous diagram we saw that at the Artifact level works like a single pipeline.
+Now on this section we are going to cover that pipeline in more detail.
 
-When writing Testorials, or any text with multiple audiences.
-We need to make to decide for whom are we writing this section.
-And importantly just devote that section to that audience at that level
+## A Learners Artifact: The tutorial
 
-The CMS that we (our most probably our organization) uses is part of the Super-System,
-of the Author (Tech-Writer, Content Engineer).
-It is not the main part of the work (writing documentation),
-but it influences how to we write.
+Let's start with the end in mind.
+Let's look at the tutorial that our Learner will read:
 
-
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)                     | DevOps |
-|--------------|------------------|-------------------------------------------------------------|--------|
-| Super System |                  | Content Management System (CMS) GitHub Pages on our example |        |
-| System       |                  |                                                             |        |
-| Sub-system   |                  |                                                             |        |
-
-
-Now what we are properly located we can proceed to work
-
-
-
-# A tutorial to write testorial
-
-In the following sections we are going to develop a very simple hello world testorial.
-Beyond teaching how to print "Hello World" in the screen, the goal is to show.
-How to separate which hat to use at what time, and therefore make it easier for you to write testorial.
-Without getting tangled in the confusion.
-
-
-
-# Level 1: A "pure" testorial (No Side Effects)
-
-In functional programming a /pure/ function is one that just makes a calculation and returns you a result.
-It doesn't have any side-effect. Meaning it doesn't store anything in your hard drive.
-It doesn't change any other part of your program. Is just a /pure/ calculation.
-The advantage of a such a function is clear,
-you can be 100% sure that if you call the function with the same input it will always return the same output.
-
-The same way a pure testorial, is one that doesn't change anything in your students, computer.
-Their advantage is that they are the easiest to execute automatically.
-And therefore the easiest ones to add to your testing environment.
-
-- A Student
-- Ourselves as authors
-- Test Engineer or QA
-
-## As a Student
-
-### Lets identify our Window
-
-The tutorial `./docs/hello_world.md` is for the Reader (Student).
-And we have to write thinking of the Student's Super-system (Operating System [OS], Internet availability, other Sass)
-
-|              | Reader (Student)                  | Author (Tech writer, Content  Engineer) | DevOps |
-|--------------|-----------------------------------|-----------------------------------------|--------|
-| Super System | *OS, Internet availability*       | CMS - GitHub Pages                      |        |
-| System       | *Tutorial: ./docs/hello_world.md* |                                         |        |
-| Sub-system   |                                   |                                         |        |
-
-### Just a Basic Tutorial
 
 <div class="example">
 <div class="view">
@@ -317,183 +361,243 @@ Browser
 </div></div></div>
 
 
-## As an Author
+In our 9 windows framework we are here:
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║ ╭───────────────────╮  ║   *
+*                     ║                         ║                          ║ │    Browser        │  ║   *
+*           Artifact  ║                         ║                          ║ ├───────────────────┤  ║   *
+*                     ║                         ║                          ║ │                   │  ║   *
+*                     ║                         ║                          ║ │    Tutorial       │  ║   *
+*                     ║                         ║                          ║ │                   │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*              Parts  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [learner_artifact]: A Learner reads the tutorial]
+
+## Author's Artifact: the Testorial
 
 In the previous section we saw what a Student would read.
-But how would you as an Author,
+For you the the Testorial looks like a markdown source code.
 
+~~~ markdown
+(insert hello_world.html here)
+~~~
+
+Notice that we have marked the instructions we expect the student to type like `@localhost $`
 How can we make sure that the instructions are correct?
 
-We should be able to execute them, in our computer, or even better in virtual machine or container.
+### Snapshot testing
 
-To do that we use a tool called:
+Snapshot testing are category of tools that execute a command and verify the output of the command matches the expectation.
 
-[https://github.com/aureliojargas/clitest](`clitest`for Posix ).
+In our case we will use `clitest for posix`
 
-Clitest belongs to a category of tools called /snapshot testing/
-that execute one command and then verify the output of that command matches, the expected one.
+### Installing clitest
 
-There are several tools that do snapshot-testing at different levels,
-But so far `clitest` (for posix) has been the most flexible for me.
+Installing `clitest` is as easy as:
 
-### Orienting ourselves in the map
+~~~ bash
+@author $ curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
+@author $ chmod +x clitest
+@author $ mv clitest ~/.local/bin
+@author $ clitest --version
+@author clitest 0.5.0
+~~~
 
-Clitest is tool is meant to be used by you as the Author,
-to make sure that every single command in your tutorial executes correctly.
+### Listing the commands in hello_world.md
 
+Now lets use `clitest` to view what commands are in our tutorial
 
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)          | DevOps |
-|--------------|------------------|--------------------------------------------------|--------|
-| Super System |                  | CMS - GitHub Pages                               |        |
-| System       | Tutorial         | *clitest* repeateble execution of the testorial  |        |
-| Sub-system   |                  |                                                  |        |
+~~~ bash
+@author $ clitest --list --prefix '@learner ' ./hello_world.html
+@author #1	echo "hello world"
+@author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
+~~~
 
-### Install clitest
++ Use `--list` to show the commands that can execute in the tutorial.
++ The parameter `--prefix '@learner'` specifies how the executable lines are prefixed.
++ The #1 and #2 show what are the commands that `clitest` identified as possible.
++ #1 and #2 are the test cases in our testorial /test suite/
 
-Is as easy as:
+!!! Tip
+    Is important to make sure that `--list` finds all the commands that you expect the testorial to execute.
 
-```
-@author:$ curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
-@author:$ chmod +x clitest
-@author:$ mv clitest ~/.local/bin
-@author:$ clitest --version
-@author:clitest 0.5.0
-```
+To actually execute the tests you just need to remove the `-- list` flag
 
-### Example
+~~~{.bash}
+@author $ clitest --prefix '@learner ' ./hello_world.html
+@author #1	echo "hello world"
+@author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
+@author OK: 2 of 2 tests passed
 
-Now lets use `clitest` to view what commands are in our tutorial?
+~~~
 
-```{.bash}
-@author:$ clitest --prefix '   :' --list ./docs/hello_world.md
-```
+Now we get the report `OK: 2 of 2 tests passed`.
 
-+ observe that in `--prefix '    @author:$'` we are telling it how we expect the lines that are going to be executed in the tutorial should look.
-+ in `--list` we are asking to know what lines does `clitest` identifies as executable.
-
-This is how our testorial  works. A tutorial that is a *test suite*, where each command will be checked against reality.
-
-Now you can execute the tests with:
-
-```{.bash}
-@author:$ clitest --prefix '   :' ./docs/hello_world.md
-```
-
-We just removed the `--list` parameter.
-And now we get the report of which "tests" / commands executed and gave the same output as it was expected.
-
-This test is pure, which means that it doesn't change any state, or storage in your computer
-And you can repeat it as many times as you wish.
+This testorial is /pure/, it doesn't change any files in our computer.
+So you can repeat it as many times as you wish.
 
 Try it, just execute `clitest` again.
 
-```{.bash}
-@author:$ clitest --prefix '   :' ./docs/hello_world.md
-```
+~~~{.bash}
+@author $ clitest --prefix '   :' ./docs/hello_world.md
+@author exit 0
+~~~
 
-It will run again without any error.
+It will run again the tests.
+The comment `exit 0`, means that the command executed correctly,
+and we don't care about the literal output,
 
-## As a Tester
+
+### Where does  `clitest` fit in our nine windows framework?
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║   .--- clitest <--.     ║                          ║ ╭───────────────────╮  ║   *
+*                     ║   |               |     ║                          ║ │    Browser        │  ║   *
+*           Artifact  ║  executes        fix    ║                          ║ ├───────────────────┤  ║   *
+*                     ║   |               |     ║                          ║ │                   │  ║   *
+*                     ║   v               |     ║                          ║ │    Tutorial       │  ║   *
+*                     ║   testorial.markdown    ║                          ║ │                   │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*              Parts  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [author_artifact]: An author makes its testorial executable by clitest]
+
+## DevOps Engineer Artifact
 
 Now that the test can be reproduce locally,
-we need to think, on how it is going to be executed on the Continuous Integration servers.
-
-### Orienting ourselves in the map
-
-
-|              | Reader (Student) | Author (Tech writer, Content  Engineer) | DevOps                                                             |
-|--------------|------------------|-----------------------------------------|--------------------------------------------------------------------|
-| Super System |                  | CMS - GitHub Pages                      | Continence Integration Pipeline, in our example GitHub Actions     |
-| System       | Tutorial         | clitest                                 | *Testorial.yml workflow* so that it gets executed on every commit. |
-| Sub-system   |                  |                                         |                                                                    |
+we need to think, How it is going to be executed on the Continuous Integration server?
 
 ### GitHub Actions
 
 Is a Continuous Integration server provided by GitHub.
 It has two main components:
 
-+ Runners: That are virtual containers that execute your code.
-+ Workflows: that are instructions on how to configure said containers and how to execute your code.
++ Runners: Virtual containers that execute your code.
++ Workflows: instructions on how to configure said containers and how to execute your code.
 
-### A workflow to run our testorial.
+### GitHub Workflow
 
-Now we already have a GitHub Workflow running.
-Is the one that takes a commit of our README.md file and then publish it to the web.
-Now we want to modify that workflow, so that it only publishes a new version
-Of the Testorial, if that new version is correctly executed.
-On GitHub Runners (containers).
+We will configure a workflow that can execute the testorial as we can now do locally with `clitest`.
 
-So our next goal is to configure a workflow that can execute the testorial that we have created.
-In order to do that you can copy the following template, that we explain in detail below.
+Look at this suggested workflow
 
-#### testorial.yml :IGNORE:
+(embed ../.github/workflows/execute_testorials.yml height=100px here)
 
-```{.yaml .cb_include=./.github/workflow/testorial.yml}
-name: CliTest Tutorial              # (1)
+[Listing [execute_testorial_yml]: ./.github/workflows/execute_testorials.yml]
 
-on:                                 # (2)
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:                # (3)
 
-jobs:
-  run-clitest:
-    runs-on: ubuntu-latest          # (4)
+(1) Name of our workflow.
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Install clitest
-      run: |
-         curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
-         chmod +x clitest
-
-    - name: Run clitest on your testorial
-      run: ./clitest --prefix '   :' ./docs/hello_world.md
-
-```
-
-(1) Name of our workflow
 (2) This is the event that will trigger the execution of our workflow.
-(3) In particular we want to trigger the execution from the GitHub User Interface
+
+(3) In particular we want to trigger the execution from the GitHub User Interface.
+
 (4) This is the Operating system where the tests are going to run.
+
 This workflow will execute on every commit, but for demonstration purposes go to where you have this tutorial stored.
 Then GitHub Workflows click on Execute wait a few minutes.
 And see that it is in *green* meaning all the tests executed correctly.
 
-### actionlint
 
-https://github.com/rhysd/actionlint
+### Commit your execute_testarials workflow
 
-actionlint is a static checker for GitHub Actions workflow files.
-go install github.com/rhysd/actionlint/cmd/actionlint@latest
+Now we are ready to include this tutorial as part of the CI pipeline.
+This will need  approval from your DevOps department
+Your `testorial.markdown` and `execute_testolias.yml` workflow is all the documentation they need to include the testorials execution as part of the CI process.
 
-### add your workflow testorial.yaml
+Perhaps the DevOps team will decide to change the trigger so that instead of on every commit, it's on every pull request.
 
-Now we are ready to include this tutorial as part of our Continuous Integration Pipeline.
+!!! Warning
+    Now you will get notified when a code change, or a library update breaks your testorial.
+    So now you have a new responsibility, to keep your testorials updated.
+    But better be you, the Author, than your frustrated readers.
 
-In this part you will probably need approval from your QA Department,
-Or lead of Testing.
-But already your tutorial as a script,
-and your workflow is all the documentation they need to make the call.
-On how frequently said test needs to be executed.
 
-Perhaps they will change it, instead of being on every commit it can be done,
-on every Pull Request Merge, so that your tutorial continues to work, on every code change.
-Or maybe is on every Release.
+> "The reward for work well done is the opportunity to do more."
+>
+>       -- Jonas Salk, inventor of the polio vaccine
 
-Although in this case, it would too late. Better to do it on every release candidate.
+### Tracing the CI pipeline in the nine Windows
 
-So now you commit your tutorial and workflow to GitHub and it will work for ever.
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║ .--- clitest <--.       ║  .--> GH Workflow        ║ ╭───────────────────╮  ║   *
+*                     ║ |               |       ║  |     |                 ║ │    Browser        │  ║   *
+*           Artifact  ║ executes       fix      ║  |   execute             ║ ├───────────────────┤  ║   *
+*                     ║ |               |       ║  |     |                 ║ │                   │  ║   *
+*                     ║ v               |       ║  |     v                 ║ │    Tutorial       │  ║   *
+*                     ║ testorial.markdown---gh push   clitest? ---publish-->│                   │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*              Parts  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [devops_artifact]: How a testorial gets executed and becomes a tutorial]
 
-Now comes your next responsibility, keep the tutorial updated so that when new version of your software.
 
-Or dependencies become more popular.
-
-# Level 2: Storing in Disk
+# 3rd level: Components
 
 Now that we have completed the hello world.
 
@@ -501,7 +605,7 @@ We will create a 2 nd tutorial, this tutorial will create an actual file that ge
 Having this effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
 Instead we need to create *isolation*.
 
-## As a student
+## As a Learner
 
 Now let's suppose we want to create a bash script that says hello world.
 
@@ -534,30 +638,30 @@ So it is the same as we did typing the instructions,
 but now it will be a script that executes them.
 
 
-```{.bash .cb_save=./hi.sh}
+~~~{.bash .cb_save=./hi.sh}
 #!/bin/env bash
 
 echo "Hello World"
 
 
-```
+~~~
 
 Once we store the file and name it: `hi.sh`
 you need to give it permissions to be used as a program.
 for that you use the command `chmod`
 
-```
+~~~
    :$ chmod +x ./hi.sh
-```
+~~~
 
 What this means is add (+) the executable permission to the `./hi.sh` file.
 Which makes it an executable program you can use like:
 
 
-```
+~~~
     :$ ./hi.sh
     Hello World
-```
+~~~
 
 As you can see now, the computer is executing the same instructions,
 you typed before.
@@ -574,17 +678,17 @@ on first instance we might get lucky
 
 and be able to execute it:
 
-```
+~~~
   :$ clitest --prefix '   :' ./hello_script.md
-```
+~~~
 
 But if we execute it a second time.
 We will get the error that the file already exists:
 
 
-```
+~~~
   :$ clitest --prefix '   :' ./hello_script.md #=> exit -3
-```
+~~~
 
 Now there are several ways we could handle this:
 
@@ -613,28 +717,28 @@ So that would be using act`.
 
 you can verify that you have act installed by:
 
-```
+~~~
   $ act --version
   act version 0.2.67
-```
+~~~
 
 Now let's create a GitHub workflow that we can use to execute our tutorial as a test.
 
 We will use the help of Claude Code to do this but any of your  agentic coding tutorials can do it.
 
-```bash
+~~~bash
 
 % claude --print "Can you generate .github workflow that using the latest ubuntu version install clitest and executes with basic_nushell_tutorial.md ?
 ...
-```
+~~~
 
 
 You can validate the generated workflow with actionlint[fn:5]
 
-```
+~~~
 % claude --print "Validate .github/workflow/shelldocs.yml using actionlint and correct any error"
 ...
-```
+~~~
 
 And that's it.
 Now you have setup the environment that we will use to run the tests.
@@ -644,16 +748,16 @@ now finally we ca locally run the tutorial repetitive tutorial.
 Even if it creates files, or changes databases, etc.
 It can run repetitively.
 
-```
+~~~
    ~$ act list
-```
+~~~
 
 Will give you the list of jobs to run.
 
 
-```
+~~~
    ~$ act jobs test_hello_world_tutorial~
-```
+~~~
 
 Now we are ready to make this tutorial part of our Continuous Integration Tutorial.
 
@@ -694,14 +798,14 @@ Where $your_name is parameter we send from the command line.
 Well in that case we would need to write a script like this:
 
 
-```
+~~~
 #!/bin/env bash
 
 + name:-$1:'World'
 + echo "Hello $name"
 - echo "Hello World"
 
-```
+~~~
 
 What the lines with the `+` sign mean that line was added.
 and the ones with `-` mean that line was deleted.
@@ -710,17 +814,17 @@ like the "Hello World" being replaced by "Hello $name".
 
 Now save your file again as hi.sh. And Execute it like:
 
-```
+~~~
     :$ ./hi.sh "Alice"
     :  Hello Alice
-```
+~~~
 
 We even have a default value, for the parameter so:
 
-```
+~~~
     :$ ./hello.sh
     :  Hello World
-```
+~~~
 
 As you can see this new version of our script can take as input values entered by the user.
 
@@ -742,15 +846,15 @@ For that we use `codebraid`.
 is a tool for literate programming that allows us to write command in markdown, but by using its special `.cb-run` property
 it can show the output of the command not its input.
 
-```{.bash .cb-run}
+~~~{.bash .cb-run}
   :$ git diff hi.sh@rev... hi.sh@rev...
-```
+~~~
 
 to execute it we use:
 
-```
+~~~
   :$ codebraid pandoc --from markdown --to html --output ./doc/3rd_level.html
-```
+~~~
 
 You can see that `codebraid` depends on the execution of `pandoc` good thing  that `pandoc` is the most popular tool used to transform documents from one format to another.
 
@@ -876,9 +980,8 @@ It is definitively worth it, now that it has become cheaper to do it, with the h
 *                                                                                                       *
 *********************************************************************************************************
 
-
-
 # Appendix: Configuring GitHub Pages
+
 ## Install GitHub Pages
 
 For simplicity we will use a a CMS GitHub pages.
@@ -897,15 +1000,15 @@ Now let's modify the default `readme.md` document to shouw that the update mecha
 
 Clone your repository to your local machine:
 
-```{.bash .invisible}
+~~~{.bash .invisible}
     @author:$ export $USERNAME='jag-academy'
     @author: exit 0
-```
+~~~
 
-``` bash
+~~~ bash
     @author:$ gh repo clone $USERNAME/$USERNAME.github.io
     @author: exit 0 # your command executed without errors
-```
+~~~
 
 That would create your local copy of your repository.
 
@@ -914,18 +1017,18 @@ Now you can modify the `readme.md` file.
 Like this little script would simply append the current date and time to the readme file
 to make sure it is modified.
 
-```
+~~~
    @author:$ cd $USERNAME.github.io
    @author:$ echo "modified on: $(date +'%Y%m%d %H:%M:%S')" >> README.md
-```
+~~~
 
 Now do commit and push
 
 
-```
+~~~
   @author:$ git commit -am "Append current date and time to trigger regeneration"
   @author:$ git push
-```
+~~~
 
 this will start the republishing of the page.
 
@@ -944,8 +1047,6 @@ When it finally turns to green means your new website is finished.
 Got your link again and should see the document with the new date time.
 
 https://$USERNAME.github.io/
-
-
 
 # OrgDeep :IGNORE:
 <script>markdeepOptions={tocStyle:'long'};</script>
