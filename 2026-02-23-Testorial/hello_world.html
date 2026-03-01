@@ -1,0 +1,24 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+
+# Hello World from Bash
+
+On this tutorial we are going to learn about the `echo` command in Bash
+This command prints to the screen whatever you send it.
+
+It's as easy as:
+
+```{.bash .cb_test}
+@learner $ echo "hello world"
+@learner hello world
+```
+
+The great power of Unix is the pipe "|" the idea to connect programs that weren't made to be connected.
+so if we connect 'str_to_upper' to our previous command we will get:
+
+
+```{.prysk .cb_test}
+@learner $ echo "hello world" | tr '[:lower:]' '[:upper:]'
+@learner HELLO WORLD
+```
+
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
