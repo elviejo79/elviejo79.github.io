@@ -8,6 +8,17 @@
 
 ![Author surveying the terrain ](./images/author_terrain.png)
 
+For technical writers, that are looking to be more valuable to their organizations,
+That are frustrated with having articles that they wrote,
+become obsolete almost immediately,
+And that haven't found Large Language Models useful.
+This article teaches how to write Testorials.
+Tutorials that can be executed as Integration tests.
+So that the documentation is known to be correct.
+And can notify the author when something in the tutorial breaks.
+Instead of frustrated users.
+
+
 When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
 The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
 Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
@@ -557,9 +568,6 @@ Perhaps the DevOps team will decide to change the trigger so that instead of on 
     But better be you, the Author, than your frustrated readers.
 
 
-> "The reward for work well done is the opportunity to do more."
->
->       -- Jonas Salk, inventor of the polio vaccine
 
 ### Tracing the CI pipeline in the nine Windows
 
@@ -680,7 +688,7 @@ Now we know that the Testorials looks like this
 and we can execute it in our computer like this:
 
 ~~~bash
-@author $ sudo -v && clitest --first --prefix '@learner ' --diff-options '--ignore-space-change' ./cowsay_hello_world.md.html
+@author $ sudo -v && ./clitest --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 0
 ~~~
 
 Now we are using a lot more parameters so let's explain them:
@@ -705,7 +713,7 @@ The problem is that if we execute the script again we will get an error!
 Since the `cowsay` package was installed on first run, the second time we will get an error
 
 ~~~ bash
-@author $ sudo-v && clitest --first --prefix '@learner ' --diff-options '--ignore-whitespace' ./cowsay_hello_world.md.html #=> --exit 1
+@author $ sudo -v && ./clitest --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 1
 ~~~
 
 So now we need to clean after the execution of the tests.
@@ -721,7 +729,7 @@ in `clitest` that is achieved with the `--post-fligt COMMAND` parameter.
 For example
 
 ~~~ bash
-@author $ sudo-v && clitest --post-flight 'sudo apt remove -y cowsay' --first --prefix '@learner ' --diff-options '--ignore-whitespace' ./cowsay_hello_world.md.html #=> --exit 1
+@author $ sudo-v && clitest --post-flight 'sudo apt remove -y cowsay' --first --prefix '@learner ' --diff-options '--ignore-whitespace' ./cowsay_hello_world.md.html #=> --exit 0
 ~~~
 
 `--post-flight 'sudo apt remove -y cowsay' `
@@ -743,17 +751,17 @@ For example
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
-*                     ║   .-- clitest --.       ║                          ║ ╭───────────────────╮  ║   *
-*                     ║   |             |       ║                          ║ │    Browser        │  ║   *
-*                     ║ executes        |       ║                          ║ ├───────────────────┤  ║   *
-*          Execution  ║   |             |       ║                          ║ │    Tutorial       │  ║   *
-*                     ║ testorial    pre-flight ║                          ║ ╰───────────────────╯  ║   *
-*                     ║   |             |       ║                          ║    |                   ║   *
-*                     ║ apt install  apt remove ║                          ║  apt install           ║   *
-*                     ╠═══|═════════════|═══════╬══════════════════════════╬════|═══════════════════╣   *
-*                     ║   |             |       ║                          ║    |                   ║   *
-*                     ║   |             |       ║                          ║    v                   ║   *
-*                     ║   '->packages <-'       ║                          ║ packages               ║   *
+*                     ║    clitest <─────╮      ║                          ║ ╭───────────────────╮  ║   *
+*                     ║      │           │      ║                          ║ │    Browser        │  ║   *
+*                     ║╭ pre-flight apt remove  ║                          ║ ├───────────────────┤  ║   *
+*          Execution  ║│     │           │      ║                          ║ │    Tutorial       │  ║   *
+*                     ║│ execute testorial      ║                          ║ ╰───────────────────╯  ║   *
+*                     ║│     |           ^      ║                          ║    |                   ║   *
+*                     ║│  apt install    │      ║                          ║  apt install           ║   *
+*                     ╠│═════│═══════════│══════╬══════════════════════════╬════|═══════════════════╣   *
+*                     ║│     │           │      ║                          ║    |                   ║   *
+*                     ║│     v           │      ║                          ║    v                   ║   *
+*                     ║╰─>packages ──────╯      ║                          ║ packages               ║   *
 *            Storage  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -762,8 +770,6 @@ For example
 *                                                                                                       *
 *********************************************************************************************************
 
-
-
 ### There different ways to handle isolation of tests
 Now there are several ways we could handle this:
 
@@ -771,8 +777,59 @@ Now there are several ways we could handle this:
 2. Make the tutorial clean after it's execution. That is the `tear-down` in unit testing
 3. And finally make our testorial execute on an *isolated* environment, like a docker container. And we will do that in the next phase.
 
-In this section we will talk about 3rd option *isolation with containers*.
 
+## As a DevOps Engineer impact on Storage
+
+Now the impact of storing on Devops Engineer is *minimal* their map is the same as before:
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║     clitest <─────╮     ║  ╭──> GH Workflow        ║ ╭───────────────────╮  ║   *
+*                     ║       │           │     ║  │     │                 ║ │    Browser        │  ║   *
+*                     ║ ╭ pre-flight apt remove ║  │   execute             ║ ├───────────────────┤  ║   *
+*          Execution  ║ │     │           │     ║  │     │                 ║ │                   │  ║   *
+*                     ║ │ execute testorial ─git push    v                 ║ │    Tutorial       │  ║   *
+*                     ║ │     |           ^     ║      clitest? ---publish-->│                   │  ║   *
+*                     ║ │  apt install    │     ║        │                 ║ ╰───────────────────╯  ║   *
+*                     ╠═│═════│═══════════│═════╬════════│═════════════════╬═════│══════════════════╣   *
+*                     ║ │     │           │     ║        │                 ║     │                  ║   *
+*                     ║ │     v           │     ║        v                 ║     v                  ║   *
+*                     ║ ╰─>packages ──────╯     ║     packages             ║  packages              ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [devops_storage]: Because of container isolation, DevOps dont worroy about storage changes]
+
+This is due to the fact, that a DevOps Engineer is already working with an *isolated container* so each push,
+starts a new computer, clean of previous modified state.
+
+Wouldn't it be nice if we could do the same in our Author column?
+
+
+# Revisining the Storage level of an Author with containers
+
+To have the same level of isolation, we will use containers.
+But not any container, a container specifically designed to imitate the contateiners that DevOps engineer use.
+So that if our testorial works in our container, we can be certain that it will run on the Continous Integration pipeline.
+
+Fortunately for such a tool exits *act*
+With act, it will seem like our Author Column has a new Context, Execution and Storage level,
+That, completely matches the one a DevOps Engineer uses.
 
 ***********************************************************************************************************************************
 *
@@ -797,7 +854,7 @@ In this section we will talk about 3rd option *isolation with containers*.
 *                     ╠═══════╪════════|═════════════════╬════════|═════════════════╬═════|══════════════════╣
 *                     ║                |                 ║        |                 ║     |                  ║
 *                     ║       │        v                 ║        v                 ║     v                  ║
-*                     ║              package             ║      package             ║   package              ║
+*                     ║              packages            ║      packages            ║   packages             ║
 *            Storage  ║       │                          ║                          ║                        ║
 *                     ║                                  ║                          ║                        ║
 *                     ║       │                          ║                          ║                        ║
@@ -805,227 +862,145 @@ In this section we will talk about 3rd option *isolation with containers*.
 *                     ╚═══════╧══════════════════════════╩══════════════════════════╩════════════════════════╝
 *
 *****************************************************************************************************************************************
-[Figure [devops_artifact]: An Act container creates a new Execution envorontment]
+[Figure [author_act_execution]: An Act container creates a new Execution environment]
 
 
-### Act
+### Using `act`
 
-So to re-create the students environment in our tutorial we would use a Docker image,
-that looks a lot like a the system that our Continuous Integration team uses.
+To install act (run GitHub Actions locally) on Ubuntu:
 
-So that would be using act`.
-
+~~~ bash
+@author $ sudo snap install action #=> -- exit 0
+~~~
 you can verify that you have act installed by:
 
-~~~
-  $ act --version
-  act version 0.2.67
+
+~~~ bash
+@author $ act --version
+@author act version 0.2.67
 ~~~
 
-Now let's create a GitHub workflow that we can use to execute our tutorial as a test.
+Now there are three different kinds of machines using act:
 
-We will use the help of Claude Code to do this but any of your  agentic coding tutorials can do it.
+Docker image sizes (used by act):
+
+  - Micro (node:16-buster-slim): ~200MB - minimal, may not work for all workflows
+  - Medium (default): ~500MB - good balance, works for most workflows
+  - Large (catthehacker/ubuntu:full-latest): ~18GB - includes most tools
+
+For our case we will use the medium machine.
+So to execute our workflows we will use the workflow we already have in section [GitHub Workflow].
+
+First let's see if `act` can find our workflow with `--list`.
 
 ~~~bash
-
-% claude --print "Can you generate .github workflow that using the latest ubuntu version install clitest and executes with basic_nushell_tutorial.md ?
-...
+@author $ act --list
+@author INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'
+@author Stage  Job ID         Job name       Workflow name       Workflow file           Events
+@author 0      run-testorial  run-testorial  execute testorials  execute_testorials.yml  push,pull_request,workflow_dispatch
 ~~~
 
+Now let's execute it:
 
-You can validate the generated workflow with actionlint[fn:5]
-
-~~~
-% claude --print "Validate .github/workflow/shelldocs.yml using actionlint and correct any error"
-...
+~~~bash
+@author $ act --platform ubuntu-latest=catthehacker/ubuntu:act-latest --job run-testorial #=> --exit 0
 ~~~
 
-And that's it.
-Now you have setup the environment that we will use to run the tests.
+`--platform ubuntu-latest=catthehacker/ubuntu:act-latest`
+: In our workflow when it uses the `ubuntu-latest` runner, use the docker image `catthehacker/ubuntu:act-latest`
+`--job run-testorial`
+: A workflow can have multiple jobs, we only care about the `run-testorial` one.
 
-#### Now run the test in our container
-now finally we ca locally run the tutorial repetitive tutorial.
-Even if it creates files, or changes databases, etc.
-It can run repetitively.
+And now that our workflows run in an isolated environment, we can run them repeatedly
 
-~~~
-   ~$ act list
-~~~
-
-Will give you the list of jobs to run.
-
-
-~~~
-   ~$ act jobs test_hello_world_tutorial~
+~~~bash
+@author $ act --platform ubuntu-latest=catthehacker/ubuntu:act-latest --job run-testorial #=> --exit 0
 ~~~
 
-Now we are ready to make this tutorial part of our Continuous Integration Tutorial.
-
-## As a DevOps Engineer
-
-Now Fortunately for us,
-Our Act container has the same structure as the one of GitHub Actions.
-Therefore the execution of our new tutorial doesn't require any change.
-Just upload hello_script.md tutorial
-And see how it is running in the GitHub Workflows tab.
-
-# Level 3: Invisible Commands
-
-Now for our final variation on a tutorial.
-
-Let's think of commands that we want to be executed as part of our test,
-but we don't want to be actually read by the Student.
-
-This make us create a new kind of publishing step in our tutorials.
-One Step to execute the output
-
-## As a Student
-
-Some tutorial need to show changes over time for the same time.
-
-As developers the tool that we use to show the differences between two versions of the same file.
-
-so a tutorial to shows changes over time would look like this:
-
-### 3rd Example Hello your_name
-
-------
-
-Let's suppose we want to create a bash script,
-that tell us: "Hello $your_name"
-Where $your_name is parameter we send from the command line.
-
-Well in that case we would need to write a script like this:
+Congratulations!
 
 
-~~~
-#!/bin/env bash
+### Our updated map
 
-+ name:-$1:'World'
-+ echo "Hello $name"
-- echo "Hello World"
+Observe that now the flow of information between the our Author container with `act` is the same as the one for the DevOps Engineer.
+Which is exactly what we want to avoid surprises!
 
-~~~
+***********************************************************************************************************************************
+*
+*
+*                           Author                                 DevOps                  Learner
+*                     ╔═══════╤══════════════════════════╦══════════════════════════╦════════════════════════╗
+*                     ║Real       Container              ║                          ║                        ║
+*                     ║Compu  │                          ║                          ║                        ║
+*                     ║ter                               ║                          ║                        ║
+*            Context  ║       │        Act ----inspired by ----> GH Runners         ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ║       │      list                ║                          ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ╠═══════╪════════|═════════════════╬══════════════════════════╬════════════════════════╣
+*                     ║          .--> GH Workflow        ║  .--> GH Workflow        ║ ╭───────────────────╮  ║
+*                     ║       │  |     |                 ║  |     |                 ║ │    Browser        │  ║
+*                     ║          |   execute             ║  |   execute             ║ ├───────────────────┤  ║
+*          Execution  ║       │  |     |                 ║  |     |                 ║ │                   │  ║
+*                     ║          |     v                 ║  |     v                 ║ │    Tutorial       │  ║
+*                     ║testorial-'   clitest? ---git push---'   clitest? ---publish-->│                   │  ║
+*                     ║                |                 ║        |                 ║ ╰───────────────────╯  ║
+*                     ╠═══════╪════════|═════════════════╬════════|═════════════════╬═════|══════════════════╣
+*                     ║                |                 ║        |                 ║     |                  ║
+*                     ║       │        v                 ║        v                 ║     v                  ║
+*                     ║              packages            ║      packages            ║   packages             ║
+*            Storage  ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ╚═══════╧══════════════════════════╩══════════════════════════╩════════════════════════╝
+*
+*****************************************************************************************************************************************
+[Figure [author_act_execution]: An Act container creates a new Execution environment]
 
-What the lines with the `+` sign mean that line was added.
-and the ones with `-` mean that line was deleted.
-And when you see two very similar lines one with the `+` and one with the `-` it means actually the line was replaced.
-like the "Hello World" being replaced by "Hello $name".
-
-Now save your file again as hi.sh. And Execute it like:
-
-~~~
-    :$ ./hi.sh "Alice"
-    :  Hello Alice
-~~~
-
-We even have a default value, for the parameter so:
-
-~~~
-    :$ ./hello.sh
-    :  Hello World
-~~~
-
-As you can see this new version of our script can take as input values entered by the user.
-
-------
-
-## As a Teacher
-
-Now that we have seen what a student, reads.
-
-How can we *produce* the diff output in a way that stays always consistent.
-But is *NOT* a screenshot or a copy paste of the output of a single time command?
-
-Well you can write it like this, and the output would like the one we want.
-But we don't want the command to be visible for our students.
-That might confuse them,
-so we need to execute the command, and make *only its output* part of the tutorial.
-For that we use `codebraid`.
-
-is a tool for literate programming that allows us to write command in markdown, but by using its special `.cb-run` property
-it can show the output of the command not its input.
-
-~~~{.bash .cb-run}
-  :$ git diff hi.sh@rev... hi.sh@rev...
-~~~
-
-to execute it we use:
-
-~~~
-  :$ codebraid pandoc --from markdown --to html --output ./doc/3rd_level.html
-~~~
-
-You can see that `codebraid` depends on the execution of `pandoc` good thing  that `pandoc` is the most popular tool used to transform documents from one format to another.
-
-Now if you read the ./doc/3rd_level.html file you would find that it doesn't contain any mention of the `diff` command
-It just shows how it's output. Which is precisely what we want for our student.
-
-One could make the case that making it just a copy paste from our interaction with the `diff` command line would be enough in this situation.
-
-But remember we are building this `testoria` to stand the passage of time.
-So probably a new version of our software or a new library, in the future is going to force us to write another version of the `hi.sh` script and therefore comparing versions with the new one, will be very easy to change for our command.
-
-### Finding this improvement in our map
-
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)              | DevOps                 |
-|--------------|------------------|------------------------------------------------------|------------------------|
-| Super System |                  | clitest, act, actlint and CMS - GitHub Pages         | GitHub Actions..       |
-| System       | Executing hi.sh  | ./docs_source/hello_world.md                         | Testorial.yml workflow |
-| Sub-system   | the script hi.sh | commands inside our tutorial not for public consumpt |                        |
-
-## As Tester
-
-Now the good news you.
-
-For a tester nothing to do!
-
-Just continue to run the workflows when you decide.
-
-### Finding this improvement in our map
-
-This stage doesn't modify anything on our workflow.
-Just like DevOps like it, because they don't get affected with more work.
-And yet reap the benefits of having a correct tutorial.
-
-
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)              | DevOps                 |
-|--------------|------------------|------------------------------------------------------|------------------------|
-| Super System |                  | clitest, act, actlint and CMS - GitHub Pages         | GitHub Actions..       |
-| System       | Executing hi.sh  | ./docs_source/hello_world.md                         | Testorial.yml workflow |
-| Sub-system   | the script hi.sh | commands inside our tutorial not for public consumpt |                        |
-
-# Tutorial Conclusion :ignore:
-
-And with that we have written a Testorial that covers a wide range of problems you might encounter when putting this ideas into practice.
 
 # What have we learned?
 
-+ There are 9 windows / context :: We need to consider all of them when writing executable documentation.
+And with that we have written a Testorial that covers a wide range of problems you might encounter when putting this ideas into practice.
+
++ There are 9 windows: We need to consider all of them when writing executable documentation.
++ 3 belong to our audience that now includes de *DevOps Engineer* that will integraet our testorials as port of the Continious Integration workflow.
++ And we need to consider 3 levels of context, for each one of the audiences.
++ We need to consider all the 9 windows,
   But *one by one* if we think of them all at once we get confused. So we can simply decide the following paragraph.
   For whom is it? and on what of it's contexts (super-system, system or sub-system) and just focus on that level.
 
 
-+ Writing executable documentation is hard, but LLMs make it easier:
-  As we have seen we need to use 3 hats to write executable documentation, but fortunately we just need to be proficient in them. with the help of LLMs we can do things that before required experts.
++ Writing executable documentation is hard, we need to be at the same time: Writer, a Porgrammer and a Tester.
+  But LLMs helps us in our weeak spots.
+
++ There are things we shouldn't delegate to LLMs
+  One is the acutal execution of the testorial, they can alucinate the execution. But they can help you debug the testorial.
+  The other is the writing of the testorial. It has to have your voice and care, but they can help you edit and review it.
 
 + There is no single tool to do executable documentation.
-  On this tutorial we used:
-  - clitest, to execute our tutorial.
-  - codebraid to  fine invisible executable blocks.
-  - pandoc to create an html version of our tutorial
-  - GitHub Actions to define the CI workflow.
-  - act to simulate locally, how our tutorial would run on GitHub Action servers.
-  - plus our standard text editor!
+    - clitest, to execute our tutorial.
+    - GitHub Actions to define the CI workflow.
+    - act to simulate locally, how our tutorial would run on GitHub Action servers.
+    - markdeep to actually publish the tutorial
+    - plus our standard text editor!
 
 
  But your selection of tools is very contextual specific.
  For example if your team uses another Continuous Integration tool not github actions, then you would need to change the workflow.yml file. To orient yourself you just need to keep in mind the 9 windows.
 
-# Is it worth it?
+## Is it worth it?
 
 If you want to have always correct, and up-to-date documentation and help your QA team with *real* test cases.
 It is definitively worth it, now that it has become cheaper to do it, with the help of LLMs
+
+
+> because ...
+> "The reward for work well done is the opportunity to do more."
+>
+>       -- Jonas Salk, inventor of the polio vaccine
+
+
 
 # Footnotes
 
@@ -1045,40 +1020,6 @@ It is definitively worth it, now that it has become cheaper to do it, with the h
 [[https://www.youtube.com/watch?v=EnB8GtPuauw][Documentation, Disrupted: How Two Technical Writers Changed Google Engineering Culture]]
  Write the Docs conference 2015
 
-# 9 windows filled
-
-
-*********************************************************************************************************
-*                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Audience ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    *
-*                                                                                                       *
-*                          Learner                   Tech Writer               DevOps                   *
-*    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢       Context  ║ Operating System        ║  CMS GitHub Pages        ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║ IDE (VS Code)           ║  Act container image ---copies--> Git Hub Runner  ║   *
-*    ⎢                ║                         ║      ^                   ║                        ║   *
-*    ⎢                ╠═════════════════════════╬══════|═══════════════════╬════════════════════════╣   *
-*    ⎢                ║                         ║      |                   ║                        ║   *
-*    ⎢                ║                         ║      |                   ║                        ║   *
-* Level     Execution ║ Tutorial.md <--cb pandoc--- Testorial.md ----clitest---> Workflow.yml       ║   *
-*    ⎢                ║     |                   ║   ^          ^           ║                        ║   *
-*    ⎢                ║     |                   ║   |          |           ║                        ║   *
-*    ⎢                ║   types                 ║   cb include cb run      ║                        ║   *
-*    ⎢                ║     |                   ║   |          |           ║                        ║   *
-*    ⎢                ╠═════|═══════════════════╬═══|══════════|═══════════╬════════════════════════╣   *
-*    ⎢                ║     |                   ║   |          |           ║                        ║   *
-*    ⎢                ║     |                   ║   |          |           ║                        ║   *
-*    ⎢                ║     v                   ║   |          |           ║                        ║   *
-*    ⎢         Parts  ║ hello.sh                ║  hello.sh   diff         ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎣                ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
-*                                                                                                       *
-*********************************************************************************************************
 
 # Appendix: Configuring GitHub Pages
 

@@ -8,7 +8,7 @@ on:                                 # (2)
   workflow_dispatch:                # (3)
 
 jobs:
-  run-clitest:
+  run-testorial:
     runs-on: ubuntu-latest          # (4)
 
     steps:
@@ -20,5 +20,8 @@ jobs:
          curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
          chmod +x clitest
 
-    - name: Run clitest on your testorial-
-      run: ./clitest --prefix '@learner ' ./docs/hello_world.md.html
+    - name: Run hello_world testorial
+      run: ./clitest --prefix '@learner ' ./hello_world.md.html
+
+    - name: testorial that install cowsay
+      run: sudo -v && ./clitest --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html
