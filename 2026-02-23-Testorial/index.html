@@ -356,7 +356,7 @@ Browser
 <div class="window browser">
 <div class="buttons"></div>
 <div class="tab">Example</div>
-<div class="menu"> <- -> ⟳ <div class="url">/Users/morgan/example.md.html</div></div>
+<div class="menu"> <- -> ⟳ <div class="url">hello_world.md.html</div></div>
 <iframe src="hello_world.html" content="text/html;charset=UTF-8"></iframe>
 </div></div></div>
 
@@ -525,7 +525,7 @@ We will configure a workflow that can execute the testorial as we can now do loc
 
 Look at this suggested workflow
 
-(embed git execute_testorials.yml height=100px here)
+(embed execute_testorials.yml height=100px here)
 
 [Listing [execute_testorial_yml]: ./.github/workflows/execute_testorials.yml]
 
@@ -570,16 +570,16 @@ Perhaps the DevOps team will decide to change the trigger so that instead of on 
 *                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
-*            Context  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║ .--- clitest <--.       ║  .--> GH Workflow        ║ ╭───────────────────╮  ║   *
 *                     ║ |               |       ║  |     |                 ║ │    Browser        │  ║   *
-*           Artifact  ║ executes       fix      ║  |   execute             ║ ├───────────────────┤  ║   *
-*                     ║ |               |       ║  |     |                 ║ │                   │  ║   *
+*                     ║ executes       fix      ║  |   execute             ║ ├───────────────────┤  ║   *
+*          Execution  ║ |               |       ║  |     |                 ║ │                   │  ║   *
 *                     ║ v               |       ║  |     v                 ║ │    Tutorial       │  ║   *
 *                     ║ testorial.markdown---gh push   clitest? ---publish-->│                   │  ║   *
 *                     ║                         ║                          ║ ╰───────────────────╯  ║   *
@@ -587,7 +587,7 @@ Perhaps the DevOps team will decide to change the trigger so that instead of on 
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
-*              Parts  ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -597,116 +597,177 @@ Perhaps the DevOps team will decide to change the trigger so that instead of on 
 [Figure [devops_artifact]: How a testorial gets executed and becomes a tutorial]
 
 
-# 3rd level: Components
+# 3rd level: Storage
 
-Now that we have completed the hello world.
+In the previous level we completed the "Hello World" tutorial.
+And we made it executable with `clitest` but we "cheated a litle" since we used as example a Testorial,
+that was pure, meaning it didn't change the state in any of the computers.
+So it was easy to execute as many times as we wanted.
 
-We will create a 2 nd tutorial, this tutorial will create an actual file that gets stored in the computer.
-Having this effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
+However most testorials, in fact most programs aren't like that.
+Most programs change something in the computer that executes them.
+They add records to a database, store files in the hard drive, even make transactions on a blockchain!
+
+For our next example we are going to evolve our "hello_World.md.html" tutorial.
+It will create a file that gets stored in the computer.
+This side-effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
 Instead we need to create *isolation*.
 
 ## As a Learner
 
-Now let's suppose we want to create a bash script that says hello world.
+Now let's modify our Tutorial, so that learner now has to install a program (`cowsay`) in their computer.
+
+The tutorial would look something like this:
+
+<div class="view">
+Browser
+<div class="window browser">
+<div class="buttons"></div>
+<div class="tab">Example</div>
+<div class="menu"> <- -> ⟳ <div class="url">cowsay_hello_world.md.html</div></div>
+<iframe src="cowsay_hello_world.md.html" content="text/html;charset=UTF-8"></iframe>
+</div></div></div>
+
 
 ### Orienting ourselves in the map
 
-Executing hi.sh from bash is something that happens in the system of the student,
-while reading tutorial: ./docs/hello_wrold.html in their browser.
-The script hi.sh is a sub part of the tutorial for the student.
-
-|              | Reader (Student)               | Author (Tech writer, Content  Engineer) | DevOps                       |
-|--------------|--------------------------------|-----------------------------------------|------------------------------|
-| Super System |                                | CMS - GitHub Pages                      | CI Pipeline (GitHub Actions) |
-| System       | *Execute hi.sh*                | clitest                                 | Testorial.yml workflow       |
-| Sub-system   | *Save hi.sh in the filesystem* |                                         |                              |
-
-### 2nd example: hi.sh
-One of the advantages of programs like bash.
-Is that the same instructions that you write as human,
-can be used to write a script,
-that the computer can execute almost exactly as if a human was typing them in the screen.
-
-Those programs are called: scripts.
+The important thing to know is that this tutorial asks the Learner to install something on ther local computer.
+Therefore it modifies the storage.
 
 
-------
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║ ╭───────────────────╮  ║   *
+*                     ║                         ║                          ║ │    Browser        │  ║   *
+*           Artifact  ║                         ║                          ║ ├───────────────────┤  ║   *
+*                     ║                         ║                          ║ │    Tutorial       │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ║                         ║                          ║    |                   ║   *
+*                     ║                         ║                          ║  apt install           ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════|═══════════════════╣   *
+*                     ║                         ║                          ║    |                   ║   *
+*                     ║                         ║                          ║    v                   ║   *
+*                     ║                         ║                          ║ packages               ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
 
-Let's suppose we want to create a bash script,
-that tell us: "Hello World"
-So it is the same as we did typing the instructions,
-but now it will be a script that executes them.
 
 
-~~~{.bash .cb_save=./hi.sh}
-#!/bin/env bash
+## Storage Level as an author.
 
-echo "Hello World"
+Now we know that the Testorials looks like this
 
-
+~~~ markdown
+  (include ./cowsay_hello_world.md.html here)
 ~~~
 
-Once we store the file and name it: `hi.sh`
-you need to give it permissions to be used as a program.
-for that you use the command `chmod`
+and we can execute it in our computer like this:
 
-~~~
-   :$ chmod +x ./hi.sh
+~~~bash
+@author $ sudo -v && clitest --first --prefix '@learner ' --diff-options '--ignore-space-change' ./cowsay_hello_world.md.html
 ~~~
 
-What this means is add (+) the executable permission to the `./hi.sh` file.
-Which makes it an executable program you can use like:
+Now we are using a lot more parameters so let's explain them:
+
+`sudo -v`
+: This is just so that before the execution, it asks for our local sudo password. So that the tutorial can install packages.
+`&&`
+: means *and* only execute the next command if the previous one executed correctly.
+`clitest`
+: We already familiar, in the following textfile, process lines tagged with the prefix as a script.
+`--first`
+: stop executing at the first test that fails. No need to continue executing if we have an error.
+`--prefix '@learner'`
+: execute the lines that start with `@learner`
+`--diff-options '--ignore-space-change'`
+: When comparing, ignore whitefspace differences between the output and the expected value.
+` ./cowsay_hello_world.md.html`
+: the name of the markdown file (`.md.html`) we are going to execute with clitest.
 
 
-~~~
-    :$ ./hi.sh
-    Hello World
-~~~
+The problem is that if we execute the script again we will get an error!
+Since the `cowsay` package was installed on first run, the second time we will get an error
 
-As you can see now, the computer is executing the same instructions,
-you typed before.
-But now it's a program.
-
-
-
-------
-
-## As a Teacher
-
-Now if we run the "testorial" tutorial
-on first instance we might get lucky
-
-and be able to execute it:
-
-~~~
-  :$ clitest --prefix '   :' ./hello_script.md
+~~~ bash
+@author $ sudo-v && clitest --first --prefix '@learner ' --diff-options '--ignore-whitespace' ./cowsay_hello_world.md.html #=> --exit 1
 ~~~
 
-But if we execute it a second time.
-We will get the error that the file already exists:
+So now we need to clean after the execution of the tests.
 
+## Testorial tear-down
 
+When doing unit testing _tear-down_ is the method that get's called aftear each test execution.
+
+In our case, we need to clean what we stored in the computer so that our testorials are repeateble.
+
+in `clitest` that is achieved with the `--post-fligt COMMAND` parameter.
+
+For example
+
+~~~ bash
+@author $ sudo-v && clitest --post-flight 'sudo apt remove -y cowsay' --first --prefix '@learner ' --diff-options '--ignore-whitespace' ./cowsay_hello_world.md.html #=> --exit 1
 ~~~
-  :$ clitest --prefix '   :' ./hello_script.md #=> exit -3
-~~~
+
+`--post-flight 'sudo apt remove -y cowsay' `
+: After the last test, execute the command `apt remove` so that the cowsay that we installed in the testorial, get's removed
+
 
 Now there are several ways we could handle this:
 
-1. We could write a code block in the beginning of our tutorial, specifying that the script shouldn't exist before execution.
-   That would be a pre-condition.
-2. Make the tutorial clean after it's execution. So deleting the created files, so that the next time is executed the state is known.
-3. Make the testorial execute on a temp directory every time to create isolation. This is the approach favored by the tool `prysk` and `cram` that are other snapshot-testing tools like `clitest` the one we are using now.
-4. And finally make our testorial execute on an *isolated* environment.
+1. We could have a pre-flight command requiring that cowsay it's not installed. That is called a `set-up` method in unit testing
+2. Make the tutorial clean after it's execution. That is the `tear-down` in unit testing
+3. And finally make our testorial execute on an *isolated* environment, like a docker container. And we will do that in the next phase.
 
-### Orienting ourselves in the map
+### Cleaning in the map
 
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║   .-- clitest --.       ║                          ║ ╭───────────────────╮  ║   *
+*                     ║   |             |       ║                          ║ │    Browser        │  ║   *
+*                     ║ executes        |       ║                          ║ ├───────────────────┤  ║   *
+*          Execution  ║   |             |       ║                          ║ │    Tutorial       │  ║   *
+*                     ║ testorial    pre-flight ║                          ║ ╰───────────────────╯  ║   *
+*                     ║   |             |       ║                          ║    |                   ║   *
+*                     ║ apt install  apt remove ║                          ║  apt install           ║   *
+*                     ╠═══|═════════════|═══════╬══════════════════════════╬════|═══════════════════╣   *
+*                     ║   |             |       ║                          ║    |                   ║   *
+*                     ║   |             |       ║                          ║    v                   ║   *
+*                     ║   '->packages <-'       ║                          ║ packages               ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
 
-
-|              | Reader (Student) | Author (Tech writer, Content  Engineer)      | DevOps                 |
-|--------------|------------------|----------------------------------------------|------------------------|
-| Super System |                  | clitest, act, actlint and CMS - GitHub Pages | GitHub Actions..       |
-| System       | Executing hi.sh  | ./docs_source/hello_world.md                 | Testorial.yml workflow |
-| Sub-system   | the script hi.sh | hi.sh                                        |                        |
 
 ### Act
 

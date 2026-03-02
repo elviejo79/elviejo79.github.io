@@ -1,0 +1,48 @@
+# Creating a Bash Script
+
+In our previous tutorial we executed commands in command line to say "hello world"
+
+But that is kind of boring.
+So now we will have a cow say it!
+
+First, let's check if we have the `cowsay` program installed:
+
+~~~bash
+@learner $ dpkg --status cowsay
+@learner dpkg-query: package 'cowsay' is not installed and no information is available
+@learner Use dpkg --info (= dpkg-deb --info) to examine archive files.
+@learner $
+~~~
+
+Since it is not in our system, we need to install it.
+~~~bash
+@learner $ sudo apt install cowsay #=> --exit 0
+~~~
+
+Once the installation ends successfully you can verify,
+you have `cowsay` installed
+
+~~~bash
+@learner $ cowsay -h
+@learner cow{say,think} version 3.03, (c) 1999 Tony Monroe
+@learner Usage: cowsay [-bdgpstwy] [-h] [-e eyes] [-f cowfile]
+@learner           [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
+@learner $
+~~~
+
+now we can tell a cow to tell 'hello'
+
+~~~ bash
+@learner $ cowsay Hello World
+@learner  _____________
+@learner < Hello World >
+@learner  -------------
+@learner         \   ^__^
+@learner          \  (oo)\_______
+@learner             (__)\       )\/\
+@learner                 ||----w |
+@learner                 ||     ||
+@learner $
+~~~
+
+Isn't a `cowsay`ing so much cooler?
