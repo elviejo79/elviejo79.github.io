@@ -156,7 +156,7 @@ Considering our Audiences and the Levels of context we need to understand we can
 *    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
-* Level     Execution  ║                         ║                          ║                        ║   *
+* Level    Execution  ║                         ║                          ║                        ║   *
 *    ⎢                ║          4th            ║           5th            ║         6th            ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
@@ -208,7 +208,7 @@ and so on.
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
-*           Execution  ║                         ║                          ║                        ║   *
+*          Execution  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -251,7 +251,7 @@ This pipeline is crucial, since we will integrate the testorials as parts of the
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
-*           Execution  ║                         ║                          ║                        ║   *
+*          Execution  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -332,7 +332,7 @@ We can trace how it works in our map of writing.
 *                     ║    organization         ║                          ║                        ║   *
 *                     ╠════════|════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║        |                ║                          ║                        ║   *
-*           Execution  ║        v                ║                          ║                        ║   *
+*          Execution  ║        v                ║                          ║                        ║   *
 *                     ║ Markdown Document ---git push--> GH Workflow ---publish--> Tutorial         ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -368,7 +368,7 @@ Browser
 <div class="buttons"></div>
 <div class="tab">Example</div>
 <div class="menu"> <- -> ⟳ <div class="url">hello_world.md.html</div></div>
-<iframe src="hello_world.html" content="text/html;charset=UTF-8"></iframe>
+<iframe src="hello_world.md.html" content="text/html;charset=UTF-8"></iframe>
 </div></div></div>
 
 
@@ -389,7 +389,7 @@ In our 9 windows framework we are here:
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║ ╭───────────────────╮  ║   *
 *                     ║                         ║                          ║ │    Browser        │  ║   *
-*           Execution  ║                         ║                          ║ ├───────────────────┤  ║   *
+*          Execution  ║                         ║                          ║ ├───────────────────┤  ║   *
 *                     ║                         ║                          ║ │                   │  ║   *
 *                     ║                         ║                          ║ │    Tutorial       │  ║   *
 *                     ║                         ║                          ║ │                   │  ║   *
@@ -413,7 +413,7 @@ In the previous section we saw what a Student would read.
 For you the the Testorial looks like a markdown source code.
 
 ~~~ markdown
-(insert hello_world.html here)
+(insert hello_world.md.html here)
 ~~~
 
 Notice that we have marked the instructions we expect the student to type like `@localhost $`
@@ -442,7 +442,7 @@ Installing `clitest` is as easy as:
 Now lets use `clitest` to view what commands are in our tutorial
 
 ~~~ bash
-@author $ clitest --list --prefix '@learner ' ./hello_world.html
+@author $ clitest --list --prefix '@learner ' ./hello_world.md.html
 @author #1	echo "hello world"
 @author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
 ~~~
@@ -458,7 +458,7 @@ Now lets use `clitest` to view what commands are in our tutorial
 To actually execute the tests you just need to remove the `-- list` flag
 
 ~~~{.bash}
-@author $ clitest --prefix '@learner ' ./hello_world.html
+@author $ clitest --prefix '@learner ' ./hello_world.md.html
 @author #1	echo "hello world"
 @author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
 @author OK: 2 of 2 tests passed
@@ -473,7 +473,7 @@ So you can repeat it as many times as you wish.
 Try it, just execute `clitest` again.
 
 ~~~{.bash}
-@author $ clitest --prefix '   :' ./docs/hello_world.md
+@author $ clitest --prefix '   :' ./hello_world.md.html
 @author exit 0
 ~~~
 
@@ -536,9 +536,9 @@ We will configure a workflow that can execute the testorial as we can now do loc
 
 Look at this suggested workflow
 
-(embed execute_testorials.yml height=100px here)
+(embed .github/workflows/execute_testorials.yml height=100px here)
 
-[Listing [execute_testorial_yml]: ./.github/workflows/execute_testorials.yml]
+[Listing [execute_testorial_yml]: .github/workflows/execute_testorials.yml]
 
 
 (1) Name of our workflow.
