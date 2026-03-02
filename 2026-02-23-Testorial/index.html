@@ -117,7 +117,7 @@ And for each element of our audince we need to consider distinct levels of under
 Context level
 : Is under what circunstances (outside its control) are we writing.
 
-Artifact level
+Execution level
 : the actual thing (tutorial, testorial, workflow) that the person can maniplate.
 
 Parts level
@@ -145,7 +145,7 @@ Considering our Audiences and the Levels of context we need to understand we can
 *    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
-* Level     Artifact  ║                         ║                          ║                        ║   *
+* Level     Execution  ║                         ║                          ║                        ║   *
 *    ⎢                ║          4th            ║           5th            ║         6th            ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
@@ -197,7 +197,7 @@ and so on.
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
-*           Artifact  ║                         ║                          ║                        ║   *
+*           Execution  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -240,7 +240,7 @@ This pipeline is crucial, since we will integrate the testorials as parts of the
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
-*           Artifact  ║                         ║                          ║                        ║   *
+*           Execution  ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -321,7 +321,7 @@ We can trace how it works in our map of writing.
 *                     ║    organization         ║                          ║                        ║   *
 *                     ╠════════|════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║        |                ║                          ║                        ║   *
-*           Artifact  ║        v                ║                          ║                        ║   *
+*           Execution  ║        v                ║                          ║                        ║   *
 *                     ║ Markdown Document ---git push--> GH Workflow ---publish--> Tutorial         ║   *
 *                     ║                         ║                          ║                        ║   *
 *                     ║                         ║                          ║                        ║   *
@@ -339,12 +339,12 @@ We can trace how it works in our map of writing.
 *********************************************************************************************************
 [Figure [gh_pages_workflow]: GitHub Pages pbublishing workflow]
 
-# 2nd Level the Artifact
+# 2nd Level the Execution
 
-In the previous diagram we saw that at the Artifact level works like a single pipeline.
+In the previous diagram we saw that at the Execution level works like a single pipeline.
 Now on this section we are going to cover that pipeline in more detail.
 
-## A Learners Artifact: The tutorial
+## A Learners Execution: The tutorial
 
 Let's start with the end in mind.
 Let's look at the tutorial that our Learner will read:
@@ -378,7 +378,7 @@ In our 9 windows framework we are here:
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║ ╭───────────────────╮  ║   *
 *                     ║                         ║                          ║ │    Browser        │  ║   *
-*           Artifact  ║                         ║                          ║ ├───────────────────┤  ║   *
+*           Execution  ║                         ║                          ║ ├───────────────────┤  ║   *
 *                     ║                         ║                          ║ │                   │  ║   *
 *                     ║                         ║                          ║ │    Tutorial       │  ║   *
 *                     ║                         ║                          ║ │                   │  ║   *
@@ -396,7 +396,7 @@ In our 9 windows framework we are here:
 *********************************************************************************************************
 [Figure [learner_artifact]: A Learner reads the tutorial]
 
-## Author's Artifact: the Testorial
+## Author's Execution: the Testorial
 
 In the previous section we saw what a Student would read.
 For you the the Testorial looks like a markdown source code.
@@ -488,7 +488,7 @@ and we don't care about the literal output,
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║   .--- clitest <--.     ║                          ║ ╭───────────────────╮  ║   *
 *                     ║   |               |     ║                          ║ │    Browser        │  ║   *
-*           Artifact  ║  executes        fix    ║                          ║ ├───────────────────┤  ║   *
+*           Execution  ║  executes        fix    ║                          ║ ├───────────────────┤  ║   *
 *                     ║   |               |     ║                          ║ │                   │  ║   *
 *                     ║   v               |     ║                          ║ │    Tutorial       │  ║   *
 *                     ║   testorial.markdown    ║                          ║ │                   │  ║   *
@@ -506,7 +506,7 @@ and we don't care about the literal output,
 *********************************************************************************************************
 [Figure [author_artifact]: An author makes its testorial executable by clitest]
 
-## DevOps Engineer Artifact
+## DevOps Engineer Execution
 
 Now that the test can be reproduce locally,
 we need to think, How it is going to be executed on the Continuous Integration server?
@@ -650,7 +650,7 @@ Therefore it modifies the storage.
 *                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
 *                     ║                         ║                          ║ ╭───────────────────╮  ║   *
 *                     ║                         ║                          ║ │    Browser        │  ║   *
-*           Artifact  ║                         ║                          ║ ├───────────────────┤  ║   *
+*           Execution ║                         ║                          ║ ├───────────────────┤  ║   *
 *                     ║                         ║                          ║ │    Tutorial       │  ║   *
 *                     ║                         ║                          ║ ╰───────────────────╯  ║   *
 *                     ║                         ║                          ║    |                   ║   *
@@ -728,13 +728,7 @@ For example
 : After the last test, execute the command `apt remove` so that the cowsay that we installed in the testorial, get's removed
 
 
-Now there are several ways we could handle this:
-
-1. We could have a pre-flight command requiring that cowsay it's not installed. That is called a `set-up` method in unit testing
-2. Make the tutorial clean after it's execution. That is the `tear-down` in unit testing
-3. And finally make our testorial execute on an *isolated* environment, like a docker container. And we will do that in the next phase.
-
-### Cleaning in the map
+### How does the Storage level looks from the point of view of the Author
 
 *********************************************************************************************************
 *                                                                                                       *
@@ -767,6 +761,51 @@ Now there are several ways we could handle this:
 *                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
 *                                                                                                       *
 *********************************************************************************************************
+
+
+
+### There different ways to handle isolation of tests
+Now there are several ways we could handle this:
+
+1. We could have a pre-flight command requiring that cowsay it's not installed. That is called a `set-up` method in unit testing
+2. Make the tutorial clean after it's execution. That is the `tear-down` in unit testing
+3. And finally make our testorial execute on an *isolated* environment, like a docker container. And we will do that in the next phase.
+
+In this section we will talk about 3rd option *isolation with containers*.
+
+
+***********************************************************************************************************************************
+*
+*
+*                           Author                                 DevOps                  Learner
+*                     ╔═══════╤══════════════════════════╦══════════════════════════╦════════════════════════╗
+*                     ║Real       Container              ║                          ║                        ║
+*                     ║Compu  │                          ║                          ║                        ║
+*                     ║ter                               ║                          ║                        ║
+*            Context  ║       │        Act ----inspired by ----> GH Runners         ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ║       │      list                ║                          ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ╠═══════╪════════|═════════════════╬══════════════════════════╬════════════════════════╣
+*                     ║          .--> GH Workflow        ║  .--> GH Workflow        ║ ╭───────────────────╮  ║
+*                     ║       │  |     |                 ║  |     |                 ║ │    Browser        │  ║
+*                     ║          |   execute             ║  |   execute             ║ ├───────────────────┤  ║
+*          Execution  ║       │  |     |                 ║  |     |                 ║ │                   │  ║
+*                     ║          |     v                 ║  |     v                 ║ │    Tutorial       │  ║
+*                     ║testorial-'   clitest? ---git push---'   clitest? ---publish-->│                   │  ║
+*                     ║                |                 ║        |                 ║ ╰───────────────────╯  ║
+*                     ╠═══════╪════════|═════════════════╬════════|═════════════════╬═════|══════════════════╣
+*                     ║                |                 ║        |                 ║     |                  ║
+*                     ║       │        v                 ║        v                 ║     v                  ║
+*                     ║              package             ║      package             ║   package              ║
+*            Storage  ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ╚═══════╧══════════════════════════╩══════════════════════════╩════════════════════════╝
+*
+*****************************************************************************************************************************************
+[Figure [devops_artifact]: An Act container creates a new Execution envorontment]
 
 
 ### Act
@@ -1024,7 +1063,7 @@ It is definitively worth it, now that it has become cheaper to do it, with the h
 *    ⎢                ╠═════════════════════════╬══════|═══════════════════╬════════════════════════╣   *
 *    ⎢                ║                         ║      |                   ║                        ║   *
 *    ⎢                ║                         ║      |                   ║                        ║   *
-* Level     Artifact  ║ Tutorial.md <--cb pandoc--- Testorial.md ----clitest---> Workflow.yml       ║   *
+* Level     Execution ║ Tutorial.md <--cb pandoc--- Testorial.md ----clitest---> Workflow.yml       ║   *
 *    ⎢                ║     |                   ║   ^          ^           ║                        ║   *
 *    ⎢                ║     |                   ║   |          |           ║                        ║   *
 *    ⎢                ║   types                 ║   cb include cb run      ║                        ║   *
