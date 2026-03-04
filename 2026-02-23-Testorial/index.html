@@ -8,17 +8,6 @@
 
 ![Author surveying the terrain ](./images/author_terrain.png)
 
-For technical writers, that are looking to be more valuable to their organizations,
-That are frustrated with having articles that they wrote,
-become obsolete almost immediately,
-And that haven't found Large Language Models useful.
-This article teaches how to write Testorials.
-Tutorials that can be executed as Integration tests.
-So that the documentation is known to be correct.
-And can notify the author when something in the tutorial breaks.
-Instead of frustrated users.
-
-
 When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
 The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
 Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
@@ -109,7 +98,68 @@ LLMs can help us become the unicorn at the intersection of the three hats needed
 
 ![With LLMs it is easier to become a unicorn, or Author of estorials](./images/venn_unicorn.svg)
 
-# A map of the terrain
+## What you are reading
+
+According to my records it seems that for writing this Testorial
+I had to 34 conversations with [Claude Code](https://claude.com/product/claude-code).
+And with 18 conversations witch [ChatGpt](https://chatgpt.com)
+
+Those conversations varied froma couple of minutes to a few days.
+
+With Claude it was technical conversations like:
++ How can execute a command with `sudo` inside a script?
++ How to install `act` in Ubuntu?
+
+And with ChatGpt the conversations where more like an editor:
++ What is a better name for the technique of using tutorials as tests: Testorials or DocOps?
++ Here is the first draft of my article. What are it's 5 weakest spots?
+
+
+So having LLMs at my disposal was key in bring the article that you are reading to frutuition.
+It was like having a team with a Senior Developer and a Tireles Editor helping me write it.
+
+In the past when I have tried to make Testorials a common practice it has no been possible,
+Because the level of expertise required in so many areas made it impractical.
+The Deadline to deliver the article had alread passed.
+
+> "LLMs make it economically feasible, practical and even fun,
+> to write testorials"
+
+However as a big proponent of using the help of LLMs to write documents.
+There are two areas where I don't think they should be used:
+
+### Deterministc Execution
+As you will see next the whole point of testorial is that it can be executed repeteadly as an intgration test.
+And although in theory it could be possible to tell an LLM: "Read this testorial and execute the code, in the examples"
+That would be recipe for failure.
+We want the execution of the test to be exactly the same on every iteration!
+In order to trust our test.
+
+Once a testorial fails, you can ask the LLM to update it and make it run again.
+But once it is correct again it's execution again must be deterministic.
+
+In this tutorial that Determinism comes from `clitest` to execue the testorial and from using the `act` container.
+
+### Your goal with the article
+
+When you are writing a tutorial you have a *goal* an approach an inovation,
+that you want to communcate to the Learner.
+That goal is *yours* and the LLM cannot, give you a goal.
+So in my opinion LLMs are best used as untairable editors.
+That can read as many drafts of your piece as necessary
+That can give clear direction.
+But you shouldn't use them to replace your voice.
+
+You are the writter, the LLM is a great Editor.
+
+For example with article my goal where to:
+
+1. Explain how to write documentation as test, Testorials.
+2. Introcude the Nine Windows framework for writing to make it easy for the Author to think about this pieces.
+
+And with that, let's learn about the Nine Windows
+
+# A map of the terrain, the Nine Windows framework
 
 We have always had to consider the audience when writing a piece.
 Now we need to consider three different audiences:
@@ -148,16 +198,8 @@ Considering our Audiences and the Levels of context we need to understand we can
 *    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢       Context  ║          1st            ║          2nd             ║        3rd             ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
-*    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢                ║                         ║                          ║                        ║   *
-* Level    Execution  ║                         ║                          ║                        ║   *
-*    ⎢                ║          4th            ║           5th            ║         6th            ║   *
+*    ⎢       Context  ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
@@ -165,7 +207,15 @@ Considering our Audiences and the Levels of context we need to understand we can
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
-*    ⎢         Parts  ║         7th             ║                          ║                        ║   *
+*  Level   Execution  ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢       Storage  ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
 *    ⎢                ║                         ║                          ║                        ║   *
