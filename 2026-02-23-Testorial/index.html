@@ -512,7 +512,7 @@ To actually execute the tests you just need to remove the `-- list` flag
 @author #1	echo "hello world"
 @author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
 @author OK: 2 of 2 tests passed
-
+@author $
 ~~~
 
 Now we get the report `OK: 2 of 2 tests passed`.
@@ -523,8 +523,7 @@ So you can repeat it as many times as you wish.
 Try it, just execute `clitest` again.
 
 ~~~{.bash}
-@author $ clitest --prefix '   :' ./hello_world.md.html
-@author exit 0
+@author $ clitest --prefix '@learner ' ./hello_world.md.html #=> --exit 0
 ~~~
 
 It will run again the tests.
@@ -738,7 +737,7 @@ Now we know that the Testorials looks like this
 and we can execute it in our computer like this:
 
 ~~~bash
-@author $ sudo -v && ./clitest --first --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 0
+@author $ sudo -v && clitest --first --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 0
 ~~~
 
 Now we are using a lot more parameters so let's explain them:
@@ -763,7 +762,7 @@ The problem is that if we execute the script again we will get an error!
 Since the `cowsay` package was installed on first run, the second time we will get an error
 
 ~~~ bash
-@author $ sudo -v && ./clitest --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 1
+@author $ sudo -v && clitest --first --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 1
 ~~~
 
 So now we need to clean after the execution of the tests.
@@ -779,7 +778,7 @@ in `clitest` that is achieved with the `--post-flight COMMAND` parameter.
 For example
 
 ~~~ bash
-@author $ sudo-v && clitest --post-flight 'sudo apt remove -y cowsay' --first --prefix '@learner ' --diff-options '--ignore-space-change' ./cowsay_hello_world.md.html #=> --exit 0
+@author $ sudo -v && clitest --post-flight 'sudo apt remove -y cowsay' --first --prefix '@learner ' --diff-options '--ignore-space-change' ./cowsay_hello_world.md.html #=> --exit 0
 ~~~
 
 `--post-flight 'sudo apt remove -y cowsay' `
@@ -920,7 +919,7 @@ That, completely matches the one a DevOps Engineer uses.
 To install act (run GitHub Actions locally) on Ubuntu:
 
 ~~~ bash
-@author $ sudo snap install act #=> -- exit 0
+@author $ sudo snap install act #=> --exit 0
 ~~~
 you can verify that you have act installed by:
 
@@ -944,7 +943,7 @@ So to execute our workflows we will use the workflow we already have in section 
 First let's see if `act` can find our workflow with `--list`.
 
 ~~~bash
-@author $ act --list
+@author $ act --list #=> --exit 0
 @author INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'
 @author Stage  Job ID         Job name       Workflow name       Workflow file           Events
 @author 0      run-testorial  run-testorial  execute testorials  execute_testorials.yml  push,pull_request,workflow_dispatch
