@@ -13,7 +13,7 @@ The one that explains what you want to learn in a voice that you can understand 
 Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
 
 Well, as a Content Engineer let me tell you that it's never my intention to write documentation that goes stale.
-It's just that there are many moving parts,
+There are many moving parts,
 So invariably a section of a good tutorial will always become obsolete almost the moment we publish it.
 It's our continuous fight against [bit rot](https://en.wikipedia.org/wiki/Software_rot).
 
@@ -52,7 +52,7 @@ Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
 And it's historical precedent Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
 It should be more popular and it isn't.
 
-If we just search online: Why isn't literate programming more popular?
+If we search online: Why isn't literate programming more popular?
 We would a find that common reason is that:
 
 > The intersection of people that are good programmers
@@ -82,7 +82,7 @@ Testorial asks the Author to wear a *third hat*:
   - Write tests that run automatically
   - Monitor when things break
 
-And if just writing is already difficult,
+If writing is difficult,
 writing, programming, and testing is as difficult as finding a unicorn.
 
 ![A person that can wear all three hats is as rare as unicorn](./images/venn_programmer_writer_tester.svg)
@@ -132,7 +132,7 @@ There are two areas where I don't think they should be used:
 As you will see next the whole point of testorial is that it can be executed repeatedly as an integration test.
 And although in theory it could be possible to tell an LLM: "Read this testorial and execute the code, in the examples"
 That would be recipe for failure.
-We want the execution of the test to be exactly the same on every iteration!
+We want the execution of the test to be identical on every iteration!
 In order to trust our test.
 
 Once a testorial fails, you can ask the LLM to update it and make it run again.
@@ -229,8 +229,8 @@ Now with this map we can make sense of what we're writing for whom, when.
 # 1st Level: Context
 
 Let's start by understanding the Context on which each of our Audience operate
-The context is very important since most of the time we can't control it.
-And it's actually a constraint.
+The context is important since most of the time we can't control it.
+It's a constraint.
 
 
 
@@ -340,7 +340,7 @@ In this tutorial we will assume your using GitHub Pages as your CMS.
 Since it's pretty common and it integrates with GitHub Actions, that's a Continuous Integration pipeline.
 
 Probably your organization already has configured GitHub Pages.
-You just need to understand on which repository on which folder you need to save your testorial markdown document.
+You need to understand on which repository on which folder you need to save your testorial markdown document.
 But, in case it's not configured you can check the section [Appendix: Configuring GitHub Pages] Configuring GitHub Pages.
 
 
@@ -506,7 +506,7 @@ Now lets use `clitest` to view what commands are in our tutorial
 !!! Tip
     Is important to make sure that `--list` finds all the commands that you expect the testorial to execute.
 
-To actually execute the tests you just need to remove the `-- list` flag
+To execute the tests, remove the `--list` flag
 
 ~~~{.bash}
 @author $ clitest --prefix '@learner ' ./hello_world.md.html
@@ -521,7 +521,7 @@ Now we get the report `OK: 2 of 2 tests passed`.
 This testorial is /pure/, it doesn't change any files in our computer.
 So you can repeat it as many times as you wish.
 
-Try it, just execute `clitest` again.
+Try it, execute `clitest` again.
 
 ~~~{.bash}
 @author $ clitest --prefix '@learner ' ./hello_world.md.html #=> --exit 0
@@ -744,7 +744,7 @@ and we can execute it in our computer like this:
 Now we're using a lot more parameters so let's explain them:
 
 `sudo -v`
-: This is just so that before the execution, it asks for our local sudo password. So that the tutorial can install packages.
+: Before execution, `sudo -v` asks for your local sudo password so the tutorial can install packages.
 `&&`
 : means *and* only execute the next command if the previous one executed correctly.
 `clitest`
@@ -865,8 +865,7 @@ Now the impact of storing on Devops Engineer is *minimal* their map is the same 
 *********************************************************************************************************
 [Figure [devops_storage]: Because of container isolation, DevOps don't worry about storage changes]
 
-This is due to the fact, that a DevOps Engineer is already working with an *isolated container* so each push,
-starts a new computer, clean of previous modified state.
+This is because a DevOps Engineer is already working with an *isolated container* so each push starts a new computer, clean of previous modified state.
 
 Wouldn't it be nice if we could do the same in our Author column?
 
@@ -1017,7 +1016,7 @@ And with that we have written a Testorial that covers a wide range of problems y
 + 3 belong to our audience that now includes  *DevOps Engineer* that will integrate our testorials as port of the Continuous Integration workflow.
 + And we need to consider 3 levels of context, for each one of the audiences.
 + We need to consider all the 9 windows,
-  But *one by one* if we think of them all at once we get confused. So we can simply decide the following paragraph.
+  But *one by one* if we think of them all at once we get confused. We can decide the following paragraph.
   For whom is it? Author, Learner, or DevOps;
   and on what level is it working? Context, Execution, or Storage.
 
@@ -1033,11 +1032,11 @@ And with that we have written a Testorial that covers a wide range of problems y
     - clitest, to execute our tutorial.
     - GitHub Actions to define the CI workflow.
     - act to simulate locally, how our tutorial would run on GitHub Action servers.
-    - Markdeep to actually publish the tutorial
+    - Markdeep to publish the tutorial
     - plus our standard text editor!
 
 
- But your selection of tools is very contextual specific.
+ But your selection of tools is context-specific.
  For example if your team uses another Continuous Integration tool not github actions, then you would need to change the workflow.yml file. To orient yourself you just need to keep in mind the 9 windows.
 
 ## Is it worth it?
@@ -1105,8 +1104,7 @@ That would create your local copy of your repository.
 
 Now you can modify the `readme.md` file.
 
-Like this little script would simply append the current date and time to the readme file
-to make sure it's modified.
+This script appends the current date and time to the readme file to make sure it's modified.
 
 ~~~
    @author:$ cd $USERNAME.github.io
