@@ -8,11 +8,11 @@
 
 ![Author surveying the terrain ](./images/author_terrain.png)
 
-When you are learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
+When you're learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
 The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
 Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
 
-Well, as a Content Engineer let me tell you that it is never my intention to write documentation that goes stale.
+Well, as a Content Engineer let me tell you that it's never my intention to write documentation that goes stale.
 It's just that there are many moving parts,
 So invariably a section of a good tutorial will always become obsolete almost the moment we publish it.
 It's our continuous fight against [bit rot](https://en.wikipedia.org/wiki/Software_rot).
@@ -46,7 +46,7 @@ Tutorial
 : A goal oriented article, written so that a Learner can acquire a new skill.
 : Every Testorial is a Tutorial, but not every Tutorial is a Testorial.
 
-# Why aren't Docs-as-test more popular.
+# Why aren't Testorials (Docs-as-test) more popular?
 
 Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
 And it's historical precedent Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
@@ -75,7 +75,7 @@ Traditional Technical Writing has been seen as a person that can wear two hats:
 
 But Even though a Technical Writer has the skills of Programmer and a Writer.
 We don't see frequently executable documentation or testorials.
-And I think it is because
+And I think it's because
 Testorial asks the Author to wear a *third hat*:
 
 - Tester
@@ -83,7 +83,7 @@ Testorial asks the Author to wear a *third hat*:
  - Monitors
 
 And if just writing is already difficult,
-writing, programming and testing is as difficult as finding a unicorn.
+writing, programming, and testing is as difficult as finding a unicorn.
 
 ![A person that can wear all three hats is as rare as unicorn](./images/venn_programmer_writer_tester.svg)
 
@@ -96,9 +96,9 @@ If you were writer fascinated by computers and became a technical writer.
 Or you were a DevOps engineer that you learned you love of writing later in life, like me.
 LLMs can help us become the unicorn at the intersection of the three hats needed to do Docs-as-Tests
 
-![With LLMs it is easier to become a unicorn, or Author of testorials](./images/venn_unicorn.svg)
+![With LLMs it's easier to become a unicorn, or Author of testorials](./images/venn_unicorn.svg)
 
-## What you are reading
+## What you're reading
 
 According to my records it seems that for writing this Testorial
 I had to 34 conversations with [Claude Code](https://claude.com/product/claude-code).
@@ -115,14 +115,14 @@ And with ChatGpt the conversations where more like an editor:
 + Here is the first draft of my article. What are it's 5 weakest spots?
 
 
-So having LLMs at my disposal was key in bring the article that you are reading to fruition.
+So having LLMs at my disposal was key in bring the article that you're reading to fruition.
 It was like having a team with a Senior Developer and a tireless Editor helping me write it.
 
 In the past when I have tried to make Testorials a common practice it has no been possible,
 Because the level of expertise required in so many areas made it impractical.
 The Deadline to deliver the article had already passed.
 
-> "LLMs make it economically feasible, practical and even fun,
+> "LLMs make it economically feasible, practical, and even fun,
 > to write testorials"
 
 However as a big proponent of using the help of LLMs to write documents.
@@ -136,13 +136,13 @@ We want the execution of the test to be exactly the same on every iteration!
 In order to trust our test.
 
 Once a testorial fails, you can ask the LLM to update it and make it run again.
-But once it is correct again it's execution again must be deterministic.
+But once it's correct again it's execution again must be deterministic.
 
 In this tutorial that Determinism comes from `clitest` to execute the testorial and from using the `act` container.
 
 ### Your goal with the article
 
-When you are writing a tutorial you have a *goal* an approach an innovation,
+When you're writing a tutorial you have a *goal* an approach an innovation,
 that you want to communicate to the Learner.
 That goal is *yours* and the LLM cannot, give you a goal.
 So in my opinion LLMs are best used as tireless editors.
@@ -150,7 +150,7 @@ That can read as many drafts of your piece as necessary
 That can give clear direction.
 But you shouldn't use them to replace your voice.
 
-You are the writer, the LLM is a great Editor.
+You're the writer, the LLM is a great Editor.
 
 For example with article my goal where to:
 
@@ -186,7 +186,7 @@ Storage level
 : We must consider the impact of changing the Storage for each tutorial.
 
 
-Thinking this way, gives us a map of the terrain that we are going to traverse while writing.
+Thinking this way, gives us a map of the terrain that we're going to traverse while writing.
 
 ## Nine windows to write a testorial
 
@@ -224,21 +224,21 @@ Considering our Audiences and the Levels of context we need to understand we can
 *                                                                                                       *
 *********************************************************************************************************
 
-Now with this map we can make sense of what we are writing for whom, when.
+Now with this map we can make sense of what we're writing for whom, when.
 
 # 1st Level: Context
 
 Let's start by understanding the Context on which each of our Audience operate
-The context is very important since most of the time we cannot control it.
-And it is actually a constraint.
+The context is very important since most of the time we can't control it.
+And it's actually a constraint.
 
 
 
 And the main Context that we need to focus on is the one for you the Author:
 
-## A Learners Context
+## A Learner's Context
 This is the most obvious one, we need to be mindful of our Learners Context.
-+ What is their previous experience?
++ What's their previous experience?
 + What constrains could their employer have?
 + What operating system are they using?
 and so on.
@@ -337,14 +337,14 @@ Some static site generators, that work well are:
 [Markdeep](https://casual-effects.com/markdeep/)
 
 In this tutorial we will assume your using GitHub Pages as your CMS.
-Since it's pretty common and it integrates with GitHub Actions, that is a Continuous Integration pipeline.
+Since it's pretty common and it integrates with GitHub Actions, that's a Continuous Integration pipeline.
 
 Probably your organization already has configured GitHub Pages.
 You just need to understand on which repository on which folder you need to save your testorial markdown document.
-But, in case it is not configured you can check the section [Appendix: Configuring GitHub Pages] Configuring GitHub Pages.
+But, in case it's not configured you can check the section [Appendix: Configuring GitHub Pages] Configuring GitHub Pages.
 
 
-What is important to understand is the publishing process of GitHub Pages
+What's important to understand is the publishing process of GitHub Pages
 
 ### GitHub Pages publishing process
 
@@ -357,9 +357,9 @@ In GitHub Pages the process of publishing is:
 
 You can monitor the state the of the GitHub Workflow on the page.
 
-Observe that the workflow it's on yellow while it is running.
+Observe that the workflow it's on yellow while it's running.
 
-You can even check the detail instructions that it is executing.
+You can even check the detail instructions that it's executing.
 
 When it finally turns to green means your new page is published.
 
@@ -404,7 +404,7 @@ We can trace how it works in our map of writing.
 # 2nd Level the Execution
 
 In the previous diagram we saw that at the Execution level works like a single pipeline.
-Now on this section we are going to cover that pipeline in more detail.
+Now on this section we're going to cover that pipeline in more detail.
 
 ## A Learners Execution: The tutorial
 
@@ -423,7 +423,7 @@ Learner
 </div></div></div>
 
 
-In our 9 windows framework we are here:
+In our 9 windows framework we're here:
 
 *********************************************************************************************************
 *                                                                                                       *
@@ -570,7 +570,7 @@ and we don't care about the literal output,
 ## DevOps Engineer Execution
 
 Now that the test can be reproduce locally,
-we need to think, How it is going to be executed on the Continuous Integration server?
+we need to think, How it's going to be executed on the Continuous Integration server?
 
 ### GitHub Actions
 
@@ -601,12 +601,12 @@ Look at this suggested workflow
 
 This workflow will execute on every commit, but for demonstration purposes go to where you have this tutorial stored.
 Then GitHub Workflows click on Execute wait a few minutes.
-And see that it is in *green* meaning all the tests executed correctly.
+And see that it's in *green* meaning all the tests executed correctly.
 
 
 ### Commit your execute_testorials workflow
 
-Now we are ready to include this tutorial as part of the CI pipeline.
+Now we're ready to include this tutorial as part of the CI pipeline.
 This will need  approval from your DevOps department
 Your `testorial.markdown` and `execute_tasteless.yml` workflow is all the documentation they need to include the testorials execution as part of the CI process.
 
@@ -666,7 +666,7 @@ However most testorials, in fact most programs aren't like that.
 Most programs change something in the computer that executes them.
 They add records to a database, store files in the hard drive, even make transactions on a blockchain!
 
-For our next example we are going to evolve our "hello_World.md.html" tutorial.
+For our next example we're going to evolve our "hello_World.md.html" tutorial.
 It will create a file that gets stored in the computer.
 This side-effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
 Instead we need to create *isolation*.
@@ -727,7 +727,7 @@ Therefore it modifies the storage.
 
 
 
-## Storage Level as an author.
+## Storage Level as an Author
 
 Now we know that the Testorials looks like this
 
@@ -741,7 +741,7 @@ and we can execute it in our computer like this:
 @author $ sudo -v && clitest --first --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 0
 ~~~
 
-Now we are using a lot more parameters so let's explain them:
+Now we're using a lot more parameters so let's explain them:
 
 `sudo -v`
 : This is just so that before the execution, it asks for our local sudo password. So that the tutorial can install packages.
@@ -756,7 +756,7 @@ Now we are using a lot more parameters so let's explain them:
 `--diff-options '--ignore-space-change'`
 : When comparing, ignore space differences between the output and the expected value.
 ` ./cowsay_hello_world.md.html`
-: the name of the markdown file (`.md.html`) we are going to execute with clitest.
+: the name of the markdown file (`.md.html`) we're going to execute with clitest.
 
 
 The problem is that if we execute the script again we will get an error!
@@ -774,7 +774,7 @@ When doing unit testing _tear-down_ is the method that gets called after each te
 
 In our case, we need to clean what we stored in the computer so that our testorials are repeatable.
 
-in `clitest` that is achieved with the `--post-flight COMMAND` parameter.
+in `clitest` that's achieved with the `--post-flight COMMAND` parameter.
 
 For example
 
@@ -823,8 +823,8 @@ For example
 ### There different ways to handle isolation of tests
 Now there are several ways we could handle this:
 
-1. We could have a pre-flight command requiring that cowsay it's not installed. That is called a `set-up` method in unit testing
-2. Make the tutorial clean after it's execution. That is the `tear-down` in unit testing
+1. We could have a pre-flight command requiring that cowsay it's not installed. That's called a `set-up` method in unit testing
+2. Make the tutorial clean after it's execution. That's the `tear-down` in unit testing
 3. And finally make our testorial execute on an *isolated* environment, like a docker container. And we will do that in the next phase.
 
 
@@ -878,7 +878,7 @@ But not any container, a container specifically designed to imitate the containe
 So that if our testorial works in our container, we can be certain that it will run on the Continuous Integration pipeline.
 
 Fortunately for such a tool exits *act*
-With act, it will seem like our Author Column has a new Context, Execution and Storage level,
+With act, it will seem like our Author Column has a new Context, Execution, and Storage level,
 That, completely matches the one a DevOps Engineer uses.
 
 ***********************************************************************************************************************************
@@ -1018,7 +1018,8 @@ And with that we have written a Testorial that covers a wide range of problems y
 + And we need to consider 3 levels of context, for each one of the audiences.
 + We need to consider all the 9 windows,
   But *one by one* if we think of them all at once we get confused. So we can simply decide the following paragraph.
-  For whom is it? and on what of it's contexts (super-system, system or sub-system) and just focus on that level.
+  For whom is it? Author, Learner, or DevOps;
+  and on what level is it working? Context, Execution, or Storage.
 
 
 + Writing executable documentation is hard, we need to be at the same time: Writer, a Programmer and a Tester.
@@ -1028,7 +1029,7 @@ And with that we have written a Testorial that covers a wide range of problems y
   One is the actual execution of the testorial, they can hallucinate the execution. But they can help you debug the testorial.
   The other is the writing of the testorial. It has to have your voice and care, but they can help you edit and review it.
 
-+ There is no single tool to do executable documentation.
++ There's no single tool to do executable documentation.
     - clitest, to execute our tutorial.
     - GitHub Actions to define the CI workflow.
     - act to simulate locally, how our tutorial would run on GitHub Action servers.
@@ -1079,7 +1080,7 @@ For simplicity we will use a a CMS GitHub pages.
 
 To do that you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the quickstart).
 
-When you are finish you can see your webpages here: https://$USERNAME.github.io/
+When you're finish you can see your webpages here: https://$USERNAME.github.io/
 
 And it will look something like this [fn:6]:
 
@@ -1105,7 +1106,7 @@ That would create your local copy of your repository.
 Now you can modify the `readme.md` file.
 
 Like this little script would simply append the current date and time to the readme file
-to make sure it is modified.
+to make sure it's modified.
 
 ~~~
    @author:$ cd $USERNAME.github.io
@@ -1124,9 +1125,9 @@ this will start the republishing of the page.
 
 ## Check the publishing pipeline
 
-Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it is being generated.
+Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it's being generated.
 
-Observe that the workflow it's on yellow while it is running.
+Observe that the workflow it's on yellow while it's running.
 
 You can even check the detail process that is following.
 
