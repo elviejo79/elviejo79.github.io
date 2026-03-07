@@ -367,7 +367,7 @@
 
 
         {
-            "name": "Corparate Blog and news",
+            "name": "Corparate blog and news",
             "publisher": "iog.io",
             "url": "https://www.iog.io/news?query=alejandro&type=article",
             "releaseDate": "2024-10-24",
@@ -378,7 +378,7 @@
         "publisher": "Leanpub.com",
       "url": "https://leanpub.com/manualscrumdeveloperintegracioncontinua",
       "releaseDate": "2016-10-27",
-      "summary": "How to use use technology to facilitate SCRUM practices"
+      "summary": "How to use technology to facilitate SCRUM practices"
     }
   ],
   "projects": [
@@ -386,9 +386,9 @@
       "name": "IOGAcademy Youtube Channel",
       "startDate": "2021-06-01",
       "endDate": "2026-01-19",
-      "description": "I created, a central repository for all of IO Education Videos",
+      "description": "I created a central repository for all of IO Education Videos",
       "highlights": [
-        "I created, planned, executed and ran the channel",
+        "Planned, executed and ran the channel",
         "Over 300 uploaded videos",
         "Over 3.75k subscribers",
         "Over 12k hours of watch time"
