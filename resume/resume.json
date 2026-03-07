@@ -1,4 +1,4 @@
-{
+ {
   "basics": {
     "name": "Alejandro Garcia",
     "label": "Systems-first turnaround leader (Agile/Delivery)",
@@ -6,7 +6,7 @@
     "email": "agarciafdz@gmail.com",
     "phone": "(+52) 492 122 8171",
     "website": "https://elviejo79.github.io",
-    "summary": "I'm a project manager, teacher, and entrepreneur with experience creating small tech companies. I love forming focused teams to achieve success. To answer the question 'When will the project be done?', my favorite tools are agentic coding, machine learning, and Monte Carlo simulation.",
+    "summary": "Technical writer with 10+ years turning complex systems into clear, testable documentation. I believe docs that can't be automatically verified are already out of date — so I build documentation pipelines where tutorials are executable, examples are CI-tested, and writing ships like code. Experienced with AsciiDoc, docs-as-code, and literate programming across blockchain, education, and developer tooling domains.",
     "location": {
       "countryCode": "MX",
       "address": "Fuentes del Bosque",
@@ -121,7 +121,7 @@
       "endDate": "2009-09-30",
       "summary": "Software developer mainly in PHP",
       "highlights": [
-        "Developed backend features and services primarily in PHP.",
+        "Developed backed features and services primarily in PHP.",
         "Collaborated with senior engineers on performance and scalability fixes."
       ],
       "url": "https://www.linkedin.com/company/omniti/"
@@ -354,7 +354,7 @@
             "publisher": "personal position",
             "releaseDate": "2026-02-23",
             "url": "https://elviejo79.github.io/2026-02-23-Testorial/",
-            "summary": "This is my position on how to write documentation, that is always updated since its executable and part of the continious integration pipeline."
+            "summary": "This is my position on how to write documentation, that is always updated since its executable and part of the continuous integration pipeline."
         },
 
     {
@@ -378,7 +378,7 @@
         "publisher": "Leanpub.com",
       "url": "https://leanpub.com/manualscrumdeveloperintegracioncontinua",
       "releaseDate": "2016-10-27",
-      "summary": "How to use use techonolgy to facilitate SCRUM practices"
+      "summary": "How to use use technology to facilitate SCRUM practices"
     }
   ],
   "projects": [
@@ -389,7 +389,7 @@
       "description": "I created, a central repository for all of IO Education Videos",
       "highlights": [
         "I created, planned, executed and ran the channel",
-        "Over 300 upladoded videos",
+        "Over 300 uploaded videos",
         "Over 3.75k subscribers",
         "Over 12k hours of watch time"
       ],
@@ -421,7 +421,7 @@
           "description": "Apply Architecture Oriented Programming in a strongly typed OOP language (Eiffel)",
           "highlights": [
               "Translate state of the art academic research to practical code",
-              "This is the 2nd implemententation in the world of AOP, the 1st one is by the creator"
+              "This is the 2nd implementation in the world of AOP, the 1st one is by the creator"
           ],
           "url": "https://github.com/elviejo79/RESTLY",
           "tags": [
