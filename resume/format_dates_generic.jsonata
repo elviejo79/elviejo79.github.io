@@ -1,0 +1,7 @@
+(
+  $formatDate := function($date) {
+    $date ? $fromMillis($toMillis($date), '[Y0001]-[MNn,*-3]') ~> $lowercase() : $date
+  };
+
+  $ ~> | ** | {"startDate": $formatDate(startDate), "endDate": $formatDate(endDate), "date": $formatDate(date), "releaseDate": $formatDate(releaseDate)} |
+)
