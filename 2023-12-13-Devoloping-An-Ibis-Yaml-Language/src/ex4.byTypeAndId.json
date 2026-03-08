@@ -1,0 +1,34 @@
+{
+  "Question": {
+    "root": {
+      "id": "root",
+      "title": "What should we do about the one ring?",
+      "Idea": {
+        "gg": {
+          "id": "gg",
+          "title": "Give it to golumm"
+        },
+        "gh": {
+          "id": "gh",
+          "title": "Give it to humans"
+        },
+        "bm": {
+          "id": "bm",
+          "title": "Burn it in mount mordor",
+          "pro": {
+            "ow": {
+              "id": "ow",
+              "title": "its the only way to destroy it"
+            }
+          },
+          "con": {
+            "rd": {
+              "id": "rd",
+              "title": "the road is extremely dangerous"
+            }
+          }
+        }
+      }
+    }
+  }
+}

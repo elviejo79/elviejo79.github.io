@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vis Network | Node Styles | Circular Images</title>
+
+    <style type="text/css">
+      body {
+        font: 10pt arial;
+      }
+      #mynetwork {
+        width: 800px;
+        height: 800px;
+        border: 1px solid lightgray;
+        background-color: #333333;
+      }
+    </style>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/collection/components/icon/icon.min.css"
+/>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js"
+    ></script>
+
+
+    <script type="text/javascript">
+        const options = {
+          nodes: {
+            borderWidth: 4,
+            size: 30,
+            color: {
+              border: "#222222",
+              background: "#666666",
+            },
+            font: { color: "#eeeeee" },
+          },
+          edges: {
+            color: "lightgray",
+          },
+          groups: {
+            Question: {
+              shape: "icon",
+              icon: {
+                face: "fontawesome",
+                code: "\u003f",
+                size: 40,
+                color: "#78D8D0",
+              },
+            },
+            Ideas: {
+              shape: "icon",
+              icon: {
+                face: "fontawesome",
+                code: "\uf0eb",
+                size: 40,
+                color: "#FAF99F",
+              },
+            },
+            pros: {
+              shape: "icon",
+              icon: {
+                face: "fontawesome",
+                code: "\u002b",
+                size: 40,
+                color: "#A1F6B6",
+              },
+            },
+            cons: {
+              shape: "icon",
+              icon: {
+                face: "fontawesome",
+                code: "\uf068",
+                size: 40,
+                color: "#D65F5F",
+              },
+            },
+          },
+          layout: {
+            hierarchical: {
+              direction: "LR",
+            },
+          },
+        };
+
+
+      // Function to extract query string parameters
+      function getQueryStringParameter(name) {
+          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+          var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+              results = regex.exec(location.search);
+          return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+
+
+      function draw() {
+
+          const container = document.getElementById("mynetwork");
+          // Called when the Visualization API is loaded.
+
+    // Get the filename from the query string
+    var dataFile = getQueryStringParameter('data');
+
+    // Check if the dataFile parameter is provided
+    if (dataFile) {
+      // Load the JSON file
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', dataFile, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var data = JSON.parse(xhr.responseText);
+
+          // Create the network with loaded data
+          network = new vis.Network(container, data, options);
+        }
+      };
+      xhr.send();
+    } else {
+      // Handle case where no data file is provided
+      console.error('No data file specified in the query string');
+    }
+  }
+  </head>
+
+  <body onload="draw()">
+    <div id="mynetwork"></div>
+  </body>
+</html>
