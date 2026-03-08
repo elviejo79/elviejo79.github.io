@@ -1,0 +1,446 @@
+ {
+  "basics": {
+    "name": "Alejandro Garcia",
+    "label": "Systems-first turnaround leader (Agile/Delivery)",
+    "picture": "https://github.com/elviejo79.png?size=256",
+    "email": "agarciafdz@gmail.com",
+    "phone": "(+52) 492 122 8171",
+    "website": "https://elviejo79.github.io",
+    "summary": "Technical writer with 10+ years turning complex systems into clear, testable documentation. I believe docs that can't be automatically verified are already out of date — so I build documentation pipelines where tutorials are executable, examples are CI-tested, and writing ships like code. Experienced with AsciiDoc, docs-as-code, and literate programming across blockchain, education, and developer tooling domains.",
+    "location": {
+      "countryCode": "MX",
+      "address": "Fuentes del Bosque",
+      "postalCode": "9807",
+      "city": "Zacatecas",
+      "region": "Zacatecas"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "elviejo79",
+        "url": "https://www.linkedin.com/in/elviejo79/"
+      },
+      {
+        "network": "GitHub",
+        "username": "elviejo79",
+        "url": "https://github.com/elviejo79"
+      },
+      {
+        "network": "Stack-Overflow",
+        "username": "elviejo79",
+        "url": "https://stackoverflow.com/users/54848/elviejo79"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Input Output (IOHK)",
+      "position": "Education Lead (Agile)",
+      "startDate": "2024-10-01",
+      "endDate": "2026-01-19",
+      "summary": "Using my previous experience as a project manager, I took an active role helping the Education team with all its initiatives.",
+      "highlights": [
+        "Represented the Education department in all PI Planning meetings and reporting.",
+        "Wrote the Ouroboros chapter of the Mastering Cardano book.",
+        "Co-created the Cardano Days concept, delivered at over 12 universities worldwide.",
+        "Created the Ouroboros card game to teach consensus concepts."
+      ],
+      "url": "https://www.linkedin.com/company/input-output-global/"
+    },
+    {
+      "name": "Input Output (IOHK)",
+      "position": "Education Project Manager",
+      "startDate": "2022-07-01",
+      "endDate": "2024-10-01",
+      "summary": "Created tutorials for the Cardano developer community. Frequently this required reading source code and academic papers, because these were the first docs for several innovative technologies.",
+      "highlights": [
+        "Helped publish the first Plutus book on Amazon and Leanpub.",
+        "Co-led four iterations of a 3-month Plutus Pioneer boot camp.",
+        "Supported a community of over 12,000 Plutus learners and builders."
+      ],
+      "url": "https://www.linkedin.com/company/input-output-global/"
+    },
+    {
+      "name": "Input Output (IOHK)",
+      "position": "Education Specialist",
+      "startDate": "2018-10-01",
+      "endDate": "2022-07-01",
+      "summary": "Together with the Director of Education, helped launch the department when it was only the two of us.",
+      "highlights": [
+        "Helped deliver four editions of the Plutus Pioneer Program, reaching over 10,000 participants.",
+        "Authored tutorials for the Jormungandr Incentivized Testnet.",
+        "Published Udemy courses on the Plutus and Marlowe smart contract languages."
+      ],
+      "url": "https://www.linkedin.com/company/input-output-global/"
+    },
+    {
+      "name": "Input Output (IOHK)",
+      "position": "Project Manager",
+      "startDate": "2017-07-31",
+      "endDate": "2018-10-01",
+      "summary": "Given my knowledge and certifications in agile development, I helped keep several projects on track.",
+      "highlights": [
+        "Led delivery of the Mantis Ethereum Classic full wallet.",
+        "Managed development of the IELE smart contract virtual machine.",
+        "Coordinated an asset redemption platform project for Cardano users."
+      ],
+      "url": "https://www.linkedin.com/company/input-output-global/"
+    },
+    {
+      "name": "CIMAT",
+      "position": "Associate Professor",
+      "startDate": "2013-06-30",
+      "endDate": "2019-05-31",
+      "summary": "Taught courses in: * Software Quality Assurance (agile) * Discrete Math (Haskell) * Distributed Systems (RabbitMQ) * Software Components (APIs, REST)",
+      "highlights": [
+        "Taught Software Quality Assurance with a focus on agile practices.",
+        "Taught Discrete Mathematics using Haskell to reinforce functional thinking.",
+        "Taught Distributed Systems with RabbitMQ as a core messaging technology.",
+        "Taught Software Components with an emphasis on APIs and REST."
+      ],
+      "url": "https://www.linkedin.com/company/cimat/",
+      "location": "Zacatecas, México"
+    },
+    {
+      "name": "Softlogik",
+      "position": "CEO / CTO",
+      "startDate": "2010-02-28",
+      "endDate": "2010-08-31",
+      "summary": "Founded the company, set its strategic vision, and trained the first employees in Scrum, Kanban, and unit testing.",
+      "highlights": [
+        "Founded a software company and defined its strategic vision.",
+        "Introduced Scrum and Kanban practices to the initial team.",
+        "Trained early employees in unit testing and engineering discipline."
+      ],
+      "location": "Zacatecas, México"
+    },
+    {
+      "name": "OmniTI",
+      "position": "Software Analyst",
+      "startDate": "2006-11-30",
+      "endDate": "2009-09-30",
+      "summary": "Software developer mainly in PHP",
+      "highlights": [
+        "Developed backed features and services primarily in PHP.",
+        "Collaborated with senior engineers on performance and scalability fixes."
+      ],
+      "url": "https://www.linkedin.com/company/omniti/"
+    },
+    {
+      "name": "Tecnologias DEXA",
+      "position": "CEO / Cofounder",
+      "startDate": "2002-01-31",
+      "endDate": "2006-02-28",
+      "summary": "Five friends and I started this software company in Zacatecas, probably the first software company in the state, although there were some earlier individual attempts. The company grew to 13 employees and later \"collapsed.\" I served as director for a period of two years.",
+      "highlights": [
+        "Cofounded one of the first software companies in Zacatecas.",
+        "Grew the company from a small founding team to 13 employees.",
+        "Served as director for two years, overseeing operations and delivery."
+      ]
+    },
+    {
+      "name": "ITESM Campus Zacatecas",
+      "position": "DBA Servicios Escolares",
+      "startDate": "2001-07-31",
+      "endDate": "2003-08-31",
+      "summary": "Wrote SQL queries, created ad-hoc reports for decision makers, and ensured the quality of the database.",
+      "highlights": [
+        "Maintained and optimized the student information database.",
+        "Wrote SQL queries and ad-hoc reports for academic decision makers.",
+        "Improved data quality and reporting reliability for campus stakeholders."
+      ],
+      "url": "https://www.linkedin.com/school/tecdemonterrey/"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Zacatecas FP Nights",
+      "position": "Organizer",
+      "startDate": "2014-01-31",
+      "endDate": "2015-01-31",
+      "summary": "Once a month, five different entrepreneurs share their failure stories to inspire young people to start their own businesses without fear of failure.",
+      "highlights": [
+        "Organized monthly FP Nights events in Zacatecas.",
+        "Curated talks where entrepreneurs shared candid failure stories.",
+        "Promoted a culture of learning from failure among young founders."
+      ]
+    },
+    {
+      "organization": "Startup Weekend",
+      "url": "https://twitter.com/SWZac",
+      "position": "Mentor",
+      "startDate": "2012-09-30",
+      "endDate": "2015-01-01",
+      "summary": "I've been a mentor for this event on four occasions, teaching young entrepreneurs about the Business Model Canvas, Lean Startup, and fast prototyping.",
+      "highlights": [
+        "Mentored Startup Weekend participants on four separate events.",
+        "Coached teams on the Business Model Canvas and Lean Startup.",
+        "Guided rapid prototyping and validation of new business ideas."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Centro de Investigación en Matemáticas A.C.",
+      "area": "Software Engineering, Project Management",
+      "studyType": "Master's in Software Engineering",
+      "startDate": "2010-08-01",
+      "endDate": "2012-12-31",
+      "url": "https://www.cimat.mx/"
+    },
+    {
+      "institution": "Tecnológico de Monterrey",
+      "area": "Systems Engineering",
+      "studyType": "BS",
+      "startDate": "1996-12-31",
+      "endDate": "2000-12-31",
+      "score": "96/100"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Leading SAFe",
+      "date": "2022-11-17",
+      "issuer": "MI-GSO|PCUBED",
+      "url": "https://www.coursera.org/account/accomplishments/verify/DZLDNG6LW9R5"
+    },
+    {
+      "name": "CSPO - Certified Scrum Product Owner",
+      "issuer": "Scrum Alliance",
+      "date": "2017-04-30",
+      "url": "https://www.scrumalliance.org/community/profile/agarc9afer"
+    },
+    {
+      "name": "ESP - Enterprise Services Planning Professional",
+      "issuer": "Lean Kanban Inc.",
+      "date": "2016-06-01",
+      "url": "https://edu.kanban.university/user/12589/14/qualification-certificate/QWxlamFuZHJvIEdhcmNpYTptc3QwMDE6MTc2OTU2Mjc1Mg=="
+    },
+    {
+      "name": "Machine Learning",
+      "issuer": "Coursera Course Certificates",
+      "date": "2016-03-31",
+      "url": "https://www.coursera.org/account/accomplishments/verify/DZLDNG6LW9R5"
+    },
+    {
+      "name": "KMP I and II  - Kanban Management Professional",
+      "issuer": "Kanban.University",
+      "date": "2015-05-31",
+      "url": "https://edu.kanban.university/user/12589/8/qualification-certificate/QWxlamFuZHJvIEdhcmNpYTptc3QwMDE6MTc2OTU2Mjc1Mg=="
+    },
+    {
+      "name": "AKT - Accredited Kanban Trainer",
+      "issuer": "Lean Kanban Inc.",
+      "date": "2015-05-31",
+      "url": "http://edu.leankanban.com/users/alejandro-garcia"
+    },
+    {
+      "name": "CSP - Certified Scrum Professional",
+      "issuer": "Scrum Alliance",
+      "date": "2015-04-30",
+      "url": "https://www.scrumalliance.org/community/profile/agarc9afer"
+    },
+    {
+      "name": "CSD - Certified Scrum Developer",
+      "issuer": "Scrum Alliance",
+      "date": "2014-08-31",
+      "url": "https://www.scrumalliance.org/community/profile/agarc9afer"
+    },
+    {
+      "name": "CSM - Certified Scrum Master",
+      "issuer": "Scrum Alliance",
+      "date": "2011-09-30",
+      "url": "https://www.scrumalliance.org/community/profile/agarc9afer"
+    }
+  ],
+    "skills": [
+        {
+            "name": "Technical Writer",
+            "level": "Senior Level",
+            "keywords": [
+                "Markdown",
+                "AsciiDoc",
+                "Docs-as-code",
+                "Literate Programming",
+                "Emacs",
+                "VS Code",
+                "Confluence"
+            ]
+        },
+
+      {
+          "name": "Agile Methods / Project Management",
+          "level": "Senior",
+          "keywords": [
+              "Kanban Trainer",
+              "Scrum",
+              "PSP Personal Software Process",
+              "TOC Thinking Processes",
+              "Coaching & Mentoring"
+          ]
+      },
+      {
+          "name": "DevOps",
+          "level": "Junior",
+          "keywords": [
+              "AWS",
+              "GitHub Actions",
+              "Docker containers",
+              "Bash",
+              "Nushell"
+          ]
+      },
+    {
+      "name": "AI / LLM",
+      "level": "Junior",
+      "keywords": [
+          "Agentic coding",
+          "Claude code memory"
+      ]
+    },
+    {
+      "name": "Backend Developer",
+      "level": "Senior",
+      "keywords": [
+        "Eiffel",
+        "PHP",
+        "Python",
+        "Linux",
+        "Design Patterns",
+        "Bash Scripting",
+          "Git",
+          "REST API"
+      ]
+    },
+      {
+          "name": "Database",
+          "level": "Mid",
+          "keywords": [
+              "MySQL",
+              "SQL",
+              "SQLite",
+              "Neo4j",
+              "TypeDB"
+          ]
+      },
+    {
+      "name": "Frontend",
+      "level": "Junior",
+      "keywords": [
+        "TypeScript",
+        "htmx"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native-like",
+      "language": "English"
+    },
+    {
+      "fluency": "Native speaker",
+      "language": "Spanish"
+    }
+  ],
+  "meta": {
+    "theme": "bold-header-statement",
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  },
+    "publications": [
+
+        {
+            "name": "Testorial: An executable Tutorial",
+            "publisher": "personal position",
+            "releaseDate": "2026-02-23",
+            "url": "https://elviejo79.github.io/2026-02-23-Testorial/",
+            "summary": "This is my position on how to write documentation, that is always updated since its executable and part of the continuous integration pipeline."
+        },
+
+    {
+      "name": "Mastering Cardano: Ouroboros Chapter",
+        "publisher": "Book.io",
+      "releaseDate": "2025-09-07",
+      "url": "https://book.io/book/mastering-cardano/",
+      "summary": "Discover the blockchain platform redefining trust, innovation, and global finance. Mastering Cardano shows you how to understand it, use it, and build with it"
+    },
+
+
+        {
+            "name": "Corparate blog and news",
+            "publisher": "iog.io",
+            "url": "https://www.iog.io/news?query=alejandro&type=article",
+            "releaseDate": "2024-10-24",
+            "summary": "Blog posts about different education initiatives"
+        },
+    {
+        "name": "SCRUM Developer: Manual del alumno",
+        "publisher": "Leanpub.com",
+      "url": "https://leanpub.com/manualscrumdeveloperintegracioncontinua",
+      "releaseDate": "2016-10-27",
+      "summary": "How to use technology to facilitate SCRUM practices"
+    }
+  ],
+  "projects": [
+    {
+      "name": "IOGAcademy Youtube Channel",
+      "startDate": "2021-06-01",
+      "endDate": "2026-01-19",
+      "description": "I created a central repository for all of IO Education Videos",
+      "highlights": [
+        "Planned, executed and ran the channel",
+        "Over 300 uploaded videos",
+        "Over 3.75k subscribers",
+        "Over 12k hours of watch time"
+      ],
+      "roles": [
+        "Producer",
+        "Lead",
+        "Education"
+      ],
+      "url": "https://www.youtube.com/@iogacademy"
+    },
+    {
+      "name": "Udemy Plutus Course",
+        "startDate": "2019-04-01",
+        "description": "At the time it was the only class on this new programming language.",
+      "highlights": [
+
+        "11,257 students",
+        "4.1 stars in 658 ratings"
+      ],
+      "roles": [
+        "Course Author",
+        "Educator"
+      ],
+      "url": "https://www.udemy.com/course/plutus-reliable-smart-contracts/?src=sac&kw=plutus"
+    },
+      {
+          "name": "picoHTTP",
+          "startDate": "2025-04-01",
+          "description": "Apply Architecture Oriented Programming in a strongly typed OOP language (Eiffel)",
+          "highlights": [
+              "Translate state of the art academic research to practical code",
+              "This is the 2nd implementation in the world of AOP, the 1st one is by the creator"
+          ],
+          "url": "https://github.com/elviejo79/RESTLY",
+          "tags": [
+              "formal_methods",
+              "programming",
+              "research"
+          ]
+      }
+  ],
+  "references": [
+    {
+      "name": "JW",
+      "position": "Former Marketing Director IOHK",
+      "reference": "Well, I'll cut to the chase. Your writing was brilliant ... It's by far the best copy we've produced."
+    },
+      {
+          "name": "LB",
+          "position": "Director of Education IOHK",
+          "reference": "Alejandro is a proactive self-starter who is deeply passionate about his work in project management and education. He is already in a role that aligns perfectly with his strengths and continuously learns on his own accord."
+      }
+  ]
+}

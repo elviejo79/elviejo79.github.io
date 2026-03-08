@@ -1,0 +1,1143 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css">
+
+
+    **Testorial: An executable Tutorial**
+    By [Alejandro Garcia](mailto:agarciafdz@gmail.com)
+
+![Author surveying the terrain ](./images/author_terrain.png)
+
+When you're learning a new technology, library, or programming language have you felt the excitement of finding the perfect tutorial.
+The one that explains what you want to learn in a voice that you can understand with an example that almost perfectly matches your needs.
+Only to feel the frustration of discovering that many instructions in the tutorial are obsolete no longer works or maybe they never did.
+
+Well, as a Content Engineer let me tell you that it's never my intention to write documentation that goes stale.
+There are many moving parts,
+So invariably a section of a good tutorial will always become obsolete almost the moment we publish it.
+It's our continuous fight against [bit rot](https://en.wikipedia.org/wiki/Software_rot).
+
+However, from the field of DevOps we have techniques of Continuous Integration that helps fight bit rot in Software.
+And we can use the same techniques in our documentation.
+By monitoring our source testorial, and detecting changes we can anticipate parts of our tutorial that will be need to be updated.
+
+And if this wasn't enough reason to justify the effort to write testorials.
+We need to consider a new Learner: Large Language Models (LLMs)
+LLMS will learn from the documentation that we write.
+So our documentation *can't be a hallucination* it *must be correct* so that the LLM,
+Can learn the correct way to do things.
+
+This tutorial is for Authors, Content Engineers and Technical Writers,
+that want to
+fight bit rot,
+don't waste their Learner's time,
+and provide more value to their organization by doing integration tests
+that their software must run.
+
+Testorial
+: A Testable Tutorial
+: Is a Tutorial written so that  humans can comprehend,
+: that also works as a test in a Continuous Integration (CI) pipeline.
+: Becoming valuable for both your Learners and Quality Assurance (QA) Team.
+: synonym: executable documentation
+: related: literate programming, DevOps
+
+Tutorial
+: A goal oriented article, written so that a Learner can acquire a new skill.
+: Every Testorial is a Tutorial, but not every Tutorial is a Testorial.
+
+# Why aren't Testorials (Docs-as-test) more popular?
+
+Given that the movement Docs-as-Code has been active since at least 2015[fn:1].
+And it's historical precedent Literate Programming, was invented by Donald Knuth in 1984[fn:2]  .
+It should be more popular and it isn't.
+
+If we search online: Why isn't literate programming more popular?
+We would a find that common reason is that:
+
+> The intersection of people that are good programmers
+> and good writers at the same time is pretty small.
+
+I find this is a good point, for general programmers.
+
+But for technical writers, it's the starting position!
+
+Traditional Technical Writing has been seen as a person that can wear two hats:
+
+- Programmer:
+  - Read code, libraries, products
+  - Experiments and learns
+- Writer
+  - Writes documentation
+  - Edits documentation
+
+![A Tech Writer is the rare intersection between a Programmer and a Writer](./images/venn_programmer_writer.svg)
+
+But Even though a Technical Writer has the skills of Programmer and a Writer.
+We don't see frequently executable documentation or testorials.
+And I think it's because
+Testorial asks the Author to wear a *third hat*:
+
+- Tester
+  - Write tests that run automatically
+  - Monitor when things break
+
+If writing is difficult,
+writing, programming, and testing is as difficult as finding a unicorn.
+
+![A person that can wear all three hats is as rare as unicorn](./images/venn_programmer_writer_tester.svg)
+
+
+But now it's 2026 And we can count on the help of LLMs!
+which has dramatically increased the size of the intersection.
+
+So doesn't matter how you started,
+If you were writer fascinated by computers and became a technical writer.
+Or you were a DevOps engineer that you learned you love of writing later in life, like me.
+LLMs can help us become the unicorn at the intersection of the three hats needed to do Docs-as-Tests
+
+![With LLMs it's easier to become a unicorn, or Author of testorials](./images/venn_unicorn.svg)
+
+## What you're reading
+
+According to my records it seems that for writing this Testorial
+I had to 34 conversations with [Claude Code](https://claude.com/product/claude-code).
+And with 18 conversations witch [ChatGpt](https://chatgpt.com)
+
+Those conversations varied from couple of minutes to a few days.
+
+With Claude it was technical conversations like:
++ How can execute a command with `sudo` inside a script?
++ How to install `act` in Ubuntu?
+
+And with ChatGpt the conversations where more like an editor:
++ What is a better name for the technique of using tutorials as tests: Testorials or DocOps?
++ Here is the first draft of my article. What are it's 5 weakest spots?
+
+
+So having LLMs at my disposal was key in bring the article that you're reading to fruition.
+It was like having a team with a Senior Developer and a tireless Editor helping me write it.
+
+In the past when I have tried to make Testorials a common practice it has no been possible,
+Because the level of expertise required in so many areas made it impractical.
+The Deadline to deliver the article had already passed.
+
+> "LLMs make it economically feasible, practical, and even fun,
+> to write testorials"
+
+However as a big proponent of using the help of LLMs to write documents.
+There are two areas where I don't think they should be used:
+
+### Deterministic Execution
+As you will see next the whole point of testorial is that it can be executed repeatedly as an integration test.
+And although in theory it could be possible to tell an LLM: "Read this testorial and execute the code, in the examples"
+That would be recipe for failure.
+We want the execution of the test to be identical on every iteration!
+In order to trust our test.
+
+Once a testorial fails, you can ask the LLM to update it and make it run again.
+But once it's correct again it's execution again must be deterministic.
+
+In this tutorial that Determinism comes from `clitest` to execute the testorial and from using the `act` container.
+
+### Your goal with the article
+
+When you're writing a tutorial you have a *goal* an approach an innovation,
+that you want to communicate to the Learner.
+That goal is *yours* and the LLM cannot, give you a goal.
+So in my opinion LLMs are best used as tireless editors.
+That can read as many drafts of your piece as necessary
+That can give clear direction.
+But you shouldn't use them to replace your voice.
+
+You're the writer, the LLM is a great Editor.
+
+For example with article my goal where to:
+
+1. Explain how to write documentation as test, Testorials.
+2. Introduce the Nine Windows framework for writing to make it easy for the Author to think about this pieces.
+
+And with that, let's learn about the Nine Windows
+
+# A map of the terrain, the Nine Windows framework
+
+We have always had to consider the audience when writing a piece.
+Now we need to consider three different audiences:
+
+A Learner
+: A human or LLM using your article to develop a new skill.
+
+A DevOps engineer
+: A person in your organization that doesn't care about your testorial, except that it will help him with QA for the whole project.
+
+An Author (yourself)
+: You need consider your own environment, deadlines, etc. and the ones of your audience.
+
+And for each element of our audience we need to consider distinct levels of understanding.
+
+Context level
+: Is under what circumstances (outside its control) are we writing.
+
+Execution level
+: the actual thing (tutorial, testorial, workflow) that the person can manipulate.
+
+Storage level
+: When executing many commands, they will have an impact in the storage or in subparts of the tutorial.
+: We must consider the impact of changing the Storage for each tutorial.
+
+
+Thinking this way, gives us a map of the terrain that we're going to traverse while writing.
+
+## Nine windows to write a testorial
+
+Considering our Audiences and the Levels of context we need to understand we can map our article as:
+
+*********************************************************************************************************
+*                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Audience ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*    ⎡                ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢       Context  ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*  Level   Execution  ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢       Storage  ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎢                ║                         ║                          ║                        ║   *
+*    ⎣                ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+
+Now with this map we can make sense of what we're writing for whom, when.
+
+# 1st Level: Context
+
+Let's start by understanding the Context on which each of our Audience operate
+The context is important since most of the time we can't control it.
+It's a constraint.
+
+
+
+And the main Context that we need to focus on is the one for you the Author:
+
+## A Learner's Context
+This is the most obvious one, we need to be mindful of our Learners Context.
++ What's their previous experience?
++ What constrains could their employer have?
++ What operating system are they using?
+and so on.
+
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║ Previous Experience?   ║   *
+*                     ║                         ║                          ║ Job Constraints?       ║   *
+*                     ║                         ║                          ║ Operating System?      ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*          Execution  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [learner_context]: The Learners context, guides the depth and tone of our tutorial]
+
+## DevOps Context
+
+On this context we need to understand that the DevOps and QA Team, have setup a Continuous Integration (CI) pipeline.
+The CI on every change, takes the content of the source code repository,
+executes tests on it and if the tests are correct,
+publishes a new version of our software into production.
+
+All of this happens inside virtual computers called Containers, so that we don't have to
+This pipeline is crucial, since we will integrate the testorials as parts of the pipeline in the following sections.
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║ What is the CI pipeline? ║ Previous Experience?   ║   *
+*                     ║                         ║                          ║ Job Constraints?       ║   *
+*                     ║                         ║ GitHub Runner (Container)║ Operating System?      ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*          Execution  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [devops_context]: A DevOps context, informs what is the CI pipeline and the publishing process]
+
+## An Author's Context
+
+Now lets talk about you, the Author and your Context.
+
+Probably your organization already has setup a Content Management System (CMS).
+And you need to understand the workflows that will transform (publish) the testorial to a tutorial.
+
+Since a testorial is also code, and code is plain text
+Any CMS that works with plain text formats like Markdown, AsciiDoc, Org-mode will do.
+This category is commonly called Static Site Generators.
+
+Some static site generators, that work well are:
+[Docusaurus](https://docusaurus.io),
+[GitHub Pages](https://docs.github.com/en/pages/quickstart) Or my personal favorite
+[Markdeep](https://casual-effects.com/markdeep/)
+
+In this tutorial we will assume your using GitHub Pages as your CMS.
+Since it's pretty common and it integrates with GitHub Actions, that's a Continuous Integration pipeline.
+
+Probably your organization already has configured GitHub Pages.
+You need to understand on which repository on which folder you need to save your testorial markdown document.
+But, in case it's not configured you can check the section [Appendix: Configuring GitHub Pages] Configuring GitHub Pages.
+
+
+What's important to understand is the publishing process of GitHub Pages
+
+### GitHub Pages publishing process
+
+In GitHub Pages the process of publishing is:
+
+1. Create or Modify Markdown document.
+2. git commit & git push
+3. Wait for GitHub Workflow to finish.
+4. Review modifications on your website.
+
+You can monitor the state the of the GitHub Workflow on the page.
+
+Observe that the workflow it's on yellow while it's running.
+
+You can even check the detail instructions that it's executing.
+
+When it finally turns to green means your new page is published.
+
+![Your workflow is in yellow while it runs and green once it passes](./images/workflows.png)
+
+### Tracing the publishing process
+
+Now that we understand the GitHub Pages publishing process.
+We can trace how it works in our map of writing.
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║ CMS - GitHub Pages      ║                          ║                        ║   *
+*                     ║        |                ║                          ║                        ║   *
+*                     ║        |                ║                          ║                        ║   *
+*                     ║     dictates            ║                          ║                        ║   *
+*                     ║    organization         ║                          ║                        ║   *
+*                     ╠════════|════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║        |                ║                          ║                        ║   *
+*          Execution  ║        v                ║                          ║                        ║   *
+*                     ║ Markdown Document ---git push--> GH Workflow ---publish--> Tutorial         ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [gh_pages_workflow]: GitHub Pages publishing workflow]
+
+# 2nd Level the Execution
+
+In the previous diagram we saw that at the Execution level works like a single pipeline.
+Now on this section we're going to cover that pipeline in more detail.
+
+## A Learners Execution: The tutorial
+
+Let's start with the end in mind.
+Let's look at the tutorial that our Learner will read:
+
+
+<div class="example">
+<div class="view">
+Learner
+<div class="window browser">
+<div class="buttons"></div>
+<div class="tab">Example</div>
+<div class="menu"> <- -> ⟳ <div class="url">hello_world.md.html</div></div>
+<iframe src="hello_world.md.html" content="text/html;charset=UTF-8"></iframe>
+</div></div></div>
+
+
+In our 9 windows framework we're here:
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║ ╭───────────────────╮  ║   *
+*                     ║                         ║                          ║ │    Browser        │  ║   *
+*          Execution  ║                         ║                          ║ ├───────────────────┤  ║   *
+*                     ║                         ║                          ║ │                   │  ║   *
+*                     ║                         ║                          ║ │    Tutorial       │  ║   *
+*                     ║                         ║                          ║ │                   │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [learner_artifact]: A Learner reads the tutorial]
+
+## Author's Execution: the Testorial
+
+In the previous section we saw what a Student would read.
+For you the the Testorial looks like a markdown source code.
+
+~~~ markdown
+(insert hello_world.md.html here)
+~~~
+
+Notice that we have marked the instructions we expect the student to type like `@localhost $`
+How can we make sure that the instructions are correct?
+
+### Snapshot testing
+
+Snapshot testing tools run your commands and check the results. They compare the actual output with the expected output to make sure everything works correctly.
+
+In our case we will use `clitest for posix`
+
+### Installing clitest
+
+Installing `clitest` is as easy as:
+
+~~~ bash
+@author $ curl -sOL https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest
+@author $ chmod +x clitest
+@author $ mv clitest ~/.local/bin
+@author $ clitest --version
+@author clitest 0.5.0
+~~~
+
+### Listing the commands in hello_world.md.html
+
+Now lets use `clitest` to view what commands are in our tutorial
+
+~~~ bash
+@author $ clitest --list --prefix '@learner ' ./hello_world.md.html
+@author #1	echo "hello world"
+@author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
+~~~
+
++ Use `--list` to show the commands that can execute in the tutorial.
++ The parameter `--prefix '@learner'` specifies how the executable lines are prefixed.
++ The #1 and #2 show what are the commands that `clitest` identified as possible.
++ #1 and #2 are the test cases in our testorial /test suite/
+
+!!! Tip
+    Is important to make sure that `--list` finds all the commands that you expect the testorial to execute.
+
+To execute the tests, remove the `--list` flag
+
+~~~{.bash}
+@author $ clitest --prefix '@learner ' ./hello_world.md.html
+@author #1	echo "hello world"
+@author #2	echo "hello world" | tr '[:lower:]' '[:upper:]'
+@author OK: 2 of 2 tests passed
+@author $
+~~~
+
+Now we get the report `OK: 2 of 2 tests passed`.
+
+This testorial is /pure/, it doesn't change any files in our computer.
+So you can repeat it as many times as you wish.
+
+Try it, execute `clitest` again.
+
+~~~{.bash}
+@author $ clitest --prefix '@learner ' ./hello_world.md.html #=> --exit 0
+~~~
+
+It will run again the tests.
+The comment `exit 0`, means that the command executed correctly,
+and we don't care about the literal output,
+
+
+### Where does  `clitest` fit in our nine windows framework?
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║   .--- clitest <--.     ║                          ║ ╭───────────────────╮  ║   *
+*                     ║   |               |     ║                          ║ │    Browser        │  ║   *
+*          Execution  ║  executes        fix    ║                          ║ ├───────────────────┤  ║   *
+*                     ║   |               |     ║                          ║ │                   │  ║   *
+*                     ║   v               |     ║                          ║ │    Tutorial       │  ║   *
+*                     ║   testorial.markdown    ║                          ║ │                   │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [author_artifact]: An author makes its testorial executable by clitest]
+
+## DevOps Engineer Execution
+
+Now that the test can be reproduce locally,
+we need to think, How it's going to be executed on the Continuous Integration server?
+
+### GitHub Actions
+
+Is a Continuous Integration server provided by GitHub.
+It has two main components:
+
++ Runners: Virtual containers that execute your code.
++ Workflows: instructions on how to configure said containers and how to execute your code.
+
+### GitHub Workflow
+
+We will configure a workflow that can execute the testorial as we can now do locally with `clitest`.
+
+Look at this suggested workflow
+
+(embed execute_testorials.yml height=450px here)
+
+[Listing [execute_testorial_yml]: .github/workflows/execute_testorials.yml]
+
+
+(1) Name of our workflow.
+
+(2) This is the event that will trigger the execution of our workflow.
+
+(3) In particular we want to trigger the execution from the GitHub User Interface.
+
+(4) This is the Operating system where the tests are going to run.
+
+This workflow will execute on every commit, but for demonstration purposes go to where you have this tutorial stored.
+Then GitHub Workflows click on Execute wait a few minutes.
+And see that it's in *green* meaning all the tests executed correctly.
+
+
+### Commit your execute_testorials workflow
+
+Now we're ready to include this tutorial as part of the CI pipeline.
+This will need  approval from your DevOps department
+Your `testorial.markdown` and `execute_tasteless.yml` workflow is all the documentation they need to include the testorials execution as part of the CI process.
+
+Perhaps the DevOps team will decide to change the trigger so that instead of on every commit, it's on every pull request.
+
+!!! Warning
+    Now you will get notified when a code change, or a library update breaks your testorial.
+    So now you have a new responsibility, to keep your testorials updated.
+    But better be you, the Author, than your frustrated readers.
+
+
+
+### Tracing the CI pipeline in the nine Windows
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║ .--- clitest <--.       ║  .--> GH Workflow        ║ ╭───────────────────╮  ║   *
+*                     ║ |               |       ║  |     |                 ║ │    Browser        │  ║   *
+*                     ║ executes       fix      ║  |   execute             ║ ├───────────────────┤  ║   *
+*          Execution  ║ |               |       ║  |     |                 ║ │                   │  ║   *
+*                     ║ v               |       ║  |     v                 ║ │    Tutorial       │  ║   *
+*                     ║ testorial.markdown---gh push   clitest? ---publish-->│                   │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [devops_artifact]: How a testorial gets executed and becomes a tutorial]
+
+
+# 3rd level: Storage
+
+In the previous level we completed the "Hello World" tutorial.
+And we made it executable with `clitest` but we "cheated a little" since we used as example a Testorial,
+that was pure, meaning it didn't change the state in any of the computers.
+So it was easy to execute as many times as we wanted.
+
+However most testorials, in fact most programs aren't like that.
+Most programs change something in the computer that executes them.
+They add records to a database, store files in the hard drive, even make transactions on a blockchain!
+
+For our next example we're going to evolve our "hello_World.md.html" tutorial.
+It will create a file that gets stored in the computer.
+This side-effect doesn't let us run and re-run the tutorial with `clitest` as easy as before.
+Instead we need to create *isolation*.
+
+## As a Learner
+
+Now let's modify our Tutorial, so that learner now has to install a program (`cowsay`) in their computer.
+
+The tutorial would look something like this:
+
+<div class="example">
+<div class="view">
+Learner
+<div class="window browser">
+<div class="buttons"></div>
+<div class="tab">Example</div>
+<div class="menu"> <- -> ⟳ <div class="url">cowsay_hello_world.md.html</div></div>
+<iframe src="cowsay_hello_world.md.html" content="text/html;charset=UTF-8"></iframe>
+</div></div></div>
+
+### Orienting ourselves in the map
+
+The important thing to know is that this tutorial asks the Learner to install something on their local computer.
+Therefore it modifies the storage.
+
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║                         ║                          ║ ╭───────────────────╮  ║   *
+*                     ║                         ║                          ║ │    Browser        │  ║   *
+*           Execution ║                         ║                          ║ ├───────────────────┤  ║   *
+*                     ║                         ║                          ║ │    Tutorial       │  ║   *
+*                     ║                         ║                          ║ ╰───────────────────╯  ║   *
+*                     ║                         ║                          ║    |                   ║   *
+*                     ║                         ║                          ║  apt install           ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════|═══════════════════╣   *
+*                     ║                         ║                          ║    |                   ║   *
+*                     ║                         ║                          ║    v                   ║   *
+*                     ║                         ║                          ║ packages               ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+
+
+
+## Storage Level as an Author
+
+Now we know that the Testorials looks like this
+
+~~~ markdown
+  (include ./cowsay_hello_world.md.html here)
+~~~
+
+and we can execute it in our computer like this:
+
+~~~bash
+@author $ sudo -v && clitest --first --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 0
+~~~
+
+Now we're using a lot more parameters so let's explain them:
+
+`sudo -v`
+: Before execution, `sudo -v` asks for your local sudo password so the tutorial can install packages.
+`&&`
+: means *and* only execute the next command if the previous one executed correctly.
+`clitest`
+: We already familiar, in the following textile, process lines tagged with the prefix as a script.
+`--first`
+: stop executing at the first test that fails. No need to continue executing if we have an error.
+`--prefix '@learner'`
+: execute the lines that start with `@learner`
+`--diff-options '--ignore-space-change'`
+: When comparing, ignore space differences between the output and the expected value.
+` ./cowsay_hello_world.md.html`
+: the name of the markdown file (`.md.html`) we're going to execute with clitest.
+
+
+The problem is that if we execute the script again we will get an error!
+Since the `cowsay` package was installed on first run, the second time we will get an error
+
+~~~ bash
+@author $ sudo -v && clitest --first --diff-options '--ignore-space-change' --prefix '@learner ' ./cowsay_hello_world.md.html #=> --exit 1
+~~~
+
+So now we need to clean after the execution of the tests.
+
+## Testorial tear-down
+
+When doing unit testing _tear-down_ is the method that gets called after each test execution.
+
+In our case, we need to clean what we stored in the computer so that our testorials are repeatable.
+
+in `clitest` that's achieved with the `--post-flight COMMAND` parameter.
+
+For example
+
+~~~ bash
+@author $ sudo -v && clitest --post-flight 'sudo apt remove -y cowsay' --first --prefix '@learner ' --diff-options '--ignore-space-change' ./cowsay_hello_world.md.html #=> --exit 0
+~~~
+
+`--post-flight 'sudo apt remove -y cowsay' `
+: After the last test, execute the command `apt remove` so that the cowsay that we installed in the testorial, gets removed
+
+
+### How does the Storage level looks from the point of view of the Author
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║    clitest <─────╮      ║                          ║ ╭───────────────────╮  ║   *
+*                     ║      │           │      ║                          ║ │    Browser        │  ║   *
+*                     ║╭ pre-flight apt remove  ║                          ║ ├───────────────────┤  ║   *
+*          Execution  ║│     │           │      ║                          ║ │    Tutorial       │  ║   *
+*                     ║│ execute testorial      ║                          ║ ╰───────────────────╯  ║   *
+*                     ║│     |           ^      ║                          ║    |                   ║   *
+*                     ║│  apt install    │      ║                          ║  apt install           ║   *
+*                     ╠│═════│═══════════│══════╬══════════════════════════╬════|═══════════════════╣   *
+*                     ║│     │           │      ║                          ║    |                   ║   *
+*                     ║│     v           │      ║                          ║    v                   ║   *
+*                     ║╰─>packages ──────╯      ║                          ║ packages               ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+
+### There different ways to handle isolation of tests
+Now there are several ways we could handle this:
+
+1. We could have a pre-flight command requiring that cowsay it's not installed. That's called a `set-up` method in unit testing
+2. Make the tutorial clean after it's execution. That's the `tear-down` in unit testing
+3. And finally make our testorial execute on an *isolated* environment, like a docker container. And we will do that in the next phase.
+
+
+## As a DevOps Engineer impact on Storage
+
+Now the impact of storing on Devops Engineer is *minimal* their map is the same as before:
+
+*********************************************************************************************************
+*                                                                                                       *
+*                                                                                                       *
+*                                Author                  DevOps                  Learner                *
+*                     ╔═════════════════════════╦══════════════════════════╦════════════════════════╗   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*            Context  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╠═════════════════════════╬══════════════════════════╬════════════════════════╣   *
+*                     ║     clitest <─────╮     ║  ╭──> GH Workflow        ║ ╭───────────────────╮  ║   *
+*                     ║       │           │     ║  │     │                 ║ │    Browser        │  ║   *
+*                     ║ ╭ pre-flight apt remove ║  │   execute             ║ ├───────────────────┤  ║   *
+*          Execution  ║ │     │           │     ║  │     │                 ║ │                   │  ║   *
+*                     ║ │ execute testorial ─git push    v                 ║ │    Tutorial       │  ║   *
+*                     ║ │     |           ^     ║      clitest? ---publish-->│                   │  ║   *
+*                     ║ │  apt install    │     ║        │                 ║ ╰───────────────────╯  ║   *
+*                     ╠═│═════│═══════════│═════╬════════│═════════════════╬═════│══════════════════╣   *
+*                     ║ │     │           │     ║        │                 ║     │                  ║   *
+*                     ║ │     v           │     ║        v                 ║     v                  ║   *
+*                     ║ ╰─>packages ──────╯     ║     packages             ║  packages              ║   *
+*            Storage  ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ║                         ║                          ║                        ║   *
+*                     ╚═════════════════════════╩══════════════════════════╩════════════════════════╝   *
+*                                                                                                       *
+*********************************************************************************************************
+[Figure [devops_storage]: Because of container isolation, DevOps don't worry about storage changes]
+
+This is because a DevOps Engineer is already working with an *isolated container* so each push starts a new computer, clean of previous modified state.
+
+Wouldn't it be nice if we could do the same in our Author column?
+
+
+# Revisiting the Storage level of an Author with containers
+
+To have the same level of isolation, we will use containers.
+But not any container, a container specifically designed to imitate the containers that DevOps engineer use.
+So that if our testorial works in our container, we can be certain that it will run on the Continuous Integration pipeline.
+
+Fortunately for such a tool exits *act*
+With act, it will seem like our Author Column has a new Context, Execution, and Storage level,
+That, completely matches the one a DevOps Engineer uses.
+
+***********************************************************************************************************************************
+*
+*
+*                           Author                                 DevOps                  Learner
+*                     ╔═══════╤══════════════════════════╦══════════════════════════╦════════════════════════╗
+*                     ║Real       Container              ║                          ║                        ║
+*                     ║Compu  │                          ║                          ║                        ║
+*                     ║ter                               ║                          ║                        ║
+*            Context  ║       │        Act ----inspired by ----> GH Runners         ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ║       │      list                ║                          ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ╠═══════╪════════|═════════════════╬══════════════════════════╬════════════════════════╣
+*                     ║          .--> GH Workflow        ║  .--> GH Workflow        ║ ╭───────────────────╮  ║
+*                     ║       │  |     |                 ║  |     |                 ║ │    Browser        │  ║
+*                     ║          |   execute             ║  |   execute             ║ ├───────────────────┤  ║
+*          Execution  ║       │  |     |                 ║  |     |                 ║ │                   │  ║
+*                     ║          |     v                 ║  |     v                 ║ │    Tutorial       │  ║
+*                     ║testorial-'   clitest? ---git push---'   clitest? ---publish-->│                   │  ║
+*                     ║                |                 ║        |                 ║ ╰───────────────────╯  ║
+*                     ╠═══════╪════════|═════════════════╬════════|═════════════════╬═════|══════════════════╣
+*                     ║                |                 ║        |                 ║     |                  ║
+*                     ║       │        v                 ║        v                 ║     v                  ║
+*                     ║              packages            ║      packages            ║   packages             ║
+*            Storage  ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ╚═══════╧══════════════════════════╩══════════════════════════╩════════════════════════╝
+*
+*****************************************************************************************************************************************
+[Figure [author_act_execution]: An Act container creates a new Execution environment]
+
+
+### Using `act`
+
+To install act (run GitHub Actions locally) on Ubuntu:
+
+~~~ bash
+@author $ sudo snap install act #=> --exit 0
+~~~
+you can verify that you have act installed by:
+
+
+~~~ bash
+@author $ act --version
+@author act version 0.2.67
+~~~
+
+Now there are three different kinds of machines using act:
+
+Docker image sizes (used by act):
+
+  - Micro (node:16-buster-slim): ~200MB - minimal, may not work for all workflows
+  - Medium (default): ~500MB - good balance, works for most workflows
+  - Large (catthehacker/ubuntu:full-latest): ~18GB - includes most tools
+
+For our case we will use the medium machine.
+So to execute our workflows we will use the workflow we already have in section [GitHub Workflow].
+
+First let's see if `act` can find our workflow with `--list`.
+
+~~~bash
+@author $ act --list #=> --exit 0
+@author INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'
+@author Stage  Job ID         Job name       Workflow name       Workflow file           Events
+@author 0      run-testorial  run-testorial  execute testorials  execute_testorials.yml  push,pull_request,workflow_dispatch
+~~~
+
+Now let's execute it:
+
+~~~bash
+@author $ act --platform ubuntu-latest=catthehacker/ubuntu:act-latest --job run-testorial #=> --exit 0
+~~~
+
+`--platform ubuntu-latest=catthehacker/ubuntu:act-latest`
+: In our workflow when it uses the `ubuntu-latest` runner, use the docker image `catthehacker/ubuntu:act-latest`
+`--job run-testorial`
+: A workflow can have multiple jobs, we only care about the `run-testorial` one.
+
+And now that our workflows run in an isolated environment, we can run them repeatedly
+
+~~~bash
+@author $ act --platform ubuntu-latest=catthehacker/ubuntu:act-latest --job run-testorial #=> --exit 0
+~~~
+
+Congratulations!
+
+
+### Our updated map
+
+Observe that now the flow of information between the our Author container with `act` is the same as the one for the DevOps Engineer.
+Which is exactly what we want to avoid surprises!
+
+***********************************************************************************************************************************
+*
+*
+*                           Author                                 DevOps                  Learner
+*                     ╔═══════╤══════════════════════════╦══════════════════════════╦════════════════════════╗
+*                     ║Real       Container              ║                          ║                        ║
+*                     ║Compu  │                          ║                          ║                        ║
+*                     ║ter                               ║                          ║                        ║
+*            Context  ║       │        Act ----inspired by ----> GH Runners         ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ║       │      list                ║                          ║                        ║
+*                     ║                |                 ║                          ║                        ║
+*                     ╠═══════╪════════|═════════════════╬══════════════════════════╬════════════════════════╣
+*                     ║          .--> GH Workflow        ║  .--> GH Workflow        ║ ╭───────────────────╮  ║
+*                     ║       │  |     |                 ║  |     |                 ║ │    Browser        │  ║
+*                     ║          |   execute             ║  |   execute             ║ ├───────────────────┤  ║
+*          Execution  ║       │  |     |                 ║  |     |                 ║ │                   │  ║
+*                     ║          |     v                 ║  |     v                 ║ │    Tutorial       │  ║
+*                     ║testorial-'   clitest? ---git push---'   clitest? ---publish-->│                   │  ║
+*                     ║                |                 ║        |                 ║ ╰───────────────────╯  ║
+*                     ╠═══════╪════════|═════════════════╬════════|═════════════════╬═════|══════════════════╣
+*                     ║                |                 ║        |                 ║     |                  ║
+*                     ║       │        v                 ║        v                 ║     v                  ║
+*                     ║              packages            ║      packages            ║   packages             ║
+*            Storage  ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ║       │                          ║                          ║                        ║
+*                     ║                                  ║                          ║                        ║
+*                     ╚═══════╧══════════════════════════╩══════════════════════════╩════════════════════════╝
+*
+*****************************************************************************************************************************************
+[Figure [author_act_execution]: An Act container creates a new Execution environment]
+
+
+# What have we learned?
+
+And with that we have written a Testorial that covers a wide range of problems you might encounter when putting this ideas into practice.
+
++ There are 9 windows: We need to consider all of them when writing executable documentation.
++ 3 belong to our audience that now includes  *DevOps Engineer* that will integrate our testorials as port of the Continuous Integration workflow.
++ And we need to consider 3 levels of context, for each one of the audiences.
++ We need to consider all the 9 windows,
+  But *one by one* if we think of them all at once we get confused. We can decide the following paragraph.
+  For whom is it? Author, Learner, or DevOps;
+  and on what level is it working? Context, Execution, or Storage.
+
+
++ Writing executable documentation is hard, we need to be at the same time: Writer, a Programmer and a Tester.
+  But LLMs helps us in our weak spots.
+
++ There are things we shouldn't delegate to LLMs
+  One is the actual execution of the testorial, they can hallucinate the execution. But they can help you debug the testorial.
+  The other is the writing of the testorial. It has to have your voice and care, but they can help you edit and review it.
+
++ There's no single tool to do executable documentation.
+    - clitest, to execute our tutorial.
+    - GitHub Actions to define the CI workflow.
+    - act to simulate locally, how our tutorial would run on GitHub Action servers.
+    - Markdeep to publish the tutorial
+    - plus our standard text editor!
+
+
+ But your selection of tools is context-specific.
+ For example if your team uses another Continuous Integration tool not github actions, then you would need to change the workflow.yml file. To orient yourself you just need to keep in mind the 9 windows.
+
+## Is it worth it?
+
+If you want to have always correct, and up-to-date documentation and help your QA team with *real* test cases.
+It is definitively worth it, now that it has become cheaper to do it, with the help of LLMs
+
+
+> because ...
+> "The reward for work well done is the opportunity to do more."
+>
+>       -- Jonas Salk, inventor of the polio vaccine
+
+
+
+# Footnotes
+
+[fn:7] codex exec "Where is stored the workflow that publishes a markdown to github pages?"
+
+[fn:6] codex exec "How can I take a screenshot from a website from the command line ?"
+
+[fn:5] A linter is program that reads the instructions in a program and gives you suggestions on how to improve it's style. Or points coding that could be errors.
+
+[fn:4] https://github.com/aureliojargas/clitest
+
+[fn:3] [[https://en.wikipedia.org/wiki/Nine_windows][Wikipedia: Nine Windows]]
+
+[fn:2] [[https://en.wikipedia.org/wiki/Literate_programming][wikipedia: Literate Programming]]
+
+[fn:1] MacNamara, Riona:
+[[https://www.youtube.com/watch?v=EnB8GtPuauw][Documentation, Disrupted: How Two Technical Writers Changed Google Engineering Culture]]
+ Write the Docs conference 2015
+
+
+# Appendix: Configuring GitHub Pages
+
+## Install GitHub Pages
+
+For simplicity we will use a a CMS GitHub pages.
+
+To do that you just need to follow the instructions [https://docs.github.com/en/pages/quickstart](in the quickstart).
+
+When you're finish you can see your webpages here: https://$USERNAME.github.io/
+
+And it will look something like this [fn:6]:
+
+![Default GitHub Page](./images/default_github_page.png "Default A GitHub Page")
+
+## Modify a GitHub Page
+
+Now let's modify the default `readme.md` document to show that the update mechanism works.
+
+Clone your repository to your local machine:
+
+~~~{.bash .invisible}
+    @author:$ export $USERNAME='jag-academy'
+    @author: exit 0
+~~~
+
+~~~ bash
+    @author:$ gh repo clone $USERNAME/$USERNAME.github.io #=> --exit 0
+~~~
+
+That would create your local copy of your repository.
+
+Now you can modify the `readme.md` file.
+
+This script appends the current date and time to the readme file to make sure it's modified.
+
+~~~
+   @author:$ cd $USERNAME.github.io
+   @author:$ echo "modified on: $(date +'%Y%m%d %H:%M:%S')" >> README.md
+~~~
+
+Now do commit and push
+
+
+~~~
+  @author:$ git commit -am "Append current date and time to trigger regeneration"
+  @author:$ git push
+~~~
+
+this will start the republishing of the page.
+
+## Check the publishing pipeline
+
+Now go to [https://github.com/jag-academy/jag-academy.github.io/actions](github.com/$USERNAME/$REPO/actions) to see your page as it's being generated.
+
+Observe that the workflow it's on yellow while it's running.
+
+You can even check the detail process that is following.
+
+When it finally turns to green means your new website is finished.
+
+![Your workflow is in yellow while it runs and green once it passes](./images/workflows.png)
+
+Got your link again and should see the document with the new date time.
+
+https://$USERNAME.github.io/
+
+<script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+<script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script>
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

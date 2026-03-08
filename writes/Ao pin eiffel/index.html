@@ -1,0 +1,138 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+
+**Architecture-Oriented Programming in Eiffel**
+
+A Conjecture
+===============================================================================
+
+Architecture Oriented Programming (AOP) is a programming paradigm that increases reusability and modularity of Object Oriented Languages.
+By identifying patterns found at the *architecture level* of *systems* and shrinking them at the *code level* of *programs*.
+The advanced features of Eiffel, such as Genericity, Aliasing, and Design by Contract, make it an ideal environment to implement AOP.
+And it would result in smaller code with more reusability in Eiffel programs.
+
+Background
+================================================================================
+
+Architecture Oriented Programming (AOP) is the name given by Weiher and Hirschfeld to their ideas in developing the Objective Smalltalk language.
+The main idea is delightfully simple:
+
+>  What if we took inspiration from the architecture of big systems,
+>    and shrink the techniques to organize a single program.
+
+(Weiher, 2020 a)  identified the first patterns and also made a summary in the YouTube presentation: "Can programmers escape the gentle tyranny of call return" (Weiher, 2020 b)
+Also, each pattern was published independently. As is shown in table [Summary]:
+
+| Inspired by                      | AOP Proposes                          | One Sentence Summary                                                                                                                                                                                 | Examples                                                                                                                                                     | Reference                                                                                                     |
+|----------------------------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| Internet URLs and URIs           | Polymorphic identifiers               | If every resource on your program: variables, objects, files, APIs had a local URI that you can use to communicate with it.                                                                          | var:person/name var:person/{attribute},     file://tmp/button.png ,    http://www.example.com/button.png, file:{env:HOME}/rfcs/{rfcName}                     | Weiher, M., & Hirschfeld, R. (2013). Polymorphic identifiers: uniform resource access in objective-smalltalk. |
+| Internet Protocols FTP, WWW, IRC | Schemes                               | The same way that a URI like ftp://myDir/myImage.jpg has a different behavior, than www://myDy/myImage.jpg. Schemes change the behavior that Polymorphic URI will have                               |                                                                                                                                                              | Weiher, M., & Hirschfeld, R. (2013). Polymorphic identifiers: uniform resource access in objective-smalltalk. |
+| Spreadsheet formulas             | References                            | The same way that changing a value in a cell in a spreadsheet automatically recalculates the derived values. Reference values will automatically update the derived values in a uniform identifier. |                                                                                                                                                              | Weiher, M., & Hirschfeld, R. (2013). Polymorphic identifiers: uniform resource access in objective-smalltalk. |
+| Unix pipes and filters           | Polymorphic write streams             | What if unix pipes, instead of sending a chain of text to the next process, threw a nested object structure                                                                                           |                                                                                                                                                              | Weiher, M., & Hirschfeld, R. (2019). Standard object out: streaming objects with polymorphic write streams.   |
+| Rest and stackable filesystems   | Storage combinators                   | With limited API verbs (like REST) you can create components that can compose, web servers combined with cache servers and load balancers.                                                           | A composition serving the files in $HOME/Sites, cached by memory. server := ref:file:{env:HOME} -> CachingStore -> SchemeHTTPServer port:8080. server start. | Weiher, M., & Hirschfeld, R. (2019). Storage combinators.                                                     |
+| Constraint programming           | Constraints as polymorphic connectors | What if the assignment operation had more meaning, such as keeping the values unidirectionally updated or synchronized?                                                                              |                                                                                                                                                              | Weiher, M., & Hirschfeld, R. (2016). Constraints as polymorphic connectors.                                   |
+[Table [Summary]: Summary of AOP Patterns and their publication]
+
+Uncertainties (Known-Unknowns)
+================================================================================
+
+In his conference, Marcel P. Weiher says that the comments for Unicon made it decide to create a new language (Objective Smalltalk) instead of a library for an existing language.
+And on this project, I'm doing exactly that: creating a library, not a new language.
+So it might be a bad idea.
+However, the advanced tools of Eiffel make this a better approach in this language.
+
+My plan
+================================================================================
+
+To get the implementation of AOP in the Eiffel, I intend to:
+
+First
+-----------
+
+Write a complete design by contract specification of the architecture patterns identified.
+This will require also the description of frame rules.
+Probably using "model queries" (Polikarpova et al. 2012)
+
+Second
+-----------
+
+I'll make several implementations.
+Here, I'll experiment.
+Where I'd ask a set of 5 developers to each
+develop their storage combinator and polymorphic identifier.
+Then, I will try to compose all of them.
+And survey the developers to see how they feel about the patterns' specification and composability.
+
+Third
+-----------
+
+To test that the code based on AOP is more reusable than the current call return style. I will reimplement a project in Eiffel (like the Nino Webserver).
+On AOP and measure using Avontis & Mingis 93 "Metrics from Object-Oriented Design."
+
+
+Future work (avenues to explore)
+=============================================================================
+
+It seems pretentious to talk about "future work" when discussing a proposal for a future project.
+But, assuming that I can achieve the goals in the plan. I.e., a specification and implementation for AOP in Eiffel.
+What other avenues will open for exploration?
+At the moment, I can imagine the following:
+
+Shrink other architectural patterns at the level of programs
+-----------------------------------------------------------------------------
+Weiher has currently only identified six architectural patterns and shrunk them to the level of programs.
+So, a natural progression of this work would be to specify and code even more patterns.
+
+For example, how would a queue-based architecture (like Rabbit MQ) look at the program level? Something like Erlang with OTP?
+
+How would an Event Sourcing architecture look at the program level?
+Could we reuse the agent and pub/sub mechanism in GUI Eiffel for other object communication, not only GUI?
+Reusing it as the main means of communication among objects.
+
+
+Given a specification, can ChatGPT program an implementation?
+-----------------------------------------------------------------------------
+If we follow the headlines, there are two ways of thinking about programming and Large Language Models (LLMs like chatgpt).
+Either:
+
+> Programming is dead, and ChatGPT killed it.
+
+or
+
+> ChatGPT and their inherent hallucinations make it irrelevant to programming.
+
+However, I think Design by Contract (DBC) opens an avenue for collaboration between the two approaches.
+In this collaboration, humans would write a specification in DBC  with the appropriate frame rules.
+Then ChatGPT would try to code to the specification.
+
+So it would be fascinating to see if, given a spec for AOP, we could get ChatGPT to implement it.
+
+Others
+-----------------------------
+While developing this work, other avenues of growth will become more apparent.
+
+
+Expected Contributions
+================================================================================
+
+As a result of this work, I expect to deliver the following work products.
+
+- Write a design by contract specification of the AOP patterns documented by Weiher.
+- Program an Eiffel implementation of said patterns.
+- Share the specification and its benefits with the academic and development communities so they can use AOP.
+
+References
+================================================================================
+
+- Avotins, J., & Mingins, C. (1993). Metrics for Object-Oriented Design. International Conference on Software Technology: Methods and Tools.
+- Polikarpova, N., Furia, C.A., Pei, Y., Wei, Y., & Meyer, B. (2012). What good are strong specifications? 2013 35th International Conference on Software Engineering (ICSE), 262-271.
+- Weiher, M., & Hirschfeld, R. (2013). Polymorphic identifiers: uniform resource access in objective-smalltalk. Dynamic Languages Symposium.
+- Weiher, M., & Hirschfeld, R. (2016). Constraints as polymorphic connectors. Proceedings of the 15th International Conference on Modularity.
+- Weiher, M., & Hirschfeld, R. (2019). Standard object out: streaming objects with polymorphic write streams. Proceedings of the 15th ACM SIGPLAN International Symposium on Dynamic Languages.
+- Weiher, M., & Hirschfeld, R. (2019). Storage combinators. Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software.
+- Weiher, M. (2020 a). Can programmers escape the gentle tyranny of call/return? Companion Proceedings of the 4th International Conference on Art, Science, and Engineering of Programming.
+- Weiher, M. (2020 b). Can programmers escape the gentle tyranny of call/return? https://www.youtube.com/watch?v=Gel8ffr4pqw
+
+
+
+<link rel="stylesheet" href="https://morgan3d.github.io/markdeep/latest/latex.css?">
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
