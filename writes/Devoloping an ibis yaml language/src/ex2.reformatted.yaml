@@ -1,0 +1,12 @@
+# @<ex2/reformatted
+? Why is there no silver bullet in software engineering?
+ . Silver Bullet: any software engineering development that can produce a tenfold or better improvement in programming productivity.
+ * Essential difficulties : Those related to conceptualization design
+    ? What are the essential difficultios of designing software?
+        * Complexity: no two parts alike; many states; nonlinear interactions between modules.
+        * Comformity: must conform to arbritray conditions (business rules, existin systems)
+        * Changeability: often required to change difficulty of change understimated.
+        * Invisibility: structure cannot be vsualized (flowcharts and visual modelling languages are very limited)
+ ? What silver bullets have been proposed to date?
+
+# >@ex2/reformatted

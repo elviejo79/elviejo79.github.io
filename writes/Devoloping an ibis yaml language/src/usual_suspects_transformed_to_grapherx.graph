@@ -1,0 +1,78 @@
+{
+    "items": [
+      {
+        "id": "Roger Kint-Keyser Söze",
+        "kind": "edge",
+        "label": "label",
+        "desc": "desc",
+        "tags": [],
+        "directed": false,
+        "fromId": "Roger Kint",
+        "toId": "Keyser Söze"
+      },
+      {
+        "id": "Roger Kint",
+        "kind": "node",
+        "label": "Roger Kint",
+        "desc": " ",
+        "tags": [
+          "transformar el metadata a array the key:value"
+        ],
+        "parent": "id of thee graph that represents the root",
+        "backgroundImageURL": null,
+        "has_dynamic_notes": false,
+        "is_collapsed": false
+      },
+      {
+        "id": "Keyser Söze",
+        "kind": "node",
+        "label": "Keyser Söze",
+        "desc": " ",
+        "tags": [
+          "transformar el metadata a array the key:value"
+        ],
+        "parent": "id of thee graph that represents the root",
+        "backgroundImageURL": null,
+        "has_dynamic_notes": false,
+        "is_collapsed": false
+      }
+    ],
+    "theme": {
+      "name": "minimal",
+      "bgfill": "#e5e7eb",
+      "grid": false,
+      "snapdist": {
+        "x": 100,
+        "y": 100
+      },
+      "selectionColor": "#1f2937",
+      "highlightColor": "red",
+      "nodefill": "white",
+      "nodelabelstroke": "black",
+      "nodelabelfontsize": 16,
+      "nodenotesfontsize": 16,
+      "nodeborder": "black",
+      "nodeborderradius": 15,
+      "nodeBackgroundImageURL": null,
+      "edgestroke": "#1f2937",
+      "edgeshape": "curved",
+      "edgestroketype": "solid",
+      "font": "PT Mono",
+      "badges": [
+        "✅",
+        "❌",
+        "⚡",
+        "👎",
+        "👍"
+      ]
+    },
+    "jsondownload": true,
+    "jsonupload": true,
+    "contextmenu": true,
+    "customjson": false,
+    "exportcytoscape": true,
+    "exportsvg": true,
+    "title": "Sample graph",
+    "description": "Compound graphs allow nodes to be nested inside each other.",
+    "contact": "mailto:eshnil22@gmail.com"
+  }

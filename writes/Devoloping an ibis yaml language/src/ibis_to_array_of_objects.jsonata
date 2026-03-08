@@ -1,0 +1,17 @@
+(
+    $eachNode:=function($parent,$current){
+        $current.{"kind":$parent.$keys()[1],
+            "parent":$parent.$keys()[0],
+            "id":$keys()[0],
+            "label":$lookup($,$keys()[0])}
+        };
+
+$recursive:=function($parent,$tree){
+    ($tree.$eachNode($parent,$tree))~>
+    $append($tree.$recursive($,$.*))~>
+    $distinct()
+    
+};
+
+$.Question.$recursive(%,$)[$exists(label)]
+)

@@ -1,0 +1,12 @@
+/* @<groupSentencesByType_jsonata */
+(
+
+$groupByType:=function($tree){
+    $tree.items{
+        `type`:$.($merge([{"id":id, "title":title},$groupByType($)]))
+    }
+};
+
+$groupByType($);
+)
+/* >@groupSentencesByType_jsonata */

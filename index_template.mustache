@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Blog</title>
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+<style>
+body {
+    text-align: center;
+    padding: 1rem;
+}
+#page {
+    display: block;
+    text-align: left;
+    max-width: 40rem;
+    margin: auto;
+}
+h1, h2 {
+    font-family: "IM Fell DW Pica";
+    font-weight: 400;
+    line-height: normal;
+}
+h1 {
+    font-size: 250%;
+}
+h2 {
+    font-size: 180%;
+}
+#menu-contact {
+    font-family: "IM Fell DW Pica";
+    font-size: 130%;
+    line-height: 1.4;
+}
+#menu-contact a {
+    text-decoration: none;
+    color: inherit;
+}
+main {
+    font-family: "Libre Baskerville";
+    line-height: 1.5;
+}
+code {
+    font-family: 'Inconsolata', monospace;
+    font-size: 115%;
+}
+u.dotted {
+    border-bottom: 1px dotted silver;
+    text-decoration: none;
+}
+ul.arrow {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+ul.arrow li:before {
+    content: "\27b5";
+    position: absolute;
+    vertical-align: center;
+}
+.post-meta {
+    color: #666;
+    font-size: 90%;
+}
+</style>
+</head>
+
+<body>
+<div id="page">
+<div id="header">
+<h1 id="name">Alejandro Garcia</h1>
+<p id="menu-contact">
+<a href="/">Teacher, Writer and Programmer</a>
+</p>
+</div>
+
+<hr/>
+
+<main>
+<h2>Writings</h2>
+<ul class="arrow">
+{{#writes.contents}}
+<li>
+<p>
+ {{#time}}{{time}}{{/time}}: <a href="/writes/{{name}}/">{{name}}</a>{{#info}}, <cite>{{info}}</cite>{{/info}}
+</p>
+</li>
+{{/writes.contents}}
+</ul>
+
+<h2>Pages</h2>
+<ul class="arrow">
+{{#pages.contents}}
+<li>
+<p>
+ {{#time}}{{time}}{{/time}}: <a href="/pages/{{name}}/">{{name}}</a>{{#info}}, <cite>{{info}}</cite>{{/info}}
+</p>
+</li>
+{{/pages.contents}}
+</ul>
+
+</main>
+
+<hr/>
+<div id="footer">
+<p></p>
+</div>
+
+</div>
+</body>
+</html>

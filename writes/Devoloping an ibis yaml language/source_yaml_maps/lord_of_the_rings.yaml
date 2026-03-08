@@ -1,0 +1,33 @@
+'null': top of the map
+Question:
+  - root: What should Frodo do about the one ring?
+    Ideas:
+      - ki: keep the ring
+        pros:
+          - in: gain invisibility
+            Question:
+              - im: Implications of using this trick?
+                Ideas:
+                  - sf: sauron will find the ring
+      - gg: Give it to golumm
+        pros:
+          - gw: Gollum really wants its
+          - gas: Gollum kept it away from Sauron for ages
+        cons:
+          - gm: gollum is a litlle messed up
+      - gh: THIS IS WRONG AFTER A CONS
+      - gf: What hapenns If I add somethig here
+      - bm: Drop it into the fires ouf mount Doom
+        pros:
+          - ow: its the only way to destroy it
+          - ofora: once and for all
+        cons:
+          - dr: the road is extremely dangerous
+            Question:
+              - wr: What are the risks?
+                Ideas:
+                  - ll: lava
+                  - or: Orcs
+                  - sp: giant spiers
+                  - 3b: 3rd degree burns
+  - root2: Why do we need to destroy it?
