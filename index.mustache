@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Alejandro Garcia's Blog</title>
+<link href="https://cdn.jsdelivr.net/npm/tufte-css/tufte.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <article>
+    <h1 id="name">Alejandro Garcia</h1>
+    <p class="subtitle">Writer, Developer, and Entrepreneur</p>
+
+    <section>
+      <h2 id="writes">Writings</h2>
+
+      {{#writes.contents}}
+      <h3>  {{#time}}{{time}}{{/time}}: <a href="./writes/{{name}}/">{{name}}</a> </h3>
+      {{#info}}<p>{{info}}</p>{{/info}}
+      {{/writes.contents}}
+    </section>
+
+    <section>
+      <h2>Pages</h2>
+{{#pages.contents}}
+      <h3>  {{#time}}{{time}}{{/time}}: <a href="./pages/{{name}}/">{{name}}</a></h3>
+      {{#info}}, <p>{{info}}</p>{{/info}}
+{{/pages.contents}}
+</section>
+
+</article>
+
+<hr/>
+<div id="footer">
+<p></p>
+</div>
+
+</div>
+</body>
+</html>
