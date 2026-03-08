@@ -1,0 +1,16 @@
+{
+  "name": "graph-to-svg",
+  "version": "1.0.0",
+  "description": "Using visjs and puppetter to generate an image from a text file",
+  "main": "graph-to-json.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejandro Garcia and chatgpt",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "puppeteer": "^21.6.1",
+    "vis-network": "^9.1.9"
+  }
+}

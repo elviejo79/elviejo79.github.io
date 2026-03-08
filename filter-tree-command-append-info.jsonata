@@ -1,0 +1,13 @@
+(
+    $processDir := function($dir) {
+      $dir.{
+        "type": type,
+        "name": name,
+        "time": time,
+        "info": contents[name="index.html"].info,
+        "contents": contents[type="directory"].($processDir($))
+      }
+    };
+
+    $processDir($.contents){name:$};
+  )
