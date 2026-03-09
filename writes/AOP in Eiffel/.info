@@ -1,0 +1,6 @@
+index.html
+	Architecture Oriented Programming (AOP) is the paradigm proposed by Marcel P. Weiher in his Objective-Smalltalk language.
+	The fundamental idea is to take the architecure of large systems like the Web,
+	and shrink it to the level of a single program.
+	Eiffel is the perfect language to express this idea, since "Design By Contract" was once of the inspirations for the HTTP protocol.
+
