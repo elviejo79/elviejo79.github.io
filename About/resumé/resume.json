@@ -131,7 +131,7 @@
       "position": "CEO / Cofounder",
       "startDate": "2002-01-31",
       "endDate": "2006-02-28",
-      "summary": "Five friends and I started this software company in Zacatecas, probably the first software company in the state, although there were some earlier individual attempts. The company grew to 13 employees and later \"collapsed.\" I served as director for a period of two years.",
+      "summary": "Five friends and I started this software company in the state. The company grew to 13 employees. I served as director for a period of two years.",
       "highlights": [
         "Cofounded one of the first software companies in Zacatecas.",
         "Grew the company from a small founding team to 13 employees.",
@@ -181,15 +181,7 @@
   ],
   "education": [
     {
-      "institution": "Centro de Investigación en Matemáticas A.C.",
-      "area": "Software Engineering, Project Management",
-      "studyType": "Ms. in Software Engineering",
-      "startDate": "2010-08-01",
-      "endDate": "2012-12-31",
-      "url": "https://www.cimat.mx/"
-    },
-    {
-      "institution": "Tecnológico de Monterrey",
+      "institution": "Monterrey Tec (itesm.mx)",
       "area": "Systems Engineering",
       "studyType": "BS Eng",
       "startDate": "1996-12-31",
@@ -367,7 +359,7 @@
 
 
         {
-            "name": "Corparate blog and news",
+            "name": "Corporate blog and news",
             "publisher": "iog.io",
             "url": "https://www.iog.io/news?query=alejandro&type=article",
             "releaseDate": "2024-10-24",
