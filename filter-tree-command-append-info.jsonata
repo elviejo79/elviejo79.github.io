@@ -9,6 +9,7 @@
         "contents": contents[type="directory"].($processDir($))
       }
     };
-
-    $processDir($.contents){name:$};
+    
+    /* the name:$ is the thing that names the objects as the subdirectory they contain*/
+    $processDir($.contents){name:$}; 
   )
