@@ -5,6 +5,7 @@
         "name": name,
         "time": time,
         "info": contents[name="index.html"].info,
+        "thumbnail": contents[name="images"].contents[name="thumbnail.png"].name,
         "contents": contents[type="directory"].($processDir($))
       }
     };

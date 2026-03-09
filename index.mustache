@@ -16,8 +16,16 @@
       <h2 id="writes">Writes</h2>
 
       {{#writes.contents}}
-      <h3>  {{#time}}{{time}}{{/time}}: <a href="./writes/{{name}}/">{{name}}</a> </h3>
-      {{#info}}<p>{{& info}}</p>{{/info}}
+      <h3>  {{#time}}{{time}}{{/time}}: <a href="./writes/{{name}}/">{{name}}</a></h3>
+      {{#info}}
+      <p>{{#thumbnail}}
+      <label for="mn-{{time}}" class="margin-toggle">&#8853;</label>
+      <input type="checkbox" id="mn-{{time}}" class="margin-toggle"/>
+      <span class="marginnote">
+        <img src="./writes/{{name}}/images/{{thumbnail}}"/>
+      </span>
+      {{/thumbnail}}</p>
+      <p>{{& info}}</p>{{/info}}
       {{/writes.contents}}
     </section>
 
