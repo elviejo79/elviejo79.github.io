@@ -350,12 +350,28 @@
         },
 
     {
-      "name": "Mastering Cardano: Ouroboros Chapter",
+      "name": "Mastering Cardano",
         "publisher": "Book.io",
       "releaseDate": "2025-09-07",
       "url": "https://book.io/book/mastering-cardano/",
-      "summary": "Discover the blockchain platform redefining trust, innovation, and global finance. Mastering Cardano shows you how to understand it, use it, and build with it"
+      "summary": "Setup the publishing pipeline on top of AsciiDoc and GitHub Actions. Discover the blockchain platform redefining trust, innovation, and global finance. Mastering Cardano shows you how to understand it, use it, and build with it"
     },
+        {
+            "name": "MC:Ouroboros Chapter",
+            "publisher": "Book.io",
+            "releaseDate": "2025-09-07",
+            "url": "https://github.com/input-output-hk/mastering-cardano/blob/main/chapters/chapter-04-how-cardano-works/ouroboros-consensus.adoc",
+            "summary": "Had to translate very difficult cryptography papers for a general audience."
+        },
+
+        {
+            "name": "Plutus: Writing reliable smart contracts",
+            "publisher": "Amazon Kindle Publishing",
+            "releaseDate": "2019-07-08",
+            "url": "https://a.co/d/08WEzEbj",
+            "summary": "Setup the publishing pipeline on top of AsciiDoc and GitHub Actions. Managed the whole publishing process in Amazon and Leanpub."
+        },
+
 
 
         {
