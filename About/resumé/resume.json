@@ -1,4 +1,4 @@
- {
+{
   "basics": {
     "name": "Alejandro Garcia",
     "label": "Systems-first turnaround leader (Agile/Delivery)",
@@ -181,6 +181,13 @@
   ],
   "education": [
     {
+      "institution": "Mathematics Research Center(cimat.mx)",
+      "area": "Systems Engineering",
+      "studyType": "MS in Softwore Engineering",
+      "startDate": "2008-08-01",
+      "endDate": "2011-05-01"
+    },
+    {
       "institution": "Monterrey Tec (itesm.mx)",
       "area": "Systems Engineering",
       "studyType": "BS Eng",
@@ -245,49 +252,48 @@
       "url": "https://www.scrumalliance.org/community/profile/agarc9afer"
     }
   ],
-    "skills": [
-        {
-            "name": "Technical Writer",
-            "level": "Senior Level",
-            "keywords": [
-                "Markdown",
-                "AsciiDoc",
-                "Docs-as-code",
-                "Literate Programming",
-                "Emacs",
-                "VS Code",
-                "Confluence"
-            ]
-        },
-
-      {
-          "name": "Agile Methods / Project Management",
-          "level": "Senior",
-          "keywords": [
-              "Kanban Trainer",
-              "Scrum",
-              "PSP Personal Software Process",
-              "TOC Thinking Processes",
-              "Coaching & Mentoring"
-          ]
-      },
-      {
-          "name": "DevOps",
-          "level": "Junior",
-          "keywords": [
-              "AWS",
-              "GitHub Actions",
-              "Docker containers",
-              "Bash",
-              "Nushell"
-          ]
-      },
+  "skills": [
+    {
+      "name": "Technical Writer",
+      "level": "Senior Level",
+      "keywords": [
+        "Markdown",
+        "AsciiDoc",
+        "Docs-as-code",
+        "Literate Programming",
+        "Emacs",
+        "VS Code",
+        "Confluence"
+      ]
+    },
+    {
+      "name": "Agile Methods / Project Management",
+      "level": "Senior",
+      "keywords": [
+        "Kanban Trainer",
+        "Scrum",
+        "PSP Personal Software Process",
+        "TOC Thinking Processes",
+        "Coaching & Mentoring"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "level": "Junior",
+      "keywords": [
+        "AWS",
+        "GitHub Actions",
+        "Docker containers",
+        "Bash",
+        "Nushell"
+      ]
+    },
     {
       "name": "AI / LLM",
       "level": "Junior",
       "keywords": [
-          "Agentic coding",
-          "Claude code memory"
+        "Agentic coding",
+        "Claude code memory"
       ]
     },
     {
@@ -300,21 +306,21 @@
         "Linux",
         "Design Patterns",
         "Bash Scripting",
-          "Git",
-          "REST API"
+        "Git",
+        "REST API"
       ]
     },
-      {
-          "name": "Database",
-          "level": "Mid",
-          "keywords": [
-              "MySQL",
-              "SQL",
-              "SQLite",
-              "Neo4j",
-              "TypeDB"
-          ]
-      },
+    {
+      "name": "Database",
+      "level": "Mid",
+      "keywords": [
+        "MySQL",
+        "SQL",
+        "SQLite",
+        "Neo4j",
+        "TypeDB"
+      ]
+    },
     {
       "name": "Frontend",
       "level": "Junior",
@@ -339,51 +345,45 @@
     "version": "v1.0.0",
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
   },
-    "publications": [
-
-        {
-            "name": "Testorial: An executable Tutorial",
-            "publisher": "personal position",
-            "releaseDate": "2026-02-23",
-            "url": "https://elviejo79.github.io/2026-02-23-Testorial/",
-            "summary": "This is my position on how to write documentation, that is always updated since its executable and part of the continuous integration pipeline."
-        },
-
+  "publications": [
+    {
+      "name": "Testorial: An executable Tutorial",
+      "publisher": "personal position",
+      "releaseDate": "2026-02-23",
+      "url": "https://elviejo79.github.io/2026-02-23-Testorial/",
+      "summary": "This is my position on how to write documentation, that is always updated since its executable and part of the continuous integration pipeline."
+    },
     {
       "name": "Mastering Cardano",
-        "publisher": "Book.io",
+      "publisher": "Book.io",
       "releaseDate": "2025-09-07",
       "url": "https://book.io/book/mastering-cardano/",
       "summary": "Setup the publishing pipeline on top of AsciiDoc and GitHub Actions. Discover the blockchain platform redefining trust, innovation, and global finance. Mastering Cardano shows you how to understand it, use it, and build with it"
     },
-        {
-            "name": "MC:Ouroboros Chapter",
-            "publisher": "Book.io",
-            "releaseDate": "2025-09-07",
-            "url": "https://github.com/input-output-hk/mastering-cardano/blob/main/chapters/chapter-04-how-cardano-works/ouroboros-consensus.adoc",
-            "summary": "Had to translate very difficult cryptography papers for a general audience."
-        },
-
-        {
-            "name": "Plutus: Writing reliable smart contracts",
-            "publisher": "Amazon Kindle Publishing",
-            "releaseDate": "2019-07-08",
-            "url": "https://a.co/d/08WEzEbj",
-            "summary": "Setup the publishing pipeline on top of AsciiDoc and GitHub Actions. Managed the whole publishing process in Amazon and Leanpub."
-        },
-
-
-
-        {
-            "name": "Corporate blog and news",
-            "publisher": "iog.io",
-            "url": "https://www.iog.io/news?query=alejandro&type=article",
-            "releaseDate": "2024-10-24",
-            "summary": "Blog posts about different education initiatives"
-        },
     {
-        "name": "SCRUM Developer: Manual del alumno",
-        "publisher": "Leanpub.com",
+      "name": "MC:Ouroboros Chapter",
+      "publisher": "Book.io",
+      "releaseDate": "2025-09-07",
+      "url": "https://github.com/input-output-hk/mastering-cardano/blob/main/chapters/chapter-04-how-cardano-works/ouroboros-consensus.adoc",
+      "summary": "Had to translate very difficult cryptography papers for a general audience."
+    },
+    {
+      "name": "Plutus: Writing reliable smart contracts",
+      "publisher": "Amazon Kindle Publishing",
+      "releaseDate": "2019-07-08",
+      "url": "https://a.co/d/08WEzEbj",
+      "summary": "Setup the publishing pipeline on top of AsciiDoc and GitHub Actions. Managed the whole publishing process in Amazon and Leanpub."
+    },
+    {
+      "name": "Corporate blog and news",
+      "publisher": "iog.io",
+      "url": "https://www.iog.io/news?query=alejandro&type=article",
+      "releaseDate": "2024-10-24",
+      "summary": "Blog posts about different education initiatives"
+    },
+    {
+      "name": "SCRUM Developer: Manual del alumno",
+      "publisher": "Leanpub.com",
       "url": "https://leanpub.com/manualscrumdeveloperintegracioncontinua",
       "releaseDate": "2016-10-27",
       "summary": "How to use technology to facilitate SCRUM practices"
@@ -410,10 +410,9 @@
     },
     {
       "name": "Udemy Plutus Course",
-        "startDate": "2019-04-01",
-        "description": "At the time it was the only class on this new programming language.",
+      "startDate": "2019-04-01",
+      "description": "At the time it was the only class on this new programming language.",
       "highlights": [
-
         "11,257 students",
         "4.1 stars in 658 ratings"
       ],
@@ -423,21 +422,21 @@
       ],
       "url": "https://www.udemy.com/course/plutus-reliable-smart-contracts/?src=sac&kw=plutus"
     },
-      {
-          "name": "picoHTTP",
-          "startDate": "2025-04-01",
-          "description": "Apply Architecture Oriented Programming in a strongly typed OOP language (Eiffel)",
-          "highlights": [
-              "Translate state of the art academic research to practical code",
-              "This is the 2nd implementation in the world of AOP, the 1st one is by the creator"
-          ],
-          "url": "https://github.com/elviejo79/RESTLY",
-          "tags": [
-              "formal_methods",
-              "programming",
-              "research"
-          ]
-      }
+    {
+      "name": "picoHTTP",
+      "startDate": "2025-04-01",
+      "description": "Apply Architecture Oriented Programming in a strongly typed OOP language (Eiffel)",
+      "highlights": [
+        "Translate state of the art academic research to practical code",
+        "This is the 2nd implementation in the world of AOP, the 1st one is by the creator"
+      ],
+      "url": "https://github.com/elviejo79/RESTLY",
+      "tags": [
+        "formal_methods",
+        "programming",
+        "research"
+      ]
+    }
   ],
   "references": [
     {
@@ -445,10 +444,10 @@
       "position": "Former Marketing Director IOHK",
       "reference": "Well, I'll cut to the chase. Your writing was brilliant ... It's by far the best copy we've produced."
     },
-      {
-          "name": "LB",
-          "position": "Director of Education IOHK",
-          "reference": "Alejandro is a proactive self-starter who is deeply passionate about his work in project management and education. He is already in a role that aligns perfectly with his strengths and continuously learns on his own accord."
-      }
+    {
+      "name": "LB",
+      "position": "Director of Education IOHK",
+      "reference": "Alejandro is a proactive self-starter who is deeply passionate about his work in project management and education. He is already in a role that aligns perfectly with his strengths and continuously learns on his own accord."
+    }
   ]
 }
