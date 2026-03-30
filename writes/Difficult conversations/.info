@@ -1,0 +1,6 @@
+# -*- indent-tabs-mode: t -*-
+index.html
+	Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
+	In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
+	So your tutorials never lie to your readers again.
+
