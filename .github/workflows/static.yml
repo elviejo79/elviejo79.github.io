@@ -37,11 +37,11 @@ jobs:
         with:
           version: '0.99'
 
-      - name: Install tree and jfq
+      - name: Install tree, jfq, and mustache
         run: |
           sudo apt-get update
           sudo apt-get install -y tree
-          npm install --global jfq
+          npm install --global jfq mustache
 
       - name: Generate static site
         run: |
