@@ -41,7 +41,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y tree
-          cargo install jfq
+          npm install --global jfq
 
       - name: Generate static site
         run: |
