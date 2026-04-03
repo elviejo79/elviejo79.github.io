@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Alejandro Garcia's Blog</title>
-<link href="https://cdn.jsdelivr.net/npm/tufte-css/tufte.min.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Alejandro Garcia's Blog</title>
+    <link rel="stylesheet" href="https://unpkg.com/classless-tufte-css@1.3.0/tufte.min.css"/>
+  </head>
 
 <body>
   <article>
@@ -28,6 +28,16 @@
       <p>{{& info}}</p>{{/info}}
       {{/writes.contents}}
     </section>
+
+
+    <section>
+      <h2>PhD</h2>
+      {{#PhD.contents}}
+        <h3> <a href="./PhD/{{name}}/">{{name}}</a></h3>
+        {{#info}}<p>{{& info}}</p>{{/info}}
+  {{/About.contents}}
+    </section>
+
 
     <section>
       <h2>About</h2>
