@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-04-03 vie 16:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contracted Intelligence</title>
+<meta name="author" content="Alejandro García F." />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css" type="text/css" />
+<link rel="stylesheet" href="ox-tufte.css" type="text/css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Contracted Intelligence</h1>
+<blockquote>
+<p>
+All of this AI speed is the opposite of what is needed, <br />
+Bring me 10x quality or get the f&#x2026; out. <br />
+&#x2014; <a href="https://www.threads.com/@zate75/post/DVYrkisCRVk?xmt=AQF0BzrjNUNwFTINOrvzrAB6JVLl7PZ3A0RDEwH_J69I7Q">zate75</a>
+</p>
+</blockquote>
+<div id="outline-container-org5d565b2" class="outline-2">
+<h2 id="org5d565b2"><span class="section-number-2">1.</span> Target: To get LLMs to produce reliable software.</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</div>
+<ul class="org-ul">
+<li>To apply Eiffel's Design by Contract as an interface for LLMs so that they generate trustworthy code.</li>
+<li>To compare LLMs-guided-by-contracts vs LLMs-guided-by-tests to discover which approach produces more reliable software.</li>
+<li>To measure time, money and defects of both approaches</li>
+<li>To program a valuable software product (application or library) to demonstrate he usefulness of the approach.</li>
+</ul>
+<p>
+LLMs are capable of producing a lot of code, but those programs are not reliable.
+</p>
+
+<p>
+As summarized by this headline:
+</p>
+
+<blockquote>
+<p>
+<a href="https://www.cnbc.com/2026/03/10/amazon-plans-deep-dive-internal-meeting-address-ai-related-outages.html">Amazon called an emergency meeting</a> after outages caused by AI-assisted code changes.
+The fix: put senior engineers back in the loop
+&#x2013; <a href="https://x.com/ThisWeeknAI/status/2031759301283316127">This week in AI News</a>
+</p>
+</blockquote>
+<p>
+For the past 50 years we have known that formal methods enable reliable software development, but they remain unpopular in industry due to project execution methods, certification concerns, and the <b>high cost associated with formal methods</b> [<a href="#citeproc_bib_item_2">2</a>].
+</p>
+
+<p>
+The high cost of applying formal methods has made them obvious candidates to try to automate with Generative AI.
+As shown by the work of [<a href="#citeproc_bib_item_1">1</a>] and [<a href="#citeproc_bib_item_3">3</a>]
+However to the best of our knowledge there has not been work on using Design By Contract  and LLMs.
+</p>
+
+<p>
+And there are two industry implementations of Design by Contract Eiffel's and ADA with SPARK.
+Of those two implementations we decided to use Eiffel because of its Simplified Concurrent Object Oriented Programming (SCOOP).
+Since SCOOP will help with the concurrency and distributed experiments.
+</p>
+<p>
+So, given that LLMs make developing code cheaper and Formal Methods make developing software higher quality.
+</p>
+
+<p>
+On this project we will try to use formal methods, in its Design by Contract incarnation, to guide LLMs creating software.
+To get: "10x quality software, not just 10x lines of code"
+</p>
+<div id="outline-container-org4ebb2dc" class="outline-2">
+<h2 id="org4ebb2dc"><span class="section-number-2">2.</span> Methodology</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+During the project we will have two groups: Generate by Unit Tests (GenByTests) and Generate by Contracts (GenByContracts)
+To compare code generated by LLMs with the current state of the practice (following unit tests) vs our proposal (generated by contracts).
+</p>
+</div>
+<div id="outline-container-orge916a2a" class="outline-3">
+<h3 id="orge916a2a"><span class="section-number-3">2.1.</span> Experiment protocol</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Each experiment runs the following procedure:
+</p>
+</div>
+<div id="outline-container-org6c1fd61" class="outline-4">
+<h4 id="org6c1fd61">Specification phase (human-authored):</h4>
+<div class="outline-text-4" id="text-org6c1fd61">
+<dl class="org-dl">
+<dt>GenByContracts</dt><dd>A human writes a complete DbC specification for the target
+library: preconditions, post-conditions, class invariants, and frame
+rules.  No implementation is written.</dd>
+<dt>GenByTests</dt><dd>A human writes a test suite for the same target library,
+split into a <i>training set</i> (given to the LLM) and a <i>verification set</i>
+(held out for evaluation).  No implementation is written.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge213fe2" class="outline-4">
+<h4 id="orge213fe2">Generation phase (LLM-authored)</h4>
+<div class="outline-text-4" id="text-orge213fe2">
+<dl class="org-dl">
+<dt>GenByContracts</dt><dd>An LLM receives the DbC specification and generates a complete Eiffel implementation.</dd>
+<dt>GenByTests</dt><dd>An LLM receives the training-set tests and generates a  complete Eiffel implementation.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgb460bbe" class="outline-4">
+<h4 id="orgb460bbe">Evaluation phase</h4>
+<div class="outline-text-4" id="text-orgb460bbe">
+<p>
+Both implementations are evaluated on the same axes:
+</p>
+<dl class="org-dl">
+<dt>Cost</dt><dd>API expense to produce a compiling,
+contract-passing (GenByContracts) or training-set-passing (GenByTests)
+ implementation.</dd>
+<dt>Time</dt><dd>Time required to produce a compiling implementation on each group.</dd>
+<dt>Quality</dt><dd>performance on the held-out verification set, which
+neither group has seen during generation.</dd>
+</dl>
+
+<p>
+This design ensures the verification set is an unbiased judge: it tests
+behavioral correctness that was never explicitly provided to either LLM.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb98721a" class="outline-3">
+<h3 id="orgb98721a"><span class="section-number-3">2.2.</span> Experiments Iterations</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+For our experiments we will develop an implementation of Weiher's [<a href="#citeproc_bib_item_6">6</a>] Architecture Oriented Programming (AOP) library in Eiffel.
+</p>
+
+<p>
+In 4 iterations each iteration with a bigger level of complexity.
+</p>
+
+<p>
+The four experiments are:
+</p>
+
+<dl class="org-dl">
+<dt>Baseline</dt><dd>Implement (with GenByContracts and GenByTests) known data-structures  with known contracts. Like stack, queue or hash-map.</dd>
+<dt>AOP - Single</dt><dd>In a single threaded environment, implement Weiher's six patterns</dd>
+<dt>AOP - Concurrent</dt><dd>Implement the same patterns now in a multi-threaded processor. For this we will take advantage of Eiffel SCOOP (Simplified Concurrent Object Oriented Programming) [<a href="#citeproc_bib_item_4">4</a>]</dd>
+<dt>AOP - Distributed</dt><dd>Implement the same patterns now in a distributed system. For this we will build on the thesis [<a href="#citeproc_bib_item_5">5</a>]</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgd87bb09" class="outline-3">
+<h3 id="orgd87bb09"><span class="section-number-3">2.3.</span> What is AOP? and Why will it be our library example case?</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+AOP has a simple but powerful idea:
+</p>
+
+<div class="org-center">
+<p>
+What would happen if we took the architecture of large software systems,
+(like HTTP and the web) and shrunk it to the level of a single program?
+</p>
+</div>
+
+<p>
+With this principle Weiher developed the <a href="http://objective.st">Objective-Smalltalk</a> programming language, but it remains the only implementation and AOP is only documented on his corpus of work.
+Not specified in an executable format.
+</p>
+
+<p>
+The six AOP patterns that Weiher documents are:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Six patterns of AOP</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Architectural Inspiration</th>
+<th scope="col" class="org-left">AOP Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Internet URIs</td>
+<td class="org-left">Polymorphic Identifiers [<a href="#citeproc_bib_item_8">8</a>]</td>
+</tr>
+
+<tr>
+<td class="org-left">Internet Protocols</td>
+<td class="org-left">Schemes [<a href="#citeproc_bib_item_8">8</a>]</td>
+</tr>
+
+<tr>
+<td class="org-left">Spreadsheet cell references</td>
+<td class="org-left">References [<a href="#citeproc_bib_item_8">8</a>]</td>
+</tr>
+
+<tr>
+<td class="org-left">Unix pipes and filters</td>
+<td class="org-left">Polymorphic Write Streams [<a href="#citeproc_bib_item_9">9</a>]</td>
+</tr>
+
+<tr>
+<td class="org-left">REST / stackable file-systems</td>
+<td class="org-left">Storage Combinators [<a href="#citeproc_bib_item_10">10</a>]</td>
+</tr>
+
+<tr>
+<td class="org-left">Constraint programming</td>
+<td class="org-left">Constraints as Polymorphic Connectors [<a href="#citeproc_bib_item_7">7</a>]</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We selected this application because:
+</p>
+
+<ul class="org-ul">
+<li>It is complex enough, it is not a trivial case.</li>
+<li>It is documented in the academic literature, but there is only one implementation so we can assume LLMs haven't been trained on how to develop it.</li>
+<li>It is an ideal candidate to be specified with Design by Contract by virtue of being inspired by HTTP Protocol that was inspired by DbC.</li>
+<li>The resulting library would be valuable on its own.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2484f1d" class="outline-2">
+<h2 id="org2484f1d"><span class="section-number-2">3.</span> Budget</h2>
+<div class="outline-text-2" id="text-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Indicative Budget</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Item</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-right">Count</th>
+<th scope="col" class="org-right">Unit Cost</th>
+<th scope="col" class="org-right">Subtotal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">PhD stipend</td>
+<td class="org-left">Researcher salary</td>
+<td class="org-right">36 months</td>
+<td class="org-right">mxn <a href="https://www.secihti.mx/wp-content/uploads/2026/02/TABBN-26-20260223T163125.pdf">$ 21,397.32</a></td>
+<td class="org-right">mxn $  770,303.52</td>
+</tr>
+
+<tr>
+<td class="org-left">LLM API access</td>
+<td class="org-left">4 experiments × Groups GenByContracts + GenByTests</td>
+<td class="org-right">9 months</td>
+<td class="org-right">USD $ 200 / month</td>
+<td class="org-right">mxn $   64,297.08</td>
+</tr>
+
+<tr>
+<td class="org-left">Eiffel Studio</td>
+<td class="org-left">Academic license</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">mxn $           0</td>
+</tr>
+
+<tr>
+<td class="org-left">Conference travel</td>
+<td class="org-left">4 presentations (ICSE / FM / VerifyAI)</td>
+<td class="org-right">4 conferences</td>
+<td class="org-right"><a href="https://web.archive.org/web/20251212191121/https://www.laser-foundation.org/verifai-26/">EUR $690</a> + USD $1884</td>
+<td class="org-right">mxn $  191,462.18</td>
+</tr>
+
+<tr>
+<td class="org-left">Article Processing Fees</td>
+<td class="org-left">Will publish in Diamond Open Access journals (<a href="https://programming-journal.org">https://programming-journal.org</a> , <a href="https://www.jot.fm">https://www.jot.fm</a>)</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">mxn $           0</td>
+</tr>
+
+<tr>
+<td class="org-left">Computing infrastructure</td>
+<td class="org-left">CIMAT provision</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">mxn $           0</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right"><b>TOTAL</b></td>
+<td class="org-right">mxn $1,026,052.56</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org97789cf" class="outline-2">
+<h2 id="org97789cf"><span class="section-number-2">4.</span> Status</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+I have been working on an <a href="https://github.com/elviejo79/RESTLY">Eiffel AOP implementation since May 2025</a>.
+During that time I became convinced that AOP is good paradigm to copy in other patterns.
+But that I would need to speed up my productivity if I ever wanted to finish it.
+That is why now I will focus on getting Generative AI to produce a correct implementation of AOP guided by contracts.
+So I have already the human generated contracts that will become the basis for the second experiment <i>AOP - Single</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org70d4e0d" class="outline-2">
+<h2 id="org70d4e0d"><span class="section-number-2">5.</span> Participants</h2>
+<div class="outline-text-2" id="text-5">
+<dl class="org-dl">
+<dt>PhD Candidate</dt><dd>Alejandro García F., Msc. in Software Engineering from CIMAT Zacatecas
+Software engineer with over 30 years of experience.
+And the originator of the Contracted Intelligence approach,
+has prior published work on Software Engineering,
+and brings experience in formal methods,
+literate programming,
+and technical writing to the project.</dd>
+
+<dt>Research Supervisor</dt><dd>Dr. Carlos Lara-Alvarez, Director of CIMAT Zacatecas,
+holds SNI Level I and has 537 academic citations with industry collaborations at Intel and commercial software firms on safety-critical systems.</dd>
+</dl>
+<p>
+His expertise in probabilistic models, software testing,
+and human-machine systems directly covers the experimental design and evaluation methodology of this project.
+</p>
+</div>
+</div>
+<div id="outline-container-org937ecf1" class="outline-2">
+<h2 id="org937ecf1"><span class="section-number-2">6.</span> Results and Impact</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+The project will produce empirical evidence comparing contract-guided vs test-guided LLM code generation, including:
+</p>
+
+<ul class="org-ul">
+<li>A validated methodology for using DbC to guide LLMs in generating reliable software</li>
+<li>Quantitative measurements (cost, time, defect rates) comparing both approaches across four complexity levels</li>
+<li>A complete, working implementation of Weiher's AOP library in Eiffel (valuable independently)</li>
+<li>Four peer-reviewed publications documenting findings at each experiment iteration</li>
+</ul>
+
+<p>
+Delivering these results will enable software engineering teams to adopt contract-guided AI coding practices with evidence-based confidence, and provide AI tool developers with design principles for integrating formal specifications into code generation workflows.
+</p>
+</div>
+</div>
+<div id="outline-container-org17d7c09" class="outline-2">
+<h2 id="org17d7c09"><span class="section-number-2">7.</span> Timeline</h2>
+<div class="outline-text-2" id="text-7">
+
+<div id="orgf71165c" class="figure">
+<p><img src="./images/timeline.svg" alt="timeline.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>The project will last for 36 months</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1d626ce" class="outline-2">
+<h2 id="org1d626ce"><span class="section-number-2">8.</span> What I am looking for</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+To be accepted in the DOCTORADO EN CIENCIAS FÍSICO MATEMÁTICAS
+CON ORIENTACIÓN EN PROCESAMIENTO DIGITAL DE SEÑALES
+INTELIGENCIA ARTIFICIAL
+</p>
+</div>
+</div>
+<hr />
+<p>
+Alejandro García F.
+agarciafdz@gmail.com
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-02 jue&gt;</span></span>
+</p>
+<div id="outline-container-org3830ccf" class="outline-2">
+<h2 id="org3830ccf"><span class="section-number-2">9.</span> References</h2>
+<div class="outline-text-2" id="text-9">
+<style>.csl-left-margin{float: left; padding-right: 0em;}
+ .csl-right-inline{margin: 0 0 0 2em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>
+    <div class="csl-left-margin">[1]</div><div class="csl-right-inline">Beg, A. et al. 2025. <a href="https://arxiv.org/abs/2507.14330">Leveraging llms for formal software requirements – challenges and prospects</a>.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>
+    <div class="csl-left-margin">[2]</div><div class="csl-right-inline">Davis, J.A. et al. 2013. Study on the barriers to the industrial adoption of formal methods. <i>International workshop on formal methods for industrial critical systems</i> (2013), 63–77.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>
+    <div class="csl-left-margin">[3]</div><div class="csl-right-inline">Ma, L. et al. 2025. <a href="https://doi.org/10.1109/ICSE55347.2025.00129">Specgen: Automated generation of formal program specifications via large language models</a>. <i>2025 Ieee/acm 47th international conference on software engineering (icse)</i> (2025), 16–28.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>
+    <div class="csl-left-margin">[4]</div><div class="csl-right-inline">Morandi, B. et al. 2008. A formal reference for scoop. <i>Laser summer school on software engineering</i>. Springer. 89–157.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>
+    <div class="csl-left-margin">[5]</div><div class="csl-right-inline">Schmocker, R. 2014. Concurrency patterns in scoop. (2014).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>
+    <div class="csl-left-margin">[6]</div><div class="csl-right-inline">Weiher, M. 2020. Can programmers escape the gentle tyranny of call/return? <i>Companion proceedings of the 4th international conference on art, science, and engineering of programming</i> (2020).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>
+    <div class="csl-left-margin">[7]</div><div class="csl-right-inline">Weiher, M. and Hirschfeld, R. 2016. Constraints as polymorphic connectors. <i>Proceedings of the 15th international conference on modularity</i> (2016).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>
+    <div class="csl-left-margin">[8]</div><div class="csl-right-inline">Weiher, M. and Hirschfeld, R. 2013. Polymorphic identifiers: Uniform resource access in objective-smalltalk. <i>Dynamic languages symposium</i> (2013).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>
+    <div class="csl-left-margin">[9]</div><div class="csl-right-inline">Weiher, M. and Hirschfeld, R. 2019. Standard object out: Streaming objects with polymorphic write streams. <i>Proceedings of the 15th acm sigplan international symposium on dynamic languages</i> (2019).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_10"></a>
+    <div class="csl-left-margin">[10]</div><div class="csl-right-inline">Weiher, M. and Hirschfeld, R. 2019. Storage combinators. <i>Proceedings of the 2019 acm sigplan international symposium on new ideas, new paradigms, and reflections on programming and software</i> (2019).</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
