@@ -8,6 +8,15 @@
     <atom:link href="https://elviejo79.github.io/feed.rss" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Difficult conversations</title>
+      <link>https://elviejo79.github.io/writes/Difficult conversations/</link>
+      <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
+In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
+So your tutorials never lie to your readers again.]]></description>
+      <pubDate>26-mar-21</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Difficult conversations/</guid>
+    </item>
+    <item>
       <title>Testorial</title>
       <link>https://elviejo79.github.io/writes/Testorial/</link>
       <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
