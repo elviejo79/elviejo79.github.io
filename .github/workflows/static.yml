@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -31,6 +31,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Nushell
+        uses: hustcer/setup-nu@v3
+        with:
+          version: '0.99'
+
+      - name: Install tree and jfq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+          cargo install jfq
+
+      - name: Generate static site
+        run: |
+          nu -c "tree -I '????-??-??-*' -D --timefmt '%y-%b-%d' -L 3 --sort mtime -r -J --noreport --info | jfq --query-file ./filter-tree-command-append-info.jsonata | tee { mustache ./index.mustache | save --force index.html } | mustache ./rss.mustache | save --force rss.xml"
+
+      - name: Commit and push generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Regenerate index.html and rss.xml
+          file_pattern: 'index.html rss.xml'
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
