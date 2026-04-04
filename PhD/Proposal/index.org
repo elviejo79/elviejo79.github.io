@@ -74,9 +74,9 @@ LLMs are capable of producing a lot of code, but those programs are not reliable
 As summarized by this headline:
 
    #+BEGIN_QUOTE
-   [[https://www.cnbc.com/2026/03/10/amazon-plans-deep-dive-internal-meeting-address-ai-related-outages.html][Amazon called an emergency meeting]] after outages caused by AI-assisted code changes.
-   The fix: put senior engineers back in the loop
-   -- [[https://x.com/ThisWeeknAI/status/2031759301283316127][This week in AI News]]
+   [[https://www.cnbc.com/2026/03/10/amazon-plans-deep-dive-internal-meeting-address-ai-related-outages.html][Amazon called an emergency meeting]] after outages caused by AI-assisted code changes. \\
+   The fix: put senior engineers back in the loop. \\
+   --- [[https://x.com/ThisWeeknAI/status/2031759301283316127][This week in AI News]]
    #+END_QUOTE
 
 *** Compelling Points :ignore:
