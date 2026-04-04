@@ -47,12 +47,6 @@ jobs:
         run: |
           nu -c "tree -I '????-??-??-*' -D --timefmt '%y-%b-%d' -L 3 --sort mtime -r -J --noreport --info | jfq --query-file ./filter-tree-command-append-info.jsonata | tee { mustache ./index.mustache | save --force index.html } | mustache ./rss.mustache | save --force rss.xml"
 
-      - name: Commit and push generated files
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Regenerate index.html and rss.xml
-          file_pattern: 'index.html rss.xml'
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -63,3 +57,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Commit and push generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Regenerate index.html and rss.xml
+          file_pattern: 'index.html rss.xml'
