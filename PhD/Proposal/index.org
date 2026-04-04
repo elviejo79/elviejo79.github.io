@@ -147,8 +147,7 @@ Both implementations are evaluated on the same axes:
 This design ensures the verification set is an unbiased judge: it tests
 behavioral correctness that was never explicitly provided to either LLM.
 
-
-** Experiments Iterations
+** Experiment Iterations
 For our experiments we will develop an implementation of Weiher's [cite:@weiher2020tyranny] Architecture Oriented Programming (AOP) library in Eiffel.
 
 In 4 iterations each iteration with a bigger level of complexity.
@@ -159,6 +158,32 @@ The four experiments are:
 - AOP - Single :: In a single threaded environment, implement Weiher's six patterns
 - AOP - Concurrent :: Implement the same patterns now in a multi-threaded processor. For this we will take advantage of Eiffel SCOOP (Simplified Concurrent Object Oriented Programming) [cite:@morandi2008scoop]
 - AOP - Distributed :: Implement the same patterns now in a distributed system. For this we will build on the thesis [cite:@concurrency_scoop]
+
+
+#+BEGIN_SRC plantuml :file ./images/experiment_protocol.svg
+@startuml
+!theme mono
+
+actor Human
+collections LLMs
+
+loop Baseline, Single, Concurrent, Distributed
+
+Human -> Human: Specification phase
+Human -> LLMs: Contracts, Training Test Sets
+LLMs -> LLMs: Generation phase
+
+LLMs -> Human : Working code
+Human -> Human : Evaluation phase: Cost, Time, Quality
+
+end
+@enduml
+#+END_SRC
+
+#+CAPTION: Experiment protocol, for 4 experiments
+#+RESULTS:
+[[file:./images/experiment_protocol.svg]]
+
 
 ** What is AOP? and Why will it be our library example case?
 
@@ -267,7 +292,7 @@ Delivering these results will enable software engineering teams to adopt contrac
 #+BEGIN_SRC mermaid :file ./images/timeline.svg
 ---
 config:
-  theme: 'base'
+  theme: 'neutral'
   timeline:
     disableMulticolor: true
 ---
