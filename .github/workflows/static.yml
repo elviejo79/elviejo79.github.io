@@ -37,11 +37,17 @@ jobs:
         with:
           version: '0.99'
 
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
       - name: Install tree, jfq, and mustache
         run: |
           sudo apt-get update
           sudo apt-get install -y tree
-          npm install --global jfq mustache
+          npm install --global jfq
+          go install github.com/cbroglie/mustache/cmd/mustache@latest
 
       - name: Generate static site
         run: |
