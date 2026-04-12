@@ -14,7 +14,7 @@
 This is one my first serious attempts at making it practical for me.
 My most recent attempt can be found in <a href="./writes/Testorials">Testorials</a>.
 ]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Writing programming tutorials/</guid>
     </item>
     <item>
@@ -25,7 +25,7 @@ Yet the techonology is not deployed on ever saw that exists.
 And superficially we could think is because of *patents*
 But in fact is a lot more complicated than that!
 ]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Thinking about patents sawstop case/</guid>
     </item>
     <item>
@@ -34,7 +34,7 @@ But in fact is a lot more complicated than that!
       <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
 In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
 So your tutorials never lie to your readers again.]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Testorial/</guid>
     </item>
     <item>
@@ -43,7 +43,7 @@ So your tutorials never lie to your readers again.]]></description>
       <description><![CDATA[Things hat can stack inside each other are better, than things that can't.
 Prove me wrong.
 ]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Stackable things/</guid>
     </item>
     <item>
@@ -51,7 +51,7 @@ Prove me wrong.
       <link>https://elviejo79.github.io/writes/Polimophic identifiers/</link>
       <description><![CDATA[Superficially look like internet urls.
 But are in fact the fundamental, and transparent abstraction for resources in Architecture Oriente Porgramming (AOP).]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Polimophic identifiers/</guid>
     </item>
     <item>
@@ -60,14 +60,14 @@ But are in fact the fundamental, and transparent abstraction for resources in Ar
       <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
 In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
 So your tutorials never lie to your readers again.]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Difficult conversations/</guid>
     </item>
     <item>
       <title>Biyoocc</title>
       <link>https://elviejo79.github.io/writes/Biyoocc/</link>
       <description><![CDATA[Yes an Object Oriented Compiler Compiler (YOOCC). Was a reasearch effort in Monash univeristy to create a compiler on top of Eiffel.]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Biyoocc/</guid>
     </item>
     <item>
@@ -79,7 +79,7 @@ Therefore I use programming to learn other topics.
 On this list I collect programming languages, whose output is not binary code,
 But other "things" as a way to learn those other things.
 ]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Awesome list of text to x/</guid>
     </item>
     <item>
@@ -89,14 +89,14 @@ But other "things" as a way to learn those other things.
 Only to be defeated by a batery.
 This post is to express my frustration with the applicacion of the algorithm.
 ]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Algorithms at the movies angels and demons/</guid>
     </item>
     <item>
       <title>Actually writing the tutorial</title>
       <link>https://elviejo79.github.io/writes/Actually writing the tutorial/</link>
       <description><![CDATA[This article is now super-seeded by <a href="./writes/Testorials/">Testorials</a>.]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Actually writing the tutorial/</guid>
     </item>
     <item>
@@ -106,7 +106,7 @@ This post is to express my frustration with the applicacion of the algorithm.
 The fundamental idea is to take the architecure of large systems like the Web,
 and shrink it to the level of a single program.
 Eiffel is the perfect language to express this idea, since "Design By Contract" was once of the inspirations for the HTTP protocol.]]></description>
-      <pubDate>26-Apr-05</pubDate>
+      <pubDate>26-Apr-09</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/AOP in Eiffel/</guid>
     </item>
 
