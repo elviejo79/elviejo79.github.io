@@ -6,7 +6,7 @@
     "email": "agarciafdz@gmail.com",
     "phone": "(+52) 492 122 8171",
     "website": "https://elviejo79.github.io",
-    "summary": "Technical writer with 10+ years turning complex systems into clear, testable documentation. I believe docs that can't be automatically verified are already out of date — so I build documentation pipelines where tutorials are executable, examples are CI-tested, and writing ships like code. Experienced with AsciiDoc, docs-as-code, and literate programming across blockchain, education, and developer tooling domains.",
+      "summary": "Writing, Coding and Testing are the same job. I can't do one without the others.Technical writer with 10+ years turning complex systems into clear, testable documentation. I believe docs that can't be automatically verified are already out of date; so I build documentation pipelines where tutorials are executable, examples are CI-tested, and writing ships like code. Experienced with AsciiDoc, docs-as-code, and literate programming across blockchain, education, and developer tooling domains.",
     "location": {
       "countryCode": "MX",
       "address": "Fuentes del Bosque",
@@ -35,7 +35,7 @@
   "work": [
     {
       "name": "Input Output (IOHK)",
-      "position": "Education Lead (Agile)",
+      "position": "Lead Agile coach in Education",
       "startDate": "2024-10-01",
       "endDate": "2026-01-19",
       "summary": "Using my previous experience as a project manager, I took an active role helping the Education team with all its initiatives.",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Input Output (IOHK)",
-      "position": "Education Project Manager",
+      "position": "Project Manager in Education",
       "startDate": "2022-07-01",
       "endDate": "2024-10-01",
       "summary": "Created tutorials for the Cardano developer community. Frequently this required reading source code and academic papers, because these were the first docs for several innovative technologies.",
