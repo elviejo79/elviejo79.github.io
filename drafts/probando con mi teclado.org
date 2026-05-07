@@ -1,0 +1,27 @@
+* este es un titulo
+
+interesate el contendo no se activa con el teclado externo hay que hacer click en la pantalla
+
+
+
+** TODO esto esta creando otra nota
+
+la prodr{e anidar dentro de la otra
+
+
+*** y esta es otra subnota
+* la reorganizacion es una pesadilla
+
+hay que seleccionar una nota.
+hacer click en un un boton que tiene unas flechas de arriba abajo.
+luego presinar unas flechas para anidar desanidar la conversacion
+
+** la clave es crear la nota con la indentaci{on correctad desde el principio.
+* pues necesito hacer un fork de orgzly y hacerlo drag and drop
+
+la interfaz debe de ser mas como la de voiceliner que permite teclear con grabaci{on y que permite re-acomodar los segmentos de la conversacion conforme al plan
+
+** y que permiat sincranizar con git
+** y manejarse con el teclado 100
+* puede el keebio conectarse por bluetooth.
+* pues parece que para escribir documentos largos orgzly es mi unica opcionl
