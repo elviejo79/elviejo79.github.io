@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-06-15 lun 20:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why I love to program as a writer</title>
+<meta name="author" content="Alejandro Garcia" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Why I love to program as a writer
+<br />
+<span class="subtitle">Or How literate programming is the ultimate programming hack</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org531a79b">1. The two gifts of literate programming</a></li>
+<li><a href="#orga97380e">2. Example of a literate program</a>
+<ul>
+<li><a href="#orgf702b42">2.1. Discarded alternatives</a>
+<ul>
+<li><a href="#org822e15b">2.1.1. Leo-Editor and its clone LeoJS</a></li>
+<li><a href="#org3e1e1ba">2.1.2. Tiny Wiki.</a></li>
+<li><a href="#org76217b4">2.1.3. Jupyter Notebooks.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org300d4ea">3. How to become a literate programmer.</a></li>
+<li><a href="#org8f6347a">4. Discarded sections</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org2e3e3f9">4.0.1. How do we program currently?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+Paraphrasing Alan Kay: Literate Programming to me means only
+prose and code  in order of human comprehension,
+with the order of the code required by the compiler being irrelevant.
+It is possible to do in Emacs Org-mode and in Noweb.
+There are possibly other systems in which this is possible,
+but I'm not aware of them.
+</p>
+</blockquote>
+
+
+<p>
+Lately I have been programming two big systems.
+One is a project management software and the other is an Eiffel library.
+And that made me appreciate the gifts of Literate Programming.
+</p>
+<div id="outline-container-org531a79b" class="outline-2">
+<h2 id="org531a79b"><span class="section-number-2">1.</span> The two gifts of literate programming</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I went back to my Eiffel library after 5 months of not touching it.
+Of course my mind was blank when reading the code.
+</p>
+
+<p>
+Fortunately for me I have programmed it in literate programming style.
+So I had 1300 lines of prose and code to explain to myself.
+What I had decided and why!!
+</p>
+
+<p>
+It was a gift from my past self to present me.
+The gift of understanding.
+The gift of knowing that when I come back to this software,  I can see why it's designed the way it is.
+</p>
+
+<p>
+The second gift is the gift of focus, focus on the goals that matter.
+Most software is programmed to work in layers.
+We have specialized tools for each layer: Database Manager for the data layer, coding editors for the business logic, and design tools for the user interface.
+We have specialized professionals for each layer, Database Administrators, Programmers, and User Experience.
+</p>
+
+<p>
+However our users don't think in terms of layers.
+Our users have goals.
+And our software must help them achieve their goals.
+</p>
+
+<p>
+So the first thing we need to change is to think in terms of goals not tools.
+And the way I have found to do that is to organize my thinking as an article.
+Where the goal is the first paragraph.
+Subsequent paragraphs and code blocks are written in service of the goal.
+This of course means that current tools are not useful in this way of writing.
+I cannot write SQL in the python interpreter, nor CSS in the command prompt.
+But I need all of these languages and tools mixed in order to fulfill the goal of my user.
+</p>
+</div>
+</div>
+<div id="outline-container-orga97380e" class="outline-2">
+<h2 id="orga97380e"><span class="section-number-2">2.</span> Example of a literate program</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Our goal is to show the users stored in a SQLite database.
+So we would write an article as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><code>#+title: How to Use SQLite with Python
+#+author: Eesa Zahed
+#+date: 2023-02-21
+#+language: en
+#+options: toc:t num:t ^:nil
+
+In this tutorial we would learn how to connect SQLite and Python
+
+* Requirements
+First of all you need to check if you have Python and Sqlite installed.
+So write this command in your terminal.
+And they should return an output similar to the one shown.
+
+#+begin_src shell :exports both :results output
+  python --version
+  sqlite3 --version
+#+end_src
+
+#+results:
+: Python 3.10.12
+: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
+
+
+* Setup
+
+#+begin_src shell
+  pip install cs50
+  touch database.db
+#+end_src
+
+* CREATE
+
+#+begin_src python :tangle main.py
+  db.execute("""
+      CREATE TABLE IF NOT EXISTS users (
+          name     TEXT,
+          age      NUMBER,
+          fav_food STRING
+      )
+  """)
+#+end_src
+
+* Connecting
+
+#+begin_src python :tangle main.py :mkdirp yes
+  from cs50 import SQL
+
+  db = SQL("sqlite:///database.db")
+#+end_src
+
+* INSERT
+
+Use =?= placeholders — never interpolate values directly into SQL strings.
+
+#+begin_src python :tangle main.py
+  db.execute(
+      "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+      "eesa", 14, "pizza"
+  )
+  db.execute(
+      "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+      "bob", 20, "burgers"
+  )
+#+end_src
+
+* SELECT
+
+#+begin_src python :tangle main.py
+  # All rows
+  people = db.execute("SELECT * FROM users")
+  print(people)
+
+  # Distinct values
+  foods = db.execute("SELECT DISTINCT fav_food FROM users")
+  print(foods)
+
+  # Filter
+  bob = db.execute("SELECT * FROM users WHERE name='bob'")
+  print(bob)
+
+  # Compound condition
+  result = db.execute(
+      "SELECT * FROM users WHERE name='bob' AND age=20"
+  )
+  print(result)
+#+end_src
+
+* UPDATE
+
+Always include =WHERE= or every row gets overwritten.
+
+#+begin_src python :tangle main.py
+  db.execute(
+      "UPDATE users SET fav_food='shawarma' WHERE name='eesa'"
+  )
+#+end_src
+
+* DELETE
+
+#+begin_src python :tangle main.py
+  # One row
+  db.execute("DELETE FROM users WHERE name='bob'")
+
+  # All rows
+  db.execute("DELETE FROM users")
+#+end_src
+
+* Tangle and Run                                                   :noexport:
+
+#+begin_src shell
+  emacs --batch \
+        --eval "(require 'ob-tangle)" \
+        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+  python main.py
+#+end_src
+
+* Further Reading
+
+- [[https://docs.python.org/3/library/sqlite3.html][Python sqlite3 docs]]
+- [[https://www.sqlite.org/lang.html][SQLite SQL syntax reference]]
+- [[https://cs50.readthedocs.io/libraries/cs50/python/][cs50 Python library docs]]
+
+* License
+
+This work is adapted from [[https://www.freecodecamp.org/news/sqlite-python-beginners-tutorial/]["How to Use SQLite with Python"]] by Eesa
+Zahed, published on freeCodeCamp.org.
+
+Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0)]].
+</code></pre>
+</div>
+
+
+<p>
+Observe that:
+</p>
+
+<p>
+(goal) :: First I start with the goal or user story this document will satisfy.
+(pre-conditions) :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
+(installation) :: In this day and age any functionality requires some library that the Open Source community has done for us.
+(a fragment of code) :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
+Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
+(compile) :: Going back to the context, we compile our program.
+(test) :: and we test against our expectations.
+</p>
+
+<p>
+But with a powerful literate programming editor like Emacs, everything is in the same view.
+Our user goals are prose,  environment configuration are blocks, business rules are code.
+Everything in the same document, so just scrolling up and down is enough to understand how this goal is realized in every layer.
+For my brain, this has been a lifesaver.
+This state of flow in the age of distraction, has made me so much more productive.
+</p>
+</div>
+<div id="outline-container-orgf702b42" class="outline-3">
+<h3 id="orgf702b42"><span class="section-number-3">2.1.</span> Discarded alternatives</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Obviously Emacs and Noweb aren't the only tools in the game.
+But I have tried them all<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. And all of them fall short in some way.
+</p>
+
+<p>
+In general, and the most damaging, is that every single tool in this list treats a paragraph as an individual node in a graph of ideas.
+But that separation, dilutes the goal in many little files. To the point that each file doesn't have an idea of the single goal you were trying to achieve.
+</p>
+
+<p>
+I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't emacs.
+And why I don't use them to do literate programming.
+</p>
+</div>
+<div id="outline-container-org822e15b" class="outline-4">
+<h4 id="org822e15b"><span class="section-number-4">2.1.1.</span> Leo-Editor and its clone LeoJS</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+These tools are <b>almost</b> perfect.
+Their literate programming capabilities are top notch.
+Their node organization is amazing.
+But, they separate each node, either code or prose in their own little note.
+And that is the problem.
+I start with a mixed set of ideas (prose) and code.
+And I want the editor to separate them into nodes.
+And then create the document for each audience:
+</p>
+<ul class="org-ul">
+<li>The SQL files for the database manager.</li>
+<li>the code for the compiler and</li>
+<li>the prose for my fellow programmers or, more likely, future me.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3e1e1ba" class="outline-4">
+<h4 id="org3e1e1ba"><span class="section-number-4">2.1.2.</span> Tiny Wiki.</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+On the opposite side we have tiny wiki.
+Which is the perfect note taking tool. Every note is just a block in a single long document.
+And it supports transclusion <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Which makes it perfect to take little ideas that you have accumulated along the years.
+And assemble a coherent whole.
+But its literate programming story is a lot less good.
+</p>
+</div>
+</div>
+<div id="outline-container-org76217b4" class="outline-4">
+<h4 id="org76217b4"><span class="section-number-4">2.1.3.</span> Jupyter Notebooks.</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+I personally don't like Jupyter notebooks.
+I think their data format is good. But they have gone too far on the other direction.
+Since you don't have a tangle operation i.e., assembling the code out of the fragments that you have written.
+Then Jupyter notebooks end up being the only environment in which your code can be executed.
+But that destroys the layers and the fact that each layer is perfectly optimized for its function.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org300d4ea" class="outline-2">
+<h2 id="org300d4ea"><span class="section-number-2">3.</span> How to become a literate programmer.</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+To learn how to become a literate programmer, I think a good exercise is to take any
+programming tutorial that you already know or have read in the past <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>.
+A tutorial whose prose and content you have already enjoyed.
+</p>
+
+<p>
+And type the whole tutorial again, no steps omitted.
+Every time the tutorial said: "and now you execute our program"  or where it said: "in the browser click here and there"
+Now you must find a way to write an executable code block that will be part of your document.
+</p>
+
+
+
+<p>
+This practice is great to learn to write in a literate programming style,
+since you would be wearing the shoes of both an experienced writer and programmer.
+</p>
+</div>
+</div>
+<div id="outline-container-org8f6347a" class="outline-2">
+<h2 id="org8f6347a"><span class="section-number-2">4.</span> Discarded sections</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org2e3e3f9" class="outline-4">
+<h4 id="org2e3e3f9"><span class="section-number-4">4.0.1.</span> How do we program currently?</h4>
+<div class="outline-text-4" id="text-4-0-1">
+<p>
+But we need to accept fact that user goals are cross cutting.
+They can't be anyother way.
+So by definition we must program the parts of the same goal across different layers of the software stack.
+</p>
+
+<dl class="org-dl">
+<dt>Need to change something on the configuration?</dt><dd></dd>
+</dl>
+<p>
+Open the terminal and write docker commands or in VS-Code click the docker icon in the toolbox.
+</p>
+
+<dl class="org-dl">
+<dt>Need to change the database schema?</dt><dd>Open SQLite manager, the terminal or SQLite3 Editor for VS-Code.</dd>
+
+<dt>Need to update your business logic?</dt><dd>Click in an editor window in VS-Code or open Emacs.</dd>
+
+<dt>Need to change the design?</dt><dd>Open your CSS file in yet another editor or VS code plugin.</dd>
+</dl>
+
+<p>
+You see the pattern? Integrated Development Environment like VS-Code is just a faster way to switch between layers.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+It's hyperbole, but I have tried a good chunk.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Which is the fancy way of saying it inserts blocks from another document into the current one.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Alejandro Garcia</p>
+<p class="date">Created: 2026-06-15 lun 20:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
