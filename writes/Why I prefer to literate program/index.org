@@ -101,12 +101,17 @@ So we would write an article as follows:
   ,#+end_src
 
 
-  ,* Tangle and Run                                                   :noexport:
-  ,#+name: (ref:compile)
+  ,* Tangle
+  ,#+name: (ref:tangle)
   ,#+begin_src shell
   ,  emacs --batch \
   ,        --eval "(require 'ob-tangle)" \
   ,        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+  ,#+end_src
+
+  ,* Compile and Run
+  ,#+name: (ref:compile)
+  ,#+begin_src shell
   ,  python main.py
   ,#+end_src
 
@@ -125,6 +130,8 @@ Observe that:
     Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
 
 - [[(compile)]] :: Going back to the context, we compile our program and we test against our expectations.
+
+- [[(tangle)]] :: Is the action of taking the code blocks and assembling a single coherent file.
 
 But with a powerful literate programming editor like Emacs, everything is in the same view.
 Our user goals are prose,  environment configuration are blocks, business rules are code.
