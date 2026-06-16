@@ -55,10 +55,6 @@ So we would write an article as follows:
 #+header: :transclude [[file:./example_tutorial.org]]
 #+BEGIN_SRC org
   ,#+title: How to Use SQLite with Python
-  ,#+author: Eesa Zahed
-  ,#+date: 2023-02-21
-  ,#+language: en
-  ,#+options: toc:t num:t ^:nil
 
   In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
 
@@ -69,8 +65,8 @@ So we would write an article as follows:
 
   ,#+name: (ref:pre-conditions)
   ,#+begin_src shell :exports both :results output
-    python --version
-    sqlite3 --version
+  ,  python --version
+  ,  sqlite3 --version
   ,#+end_src
 
   ,#+results:
@@ -80,109 +76,40 @@ So we would write an article as follows:
 
   ,* Setup (ref:installation)
   ,#+begin_src shell
-    pip install cs50
-    touch database.db
-  ,#+end_src
-
-  ,* CREATE
-  ,#+name: (ref:a_code_block)
-  ,#+begin_src python :tangle main.py
-    db.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-            name     TEXT,
-            age      NUMBER,
-            fav_food STRING
-        )
-    """)
+  ,  pip install cs50
+  ,  touch database.db
   ,#+end_src
 
   ,* Connecting
 
   ,#+begin_src python :tangle main.py :mkdirp yes
-    from cs50 import SQL
+  ,  from cs50 import SQL
 
-    db = SQL("sqlite:///database.db")
+  ,  db = SQL("sqlite:///database.db")
   ,#+end_src
 
-  ,* INSERT
-
-  ,Use =?= placeholders — never interpolate values directly into SQL strings.
-
+  ,* CREATE
+  ,#+name: (ref:a_code_block)
   ,#+begin_src python :tangle main.py
-    db.execute(
-        "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
-        "eesa", 14, "pizza"
-    )
-    db.execute(
-        "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
-        "bob", 20, "burgers"
-    )
+  ,  db.execute("""
+  ,      CREATE TABLE IF NOT EXISTS users (
+  ,          name     TEXT,
+  ,          age      NUMBER,
+  ,          fav_food STRING
+  ,      )
+  ,  """)
   ,#+end_src
 
-  ,* SELECT
-
-  ,#+begin_src python :tangle main.py
-    # All rows
-    people = db.execute("SELECT * FROM users")
-    print(people)
-
-    # Distinct values
-    foods = db.execute("SELECT DISTINCT fav_food FROM users")
-    print(foods)
-
-    # Filter
-    bob = db.execute("SELECT * FROM users WHERE name='bob'")
-    print(bob)
-
-    # Compound condition
-    result = db.execute(
-        "SELECT * FROM users WHERE name='bob' AND age=20"
-    )
-    print(result)
-  ,#+end_src
-
-  ,* UPDATE
-
-  ,Always include =WHERE= or every row gets overwritten.
-
-  ,#+begin_src python :tangle main.py
-    db.execute(
-        "UPDATE users SET fav_food='shawarma' WHERE name='eesa'"
-    )
-  ,#+end_src
-
-  ,* DELETE
-
-  ,#+begin_src python :tangle main.py
-    # One row
-    db.execute("DELETE FROM users WHERE name='bob'")
-
-    # All rows
-    db.execute("DELETE FROM users")
-  ,#+end_src
 
   ,* Tangle and Run                                                   :noexport:
   ,#+name: (ref:compile)
   ,#+begin_src shell
-    emacs --batch \
-          --eval "(require 'ob-tangle)" \
-          --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
-    python main.py
+  ,  emacs --batch \
+  ,        --eval "(require 'ob-tangle)" \
+  ,        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+  ,  python main.py
   ,#+end_src
 
-  ,* Further Reading
-
-  - [[https://docs.python.org/3/library/sqlite3.html][Python sqlite3 docs]]
-  - [[https://www.sqlite.org/lang.html][SQLite SQL syntax reference]]
-  - [[https://cs50.readthedocs.io/libraries/cs50/python/][cs50 Python library docs]]
-
-  ,* License
-
-  This work is adapted from [[https://www.freecodecamp.org/news/sqlite-python-beginners-tutorial/]["How to Use SQLite with Python"]] by Eesa
-  Zahed, published on freeCodeCamp.org.
-
-  Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International
-  (CC BY-SA 4.0)]].
 #+END_SRC
 
 
