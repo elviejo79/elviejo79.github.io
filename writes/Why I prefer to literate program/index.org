@@ -58,7 +58,7 @@ So we would write an article as follows:
 #+BEGIN_example org
   ,#+title: How to Use SQLite with Python
 
-  In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
+  ,In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
 
   ,* Requirements
   First of all you need to check if you have Python and Sqlite installed.
