@@ -1,11 +1,13 @@
-#+TITLE: Why I love to program as a writer
-#+SUBTITLE: Or How literate programming is the ultimate programming hack
+#+TITLE: Why I prefer to literate program
+#+SUBTITLE: Or How to program as a writer
+#+BIND: org-html-htmlize-output-type nil
 
 #+BEGIN_QUOTE
-Paraphrasing Alan Kay: Literate Programming to me means only
+Paraphrasing Alan Kay:
+Literate Programming to me means only
 prose and code  in order of human comprehension,
 with the order of the code required by the compiler being irrelevant.
-It is possible to do in Emacs Org-mode and in Noweb.
+It is possible to do in Emacs and in Noweb.
 There are possibly other systems in which this is possible,
 but I'm not aware of them.
 #+END_QUOTE
@@ -53,7 +55,7 @@ Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
 
 #+header: :transclude [[file:./example_tutorial.org]]
-#+BEGIN_SRC org
+#+BEGIN_example org
   ,#+title: How to Use SQLite with Python
 
   In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
@@ -115,7 +117,7 @@ So we would write an article as follows:
   ,  python main.py
   ,#+end_src
 
-#+END_SRC
+#+END_example
 
 
 Observe that:

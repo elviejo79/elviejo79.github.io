@@ -12,24 +12,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script></head>
 <body id="top">
-<div id="body"><div id="container"><div id="content"><article><h1 class="title">Why I love to program as a writer</h1>
+<div id="body"><div id="container"><div id="content"><article><h1 class="title">Why I prefer to literate program</h1>
 <nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5135a1f">The two gifts of literate programming</a></li>
-<li><a href="#orgf256b57">Example of a literate program</a>
+<li><a href="#orgc06b653">The two gifts of literate programming</a></li>
+<li><a href="#org369e486">Example of a literate program</a>
 <ul>
-<li><a href="#org0afd1dd">Discarded alternatives</a>
+<li><a href="#org9d122c6">Discarded alternatives</a>
 <ul>
-<li><a href="#org8c94bc5">Leo-Editor and its clone LeoJS</a></li>
-<li><a href="#org80d0770">Tiny Wiki.</a></li>
-<li><a href="#org04f60a8">Jupyter Notebooks.</a></li>
+<li><a href="#orga380401">Leo-Editor and its clone LeoJS</a></li>
+<li><a href="#org41d0dcf">Tiny Wiki.</a></li>
+<li><a href="#org7fc8ec2">Jupyter Notebooks.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd1a9191">How to become a literate programmer.</a></li>
+<li><a href="#orgd1efcb1">How to become a literate programmer.</a></li>
 </ul>
 </div>
 </nav>
@@ -52,8 +52,8 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 </p>
 </section>
-<div id="outline-container-org5135a1f" class="outline-2">
-<h2 id="org5135a1f">The two gifts of literate programming</h2>
+<div id="outline-container-orgc06b653" class="outline-2">
+<h2 id="orgc06b653">The two gifts of literate programming</h2>
 <section><p>
 I went back to my Eiffel library after 5 months of not touching it.
 Of course my mind was blank when reading the code.
@@ -95,70 +95,76 @@ But I need all of these languages and tools mixed in order to fulfill the goal o
 </p>
 </section>
 </div>
-<div id="outline-container-orgf256b57" class="outline-2">
-<h2 id="orgf256b57">Example of a literate program</h2>
+<div id="outline-container-org369e486" class="outline-2">
+<h2 id="org369e486">Example of a literate program</h2>
 <section><p>
 Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
 </p>
 
-<pre class="code"><code><span style="color: #b3b3b3;">#+title:</span> <span style="color: #8CD0D3; background-color: #3F3F3F; font-weight: bold;">How to Use SQLite with Python
-</span>
+<pre class="example" id="org04397b5">
+#+title: How to Use SQLite with Python
+
 <span id="coderef-goal" class="coderef-off">In this tutorial we would learn how to connect SQLite and Python. (goal)</span>
 
-<span style="color: #DFAF8F; background-color: #3F3F3F;">* Requirements</span>
+* Requirements
 First of all you need to check if you have Python and Sqlite installed.
 So write this command in your terminal.
 And they should return an output similar to the one shown.
 
-<span id="coderef-pre-conditions" class="coderef-off"><span style="color: #7F9F7F;">#+name:</span> (pre-conditions)</span>
-<span style="color: #7F9F7F;">#+begin_src shell :exports both :results output
-</span><span style="background-color: #494949;">,  python --version
+<span id="coderef-pre-conditions" class="coderef-off">#+name: (pre-conditions)</span>
+#+begin_src shell :exports both :results output
+,  python --version
 ,  sqlite3 --version
-</span><span style="color: #7F9F7F;">#+end_src
-</span>
-<span style="color: #7F9F7F;">#+results:</span>
-<span style="color: #b3b3b3;">: Python 3.10.12
-: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46</span><span style="color: #DC8CC3; background-color: #3F3F3F;">b29818d5dalt1</span><span style="color: #b3b3b3;">
-</span>
+#+end_src
 
-<span id="coderef-installation" class="coderef-off"><span style="color: #DFAF8F; background-color: #3F3F3F;">* Setup</span> (installation)</span>
-<span style="color: #7F9F7F;">#+begin_src shell
-</span><span style="background-color: #494949;">,  pip install cs50
+#+results:
+: Python 3.10.12
+: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
+
+
+<span id="coderef-installation" class="coderef-off">* Setup (installation)</span>
+#+begin_src shell
+,  pip install cs50
 ,  touch database.db
-</span><span style="color: #7F9F7F;">#+end_src
-</span>
-<span style="color: #DFAF8F; background-color: #3F3F3F;">* Connecting</span>
+#+end_src
 
-<span style="color: #7F9F7F;">#+begin_src python :tangle main.py :mkdirp yes
-</span><span style="background-color: #494949;">,  </span><span style="color: #F0DFAF; background-color: #494949; font-weight: bold;">from</span><span style="background-color: #494949;"> cs50 </span><span style="color: #F0DFAF; background-color: #494949; font-weight: bold;">import</span><span style="background-color: #494949;"> SQL
+* Connecting
 
-,  </span><span style="color: #DFAF8F; background-color: #494949;">db</span><span style="background-color: #494949;"> </span><span style="color: #DCDCCC; background-color: #494949;">=</span><span style="background-color: #494949;"> SQL(</span><span style="color: #CC9393; background-color: #494949;">"sqlite:///database.db"</span><span style="background-color: #494949;">)
-</span><span style="color: #7F9F7F;">#+end_src
-</span>
-<span style="color: #DFAF8F; background-color: #3F3F3F;">* CREATE</span>
-<span id="coderef-a_code_block" class="coderef-off"><span style="color: #7F9F7F;">#+name:</span> (a_code_block)</span>
-<span style="color: #7F9F7F;">#+begin_src python :tangle main.py
-</span><span style="background-color: #494949;">,  db.execute(</span><span style="color: #CC9393; background-color: #494949;">"""
+#+begin_src python :tangle main.py :mkdirp yes
+,  from cs50 import SQL
+
+,  db = SQL("sqlite:///database.db")
+#+end_src
+
+* CREATE
+<span id="coderef-a_code_block" class="coderef-off">#+name: (a_code_block)</span>
+#+begin_src python :tangle main.py
+,  db.execute("""
 ,      CREATE TABLE IF NOT EXISTS users (
 ,          name     TEXT,
 ,          age      NUMBER,
 ,          fav_food STRING
 ,      )
-,  """</span><span style="background-color: #494949;">)
-</span><span style="color: #7F9F7F;">#+end_src
-</span>
+,  """)
+#+end_src
 
-<span style="color: #DFAF8F; background-color: #3F3F3F;">* Tangle and Run                                                   </span><span style="color: #DFAF8F; background-color: #3F3F3F; font-weight: bold;">:noexport:</span>
-<span id="coderef-compile" class="coderef-off"><span style="color: #7F9F7F;">#+name:</span> (compile)</span>
-<span style="color: #7F9F7F;">#+begin_src shell
-</span><span style="background-color: #494949;">,  emacs --batch </span><span style="color: #CC9393; background-color: #494949;">\</span><span style="background-color: #494949;">
-,        --eval </span><span style="color: #CC9393; background-color: #494949;">"(require 'ob-tangle)"</span><span style="background-color: #494949;"> </span><span style="color: #CC9393; background-color: #494949;">\</span><span style="background-color: #494949;">
-,        --eval </span><span style="color: #CC9393; background-color: #494949;">"(org-babel-tangle-file \"python-sqlite-tutorial.org\")"</span><span style="background-color: #494949;">
+
+* Tangle
+<span id="coderef-tangle" class="coderef-off">#+name: (tangle)</span>
+#+begin_src shell
+,  emacs --batch \
+,        --eval "(require 'ob-tangle)" \
+,        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+#+end_src
+
+* Compile and Run
+<span id="coderef-compile" class="coderef-off">#+name: (compile)</span>
+#+begin_src shell
 ,  python main.py
-</span><span style="color: #7F9F7F;">#+end_src
-</span>
-</code></pre>
+#+end_src
+
+</pre>
 
 
 <p>
@@ -176,6 +182,8 @@ Observe that:
 Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.</dd>
 
 <dt><a href="#coderef-compile" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-compile');" onmouseout="CodeHighlightOff(this, 'coderef-compile');">compile</a></dt><dd>Going back to the context, we compile our program and we test against our expectations.</dd>
+
+<dt><a href="#coderef-tangle" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-tangle');" onmouseout="CodeHighlightOff(this, 'coderef-tangle');">tangle</a></dt><dd>Is the action of taking the code blocks and assembling a single coherent file.</dd>
 </dl>
 
 <p>
@@ -186,8 +194,8 @@ For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 </p>
 </section>
-<div id="outline-container-org0afd1dd" class="outline-3">
-<h3 id="org0afd1dd">Discarded alternatives</h3>
+<div id="outline-container-org9d122c6" class="outline-3">
+<h3 id="org9d122c6">Discarded alternatives</h3>
 <section><p>
 Obviously Emacs and Noweb aren't the only tools in the game.
 But I have tried them all<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/><span class="sidenote">
@@ -205,8 +213,8 @@ I do not want to criticize any one tool, instead I'm going to mention my favorit
 And why I don't use them to do literate programming.
 </p>
 </section>
-<div id="outline-container-org8c94bc5" class="outline-4">
-<h4 id="org8c94bc5">Leo-Editor and its clone LeoJS</h4>
+<div id="outline-container-orga380401" class="outline-4">
+<h4 id="orga380401">Leo-Editor and its clone LeoJS</h4>
 <section><p>
 These tools are <b>almost</b> perfect.
 Their literate programming capabilities are top notch.
@@ -224,8 +232,8 @@ And then create the document for each audience:
 </ul>
 </section>
 </div>
-<div id="outline-container-org80d0770" class="outline-4">
-<h4 id="org80d0770">Tiny Wiki.</h4>
+<div id="outline-container-org41d0dcf" class="outline-4">
+<h4 id="org41d0dcf">Tiny Wiki.</h4>
 <section><p>
 On the opposite side we have tiny wiki.
 Which is the perfect note taking tool. Every note is just a block in a single long document.
@@ -237,8 +245,8 @@ But its literate programming story is a lot less good.
 </p>
 </section>
 </div>
-<div id="outline-container-org04f60a8" class="outline-4">
-<h4 id="org04f60a8">Jupyter Notebooks.</h4>
+<div id="outline-container-org7fc8ec2" class="outline-4">
+<h4 id="org7fc8ec2">Jupyter Notebooks.</h4>
 <section><p>
 I personally don't like Jupyter notebooks.
 I think their data format is good. But they have gone too far on the other direction.
@@ -250,8 +258,8 @@ But that destroys the layers and the fact that each layer is perfectly optimized
 </div>
 </div>
 </div>
-<div id="outline-container-orgd1a9191" class="outline-2">
-<h2 id="orgd1a9191">How to become a literate programmer.</h2>
+<div id="outline-container-orgd1efcb1" class="outline-2">
+<h2 id="orgd1efcb1">How to become a literate programmer.</h2>
 <section><p>
 To learn how to become a literate programmer, I think a good exercise is to take any
 programming tutorial that you already know or have read in the past <label for="3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="3" class="margin-toggle"/><span class="sidenote">
