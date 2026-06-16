@@ -17,28 +17,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org422c5f4">The two gifts of literate programming</a></li>
-<li><a href="#orge14051b">Example of a literate program</a>
+<li><a href="#org0b5b338">The two gifts of literate programming</a></li>
+<li><a href="#orge892fb9">Example of a literate program</a>
 <ul>
-<li><a href="#org9c8abef">Discarded alternatives</a>
+<li><a href="#orgac4f887">Discarded alternatives</a>
 <ul>
-<li><a href="#orgf1b868f">Leo-Editor and its clone LeoJS</a></li>
-<li><a href="#org0c2ffba">Tiny Wiki.</a></li>
-<li><a href="#org53bc996">Jupyter Notebooks.</a></li>
+<li><a href="#org88811cf">Leo-Editor and its clone LeoJS</a></li>
+<li><a href="#orgaf8166d">Tiny Wiki.</a></li>
+<li><a href="#org7bff7d3">Jupyter Notebooks.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga818f49">How to become a literate programmer.</a></li>
-<li><a href="#orgf91d882">Discarded sections</a>
-<ul>
-<li>
-<ul>
-<li><a href="#orgf45956e">How do we program currently?</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#orga35d32c">How to become a literate programmer.</a></li>
 </ul>
 </div>
 </nav>
@@ -61,8 +52,8 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 </p>
 </section>
-<div id="outline-container-org422c5f4" class="outline-2">
-<h2 id="org422c5f4">The two gifts of literate programming</h2>
+<div id="outline-container-org0b5b338" class="outline-2">
+<h2 id="org0b5b338">The two gifts of literate programming</h2>
 <section><p>
 I went back to my Eiffel library after 5 months of not touching it.
 Of course my mind was blank when reading the code.
@@ -104,8 +95,8 @@ But I need all of these languages and tools mixed in order to fulfill the goal o
 </p>
 </section>
 </div>
-<div id="outline-container-orge14051b" class="outline-2">
-<h2 id="orge14051b">Example of a literate program</h2>
+<div id="outline-container-orge892fb9" class="outline-2">
+<h2 id="orge892fb9">Example of a literate program</h2>
 <section><p>
 Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
@@ -117,13 +108,14 @@ So we would write an article as follows:
 #+language: en
 #+options: toc:t num:t ^:nil
 
-In this tutorial we would learn how to connect SQLite and Python
+<span id="coderef-goal" class="coderef-off">In this tutorial we would learn how to connect SQLite and Python. (goal)</span>
 
 * Requirements
 First of all you need to check if you have Python and Sqlite installed.
 So write this command in your terminal.
 And they should return an output similar to the one shown.
 
+<span id="coderef-pre-conditions" class="coderef-off">#+name: (pre-conditions)</span>
 #+begin_src shell :exports both :results output
   python --version
   sqlite3 --version
@@ -134,15 +126,14 @@ And they should return an output similar to the one shown.
 : 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
 
 
-* Setup
-
+<span id="coderef-installation" class="coderef-off">* Setup (installation)</span>
 #+begin_src shell
   pip install cs50
   touch database.db
 #+end_src
 
 * CREATE
-
+<span id="coderef-a_code_block" class="coderef-off">#+name: (a_code_block)</span>
 #+begin_src python :tangle main.py
   db.execute("""
       CREATE TABLE IF NOT EXISTS users (
@@ -163,7 +154,7 @@ And they should return an output similar to the one shown.
 
 * INSERT
 
-Use =?= placeholders — never interpolate values directly into SQL strings.
+,Use =?= placeholders — never interpolate values directly into SQL strings.
 
 #+begin_src python :tangle main.py
   db.execute(
@@ -200,7 +191,7 @@ Use =?= placeholders — never interpolate values directly into SQL strings.
 
 * UPDATE
 
-Always include =WHERE= or every row gets overwritten.
+,Always include =WHERE= or every row gets overwritten.
 
 #+begin_src python :tangle main.py
   db.execute(
@@ -219,7 +210,7 @@ Always include =WHERE= or every row gets overwritten.
 #+end_src
 
 * Tangle and Run                                                   :noexport:
-
+<span id="coderef-compile" class="coderef-off">#+name: (compile)</span>
 #+begin_src shell
   emacs --batch \
         --eval "(require 'ob-tangle)" \
@@ -247,15 +238,18 @@ Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commo
 Observe that:
 </p>
 
-<p>
-(goal) :: First I start with the goal or user story this document will satisfy.
-(pre-conditions) :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
-(installation) :: In this day and age any functionality requires some library that the Open Source community has done for us.
-(a fragment of code) :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
-Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
-(compile) :: Going back to the context, we compile our program.
-(test) :: and we test against our expectations.
-</p>
+<dl class="org-dl">
+<dt><a href="#coderef-goal" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-goal');" onmouseout="CodeHighlightOff(this, 'coderef-goal');">goal</a></dt><dd>First I start with the goal or user story this document will satisfy.</dd>
+
+<dt><a href="#coderef-pre-conditions" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-pre-conditions');" onmouseout="CodeHighlightOff(this, 'coderef-pre-conditions');">pre-conditions</a></dt><dd>Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.</dd>
+
+<dt><a href="#coderef-installation" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-installation');" onmouseout="CodeHighlightOff(this, 'coderef-installation');">installation</a></dt><dd>In this day and age any functionality requires some library that the Open Source community has done for us.</dd>
+
+<dt><a href="#coderef-a_code_block" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-a_code_block');" onmouseout="CodeHighlightOff(this, 'coderef-a_code_block');">a_code_block</a></dt><dd>This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
+Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.</dd>
+
+<dt><a href="#coderef-compile" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-compile');" onmouseout="CodeHighlightOff(this, 'coderef-compile');">compile</a></dt><dd>Going back to the context, we compile our program and we test against our expectations.</dd>
+</dl>
 
 <p>
 But with a powerful literate programming editor like Emacs, everything is in the same view.
@@ -265,8 +259,8 @@ For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 </p>
 </section>
-<div id="outline-container-org9c8abef" class="outline-3">
-<h3 id="org9c8abef">Discarded alternatives</h3>
+<div id="outline-container-orgac4f887" class="outline-3">
+<h3 id="orgac4f887">Discarded alternatives</h3>
 <section><p>
 Obviously Emacs and Noweb aren't the only tools in the game.
 But I have tried them all<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/><span class="sidenote">
@@ -284,8 +278,8 @@ I do not want to criticize any one tool, instead I'm going to mention my favorit
 And why I don't use them to do literate programming.
 </p>
 </section>
-<div id="outline-container-orgf1b868f" class="outline-4">
-<h4 id="orgf1b868f">Leo-Editor and its clone LeoJS</h4>
+<div id="outline-container-org88811cf" class="outline-4">
+<h4 id="org88811cf">Leo-Editor and its clone LeoJS</h4>
 <section><p>
 These tools are <b>almost</b> perfect.
 Their literate programming capabilities are top notch.
@@ -303,8 +297,8 @@ And then create the document for each audience:
 </ul>
 </section>
 </div>
-<div id="outline-container-org0c2ffba" class="outline-4">
-<h4 id="org0c2ffba">Tiny Wiki.</h4>
+<div id="outline-container-orgaf8166d" class="outline-4">
+<h4 id="orgaf8166d">Tiny Wiki.</h4>
 <section><p>
 On the opposite side we have tiny wiki.
 Which is the perfect note taking tool. Every note is just a block in a single long document.
@@ -316,8 +310,8 @@ But its literate programming story is a lot less good.
 </p>
 </section>
 </div>
-<div id="outline-container-org53bc996" class="outline-4">
-<h4 id="org53bc996">Jupyter Notebooks.</h4>
+<div id="outline-container-org7bff7d3" class="outline-4">
+<h4 id="org7bff7d3">Jupyter Notebooks.</h4>
 <section><p>
 I personally don't like Jupyter notebooks.
 I think their data format is good. But they have gone too far on the other direction.
@@ -329,8 +323,8 @@ But that destroys the layers and the fact that each layer is perfectly optimized
 </div>
 </div>
 </div>
-<div id="outline-container-orga818f49" class="outline-2">
-<h2 id="orga818f49">How to become a literate programmer.</h2>
+<div id="outline-container-orga35d32c" class="outline-2">
+<h2 id="orga35d32c">How to become a literate programmer.</h2>
 <section><p>
 To learn how to become a literate programmer, I think a good exercise is to take any
 programming tutorial that you already know or have read in the past <label for="3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="3" class="margin-toggle"/><span class="sidenote">
@@ -352,39 +346,6 @@ This practice is great to learn to write in a literate programming style,
 since you would be wearing the shoes of both an experienced writer and programmer.
 </p>
 </section>
-</div>
-<div id="outline-container-orgf91d882" class="outline-2">
-<h2 id="orgf91d882">Discarded sections</h2>
-<div class="outline-text-2" id="text-orgf91d882">
-</div>
-<div id="outline-container-orgf45956e" class="outline-4">
-<h4 id="orgf45956e">How do we program currently?</h4>
-<section><p>
-But we need to accept fact that user goals are cross cutting.
-They can't be anyother way.
-So by definition we must program the parts of the same goal across different layers of the software stack.
-</p>
-
-<dl class="org-dl">
-<dt>Need to change something on the configuration?</dt><dd></dd>
-</dl>
-<p>
-Open the terminal and write docker commands or in VS-Code click the docker icon in the toolbox.
-</p>
-
-<dl class="org-dl">
-<dt>Need to change the database schema?</dt><dd>Open SQLite manager, the terminal or SQLite3 Editor for VS-Code.</dd>
-
-<dt>Need to update your business logic?</dt><dd>Click in an editor window in VS-Code or open Emacs.</dd>
-
-<dt>Need to change the design?</dt><dd>Open your CSS file in yet another editor or VS code plugin.</dd>
-</dl>
-
-<p>
-You see the pattern? Integrated Development Environment like VS-Code is just a faster way to switch between layers.
-</p>
-</section>
-</div>
 </div>
 <!-- Footnotes --><!-- 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">

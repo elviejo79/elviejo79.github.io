@@ -54,147 +54,150 @@ So we would write an article as follows:
 
 #+header: :transclude [[file:./example_tutorial.org]]
 #+BEGIN_SRC org
-,#+title: How to Use SQLite with Python
-,#+author: Eesa Zahed
-,#+date: 2023-02-21
-,#+language: en
-,#+options: toc:t num:t ^:nil
+  ,#+title: How to Use SQLite with Python
+  ,#+author: Eesa Zahed
+  ,#+date: 2023-02-21
+  ,#+language: en
+  ,#+options: toc:t num:t ^:nil
 
-In this tutorial we would learn how to connect SQLite and Python
+  In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
 
-,* Requirements
-First of all you need to check if you have Python and Sqlite installed.
-So write this command in your terminal.
-And they should return an output similar to the one shown.
+  ,* Requirements
+  First of all you need to check if you have Python and Sqlite installed.
+  So write this command in your terminal.
+  And they should return an output similar to the one shown.
 
-,#+begin_src shell :exports both :results output
-  python --version
-  sqlite3 --version
-,#+end_src
+  ,#+name: (ref:pre-conditions)
+  ,#+begin_src shell :exports both :results output
+    python --version
+    sqlite3 --version
+  ,#+end_src
 
-,#+results:
-: Python 3.10.12
-: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
+  ,#+results:
+  : Python 3.10.12
+  : 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
 
 
-,* Setup
+  ,* Setup (ref:installation)
+  ,#+begin_src shell
+    pip install cs50
+    touch database.db
+  ,#+end_src
 
-,#+begin_src shell
-  pip install cs50
-  touch database.db
-,#+end_src
+  ,* CREATE
+  ,#+name: (ref:a_code_block)
+  ,#+begin_src python :tangle main.py
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            name     TEXT,
+            age      NUMBER,
+            fav_food STRING
+        )
+    """)
+  ,#+end_src
 
-,* CREATE
+  ,* Connecting
 
-,#+begin_src python :tangle main.py
-  db.execute("""
-      CREATE TABLE IF NOT EXISTS users (
-          name     TEXT,
-          age      NUMBER,
-          fav_food STRING
-      )
-  """)
-,#+end_src
+  ,#+begin_src python :tangle main.py :mkdirp yes
+    from cs50 import SQL
 
-,* Connecting
+    db = SQL("sqlite:///database.db")
+  ,#+end_src
 
-,#+begin_src python :tangle main.py :mkdirp yes
-  from cs50 import SQL
+  ,* INSERT
 
-  db = SQL("sqlite:///database.db")
-,#+end_src
+  ,Use =?= placeholders — never interpolate values directly into SQL strings.
 
-,* INSERT
+  ,#+begin_src python :tangle main.py
+    db.execute(
+        "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+        "eesa", 14, "pizza"
+    )
+    db.execute(
+        "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+        "bob", 20, "burgers"
+    )
+  ,#+end_src
 
-Use =?= placeholders — never interpolate values directly into SQL strings.
+  ,* SELECT
 
-,#+begin_src python :tangle main.py
-  db.execute(
-      "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
-      "eesa", 14, "pizza"
-  )
-  db.execute(
-      "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
-      "bob", 20, "burgers"
-  )
-,#+end_src
+  ,#+begin_src python :tangle main.py
+    # All rows
+    people = db.execute("SELECT * FROM users")
+    print(people)
 
-,* SELECT
+    # Distinct values
+    foods = db.execute("SELECT DISTINCT fav_food FROM users")
+    print(foods)
 
-,#+begin_src python :tangle main.py
-  # All rows
-  people = db.execute("SELECT * FROM users")
-  print(people)
+    # Filter
+    bob = db.execute("SELECT * FROM users WHERE name='bob'")
+    print(bob)
 
-  # Distinct values
-  foods = db.execute("SELECT DISTINCT fav_food FROM users")
-  print(foods)
+    # Compound condition
+    result = db.execute(
+        "SELECT * FROM users WHERE name='bob' AND age=20"
+    )
+    print(result)
+  ,#+end_src
 
-  # Filter
-  bob = db.execute("SELECT * FROM users WHERE name='bob'")
-  print(bob)
+  ,* UPDATE
 
-  # Compound condition
-  result = db.execute(
-      "SELECT * FROM users WHERE name='bob' AND age=20"
-  )
-  print(result)
-,#+end_src
+  ,Always include =WHERE= or every row gets overwritten.
 
-,* UPDATE
+  ,#+begin_src python :tangle main.py
+    db.execute(
+        "UPDATE users SET fav_food='shawarma' WHERE name='eesa'"
+    )
+  ,#+end_src
 
-Always include =WHERE= or every row gets overwritten.
+  ,* DELETE
 
-,#+begin_src python :tangle main.py
-  db.execute(
-      "UPDATE users SET fav_food='shawarma' WHERE name='eesa'"
-  )
-,#+end_src
+  ,#+begin_src python :tangle main.py
+    # One row
+    db.execute("DELETE FROM users WHERE name='bob'")
 
-,* DELETE
+    # All rows
+    db.execute("DELETE FROM users")
+  ,#+end_src
 
-,#+begin_src python :tangle main.py
-  # One row
-  db.execute("DELETE FROM users WHERE name='bob'")
+  ,* Tangle and Run                                                   :noexport:
+  ,#+name: (ref:compile)
+  ,#+begin_src shell
+    emacs --batch \
+          --eval "(require 'ob-tangle)" \
+          --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+    python main.py
+  ,#+end_src
 
-  # All rows
-  db.execute("DELETE FROM users")
-,#+end_src
+  ,* Further Reading
 
-,* Tangle and Run                                                   :noexport:
+  - [[https://docs.python.org/3/library/sqlite3.html][Python sqlite3 docs]]
+  - [[https://www.sqlite.org/lang.html][SQLite SQL syntax reference]]
+  - [[https://cs50.readthedocs.io/libraries/cs50/python/][cs50 Python library docs]]
 
-,#+begin_src shell
-  emacs --batch \
-        --eval "(require 'ob-tangle)" \
-        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
-  python main.py
-,#+end_src
+  ,* License
 
-,* Further Reading
+  This work is adapted from [[https://www.freecodecamp.org/news/sqlite-python-beginners-tutorial/]["How to Use SQLite with Python"]] by Eesa
+  Zahed, published on freeCodeCamp.org.
 
-- [[https://docs.python.org/3/library/sqlite3.html][Python sqlite3 docs]]
-- [[https://www.sqlite.org/lang.html][SQLite SQL syntax reference]]
-- [[https://cs50.readthedocs.io/libraries/cs50/python/][cs50 Python library docs]]
-
-,* License
-
-This work is adapted from [[https://www.freecodecamp.org/news/sqlite-python-beginners-tutorial/]["How to Use SQLite with Python"]] by Eesa
-Zahed, published on freeCodeCamp.org.
-
-Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International
-(CC BY-SA 4.0)]].
+  Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International
+  (CC BY-SA 4.0)]].
 #+END_SRC
 
 
 Observe that:
 
-(goal) :: First I start with the goal or user story this document will satisfy.
-(pre-conditions) :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
-(installation) :: In this day and age any functionality requires some library that the Open Source community has done for us.
-(a fragment of code) :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
-Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
-(compile) :: Going back to the context, we compile our program.
-(test) :: and we test against our expectations.
+- [[(goal)]] :: First I start with the goal or user story this document will satisfy.
+
+- [[(pre-conditions)]] :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
+
+- [[(installation)]] :: In this day and age any functionality requires some library that the Open Source community has done for us.
+
+- [[(a_code_block)]] :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
+    Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
+
+- [[(compile)]] :: Going back to the context, we compile our program and we test against our expectations.
 
 But with a powerful literate programming editor like Emacs, everything is in the same view.
 Our user goals are prose,  environment configuration are blocks, business rules are code.
@@ -260,24 +263,6 @@ This practice is great to learn to write in a literate programming style,
 since you would be wearing the shoes of both an experienced writer and programmer.
 
 
-* Discarded sections
-
-*** How do we program currently?
-
-But we need to accept fact that user goals are cross cutting.
-They can't be anyother way.
-So by definition we must program the parts of the same goal across different layers of the software stack.
-
-- Need to change something on the configuration? ::
-Open the terminal and write docker commands or in VS-Code click the docker icon in the toolbox.
-
-- Need to change the database schema? :: Open SQLite manager, the terminal or SQLite3 Editor for VS-Code.
-
-- Need to update your business logic? :: Click in an editor window in VS-Code or open Emacs.
-
-- Need to change the design? :: Open your CSS file in yet another editor or VS code plugin.
-
-You see the pattern? Integrated Development Environment like VS-Code is just a faster way to switch between layers.
 
 * Footnotes
 
