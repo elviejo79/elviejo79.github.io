@@ -1,0 +1,129 @@
+#+TITLE: How to Use SQLite with Python
+#+AUTHOR: Eesa Zahed
+#+DATE: 2023-02-21
+#+LANGUAGE: en
+#+OPTIONS: toc:t num:t ^:nil
+
+In this tutorial we would learn how to connect SQLite and Python
+
+* Requirements
+First of all you need to check if you have Python and Sqlite installed.
+So write this command in your terminal.
+And they should return an output similar to the one shown.
+
+#+BEGIN_SRC shell :exports both :results output
+python --version
+sqlite3 --version
+#+END_SRC
+
+#+RESULTS:
+: Python 3.10.12
+: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
+
+
+* Setup
+
+#+BEGIN_SRC shell
+pip install cs50
+touch database.db
+#+END_SRC
+
+* CREATE
+
+#+BEGIN_SRC python :tangle main.py
+db.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        name     TEXT,
+        age      NUMBER,
+        fav_food STRING
+    )
+""")
+#+END_SRC
+
+* Connecting
+
+#+BEGIN_SRC python :tangle main.py :mkdirp yes
+from cs50 import SQL
+
+db = SQL("sqlite:///database.db")
+#+END_SRC
+
+* INSERT
+
+Use =?= placeholders — never interpolate values directly into SQL strings.
+
+#+BEGIN_SRC python :tangle main.py
+db.execute(
+    "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+    "eesa", 14, "pizza"
+)
+db.execute(
+    "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+    "bob", 20, "burgers"
+)
+#+END_SRC
+
+* SELECT
+
+#+BEGIN_SRC python :tangle main.py
+# All rows
+people = db.execute("SELECT * FROM users")
+print(people)
+
+# Distinct values
+foods = db.execute("SELECT DISTINCT fav_food FROM users")
+print(foods)
+
+# Filter
+bob = db.execute("SELECT * FROM users WHERE name='bob'")
+print(bob)
+
+# Compound condition
+result = db.execute(
+    "SELECT * FROM users WHERE name='bob' AND age=20"
+)
+print(result)
+#+END_SRC
+
+* UPDATE
+
+Always include =WHERE= or every row gets overwritten.
+
+#+BEGIN_SRC python :tangle main.py
+db.execute(
+    "UPDATE users SET fav_food='shawarma' WHERE name='eesa'"
+)
+#+END_SRC
+
+* DELETE
+
+#+BEGIN_SRC python :tangle main.py
+# One row
+db.execute("DELETE FROM users WHERE name='bob'")
+
+# All rows
+db.execute("DELETE FROM users")
+#+END_SRC
+
+* Tangle and Run :noexport:
+
+#+BEGIN_SRC shell
+emacs --batch \
+      --eval "(require 'ob-tangle)" \
+      --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+python main.py
+#+END_SRC
+
+* Further Reading
+
+- [[https://docs.python.org/3/library/sqlite3.html][Python sqlite3 docs]]
+- [[https://www.sqlite.org/lang.html][SQLite SQL syntax reference]]
+- [[https://cs50.readthedocs.io/libraries/cs50/python/][cs50 Python library docs]]
+
+* License
+
+This work is adapted from [[https://www.freecodecamp.org/news/sqlite-python-beginners-tutorial/]["How to Use SQLite with Python"]] by Eesa
+Zahed, published on freeCodeCamp.org.
+
+Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0)]].

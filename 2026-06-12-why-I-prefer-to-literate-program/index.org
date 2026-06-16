@@ -1,0 +1,288 @@
+#+TITLE: Why I love to program as a writer
+#+SUBTITLE: Or How literate programming is the ultimate programming hack
+
+#+BEGIN_QUOTE
+Paraphrasing Alan Kay: Literate Programming to me means only
+prose and code  in order of human comprehension,
+with the order of the code required by the compiler being irrelevant.
+It is possible to do in Emacs Org-mode and in Noweb.
+There are possibly other systems in which this is possible,
+but I'm not aware of them.
+#+END_QUOTE
+
+
+Lately I have been programming two big systems.
+One is a project management software and the other is an Eiffel library.
+And that made me appreciate the gifts of Literate Programming.
+
+
+* The two gifts of literate programming
+
+I went back to my Eiffel library after 5 months of not touching it.
+Of course my mind was blank when reading the code.
+
+Fortunately for me I have programmed it in literate programming style.
+So I had 1300 lines of prose and code to explain to myself.
+What I had decided and why!!
+
+It was a gift from my past self to present me.
+The gift of understanding.
+The gift of knowing that when I come back to this software,  I can see why it's designed the way it is.
+
+The second gift is the gift of focus, focus on the goals that matter.
+Most software is programmed to work in layers.
+We have specialized tools for each layer: Database Manager for the data layer, coding editors for the business logic, and design tools for the user interface.
+We have specialized professionals for each layer, Database Administrators, Programmers, and User Experience.
+
+However our users don't think in terms of layers.
+Our users have goals.
+And our software must help them achieve their goals.
+
+So the first thing we need to change is to think in terms of goals not tools.
+And the way I have found to do that is to organize my thinking as an article.
+Where the goal is the first paragraph.
+Subsequent paragraphs and code blocks are written in service of the goal.
+This of course means that current tools are not useful in this way of writing.
+I cannot write SQL in the python interpreter, nor CSS in the command prompt.
+But I need all of these languages and tools mixed in order to fulfill the goal of my user.
+
+
+* Example of a literate program
+
+Our goal is to show the users stored in a SQLite database.
+So we would write an article as follows:
+
+#+header: :transclude [[file:./example_tutorial.org]]
+#+BEGIN_SRC org
+,#+title: How to Use SQLite with Python
+,#+author: Eesa Zahed
+,#+date: 2023-02-21
+,#+language: en
+,#+options: toc:t num:t ^:nil
+
+In this tutorial we would learn how to connect SQLite and Python
+
+,* Requirements
+First of all you need to check if you have Python and Sqlite installed.
+So write this command in your terminal.
+And they should return an output similar to the one shown.
+
+,#+begin_src shell :exports both :results output
+  python --version
+  sqlite3 --version
+,#+end_src
+
+,#+results:
+: Python 3.10.12
+: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
+
+
+,* Setup
+
+,#+begin_src shell
+  pip install cs50
+  touch database.db
+,#+end_src
+
+,* CREATE
+
+,#+begin_src python :tangle main.py
+  db.execute("""
+      CREATE TABLE IF NOT EXISTS users (
+          name     TEXT,
+          age      NUMBER,
+          fav_food STRING
+      )
+  """)
+,#+end_src
+
+,* Connecting
+
+,#+begin_src python :tangle main.py :mkdirp yes
+  from cs50 import SQL
+
+  db = SQL("sqlite:///database.db")
+,#+end_src
+
+,* INSERT
+
+Use =?= placeholders — never interpolate values directly into SQL strings.
+
+,#+begin_src python :tangle main.py
+  db.execute(
+      "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+      "eesa", 14, "pizza"
+  )
+  db.execute(
+      "INSERT INTO users (name, age, fav_food) VALUES(?, ?, ?)",
+      "bob", 20, "burgers"
+  )
+,#+end_src
+
+,* SELECT
+
+,#+begin_src python :tangle main.py
+  # All rows
+  people = db.execute("SELECT * FROM users")
+  print(people)
+
+  # Distinct values
+  foods = db.execute("SELECT DISTINCT fav_food FROM users")
+  print(foods)
+
+  # Filter
+  bob = db.execute("SELECT * FROM users WHERE name='bob'")
+  print(bob)
+
+  # Compound condition
+  result = db.execute(
+      "SELECT * FROM users WHERE name='bob' AND age=20"
+  )
+  print(result)
+,#+end_src
+
+,* UPDATE
+
+Always include =WHERE= or every row gets overwritten.
+
+,#+begin_src python :tangle main.py
+  db.execute(
+      "UPDATE users SET fav_food='shawarma' WHERE name='eesa'"
+  )
+,#+end_src
+
+,* DELETE
+
+,#+begin_src python :tangle main.py
+  # One row
+  db.execute("DELETE FROM users WHERE name='bob'")
+
+  # All rows
+  db.execute("DELETE FROM users")
+,#+end_src
+
+,* Tangle and Run                                                   :noexport:
+
+,#+begin_src shell
+  emacs --batch \
+        --eval "(require 'ob-tangle)" \
+        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+  python main.py
+,#+end_src
+
+,* Further Reading
+
+- [[https://docs.python.org/3/library/sqlite3.html][Python sqlite3 docs]]
+- [[https://www.sqlite.org/lang.html][SQLite SQL syntax reference]]
+- [[https://cs50.readthedocs.io/libraries/cs50/python/][cs50 Python library docs]]
+
+,* License
+
+This work is adapted from [[https://www.freecodecamp.org/news/sqlite-python-beginners-tutorial/]["How to Use SQLite with Python"]] by Eesa
+Zahed, published on freeCodeCamp.org.
+
+Licensed under [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0)]].
+#+END_SRC
+
+
+Observe that:
+
+(goal) :: First I start with the goal or user story this document will satisfy.
+(pre-conditions) :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
+(installation) :: In this day and age any functionality requires some library that the Open Source community has done for us.
+(a fragment of code) :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
+Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
+(compile) :: Going back to the context, we compile our program.
+(test) :: and we test against our expectations.
+
+But with a powerful literate programming editor like Emacs, everything is in the same view.
+Our user goals are prose,  environment configuration are blocks, business rules are code.
+Everything in the same document, so just scrolling up and down is enough to understand how this goal is realized in every layer.
+For my brain, this has been a lifesaver.
+This state of flow in the age of distraction, has made me so much more productive.
+
+
+** Discarded alternatives
+
+Obviously Emacs and Noweb aren't the only tools in the game.
+But I have tried them all[fn:1]. And all of them fall short in some way.
+
+In general, and the most damaging, is that every single tool in this list treats a paragraph as an individual node in a graph of ideas.
+But that separation, dilutes the goal in many little files. To the point that each file doesn't have an idea of the single goal you were trying to achieve.
+
+I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't emacs.
+And why I don't use them to do literate programming.
+
+
+*** Leo-Editor and its clone LeoJS
+These tools are *almost* perfect.
+Their literate programming capabilities are top notch.
+Their node organization is amazing.
+But, they separate each node, either code or prose in their own little note.
+And that is the problem.
+I start with a mixed set of ideas (prose) and code.
+And I want the editor to separate them into nodes.
+And then create the document for each audience:
+- The SQL files for the database manager.
+- the code for the compiler and
+- the prose for my fellow programmers or, more likely, future me.
+
+*** Tiny Wiki.
+On the opposite side we have tiny wiki.
+Which is the perfect note taking tool. Every note is just a block in a single long document.
+And it supports transclusion [fn:2]. Which makes it perfect to take little ideas that you have accumulated along the years.
+And assemble a coherent whole.
+But its literate programming story is a lot less good.
+
+*** Jupyter Notebooks.
+
+I personally don't like Jupyter notebooks.
+I think their data format is good. But they have gone too far on the other direction.
+Since you don't have a tangle operation i.e., assembling the code out of the fragments that you have written.
+Then Jupyter notebooks end up being the only environment in which your code can be executed.
+But that destroys the layers and the fact that each layer is perfectly optimized for its function.
+
+
+* How to become a literate programmer.
+
+To learn how to become a literate programmer, I think a good exercise is to take any
+programming tutorial that you already know or have read in the past [fn:3].
+A tutorial whose prose and content you have already enjoyed.
+
+And type the whole tutorial again, no steps omitted.
+Every time the tutorial said: "and now you execute our program"  or where it said: "in the browser click here and there"
+Now you must find a way to write an executable code block that will be part of your document.
+
+
+
+This practice is great to learn to write in a literate programming style,
+since you would be wearing the shoes of both an experienced writer and programmer.
+
+
+* Discarded sections
+
+*** How do we program currently?
+
+But we need to accept fact that user goals are cross cutting.
+They can't be anyother way.
+So by definition we must program the parts of the same goal across different layers of the software stack.
+
+- Need to change something on the configuration? ::
+Open the terminal and write docker commands or in VS-Code click the docker icon in the toolbox.
+
+- Need to change the database schema? :: Open SQLite manager, the terminal or SQLite3 Editor for VS-Code.
+
+- Need to update your business logic? :: Click in an editor window in VS-Code or open Emacs.
+
+- Need to change the design? :: Open your CSS file in yet another editor or VS code plugin.
+
+You see the pattern? Integrated Development Environment like VS-Code is just a faster way to switch between layers.
+
+* Footnotes
+
+[fn:1] It's hyperbole, but I have tried a good chunk.
+
+[fn:2] Which is the fancy way of saying it inserts blocks from another document into the current one.
+
+[fn:3] It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
