@@ -51,7 +51,7 @@ jobs:
 
       - name: Generate static site
         run: |
-          nu -c "tree -I '????-??-??-*' -D --timefmt '%y-%b-%d' -L 3 --sort mtime -r -J --noreport --info | jfq --query-file ./filter-tree-command-append-info.jsonata | nu ./update-git-dates.nu | tee { mustache ./index.mustache | save --force index.html } | mustache ./rss.mustache | save --force rss.xml"
+          nu -c "tree -I '????-??-??-*' -D --timefmt '%y-%b-%d' -L 3 --sort mtime -r -J --noreport --info | jfq --query-file ./filter-tree-command-append-info.jsonata | ./update-git-dates.nu | tee { mustache ./index.mustache | save --force index.html } | mustache ./rss.mustache | save --force rss.xml"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
