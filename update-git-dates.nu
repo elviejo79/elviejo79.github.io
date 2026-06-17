@@ -1,4 +1,4 @@
-#!/usr/bin/env nu
+#!/usr/bin/env -S nu --stdin
 
 # Get the git creation date for a file or directory
 def get-git-date [path: string] {
@@ -47,7 +47,8 @@ def update-times [node: record, base_path: string] {
     if ("contents" in $node) {
         let contents = $node.contents
 
-        if ($contents | describe | str starts-with "list") {
+        let contents_type = ($contents | describe)
+        if ($contents_type | str starts-with "list") or ($contents_type | str starts-with "table") {
             # Contents is a list
             let new_contents = ($contents | each {|item|
                 let item_path = if ($base_path | is-empty) {
@@ -75,7 +76,6 @@ def update-times [node: record, base_path: string] {
 
 # Main function
 def main [] {
-    # Read the input JSON from stdin
     let input_data = ($in | from json)
 
     # Process each top-level key
