@@ -2,13 +2,13 @@
 
 # Get the git creation date for a file or directory
 def get-git-date [path: string] {
-    let result = (git log --diff-filter=A --follow --format=%aI -- $path
-                  | lines
-                  | last)
+    let log_lines = (git log --diff-filter=A --follow --format=%aI -- $path | lines)
 
-    if ($result | is-empty) {
+    if ($log_lines | is-empty) {
         return null
     }
+
+    let result = ($log_lines | last)
 
     # Convert ISO date to YY-MMM-DD format (e.g., 26-mar-07)
     let date = ($result | into datetime)
