@@ -8,22 +8,55 @@
     <atom:link href="https://elviejo79.github.io/feed.rss" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>Writing programming tutorials</title>
-      <link>https://elviejo79.github.io/writes/Writing programming tutorials/</link>
-      <description><![CDATA[Literate Programming is a way to write documents and prose, at the same time.
-This is one my first serious attempts at making it practical for me.
-My most recent attempt can be found in <a href="./writes/Testorials">Testorials</a>.
-]]></description>
-      <pubDate>19-dec-31</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Writing programming tutorials/</guid>
-    </item>
-    <item>
       <title>Why I prefer to literate program</title>
       <link>https://elviejo79.github.io/writes/Why I prefer to literate program/</link>
       <description><![CDATA[I practice literate programming, and my fellow developers see it like waste of time.
 On this piece I explain the two gifts that LP has given me: understanding and focus.]]></description>
       <pubDate>26-jun-15</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Why I prefer to literate program/</guid>
+    </item>
+    <item>
+      <title>Difficult conversations</title>
+      <link>https://elviejo79.github.io/writes/Difficult conversations/</link>
+      <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
+In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
+So your tutorials never lie to your readers again.]]></description>
+      <pubDate>26-mar-07</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Difficult conversations/</guid>
+    </item>
+    <item>
+      <title>Testorial</title>
+      <link>https://elviejo79.github.io/writes/Testorial/</link>
+      <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
+In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
+So your tutorials never lie to your readers again.]]></description>
+      <pubDate>26-feb-23</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Testorial/</guid>
+    </item>
+    <item>
+      <title>Polimophic identifiers</title>
+      <link>https://elviejo79.github.io/writes/Polimophic identifiers/</link>
+      <description><![CDATA[Superficially look like internet urls.
+But are in fact the fundamental, and transparent abstraction for resources in Architecture Oriente Porgramming (AOP).]]></description>
+      <pubDate>24-apr-08</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Polimophic identifiers/</guid>
+    </item>
+    <item>
+      <title>AOP in Eiffel</title>
+      <link>https://elviejo79.github.io/writes/AOP in Eiffel/</link>
+      <description><![CDATA[Architecture Oriented Programming (AOP) is the paradigm proposed by Marcel P. Weiher in his Objective-Smalltalk language.
+The fundamental idea is to take the architecure of large systems like the Web,
+and shrink it to the level of a single program.
+Eiffel is the perfect language to express this idea, since "Design By Contract" was once of the inspirations for the HTTP protocol.]]></description>
+      <pubDate>24-feb-17</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/AOP in Eiffel/</guid>
+    </item>
+    <item>
+      <title>Biyoocc</title>
+      <link>https://elviejo79.github.io/writes/Biyoocc/</link>
+      <description><![CDATA[Yes an Object Oriented Compiler Compiler (YOOCC). Was a reasearch effort in Monash univeristy to create a compiler on top of Eiffel.]]></description>
+      <pubDate>24-jan-08</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Biyoocc/</guid>
     </item>
     <item>
       <title>Thinking about patents sawstop case</title>
@@ -37,13 +70,14 @@ But in fact is a lot more complicated than that!
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Thinking about patents sawstop case/</guid>
     </item>
     <item>
-      <title>Testorial</title>
-      <link>https://elviejo79.github.io/writes/Testorial/</link>
-      <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
-In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
-So your tutorials never lie to your readers again.]]></description>
-      <pubDate>26-feb-23</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Testorial/</guid>
+      <title>Algorithms at the movies angels and demons</title>
+      <link>https://elviejo79.github.io/writes/Algorithms at the movies angels and demons/</link>
+      <description><![CDATA[In the movie "Angels and Demons" they use a binary seach  algorithm to find a bomb.
+Only to be defeated by a batery.
+This post is to express my frustration with the applicacion of the algorithm.
+]]></description>
+      <pubDate>23-oct-26</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Algorithms at the movies angels and demons/</guid>
     </item>
     <item>
       <title>Stackable things</title>
@@ -53,30 +87,6 @@ Prove me wrong.
 ]]></description>
       <pubDate>20-feb-08</pubDate>
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Stackable things/</guid>
-    </item>
-    <item>
-      <title>Polimophic identifiers</title>
-      <link>https://elviejo79.github.io/writes/Polimophic identifiers/</link>
-      <description><![CDATA[Superficially look like internet urls.
-But are in fact the fundamental, and transparent abstraction for resources in Architecture Oriente Porgramming (AOP).]]></description>
-      <pubDate>24-apr-08</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Polimophic identifiers/</guid>
-    </item>
-    <item>
-      <title>Difficult conversations</title>
-      <link>https://elviejo79.github.io/writes/Difficult conversations/</link>
-      <description><![CDATA[Have you ever followed a tutorial only to discover the instructions are outdated the moment you try them?
-In this article, we will rearn how to write documentation that proves itself correct by running as a real CI test
-So your tutorials never lie to your readers again.]]></description>
-      <pubDate>26-mar-07</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Difficult conversations/</guid>
-    </item>
-    <item>
-      <title>Biyoocc</title>
-      <link>https://elviejo79.github.io/writes/Biyoocc/</link>
-      <description><![CDATA[Yes an Object Oriented Compiler Compiler (YOOCC). Was a reasearch effort in Monash univeristy to create a compiler on top of Eiffel.]]></description>
-      <pubDate>24-jan-08</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Biyoocc/</guid>
     </item>
     <item>
       <title>Awesome list of text to x</title>
@@ -91,16 +101,6 @@ But other "things" as a way to learn those other things.
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Awesome list of text to x/</guid>
     </item>
     <item>
-      <title>Algorithms at the movies angels and demons</title>
-      <link>https://elviejo79.github.io/writes/Algorithms at the movies angels and demons/</link>
-      <description><![CDATA[In the movie "Angels and Demons" they use a binary seach  algorithm to find a bomb.
-Only to be defeated by a batery.
-This post is to express my frustration with the applicacion of the algorithm.
-]]></description>
-      <pubDate>23-oct-26</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Algorithms at the movies angels and demons/</guid>
-    </item>
-    <item>
       <title>Actually writing the tutorial</title>
       <link>https://elviejo79.github.io/writes/Actually writing the tutorial/</link>
       <description><![CDATA[This article is now super-seeded by <a href="./writes/Testorials/">Testorials</a>.]]></description>
@@ -108,14 +108,14 @@ This post is to express my frustration with the applicacion of the algorithm.
       <guid isPermaLink="true">https://elviejo79.github.io/writes/Actually writing the tutorial/</guid>
     </item>
     <item>
-      <title>AOP in Eiffel</title>
-      <link>https://elviejo79.github.io/writes/AOP in Eiffel/</link>
-      <description><![CDATA[Architecture Oriented Programming (AOP) is the paradigm proposed by Marcel P. Weiher in his Objective-Smalltalk language.
-The fundamental idea is to take the architecure of large systems like the Web,
-and shrink it to the level of a single program.
-Eiffel is the perfect language to express this idea, since "Design By Contract" was once of the inspirations for the HTTP protocol.]]></description>
-      <pubDate>24-feb-17</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/AOP in Eiffel/</guid>
+      <title>Writing programming tutorials</title>
+      <link>https://elviejo79.github.io/writes/Writing programming tutorials/</link>
+      <description><![CDATA[Literate Programming is a way to write documents and prose, at the same time.
+This is one my first serious attempts at making it practical for me.
+My most recent attempt can be found in <a href="./writes/Testorials">Testorials</a>.
+]]></description>
+      <pubDate>19-dec-31</pubDate>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Writing programming tutorials/</guid>
     </item>
 
   </channel>
