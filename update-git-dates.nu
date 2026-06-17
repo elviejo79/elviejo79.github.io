@@ -1,7 +1,40 @@
 #!/usr/bin/env -S nu --stdin
 
+# Find a date-prefixed directory in the repo root that matches the article name
+def get-date-from-dir-prefix [article_name: string] {
+    let normalized = ($article_name | str downcase | str replace --all ' ' '-' | str replace --all '_' '-')
+    # stripped version removes all non-alphanumeric chars for CamelCase and double-dash edge cases
+    let stripped = ($normalized | str replace --all '-' '' | str replace --all '_' '')
+
+    let match = (ls | where type == dir
+                    | get name
+                    | where {|n| $n =~ '^\d{4}-\d{2}-\d{2}-'}
+                    | where {|dir|
+                        let slug = ($dir | str replace -r '^\d{4}-\d{2}-\d{2}-' '' | str downcase | str replace --all '_' '-')
+                        let slug_stripped = ($slug | str replace --all '-' '' | str replace --all '_' '')
+                        $slug == $normalized or $slug_stripped == $stripped
+                    }
+                    )
+
+    if ($match | is-empty) {
+        return null
+    }
+
+    let parsed = ($match | first | parse '{y}-{m}-{d}-{rest}' | first)
+    $"($parsed.y)-($parsed.m)-($parsed.d)" | into datetime | format date "%y-%b-%d" | str downcase
+}
+
 # Get the git creation date for a file or directory
 def get-git-date [path: string] {
+    # For articles under writes/, try matching a date-prefixed directory first
+    if ($path | str starts-with "writes/") {
+        let article_name = ($path | str replace "writes/" "" | str replace "/index.html" "")
+        let dir_date = (get-date-from-dir-prefix $article_name)
+        if ($dir_date != null) {
+            return $dir_date
+        }
+    }
+
     let log_lines = (git log --diff-filter=A --follow --format=%aI -- $path | lines)
 
     if ($log_lines | is-empty) {
@@ -10,13 +43,11 @@ def get-git-date [path: string] {
 
     let result = ($log_lines | last)
 
-    # Convert ISO date to YY-MMM-DD format (e.g., 26-mar-07)
-    let date = ($result | into datetime)
-    let year = ($date | format date "%y")
-    let month = ($date | format date "%b" | str downcase)
-    let day = ($date | format date "%d")
+    if ($result | is-empty) {
+        return null
+    }
 
-    $"($year)-($month)-($day)"
+    $result | into datetime | format date "%y-%b-%d" | str downcase
 }
 
 # Recursively update time fields in the JSON structure
@@ -49,7 +80,6 @@ def update-times [node: record, base_path: string] {
 
         let contents_type = ($contents | describe)
         if ($contents_type | str starts-with "list") or ($contents_type | str starts-with "table") {
-            # Contents is a list
             let new_contents = ($contents | each {|item|
                 let item_path = if ($base_path | is-empty) {
                     $node.name
@@ -60,7 +90,6 @@ def update-times [node: record, base_path: string] {
             })
             $updated = ($updated | upsert contents $new_contents)
         } else if ($contents | describe | str starts-with "record") {
-            # Contents is a record (single item)
             let item_path = if ($base_path | is-empty) {
                 $node.name
             } else {
@@ -85,6 +114,5 @@ def main [] {
         $updated_data = ($updated_data | insert $key (update-times $value ""))
     }
 
-    # Output to stdout
     $updated_data | to json --indent 2
 }
