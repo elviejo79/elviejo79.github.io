@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Nushell
         uses: hustcer/setup-nu@v3
@@ -38,7 +38,7 @@ jobs:
           version: '0.99'
 
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: 'stable'
 
@@ -54,18 +54,18 @@ jobs:
           nu -c "tree -I '????-??-??-*' -D --timefmt '%y-%b-%d' -L 3 --sort mtime -r -J --noreport --info | jfq --query-file ./filter-tree-command-append-info.jsonata | ./update-git-dates.nu | tee { mustache ./index.mustache | save --force index.html } | mustache ./rss.mustache | save --force rss.xml"
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Commit and push generated files
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Regenerate index.html and rss.xml
           file_pattern: 'index.html rss.xml'
