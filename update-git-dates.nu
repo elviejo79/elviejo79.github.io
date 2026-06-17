@@ -1,118 +1,70 @@
 #!/usr/bin/env -S nu --stdin
 
-# Find a date-prefixed directory in the repo root that matches the article name
-def get-date-from-dir-prefix [article_name: string] {
-    let normalized = ($article_name | str downcase | str replace --all ' ' '-' | str replace --all '_' '-')
-    # stripped version removes all non-alphanumeric chars for CamelCase and double-dash edge cases
-    let stripped = ($normalized | str replace --all '-' '' | str replace --all '_' '')
-
-    let match = (ls | where type == dir
-                    | get name
-                    | where {|n| $n =~ '^\d{4}-\d{2}-\d{2}-'}
-                    | where {|dir|
-                        let slug = ($dir | str replace -r '^\d{4}-\d{2}-\d{2}-' '' | str downcase | str replace --all '_' '-')
-                        let slug_stripped = ($slug | str replace --all '-' '' | str replace --all '_' '')
-                        $slug == $normalized or $slug_stripped == $stripped
-                    }
-                    )
-
-    if ($match | is-empty) {
-        return null
-    }
-
-    let parsed = ($match | first | parse '{y}-{m}-{d}-{rest}' | first)
-    $"($parsed.y)-($parsed.m)-($parsed.d)" | into datetime | format date "%y-%b-%d" | str downcase
-}
-
-# Get the git creation date for a file or directory
 def get-git-date [path: string] {
-    # For articles under writes/, try matching a date-prefixed directory first
     if ($path | str starts-with "writes/") {
-        let article_name = ($path | str replace "writes/" "" | str replace "/index.html" "")
-        let dir_date = (get-date-from-dir-prefix $article_name)
-        if ($dir_date != null) {
-            return $dir_date
+        let article = ($path | str replace "writes/" "" | str replace "/index.html" "")
+        let norm = ($article | str downcase | str replace --all ' ' '-' | str replace --all '_' '-')
+        let stripped = ($norm | str replace --all '-' '')
+
+        let match = (ls | where type == dir | get name
+                        | where {|n| $n =~ '^\d{4}-\d{2}-\d{2}-'}
+                        | where {|d|
+                            let slug = ($d | str replace -r '^\d{4}-\d{2}-\d{2}-' '' | str downcase | str replace --all '_' '-')
+                            $slug == $norm or ($slug | str replace --all '-' '') == $stripped
+                        })
+        if not ($match | is-empty) {
+            let p = ($match | first | parse '{y}-{m}-{d}-{rest}' | first)
+            return $"($p.y)-($p.m)-($p.d)"
         }
     }
 
-    let log_lines = (git log --diff-filter=A --follow --format=%aI -- $path | lines)
-
-    if ($log_lines | is-empty) {
-        return null
-    }
-
-    let result = ($log_lines | last)
-
-    if ($result | is-empty) {
-        return null
-    }
-
-    $result | into datetime | format date "%y-%b-%d" | str downcase
+    let lines = (git log --diff-filter=A --follow --format=%aI -- $path | lines)
+    if ($lines | is-empty) { return null }
+    $lines | last | into datetime | format date "%Y-%m-%d"
 }
 
-# Recursively update time fields in the JSON structure
 def update-times [node: record, base_path: string] {
+    let full_path = if ("name" in $node) {
+        if ($base_path | is-empty) { $node.name } else { $"($base_path)/($node.name)" }
+    } else { $base_path }
+
     mut updated = $node
 
-    # Update time for current node if it's a directory or file with a name
     if ("name" in $node) {
-        let full_path = if ($base_path | is-empty) {
-            $node.name
-        } else {
-            $"($base_path)/($node.name)"
-        }
-
-        let index_path = $"($full_path)/index.html"
-        print --stderr $"Checking: ($index_path)"
-        let git_date = (get-git-date $index_path)
-
-        if ($git_date != null) {
-            print --stderr $"  Found date: ($git_date)"
-            $updated = ($updated | upsert time $git_date)
-        } else {
-            print --stderr $"  No git history found"
+        let iso = (get-git-date $"($full_path)/index.html")
+        if ($iso != null) {
+            $updated = ($updated
+                | upsert time ($iso | into datetime | format date "%y-%b-%d" | str downcase)
+                | upsert _sort_date $iso)
         }
     }
 
-    # Recursively process contents
     if ("contents" in $node) {
-        let contents = $node.contents
-
-        let contents_type = ($contents | describe)
-        if ($contents_type | str starts-with "list") or ($contents_type | str starts-with "table") {
-            let new_contents = ($contents | each {|item|
-                let item_path = if ($base_path | is-empty) {
-                    $node.name
-                } else {
-                    $"($base_path)/($node.name)"
-                }
-                update-times $item $item_path
-            })
-            $updated = ($updated | upsert contents $new_contents)
-        } else if ($contents | describe | str starts-with "record") {
-            let item_path = if ($base_path | is-empty) {
-                $node.name
-            } else {
-                $"($base_path)/($node.name)"
-            }
-            let new_contents = (update-times $contents $item_path)
-            $updated = ($updated | upsert contents $new_contents)
+        let new_contents = if ($node.contents | describe | str starts-with "record") {
+            update-times $node.contents $full_path
+        } else {
+            $node.contents | each {|item| update-times $item $full_path }
         }
+        $updated = ($updated | upsert contents $new_contents)
     }
 
     $updated
 }
 
-# Main function
 def main [] {
-    let input_data = ($in | from json)
-
-    mut updated_data = {}
-    for key in ($input_data | columns) {
-        let value = ($input_data | get $key)
-        print --stderr $"\nProcessing section: ($key)"
-        $updated_data = ($updated_data | insert $key (update-times $value ""))
+    let input = ($in | from json)
+    mut out = {}
+    for key in ($input | columns) {
+        mut section = (update-times ($input | get $key) "")
+        if ($key == "writes" and "contents" in $section) {
+            $section = ($section | upsert contents (
+                $section.contents
+                | default "" _sort_date
+                | sort-by _sort_date --reverse
+                | each {|i| $i | reject --ignore-errors _sort_date }
+            ))
+        }
+        $out = ($out | insert $key $section)
     }
-
-    $updated_data | to json --indent 2
+    $out | to json --indent 2
 }
