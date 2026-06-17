@@ -78,11 +78,12 @@ def update-times [node: record, base_path: string] {
 def main [] {
     let input_data = ($in | from json)
 
-    # Process each top-level key
-    let updated_data = ($input_data | items {|key, value|
+    mut updated_data = {}
+    for key in ($input_data | columns) {
+        let value = ($input_data | get $key)
         print --stderr $"\nProcessing section: ($key)"
-        {$key: (update-times $value "")}
-    } | reduce {|it, acc| $acc | merge $it})
+        $updated_data = ($updated_data | insert $key (update-times $value ""))
+    }
 
     # Output to stdout
     $updated_data | to json --indent 2
