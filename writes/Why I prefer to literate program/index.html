@@ -1,49 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<meta name="author" content="Alejandro Garcia">
-<link rel="stylesheet" href="https://zilongli.org/code/normalize.css" type="text/css" />
-<link rel="stylesheet" href="https://zilongli.org/code/tufte.css" type="text/css" />
-<link rel="stylesheet" href="https://zilongli.org/code/org.css" type="text/css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script></head>
-<body id="top">
-<div id="body"><div id="container"><div id="content"><article><h1 class="title">Why I prefer to literate program</h1>
-<nav id="table-of-contents" role="doc-toc">
+<!-- 2026-06-17 mié 23:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why I prefer to literate program</title>
+<meta name="author" content="Alejandro Garcia" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@v1.8.0/tufte.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ox-tufte/ox-tufte@4.2.1/src/ox-tufte.css" type="text/css" />
+<script src="../../assets/js/linkerline.umd.js"></script>
+<script src="../../assets/js/connect-refs.js"></script>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<article id="content" class="content">
+<header>
+<h1 class="title">Why I prefer to literate program</h1>
+<p class="subtitle" role="doc-subtitle">Or How to program as a writer</p>
+</header><nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc06b653">The two gifts of literate programming</a></li>
-<li><a href="#org369e486">Example of a literate program</a>
+<li><a href="#org7f16d57">The two gifts of literate programming</a></li>
+<li><a href="#orgd98eb26">Example of a literate program</a>
 <ul>
-<li><a href="#org9d122c6">Discarded alternatives</a>
+<li><a href="#orgee35afe">Discarded alternatives</a>
 <ul>
-<li><a href="#orga380401">Leo-Editor and its clone LeoJS</a></li>
-<li><a href="#org41d0dcf">Tiny Wiki.</a></li>
-<li><a href="#org7fc8ec2">Jupyter Notebooks.</a></li>
+<li><a href="#org0ce0959">Leo-Editor and its clone LeoJS</a></li>
+<li><a href="#org7f6f53b">Tiny Wiki.</a></li>
+<li><a href="#orgb948b55">Jupyter Notebooks.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd1efcb1">How to become a literate programmer.</a></li>
+<li><a href="#org2dc1f56">How to become a literate programmer.</a></li>
 </ul>
 </div>
 </nav>
-<section><div class="epigraph"><blockquote>
+<blockquote>
 <p>
-Paraphrasing Alan Kay: Literate Programming to me means only
+Paraphrasing Alan Kay:
+Literate Programming to me means only
 prose and code  in order of human comprehension,
 with the order of the code required by the compiler being irrelevant.
-It is possible to do in Emacs Org-mode and in Noweb.
+It is possible to do in Emacs and in Noweb.
 There are possibly other systems in which this is possible,
 but I'm not aware of them.
 </p>
-
-</blockquote></div>
+</blockquote>
 
 
 <p>
@@ -51,10 +260,10 @@ Lately I have been programming two big systems.
 One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 </p>
-</section>
-<div id="outline-container-orgc06b653" class="outline-2">
-<h2 id="orgc06b653">The two gifts of literate programming</h2>
-<section><p>
+<section id="outline-container-org7f16d57" class="outline-2">
+<h2 id="org7f16d57">The two gifts of literate programming</h2>
+<div class="outline-text-2" id="text-org7f16d57">
+<p>
 I went back to my Eiffel library after 5 months of not touching it.
 Of course my mind was blank when reading the code.
 </p>
@@ -93,78 +302,80 @@ This of course means that current tools are not useful in this way of writing.
 I cannot write SQL in the python interpreter, nor CSS in the command prompt.
 But I need all of these languages and tools mixed in order to fulfill the goal of my user.
 </p>
-</section>
 </div>
-<div id="outline-container-org369e486" class="outline-2">
-<h2 id="org369e486">Example of a literate program</h2>
-<section><p>
+</section>
+<section id="outline-container-orgd98eb26" class="outline-2">
+<h2 id="orgd98eb26">Example of a literate program</h2>
+<div class="outline-text-2" id="text-orgd98eb26">
+<p>
 Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
 </p>
 
-<pre class="example" id="org04397b5">
-#+title: How to Use SQLite with Python
-
-<span id="coderef-goal" class="coderef-off">In this tutorial we would learn how to connect SQLite and Python. (goal)</span>
-
-* Requirements
-First of all you need to check if you have Python and Sqlite installed.
-So write this command in your terminal.
-And they should return an output similar to the one shown.
-
-<span id="coderef-pre-conditions" class="coderef-off">#+name: (pre-conditions)</span>
-#+begin_src shell :exports both :results output
-,  python --version
-,  sqlite3 --version
-#+end_src
-
-#+results:
-: Python 3.10.12
-: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
-
-
-<span id="coderef-installation" class="coderef-off">* Setup (installation)</span>
-#+begin_src shell
-,  pip install cs50
-,  touch database.db
-#+end_src
-
-* Connecting
-
-#+begin_src python :tangle main.py :mkdirp yes
-,  from cs50 import SQL
-
-,  db = SQL("sqlite:///database.db")
-#+end_src
-
-* CREATE
-<span id="coderef-a_code_block" class="coderef-off">#+name: (a_code_block)</span>
-#+begin_src python :tangle main.py
-,  db.execute("""
-,      CREATE TABLE IF NOT EXISTS users (
-,          name     TEXT,
-,          age      NUMBER,
-,          fav_food STRING
-,      )
-,  """)
-#+end_src
-
-
-* Tangle
-<span id="coderef-tangle" class="coderef-off">#+name: (tangle)</span>
-#+begin_src shell
-,  emacs --batch \
-,        --eval "(require 'ob-tangle)" \
-,        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
-#+end_src
-
-* Compile and Run
-<span id="coderef-compile" class="coderef-off">#+name: (compile)</span>
-#+begin_src shell
-,  python main.py
-#+end_src
-
-</pre>
+<div class="org-src-container">
+<pre class="src src-org"><code><span class="linenr"> 1: </span><span style="color: #b3b3b3;">#+title:</span> <span style="color: #8CD0D3; background-color: #3F3F3F; font-weight: bold;">How to Use SQLite with Python
+<span class="linenr"> 2: </span></span>
+<span id="coderef-goal" class="coderef-off"><span class="linenr"> 3: </span>,In this tutorial we would learn how to connect SQLite and Python. (goal)</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Requirements</span>
+<span class="linenr"> 6: </span>First of all you need to check if you have Python and Sqlite installed.
+<span class="linenr"> 7: </span>So write this command in your terminal.
+<span class="linenr"> 8: </span>And they should return an output similar to the one shown.
+<span class="linenr"> 9: </span>
+<span id="coderef-pre-conditions" class="coderef-off"><span class="linenr">10: </span><span style="color: #7F9F7F;">#+name:</span> (pre-conditions)</span>
+<span class="linenr">11: </span><span style="color: #7F9F7F;">#+begin_src shell :exports both :results output
+<span class="linenr">12: </span></span><span style="background-color: #494949;">,  python --version
+<span class="linenr">13: </span>,  sqlite3 --version
+<span class="linenr">14: </span></span><span style="color: #7F9F7F;">#+end_src
+<span class="linenr">15: </span></span>
+<span class="linenr">16: </span><span style="color: #7F9F7F;">#+results:</span>
+<span class="linenr">17: </span><span style="color: #b3b3b3;">: Python 3.10.12
+<span class="linenr">18: </span>: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46</span><span style="color: #DC8CC3; background-color: #3F3F3F;">b29818d5dalt1</span><span style="color: #b3b3b3;">
+<span class="linenr">19: </span></span>
+<span class="linenr">20: </span>
+<span id="coderef-installation" class="coderef-off"><span class="linenr">21: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Setup</span> (installation)</span>
+<span class="linenr">22: </span><span style="color: #7F9F7F;">#+begin_src shell
+<span class="linenr">23: </span></span><span style="background-color: #494949;">,  pip install cs50
+<span class="linenr">24: </span>,  touch database.db
+<span class="linenr">25: </span></span><span style="color: #7F9F7F;">#+end_src
+<span class="linenr">26: </span></span>
+<span class="linenr">27: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Connecting</span>
+<span class="linenr">28: </span>
+<span class="linenr">29: </span><span style="color: #7F9F7F;">#+begin_src python :tangle main.py :mkdirp yes
+<span class="linenr">30: </span></span><span style="background-color: #494949;">,  </span><span style="color: #F0DFAF; background-color: #494949; font-weight: bold;">from</span><span style="background-color: #494949;"> cs50 </span><span style="color: #F0DFAF; background-color: #494949; font-weight: bold;">import</span><span style="background-color: #494949;"> SQL
+<span class="linenr">31: </span>
+<span class="linenr">32: </span>,  </span><span style="color: #DFAF8F; background-color: #494949;">db</span><span style="background-color: #494949;"> </span><span style="color: #DCDCCC; background-color: #494949;">=</span><span style="background-color: #494949;"> SQL(</span><span style="color: #CC9393; background-color: #494949;">"sqlite:///database.db"</span><span style="background-color: #494949;">)
+<span class="linenr">33: </span></span><span style="color: #7F9F7F;">#+end_src
+<span class="linenr">34: </span></span>
+<span class="linenr">35: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* CREATE</span>
+<span id="coderef-a_code_block" class="coderef-off"><span class="linenr">36: </span><span style="color: #7F9F7F;">#+name:</span> (a_code_block)</span>
+<span class="linenr">37: </span><span style="color: #7F9F7F;">#+begin_src python :tangle main.py
+<span class="linenr">38: </span></span><span style="background-color: #494949;">,  db.execute(</span><span style="color: #CC9393; background-color: #494949;">"""
+<span class="linenr">39: </span>,      CREATE TABLE IF NOT EXISTS users (
+<span class="linenr">40: </span>,          name     TEXT,
+<span class="linenr">41: </span>,          age      NUMBER,
+<span class="linenr">42: </span>,          fav_food STRING
+<span class="linenr">43: </span>,      )
+<span class="linenr">44: </span>,  """</span><span style="background-color: #494949;">)
+<span class="linenr">45: </span></span><span style="color: #7F9F7F;">#+end_src
+<span class="linenr">46: </span></span>
+<span class="linenr">47: </span>
+<span class="linenr">48: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Tangle</span>
+<span id="coderef-tangle" class="coderef-off"><span class="linenr">49: </span><span style="color: #7F9F7F;">#+name:</span> (tangle)</span>
+<span class="linenr">50: </span><span style="color: #7F9F7F;">#+begin_src shell
+<span class="linenr">51: </span></span><span style="background-color: #494949;">,  emacs --batch </span><span style="color: #CC9393; background-color: #494949;">\</span><span style="background-color: #494949;">
+<span class="linenr">52: </span>,        --eval </span><span style="color: #CC9393; background-color: #494949;">"(require 'ob-tangle)"</span><span style="background-color: #494949;"> </span><span style="color: #CC9393; background-color: #494949;">\</span><span style="background-color: #494949;">
+<span class="linenr">53: </span>,        --eval </span><span style="color: #CC9393; background-color: #494949;">"(org-babel-tangle-file \"python-sqlite-tutorial.org\")"</span><span style="background-color: #494949;">
+<span class="linenr">54: </span></span><span style="color: #7F9F7F;">#+end_src
+<span class="linenr">55: </span></span>
+<span class="linenr">56: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Compile and Run</span>
+<span id="coderef-compile" class="coderef-off"><span class="linenr">57: </span><span style="color: #7F9F7F;">#+name:</span> (compile)</span>
+<span class="linenr">58: </span><span style="color: #7F9F7F;">#+begin_src shell
+<span class="linenr">59: </span></span><span style="background-color: #494949;">,  python main.py
+<span class="linenr">60: </span></span><span style="color: #7F9F7F;">#+end_src
+<span class="linenr">61: </span></span>
+</code></pre>
+</div>
 
 
 <p>
@@ -186,6 +397,7 @@ Other times it's inductive (bottom-up). I start with a specific example and modi
 <dt><a href="#coderef-tangle" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-tangle');" onmouseout="CodeHighlightOff(this, 'coderef-tangle');">tangle</a></dt><dd>Is the action of taking the code blocks and assembling a single coherent file.</dd>
 </dl>
 
+
 <p>
 But with a powerful literate programming editor like Emacs, everything is in the same view.
 Our user goals are prose,  environment configuration are blocks, business rules are code.
@@ -193,12 +405,13 @@ Everything in the same document, so just scrolling up and down is enough to unde
 For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 </p>
-</section>
-<div id="outline-container-org9d122c6" class="outline-3">
-<h3 id="org9d122c6">Discarded alternatives</h3>
-<section><p>
+</div>
+<div id="outline-container-orgee35afe" class="outline-3">
+<h3 id="orgee35afe">Discarded alternatives</h3>
+<div class="outline-text-3" id="text-orgee35afe">
+<p>
 Obviously Emacs and Noweb aren't the only tools in the game.
-But I have tried them all<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/><span class="sidenote">
+But I have tried them all<label id='fnr.1' for='fnr-in.1.6293918' class='margin-toggle sidenote-number'><sup class='numeral'>1</sup></label><input type='checkbox' id='fnr-in.1.6293918' class='margin-toggle'><span class='sidenote'><sup class='numeral'>1</sup>
 It's hyperbole, but I have tried a good chunk.
 </span>. And all of them fall short in some way.
 </p>
@@ -212,10 +425,11 @@ But that separation, dilutes the goal in many little files. To the point that ea
 I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't emacs.
 And why I don't use them to do literate programming.
 </p>
-</section>
-<div id="outline-container-orga380401" class="outline-4">
-<h4 id="orga380401">Leo-Editor and its clone LeoJS</h4>
-<section><p>
+</div>
+<div id="outline-container-org0ce0959" class="outline-4">
+<h4 id="org0ce0959">Leo-Editor and its clone LeoJS</h4>
+<div class="outline-text-4" id="text-org0ce0959">
+<p>
 These tools are <b>almost</b> perfect.
 Their literate programming capabilities are top notch.
 Their node organization is amazing.
@@ -230,39 +444,42 @@ And then create the document for each audience:
 <li>the code for the compiler and</li>
 <li>the prose for my fellow programmers or, more likely, future me.</li>
 </ul>
-</section>
 </div>
-<div id="outline-container-org41d0dcf" class="outline-4">
-<h4 id="org41d0dcf">Tiny Wiki.</h4>
-<section><p>
+</div>
+<div id="outline-container-org7f6f53b" class="outline-4">
+<h4 id="org7f6f53b">Tiny Wiki.</h4>
+<div class="outline-text-4" id="text-org7f6f53b">
+<p>
 On the opposite side we have tiny wiki.
 Which is the perfect note taking tool. Every note is just a block in a single long document.
-And it supports transclusion <label for="2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="2" class="margin-toggle"/><span class="sidenote">
+And it supports transclusion <label id='fnr.2' for='fnr-in.2.572549' class='margin-toggle sidenote-number'><sup class='numeral'>2</sup></label><input type='checkbox' id='fnr-in.2.572549' class='margin-toggle'><span class='sidenote'><sup class='numeral'>2</sup>
 Which is the fancy way of saying it inserts blocks from another document into the current one.
 </span>. Which makes it perfect to take little ideas that you have accumulated along the years.
 And assemble a coherent whole.
 But its literate programming story is a lot less good.
 </p>
-</section>
 </div>
-<div id="outline-container-org7fc8ec2" class="outline-4">
-<h4 id="org7fc8ec2">Jupyter Notebooks.</h4>
-<section><p>
+</div>
+<div id="outline-container-orgb948b55" class="outline-4">
+<h4 id="orgb948b55">Jupyter Notebooks.</h4>
+<div class="outline-text-4" id="text-orgb948b55">
+<p>
 I personally don't like Jupyter notebooks.
 I think their data format is good. But they have gone too far on the other direction.
 Since you don't have a tangle operation i.e., assembling the code out of the fragments that you have written.
 Then Jupyter notebooks end up being the only environment in which your code can be executed.
 But that destroys the layers and the fact that each layer is perfectly optimized for its function.
 </p>
+</div>
+</div>
+</div>
 </section>
-</div>
-</div>
-</div>
-<div id="outline-container-orgd1efcb1" class="outline-2">
-<h2 id="orgd1efcb1">How to become a literate programmer.</h2>
-<section><p>
+<section id="outline-container-org2dc1f56" class="outline-2">
+<h2 id="org2dc1f56">How to become a literate programmer.</h2>
+<div class="outline-text-2" id="text-org2dc1f56">
+<p>
 To learn how to become a literate programmer, I think a good exercise is to take any
-programming tutorial that you already know or have read in the past <label for="3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="3" class="margin-toggle"/><span class="sidenote">
+programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.5738824' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.5738824' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
 It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
 </span>.
 A tutorial whose prose and content you have already enjoyed.
@@ -280,27 +497,13 @@ Now you must find a way to write an executable code block that will be part of y
 This practice is great to learn to write in a literate programming style,
 since you would be wearing the shoes of both an experienced writer and programmer.
 </p>
-</section>
 </div>
-<!-- Footnotes --><!-- 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
-It's hyperbole, but I have tried a good chunk.
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
-Which is the fancy way of saying it inserts blocks from another document into the current one.
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
-It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
-</p></div></div>
-
- --></article>
-<div style="margin-right:-15%; width:50%; float:right;">
-     <a href="#top"  title="Go to Top" style="visibility: visible; opacity: 0.5;">
-    <svg xmlns="http://www.w3.org/2000/svg" height="15" width="30" viewBox="0 0 12 6" fill="#f57627" stroke="none">
-    <path d="M12 6H0l6-6z"></path></svg> </a></div>
-<footer class="footer">
-    <span>Powered by <a href="https://github.com/Zilong-Li/org-tufte" rel="noopener">Emacs Org-tufte</a></span>
-   </footer>
-   </div></div></div></body></html>
+</section>
+</article>
+<footer id="postamble" class="status">
+<p class="author">Author: Alejandro Garcia</p>
+<p class="date">Created: 2026-06-17 mié 23:19</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</footer>
+</body>
+</html>

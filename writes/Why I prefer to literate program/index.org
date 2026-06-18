@@ -1,6 +1,11 @@
 #+TITLE: Why I prefer to literate program
 #+SUBTITLE: Or How to program as a writer
 #+BIND: org-html-htmlize-output-type nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@v1.8.0/tufte.css" type="text/css" />
+#+HTML_HEAD: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ox-tufte/ox-tufte@4.2.1/src/ox-tufte.css" type="text/css" />
+#+HTML_HEAD_EXTRA: <script src="../../assets/js/linkerline.umd.js"></script>
+#+HTML_HEAD_EXTRA: <script src="../../assets/js/connect-refs.js"></script>
+
 
 #+BEGIN_QUOTE
 Paraphrasing Alan Kay:
@@ -55,7 +60,7 @@ Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
 
 #+header: :transclude [[file:./example_tutorial.org]]
-#+BEGIN_example org
+#+BEGIN_SRC org -n
   ,#+title: How to Use SQLite with Python
 
   ,In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
@@ -117,7 +122,7 @@ So we would write an article as follows:
   ,  python main.py
   ,#+end_src
 
-#+END_example
+#+END_SRC
 
 
 Observe that:
@@ -134,6 +139,7 @@ Observe that:
 - [[(compile)]] :: Going back to the context, we compile our program and we test against our expectations.
 
 - [[(tangle)]] :: Is the action of taking the code blocks and assembling a single coherent file.
+
 
 But with a powerful literate programming editor like Emacs, everything is in the same view.
 Our user goals are prose,  environment configuration are blocks, business rules are code.
@@ -197,8 +203,6 @@ Now you must find a way to write an executable code block that will be part of y
 
 This practice is great to learn to write in a literate programming style,
 since you would be wearing the shoes of both an experienced writer and programmer.
-
-
 
 * Footnotes
 
