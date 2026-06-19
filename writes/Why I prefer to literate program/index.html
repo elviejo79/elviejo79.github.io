@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-06-17 mié 23:19 -->
+<!-- 2026-06-19 vie 13:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Why I prefer to literate program</title>
@@ -192,10 +192,59 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@v1.8.0/tufte.css" type="text/css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ox-tufte/ox-tufte@4.2.1/src/ox-tufte.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/css/tufte.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/css/ox-tufte.css" type="text/css" />
 <script src="../../assets/js/linkerline.umd.js"></script>
 <script src="../../assets/js/connect-refs.js"></script>
+<style>
+body {
+padding-left: 1%;                /* reclaim most of tufte's 12.5% empty left gutter */
+}
+#content .org-src-container {
+width: 100% !important;    /* 100% of the 55% wrapper = exactly the prose column width.
+55% here meant 55% OF the wrapper (~30% of the article). */
+max-width: 100% !important;
+margin: 1.2em 0 !important;
+clear: none !important;        /* see below */
+box-sizing: border-box;
+}
+#content .org-src-container pre.src {
+width: 100%;
+max-width: 100%;
+margin: 0;
+clear: none;          /* override  body pre { clear: both }  — ox-tufte.css line 90 */
+box-sizing: border-box;
+}
+pre.src > code {
+width: auto;
+margin-left: 0;
+}
+@media (max-width: 760px) {
+#content .org-src-container,
+#content .org-src-container pre.src {
+width: 100% !important;
+max-width: 100% !important;
+}
+/* "Observe that" block note: always inline, full width, no toggle */
+div.marginnote {
+display: block !important;
+float: none !important;
+clear: both !important;
+position: static !important;
+width: 100% !important;
+max-width: 100% !important;
+margin: 1em 0 !important;
+}
+label.margin-toggle:not(.sidenote-number) {
+display: none !important;   /* the ⊕ for the block note — redundant now it's always shown */
+}
+}
+@media (min-width: 761px) {
+:root {
+--ox-tufte-content-width: 62%;
+}
+}
+</style>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -226,19 +275,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7f16d57">The two gifts of literate programming</a></li>
-<li><a href="#orgd98eb26">Example of a literate program</a>
+<li><a href="#org7f16d57">1. The two gifts of literate programming</a></li>
+<li><a href="#org2dc1f56">2. Example of a literate program</a>
 <ul>
-<li><a href="#orgee35afe">Discarded alternatives</a>
+<li><a href="#org9beed48">2.1. Discarded alternatives</a>
 <ul>
-<li><a href="#org0ce0959">Leo-Editor and its clone LeoJS</a></li>
-<li><a href="#org7f6f53b">Tiny Wiki.</a></li>
-<li><a href="#orgb948b55">Jupyter Notebooks.</a></li>
+<li><a href="#org0ce0959">2.1.1. Leo-Editor and its clone LeoJS</a></li>
+<li><a href="#org7f6f53b">2.1.2. Tiny Wiki.</a></li>
+<li><a href="#orgb948b55">2.1.3. Jupyter Notebooks.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2dc1f56">How to become a literate programmer.</a></li>
+<li><a href="#orgfa898cb">3. How to become a literate programmer.</a></li>
 </ul>
 </div>
 </nav>
@@ -261,8 +310,8 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 </p>
 <section id="outline-container-org7f16d57" class="outline-2">
-<h2 id="org7f16d57">The two gifts of literate programming</h2>
-<div class="outline-text-2" id="text-org7f16d57">
+<h2 id="org7f16d57"><span class="section-number-2">1.</span> The two gifts of literate programming</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 I went back to my Eiffel library after 5 months of not touching it.
 Of course my mind was blank when reading the code.
@@ -304,13 +353,37 @@ But I need all of these languages and tools mixed in order to fulfill the goal o
 </p>
 </div>
 </section>
-<section id="outline-container-orgd98eb26" class="outline-2">
-<h2 id="orgd98eb26">Example of a literate program</h2>
-<div class="outline-text-2" id="text-orgd98eb26">
+<section id="outline-container-org2dc1f56" class="outline-2">
+<h2 id="org2dc1f56"><span class="section-number-2">2.</span> Example of a literate program</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
 </p>
+
+
+
+<label for='mn-auto.3277734' class='margin-toggle'>&#8853;</label><input type='checkbox' id='mn-auto.3277734' class='margin-toggle'><div class="marginnote" id="org99c01cb">
+<p>
+Observe that:
+</p>
+
+<dl class="org-dl">
+<dt><a href="#coderef-goal" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-goal');" onmouseout="CodeHighlightOff(this, 'coderef-goal');">goal</a></dt><dd>First I start with the goal or user story this document will satisfy.</dd>
+
+<dt><a href="#coderef-pre-conditions" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-pre-conditions');" onmouseout="CodeHighlightOff(this, 'coderef-pre-conditions');">pre-conditions</a></dt><dd>Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.</dd>
+
+<dt><a href="#coderef-installation" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-installation');" onmouseout="CodeHighlightOff(this, 'coderef-installation');">installation</a></dt><dd>In this day and age any functionality requires some library that the Open Source community has done for us.</dd>
+
+<dt><a href="#coderef-a_code_block" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-a_code_block');" onmouseout="CodeHighlightOff(this, 'coderef-a_code_block');">a_code_block</a></dt><dd>This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
+Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.</dd>
+
+<dt><a href="#coderef-compile" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-compile');" onmouseout="CodeHighlightOff(this, 'coderef-compile');">compile</a></dt><dd>Going back to the context, we compile our program and we test against our expectations.</dd>
+
+<dt><a href="#coderef-tangle" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-tangle');" onmouseout="CodeHighlightOff(this, 'coderef-tangle');">tangle</a></dt><dd>Is the action of taking the code blocks and assembling a single coherent file.</dd>
+</dl>
+
+</div>
 
 <div class="org-src-container">
 <pre class="src src-org"><code><span class="linenr"> 1: </span><span style="color: #b3b3b3;">#+title:</span> <span style="color: #8CD0D3; background-color: #3F3F3F; font-weight: bold;">How to Use SQLite with Python
@@ -378,25 +451,6 @@ So we would write an article as follows:
 </div>
 
 
-<p>
-Observe that:
-</p>
-
-<dl class="org-dl">
-<dt><a href="#coderef-goal" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-goal');" onmouseout="CodeHighlightOff(this, 'coderef-goal');">goal</a></dt><dd>First I start with the goal or user story this document will satisfy.</dd>
-
-<dt><a href="#coderef-pre-conditions" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-pre-conditions');" onmouseout="CodeHighlightOff(this, 'coderef-pre-conditions');">pre-conditions</a></dt><dd>Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.</dd>
-
-<dt><a href="#coderef-installation" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-installation');" onmouseout="CodeHighlightOff(this, 'coderef-installation');">installation</a></dt><dd>In this day and age any functionality requires some library that the Open Source community has done for us.</dd>
-
-<dt><a href="#coderef-a_code_block" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-a_code_block');" onmouseout="CodeHighlightOff(this, 'coderef-a_code_block');">a_code_block</a></dt><dd>This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
-Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.</dd>
-
-<dt><a href="#coderef-compile" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-compile');" onmouseout="CodeHighlightOff(this, 'coderef-compile');">compile</a></dt><dd>Going back to the context, we compile our program and we test against our expectations.</dd>
-
-<dt><a href="#coderef-tangle" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-tangle');" onmouseout="CodeHighlightOff(this, 'coderef-tangle');">tangle</a></dt><dd>Is the action of taking the code blocks and assembling a single coherent file.</dd>
-</dl>
-
 
 <p>
 But with a powerful literate programming editor like Emacs, everything is in the same view.
@@ -406,12 +460,12 @@ For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 </p>
 </div>
-<div id="outline-container-orgee35afe" class="outline-3">
-<h3 id="orgee35afe">Discarded alternatives</h3>
-<div class="outline-text-3" id="text-orgee35afe">
+<div id="outline-container-org9beed48" class="outline-3">
+<h3 id="org9beed48"><span class="section-number-3">2.1.</span> Discarded alternatives</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Obviously Emacs and Noweb aren't the only tools in the game.
-But I have tried them all<label id='fnr.1' for='fnr-in.1.6293918' class='margin-toggle sidenote-number'><sup class='numeral'>1</sup></label><input type='checkbox' id='fnr-in.1.6293918' class='margin-toggle'><span class='sidenote'><sup class='numeral'>1</sup>
+But I have tried them all<label id='fnr.1' for='fnr-in.1.9790334' class='margin-toggle sidenote-number'><sup class='numeral'>1</sup></label><input type='checkbox' id='fnr-in.1.9790334' class='margin-toggle'><span class='sidenote'><sup class='numeral'>1</sup>
 It's hyperbole, but I have tried a good chunk.
 </span>. And all of them fall short in some way.
 </p>
@@ -427,8 +481,8 @@ And why I don't use them to do literate programming.
 </p>
 </div>
 <div id="outline-container-org0ce0959" class="outline-4">
-<h4 id="org0ce0959">Leo-Editor and its clone LeoJS</h4>
-<div class="outline-text-4" id="text-org0ce0959">
+<h4 id="org0ce0959"><span class="section-number-4">2.1.1.</span> Leo-Editor and its clone LeoJS</h4>
+<div class="outline-text-4" id="text-2-1-1">
 <p>
 These tools are <b>almost</b> perfect.
 Their literate programming capabilities are top notch.
@@ -447,8 +501,8 @@ And then create the document for each audience:
 </div>
 </div>
 <div id="outline-container-org7f6f53b" class="outline-4">
-<h4 id="org7f6f53b">Tiny Wiki.</h4>
-<div class="outline-text-4" id="text-org7f6f53b">
+<h4 id="org7f6f53b"><span class="section-number-4">2.1.2.</span> Tiny Wiki.</h4>
+<div class="outline-text-4" id="text-2-1-2">
 <p>
 On the opposite side we have tiny wiki.
 Which is the perfect note taking tool. Every note is just a block in a single long document.
@@ -461,8 +515,8 @@ But its literate programming story is a lot less good.
 </div>
 </div>
 <div id="outline-container-orgb948b55" class="outline-4">
-<h4 id="orgb948b55">Jupyter Notebooks.</h4>
-<div class="outline-text-4" id="text-orgb948b55">
+<h4 id="orgb948b55"><span class="section-number-4">2.1.3.</span> Jupyter Notebooks.</h4>
+<div class="outline-text-4" id="text-2-1-3">
 <p>
 I personally don't like Jupyter notebooks.
 I think their data format is good. But they have gone too far on the other direction.
@@ -474,12 +528,12 @@ But that destroys the layers and the fact that each layer is perfectly optimized
 </div>
 </div>
 </section>
-<section id="outline-container-org2dc1f56" class="outline-2">
-<h2 id="org2dc1f56">How to become a literate programmer.</h2>
-<div class="outline-text-2" id="text-org2dc1f56">
+<section id="outline-container-orgfa898cb" class="outline-2">
+<h2 id="orgfa898cb"><span class="section-number-2">3.</span> How to become a literate programmer.</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 To learn how to become a literate programmer, I think a good exercise is to take any
-programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.5738824' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.5738824' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
+programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.2232248' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.2232248' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
 It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
 </span>.
 A tutorial whose prose and content you have already enjoyed.
@@ -502,7 +556,7 @@ since you would be wearing the shoes of both an experienced writer and programme
 </article>
 <footer id="postamble" class="status">
 <p class="author">Author: Alejandro Garcia</p>
-<p class="date">Created: 2026-06-17 mié 23:19</p>
+<p class="date">Created: 2026-06-19 vie 13:27</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </footer>
 </body>

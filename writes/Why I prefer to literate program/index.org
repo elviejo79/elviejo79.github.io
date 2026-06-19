@@ -1,11 +1,59 @@
 #+TITLE: Why I prefer to literate program
 #+SUBTITLE: Or How to program as a writer
 #+BIND: org-html-htmlize-output-type nil
-#+HTML_HEAD: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@v1.8.0/tufte.css" type="text/css" />
-#+HTML_HEAD: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ox-tufte/ox-tufte@4.2.1/src/ox-tufte.css" type="text/css" />
+#+HTML_HEAD: <link rel="stylesheet" href="../../assets/css/tufte.css" type="text/css" />
+#+HTML_HEAD: <link rel="stylesheet" href="../../assets/css/ox-tufte.css" type="text/css" />
 #+HTML_HEAD_EXTRA: <script src="../../assets/js/linkerline.umd.js"></script>
 #+HTML_HEAD_EXTRA: <script src="../../assets/js/connect-refs.js"></script>
-
+#+HTML_HEAD_EXTRA: <style>
+#+HTML_HEAD_EXTRA: body {
+#+HTML_HEAD_EXTRA:   padding-left: 1%;                /* reclaim most of tufte's 12.5% empty left gutter */
+#+HTML_HEAD_EXTRA: }
+#+HTML_HEAD_EXTRA: #content .org-src-container {
+#+HTML_HEAD_EXTRA:   width: 100% !important;    /* 100% of the 55% wrapper = exactly the prose column width.
+#+HTML_HEAD_EXTRA:                                55% here meant 55% OF the wrapper (~30% of the article). */
+#+HTML_HEAD_EXTRA:   max-width: 100% !important;
+#+HTML_HEAD_EXTRA:   margin: 1.2em 0 !important;
+#+HTML_HEAD_EXTRA:   clear: none !important;        /* see below */
+#+HTML_HEAD_EXTRA:   box-sizing: border-box;
+#+HTML_HEAD_EXTRA: }
+#+HTML_HEAD_EXTRA: #content .org-src-container pre.src {
+#+HTML_HEAD_EXTRA:   width: 100%;
+#+HTML_HEAD_EXTRA:   max-width: 100%;
+#+HTML_HEAD_EXTRA:   margin: 0;
+#+HTML_HEAD_EXTRA:   clear: none;          /* override  body pre { clear: both }  — ox-tufte.css line 90 */
+#+HTML_HEAD_EXTRA:   box-sizing: border-box;
+#+HTML_HEAD_EXTRA: }
+#+HTML_HEAD_EXTRA: pre.src > code {
+#+HTML_HEAD_EXTRA:   width: auto;
+#+HTML_HEAD_EXTRA:   margin-left: 0;
+#+HTML_HEAD_EXTRA: }
+#+HTML_HEAD_EXTRA: @media (max-width: 760px) {
+#+HTML_HEAD_EXTRA:   #content .org-src-container,
+#+HTML_HEAD_EXTRA:   #content .org-src-container pre.src {
+#+HTML_HEAD_EXTRA:     width: 100% !important;
+#+HTML_HEAD_EXTRA:     max-width: 100% !important;
+#+HTML_HEAD_EXTRA:   }
+#+HTML_HEAD_EXTRA:   /* "Observe that" block note: always inline, full width, no toggle */
+#+HTML_HEAD_EXTRA:   div.marginnote {
+#+HTML_HEAD_EXTRA:     display: block !important;
+#+HTML_HEAD_EXTRA:     float: none !important;
+#+HTML_HEAD_EXTRA:     clear: both !important;
+#+HTML_HEAD_EXTRA:     position: static !important;
+#+HTML_HEAD_EXTRA:     width: 100% !important;
+#+HTML_HEAD_EXTRA:     max-width: 100% !important;
+#+HTML_HEAD_EXTRA:     margin: 1em 0 !important;
+#+HTML_HEAD_EXTRA:   }
+#+HTML_HEAD_EXTRA:   label.margin-toggle:not(.sidenote-number) {
+#+HTML_HEAD_EXTRA:     display: none !important;   /* the ⊕ for the block note — redundant now it's always shown */
+#+HTML_HEAD_EXTRA:   }
+#+HTML_HEAD_EXTRA: }
+#+HTML_HEAD_EXTRA: @media (min-width: 761px) {
+#+HTML_HEAD_EXTRA:   :root {
+#+HTML_HEAD_EXTRA:     --ox-tufte-content-width: 62%;
+#+HTML_HEAD_EXTRA:   }
+#+HTML_HEAD_EXTRA: }
+#+HTML_HEAD_EXTRA: </style>
 
 #+BEGIN_QUOTE
 Paraphrasing Alan Kay:
@@ -58,6 +106,26 @@ But I need all of these languages and tools mixed in order to fulfill the goal o
 
 Our goal is to show the users stored in a SQLite database.
 So we would write an article as follows:
+
+
+
+#+begin_marginnote
+Observe that:
+
+- [[(goal)]] :: First I start with the goal or user story this document will satisfy.
+
+- [[(pre-conditions)]] :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
+
+- [[(installation)]] :: In this day and age any functionality requires some library that the Open Source community has done for us.
+
+- [[(a_code_block)]] :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
+    Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
+
+- [[(compile)]] :: Going back to the context, we compile our program and we test against our expectations.
+
+- [[(tangle)]] :: Is the action of taking the code blocks and assembling a single coherent file.
+
+#+end_marginnote
 
 #+header: :transclude [[file:./example_tutorial.org]]
 #+BEGIN_SRC org -n
@@ -124,21 +192,6 @@ So we would write an article as follows:
 
 #+END_SRC
 
-
-Observe that:
-
-- [[(goal)]] :: First I start with the goal or user story this document will satisfy.
-
-- [[(pre-conditions)]] :: Every program has some assumptions about its environment. I like to make those assumptions explicit. Because in 6 months when this doesn't compile I need to check if the requirements were fulfilled.
-
-- [[(installation)]] :: In this day and age any functionality requires some library that the Open Source community has done for us.
-
-- [[(a_code_block)]] :: This is where the actual work begins, sometimes I start deductive (top down). With a general idea of the code as it could work. Like an outline of the code I'm going to write.
-    Other times it's inductive (bottom-up). I start with a specific example and modify it until it can handle the general case.
-
-- [[(compile)]] :: Going back to the context, we compile our program and we test against our expectations.
-
-- [[(tangle)]] :: Is the action of taking the code blocks and assembling a single coherent file.
 
 
 But with a powerful literate programming editor like Emacs, everything is in the same view.
