@@ -8,12 +8,12 @@
     <atom:link href="https://elviejo79.github.io/feed.rss" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>Why I prefer to literate program</title>
-      <link>https://elviejo79.github.io/writes/Why I prefer to literate program/</link>
+      <title>Write First compile later</title>
+      <link>https://elviejo79.github.io/writes/Write First compile later/</link>
       <description><![CDATA[I practice literate programming, and my fellow developers see it like waste of time.
 On this piece I explain the two gifts that LP has given me: understanding and focus.]]></description>
       <pubDate>26-jun-15</pubDate>
-      <guid isPermaLink="true">https://elviejo79.github.io/writes/Why I prefer to literate program/</guid>
+      <guid isPermaLink="true">https://elviejo79.github.io/writes/Write First compile later/</guid>
     </item>
     <item>
       <title>Testorial</title>
