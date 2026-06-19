@@ -71,7 +71,7 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 
 
-* The two gifts of literate programming
+* The gifts of literate programming
 
 I went back to my Eiffel library after 5 months of not touching it.
 Of course my mind was blank when reading the code.
@@ -80,7 +80,7 @@ Fortunately for me I have programmed it in literate programming style.
 So I had 1300 lines of prose and code to explain to myself.
 What I had decided and why!!
 
-It was a gift from my past self to present me.
+It was a gift from my past self to me.
 The gift of understanding.
 The gift of knowing that when I come back to this software,  I can see why it's designed the way it is.
 
@@ -100,7 +100,6 @@ Subsequent paragraphs and code blocks are written in service of the goal.
 This of course means that current tools are not useful in this way of writing.
 I cannot write SQL in the python interpreter, nor CSS in the command prompt.
 But I need all of these languages and tools mixed in order to fulfill the goal of my user.
-
 
 * Example of a literate program
 
@@ -209,7 +208,7 @@ But I have tried them all[fn:1]. And all of them fall short in some way.
 In general, and the most damaging, is that every single tool in this list treats a paragraph as an individual node in a graph of ideas.
 But that separation, dilutes the goal in many little files. To the point that each file doesn't have an idea of the single goal you were trying to achieve.
 
-I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't emacs.
+I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't Emacs.
 And why I don't use them to do literate programming.
 
 
@@ -235,12 +234,26 @@ But its literate programming story is a lot less good.
 
 *** Jupyter Notebooks.
 
-I personally don't like Jupyter notebooks.
-I think their data format is good. But they have gone too far on the other direction.
+I like that Jupyter notebooks, made a form of literate programming attractive to many more developers.
+But they have gone too far on the other direction.
 Since you don't have a tangle operation i.e., assembling the code out of the fragments that you have written.
 Then Jupyter notebooks end up being the only environment in which your code can be executed.
 But that destroys the layers and the fact that each layer is perfectly optimized for its function.
+So notebooks are more like Bash scripts than a development environment.
 
+
+* Plus an unexpected bonus
+
+Turns out that if we write for colleagues.
+With our rationales, decisions, and even routes not taken.
+And then we show the code, derived of those decisions.
+LLMs also benefit!
+This is fashionably known as "Context Engineering",
+And the current trend is just give the LLM as many documents as you can.
+But with Literate Programming all the rationale and its implementation is in the same file.
+The only caveat is that when you let an LLM modify your code,
+It should modify the [[(tangle)]] files, not the literate file.
+And then you detangle files to your literate program.
 
 * How to become a literate programmer.
 

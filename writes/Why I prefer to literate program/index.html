@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-06-19 vie 13:27 -->
+<!-- 2026-06-19 vie 13:58 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Why I prefer to literate program</title>
@@ -275,7 +275,7 @@ display: none !important;   /* the ⊕ for the block note — redundant now it's
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7f16d57">1. The two gifts of literate programming</a></li>
+<li><a href="#org7f16d57">1. The gifts of literate programming</a></li>
 <li><a href="#org2dc1f56">2. Example of a literate program</a>
 <ul>
 <li><a href="#org9beed48">2.1. Discarded alternatives</a>
@@ -287,7 +287,8 @@ display: none !important;   /* the ⊕ for the block note — redundant now it's
 </li>
 </ul>
 </li>
-<li><a href="#orgfa898cb">3. How to become a literate programmer.</a></li>
+<li><a href="#orgde0f8b8">3. Plus an unexpected bonus</a></li>
+<li><a href="#org7161a33">4. How to become a literate programmer.</a></li>
 </ul>
 </div>
 </nav>
@@ -310,7 +311,7 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 </p>
 <section id="outline-container-org7f16d57" class="outline-2">
-<h2 id="org7f16d57"><span class="section-number-2">1.</span> The two gifts of literate programming</h2>
+<h2 id="org7f16d57"><span class="section-number-2">1.</span> The gifts of literate programming</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I went back to my Eiffel library after 5 months of not touching it.
@@ -324,7 +325,7 @@ What I had decided and why!!
 </p>
 
 <p>
-It was a gift from my past self to present me.
+It was a gift from my past self to me.
 The gift of understanding.
 The gift of knowing that when I come back to this software,  I can see why it's designed the way it is.
 </p>
@@ -476,7 +477,7 @@ But that separation, dilutes the goal in many little files. To the point that ea
 </p>
 
 <p>
-I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't emacs.
+I do not want to criticize any one tool, instead I'm going to mention my favorite tools, that aren't Emacs.
 And why I don't use them to do literate programming.
 </p>
 </div>
@@ -518,22 +519,40 @@ But its literate programming story is a lot less good.
 <h4 id="orgb948b55"><span class="section-number-4">2.1.3.</span> Jupyter Notebooks.</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
-I personally don't like Jupyter notebooks.
-I think their data format is good. But they have gone too far on the other direction.
+I like that Jupyter notebooks, made a form of literate programming attractive to many more developers.
+But they have gone too far on the other direction.
 Since you don't have a tangle operation i.e., assembling the code out of the fragments that you have written.
 Then Jupyter notebooks end up being the only environment in which your code can be executed.
 But that destroys the layers and the fact that each layer is perfectly optimized for its function.
+So notebooks are more like Bash scripts than a development environment.
 </p>
 </div>
 </div>
 </div>
 </section>
-<section id="outline-container-orgfa898cb" class="outline-2">
-<h2 id="orgfa898cb"><span class="section-number-2">3.</span> How to become a literate programmer.</h2>
+<section id="outline-container-orgde0f8b8" class="outline-2">
+<h2 id="orgde0f8b8"><span class="section-number-2">3.</span> Plus an unexpected bonus</h2>
 <div class="outline-text-2" id="text-3">
 <p>
+Turns out that if we write for colleagues.
+With our rationales, decisions, and even routes not taken.
+And then we show the code, derived of those decisions.
+LLMs also benefit!
+This is fashionably known as "Context Engineering",
+And the current trend is just give the LLM as many documents as you can.
+But with Literate Programming all the rationale and its implementation is in the same file.
+The only caveat is that when you let an LLM modify your code,
+It should modify the <a href="#coderef-tangle" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-tangle');" onmouseout="CodeHighlightOff(this, 'coderef-tangle');">tangle</a> files, not the literate file.
+And then you detangle files to your literate program.
+</p>
+</div>
+</section>
+<section id="outline-container-org7161a33" class="outline-2">
+<h2 id="org7161a33"><span class="section-number-2">4.</span> How to become a literate programmer.</h2>
+<div class="outline-text-2" id="text-4">
+<p>
 To learn how to become a literate programmer, I think a good exercise is to take any
-programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.2232248' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.2232248' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
+programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.8061131' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.8061131' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
 It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
 </span>.
 A tutorial whose prose and content you have already enjoyed.
@@ -556,7 +575,7 @@ since you would be wearing the shoes of both an experienced writer and programme
 </article>
 <footer id="postamble" class="status">
 <p class="author">Author: Alejandro Garcia</p>
-<p class="date">Created: 2026-06-19 vie 13:27</p>
+<p class="date">Created: 2026-06-19 vie 13:58</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </footer>
 </body>
