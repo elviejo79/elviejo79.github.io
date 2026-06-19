@@ -200,7 +200,7 @@ For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 
 
-** Discarded alternatives
+** What I tried first
 
 Obviously Emacs and Noweb aren't the only tools in the game.
 But I have tried them all[fn:1]. And all of them fall short in some way.
