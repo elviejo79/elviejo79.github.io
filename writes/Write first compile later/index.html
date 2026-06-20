@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-06-19 vie 14:26 -->
+<!-- 2026-06-19 vie 19:01 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Write First, Compile Later</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" href="../../assets/css/tufte.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/css/tufte-css-1.8.0/tufte.css" type="text/css" />
 <link rel="stylesheet" href="../../assets/css/ox-tufte.css" type="text/css" />
 <script src="../../assets/js/linkerline.umd.js"></script>
 <script src="../../assets/js/connect-refs.js"></script>
@@ -275,20 +275,21 @@ display: none !important;   /* the ⊕ for the block note — redundant now it's
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7f16d57">1. A letter to future me</a></li>
-<li><a href="#org2dc1f56">2. What it actually looks like</a>
+<li><a href="#org7f16d57">1. A gift for me</a></li>
+<li><a href="#org7925b9e">2. What it actually looks like</a></li>
+<li><a href="#org9beed48">3. What I tried first</a>
 <ul>
-<li><a href="#org9beed48">2.1. What I tried first</a>
+<li>
 <ul>
-<li><a href="#org0ce0959">2.1.1. Leo-Editor and its clone LeoJS</a></li>
-<li><a href="#org7f6f53b">2.1.2. Tiny Wiki.</a></li>
-<li><a href="#orgb948b55">2.1.3. Jupyter Notebooks.</a></li>
+<li><a href="#org0ce0959">3.0.1. Leo-Editor and its clone LeoJS</a></li>
+<li><a href="#org7f6f53b">3.0.2. Tiny Wiki.</a></li>
+<li><a href="#orgb948b55">3.0.3. Jupyter Notebooks.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgde0f8b8">3. A letter to your AI</a></li>
-<li><a href="#org7161a33">4. Where to start</a></li>
+<li><a href="#org2dc1f56">4. A gift for AI</a></li>
+<li><a href="#orgfa898cb">5. Where to start</a></li>
 </ul>
 </div>
 </nav>
@@ -311,7 +312,7 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 </p>
 <section id="outline-container-org7f16d57" class="outline-2">
-<h2 id="org7f16d57"><span class="section-number-2">1.</span> A letter to future me</h2>
+<h2 id="org7f16d57"><span class="section-number-2">1.</span> A gift for me</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I went back to my Eiffel library after 5 months of not touching it.
@@ -331,35 +332,43 @@ The gift of knowing that when I come back to this software,  I can see why it's 
 </p>
 
 <p>
-The second gift is the gift of focus, focus on the goals that matter.
-Most software is programmed to work in layers.
-We have specialized tools for each layer: Database Manager for the data layer, coding editors for the business logic, and design tools for the user interface.
-We have specialized professionals for each layer, Database Administrators, Programmers, and User Experience.
+The second gift is the gift of focus.
+Focus on the goals that matter.
+Most software is programmed to work in layers, we have: data layer, business logic, and user interface.
+We have specialized tools for each layer: Database Managers, editors and compilers for the business logic, and design tools.
+We have specialized professionals for each layer: Database Administrators, Programmers, and Usability experts.
 </p>
 
 <p>
 However our users don't think in terms of layers.
-Our users have goals.
-And our software must help them achieve their goals.
+Our users have things to do, they have <b>goals</b>.
+Our software must help in achieving them.
 </p>
 
 <p>
-So the first thing we need to change is to think in terms of goals not tools.
-And the way I have found to do that is to organize my thinking as an article.
-Where the goal is the first paragraph.
-Subsequent paragraphs and code blocks are written in service of the goal.
-This of course means that current tools are not useful in this way of writing.
+So, we need to change and think in terms of goals not tools.
+The way I have found to do it, is to organize my thinking as an article.
+Where the user's goal, is the first paragraph.
+Subsequent lines and code blocks are written in service to it.
+This of course means that current development tools are not optimized for this way of writing.
 I cannot write SQL in the python interpreter, nor CSS in the command prompt.
-But I need all of these languages and tools mixed in order to fulfill the goal of my user.
+But I <b>need</b> all of these languages and tools mixed in order to fulfill the goal of my user.
 </p>
 </div>
 </section>
-<section id="outline-container-org2dc1f56" class="outline-2">
-<h2 id="org2dc1f56"><span class="section-number-2">2.</span> What it actually looks like</h2>
+<section id="outline-container-org7925b9e" class="outline-2">
+<h2 id="org7925b9e"><span class="section-number-2">2.</span> What it actually looks like</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Our goal is to show the users stored in a SQLite database.
-So we would write an article as follows:
+It might seem dauting, to mix every kind of programming language.
+But it isn't. Its not different from a mathematics book.
+That to explain a single concept uses prose, a formula and a diagram.
+They are just different views of the same thing.
+So it is with a literate program.
+</p>
+
+<p>
+Like this one:
 </p>
 
 
@@ -387,67 +396,67 @@ Other times it's inductive (bottom-up). I start with a specific example and modi
 </div>
 
 <div class="org-src-container">
-<pre class="src src-org"><code><span class="linenr"> 1: </span><span style="color: #b3b3b3;">#+title:</span> <span style="color: #8CD0D3; background-color: #3F3F3F; font-weight: bold;">How to Use SQLite with Python
-<span class="linenr"> 2: </span></span>
-<span id="coderef-goal" class="coderef-off"><span class="linenr"> 3: </span>,In this tutorial we would learn how to connect SQLite and Python. (goal)</span>
+<pre class="src src-dont_colorize"><code><span class="linenr"> 1: </span>#+title: How to Use SQLite with Python
+<span class="linenr"> 2: </span>
+<span id="coderef-goal" class="coderef-off"><span class="linenr"> 3: </span>In this tutorial we would learn how to connect SQLite and Python. (goal)</span>
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Requirements</span>
+<span class="linenr"> 5: </span>* Requirements
 <span class="linenr"> 6: </span>First of all you need to check if you have Python and Sqlite installed.
 <span class="linenr"> 7: </span>So write this command in your terminal.
 <span class="linenr"> 8: </span>And they should return an output similar to the one shown.
 <span class="linenr"> 9: </span>
-<span id="coderef-pre-conditions" class="coderef-off"><span class="linenr">10: </span><span style="color: #7F9F7F;">#+name:</span> (pre-conditions)</span>
-<span class="linenr">11: </span><span style="color: #7F9F7F;">#+begin_src shell :exports both :results output
-<span class="linenr">12: </span></span><span style="background-color: #494949;">,  python --version
+<span id="coderef-pre-conditions" class="coderef-off"><span class="linenr">10: </span>#+name: (pre-conditions)</span>
+<span class="linenr">11: </span>#+begin_src shell :exports both :results output
+<span class="linenr">12: </span>,  python --version
 <span class="linenr">13: </span>,  sqlite3 --version
-<span class="linenr">14: </span></span><span style="color: #7F9F7F;">#+end_src
-<span class="linenr">15: </span></span>
-<span class="linenr">16: </span><span style="color: #7F9F7F;">#+results:</span>
-<span class="linenr">17: </span><span style="color: #b3b3b3;">: Python 3.10.12
-<span class="linenr">18: </span>: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46</span><span style="color: #DC8CC3; background-color: #3F3F3F;">b29818d5dalt1</span><span style="color: #b3b3b3;">
-<span class="linenr">19: </span></span>
+<span class="linenr">14: </span>#+end_src
+<span class="linenr">15: </span>
+<span class="linenr">16: </span>#+results:
+<span class="linenr">17: </span>: Python 3.10.12
+<span class="linenr">18: </span>: 3.37.2 2022-01-06 13:25:41 872ba256cbf61d9290b571c0e6d82a20c224ca3ad82971edc46b29818d5dalt1
+<span class="linenr">19: </span>
 <span class="linenr">20: </span>
-<span id="coderef-installation" class="coderef-off"><span class="linenr">21: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Setup</span> (installation)</span>
-<span class="linenr">22: </span><span style="color: #7F9F7F;">#+begin_src shell
-<span class="linenr">23: </span></span><span style="background-color: #494949;">,  pip install cs50
+<span id="coderef-installation" class="coderef-off"><span class="linenr">21: </span>* Setup (installation)</span>
+<span class="linenr">22: </span>#+begin_src shell
+<span class="linenr">23: </span>,  pip install cs50
 <span class="linenr">24: </span>,  touch database.db
-<span class="linenr">25: </span></span><span style="color: #7F9F7F;">#+end_src
-<span class="linenr">26: </span></span>
-<span class="linenr">27: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Connecting</span>
+<span class="linenr">25: </span>#+end_src
+<span class="linenr">26: </span>
+<span class="linenr">27: </span>* Connecting
 <span class="linenr">28: </span>
-<span class="linenr">29: </span><span style="color: #7F9F7F;">#+begin_src python :tangle main.py :mkdirp yes
-<span class="linenr">30: </span></span><span style="background-color: #494949;">,  </span><span style="color: #F0DFAF; background-color: #494949; font-weight: bold;">from</span><span style="background-color: #494949;"> cs50 </span><span style="color: #F0DFAF; background-color: #494949; font-weight: bold;">import</span><span style="background-color: #494949;"> SQL
+<span class="linenr">29: </span>#+begin_src python :tangle main.py :mkdirp yes
+<span class="linenr">30: </span>,  from cs50 import SQL
 <span class="linenr">31: </span>
-<span class="linenr">32: </span>,  </span><span style="color: #DFAF8F; background-color: #494949;">db</span><span style="background-color: #494949;"> </span><span style="color: #DCDCCC; background-color: #494949;">=</span><span style="background-color: #494949;"> SQL(</span><span style="color: #CC9393; background-color: #494949;">"sqlite:///database.db"</span><span style="background-color: #494949;">)
-<span class="linenr">33: </span></span><span style="color: #7F9F7F;">#+end_src
-<span class="linenr">34: </span></span>
-<span class="linenr">35: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* CREATE</span>
-<span id="coderef-a_code_block" class="coderef-off"><span class="linenr">36: </span><span style="color: #7F9F7F;">#+name:</span> (a_code_block)</span>
-<span class="linenr">37: </span><span style="color: #7F9F7F;">#+begin_src python :tangle main.py
-<span class="linenr">38: </span></span><span style="background-color: #494949;">,  db.execute(</span><span style="color: #CC9393; background-color: #494949;">"""
+<span class="linenr">32: </span>,  db = SQL("sqlite:///database.db")
+<span class="linenr">33: </span>#+end_src
+<span class="linenr">34: </span>
+<span class="linenr">35: </span>* CREATE
+<span id="coderef-a_code_block" class="coderef-off"><span class="linenr">36: </span>#+name: (a_code_block)</span>
+<span class="linenr">37: </span>#+begin_src python :tangle main.py
+<span class="linenr">38: </span>,  db.execute("""
 <span class="linenr">39: </span>,      CREATE TABLE IF NOT EXISTS users (
 <span class="linenr">40: </span>,          name     TEXT,
 <span class="linenr">41: </span>,          age      NUMBER,
 <span class="linenr">42: </span>,          fav_food STRING
 <span class="linenr">43: </span>,      )
-<span class="linenr">44: </span>,  """</span><span style="background-color: #494949;">)
-<span class="linenr">45: </span></span><span style="color: #7F9F7F;">#+end_src
-<span class="linenr">46: </span></span>
+<span class="linenr">44: </span>,  """)
+<span class="linenr">45: </span>#+end_src
+<span class="linenr">46: </span>
 <span class="linenr">47: </span>
-<span class="linenr">48: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Tangle</span>
-<span id="coderef-tangle" class="coderef-off"><span class="linenr">49: </span><span style="color: #7F9F7F;">#+name:</span> (tangle)</span>
-<span class="linenr">50: </span><span style="color: #7F9F7F;">#+begin_src shell
-<span class="linenr">51: </span></span><span style="background-color: #494949;">,  emacs --batch </span><span style="color: #CC9393; background-color: #494949;">\</span><span style="background-color: #494949;">
-<span class="linenr">52: </span>,        --eval </span><span style="color: #CC9393; background-color: #494949;">"(require 'ob-tangle)"</span><span style="background-color: #494949;"> </span><span style="color: #CC9393; background-color: #494949;">\</span><span style="background-color: #494949;">
-<span class="linenr">53: </span>,        --eval </span><span style="color: #CC9393; background-color: #494949;">"(org-babel-tangle-file \"python-sqlite-tutorial.org\")"</span><span style="background-color: #494949;">
-<span class="linenr">54: </span></span><span style="color: #7F9F7F;">#+end_src
-<span class="linenr">55: </span></span>
-<span class="linenr">56: </span><span style="color: #DFAF8F; background-color: #3F3F3F;">* Compile and Run</span>
-<span id="coderef-compile" class="coderef-off"><span class="linenr">57: </span><span style="color: #7F9F7F;">#+name:</span> (compile)</span>
-<span class="linenr">58: </span><span style="color: #7F9F7F;">#+begin_src shell
-<span class="linenr">59: </span></span><span style="background-color: #494949;">,  python main.py
-<span class="linenr">60: </span></span><span style="color: #7F9F7F;">#+end_src
-<span class="linenr">61: </span></span>
+<span class="linenr">48: </span>* Tangle
+<span id="coderef-tangle" class="coderef-off"><span class="linenr">49: </span>#+name: (tangle)</span>
+<span class="linenr">50: </span>#+begin_src shell
+<span class="linenr">51: </span>,  emacs --batch \
+<span class="linenr">52: </span>,        --eval "(require 'ob-tangle)" \
+<span class="linenr">53: </span>,        --eval "(org-babel-tangle-file \"python-sqlite-tutorial.org\")"
+<span class="linenr">54: </span>#+end_src
+<span class="linenr">55: </span>
+<span class="linenr">56: </span>* Compile and Run
+<span id="coderef-compile" class="coderef-off"><span class="linenr">57: </span>#+name: (compile)</span>
+<span class="linenr">58: </span>#+begin_src shell
+<span class="linenr">59: </span>,  python main.py
+<span class="linenr">60: </span>#+end_src
+<span class="linenr">61: </span>
 </code></pre>
 </div>
 
@@ -461,9 +470,10 @@ For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 </p>
 </div>
-<div id="outline-container-org9beed48" class="outline-3">
-<h3 id="org9beed48"><span class="section-number-3">2.1.</span> What I tried first</h3>
-<div class="outline-text-3" id="text-2-1">
+</section>
+<section id="outline-container-org9beed48" class="outline-2">
+<h2 id="org9beed48"><span class="section-number-2">3.</span> What I tried first</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Obviously Emacs and Noweb aren't the only tools in the game.
 But I have tried them all<label id='fnr.1' for='fnr-in.1.9790334' class='margin-toggle sidenote-number'><sup class='numeral'>1</sup></label><input type='checkbox' id='fnr-in.1.9790334' class='margin-toggle'><span class='sidenote'><sup class='numeral'>1</sup>
@@ -482,8 +492,8 @@ And why I don't use them to do literate programming.
 </p>
 </div>
 <div id="outline-container-org0ce0959" class="outline-4">
-<h4 id="org0ce0959"><span class="section-number-4">2.1.1.</span> Leo-Editor and its clone LeoJS</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<h4 id="org0ce0959"><span class="section-number-4">3.0.1.</span> Leo-Editor and its clone LeoJS</h4>
+<div class="outline-text-4" id="text-3-0-1">
 <p>
 These tools are <b>almost</b> perfect.
 Their literate programming capabilities are top notch.
@@ -502,8 +512,8 @@ And then create the document for each audience:
 </div>
 </div>
 <div id="outline-container-org7f6f53b" class="outline-4">
-<h4 id="org7f6f53b"><span class="section-number-4">2.1.2.</span> Tiny Wiki.</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<h4 id="org7f6f53b"><span class="section-number-4">3.0.2.</span> Tiny Wiki.</h4>
+<div class="outline-text-4" id="text-3-0-2">
 <p>
 On the opposite side we have tiny wiki.
 Which is the perfect note taking tool. Every note is just a block in a single long document.
@@ -516,8 +526,8 @@ But its literate programming story is a lot less good.
 </div>
 </div>
 <div id="outline-container-orgb948b55" class="outline-4">
-<h4 id="orgb948b55"><span class="section-number-4">2.1.3.</span> Jupyter Notebooks.</h4>
-<div class="outline-text-4" id="text-2-1-3">
+<h4 id="orgb948b55"><span class="section-number-4">3.0.3.</span> Jupyter Notebooks.</h4>
+<div class="outline-text-4" id="text-3-0-3">
 <p>
 I like that Jupyter notebooks, made a form of literate programming attractive to many more developers.
 But they have gone too far on the other direction.
@@ -528,11 +538,10 @@ So notebooks are more like Bash scripts than a development environment.
 </p>
 </div>
 </div>
-</div>
 </section>
-<section id="outline-container-orgde0f8b8" class="outline-2">
-<h2 id="orgde0f8b8"><span class="section-number-2">3.</span> A letter to your AI</h2>
-<div class="outline-text-2" id="text-3">
+<section id="outline-container-org2dc1f56" class="outline-2">
+<h2 id="org2dc1f56"><span class="section-number-2">4.</span> A gift for AI</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Turns out that if we write for colleagues.
 With our rationales, decisions, and even routes not taken.
@@ -541,18 +550,21 @@ LLMs also benefit!
 This is fashionably known as "Context Engineering",
 And the current trend is just give the LLM as many documents as you can.
 But with Literate Programming all the rationale and its implementation is in the same file.
+</p>
+
+<p>
 The only caveat is that when you let an LLM modify your code,
 It should modify the <a href="#coderef-tangle" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-tangle');" onmouseout="CodeHighlightOff(this, 'coderef-tangle');">tangle</a> files, not the literate file.
 And then you detangle files to your literate program.
 </p>
 </div>
 </section>
-<section id="outline-container-org7161a33" class="outline-2">
-<h2 id="org7161a33"><span class="section-number-2">4.</span> Where to start</h2>
-<div class="outline-text-2" id="text-4">
+<section id="outline-container-orgfa898cb" class="outline-2">
+<h2 id="orgfa898cb"><span class="section-number-2">5.</span> Where to start</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 To learn how to become a literate programmer, I think a good exercise is to take any
-programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.8061131' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.8061131' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
+programming tutorial that you already know or have read in the past <label id='fnr.3' for='fnr-in.3.2232248' class='margin-toggle sidenote-number'><sup class='numeral'>3</sup></label><input type='checkbox' id='fnr-in.3.2232248' class='margin-toggle'><span class='sidenote'><sup class='numeral'>3</sup>
 It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
 </span>.
 A tutorial whose prose and content you have already enjoyed.
@@ -564,18 +576,19 @@ Every time the tutorial said: "and now you execute our program"  or where it sai
 Now you must find a way to write an executable code block that will be part of your document.
 </p>
 
-
-
 <p>
 This practice is great to learn to write in a literate programming style,
 since you would be wearing the shoes of both an experienced writer and programmer.
 </p>
 </div>
 </section>
+<p>
+In summary: Write for you, your colleagues, and your AI first; the compiler can wait.
+</p>
 </article>
 <footer id="postamble" class="status">
 <p class="author">Author: Alejandro Garcia</p>
-<p class="date">Created: 2026-06-19 vie 14:26</p>
+<p class="date">Created: 2026-06-19 vie 19:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </footer>
 </body>

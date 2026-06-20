@@ -1,7 +1,7 @@
 #+TITLE: Write First, Compile Later
 #+SUBTITLE: What literate programming gave me that nothing else did
 #+BIND: org-html-htmlize-output-type nil
-#+HTML_HEAD: <link rel="stylesheet" href="../../assets/css/tufte.css" type="text/css" />
+#+HTML_HEAD: <link rel="stylesheet" href="../../assets/css/tufte-css-1.8.0/tufte.css" type="text/css" />
 #+HTML_HEAD: <link rel="stylesheet" href="../../assets/css/ox-tufte.css" type="text/css" />
 #+HTML_HEAD_EXTRA: <script src="../../assets/js/linkerline.umd.js"></script>
 #+HTML_HEAD_EXTRA: <script src="../../assets/js/connect-refs.js"></script>
@@ -54,6 +54,7 @@
 #+HTML_HEAD_EXTRA:   }
 #+HTML_HEAD_EXTRA: }
 #+HTML_HEAD_EXTRA: </style>
+#+BIND: org-html-htmlize-output-type nil
 
 #+BEGIN_QUOTE
 Paraphrasing Alan Kay:
@@ -71,7 +72,7 @@ One is a project management software and the other is an Eiffel library.
 And that made me appreciate the gifts of Literate Programming.
 
 
-* A letter to future me
+* A gift for me
 
 I went back to my Eiffel library after 5 months of not touching it.
 Of course my mind was blank when reading the code.
@@ -84,27 +85,33 @@ It was a gift from my past self to me.
 The gift of understanding.
 The gift of knowing that when I come back to this software,  I can see why it's designed the way it is.
 
-The second gift is the gift of focus, focus on the goals that matter.
-Most software is programmed to work in layers.
-We have specialized tools for each layer: Database Manager for the data layer, coding editors for the business logic, and design tools for the user interface.
-We have specialized professionals for each layer, Database Administrators, Programmers, and User Experience.
+The second gift is the gift of focus.
+Focus on the goals that matter.
+Most software is programmed to work in layers, we have: data layer, business logic, and user interface.
+We have specialized tools for each layer: Database Managers, editors and compilers for the business logic, and design tools.
+We have specialized professionals for each layer: Database Administrators, Programmers, and Usability experts.
 
 However our users don't think in terms of layers.
-Our users have goals.
-And our software must help them achieve their goals.
+Our users have things to do, they have *goals*.
+Our software must help in achieving them.
 
-So the first thing we need to change is to think in terms of goals not tools.
-And the way I have found to do that is to organize my thinking as an article.
-Where the goal is the first paragraph.
-Subsequent paragraphs and code blocks are written in service of the goal.
-This of course means that current tools are not useful in this way of writing.
+So, we need to change and think in terms of goals not tools.
+The way I have found to do it, is to organize my thinking as an article.
+Where the user's goal, is the first paragraph.
+Subsequent lines and code blocks are written in service to it.
+This of course means that current development tools are not optimized for this way of writing.
 I cannot write SQL in the python interpreter, nor CSS in the command prompt.
-But I need all of these languages and tools mixed in order to fulfill the goal of my user.
+But I *need* all of these languages and tools mixed in order to fulfill the goal of my user.
 
 * What it actually looks like
 
-Our goal is to show the users stored in a SQLite database.
-So we would write an article as follows:
+It might seem dauting, to mix every kind of programming language.
+But it isn't. Its not different from a mathematics book.
+That to explain a single concept uses prose, a formula and a diagram.
+They are just different views of the same thing.
+So it is with a literate program.
+
+Like this one:
 
 
 
@@ -127,10 +134,10 @@ Observe that:
 #+end_marginnote
 
 #+header: :transclude [[file:./example_tutorial.org]]
-#+BEGIN_SRC org -n
+#+BEGIN_SRC dont_colorize -n
   ,#+title: How to Use SQLite with Python
 
-  ,In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
+  In this tutorial we would learn how to connect SQLite and Python. (ref:goal)
 
   ,* Requirements
   First of all you need to check if you have Python and Sqlite installed.
@@ -200,7 +207,7 @@ For my brain, this has been a lifesaver.
 This state of flow in the age of distraction, has made me so much more productive.
 
 
-** What I tried first
+* What I tried first
 
 Obviously Emacs and Noweb aren't the only tools in the game.
 But I have tried them all[fn:1]. And all of them fall short in some way.
@@ -242,7 +249,7 @@ But that destroys the layers and the fact that each layer is perfectly optimized
 So notebooks are more like Bash scripts than a development environment.
 
 
-* A letter to your AI
+* A gift for AI
 
 Turns out that if we write for colleagues.
 With our rationales, decisions, and even routes not taken.
@@ -251,6 +258,7 @@ LLMs also benefit!
 This is fashionably known as "Context Engineering",
 And the current trend is just give the LLM as many documents as you can.
 But with Literate Programming all the rationale and its implementation is in the same file.
+
 The only caveat is that when you let an LLM modify your code,
 It should modify the [[(tangle)]] files, not the literate file.
 And then you detangle files to your literate program.
@@ -265,10 +273,12 @@ And type the whole tutorial again, no steps omitted.
 Every time the tutorial said: "and now you execute our program"  or where it said: "in the browser click here and there"
 Now you must find a way to write an executable code block that will be part of your document.
 
-
-
 This practice is great to learn to write in a literate programming style,
 since you would be wearing the shoes of both an experienced writer and programmer.
+
+* Conclusion :ignore:
+
+In summary: Write for you, your colleagues, and your AI first; the compiler can wait.
 
 * Footnotes
 
@@ -277,3 +287,7 @@ since you would be wearing the shoes of both an experienced writer and programme
 [fn:2] Which is the fancy way of saying it inserts blocks from another document into the current one.
 
 [fn:3] It is important that this is a tutorial that you have done in the past. Your goal is to learn literate programming not the contents of the tutorial.
+
+# Local Variables:
+# org-export-allow-bind-keywords: t
+# End:
